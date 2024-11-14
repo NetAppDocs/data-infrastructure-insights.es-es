@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_cluster_detail.html 
+keywords: kubernetes, pods, clusters, nodes. troubleshooting, planning 
+summary: La página de detalles Kubernetes ofrece información y detalles como ayuda en la planificación y la solución de problemas. 
+---
+= Página de detalles del clúster de Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+La página de detalles del clúster de Kubernetes muestra una descripción detallada de su clúster de Kubernetes.
+
+image:Kubernetes_Detail_Page_new.png["Página de detalles Cluster"]
+
+
+
+== Número de espacios de nombres, nodos y POD
+
+Los números en la parte superior de la página muestran el número total de espacios de nombres, nodos y pods en el clúster, así como el número de pods que actualmente están alertando y pendientes.
+
+
+
+== Recursos compartidos y saturación
+
+En la parte superior derecha de la página de detalles, se encuentra la saturación del clúster como porcentaje actual y un gráfico que muestra la tendencia reciente a lo largo del tiempo. La saturación del clúster es la mayor saturación de CPU, memoria o almacenamiento en cada momento.
+
+A continuación, la página muestra por defecto *uso de Recursos compartidos*, con pestañas para CPU, memoria y almacenamiento. Cada pestaña muestra el porcentaje de saturación y la tendencia a lo largo del tiempo, con detalles adicionales de uso. Para el almacenamiento, el valor mostrado es el mayor de saturación de back-end y filesystem, que se calculan de forma independiente.
+
+Los dispositivos con mayor uso se muestran en una tabla de la parte inferior. Haga clic en cualquier enlace para explorar estos dispositivos.
+
+
+
+== Espacios de nombres
+
+En la pestaña Namespaces, se muestra una lista de todos los espacios de nombres en el entorno Kubernetes, donde se muestra el uso de la CPU y la memoria, así como el recuento de cargas de trabajo en cada espacio de nombres. Haga clic en los vínculos de nombre para explorar cada espacio de nombres.
+
+image:Kubernetes_Namespace_tab_new.png["Lista de espacios de nombres actuales en el entorno K8s"]
+
+
+
+== Cargas de trabajo
+
+De igual modo, la pestaña cargas de trabajo muestra una lista de las cargas de trabajo de cada espacio de nombres, mostrando de nuevo el uso de la CPU y la memoria. Al hacer clic en el espacio de nombres, se vinculan los simulacros de cada uno.
+
+image:Kubernetes_Workloads_tab_new.png["Lista de espacios de nombres actuales en el entorno K8s"]
+
+
+
+== La "rueda" del clúster
+
+image:Kubernetes_Wheel_Section.png["Rueda del grupo de instrumentos"]
+
+La sección "rueda" de clúster proporciona el estado de nodo y cápsula de un vistazo, en el que puede obtener más información. Si su clúster contiene más nodos de los que se pueden mostrar en esta área de la página, podrá girar la rueda con los botones disponibles.
+
+Los pods o nodos de alertas se muestran en rojo. Las áreas de "advertencia" se muestran en color naranja. Las vainas no programadas (es decir, sin conectar) se mostrarán en la esquina inferior de la "rueda" del grupo de instrumentos.
+
+Si pasa el ratón por un pod (círculo) o Node (barra), se ampliará la vista del nodo.
+
+image:Kubernetes_Node_Expand.png["Nodo expandido"]
+
+Al hacer clic en el pod o en el nodo de esa vista se amplía a la vista nodo expandida.
+
+image:Kubernetes_Critical_Pod_Zoom.png["Vista de nodos ampliada"]
+
+Desde aquí, puede pasar el ratón sobre un elemento para ver detalles sobre ese elemento. Por ejemplo, al pasar por el pod crucial en este ejemplo, se muestran detalles sobre ese pod.
+
+image:Kubernetes_Pod_Red.png["Información sobre el POD crítico"]
+
+Puede ver la información del sistema de archivos, la memoria y la CPU pasando por encima de los elementos Node.
+
+image:Kubernetes_Capacity_Info.png["Capacidad y asignación de nodos"]
+
+
+
+== Una nota sobre los indicadores
+
+Los indicadores de memoria y CPU muestran tres colores, ya que muestran _used_ en relación con _Allocatable Capacity_ y _total Capacity_.

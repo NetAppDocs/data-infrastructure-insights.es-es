@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_landing_page.html 
+keywords: telegraf, installation, install, kubernetes, pods, clusters, filters, filtering, k8s 
+summary: Explicación de la página de destino de Kubernetes 
+---
+= Descripción general del clúster Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+El explorador de Kubernetes de información sobre infraestructuras de datos es una potente herramienta para mostrar el estado y el uso generales de tus clústeres de Kubernetes y te permite profundizar fácilmente en áreas de investigación.
+
+Al hacer clic en *Paneles > Explorador de Kubernetes* se abre la página de lista clúster de Kubernetes. Esta página de descripción general contiene una tabla de los clústeres de Kubernetes en el entorno.
+
+image:Kubernetes_List_Page_new.png["Página de lista de Kubernetes"]
+
+
+
+=== Lista Cluster
+
+En la lista de clústeres se muestra la siguiente información para cada clúster del entorno:
+
+* Cluster *Nombre*. Al hacer clic en el nombre de un clúster se abrirá la link:kubernetes_cluster_detail.html["*página de detalles*"] para ese clúster.
+* *Porcentajes de saturación*. La saturación general es la más alta de saturación de CPU, memoria o almacenamiento.
+* Número de *nodos* en el clúster. Al hacer clic en este número se abrirá la página de lista Node.
+* Número de *pods* en el cluster. Al hacer clic en este número se abrirá la página de lista Pod.
+* Número de *espacios de nombres* en el cluster. Al hacer clic en este número se abrirá la página de lista de espacios de nombres.
+* Número de *cargas de trabajo* en el clúster. Al hacer clic en este número se abre la página de lista de cargas de trabajo.
+
+
+
+
+== Afinando el filtro
+
+Cuando está filtrando, al comenzar a escribir, se le presenta la opción de crear un filtro * comodín* basado en el texto actual. Si selecciona esta opción, se devolverán todos los resultados que coincidan con la expresión comodín. También puede crear *expresiones* utilizando NOT O Y, o puede seleccionar la opción "Ninguno" para filtrar los valores nulos en el campo.
+
+image:Filter_Kubernetes_Explorer.png["Filtrado con comodín en el Explorador de K8S"]
+
+Los filtros basados en comodines o expresiones (p. ej., NOT, AND, "None", etc.) se muestran en azul oscuro en el campo de filtro. Los elementos seleccionados directamente de la lista se muestran en azul claro.
+
+image:Filter_Kubernetes_Explorer_2.png["Filtro que muestra el comodín y los elementos seleccionados"]
+
+Los filtros de Kubernetes son contextuales, lo que significa, por ejemplo, que si se encuentra en una página específica del nodo, el filtro pod_name solo enumera los pods relacionados con ese nodo. Además, si aplica un filtro para un espacio de nombres específico, el filtro pod_name incluirá únicamente los pods de ese nodo _y_ en ese espacio de nombres.
+
+Tenga en cuenta que el filtrado de comodines y expresiones funciona con texto o listas, pero no con valores numéricos, fechas o valores.

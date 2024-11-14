@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: concept_determining_data_collector_acq_status.html 
+summary: Estado de adquisición del recopilador de datos 
+keywords: collector, acquisition, status 
+---
+= Determinar el estado de adquisición del recopilador de datos
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Dado que los recopiladores de datos son la principal fuente de información de Data Infrastructure Insights, es imprescindible que garantice que permanecen en estado de ejecución.
+
+El estado del recopilador de datos se muestra en la esquina superior derecha de cualquier página de activos como el mensaje "adquirido hace N minutos", donde N indica el tiempo de adquisición más reciente de los recopiladores de datos del activo. También se muestra la fecha y hora de adquisición.
+
+Al hacer clic en el mensaje se muestra una tabla con el nombre del recopilador de datos, el estado y la última adquisición correcta. Si ha iniciado sesión como administrador, al hacer clic en el enlace del nombre del recopilador de datos de la tabla, se le llevará a la página de detalles de ese recopilador de datos.

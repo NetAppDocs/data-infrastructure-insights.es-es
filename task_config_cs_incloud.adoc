@@ -1,0 +1,94 @@
+---
+sidebar: sidebar 
+permalink: task_config_cs_incloud.html 
+keywords: Cloud, Storage, AWS, Cloud Volumes, Cloud ONTAP, firewall, VPC, Subnet,  cloud secure 
+summary: Workload Security utiliza recopiladores de datos para recopilar datos de acceso de archivos y usuarios desde dispositivos. 
+---
+= Configurar el recopilador Cloud Volumes ONTAP y Amazon FSX para ONTAP de NetApp
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Workload Security utiliza recopiladores de datos para recopilar datos de acceso de archivos y usuarios desde dispositivos.
+
+
+
+== Configuración del almacenamiento de Cloud Volumes ONTAP
+
+Consulte la documentación de OnCommand Cloud Volumes ONTAP para configurar una instancia de AWS de un solo nodo/de alta disponibilidad para alojar el agente de seguridad de carga de trabajo: https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/index.html[]
+
+Una vez finalizada la configuración, siga los pasos para configurar la SVM: https://docs.netapp.com/us-en/cloudinsights/task_add_collector_svm.html[]
+
+
+
+== Plataformas compatibles
+
+* Cloud Volumes ONTAP, compatible con todos los proveedores de servicios cloud disponibles allá donde esté disponible. Por ejemplo: Amazon, Azure y Google Cloud.
+* Amazon FSX de ONTAP
+
+
+
+
+== Configuración de máquina de agente
+
+La máquina del agente debe estar configurada en las subredes respectivas de los proveedores de servicios en la nube. Obtenga más información sobre el acceso a la red en [requisitos del agente].
+
+A continuación se muestran los pasos para la instalación del agente en AWS. Los pasos equivalentes, según proceda y según el proveedor de servicios cloud, se pueden seguir en Azure o Google Cloud para la instalación.
+
+En AWS, siga estos pasos para configurar el equipo que se utilizará como agente de seguridad de carga de trabajo:
+
+Siga estos pasos para configurar el equipo que se utilizará como agente de seguridad de carga de trabajo:
+
+.Pasos
+. Inicie sesión en la consola de AWS y desplácese a la página EC2-instance y seleccione _Launch instance_.
+. Seleccione una AMI de RHEL o CentOS con la versión adecuada, tal y como se menciona en esta página: https://docs.netapp.com/us-en/cloudinsights/concept_cs_agent_requirements.html[]
+. Seleccione el VPC y la subred en que reside la instancia de Cloud ONTAP.
+. Seleccione _t2.xlarge_ (4 vcpu y 16 GB de RAM) como recursos asignados.
++
+.. Cree la instancia de EC2.
+
+
+. Instale los paquetes de Linux necesarios con el gestor de paquetes YUM:
++
+.. Instale los paquetes nativos de Linux _wget_ y _unzip_.
+
+
+
+
+
+
+== Instale el agente de seguridad de carga de trabajo
+
+. Inicie sesión como administrador o propietario de la cuenta en su entorno de Data Infrastructure Insights.
+. Navegue a Workload Security *Collectors* y haga clic en la pestaña *Agentes*.
+. Haga clic en *+Agent* y especifique RHEL como plataforma de destino.
+. Copie el comando instalación del agente.
+. Pegue el comando Agent Installation en la instancia de RHEL EC2 en la que ha iniciado sesión. Se instala el agente de seguridad de carga de trabajo, siempre que se cumplan todos loslink:concept_cs_agent_requirements.html["Requisitos previos del agente"].
+
+
+Para conocer los pasos detallados, consulte este enlace: https://docs.NetApp.com/us-es/cloudinsights/task_cs_add_agent.html#steps-to-install-agent
+
+
+
+== Resolución de problemas
+
+Los problemas conocidos y sus resoluciones se describen en la siguiente tabla.
+
+|===
+
+
+| Problema | Resolución 
+
+
+| El recopilador de datos muestra el error “Workload Security: Failed to determine ONTAP type for Amazon FxSN data collector” (Seguridad de carga de trabajo: Error al determinar el tipo de para el recopilador de datos de Amazon FxSN). El cliente no puede agregar un nuevo recopilador de datos de Amazon FSxN a Workload Security. La conexión al clúster FSxN en el puerto 443 del agente se agota el tiempo de espera. Los grupos de seguridad de firewall y AWS tienen habilitadas las reglas necesarias para permitir la comunicación. Un agente ya está implementado y se encuentra también en la misma cuenta de AWS. Este mismo agente se utiliza para conectar y supervisar los demás dispositivos de NetApp (y todos funcionan). | Resuelva este problema añadiendo el segmento de red LIF fsxadmin a la regla de seguridad del agente. Se permiten todos los puertos si no está seguro de los puertos. 
+|===

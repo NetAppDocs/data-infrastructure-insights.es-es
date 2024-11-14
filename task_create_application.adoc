@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task_create_application.html 
+summary: Defina las aplicaciones que, a continuación, aplique a los activos del entorno según sea necesario. 
+keywords: application, create application, 
+---
+= Creación de aplicaciones
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Para realizar un seguimiento de los datos asociados con aplicaciones específicas que se ejecutan en su entorno, puede definir las aplicaciones en Data Infrastructure Insights.
+
+.Antes de empezar
+Si desea asociar la aplicación a una entidad de negocio, debe crear la entidad de negocio antes de definir la aplicación.
+
+.Acerca de esta tarea
+Data Infrastructure Insights le permite realizar un seguimiento de los datos de los activos asociados con las aplicaciones, como la elaboración de informes de uso o de costes.
+
+.Pasos
+. En el menú Información de la infraestructura de datos, haga clic en *Observabilidad > Enriquecimiento > Aplicaciones*. Seleccione
++
+Aparece el cuadro de diálogo Agregar aplicación.
+
+. Introduzca un nombre único para la aplicación.
+. Seleccione una prioridad para la aplicación.
+. Haga clic en *Guardar*.
+
+
+Después de definir una aplicación, se puede asignar a activos.
+
+
+
+== Asignar aplicaciones a activos
+
+Este procedimiento asigna la aplicación a un host como ejemplo. Es posible asignar volúmenes host, de máquina virtual, de volumen o internos a una aplicación.
+
+.Pasos
+. Busque el activo al que desea asignar a la aplicación:
+. Haga clic en *consultas > +Nueva consulta* y busque Host.
+. Haga clic en la casilla de verificación situada a la izquierda del host que desea asociar a la aplicación.
+. Haga clic en *acciones masivas > Agregar aplicación*.
+. Seleccione la aplicación a la que está asignando el activo.
+
+
+Las aplicaciones nuevas que asigne anulan las aplicaciones del activo que se derivaron de otro activo. Por ejemplo, los volúmenes heredan aplicaciones de hosts y cuando se asignan aplicaciones nuevas a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
+
+
+NOTE: En el caso de entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a estos activos puede llevar varios minutos. Por favor, deje que se produzca más tiempo para la herencia si tiene muchos activos relacionados.
+
+.Después de terminar
+Después de asignar el host a la aplicación, puede asignar los activos restantes a la aplicación. Para acceder a la página de inicio de la aplicación, haga clic en *Administrar > aplicación* y seleccione la aplicación que creó.

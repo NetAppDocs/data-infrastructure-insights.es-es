@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: task_troubleshooting_general_problems.html 
+summary: Consejos generales de solución de problemas sobre la infraestructura de datos. 
+keywords: troubleshooting, problems, browser, login, log in, accessing, access to, Trident, qtree, quota 
+---
+= Solución de problemas generales de información sobre la infraestructura de datos
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Aquí encontrará sugerencias para solucionar problemas de Data Infrastructure Insights.
+
+Consulte también link:task_troubleshooting_linux_acquisition_unit_problems.html["Solución de problemas de la unidad de adquisición de Linux"] y link:task_troubleshooting_windows_acquisition_unit_problems.html["Solución de problemas de la unidad de adquisición de Windows"].
+
+
+
+== Problemas de inicio de sesión
+
+|===
+| *Problema:* | *Pruebe esto:* 
+
+
+| Data Infrastructure Insights se cierra automáticamente cada 6 horas | Esto se debe a las cookies de terceros deshabilitadas del navegador. Los usuarios pueden configurar su navegador para habilitar todas las cookies de 3rd partes, o utilizar una lista de excepciones más estrecha para solo habilitar las cookies para Data Infrastructure Insights. Ejemplo: Abra la configuración de su navegador Seleccione la opción “Permitir todas las cookies”. *O* Seleccione “Bloquear cookies de terceros” y añada excepciones para _[\*.]auth0.com_ y _[*.]NetApp.com_. Microsoft Edge sigue el mismo formato para excepciones que Chrome. En Firefox, las excepciones de cookies se designan simplemente como _auth0.com_ y _netapp.com_. 
+
+
+| Tengo una cuenta de BlueXP, pero no puedo iniciar sesión en BlueXP. | Abrir un ticket desde https://mysupport.netapp.com/site/help[]. Seleccione la categoría “blueXP.netapp.com > Problemas de cuenta/inicio de sesión” o “bluexp.netapp.com > Problemas de federación”. Estas opciones se refieren específicamente a problemas o preguntas de BlueXP. Para cualquier otro problema técnico relacionado con la asistencia técnica de Data Infrastructure Insights, póngase en contacto con link:concept_requesting_support.html["Soporte de NetApp"]. 
+
+
+| Me han invitado a Data Infrastructure Insights, pero recibo un mensaje de «no autorizado». | Compruebe que se ha registrado para obtener una cuenta de BlueXP o que su organización utilice el inicio de sesión SSO con BlueXP. Compruebe que la dirección de correo electrónico de su perfil de BlueXP  coincide con la dirección de correo electrónico que se muestra en su correo electrónico de bienvenida de Data Infrastructure Insights. Si no coincide, solicite una nueva invitación con la dirección de correo electrónico correcta. 
+
+
+| Cerré la sesión en BlueXP  y se desconectó automáticamente de Información sobre infraestructura de datos. | El inicio de sesión único (SSO) en los servicios en la nube de NetApp cierra la sesión de todas las sesiones de información sobre infraestructura de datos. Si tiene acceso a varias cuentas de Data Infrastructure Insights, cerrar la sesión de cualquiera cierra todas las sesiones activas. Vuelva a iniciar sesión para acceder a su cuenta. 
+
+
+| Se cerró la sesión automáticamente después de varios días. | Las cuentas de NetApp Cloud requieren una nueva autenticación cada pocos días (la configuración actual de BlueXP es 7 días). Vuelva a iniciar sesión para acceder a su cuenta. 
+
+
+| Recibo un mensaje de error que indica que no se ha autorizado el inicio de sesión. | Póngase en contacto con el administrador de su cuenta para verificar el acceso a Data Infrastructure Insights. Compruebe que la dirección de correo electrónico de su perfil de BlueXP  coincide con la dirección de correo electrónico que se muestra en su correo electrónico de bienvenida de Data Infrastructure Insights 
+
+
+| Otros errores de inicio de sesión | Pruebe el modo Incognito en Chrome, o borre el historial del navegador, las cookies y la caché. Pruebe con un perfil de navegador diferente (por ejemplo, Chrome - add person). 
+|===
+
+
+== Otros temas
+
+|===
+
+
+| *Pregunta:* | *Respuesta:* 
+
+
+| Las cuotas físicas de mis qtrees se muestran correctamente en las consultas, pero mis cuotas flexibles se muestran como la capacidad total del volumen. ¿Es correcto? | Solo las cuotas estrictas (se establecen manualmente o se establecen mediante Trident) se mostrarán como las cuotas establecidas; si no se especifican cuotas duras, la capacidad de qtree será la capacidad de volumen interno. 
+
+
+| Se configuran manualmente tanto una cuota blanda como una estricta en el mismo qtree, pero la capacidad total que muestra es la cuota rígida; ¿es correcto? | Sí, si se especifica una cuota estricta, esta se mostrará como la capacidad total. 
+
+
+| Al introducir una hora de programación de un informe Cognos, a veces termino con una “m” extra en la hora programada. Por ejemplo, si escribo la hora como “02:15 PM”, puede agregar un carácter adicional: “02:15 PMM” (o PMM). Cuando hago clic afuera, cambia a “2:15 AM”. Puedo guardar el informe, pero cuando vuelvo a abrir el informe guardado, la hora de programación aparece como AM (es decir, por la mañana), independientemente de si he introducido AM o PM en la hora programada. | Vuelva a introducir la hora programada, teniendo cuidado de no introducir los caracteres AM o PM completos; basta con escribir A para AM o P para PM. Si no se muestra el carácter adicional, la hora de programación se establecerá correctamente. 
+|===
+
+
+== Recursos
+
+Puede encontrar consejos adicionales para la solución de problemas en el  (es necesario iniciar sesión en ellink:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conocimientos de NetApp"]).
+
+Puede encontrar más información sobre soporte en la página Data Infrastructure Insightslink:concept_requesting_support.html["Soporte técnico"].
+
+Si tiene una suscripción activa a Data Infrastructure Insights, puede utilizar las siguientes opciones de soporte:
+
+link:https://www.netapp.com/us/contact-us/support.aspx["Teléfono"] link:https://mysupport.netapp.com/site/cases/mine/create?serialNumber=95001014387268156333["Ticket de soporte"]
+
+Para obtener más información, consulte la https://docs.netapp.com/us-en/cloudinsights/concept_requesting_support.html["Documentación de soporte de Data Infrastructure Insights"].

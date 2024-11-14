@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: task_identify_inactive_devices.html 
+keywords: inactive, device, 
+summary: La identificación de dispositivos inactivos permite elegir eliminarlos o asignarles una función activa. 
+---
+= Identificación de dispositivos inactivos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Identificar los activos de los que dispone y quién los utiliza es fundamental para “dimensionar correctamente” y liberar infraestructura no utilizada. Puede reasignar o retirar recursos infrautilizados fácilmente y evitar compras innecesarias.
+
+Siga estos pasos para identificar activos inactivos.
+
+.Pasos
+* Navegue hasta *Explorar -> +Nueva Consulta de Métrica*.
+* Seleccione _Storage_ en la lista desplegable.
+* Haga clic en el engranaje y agregue _isActive_ como columna.
++
+Las filas que muestran una comprobación están activas. X indica los dispositivos inactivos.
+
+

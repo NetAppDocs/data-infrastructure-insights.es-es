@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: task_dc_cohesity_smartfiles.html 
+keywords: data collector, cohesity 
+summary: Configuración del recopilador de datos de Cohesity SmartFiles. 
+---
+= Recopilador de datos de Cohesity SmartFiles
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este recopilador basado en API de REST adquirirá un clúster de Cohesity, que detectará las «vistas» (como volúmenes internos de información de infraestructura de datos) y los distintos nodos, además de recopilar métricas de rendimiento.
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Cluster IP de Cohesity | La dirección IP del clúster de Cohesity 
+
+
+| Nombre de usuario | Nombre de usuario del clúster de Cohesity 
+
+
+| Contraseña | Se utilizó la contraseña para el clúster de Cohesity 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puerto TCP | Puerto utilizado para la comunicación TCP con el clúster de Cohesity 
+
+
+| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+
+
+| Intervalo de sondeo de rendimiento (mín.) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 900 segundos. 
+|===
+
+
+== Resolución de problemas
+
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

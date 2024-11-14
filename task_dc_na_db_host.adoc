@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_db_host.html 
+keywords: data collector, generic db 
+summary: Recopilador de Resolver de Host de Base de Datos Genérica 
+---
+= Resolución de host de base de datos genérica de NetApp
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Este recopilador de datos adquiere inventario
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere un inventario de este recopilador.
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP del servidor de BASE DE DATOS | Dirección IP del servidor de base de datos 
+
+
+| Puerto del servidor DE BASE DE DATOS | el valor predeterminado es 3306 
+
+
+| Nombre de clase de conductor cualificado | Nombre de clase para el controlador. 
+
+
+| URL del controlador JDBC | URL para el controlador 
+
+
+| Consulta SQL | Consulta utilizada para devolver datos de la tabla 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos 
+
+
+| Active la conexión SSL | Seleccione esta opción para activar la conexión a través de SSL 
+
+
+| Alias de WWN de informe | Seleccione para informar sobre el alias WWN 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

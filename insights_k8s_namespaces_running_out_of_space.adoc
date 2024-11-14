@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: insights_k8s_namespaces_running_out_of_space.html 
+keywords: insight, pv, persistent volume, backend 
+summary: La información puede ayudarle a predecir cuándo es probable que los espacios de Kubernetes se llenen. 
+---
+= Estadísticas: Se están quedando sin espacio los espacios de nombres de Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Quedarse sin espacio en su entorno nunca es una buena situación. Data Infrastructure Insights le ayuda a predecir el tiempo que pasará antes de que los volúmenes persistentes de Kubernetes se completen.
+
+La _Kubernetes Namespaces se está quedando sin espacio_ Insight le ofrece una vista de las cargas de trabajo en los espacios de nombres de Kubernetes que corre el riesgo de quedarse sin espacio, con una estimación del número de días que quedan antes de que se llene cada volumen persistente.
+
+Puede ver este Insight en *Paneles > Información*.
+
+image:K8sRunningOutOfSpaceWorkloadList.png["Lista de cargas de trabajo en espacios de nombres K8s que se encuentran en riesgo de quedarse sin espacio"]
+
+Haga clic en una carga de trabajo para abrir una página de detalles de Insight. En esta página se muestra un gráfico donde se muestran las tendencias de capacidad de la carga de trabajo, así como una tabla que muestra lo siguiente:
+
+* Nombre de la carga de trabajo
+* Volumen persistente afectado
+* Tiempo de duración previsto de hasta completo en días
+* Capacidad de volumen persistente
+* Recurso de almacenamiento del back-end afectado, con capacidad actual usada fuera de capacidad total. Al hacer clic en este enlace, se opondrá la página de inicio detallada para el volumen del back-end.
+
+
+image:K8sRunningOutOfSpaceWorkloadTable.png["Tabla de cargas de trabajo donde se muestran detalles"]
+
+
+
+=== ¿Qué puedo hacer si se estoy quedando sin espacio?
+
+En la página Insight, haga clic en *+Mostrar recomendaciones* para ver las posibles soluciones. La opción más sencilla cuando se está quedando sin espacio siempre consiste en añadir más capacidad, y Data Infrastructure Insights le muestra la capacidad óptima para añadir para aumentar el tiempo de finalización a una predicción de 60 días objetivo. También se muestran otras recomendaciones.
+
+image:K8sRunningOutOfSpaceRecommendations.png["Capacidad para agregar para volver a TTF de 60 días"]
+
+Y también puede copiar un cómodo vínculo a este Insight, añadir una página a un marcador o compartir fácilmente con su equipo.

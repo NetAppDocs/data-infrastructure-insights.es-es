@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: cs_alert_data.html 
+keywords: alert, attack, ransomware, activity, security, abnormal 
+summary: Workload Security crea alertas en caso de actividad de usuario anormal o ataque potencial. La página Alertas enumera estas actividades para una investigación rápida y fácil. 
+---
+= Alertas
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media
+
+
+[role="lead"]
+La página Workload Security Alerts (Alertas de seguridad de carga de trabajo) muestra una línea temporal de ataques y/o advertencias recientes y permite ver detalles de cada problema.
+
+image:CloudSecureAlertsListPage.png["Lista de alertas"]
+
+
+
+== Alerta
+
+La lista Alerta muestra un gráfico que muestra el número total de ataques potenciales y/o advertencias que se han generado en el intervalo de tiempo seleccionado, seguido de una lista de ataques y/o advertencias que se han producido en ese intervalo de tiempo. Puede cambiar el intervalo de tiempo ajustando los controles deslizantes de hora de inicio y hora de finalización del gráfico.
+
+Se muestran los siguientes elementos para cada alerta:
+
+*Ataques potenciales:*
+
+* El tipo _Potential Attack_ (por ejemplo, ransomware o sabotaje)
+* La fecha y la hora en que se _detectó_ el ataque potencial
+* El _Status_ de la alerta:
++
+** *Nuevo*: Este es el valor predeterminado para las alertas nuevas.
+** *En curso*: La alerta está bajo investigación de un miembro o miembros del equipo.
+** *Resuelto*: La alerta ha sido marcada como resuelta por un miembro del equipo.
+** *Despedido*: La alerta ha sido desestimada como comportamiento falso positivo o esperado.
++
+Un administrador puede cambiar el estado de la alerta y agregar una nota para ayudar con la investigación.
+
++
+image:CloudSecureChangeAlertStatus.png["Cambiar estado de alerta"]
+
+
+
+* El _User_ cuyo comportamiento activó la alerta
+* _Evidence_ del ataque (por ejemplo, se ha cifrado un gran número de archivos)
+* La _Action tomó_ (por ejemplo, se tomó una instantánea)
+
+
+*Advertencias:*
+
+* El _comportamiento anormal_ que activó la advertencia
+* La fecha y la hora en que se detectó el comportamiento
+* El _Status_ de la alerta (Nuevo, en curso, etc.)
+* El _User_ cuyo comportamiento activó la alerta
+* Una descripción del _Change_ (por ejemplo, un aumento anormal del acceso a archivos)
+* La _Acción tomada_
+
+
+
+
+== Opciones de filtro
+
+Puede filtrar alertas según lo siguiente:
+
+* El _Status_ de la alerta
+* Texto específico en el _Note_
+* Tipo de _ataques/Advertencias_
+* El _User_ cuyas acciones activaron la alerta/advertencia
+
+
+
+
+== La página Alert Details
+
+Puede hacer clic en un enlace de alerta de la página de lista Alertas para abrir una página de detalles de la alerta. Los detalles de alerta pueden variar según el tipo de ataque o alerta. Por ejemplo, una página de detalles de ataque de Ransomware puede mostrar la siguiente información:
+
+
+
+=== Sección de resumen:
+
+* Tipo de ataque (ransomware, sabotaje) e ID de alerta (asignado por seguridad de carga de trabajo)
+* Fecha y hora en la que se detectó el ataque
+* Acción realizada (por ejemplo, se ha realizado una instantánea automática. La hora de la copia Snapshot se muestra inmediatamente debajo de la sección de resumen)
+* Estado (nuevo, en curso, etc.)
+
+
+
+
+=== Sección de resultados del ataque:
+
+* Número de volúmenes y archivos afectados
+* Un resumen adjunto de la detección
+* Gráfico que muestra la actividad de archivo durante el ataque
+
+
+
+
+=== Sección usuarios relacionados:
+
+En esta sección se muestran detalles sobre el usuario involucrado en el ataque potencial, incluido un gráfico de actividad superior para el usuario.
+
+Página Alerts (Este ejemplo muestra un posible ataque de ransomware): image:RansomwareAlertExample.png["Ejemplo de alerta de ransomware"]
+
+Página de detalles (este ejemplo muestra un posible ataque de ransomware): image:RansomwareDetailPageExample.png["Ejemplo de página detallada de ransomware"]
+
+
+
+== _Tomar una instantánea_ Acción
+
+Workload Security protege los datos al tomar automáticamente una instantánea cuando se detecta una actividad maliciosa, garantizando que se realiza un backup de los datos de forma segura.
+
+Puede definir link:cs_automated_response_policies.html["políticas de respuesta automatizadas"] que tomar una instantánea cuando se detecte un ataque de ransomware u otra actividad anormal del usuario. También puede realizar una copia de Snapshot manualmente desde la página de alertas.
+
+Instantánea automática realizada: image:AlertActionsAutomaticExample.png["Pantalla Acción de alerta,1000"]
+
+Instantánea manual: image:AlertActionsExample.png["Pantalla Acción de alerta,1000"]
+
+
+
+== Notificaciones de alerta
+
+Las notificaciones por correo electrónico de alertas se envían a una lista de destinatarios de alertas para cada acción de la alerta. Para configurar destinatarios de alertas, haga clic en *Admin > Notificaciones* e introduzca una dirección de correo electrónico para cada destinatario.
+
+
+
+== Política de retención
+
+Las alertas y advertencias se conservan durante 13 meses. Se eliminarán alertas y advertencias de más de 13 meses. Si se elimina el entorno Workload Security, también se eliminan todos los datos asociados con el entorno.
+
+
+
+== Resolución de problemas
+
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Existe una situación en la que ONTAP toma instantáneas cada hora al día. ¿Le afectarán las instantáneas de seguridad de carga de trabajo (WS)? ¿La instantánea de WS tomará el lugar de la instantánea cada hora? ¿Se detendrá la instantánea predeterminada por hora? | Las instantáneas de seguridad de carga de trabajo no afectarán a los snapshots de hora. Las instantáneas de WS no tomarán el espacio de instantáneas por hora y eso debería continuar como antes. La copia de Snapshot por hora predeterminada no se detendrá. 
+
+
+| ¿Qué sucederá si se alcanza el número máximo de snapshots en ONTAP? | Si se alcanza el número máximo de instantáneas, la toma posterior de instantáneas fallará y Workload Security mostrará un mensaje de error indicando que la instantánea está llena. El usuario tiene que definir políticas de Snapshot para eliminar las snapshots más antiguas. De lo contrario, no se harán snapshots. En ONTAP 9.3 y versiones anteriores, un volumen puede contener hasta 255 copias snapshot. A partir de la versión 9.4 de ONTAP, un volumen puede contener hasta 1023 copias snapshot. Consulte la Documentación de ONTAP para obtener información sobre link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-960%2Fvolume__snapshot__autodelete__modify.html["Configurando política de eliminación de Snapshot"]. 
+
+
+| Workload Security no puede tomar instantáneas en absoluto. | Asegúrese de que el rol que se usa para crear instantáneas tiene un enlace: https://docs.NetApp.com/us-en/cloudinsights/task_add_collector_svm.html#a-note-about-permissions[derechos apropiados asignados]. Asegúrese de que _csrole_ se crea con derechos de acceso adecuados para tomar instantáneas: Security login role create -vserver <vservername> -role csrole -cmddirname "volume snapshot" -access all 
+
+
+| Las copias Snapshot fallan en alertas antiguas en las SVM que se quitaron de Workload Security y, posteriormente, se vuelven a añadir. Para las alertas nuevas que ocurren después de que se vuelve a añadir la SVM, se hacen snapshots. | Este es un escenario raro. En el caso de que experimente esto, inicie sesión en ONTAP y realice las snapshots manualmente para las alertas anteriores. 
+
+
+| En la página _Alert Details_, el mensaje de error “Last intentando realizar error” se muestra debajo del botón _Take Snapshot_. Si se pasa el ratón por encima del error, se muestra “el comando Invoke API ha agotado el tiempo de espera para el recopilador de datos con id”. | Esto puede suceder cuando se añade un recopilador de datos al estado de carga de trabajo de seguridad mediante la IP de gestión de SVM, si la LIF de la SVM está en el estado _disabled_ en ONTAP. Habilite el LIF concreto en ONTAP y active _Take Snapshot_ manualmente desde Workload Security. A continuación, la acción de Snapshot tendrá éxito. 
+|===

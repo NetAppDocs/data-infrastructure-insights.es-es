@@ -1,0 +1,309 @@
+---
+sidebar: sidebar 
+permalink: task_create_monitor.html 
+keywords: monitors, alerts, log, metric, system-defined, system, metric, 
+summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventario, así como las condiciones de métricas o registros. 
+---
+= Alerta con monitores
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Se crean monitores para establecer umbrales que activen alertas para notificarle acerca de problemas relacionados con los recursos de la red. Por ejemplo, puede crear un monitor para alertar sobre la latencia de escritura de _node_ para cualquiera de los múltiples protocolos.
+
+
+TIP: Los monitores y alertas están disponibles en todas las ediciones de Data Infrastructure Insights, sin embargo, Basic Edition está sujeta a lo siguiente: * Es posible que solo tenga activos hasta cinco monitores personalizados a la vez. Los monitores que superen los cinco se crearán en el estado _pausado_ o se moverán a ellos. * No se admiten los monitores de métricas de VMDK, máquina virtual, host y almacén de datos. Si ha creado monitores para estas métricas, se pondrán en pausa y no se podrán reanudar al cambiar a Basic Edition.
+
+
+toc::[]
+Los monitores le permiten establecer umbrales sobre métricas generadas por objetos de "infraestructura" como almacenamiento, VM, EC2 y puertos, así como datos de "integración" como los recopilados para Kubernetes, métricas avanzadas de ONTAP y plugins de Telegraf. Estos monitores _Metric_ le avisan cuando se cruzan umbrales de nivel de advertencia o de nivel crítico.
+
+También puede crear monitores para activar alertas de nivel de aviso, crítico o informativo cuando se detecten _log Events_ especificados.
+
+Data Infrastructure Insights ofrece también una serie, link:task_system_monitors.html["Monitores definidos por el sistema"]según su entorno.
+
+
+
+== Mejores prácticas de seguridad
+
+Las alertas de Data Infrastructure Insights se han diseñado para resaltar las tendencias y puntos de datos de su entorno, y Data Infrastructure Insights le permite introducir cualquier dirección de correo electrónico válida como destinatario de alertas. Si está trabajando en un entorno seguro, sea especialmente consciente de quién está recibiendo la notificación o de otro modo tiene acceso a la alerta.
+
+
+
+== ¿Monitor métrico o de registro?
+
+. En el menú Información de la infraestructura de datos, haga clic en *Alertas > Administrar monitores*
++
+Se muestra la página de lista Monitores, en la que se muestran los monitores configurados actualmente.
+
+. Para modificar un monitor existente, haga clic en el nombre del monitor de la lista.
+. Para agregar un monitor, haga clic en *+ Monitor*.
++
+image:Monitor_log_or_metric.png["Seleccione Monitor de sistema o de registro"]
+
++
+Al agregar un monitor nuevo, se le pedirá que cree un monitor métrico o un Monitor de registro.
+
++
+** _Metric_ supervisa la alerta sobre activadores relacionados con la infraestructura o con el rendimiento
+** _Log_ supervisa la alerta de la actividad relacionada con el registro
+
+
++
+Después de seleccionar el tipo de monitor, aparece el cuadro de diálogo Configuración del monitor. La configuración varía en función del tipo de monitor que se esté creando.
+
+
+
+
+
+=== Monitor métrico
+
+. En el menú desplegable, busque y elija un tipo de objeto y métrica que supervisar.
+
+
+Puede configurar filtros para restringir los atributos de objeto o las métricas que desea supervisar.
+
+image:MonitorMetricFilter.png["Filtrado de métricas"]
+
+Al trabajar con datos de integración (Kubernetes, datos avanzados de ONTAP, etc.), el filtrado de métricas elimina los puntos de datos individuales/incomparables de la serie de datos gráficamente, a diferencia de los datos de infraestructura (almacenamiento, VM, puertos, etc.), donde los filtros funcionan en el valor agregado de la serie de datos y pueden eliminar potencialmente todo el objeto del gráfico.
+
+
+TIP: Para crear un monitor de varias condiciones (por ejemplo, IOPS > X y latencia > y), defina la primera condición como umbral y la segunda condición como filtro.
+
+
+
+==== Defina las condiciones del monitor.
+
+. Después de seleccionar el objeto y la métrica que se van a supervisar, establezca los umbrales de nivel de advertencia y/o de nivel crítico.
+. Para el nivel _Warning_, introduzca 200 para nuestro ejemplo. La línea discontinua que indica este nivel de advertencia se muestra en el gráfico de ejemplo.
+. Para el nivel _Critical_, introduzca 400. La línea discontinua que indica este nivel crítico se muestra en el gráfico de ejemplo.
++
+El gráfico muestra datos históricos. Las líneas de nivel crítico y de advertencia del gráfico son una representación visual del monitor, por lo que puede ver fácilmente cuándo podría activar el monitor una alerta en cada caso.
+
+. Para el intervalo de ocurrencia, seleccione _continuamente_ para un período de _15 minutos_.
++
+Puede optar por activar una alerta en el momento en que se supera un umbral, o esperar hasta que el umbral se encuentre en infracción continua durante un período de tiempo. En nuestro ejemplo, no queremos que nos avisen cada vez que los picos de IOPS total superan el nivel de advertencia o crítico, pero solo cuando un objeto supervisado supera de manera continua uno de estos niveles durante al menos 15 minutos.
+
++
+image:Monitor_metric_conditions.png["Defina las condiciones del monitor"]
+
+
+
+
+
+==== Defina el comportamiento de resolución de alertas
+
+Puede elegir cómo se resuelve una alerta de monitor de métricas. Se le presentan dos opciones:
+
+* Resuelva cuando la métrica vuelva al rango aceptable.
+* Resuelva cuando la métrica se encuentre dentro del rango aceptable para una cantidad de tiempo especificada, de 1 minuto a 7 días.
+
+
+
+
+=== Supervisor de registros
+
+Al crear un *Monitor de registro*, elija primero qué registro se va a supervisar en la lista de registros disponibles. A continuación, puede filtrar en función de los atributos disponibles como se ha indicado anteriormente. También puede elegir uno o más atributos "Agrupar por".
+
+
+NOTE: El filtro Monitor de registro no puede estar vacío.
+
+image:Monitor_Group_By_Example.png["Seleccione log para supervisar, defina un filtro y seleccione Group by Method, si lo desea"]
+
+
+
+==== Defina el comportamiento de la alerta
+
+Puede crear el monitor para que emita una alerta con un nivel de gravedad de _Critical_, _Warning_ o _Informational_, cuando se produzcan las condiciones definidas anteriormente (es decir, inmediatamente) o esperar a que se produzcan alertas hasta que se produzcan dos o más condiciones.
+
+
+
+==== Defina el comportamiento de resolución de alertas
+
+Puede elegir cómo se resuelve una alerta de monitor de registro. Se le presentan tres opciones:
+
+* *Resolver instantáneamente*: La alerta se resuelve inmediatamente sin que sea necesario realizar ninguna otra acción
+* *Resolver basado en el tiempo*: La alerta se resuelve después de que ha transcurrido el tiempo especificado
+* *Resolver basado en la entrada de registro*: La alerta se resuelve cuando se ha producido una actividad de registro posterior. Por ejemplo, cuando un objeto se registra como "disponible".
+
+
+image:Monitor_log_monitor_resolution.png["Resolución de alertas"]
+
+
+
+=== Monitor de detección de anomalías
+
+. En el menú desplegable, busque y elija un tipo de objeto y métrica que supervisar.
+
+
+Puede configurar filtros para restringir los atributos de objeto o las métricas que desea supervisar.
+
+image:AnomalyDetectionMonitorMetricChoosing.png["Filtrado de métricas para detección de anomalías"]
+
+
+
+==== Defina las condiciones del monitor.
+
+. Después de elegir el objeto y la métrica a supervisar, yous et las condiciones bajo las cuales se detecta una anomalía.
++
+** Elija si desea detectar una anomalía cuando la métrica elegida * espícula por encima* de los límites previstos, * cae por debajo* de esos límites, o * espícula por encima o cae por debajo* de los límites.
+** Establezca la *sensibilidad* de la detección. *Bajo* (se desconectan menos anomalías), *Medio* o *Alto* (se detectan más anomalías).
+** Configure las alertas para que sean blandas * Advertencia * o * Críticas *.
+** Si lo desea, puede optar por reducir el ruido, ignorando las anomalías cuando la métrica seleccionada está por debajo del umbral que haya establecido.
+
+
+
+
+image:AnomalyDetectionMonitorDefineConditions.png["Definición de las condiciones para desencadenar una detección de anomalías"]
+
+
+
+=== Seleccione el tipo de notificación y los destinatarios
+
+En la sección _Configurar notificación(s) de equipo_, puede elegir si desea avisar a su equipo por correo electrónico o mediante Webhook.
+
+image:Webhook_Choose_Monitor_Notification.png["Elija método de alerta"]
+
+*Alerta por correo electrónico:*
+
+Especifique los destinatarios de correo electrónico para las notificaciones de alertas. Si lo desea, puede elegir diferentes destinatarios para alertas críticas o de advertencia.
+
+image:email_monitor_alerts.png["Destinatarios de alertas por correo electrónico"]
+
+*Alerta a través de Webhook:*
+
+Especifique los webhook para las notificaciones de alerta. Si lo desea, puede elegir diferentes enlaces web para alertas críticas o de advertencia.
+
+image:Webhook_Monitor_Notifications.png["Alertas de Webhook"]
+
+
+NOTE: Las notificaciones del recopilador de datos de ONTAP tienen prioridad sobre cualquier notificación de monitor específica que sea relevante para el clúster/recopilador de datos. La lista de destinatarios establecida para el propio recopilador de datos recibirá las alertas del recopilador de datos. Si no hay alertas activas del recopilador de datos, las alertas generadas por el monitor se enviarán a destinatarios específicos del monitor.
+
+
+
+=== Configuración de acciones correctivas o información adicional
+
+Puede agregar una descripción opcional, así como información adicional y/o acciones correctivas rellenando la sección *Agregar una descripción de alerta*. La descripción puede tener hasta 1024 caracteres y se enviará con la alerta. El campo de información/acción correctiva puede tener hasta 67,000 caracteres y se mostrará en la sección de resumen de la página de destino de alertas.
+
+En estos campos, puede proporcionar notas, enlaces o pasos para corregir o abordar la alerta de algún otro modo.
+
+image:Monitors_Alert_Description.png["Acciones correctivas de alerta y descripción"]
+
+
+
+=== Guarde el monitor
+
+. Si lo desea, puede agregar una descripción del monitor.
+. Asigne al monitor un nombre significativo y haga clic en *Guardar*.
++
+El nuevo monitor se añade a la lista de monitores activos.
+
+
+
+
+
+== Lista de monitores
+
+En la página Monitor, se enumera los monitores configurados actualmente, lo que muestra lo siguiente:
+
+* Nombre del monitor
+* Estado
+* Objeto/métrica que se está supervisando
+* Condiciones del monitor
+
+
+Puede optar por pausar temporalmente la supervisión de un tipo de objeto haciendo clic en el menú situado a la derecha del monitor y seleccionando *Pausa*. Cuando esté listo para reanudar la supervisión, haga clic en *Reanudar*.
+
+Puede copiar un monitor seleccionando *Duplicar* en el menú. A continuación, puede modificar el nuevo monitor y cambiar el objeto/métrica, el filtro, las condiciones, los destinatarios del correo electrónico, etc.
+
+Si ya no necesita un monitor, puede eliminarlo seleccionando *Eliminar* en el menú.
+
+
+
+== Grupos de monitores
+
+La agrupación permite ver y gestionar monitores relacionados. Por ejemplo, puede tener un grupo de supervisión dedicado al almacenamiento de su entorno o monitores relevantes para una determinada lista de destinatarios.
+
+image:Monitors_GroupList.png["Agrupación de monitores"]
+
+Se muestran los siguientes grupos de monitores. El número de monitores contenidos en un grupo se muestra junto al nombre del grupo.
+
+* *Todos los monitores* muestran todos los monitores.
+* *Monitores personalizados* enumera todos los monitores creados por el usuario.
+* *Monitores suspendidos* enumerará cualquier monitor del sistema que haya sido suspendido por Data Infrastructure Insights.
+* Los análisis de la infraestructura de datos también mostrarán una serie de *Grupos de monitor del sistema*, que enumerarán uno o más grupos de link:task_system_monitors.html["monitores definidos por el sistema"], incluidos los monitores de infraestructura y carga de trabajo de ONTAP.
+
+
+
+NOTE: Los monitores personalizados se pueden pausar, reanudar, eliminar o mover a otro grupo. Los monitores definidos por el sistema se pueden poner en pausa y reanudar, pero no se pueden eliminar ni mover.
+
+
+
+=== Monitores suspendidos
+
+Este grupo solo se mostrará si Data Infrastructure Insights ha suspendido uno o más monitores. Un monitor puede ser suspendido si genera alertas excesivas o continuas. Si el monitor es un monitor personalizado, modifique las condiciones para evitar las alertas continuas y, a continuación, reanude el monitor. El monitor se eliminará del grupo Monitores suspendidos cuando se resuelva el problema que causa la suspensión.
+
+
+
+=== Monitores definidos por el sistema
+
+Estos grupos mostrarán los monitores proporcionados por Data Infrastructure Insights, siempre y cuando su entorno contenga los dispositivos y/o la disponibilidad de registros que requieren los monitores.
+
+Los monitores definidos por el sistema no se pueden modificar, mover a otro grupo ni eliminar. Sin embargo, puede duplicar un monitor del sistema y modificar o mover el duplicado.
+
+Los supervisión del sistema pueden incluir supervisión para la infraestructura de ONTAP (almacenamiento, volumen, etc.) o cargas de trabajo (es decir, supervisión de registros) u otros grupos. NetApp evalúa constantemente la necesidad de los clientes y la funcionalidad de producto y actualizará o añadirá a los grupos y monitores de sistema según sea necesario.
+
+
+
+=== Grupos de monitores personalizados
+
+Puede crear sus propios grupos para que contengan monitores en función de sus necesidades. Por ejemplo, es posible que desee un grupo para todos los monitores relacionados con el almacenamiento.
+
+Para crear un nuevo grupo de monitores personalizado, haga clic en el botón *"+" Crear nuevo grupo de monitores*. Introduzca un nombre para el grupo y haga clic en *Crear grupo*. Se crea un grupo vacío con ese nombre.
+
+Para agregar monitores al grupo, vaya al grupo _All Monitors_ (recomendado) y realice una de las siguientes acciones:
+
+* Para agregar un único monitor, haga clic en el menú situado a la derecha del monitor y seleccione _Add to Group_. Seleccione el grupo al que desea agregar el monitor.
+* Haga clic en el nombre del monitor para abrir la vista de edición del monitor y seleccione un grupo en la sección _Associate to a un grupo de monitores_.
++
+image:Monitors_AssociateToGroup.png["Asociar al grupo"]
+
+
+
+Elimine los monitores haciendo clic en un grupo y seleccionando _Remove from Group_ en el menú. No puede eliminar monitores del grupo _All Monitors_ o _Custom Monitors_. Para eliminar un monitor de estos grupos, debe eliminar el propio monitor.
+
+
+NOTE: La eliminación de un monitor de un grupo no elimina el monitor de Data Infrastructure Insights. Para eliminar completamente un monitor, selecciónelo y haga clic en _Delete_. Esto también lo elimina del grupo al que pertenecía y ya no está disponible para ningún usuario.
+
+También puede mover un monitor a otro grupo de la misma manera, seleccionando _Move to Group_.
+
+Para pausar o reanudar todos los monitores de un grupo a la vez, seleccione el menú del grupo y haga clic en _Pause_ o _Resume_.
+
+Utilice el mismo menú para cambiar el nombre o eliminar un grupo. La eliminación de un grupo no elimina los monitores de Data Infrastructure Insights; siguen estando disponibles en _All Monitors_.
+
+image:Monitors_PauseGroup.png["Pausar un grupo"]
+
+
+
+== Monitores definidos por el sistema
+
+Data Infrastructure Insights incluye una serie de monitores definidos por el sistema tanto para métricas como para registros. Los monitores del sistema disponibles dependen de los recopiladores de datos presentes en el entorno. Por este motivo, los monitores disponibles en Data Infrastructure Insights pueden cambiar a medida que se añaden los recopiladores de datos o se modifican sus configuraciones.
+
+Consulte link:task_system_monitors.html["Monitores definidos por el sistema"]la página para obtener descripciones de los monitores incluidos con Data Infrastructure Insights.
+
+
+
+=== Más información
+
+* link:task_view_and_manage_alerts.html["Ver y descartar alertas"]
+

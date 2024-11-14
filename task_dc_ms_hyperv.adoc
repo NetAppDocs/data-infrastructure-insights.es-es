@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ms_hyperv.html 
+keywords: data collector, Microsoft, Hyper-V 
+summary: Configurar el recopilador de datos de Microsoft Hyper-V. 
+---
+= Recopilación de datos de Microsoft Hyper-V.
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+La recopilación de datos de Microsoft Hyper-V adquiere datos de inventario y rendimiento de los entornos de informática de servidor virtualizados. Este recopilador de datos puede detectar un host de Hyper-V independiente, o un clúster completo, crear un recopilador por host o clúster independiente.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario de Microsoft Hyper-V (WMI). Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Disco duro virtual | Disco virtual 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Volúmenes compartidos de clúster (CSV), volumen de partición | Almacén de datos 
+
+
+| Dispositivo SCSI de Internet, LUN SCSI de ruta múltiple | LUN 
+
+
+| Puerto Fibre Channel | Puerto 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+Para configurar este recopilador de datos, es necesario lo siguiente:
+
+* El Hyper-V requiere que se abra el puerto 5985 para la recopilación de datos y el acceso y la gestión remotos.
+* Dirección IP o FQDN del clúster o hipervisor independiente. El uso del nombre de host o IP flotante del clúster es probablemente el método más fiable frente a apuntar al recopilador a solo un nodo específico en un clúster.
+* Cuenta de usuario del nivel de administración que funciona en todos los hipervisores del clúster.
+* WinRM debe estar activado y escuchando en todos los hipervisores
+* Requisitos de puerto: Puerto 135 a través de puertos WMI y TCP dinámico asignados a 1024-65535 para Windows 2003 y versiones anteriores y a 49152-65535 para Windows 2008.
+* La resolución DNS debe tener éxito, incluso si el recopilador de datos sólo está apuntando a una dirección IP
+* Cada hipervisor de Hyper-V debe tener "Resource Metering" activado para cada VM, en cada host. Esto permite que cada hipervisor tenga más datos disponibles para Data Infrastructure Insights en cada invitado. Si no se define esto, se adquieren menos métricas de rendimiento para cada invitado. Puede encontrar más información sobre la medición de recursos en la documentación de Microsoft:
++
+link:https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831661(v=ws.11)["Descripción general de la medición de recursos de Hyper-V."]
+
++
+link:https://docs.microsoft.com/en-us/powershell/module/hyper-v/enable-vmresourcemetering?view=win10-ps["Enable-VMResourceMetering"]
+
+
+
+
+NOTE: El recopilador de datos de Hyper-V requiere una unidad de adquisición de Windows.
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| FQDN de la dirección IP del clúster o del clúster flotante | La dirección IP o el nombre de dominio completo del clúster, o un hipervisor independiente sin clúster 
+
+
+| Nombre de usuario | Nombre de usuario del administrador para el hipervisor 
+
+
+| Contraseña | Contraseña del hipervisor 
+
+
+| Sufijo de dominio DNS | El sufijo de nombre de host que se combina con el nombre de host simple para ofrecer el FQDN de un hipervisor 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 20 minutos. 
+|===
+
+
+== Resolución de problemas
+
+Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

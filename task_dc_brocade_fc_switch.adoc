@@ -1,0 +1,173 @@
+---
+sidebar: sidebar 
+permalink: task_dc_brocade_fc_switch.html 
+keywords: data collector, Brocade, FC switch, 
+summary: Configurar el recopilador de datos de los switches FC de Brocade. 
+---
+= Recopilador de datos de switches Brocade FC
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Información sobre la infraestructura de datos utiliza el origen de datos del switch FC de Brocade (SSH) para detectar inventario de Brocade o dispositivos de switch de nueva marca que ejecutan el firmware de sistema operativo factorizado (FOS) 4,2 y versiones posteriores. Son compatibles los dispositivos en los modos de switch FC y Access Gateway.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos del switch FC de Brocade. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Conmutador | Conmutador 
+
+
+| Puerto | Puerto 
+
+
+| Estructura virtual, estructura física | Estructura 
+
+
+| Zona | Zona 
+
+
+| Cambio lógico | Cambio lógico 
+
+
+| Volumen virtual | Volumen 
+
+
+| Zona LSAN | Zona IVR 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+* La unidad de adquisición de información de la infraestructura de datos (AU) iniciará conexiones al puerto TCP 22 en los conmutadores Brocade para recopilar datos de inventario. El AU también iniciará conexiones al puerto UDP 161 para la recopilación de datos de rendimiento.
+* Debe haber conectividad IP para todos los switches de la estructura. Si selecciona la casilla de comprobación Detectar todos los switches en la estructura, Data Infrastructure Insights identifica todos los switches de la estructura; no obstante, se necesita conectividad IP con estos switches adicionales para detectarlos.
+* La misma cuenta es necesaria globalmente en todos los switches del entramado. Puede utilizar PuTTY (emulador de terminal de código abierto) para confirmar el acceso.
+* Los puertos 161 y 162 deben estar abiertos a todos los switches de la estructura para poder realizar sondeos de rendimiento de SNMP.
+* Cadena de comunidad de sólo lectura SNMP
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Cambie IP | Dirección IP o nombre de dominio completo del servidor EFC 
+
+
+| Nombre de usuario | Nombre de usuario del conmutador 
+
+
+| Contraseña | Contraseña para el conmutador 
+
+
+| SNMP | Versión de SNMP 
+
+
+| Cadena de comunidad SNMP | Cadena de comunidad de sólo lectura de SNMP que se utiliza para acceder al conmutador 
+
+
+| Nombre de usuario de SNMP | Nombre de usuario SNMP 
+
+
+| Contraseña de SNMP | Contraseña de SNMP 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Nombre de la estructura | Nombre de la estructura que informará el recopilador de datos. Deje en blanco para informar el nombre de la estructura como WWN. 
+
+
+| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 15. 
+
+
+| Dispositivos excluidos | Lista separada por comas de ID de dispositivo que se van a excluir del sondeo 
+
+
+| Dominios de administración activos | Seleccione si utiliza dominios de administración 
+
+
+| Recuperar datos MPR | Seleccione esta opción para obtener los datos de enrutamiento del enrutador multiprotocolo. 
+
+
+| Habilite el solapamiento | Seleccione esta opción para activar la adquisición al recibir una captura SNMP del dispositivo. Si selecciona Activar solapamiento, también debe activar SNMP. 
+
+
+| Tiempo mínimo entre solapamientos (seg) | Tiempo mínimo entre intentos de adquisición activados por solapamientos. El valor predeterminado es 10. 
+
+
+| Descubra todos los switches del entramado | Seleccione para detectar todos los switches de la estructura 
+
+
+| Seleccione Favor HBA vs. Alias de zona | Elija si prefiere los alias de HBA o de zona 
+
+
+| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+
+
+| Protocolo de autenticación SNMP | Protocolo de autenticación SNMP (solo SNMP v3) 
+
+
+| Contraseña de privacidad de SNMP | Contraseña de privacidad de SNMP (sólo SNMP v3) 
+
+
+| Reintentos SNMP | Número de intentos de reintento de SNMP 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| La adquisición de inventario del origen de datos de Brocade falla con el error: ERROR <date> <time> [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource] error 2 de 2: <datasource name> [error interno] - no se puede generar el modelo para el dispositivo <IP>. Mensaje de error de detección ([<name> de nombre de dispositivo]: No se puede generar el modelo para <IP> de dispositivo. Mensaje de error al detectar) | El problema puede deberse a que el switch Brocade tarde demasiado en volver con un aviso, superando el tiempo de espera predeterminado de 5 segundos. En los ajustes de configuración avanzada del recopilador de datos en Data Infrastructure Insights, intente aumentar _SSH Banner Wait Timeout (seg)_ a un valor superior. 
+
+
+| Error: «Información de infraestructura de datos recibida rol de chasis no válido» | Compruebe que el usuario configurado en este origen de datos ha obtenido el permiso de función de chasis. 
+
+
+| Error: "La dirección IP del chasis no coincide" | Cambie la configuración del origen de datos para utilizar la dirección IP del chasis. 
+
+
+| Reciba un mensaje que indica que más de 1 nodo ha iniciado sesión en el puerto Access Gateway | Compruebe que el dispositivo NPV funciona correctamente y que se esperan todos los WWN conectados. No adquiera directamente el dispositivo NPV. En lugar de ello, la adquisición del switch de estructura principal recopilará los datos del dispositivo NPV. 
+
+
+| Se produce un error en la recopilación de rendimiento con el tiempo de espera agotado durante el envío de la solicitud SNMP. | En función de las variables de consulta y la configuración del conmutador, algunas consultas pueden superar el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/Cloud_Insight_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"]. 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

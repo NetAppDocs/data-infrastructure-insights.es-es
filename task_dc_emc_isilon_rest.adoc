@@ -1,0 +1,175 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_isilon_rest.html 
+keywords: data collector, isilon, EMC, DELL, PowerScale 
+summary: Configuración del recopilador de datos REST de Dell EMC Isilon / PowerScale. 
+---
+= Recopilador de datos DE REST de Dell EMC Isilon y PowerScale
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights utiliza el recopilador de DATOS REST DE Dell EMC Isilon / PowerScale para adquirir datos de inventario y rendimiento del almacenamiento de Dell EMC Isilon o PowerScale. Este recopilador admite matrices que ejecutan OneFS 8,0.0+.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Unidad | Disco 
+
+
+| Clúster | Reducida 
+
+
+| Nodo | Nodo de almacenamiento 
+
+
+| Sistema de archivos OneFS | Volumen interno 
+
+
+| Sistema de archivos OneFS | Pool de almacenamiento 
+
+
+| Qtree | Qtree 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+Necesita la siguiente información para configurar este recopilador de datos:
+
+* Una cuenta de usuario y una contraseña. Esta cuenta NO necesita ser admin/root, pero DEBE conceder un número sustancial de privilegios de sólo lectura a su cuenta de servicio; consulte la tabla siguiente
+* Dirección IP / Nombre de dominio completo del clúster Dell EMC Isilon / PowerScale
+* Acceso HTTPS al puerto 8080
+* Clúster Isilon/PowerScale que ejecuta OneFS 8.0.0 o posterior
+
+
+[cols="3*"]
+|===
+| Nombre del privilegio | Descripción | r(lectura) o rw (lectura y escritura) 
+
+
+| ISI_PRIV_LOGIN_PAPI | API de plataformas | r 
+
+
+| ISI_PRIV_SYS_TIME | Tiempo | r 
+
+
+| ISI_PRIV_AUTH | Autor | r 
+
+
+| ISI_PRIV_ROLE | Privilegio | r 
+
+
+| ISI_PRIV_DEVICES | Dispositivos | r 
+
+
+| ISI_PRIV_EVENT | Evento | r 
+
+
+| ISI_PRIV_HDFS | HDFS | r 
+
+
+| ISI_PRIV_NDMP | NDMP | r 
+
+
+| ISI_PRIV_NETWORK | Red | r 
+
+
+| ISI_PRIV_NFS | NFS | r 
+
+
+| ISI_PRIV_PAPI_CONFIG | Configure la API de la plataforma | r 
+
+
+| ISI_PRIV_CUPO | Cuota | r 
+
+
+| ISI_PRIV_SMARTPOOLS | SmartPools | r 
+
+
+| ISI_PRIV_SMB | SMB | r 
+
+
+| ISI_PRIV_STATISTICS | Estadísticas | r 
+
+
+| ISI_PRIV_SWIFT | Swift | r 
+
+
+| ISI_PRIV_JOB_ENGINE | Motor de trabajo | r 
+|===
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP de Isilon | La dirección IP o el nombre de dominio completo del almacenamiento Isilon 
+
+
+| Nombre de usuario | Nombre de usuario de Isilon 
+
+
+| Contraseña | Contraseña utilizada para Isilon 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puerto HTTPS | El valor predeterminado es 8080. 
+
+
+| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 20. 
+
+
+| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| "Credenciales de inicio de sesión no válidas" con mensajes de error "los comandos no habilitados para la administración basada en roles requieren acceso de usuario raíz" | * Compruebe que el usuario tiene permisos para ejecutar los siguientes comandos en el dispositivo: > versión de isi osrelease > estado de isi -q > estado de isi -n > dispositivos isi -d %s > licencia de isi * Compruebe que las credenciales utilizadas en el asistente coinciden con las del dispositivo 
+
+
+| "Error interno" con mensajes de error "error al ejecutar Command <Your command> con permiso: <Your current permission>. Problema de permisos de ejecución de comandos sudo” | Verifique que el usuario tenga permisos sudo para ejecutar el siguiente comando en el dispositivo 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

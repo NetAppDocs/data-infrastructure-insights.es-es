@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: insights_reclaim_ontap_cold_storage.html 
+keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
+summary: Los conocimientos le permiten ver cómo afectan los recursos a otros recursos de su entorno. 
+---
+= Información: Recupere el almacenamiento de datos fríos de ONTAP
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre capacidad fría, ahorros potenciales de costes y energía, y elementos de acción recomendados para volúmenes en sistemas de ONTAP.
+
+Para ver estos detalles, navegue a *Paneles de mando > Información* y eche un vistazo a la información _Reclaim ONTAP Cold Storage_. Tenga en cuenta que este Insight solo incluirá los almacenamientos afectados si Data Infrastructure Insights ha detectado almacenamiento en frío; de lo contrario, aparecerá un mensaje que indica que todos se pueden borrar.
+
+Tenga en cuenta que no se muestran los datos inactivos de menos de 30 días de antigüedad.
+
+image:Cold_Data_Insight_List.png["Lista de Insight que muestra 3 almacenamientos con datos fríos"]
+
+La descripción de Insight ofrece una indicación rápida de la cantidad de datos detectados como «inactivos» y del almacenamiento en el que residen los datos. La tabla también proporciona un recuento de cargas de trabajo con datos inactivos.
+
+Al seleccionar un Insight de la lista se abre una página que muestra más detalles, incluidas recomendaciones para mover datos al cloud o reducir el ciclo de discos unificados, así como un ahorro estimado en costes y energía que podría obtener al implementar estas recomendaciones. La página incluso proporciona un enlace útil link:https://bluexp.netapp.com/cloud-tiering-service-tco["Calculadora de TCO de NetApp"]para que pueda experimentar con los números.
+
+image:Cold_Data_Power_Info.png["Información de alimentación de datos fríos"]
+
+
+
+=== Recomendaciones
+
+En la página de Insight, expanda las *Recomendaciones* para explorar las siguientes opciones:
+
+* Mueva cargas de trabajo no utilizadas (zombis) a un nivel de almacenamiento de menor coste (HDD).
++
+Utilizando el indicador zombie, el almacenamiento de datos de reserva y el número de días, encontrar la mayor cantidad de datos más inactivos y mover la carga de trabajo a un nivel de almacenamiento de menor coste (como un pool de almacenamiento que utiliza almacenamiento en disco duro). Una carga de trabajo se considera un “zombi” cuando IS no ha recibido ninguna solicitud de E/S significativa durante 30 días o más.
+
+* Elimine las cargas de trabajo no utilizadas
++
+Verifique qué cargas de trabajo no están en uso y considere archivarlas o eliminarlas del sistema de almacenamiento.
+
+* Considere la solución Fabric Pool de NetApp
++
+NetApp link:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Solución Fabric Pool"]organiza automáticamente en niveles los datos fríos en un almacenamiento en cloud de bajo coste, lo que aumenta la eficiencia de su nivel de rendimiento y ofrece protección de datos remota.
+
+
+
+
+
+=== Visualiza y explora
+
+Los gráficos y la tabla proporcionan información adicional sobre tendencias, así como permiten profundizar en las cargas de trabajo individuales.
+
+image:Cold_Data_Storage_Trend.png["Gráficos de resumen de datos fríos"] image:Cold_Data_Workload_Table.png["Tabla de carga de trabajo de datos fríos"]

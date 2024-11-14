@@ -1,0 +1,178 @@
+---
+sidebar: sidebar 
+permalink: task_dc_vmware.html 
+keywords: data collector, VMware, 
+summary: Configurar recopilador de datos de VMware. 
+---
+= Configurar el recopilador de datos de VMware vSphere
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+El recopilador de datos de VMware vSphere recoge información de configuración y rendimiento del invitado de máquina virtual y del host ESXi, y requiere Privileges de solo lectura en todos los objetos de vSphere. A partir de agosto de 2024, el recopilador de vSphere aporta además mensajes de registro de entornos de vSphere y algunas métricas específicas de VMware. Tenga en cuenta que Data Infrastructure Insights solo puede recuperar información de registros de VMware de entornos vSphere 8.0.1 o superiores. Del mismo modo, las métricas específicas del proveedor solo son compatibles con entornos vSphere 7+. Como tal, puede que desee desactivar la casilla de verificación Registros y/o Métricas Específicas del Proveedor en un recopilador determinado si apunta a una instancia de vSphere más antigua.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de VMware vSphere. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Disco virtual | Disco 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Almacén de datos | Almacén de datos 
+
+
+| LUN | Volumen 
+
+
+| Puerto Fibre Channel | Puerto 
+|===
+Estas son sólo asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+Para configurar este recopilador de datos se necesita la siguiente información:
+
+* Dirección IP del servidor Virtual Center
+* Nombre de usuario y contraseña de sólo lectura en Virtual Center
+* Se requieren privilegios de sólo lectura en todos los objetos de Virtual Center.
+* Acceso SDK en el servidor Virtual Center – normalmente ya configurado.
+* Requisitos del puerto: http-80 https-443
+* Validar el acceso:
++
+** Inicie sesión en Virtual Center Client con el nombre de usuario y la contraseña anteriores
+** Verificar SDK activado: telnet <vc_ip> 443
+
+
+
+
+
+
+== Configuración y conexión
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Nombre | Nombre único para el recopilador de datos 
+
+
+| Unidad de adquisición | Nombre de la unidad de adquisición 
+|===
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP del centro virtual | Dirección IP del Centro virtual 
+
+
+| Nombre de usuario | Nombre de usuario utilizado para acceder al Centro virtual 
+
+
+| Contraseña | Contraseña utilizada para acceder al Centro virtual 
+|===
+
+
+== Configuración avanzada
+
+En la pantalla de configuración avanzada, marque la casilla *VM Performance* para recopilar datos de rendimiento. La recopilación de inventario está habilitada de forma predeterminada. Se pueden configurar los siguientes campos:
+
+[cols="2*"]
+|===
+
+
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 20 
+
+
+| Filtrar las máquinas virtuales | Seleccione CLÚSTER, CENTRO de DATOS o HOST ESX 
+
+
+| Elija "excluir" o "incluir" para especificar una lista | Crear una lista de filtros (CLÚSTER, CENTRO DE DATOS y/o ESX_HOST) 
+
+
+| Cantidad de reintentos | El valor predeterminado es 3 
+
+
+| Puerto de comunicación | El valor predeterminado es 443 
+
+
+| Filtrar lista de dispositivos... | Esta lista debe constar de coincidencias de cadena exactas. Si va a filtrar por ESX_HOST, debe crear una lista delimitada por comas con los nombres exactos de los hosts ESX, tal y como se indica en Data Infrastructure Insights y vSphere. Estos "nombres" pueden ser direcciones IP, nombres de host simples o nombres de dominio completos (FQDN) - esto se determina por cómo se nombraron estos hosts cuando se agregaron originalmente a vSphere. Cuando se filtra por CLÚSTER, use los nombres de clústeres similares a Data Infrastructure Insights según informa CI en hipervisores: Data Infrastructure Insights precede el nombre del clúster de vSphere con el nombre del centro de datos de vSphere y una barra diagonal: «DC1/clusterA» es el nombre del clúster. Data Infrastructure Insights informará sobre un hipervisor en clusterA dentro del centro de datos DC1. 
+
+
+| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+|===
+
+
+== Asignar las etiquetas de VMware a anotaciones de Data Infrastructure Insights
+
+El recopilador de datos de VMware le permite completar las anotaciones de Data Infrastructure Insights con etiquetas configuradas en VMware. Las anotaciones deben tener el mismo nombre que las etiquetas de VMware. Data Infrastructure Insights siempre rellenará anotaciones de tipo texto con el mismo nombre y hará el «mejor intento» de completar anotaciones de otro tipo (número, booleano, etc.). Si la anotación es de un tipo diferente y el recopilador de datos no la rellena, puede que sea necesario eliminar la anotación y volver a crearla como un tipo de texto.
+
+Tenga en cuenta que las etiquetas de VMware pueden distinguir entre mayúsculas y minúsculas, mientras que las etiquetas de Data Infrastructure Insights no distinguen entre mayúsculas y minúsculas. De modo que si creas una anotación llamada «PROPIETARIO» en los Datos de Infraestructura y etiquetas llamadas «PROPIETARIO», «propietario» y «propietario» en VMware, todas esas variaciones de «propietario» se asignarían a la anotación de «propietario» DE Cloud Insight.
+
+Tenga en cuenta lo siguiente:
+
+* En la actualidad, Data Infrastructure Insights solo publica automáticamente información de soporte para dispositivos NetApp.
+* Dado que esta información de soporte se mantiene en forma de anotación, puede consultarla o utilizarla en paneles de control.
+* Si un usuario sobrescribe o vacía el valor de la anotación, el valor se vuelve a rellenar automáticamente cuando Data Infrastructure Insights actualiza las anotaciones, lo que hace una vez al día.
+
+
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Error: La lista de inclusión para filtrar las máquinas virtuales no puede estar vacía | Si se ha seleccionado incluir lista, indique nombres válidos de centro de datos, clúster o host para filtrar las VM 
+
+
+| Error: No se ha podido crear una instancia de una conexión a VirtualCenter en IP | Posibles soluciones: * Verificar credenciales y dirección IP introducidos. * Intente comunicarse con Virtual Center mediante VMware Infrastructure Client. * Intente comunicarse con Virtual Center mediante el explorador de objetos administrados (por ejemplo, MOB). 
+
+
+| Error: VirtualCenter en IP tiene un certificado no conforme que JVM requiere | Soluciones posibles: * Recomendado: Vuelva a generar el certificado para Virtual Center utilizando una clave RSA más fuerte (por ejemplo, de 1024 bits). * No recomendado: Modifique la configuración de JVM java.security para aprovechar la restricción jdk.certpath.disabledAlgoritms para permitir la clave RSA de 512 bits. Consulte link:http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html["Notas de la versión JDK 7 update 40"]. 
+
+
+| Verá el mensaje «El paquete de registros de VMware no es compatible con la versión 8,0.1 de VMware». | La recopilación de registros no es compatible con las versiones de VMware anteriores a la 8,0.1. Actualice su infraestructura de VI Center a la versión 8.0.1 o posterior si desea utilizar la función Recopilaciones de registros de Data Infrastructure Insights. Para obtener más información, consulte este link:https://kb.netapp.com/Cloud/BlueXP/Cloud_Insights/VMware_Logs_package_is_not_supported_on_VMware_below_version_8.0.1___Data_Infrastructure_Insights["Artículo de KB"]. 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

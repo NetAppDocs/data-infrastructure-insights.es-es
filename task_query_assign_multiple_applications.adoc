@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: task_query_assign_multiple_applications.html 
+summary: Utilice una consulta para asignar varias aplicaciones o anotaciones a objetos o para eliminar varias aplicaciones o anotaciones de ellos. 
+keywords: query, queries, application, annotation, multiple 
+---
+= Asignar múltiples aplicaciones a o quitar varias aplicaciones de activos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Puede asignar varias link:task_create_application.html["más grandes"]aplicaciones a o eliminar varias de los activos mediante una consulta en lugar de tener que asignarlas o eliminarlas manualmente.
+
+
+NOTE: Puede utilizar estos pasos para agregar o eliminar de link:task_defining_annotations.html["anotaciones"]la misma manera.
+
+.Antes de empezar
+Debe haber creado una consulta que busque todos los activos que desea editar.
+
+.Pasos
+. Haga clic en *Explorar* y seleccione *Consultas métricas*.
++
+Aparece la página consultas.
+
+. Haga clic en el nombre de la consulta que encuentra los activos.
++
+Se muestra la lista de activos asociados a la consulta.
+
+. Seleccione los activos deseados en la lista o haga clic en la casilla de verificación superior para seleccionar todo.
++
+Se muestra el menú desplegable Bulk Actions.
+
+. Para agregar una aplicación a los activos seleccionados, haga clic en Acciones masivas y seleccione *Agregar aplicación*.
+. Seleccione una o más aplicaciones.
++
+Puede seleccionar varias aplicaciones para hosts, volúmenes internos, qtrees y máquinas virtuales; sin embargo, puede seleccionar solo una aplicación para un volumen o un recurso compartido.
+
+. Haga clic en *Guardar*.
+. Para eliminar una aplicación asignada a los activos, haga clic en Acciones masivas y seleccione *Eliminar aplicación*.
+. Seleccione la aplicación o aplicaciones que desea eliminar.
+. Haga clic en *Eliminar*.
+
+
+Las aplicaciones nuevas que asigne anulan las aplicaciones del activo que se derivaron de otro activo. Por ejemplo, los volúmenes heredan aplicaciones de hosts y cuando se asignan aplicaciones nuevas a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
+
+Después de hacer clic en _Save_ en una adición masiva o _Remove_ en una acción de eliminación masiva, Data Infrastructure Insights le informa de que la acción tardará algún tiempo. Puede ignorar este mensaje; la acción continuará en segundo plano.
+
+
+NOTE: En el caso de entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a estos activos puede llevar varios minutos. Por favor, deje que se produzca más tiempo para la herencia si tiene muchos activos relacionados.

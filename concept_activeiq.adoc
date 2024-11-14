@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: concept_activeiq.html 
+keywords: Active IQ, risks, svm, AIQ, risk 
+summary: Información sobre la infraestructura de datos recopila datos de riesgo de NetApp Active IQ 
+---
+= Active IQ
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp link:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx["Active IQ"]proporciona una serie de visualizaciones, análisis y otros servicios relacionados con el soporte a los clientes de NetApp para sus sistemas de hardware/software. Los datos reportados por Active IQ pueden mejorar la solución de problemas del sistema y proporcionar un conocimiento profundo de la optimización y los análisis predictivos relacionados con sus dispositivos.
+
+
+NOTE: ActiveIQ no está disponible en Data Infrastructure Insights Federal Edition.
+
+Información sobre la infraestructura de datos recopila los * riesgos * de cualquier sistema de almacenamiento Clustered Data ONTAP de NetApp supervisado y notificado por Active IQ. Data Infrastructure Insights recopila automáticamente los riesgos informados para los sistemas de almacenamiento como parte de la recopilación de datos de dichos dispositivos. Debe añadir el recopilador de datos adecuado a Data Infrastructure Insights para recopilar información de riesgo de Active IQ.
+
+Información sobre la infraestructura de datos no mostrará datos de riesgo de los sistemas ONTAP que Active IQ no supervisa ni notifica.
+
+Los riesgos informados se muestran en Información de la infraestructura de datos, en las páginas de destino de activos _storage_ y _storage node_, en la tabla «Riesgos». En la tabla se muestran detalles de riesgos, categoría de riesgo y posible impacto del riesgo, y también se ofrece un enlace a la página Active IQ donde se resumen todos los riesgos del nodo de almacenamiento (se requiere inicio de sesión en la cuenta de soporte de NetApp).
+
+image:AIQ_Risks_Table_Example.png["Tabla de riesgos de Active IQ"]
+
+El recuento de riesgos reportados también se muestra en el widget Summary de la página de destino, con un enlace a la página Active IQ correspondiente. En una página de destino _Storage_, el recuento representa una suma de los riesgos de todos los nodos de almacenamiento subyacentes.
+
+image:AIQ_Summary_Example.png["Resumen de la página de almacenamiento"]
+
+
+
+== Abrir la página Active IQ
+
+Al hacer clic en el enlace a una página Active IQ, si no ha iniciado sesión actualmente en su cuenta Active IQ, debe realizar los siguientes pasos para ver la página Active IQ del nodo de almacenamiento.
+
+. En el widget o la tabla Riesgos de la información sobre la infraestructura de datos, haga clic en el enlace «Active IQ».
+. Inicie sesión en su cuenta de soporte de NetApp. El nodo de almacenamiento se le dirigirá directamente a la página de nodo de almacenamiento de Active IQ.
+
+
+
+
+== Consulta de riesgos
+
+En Data Infrastructure Insights, puede agregar la columna *monitoring.count* a una consulta de nodo de almacenamiento o almacenamiento. Si el resultado que devuelve incluye sistemas de almacenamiento supervisados de Active IQ, la columna Monitoring.count mostrará el número de riesgos para el sistema de almacenamiento o el nodo.
+
+
+
+== Consolas
+
+Puede crear widgets (por ejemplo, gráfico circular, widget de tabla, barra, columna, trazado de dispersión, Y widgets de valor único) para visualizar los riesgos del objeto para los nodos de almacenamiento y de almacenamiento de los sistemas Clustered Data ONTAP de NetApp supervisados por Active IQ. Los "riesgos de objeto" pueden seleccionarse como una columna o métrica en estos widgets donde Storage o Storage Node son el objeto de enfoque.
+
+image:ObjectRiskWidgets.png["Riesgos de objeto en widgets"]

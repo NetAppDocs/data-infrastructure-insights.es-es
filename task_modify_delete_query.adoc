@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: task_modify_delete_query.html 
+summary: Modificar o eliminar una consulta 
+keywords: query, queries, modify, edit, delete, remove 
+---
+= Modificar o eliminar una consulta
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Puede cambiar los criterios asociados a una consulta cuando desee cambiar los criterios de búsqueda de los activos que esté consultando.
+
+
+
+== Modificar una consulta
+
+.Pasos
+. Haga clic en *Explorar* y seleccione *Todas las consultas métricas*.
++
+Se muestra la página consultas.
+
+. Haga clic en el nombre de la consulta
+. Para agregar un criterio a la consulta, haga clic en el icono Columnas y seleccione una métrica o atributo de la lista.
+
+
+Cuando haya realizado todos los cambios necesarios, realice una de las siguientes acciones:
+
+* Haga clic en el botón *Guardar* para guardar la consulta con el nombre que se utilizó inicialmente.
+* Haga clic en el menú desplegable situado junto al botón *Guardar* y seleccione *Guardar como* para guardar la consulta con otro nombre. Esto no sobrescribe la consulta original.
+* Haga clic en el menú desplegable situado junto al botón *Guardar* y seleccione *Cambiar nombre* para cambiar el nombre de la consulta que ha utilizado inicialmente. Esto sobrescribe la consulta original.
+* Haga clic en el menú desplegable situado junto al botón *Guardar* y seleccione *descartar cambios* para volver a la consulta a los últimos cambios guardados.
+
+
+
+
+== Eliminación de una consulta
+
+Para eliminar una consulta, haga clic en *consultas* y seleccione *Mostrar todas las consultas*, y realice una de las siguientes acciones:
+
+. Haga clic en el menú "tres puntos" situado a la derecha de la consulta y haga clic en *Eliminar*.
+. Haga clic en el nombre de la consulta y seleccione *Eliminar* en el menú desplegable *Guardar*.
+

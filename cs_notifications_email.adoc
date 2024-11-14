@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: cs_notifications_email.html 
+summary: Adición de direcciones de correo electrónico para notificaciones de alertas de seguridad de carga de trabajo. 
+keywords: email, notifications, alerts, warnings, attacks 
+---
+= Configuración de notificaciones por correo electrónico para alertas, advertencias y el estado del agente/colector de origen de datos
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Para configurar los destinatarios de alertas de seguridad de carga de trabajo, haga clic en *Admin > Notificaciones* e introduzca una dirección de correo electrónico en la sección correspondiente para cada destinatario.
+
+
+
+== Alertas y advertencias de posibles ataques
+
+Para enviar notificaciones de alerta _Potential Attack_, introduzca las direcciones de correo electrónico de los destinatarios en la sección _Send Potential Attack Alerts_. Las notificaciones por correo electrónico se envían a la lista de destinatarios de alertas para cada acción de la alerta.
+
+Para enviar notificaciones _Warning_, introduzca las direcciones de correo electrónico de los destinatarios en la sección _Send Warning Alerts_.
+
+
+
+== Supervisión del estado de los agentes y los recopiladores de datos
+
+Puede supervisar el estado de los agentes y los orígenes de datos mediante notificaciones.
+
+Para recibir notificaciones en caso de que un agente o un recopilador de origen de datos no funcione, introduzca las direcciones de correo electrónico de los destinatarios en la sección _Data Collection Health Alerts_.
+
+Tenga en cuenta lo siguiente:
+
+* Las alertas de estado se enviarán solo después de que el agente/cobrador deje de informar durante al menos una hora.
+* Sólo se envía una notificación de correo electrónico a los destinatarios previstos en un período de 24 horas, incluso si el agente o el recopilador de datos se desconecta durante más tiempo.
+* En caso de fallo del agente, se enviará una alerta (no una por cobrador). El correo electrónico incluirá una lista de todas las SVM afectadas.
+* Se informa de un error de recopilación de Active Directory como una advertencia; no afecta a la detección de Ransomware.
+* La lista de instalación primeros pasos ahora incluye una nueva fase _Configure email Notificaciones_.
+
+
+
+
+== Recepción de Notificaciones de Actualización de Agente y Recopilador de Datos
+
+* Ingrese el ID(s) de correo electrónico en “Alertas de salud de recopilación de datos”.
+* Se habilita la casilla de comprobación «Enable upgrade notifications».
+* Las notificaciones por correo electrónico de actualización de agente y recopilador de datos se envían a los ID de correo electrónico un día antes de la actualización planificada.
+
+
+
+
+== Resolución de problemas
+
+|===
+| *Problema:* | *Pruebe esto:* 
+
+
+| Los ID de correo electrónico están presentes en las “Alertas de salud del recopilador de datos”, sin embargo, no estoy recibiendo notificaciones. | Los mensajes de correo electrónico de notificación se envían desde el dominio Información sobre infraestructuras de datos de NetApp, es decir, _accounts@service.cloudinsights.NetApp.com_. Algunas empresas bloquean los correos electrónicos entrantes si son de un dominio externo. Asegúrese de que las notificaciones externas de los dominios de NetApp Data Infrastructure Insights estén en la lista blanca. 
+|===

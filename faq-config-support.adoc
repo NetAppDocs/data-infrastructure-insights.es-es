@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: faq-config-support.html 
+keywords: FAQ, Frequently asked questions, questions, configuration, 
+summary:  
+---
+= Configuración y dispositivos compatibles
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Estas preguntas frecuentes responden a preguntas frecuentes sobre la configuración de Data Infrastructure Insights y los dispositivos compatibles.
+
+
+
+== ¿Cambia mi entorno con Data Infrastructure Insights?
+
+No. Data Infrastructure Insights es una herramienta de solo lectura que recopila información acerca de su entorno. Información sobre la infraestructura de datos nunca realiza ningún cambio en sus activos o configuraciones.
+
+
+
+== ¿Qué acceso a nivel de permiso necesita Data Infrastructure Insights para mis dispositivos?
+
+En la mayoría de los casos en los que el dispositivo lo admite, solo se requiere un acceso de sólo lectura. Hay algunas soluciones que no permiten el acceso de sólo lectura y, por lo tanto, requerirían los permisos elevados adecuados.
+
+
+
+== ¿Con qué frecuencia recopila información Data Infrastructure Insights?
+
+Data Infrastructure Insights normalmente recopila datos de rendimiento cada 5 minutos y detecta construcciones lógicas y físicas cada ½ hora Data Infrastructure Insights establece los intervalos de sondeo predeterminados según las mejores prácticas y la escalabilidad sugeridas, pero permite al usuario controlar completamente estos intervalos.
+
+
+
+== ¿Cuál es el impacto de Data Infrastructure Insights en mi entorno?
+
+Las comunicaciones IP pasivas, fuera de banda y sin agentes de Data Infrastructure Insights ayudan a minimizar la configuración, el mantenimiento y el impacto en el ecosistema del centro de datos. El equipo de desarrollo de rendimiento de Data Infrastructure Insights toma grandes medidas para minimizar cualquier impacto en el rendimiento del centro de datos en las actividades de supervisión del propio rendimiento. El impacto se considera insignificante en los entornos operativos normales y se puede relajar o ajustar en plataformas tecnológicas altamente utilizadas o con un bajo rendimiento. Consulte la guía de instalación de Data Infrastructure Insights para obtener más información.
+
+
+
+== ¿Cómo puedo enumerar todos los hosts/máquinas virtuales en Data Infrastructure Insights?
+
+El complemento de los widgets y las posibilidades de lista de consultas de Data Infrastructure Insights se puede utilizar para proporcionar listados de estilo de inventario para los activos del Centro de datos. Las listas de máquinas virtuales hasta los husillos y numerosas construcciones entre sí se pueden poner a disposición de las consultas, widgets, paneles de control e informes del almacén de datos, y se puede acceder a ellas a través de la API RESTful.
+
+
+
+== ¿Proporciona Data Infrastructure Insights el mismo tipo de soporte para hosts relacionados que no son de hipervisor (es decir, servidores físicos)?
+
+Los hipervisores como VMware proporcionan información detallada acerca de los hosts ESXI y sus máquinas virtuales (VM). En el caso de los servidores físicos, Data Infrastructure Insights recopila métricas hasta el HBA del host. Data Infrastructure Insights emplea un método único para detectar servidores físicos a través de una tecnología pendiente de patente. Una vez detectados los switches o el almacenamiento, los nombres de host de los servidores físicos se encuentran en la información del alias de la estructura. Data Infrastructure Insights selecciona estos nombres de hosts, los coincide con DNS y los traslada automáticamente a los hosts en Data Infrastructure Insights. Esta técnica reduce considerablemente la necesidad de actualizaciones de entrada manual y mantenimiento de inventario de herramientas.
+
+
+
+== ¿Proporciona Data Infrastructure Insights la misma profundidad métrica (paridad) de dispositivos en entornos heterogéneos?
+
+Existen distintos grados de estandarización, similitud y nomenclatura en las plataformas de terceros y las tecnologías de los proveedores. Data Infrastructure Insights intenta normalizar la información sobre capacidad y rendimiento en un marco coherente. Algunas métricas de capacidad y rendimiento se proporcionan de forma nativa desde los contadores del dispositivo, como IOPS, latencia y capacidad bruta. Si no se proporcionan contadores, Data Infrastructure Insights puede intentar resumir los valores (por ejemplo, mediante el total de IOPS o las capacidades de los volúmenes subyacentes) y, en casos en los que ninguno de estos esté disponible, Data Infrastructure Insights intentará derivar los valores métricos mediante varios algoritmos computacionales. Data Infrastructure Insights proporciona una función genérica de integración de SNMP para incorporar métricas adicionales que Data Infrastructure Insights no recopila actualmente.
+
+
+
+== ¿La información de la infraestructura de datos admite switches Fibre Channel?
+
+Sí, además de recopilar datos de sus activos de almacenamiento, Data Infrastructure Insights también adquiere datos de Inventario y Rendimiento de Cisco, Brocade y switches de QLogic en su entorno.
+
+
+
+== ¿Hay disponibles vistas de topología de toda la infraestructura? ¿Muestra la información sobre la infraestructura de datos una «visibilidad integral»?
+
+Sí, Data Infrastructure Insights detecta y mapea dinámicamente las construcciones lógicas y físicas, proporcionando una vista de topología integral e interactiva de los recursos informáticos, las estructuras, los virtualizadores y el almacenamiento back-end. Los iconos de topología permiten una rápida navegación de lanzamiento de los recursos afectados y ayudan a identificar las cargas de trabajo e infracciones en los entornos de almacenamiento compartido.

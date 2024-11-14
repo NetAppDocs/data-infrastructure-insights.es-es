@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: task_cs_add_agent.html 
+keywords: agent, Workload Security, installation, Cloud Secure 
+summary: Agregar agentes de seguridad de carga de trabajo 
+---
+= Instalación de Workload Security Agent
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Workload Security (anteriormente Cloud Secure) recopila datos de actividad de usuario mediante uno o más agentes. Los agentes se conectan a los dispositivos del entorno y recopilan datos que se envían a la capa SaaS de seguridad de carga de trabajo para su análisis. Consulte link:concept_cs_agent_requirements.html["Requisitos del agente"] para configurar una VM de agente.
+
+
+
+== Antes de empezar
+
+* Se requiere el privilegio sudo para la instalación, la ejecución de scripts y la desinstalación.
+* Al instalar el agente, se crean en el equipo un usuario local _cssys_ y un grupo local _cssys_. Si la configuración de permisos no permite la creación de un usuario local y, en su lugar, requiere Active Directory, se debe crear un usuario con el nombre de usuario _cssys_ en el servidor de Active Directory.
+* Puede leer sobre la seguridad de Data Infrastructure Insights link:security_overview.html["aquí"].
+
+
+
+
+== Pasos para instalar el agente
+
+. Inicie sesión como administrador o propietario de cuenta en su entorno de seguridad de carga de trabajo.
+. Selecciona *Colectores > Agentes > +Agente*
++
+El sistema muestra la página Agregar un agente:
+
++
+image::Add-agent-1.png[Agregando un agente de seguridad de carga de trabajo]
+
+. Compruebe que el servidor de agentes cumple los requisitos mínimos del sistema.
+. Para comprobar que el servidor de agentes está ejecutando una versión compatible de Linux, haga clic en _version soportadas (i)_.
+. Si la red utiliza un servidor proxy, defina los detalles del servidor proxy siguiendo las instrucciones de la sección Proxy .
++
+image:CloudSecureAgentWithProxy_Instructions.png["Instalar agente con nota de proxy"]
+
+. Haga clic en el icono Copiar al Portapapeles para copiar el comando de instalación.
+. Ejecute el comando de instalación en una ventana de terminal.
+. El sistema muestra el siguiente mensaje cuando la instalación se completa correctamente:
++
+image::new-agent-detect.png[Mensaje para la instalación correcta del agente]
+
+
+
+.Después de terminar
+. Debe configurar un link:task_config_user_dir_connect.html["Recopilador de directorios de usuarios"].
+. Debe configurar uno o más colectores de datos.
+
+
+
+
+== Configuración de red
+
+Ejecute los siguientes comandos en el sistema local para abrir puertos que utilizará Workload Security. Si existe un problema de seguridad con respecto al intervalo de puertos, puede utilizar un intervalo de puertos menor, por ejemplo _35000:35100_. Cada SVM utiliza dos puertos.
+
+.Pasos
+. `sudo firewall-cmd --permanent --zone=public --add-port=35000-55000/tcp`
+. `sudo firewall-cmd --reload`
+
+
+Siga los pasos que se indican a continuación en función de su plataforma:
+
+*CentOS 7.x / RHEL 7.x*:
+
+. `sudo iptables-save | grep 35000`
+
+
+Salida de muestra:
+
+ -A IN_public_allow -p tcp -m tcp --dport 35000:55000 -m conntrack -ctstate NEW,UNTRACKED -j ACCEPT
+*CentOS 8.x / RHEL 8.x*:
+
+. `sudo firewall-cmd --zone=public --list-ports | grep 35000` (Para CentOS 8)
+
+
+Salida de muestra:
+
+ 35000-55000/tcp
+
+
+== 'Anclar' a un agente en la versión actual
+
+De forma predeterminada, Data Infrastructure Insights Workload Security actualiza los agentes automáticamente. Es posible que algunos clientes deseen pausar la actualización automática, lo que deja a un agente en su versión actual hasta que ocurra una de las siguientes acciones:
+
+* El cliente reanuda las actualizaciones automáticas del agente.
+* han pasado 30 días. Tenga en cuenta que los 30 días comienzan el día de la actualización más reciente del agente, no el día en que se pone en pausa el agente.
+
+
+En cada uno de estos casos, el agente se actualizará en la siguiente actualización de seguridad de carga de trabajo.
+
+Para pausar o reanudar las actualizaciones automáticas del agente, utilice las API _cloudsecure_config.agents_:
+
+image:ws_pin_agent_apis.png["API de agente de cloudsecure para fijar y desanclar agentes"]
+
+Tenga en cuenta que la acción de pausa o reanudación puede tardar hasta cinco minutos en aplicarse.
+
+Puede ver las versiones actuales de su agente en la página *Seguridad de carga de trabajo > Colectores*, en la pestaña *Agentes*.
+
+image:ws_agent_version.png["Versiones de WS Agent mostradas en la tabla Agentes"]
+
+
+
+== Solución de problemas de errores del agente
+
+Los problemas conocidos y sus resoluciones se describen en la siguiente tabla.
+
+[cols="2*"]
+|===
+| Problema: | Resolución: 
+
+
+| La instalación del agente no puede crear la carpeta /opt/netapp/cloudsecure/agent/logs/agent.log y el archivo install.log no proporciona información relevante. | Este error se produce durante el arranque del agente. El error no se registra en los archivos de registro porque se produce antes de inicializar el registrador. El error se redirige a la salida estándar y es visible en el registro de servicio mediante `journalctl -u cloudsecure-agent.service` el comando. Este comando se puede utilizar para solucionar el problema con más detalle. est 
+
+
+| Se produce un error en la instalación del agente con ‘esta distribución de linux no es compatible. Salir de la instalación». | Este error aparece cuando intenta instalar el agente en un sistema no compatible. Consulte link:concept_cs_agent_requirements.html["Requisitos del agente"]. 
+
+
+| Error en la instalación del agente: "-bash: Unzip: Command not found" | Instale unzip y ejecute de nuevo el comando de instalación. Si se instala Yum en la máquina, intente “yum install unzip” para instalar el software de descompresión. Después, vuelva a copiar el comando desde la interfaz de usuario de instalación del agente y péguelo en la CLI para volver a ejecutar la instalación. 
+
+
+| El agente se ha instalado y se estaba ejecutando. Sin embargo, el agente se ha detenido repentinamente. | SSH a la máquina del agente. Compruebe el estado del servicio del agente a través de `sudo systemctl status cloudsecure-agent.service`. 1. Compruebe si los logs muestran un mensaje “Error al iniciar el servicio de daemon de seguridad de carga de trabajo” . 2. Compruebe si el usuario cssys existe en la máquina del agente o no. Ejecute uno por uno los siguientes comandos con permiso root y compruebe si el usuario y grupo cssys existe.
+`sudo id cssys`
+`sudo groups cssys` 3. Si no existe ninguna, una política de supervisión centralizada puede haber suprimido el usuario cssys. 4. Cree el usuario y el grupo cssys manualmente ejecutando los siguientes comandos.
+`sudo useradd cssys`
+`sudo groupadd cssys` 5. Reinicie el servicio del agente después de eso ejecutando el siguiente comando
+`sudo systemctl restart cloudsecure-agent.service`: 6. Si aún no se está ejecutando, compruebe las otras opciones de solución de problemas. 
+
+
+| No se pueden agregar más de 50 recopiladores de datos a un agente. | Sólo se pueden agregar 50 recopiladores de datos a un agente. Puede ser una combinación de todos los tipos de recopilador, por ejemplo, Active Directory, SVM y otros recopiladores. 
+
+
+| La interfaz de usuario muestra que el agente está en estado NOT_CONNECTED. | Pasos para reiniciar el agente. 1. SSH a la máquina del agente. 2. Reinicie el servicio del agente después de eso ejecutando el siguiente comando
+`sudo systemctl restart cloudsecure-agent.service`: 3. Compruebe el estado del servicio del agente a través de `sudo systemctl status cloudsecure-agent.service`. 4. El agente debe pasar al estado CONECTADO. 
+
+
+| El agente VM se encuentra detrás del proxy Zscaler y la instalación del agente falla. Debido a la inspección SSL del proxy de Zscaler, los certificados de seguridad de carga de trabajo se presentan como firmados por la CA de Zscaler, por lo que el agente no confía en la comunicación. | Desactive la inspección SSL en el proxy Zscaler para la URL *.cloudinsights.netapp.com. Si Zscaler realiza una inspección SSL y reemplaza los certificados, Workload Security no funcionará. 
+
+
+| Durante la instalación del agente, la instalación se bloquea después de descomprimir. | El comando “chmod 755 -RF” está fallando. Se produce un error en el comando de instalación del agente cuando un usuario sudo no raíz que tiene archivos en el directorio de trabajo, que pertenecen a otro usuario y los permisos de esos archivos no se pueden cambiar. Debido al comando chmod que falla, el resto de la instalación no se ejecuta. 1. Crea un nuevo directorio llamado “cloudsecure”. 2. Vaya a ese directorio. 3. Copia y pega el comando de instalación completo “token=…… … ./cloudsecure-agent-install.sh” y presiona ENTER. 4. La instalación debe poder continuar. 
+
+
+| Si aún no se puede conectar el agente a Saas, abra un caso con el soporte de NetApp. Proporcione el número de serie de Data Infrastructure Insights para abrir un caso y adjunte registros al caso según lo indicado. | Para adjuntar registros al caso: 1. Ejecute el siguiente script con permiso root y comparta el archivo de salida (cloudsecure-agent-symptoms.zip). a. /opt/NetApp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh 2. Ejecute los siguientes comandos uno a uno con permiso root y comparta la salida. a. id cssys b. groups cssys c. cat /etc/os-release 
+
+
+| La secuencia de comandos cloudsecure-agent-symptom-collector.sh falla con el siguiente error. [Root@machine tmp]# /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh recopilar registros de servicio recopilar registros de aplicación recopilar configuraciones de agente tomar instantánea de estado de servicio tomar instantánea de estructura de directorio del agente ……………………………………………… . ……………………… . /Opt/netapp/cloudsecure/agent/bin/cloudsecure-agent-symptom-collector.sh: Línea 52: Zip: Comando no encontrado ERROR: No se pudo crear /tmp/cloudsecure-agent-symptoms.zip | La herramienta zip no está instalada. Instale la herramienta zip ejecutando el comando “yum install zip”. A continuación, vuelva a ejecutar el cloudsecure-agent-symptom-collector.sh. 
+
+
+| La instalación del agente falla con useradd: No se puede crear el directorio /home/cssys | Este error puede ocurrir si el directorio de inicio de sesión del usuario no se puede crear en /home, debido a la falta de permisos. La solución sería crear un usuario cssys y agregar su directorio de inicio de sesión manualmente utilizando el siguiente comando: _Sudo useradd user_name -m -d HOME_DIR_ -m :cree el directorio principal del usuario si no existe. -D : el nuevo usuario se crea utilizando HOME_DIR como valor para el directorio de inicio de sesión del usuario. Por ejemplo, _sudo useradd cssys -m -d /cssys_, agrega un usuario _cssys_ y crea su directorio de inicio de sesión bajo root. 
+
+
+| El agente no se ejecuta después de la instalación. _Systemctl status cloudsecure-agent.service_ muestra lo siguiente: [Root@demo ~]# systemctl status cloudsecure-agent.service agent.service – Workload Security Agent Daemon Service loaded: Loaded (/usr/lib/systemd/system/cloudsecure-agent.service; enabled; Vendor PRESET: Disabled) Active: Activate (auto-restart) (result: Exit-code) desde Tue 2021-08-03 21:12:26 PDT; ago Process: 25889 /bash/opt-Agent/Secure/bin=126/your_status= 25889 (code=salir, status=126), Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service: proceso principal salida, code=salido, status=126/n/a Aug 03 21:12:26 demo systemd[1]: Unidad cloudsecure-agent.service entró en estado fallido. Aug 03 21:12:26 demo systemd[1]: cloudsecure-agent.service falló. | Esto puede estar fallando porque el usuario _cssys_ puede no tener permiso para instalar. Si /opt/netapp es un montaje NFS y el usuario _cssys_ no tiene acceso a esta carpeta, se producirá un error en la instalación. _Cssys_ es un usuario local creado por el instalador de Workload Security que puede no tener permiso para acceder al recurso compartido montado. Puede comprobar esto intentando acceder a /opt/netapp/cloudsecure/agent/bin/cloudsecure-agent usando _cssys_ user. Si devuelve “permiso denegado”, el permiso de instalación no está presente. En lugar de una carpeta montada, instale en un directorio local de la máquina. 
+
+
+| El agente se conectó inicialmente a través de un servidor proxy y el proxy se estableció durante la instalación del agente. Ahora el servidor proxy ha cambiado. ¿Cómo se puede cambiar la configuración del proxy del agente? | Puede editar el archivo agent.properties para agregar los detalles del proxy. Siga estos pasos: 1. Cambie a la carpeta que contiene el archivo de propiedades: cd /opt/netapp/cloudsecure/conf 2. Con su editor de texto favorito, abra el archivo _agent.properties_ para editarlo. 3. Agregue o modifique las siguientes líneas: AGENT_PROXY_HOST=scspa1950329001.vm.NetApp.com AGENT_PROXY_PORT=80 AGENT_PROXY_USER=PXUSER AGENT_PROXY_PASSWORD=pass1234 4. Guarde el archivo. 5. Reinicie el agente: Sudo systemctl restart cloudsecure-agent.service 
+|===

@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: concept_preview_features.html 
+summary: Las funciones de vista previa están disponibles en capacidad limitada y su función destacada aún no está lista para la hora punta. 
+keywords: coming soon, preview, 
+---
+= Funciones y funcionalidad de vista previa
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights destaca nuevas funciones y funcionalidades de forma _Preview_. Las funciones de vista previa están disponibles en entornos limitados o con una capacidad limitada.
+
+Si está interesado en obtener una vista previa de una o más de estas funciones, póngase en contacto con su link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Equipo de ventas de NetApp"] para obtener más información.
+
+|===
+
+
+| *Característica* | *Descripción* 
+
+
+| Recupere el almacenamiento de datos fríos ONTAP | Ofrece visualizaciones de cargas de trabajo para volúmenes de ONTAP con capacidad fría y otras métricas relacionadas. 
+|===

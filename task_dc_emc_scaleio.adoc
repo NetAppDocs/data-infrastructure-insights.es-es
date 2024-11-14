@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_scaleio.html 
+keywords: data collector, scaleIO, PowerFlex EMC, DELL 
+summary: Configuración del recopilador de datos DELL EMC ScaleIO/PowerFlex. 
+---
+= Recopilador de datos DELL EMC ScaleIO / PowerFlex
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+El recopilador de datos ScaleIO/PowerFlex recopila información de inventario del almacenamiento ScaleIO y PowerFlex. Para la configuración, este recopilador de datos requiere la dirección de puerta de enlace ScaleIO/PowerFlex y un nombre de usuario y una contraseña de administrador.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos ScaleIO/PowerFlex. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Clúster MDM (Meta Data Manager) | Reducida 
+
+
+| SDS (servidor de datos ScaleIO/PowerFlex) | Nodo de almacenamiento 
+
+
+| Pool de almacenamiento | Pool de almacenamiento 
+
+
+| Volumen | Volumen 
+
+
+| Dispositivo | Disco 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+* Acceso de solo lectura a la cuenta de usuario administrador
+* Requisito de puerto: Puerto HTTPS 443
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puertas de enlace ScaleIO/PowerFlex | Direcciones IP o FQDN de puertas de enlace ScaleIO/PowerFlex, separadas por coma (,) o punto y coma (;) 
+
+
+| Nombre de usuario | Nombre de usuario administrador utilizado para iniciar sesión en el dispositivo ScaleIO/PowerFlex 
+
+
+| Contraseña | Contraseña utilizada para iniciar sesión en el dispositivo ScaleIO/PowerFlex 
+|===
+
+
+== Configuración avanzada
+
+Haga clic en la casilla de verificación Inventario para habilitar la recopilación de inventario.
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puerto HTTPS | 443 
+
+
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60. 
+
+
+| Tiempo de espera de conexión (s) | El valor predeterminado es 60. 
+|===
+
+
+== Resolución de problemas
+
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

@@ -1,0 +1,141 @@
+---
+sidebar: sidebar 
+permalink: concept_kubernetes_network_monitoring_and_map.html 
+keywords: service map, workloads, 
+summary: Presenta flujos y dependencias de cargas de trabajo de Kubernetes, y destaca los problemas de red y rendimiento 
+---
+= Supervisión y mapa del rendimiento de la red de Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+La función de supervisión y mapa del rendimiento de red de Kubernetes simplifica la solución de problemas mediante la asignación de dependencias entre servicios (también llamadas cargas de trabajo) y proporciona visibilidad en tiempo real de las latencias y anomalías del rendimiento de la red para identificar problemas de rendimiento antes de que afecten a los usuarios. Esta funcionalidad ayuda a las organizaciones a reducir los costes generales mediante el análisis y la auditoría de los flujos de tráfico de Kubernetes.
+
+Características principales: • El mapa de carga de trabajo presenta los flujos y dependencias de las cargas de trabajo de Kubernetes y destaca los problemas de red y de rendimiento. • Supervisar el tráfico de red entre los pods de Kubernetes, las cargas de trabajo y los nodos; identifica la fuente del tráfico y los problemas de latencia. • Reduzca los costes generales analizando el tráfico de red entre zonas, entre regiones y entre zonas.
+
+image:workload-map-animated.gif["Ejemplo de asignación de carga de trabajo"]
+
+
+
+== Requisitos previos
+
+Antes de poder usar el control y el mapa de rendimiento de red de Kubernetes, debe haber configurado el link:task_config_telegraf_agent_k8s.html["Operador de supervisión Kubernetes de NetApp"] para habilitar esta opción. Durante el despliegue del operador, seleccione la casilla de verificación Rendimiento de red y mapa para activarlo. También puedes habilitar esta opción navegando a una página de destino de Kubernetes y seleccionando «Modificar implementación».
+
+image:ServiceMap_NKMO_Deployment_Options.png["Selección de la opción Mapa durante NKMO stup"]
+
+
+
+== Supervisiones
+
+La asignación de carga de trabajo utiliza link:task_create_monitor.html["supervisiones"] para derivar información. Data Infrastructure Insights proporciona una serie de supervisores de Kubernetes predeterminados (tenga en cuenta que estos pueden estar _Paused_ de forma predeterminada. Puede _Reanudar_ (es decir, habilitar) los monitores que desee), o puede crear monitores personalizados para objetos de kubernetes, que también utilizará el mapa de carga de trabajo.
+
+Puedes crear alertas de métricas de Data Infrastructure Insights en cualquiera de los tipos de objeto siguientes. Asegúrese de que los datos están agrupados por el tipo de objeto predeterminado.
+
+* kubernetes
+* inicio de kubernetes
+* kubernetes.deployment
+* kubernetes.cronjob
+* kubernetes.job
+* kubernetes.replicaset
+* kubernetes.statefulset
+* kubernetes.pod
+* kubernetes.network_traffic_l4
+
+
+
+
+== El mapa
+
+El mapa muestra los servicios/cargas de trabajo y sus relaciones entre sí. Las flechas muestran las direcciones del tráfico. El pasar por encima de una carga de trabajo muestra información resumida de esa carga de trabajo, como puede observarse en este ejemplo:
+
+image:ServiceMap_Simple_Example.png["Ejemplo de carga de trabajo de asignación de cargas de trabajo"]
+
+Los iconos dentro de los círculos representan diferentes tipos de servicio. Tenga en cuenta que los iconos sólo son visibles si los objetos subyacentes tienen <<workload-labels,etiquetas>>.
+
+image:ServiceMap_Icons.png["Explicación de los iconos de servicio"]
+
+El tamaño de cada círculo indica el tamaño del nodo. Tenga en cuenta que estos tamaños son relativos, el nivel de zoom del navegador o el tamaño de la pantalla pueden afectar el tamaño real del círculo. De la misma manera, el estilo de la línea de tráfico le ofrece una vista rápida del tamaño de la conexión; las líneas sólidas en negrita son de alto tráfico, mientras que las líneas con puntos claros son de menor tráfico.
+
+Los números dentro de los círculos son el número de conexiones externas que está procesando actualmente el servicio.
+
+image:ServiceMap_Node_and_Connection_Legend.png["leyenda que muestra el círculo relativo (nodo) y los tamaños de conexión"]
+
+
+
+== Detalles de carga de trabajo y alertas
+
+Los círculos mostrados en color indican una alerta de nivel crítico o de advertencia para la carga de trabajo. Pase el cursor sobre el círculo para ver un resumen del problema o haga clic en el círculo para abrir un panel deslizante con más detalles.
+
+image:Workload_Map_Slideout_with_Alert.png["Detalles de la diapositiva de las cargas de trabajo con alertas"]
+
+
+
+== Búsqueda y filtrado
+
+Como sucede con otras funciones de Data Infrastructure Insights, puede configurar fácilmente filtros para centrarse en los objetos específicos o los atributos de carga de trabajo que desee.
+
+image:Workload_Map_Filtering.png["Filtrado de asignación de carga de trabajo"]
+
+Del mismo modo, al escribir una cadena en el campo _Find_ se resaltarán las cargas de trabajo coincidentes.
+
+image:Workload_Map_Find_Highlighting.png["escribir en el cuadro buscar resalta las cargas de trabajo"]
+
+
+
+== Etiquetas de carga de trabajo
+
+Las etiquetas de carga de trabajo son necesarias si desea que el mapa identifique los tipos de cargas de trabajo que se muestran (es decir, los iconos de círculo). Las etiquetas se derivan de la siguiente manera:
+
+* Nombre del servicio/aplicación que se ejecuta en términos genéricos
+* Si la fuente es un pod:
++
+** La etiqueta deriva de la etiqueta de la carga de trabajo del pod
+** Se esperaba una etiqueta en la carga de trabajo: App.kubernetes.io/component
+** Referencia de nombre de etiqueta: https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/[]
+** Etiquetas recomendadas:
++
+*** front-end
+*** backend
+*** base de datos
+*** caché
+*** cola
+*** kafka
+
+
+
+
+* Si el origen es externo al clúster de kubernetes:
++
+** Data Infrastructure Insights intentará analizar el nombre resuelto DNS para extraer el tipo de servicio.
++
+Por ejemplo, con un nombre DNS resuelto de _s3.eu-north-1.amazonaws.com_, el nombre resuelto se analiza para obtener _S3_ como tipo de servicio.
+
+
+
+
+
+
+
+== Vea lo profundo
+
+Al hacer clic con el botón derecho en una carga de trabajo, encontrará opciones adicionales para explorar más a fondo. Por ejemplo, desde aquí puede aplicar el zoom para ver las conexiones de esa carga de trabajo.
+
+image:Workload_Map_Zoom_Into_Connections.png["Mapa de carga de trabajo Haga clic con el botón derecho en Zoom para mostrar las conexiones de la carga de trabajo"]
+
+O bien, puede abrir el panel desplegable de detalles para ver directamente las pestañas _Summary_, _Network_ o _Pod & Storage_.
+
+image:Workload_Map_Detail_Network_Slideout.png["Ejemplo de separador Red de Desplazamiento de Detalle"]
+
+Por último, al seleccionar _Ir a la página de activos_ se abrirá la página de destino detallada del activo para la carga de trabajo.
+
+image:Workload_Map_Asset_Page.png["Página de Activos de Carga de Trabajo"]

@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept_troubleshooting_overview.html 
+summary: En esta sección encontrará consejos y trucos para ayudarle a resolver problemas en su entorno Data Infrastructure Insights. 
+keywords:  
+---
+= Solución de problemas de información de la infraestructura de datos
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Los temas de esta sección proporcionan consejos para la solución de problemas en caso de problemas relacionados con el entorno de Data Infrastructure Insights.
+
+Haga clic en una categoría del menú situado a la izquierda para ver la información de solución de problemas de esa categoría.
+
+Puede encontrar más información sobre la solución de problemas y otra link:concept_requesting_support.html["soporte técnico"] información en la página Información sobre la infraestructura de datos *Ayuda > Asistencia*.

@@ -1,0 +1,95 @@
+---
+sidebar: sidebar 
+permalink: task_dc_ibm_cleversafe.html 
+keywords: data collector, IBM Cleversafe 
+summary: Configurar el recopilador de datos IBM Cleversafe. 
+---
+= Recopilador de datos IBM Cleversafe
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights utiliza este recopilador de datos para descubrir los datos de inventario y rendimiento de los sistemas de almacenamiento de IBM Cleversafe.
+
+
+NOTE: IBM Cleversafe se dosifica a una tasa de TB sin procesar diferente a la de unidades administradas. Cada 40 TB de capacidad sin formato de IBM Cleversafe se cobra como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidad administrada (UM)"].
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de IBM Cleversafe. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Pool de almacenamiento | Pool de almacenamiento 
+
+
+| Contenedor | Volumen interno 
+
+
+| Contenedor | Recurso compartido de archivos 
+
+
+| Recurso compartido NFS | Share 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+* La dirección IP de servicios de datos externos para el clúster
+* Nombre de usuario y contraseña del administrador
+* Puerto 9440
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Nombre de host o IP del administrador | La dirección IP o el nombre de host del nodo de gestión 
+
+
+| Nombre de usuario | Nombre de usuario de la cuenta de usuario con función de superusuario o administrador del sistema 
+
+
+| Contraseña | Contraseña de la cuenta de usuario con función de superusuario o administrador del sistema 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. 
+
+
+| Tiempo de espera de conexión HTTP (s) | Tiempo de espera HTTP en segundos. 
+|===
+
+
+== Resolución de problemas
+
+Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

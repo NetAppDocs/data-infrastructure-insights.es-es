@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: insights_overview.html 
+keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload, ttf, time to full, k8s, kubernetes, namespace 
+summary: Los conocimientos le darán un vistazo a la tendencia y el uso de los recursos. 
+---
+= Información
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+La información le permite examinar aspectos como el uso de recursos y cómo afecta a otros recursos, o los análisis de tiempo a completo.
+
+Hay disponible una serie de información. Navega a *Dashboards > Insights* para empezar a bucear. Puedes ver Insights activos (Insights que están ocurriendo actualmente) en la pestaña principal o Insights inactivos en la pestaña _Inactive Insights_. Los datos inactivos son aquellos que estaban activos anteriormente pero que ya no están ocurriendo.
+
+
+
+== Tipos de Insight
+
+
+
+=== Recursos compartidos bajo estrés
+
+Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Esto pone el recurso compartido bajo estrés. Data Infrastructure Insights proporciona herramientas que te ayudan a investigar la saturación de los recursos y el impacto en tu entorno. link:insights_shared_resources_under_stress.html["Más información"]
+
+
+
+=== Los espacios de nombres de Kubernetes se están quedando sin espacio
+
+Los espacios de nombres de Kubernetes que se están quedando sin espacio Insight le ofrecen una vista de las cargas de trabajo en los espacios de nombres de Kubernetes que corren el riesgo de quedarse sin espacio, con una estimación del número de días que faltan antes de que se complete cada espacio. link:insights_k8s_namespaces_running_out_of_space.html["Más información"]
+
+
+
+=== Recupere el almacenamiento de datos fríos ONTAP
+
+La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre capacidad fría, ahorros potenciales de costes y energía, y elementos de acción recomendados para volúmenes en sistemas de ONTAP. link:insights_reclaim_ontap_cold_storage.html["Más información"]
+
+
+NOTE: Esta es una función _Preview_ y puede cambiar con el tiempo a medida que se realizan mejoras. link:/concept_preview_features.html["Leer más"] Acerca de las funciones de vista previa de información sobre la infraestructura de datos.

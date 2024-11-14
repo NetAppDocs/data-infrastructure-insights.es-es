@@ -1,0 +1,164 @@
+---
+sidebar: sidebar 
+permalink: task_dc_oracle_zfs.html 
+keywords: data collector, Oracle, ZFS, storage applicance 
+summary: Configuración de Oracle ZFS data Collector. 
+---
+= Recopilador de datos de Oracle ZFS Storage Appliance
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights utiliza el recopilador de datos de Oracle ZFS Storage Appliance para recopilar datos de inventario y rendimiento.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere información de inventario con el recopilador de datos Oracle ZFS. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Disco (SSD) | Disco 
+
+
+| Clúster | Reducida 
+
+
+| Controladora | Nodo de almacenamiento 
+
+
+| LUN | Volumen 
+
+
+| Mapa de LUN | Asignación de volumen 
+
+
+| Iniciador, destino | Máscara de volumen 
+
+
+| Share | Volumen interno 
+|===
+Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+
+
+
+== Requisitos
+
+* Nombres de host para ZFS Controller-1 y ZFS Controller-2
+* Nombre de usuario y contraseña del administrador
+* Requisito de puerto: 215 HTTP/HTTPS
+
+
+
+
+== Métricas de rendimiento requeridas
+
+Los dispositivos Oracle ZFS proporcionan a los administradores de almacenamiento una gran cantidad de flexibilidad para capturar estadísticas de rendimiento. Data Infrastructure Insights espera que tenga una controladora _each_ en un par de alta disponibilidad configurado para capturar las siguientes métricas:
+
+* smb2.ops[share]
+* nfs3.ops[share]
+* nfs4.ops[share]
+* nfs4-1.ops[share]
+
+
+En caso de que la controladora no capture alguna o todas estas opciones, probablemente provocará que Información de infraestructura de datos no disponga, o que no genere informes suficientes, de la carga de trabajo en los «Volúmenes internos».
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Nombre de host de ZFS Controller-1 | Nombre del host de la controladora de almacenamiento 1 
+
+
+| Nombre de host ZFS Controller-2 | Nombre del host de la controladora de almacenamiento 2 
+
+
+| Nombre de usuario | El nombre de usuario de administrador del sistema de almacenamiento 
+
+
+| Contraseña | Contraseña de la cuenta de usuario administrador 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Tipo de conexión | HTTPS o HTTP, también muestra el puerto predeterminado 
+
+
+| Anular puerto de conexión | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, introduzca el puerto de conexión que desea utilizar 
+
+
+| Intervalo del sondeo de inventario | El valor predeterminado es 60 segundos 
+
+
+| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300. 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2a, 2a"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+ a| 
+"Credenciales de inicio de sesión no válidas"
+ a| 
+Validar la cuenta de usuario y contraseña de ZFS
+
+
+
+ a| 
+"Error de configuración" con el mensaje de error "el servicio DE REPOSO está desactivado"
+ a| 
+Compruebe que el servicio REST esté activado en este dispositivo.
+
+
+
+ a| 
+"Error de configuración " con el mensaje de error "Usuario no autorizado para comando"
+ a| 
+Este error se debe probablemente a que ciertos roles (por ejemplo, 'ADVANCED_ANALYTICS') no se incluyen para el usuario configurado.
+
+La aplicación del ámbito de análisis para el usuario con rol de sólo lectura puede eliminar el error. Siga estos pasos:
+
+. En el sistema ZFS, en la pantalla Configuración -> Usuarios, mueva el ratón sobre el rol y haga doble clic para permitir la edición
+. Seleccione "Análisis" en el menú desplegable ámbito. Aparece una lista de las propiedades posibles.
+. Haga clic en la casilla de verificación situada en la parte superior y seleccionará las tres propiedades.
+. Haga clic en el botón Agregar en el lado derecho.
+. Haga clic en el botón aplicar situado en la parte superior derecha de la ventana emergente. Se cerrará la ventana emergente.
+
+
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

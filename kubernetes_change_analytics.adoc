@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: kubernetes_change_analytics.html 
+keywords: changes, management, analysis 
+summary: El seguimiento de los cambios de Kubernetes es más fácil que nunca. 
+---
+= Análisis de cambios de Kubernetes
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Kubernetes Change Analytics le proporciona una vista integral de los cambios recientes en su entorno K8s. Tiene a su alcance las alertas y el estado de la implementación. Con Change Analytics, puede realizar un seguimiento de cada cambio de implementación y configuración, y correlacionarlo con el estado y el rendimiento de los servicios, la infraestructura y los clústeres de K8s.
+
+¿Cómo ayuda el análisis de cambios?
+
+* En entornos Kubernetes multi-tenant, las interrupciones del servicio pueden ocurrir debido a cambios mal configurados. Change Analytics ayuda con esto al proporcionar un único panel para ver y correlacionar el estado de las cargas de trabajo y los cambios de configuración. Esto puede ayudar a solucionar los problemas de entornos dinámicos de Kubernetes.
+
+
+Para ver el análisis de cambios de Kubernetes, vaya a *Kubernetes > Análisis de cambios*.
+
+image:ChangeAnalytitcs_Main_Screen.png["Pantalla principal de Kubernetes Change Analytics, que muestra alertas críticas y de advertencia, implementaciones correctas y fallidas, y las 3 principales cargas de trabajo que activan alertas"].
+
+La página se actualiza automáticamente en función del intervalo de tiempo seleccionado en ese momento. Los intervalos de tiempo más pequeños significan que la pantalla se refresca con más frecuencia.
+
+
+
+== Filtrado
+
+Como sucede con todas las funciones de Data Infrastructure Insights, filtrar la lista de cambios es intuitivo: En la parte superior de la página, introduzca o seleccione valores para su clúster de Kubernetes, espacio de nombres o carga de trabajo, o añada sus propios filtros seleccionando el botón {+].
+
+Cuando se filtra a un clúster, un espacio de nombres y una carga de trabajo específicos (junto con cualquier otro filtro que haya definido), se muestra una línea de tiempo de las implementaciones y las alertas para esa carga de trabajo en ese espacio de nombres en ese clúster. Amplíe aún más haciendo clic y arrastrando el gráfico para centrarse en un intervalo de tiempo más específico.
+
+image:ChangeAnalytitcs_Filtered_Timeline.png["Ejemplo de línea de tiempo de carga de trabajo"]
+
+
+
+== Estado rápido
+
+Debajo del área de filtrado hay una serie de indicadores de alto nivel. A la izquierda aparece el número de alertas (Advertencia y Críticas). Este número incluye _Active_ así como _Resolved_ alertas. Para ver solo las alertas _Active_, establezca un filtro para “Estado” y seleccione “Activo”.
+
+image:ChangeAnalytitcs_Alerts.png["Cambiar alertas de Analytics"]
+
+El estado de despliegue también se muestra aquí. De nuevo, el valor por defecto es mostrar el recuento de despliegues _Started_, _Complete_ y _Failed_. Para ver solo despliegues _FAILED_, establezca un filtro para “Estado” y seleccione “Fallo”.
+
+image:ChangeAnalytitcs_Deploys.png["Cambiar DSeploys de análisis"]
+
+Las 3 principales cargas de trabajo con la mayor cantidad de alertas son las siguientes. El número de rojo que aparece junto a cada carga de trabajo indica la cantidad de alertas relacionadas con esa carga de trabajo. Haga clic en el enlace de carga de trabajo para explorar a través de su infraestructura (explorador de Kubernetes), dependencias (mapa de carga de trabajo) o análisis de registros (registros de eventos).
+
+image:ChangeAnalytitcs_ExploreWorkloadAlerts.png["Cambiar las opciones de exploración de carga de trabajo analítica"]
+
+
+
+== Panel de detalles
+
+Al seleccionar un cambio en la lista, se abre un panel que describe el cambio con más detalle. Por ejemplo, al seleccionar un despliegue fallido, se muestra un resumen del despliegue, con horas de inicio y finalización, duración y dónde se activó el despliegue, con enlaces para explorar esos recursos. También muestra el motivo del fallo, los cambios relacionados y los eventos asociados.
+
+image:ChangeAnalytitcs_DeployDetailPanel.png["Desplegar Panel de Detalles de Fallos"]
+
+Al seleccionar una alerta de forma similar, se proporcionan detalles sobre la alerta, incluido el monitor que activó la alerta, así como un gráfico que muestra una línea de tiempo visual para la alerta.

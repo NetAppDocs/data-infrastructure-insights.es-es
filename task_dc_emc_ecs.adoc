@@ -1,0 +1,122 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_ecs.html 
+keywords: data collector, ecs, EMC 
+summary: Configurar el recopilador de datos de ECS. 
+---
+= Configurar el recopilador de datos de EMC ECS
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este recopilador de datos adquiere datos de inventario y rendimiento de los sistemas de almacenamiento de EMC ECS. Para la configuración, el recopilador de datos requiere una dirección IP o un nombre de host del clúster ECS, así como un nombre de usuario y una contraseña.
+
+
+NOTE: EMC ECS de Dell se evalúa según una tasa de TB sin procesar y de unidad gestionada diferente. Cada 40 TB de capacidad ECS sin formato se cobra como 1 link:concept_subscribing_to_cloud_insights.html#pricing["Unidad administrada (UM)"].
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos ECS. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Clúster | Reducida 
+
+
+| Inquilino | Pool de almacenamiento 
+
+
+| Cucharón | Volumen interno 
+
+
+| Disco | Disco 
+|===
+Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+* Dirección IP o nombre de host del cluster ECS
+* Nombre de usuario y contraseña para el sistema ECS
+* Puerto 4443 (HTTPS). Requiere conectividad saliente con el puerto TCP 4443 del sistema ECS.
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Host ECS | Dirección IP o nombre de dominio completo del sistema ECS 
+
+
+| Puerto de host ECS | Puerto utilizado para la comunicación con el host ECS 
+
+
+| ID Usuario ECS | ID de usuario de ECS 
+
+
+| Contraseña | Contraseña utilizada para ECS 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 360 minutos. 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+==== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Error: Error en la autenticación del usuario. | Asegúrese de que sus credenciales para este dispositivo son correctas. 
+|===
+
+
+==== Rendimiento
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Error: No se han recogido suficientes datos. | • Compruebe la Marca de hora de la colección en el archivo de registro y modifique el intervalo de sondeo en consecuencia • espere más tiempo 
+
+
+| Error: El intervalo de sondeo de rendimiento es demasiado grande. | Compruebe la Marca de hora de la colección en el archivo de registro ${logfile} y modifique el intervalo de sondeo en consecuencia 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

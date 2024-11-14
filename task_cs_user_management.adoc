@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task_cs_user_management.html 
+keywords: Workload Security, User, Login, account, cloud secure 
+summary: Las cuentas de usuario de seguridad de carga de trabajo se gestionan a través de la gestión de usuarios de Data Infrastructure Insights 
+---
+= Gestión de usuarios
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Las cuentas de usuario de seguridad de carga de trabajo se gestionan a través de Información de infraestructura de datos.
+
+Data Infrastructure Insights proporciona cuatro niveles de cuenta de usuario: Propietario de la cuenta, administrador, usuario e invitado. A cada cuenta se le asignan niveles de permisos específicos. Una cuenta de usuario con privilegios de administrador puede crear o modificar usuarios y asignar a cada usuario uno de los siguientes roles de seguridad de carga de trabajo:
+
+|===
+
+
+| Función | Acceso de seguridad de cargas de trabajo 
+
+
+| Administrador | Puede realizar todas las funciones de seguridad de carga de trabajo, incluidas las de Alertas, Forensics, recopiladores de datos, directivas de respuesta automatizadas y API para Workload Security. Un administrador también puede invitar a otros usuarios, pero sólo puede asignar funciones de seguridad de carga de trabajo. 
+
+
+| Usuario | Puede ver y gestionar alertas y visualizar información forense. El rol de usuario puede cambiar el estado de alerta, añadir una nota, tomar instantáneas manualmente y restringir el acceso de usuario. 
+
+
+| Invitado | Puede ver Alertas y Forensics. El rol de invitado no puede cambiar el estado de alerta, agregar una nota, tomar instantáneas manualmente o restringir el acceso de usuario. 
+|===
+.Pasos
+. Inicie sesión en Workload Security
+. En el menú, haga clic en *Administración > Administración de usuarios*
++
+Se le reenviará a la página Gestión de usuarios de Data Infrastructure Insights.
+
+. Seleccione el rol que desee para cada usuario.
+
+
+Al agregar un nuevo usuario, solo tiene que seleccionar el rol que desee (normalmente Usuario o invitado).
+
+Puede encontrar más información sobre las cuentas de usuario y las funciones en la documentación de Data Infrastructure Insightslink:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html["Rol de usuario"].

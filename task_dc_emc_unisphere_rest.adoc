@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: task_dc_emc_unisphere_rest.html 
+keywords: data collector, Unisphere, EMC 
+summary: Configurar el recopilador de datos Unisphere DE Dell EMC. 
+---
+= Configurar el recopilador de datos Unisphere DE Dell EMC
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Este recopilador de datos adquiere los datos de inventario y rendimiento de Unisphere de Dell EMC para sistemas de gestión PowerMax / Vmax 3.
+
+Tenga en cuenta que Dell/EMC no introdujo estadísticas por volumen hasta Unisphere 10.0. Este recopilador de datos admite 9.2.0+, pero no podrá recopilar estadísticas de volumen, ya que no existen.
+
+Una instancia de Unisphere para Vmax/PowerMax puede estar gestionando una o más cabinas de almacenamiento Symmetrix Vmax 3 o superior. Este recopilador intentará de forma predeterminada detectar todas las que son «locales» en esa instancia de Unisphere. Si una instancia de Unisphere ve arrays “remotos” (es decir, aquellos conectados a través de la replicación SRDF), se ignorarán y, para descubrir estos, debe crear un recopilador adicional de Unisphere en Data Infrastructure Insights que apunte a cualquier instancia de Unisphere en ese sitio los vea como locales.
+
+Para la configuración, el recopilador de datos requiere una dirección IP/FQDN del servidor Unisphere, conectividad TCP al puerto 8443 y un nombre de usuario y contraseña.
+
+
+
+== Requisitos
+
+* Una dirección IP/Nombre de dominio completo del servidor Unisphere
+* Nombre de usuario y contraseña
+* Puerto 8443.
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP del servidor Unisphere | Dirección IP o nombre de dominio completo del servidor Unisphere 
+
+
+| Unisphere Port | El valor predeterminado es 8443 
+
+
+| Nombre de usuario | Nombre de usuario del servidor Unisphere 
+
+
+| Contraseña | Contraseña utilizada para el servidor Unisphere 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 40 minutos. 
+
+
+| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. 
+
+
+| Elija "excluir" o "incluir" para especificar una lista | Especifique si desea incluir o excluir máquinas virtuales 
+
+
+| Lista de dispositivos de filtro de inventario | Lista de equipos virtuales que se van a filtrar (separados por comas o separados por punto y coma si se utiliza la coma en el valor) para el filtrado 
+
+
+| Intervalo de sondeo de rendimiento Unisphere (s) | El valor predeterminado es 300 segundos 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Error: Error en la autenticación del usuario. | Asegúrese de que sus credenciales para este dispositivo son correctas. 
+
+
+| Inventory recent status: Datos inesperados recuperados -Array informó 0 volume | Normalmente indica un problema de autorización (no autenticación). Asegúrese de que sus credenciales sean correctas y que el nombre de usuario pueda enumerar todos los volúmenes y ver sus atributos. 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: concept_log_explorer.html 
+keywords: logs, monitors, alerts, EMS, 
+summary: El Explorador de registros es una herramienta eficaz para investigar problemas a través de diferentes registros del sistema. 
+---
+= Explorador de registros
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+El Explorador de registros de Data Infrastructure Insights es una potente herramienta para consultar registros del sistema. Además de ayudar con las investigaciones, también puede guardar una consulta de registro en un monitor para proporcionar alertas cuando se activan esos activadores de registro específicos.
+
+Para comenzar a explorar los registros, haga clic en *Log Queries > +New Log Query*.
+
+Seleccione un registro disponible de la lista.
+
+image:LogExplorer_2022.png["Seleccione su registro"]
+
+
+NOTE: Los tipos de registros disponibles para la consulta pueden variar en función de su entorno. Con el tiempo se pueden agregar tipos de registro adicionales.
+
+Puede establecer filtros para afinar aún más los resultados de la consulta. Por ejemplo, para buscar todos los mensajes de registro que muestran un error, establezca un filtro para _Messages_ que contenga la palabra "failed".
+
+
+TIP: Puede empezar a escribir el texto deseado en el campo de filtro; Data Infrastructure Insights le pedirá que cree una búsqueda con comodines que contenga la cadena a medida que escribe.
+
+Los resultados se muestran en un gráfico que muestra el número de instancias de registro de cada período de tiempo mostrado. Debajo del gráfico están las entradas de registro temconsigo mismo. El gráfico y las entradas se actualizan automáticamente en función del intervalo de tiempo seleccionado.
+
+image:LogExplorer_QueryForFailed.png["Ejemplo de consulta que muestra el filtro"]
+
+
+
+== Filtrado
+
+
+
+=== Incluir/Excluir
+
+Al filtrar los registros, puede elegir entre *incluir* (es decir, “Filtrar”) o *excluir* las cadenas que escriba. Las cadenas excluidas se muestran en el filtro completado como NO <string>.
+
+image:Log_Advanced_Query_Filter_Exclude.png["Filtro de registro que muestra la opción Excluir"]
+
+Los filtros basados en comodines o expresiones (por ejemplo, NOT, O “Ninguno”, etc.) se muestran en azul oscuro en el campo de filtro. Los elementos seleccionados directamente de la lista se muestran en azul claro.
+
+
+NOTE: En cualquier momento, puede hacer clic en _Crear un Monitor de registro_ para crear un monitor nuevo basado en el filtro actual.
+
+
+
+=== Filtrado avanzado
+
+Cuando esté filtrando valores de texto o lista en consultas o widgets de panel, cuando comience a escribir, se le mostrará la opción de crear un filtro * comodín* basado en el texto actual. Si selecciona esta opción, se devolverán todos los resultados que coincidan con la expresión comodín. También puede crear expresiones utilizando NOT, AND, OR, o BIEN puede seleccionar la opción Ninguno para filtrar valores nulos.
+
+
+NOTE: Asegúrese de guardar su consulta temprano y con frecuencia mientras crea su filtro. La consulta avanzada es una entrada de cadena de formato libre, y los errores de análisis pueden ocurrir a medida que se crea.
+
+Echa un vistazo a esta imagen de pantalla que muestra los resultados filtrados para una consulta avanzada del registro _logs.kubernetes.event_. Hay muchas cosas en esta página, que se explica debajo de la imagen:
+
+image:Log_Advanced_Query_ScreenExplained.png["Se explica la pantalla Consulta avanzada"]
+
+. Esta cadena de consulta avanzada filtra lo siguiente:
++
+** Filtro para entradas de registro con un _REASON_ que incluye la palabra “FAILED”, pero no nada con el motivo específico de “FailedMount”.
+** Incluya cualquiera de esas entradas que también incluya un _metadata.namespace_ que incluya la palabra “monitoreo”, pero excluya los espacios de nombres específicos de “monitoreo de CM” o “monitoreo por ejemplo”.
++
+Tenga en cuenta que, en el caso anterior, ya que tanto la monitorización CM como la monitorización por ejemplo contienen un guión ('-), las cadenas deben incluirse entre comillas dobles o se mostrará un error de análisis. Las cadenas que no incluyen guiones, espacios, etc. no necesitan estar entre comillas. En caso de duda, intente poner la cadena entre comillas.
+
+
+
+. Los resultados del filtro actual, incluidos los valores de filtro por Y el filtro de consulta avanzada, se muestran en la lista de resultados. La lista se puede ordenar por cualquier columna mostrada. Para mostrar columnas adicionales, seleccione el icono de engranaje.
+. Se amplió el gráfico para mostrar solo los resultados del registro que se produjeron dentro de un período de tiempo específico. El intervalo de tiempo que se muestra aquí refleja el nivel de zoom actual. Seleccione el botón _Reset Zoom_ para restablecer el nivel de zoom al intervalo de tiempo actual de Data Infrastructure Insights.
+. Los resultados del gráfico se han agrupado por el campo _SOURCE_. El gráfico muestra los resultados de cada columna agrupados en colores. Si pasa el ratón sobre una columna del gráfico, se mostrarán algunos detalles sobre las entradas específicas.
++
+image:Log_Advanced_Query_Group_Detail.png["Detalles de salto agrupado"]
+
+
+
+
+
+==== Filtros de refinado
+
+Puede utilizar lo siguiente para refinar el filtro:
+
+|===
+
+
+| Filtro | Qué hace 
+
+
+| * (Asterisk) | le permite buscar todo 
+
+
+| ? (signo de interrogación) | le permite buscar un número específico de caracteres 
+
+
+| O. | permite especificar varias entidades 
+
+
+| NO | permite excluir el texto de los resultados de la búsqueda 
+
+
+| _Ninguno_ | Busca valores NULL en todos los campos 
+
+
+| No * | Busca valores NULL en los campos _text-only_ 
+|===
+Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata todo entre el primer y el último presupuesto como una coincidencia exacta. Todos los caracteres especiales o operadores incluidos en las comillas se tratarán como literales. Por ejemplo, el filtrado para "*" devolverá resultados que sean un asterisco literal; en este caso, el asterisco no será tratado como comodín. Los operadores O Y NO también se tratarán como cadenas literales cuando se incluyen entre comillas dobles.
+
+Puede combinar un filtro simple con un filtro de consulta avanzado; el filtro resultante es una “Y” de los dos.
+
+
+
+=== Leyenda del gráfico
+
+El _Legend_ debajo de la tabla tiene algunas sorpresas también. Para cada resultado (basado en el filtro actual) que se muestra en la leyenda, tiene una opción para mostrar solo los resultados de esa línea (Agregar filtro) o para mostrar cualquier resultado QUE NO SEA para esa línea (Agregar filtro excluido). El gráfico y la lista Entradas de registro se actualizan para mostrar los resultados según su selección. Para eliminar este filtro, abra de nuevo la leyenda y seleccione [X] para borrar el filtro basado en leyenda.
+
+image:Log_Advanced_Query_Legend.png["Advanced Query Legen que muestra “Agregar filtro” para el primer resultado"]
+
+
+
+== Detalles del registro
+
+Al hacer clic en cualquier parte de una entrada de registro de la lista, se abrirá un panel de detalles para esa entrada. Aquí podrá encontrar más información sobre el evento.
+
+Haga clic en "Agregar filtro" para agregar el campo seleccionado al filtro actual. La lista de entradas de registro se actualizará en función del nuevo filtro.
+
+Tenga en cuenta que algunos campos no se pueden agregar como filtros; en esos casos, el icono _Agregar filtro_ no está disponible.
+
+image:LogExplorer_DetailPane.png["Panel de detalles de entrada de registro"]
+
+
+
+== Resolución de problemas
+
+Aquí encontrará sugerencias para la solución de problemas con las consultas de registro.
+
+|===
+
+
+| *Problema:* | *Pruebe esto:* 
+
+
+| No veo mensajes "debug" en mi consulta de registro | No se recogió la mensajería del registro de depuración. Para capturar los mensajes que desee, cambie la gravedad del mensaje pertinente a nivel de _informativo, error, alerta, emergencia,_ o _aviso_. 
+|===

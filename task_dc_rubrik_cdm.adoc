@@ -1,0 +1,107 @@
+---
+sidebar: sidebar 
+permalink: task_dc_rubrik_cdm.html 
+keywords: data collector, Rubrik, 
+summary: Configurar el recopilador de datos de Rubrik CDM. 
+---
+= Rubrik CDM Data Collector
+:toc: macro
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toc: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights usa el recopilador de datos de Rubrik para adquirir datos de inventario y rendimiento de dispositivos de almacenamiento Rubrik.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Rubrik. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Clúster | Pool de almacenamiento 
+
+
+| Nodo | Nodo de almacenamiento 
+
+
+| Disco | Disco 
+|===
+Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+
+
+
+== Requisitos
+
+Para configurar este recopilador de datos, es necesario lo siguiente:
+
+* La unidad de adquisición de información de la infraestructura de datos iniciará conexiones al puerto TCP 443 al clúster Rubrik. Un recopilador por clúster.
+* Dirección IP del clúster de Rubrik.
+* El nombre de usuario y la contraseña para el clúster de.
+* Nombre de host o dirección IP del clúster de Rubrik.
+* Para la autenticación básica, un nombre de usuario y una contraseña del clúster. Si prefiere utilizar la autenticación basada en cuentas de servicio, necesita una cuenta de servicio, un secreto y un identificador de organización
+* Requisito de puerto: HTTPS 443
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| IP | Dirección IP del clúster Rubrik 
+
+
+| Nombre de usuario | El nombre de usuario del clúster 
+
+
+| Contraseña | Contraseña del clúster 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 
+
+
+| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+|===
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+
+
+=== Inventario
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| He recibido un mensaje que indica que se ha creado más de un almacenamiento. | Compruebe que el clúster esté configurado correctamente y que el recopilador apunte a un único clúster. 
+
+
+| Recibí una advertencia de que la API de disco devolvió más datos | Póngase en contacto con el servicio de soporte para obtener más datos. 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
