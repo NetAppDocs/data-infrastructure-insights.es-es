@@ -73,10 +73,3 @@ Puede empezar con una unidad de adquisición de información sobre la infraestru
 Para cada respuesta "Sí" anterior, se recomienda añadir 8 GB de memoria y 50 GB de espacio en disco a la unidad AU. Así pues, si ha respondido afirmativamente a ambos, deberá poner en marcha un sistema de memoria de 24 GB con 150 GB o más de espacio en disco. En Linux, el espacio en disco que se agregará a la ubicación del registro.
 
 Si quiere más preguntas de tamaño, póngase en contacto con el soporte de NetApp.
-
-
-
-== Requisito de edición federal adicional
-
-* Para las instalaciones de unidades de adquisición en clústeres de Data Infrastructure Insights Federal Edition, el sistema operativo subyacente debe tener una buena fuente de entropía. En sistemas Linux esto se hace normalmente instalando _rng-tools_ o mediante la generación de números aleatorios (RNG) de hardware. Es responsabilidad del cliente asegurarse de que se cumple este requisito en la máquina de la unidad de adquisición.
-

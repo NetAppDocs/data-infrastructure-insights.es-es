@@ -639,9 +639,6 @@ Al hacer clic en el vínculo de un widget de un único valor o de un widget de i
 
 Al igual que los widgets de un solo valor y de calibre, puede establecer el formato condicional en los widgets de tabla, lo que le permite resaltar datos con colores y/o iconos especiales.
 
-
-NOTE: El formato condicional no está disponible actualmente en Data Infrastructure Insights Federal Edition.
-
 El formato condicional permite establecer y resaltar umbrales de nivel de advertencia y de nivel crítico en los widgets de tabla, lo que proporciona visibilidad instantánea a los valores atípicos y puntos de datos excepcionales.
 
 image:ConditionalFormattingExample.png["Ejemplo de formato condicional"]
