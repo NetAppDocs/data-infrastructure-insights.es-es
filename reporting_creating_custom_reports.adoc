@@ -38,7 +38,7 @@ Por ejemplo, si no finaliza el proceso de identificación del dispositivo, los i
 Antes de diseñar los informes, lleve a cabo las tareas siguientes:
 
 * Configure todo link:task_configure_data_collectors.html["recopiladores de datos"] correctamente.
-* Introducir anotaciones (como niveles, centros de datos y unidades de negocio) en dispositivos y recursos del entorno. Es beneficioso tener anotaciones estables antes de generar informes, ya que la generación de informes de Data Infrastructure Insights recopila información histórica.
+* Introduzca anotaciones (como niveles, centros de datos y unidades de negocio) en los dispositivos y recursos de su inquilino. Es beneficioso tener anotaciones estables antes de generar informes, ya que la generación de informes de Data Infrastructure Insights recopila información histórica.
 
 
 
@@ -194,7 +194,7 @@ Las capacidades del modelo de datos de capacidad de máquinas virtuales están t
 
 ==== Modelo de datos de capacidad de volumen
 
-Le permite analizar todos los aspectos de los volúmenes de su entorno y organizar los datos por proveedor, modelo, nivel, nivel de servicio y centro de datos.
+Le permite analizar todos los aspectos de los volúmenes en su usuario y organizar los datos por proveedor, modelo, nivel, nivel de servicio y centro de datos.
 
 Es posible ver la capacidad relacionada con volúmenes huérfanos, volúmenes sin usar y volúmenes de protección (que se usan para la replicación). También puede ver diferentes tecnologías de volúmenes (iSCSI o FC) y comparar volúmenes virtuales con volúmenes no virtuales para problemas de virtualización de cabinas.
 

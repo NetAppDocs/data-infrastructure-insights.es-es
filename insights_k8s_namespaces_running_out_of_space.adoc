@@ -19,7 +19,7 @@ summary: La información puede ayudarle a predecir cuándo es probable que los e
 
 
 [role="lead"]
-Quedarse sin espacio en su entorno nunca es una buena situación. Data Infrastructure Insights le ayuda a predecir el tiempo que pasará antes de que los volúmenes persistentes de Kubernetes se completen.
+Quedarse sin espacio en su inquilino nunca es una buena situación. Data Infrastructure Insights le ayuda a predecir el tiempo que pasará antes de que los volúmenes persistentes de Kubernetes se completen.
 
 La _Kubernetes Namespaces se está quedando sin espacio_ Insight le ofrece una vista de las cargas de trabajo en los espacios de nombres de Kubernetes que corre el riesgo de quedarse sin espacio, con una estimación del número de días que quedan antes de que se llene cada volumen persistente.
 

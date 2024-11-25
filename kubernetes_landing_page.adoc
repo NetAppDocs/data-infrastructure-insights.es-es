@@ -21,7 +21,7 @@ summary: Explicación de la página de destino de Kubernetes
 [role="lead"]
 El explorador de Kubernetes de información sobre infraestructuras de datos es una potente herramienta para mostrar el estado y el uso generales de tus clústeres de Kubernetes y te permite profundizar fácilmente en áreas de investigación.
 
-Al hacer clic en *Paneles > Explorador de Kubernetes* se abre la página de lista clúster de Kubernetes. Esta página de descripción general contiene una tabla de los clústeres de Kubernetes en el entorno.
+Al hacer clic en *Paneles > Explorador de Kubernetes* se abre la página de lista clúster de Kubernetes. Esta página de información general contiene la tabla de los clústeres de Kubernetes en su inquilino.
 
 image:Kubernetes_List_Page_new.png["Página de lista de Kubernetes"]
 
@@ -29,7 +29,7 @@ image:Kubernetes_List_Page_new.png["Página de lista de Kubernetes"]
 
 === Lista Cluster
 
-En la lista de clústeres se muestra la siguiente información para cada clúster del entorno:
+La lista de clústeres muestra la siguiente información para cada clúster en su inquilino:
 
 * Cluster *Nombre*. Al hacer clic en el nombre de un clúster se abrirá la link:kubernetes_cluster_detail.html["*página de detalles*"] para ese clúster.
 * *Porcentajes de saturación*. La saturación general es la más alta de saturación de CPU, memoria o almacenamiento.

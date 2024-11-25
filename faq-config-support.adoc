@@ -64,7 +64,7 @@ Existen distintos grados de estandarización, similitud y nomenclatura en las pl
 
 == ¿La información de la infraestructura de datos admite switches Fibre Channel?
 
-Sí, además de recopilar datos de sus activos de almacenamiento, Data Infrastructure Insights también adquiere datos de Inventario y Rendimiento de Cisco, Brocade y switches de QLogic en su entorno.
+Sí, además de recopilar datos de sus activos de almacenamiento, Data Infrastructure Insights también adquiere datos de Inventario y Rendimiento de Cisco, Brocade y switches de QLogic en su cliente.
 
 
 

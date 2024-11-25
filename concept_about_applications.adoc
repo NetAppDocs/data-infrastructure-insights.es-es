@@ -13,11 +13,11 @@ summary: Comprender las aplicaciones utilizadas en el entorno de su empresa ayud
 :revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
 
 
-Antes de poder realizar un seguimiento de los datos asociados a las aplicaciones que se ejecutan en el entorno, primero debe definir esas aplicaciones y asociarlas a los activos adecuados. Puede asociar las aplicaciones con los siguientes activos: Hosts, máquinas virtuales, volúmenes, volúmenes internos, qtrees, recursos compartidos e hipervisores.
+Antes de poder realizar un seguimiento de los datos asociados a las aplicaciones que se ejecutan en el arrendatario, primero debe definir dichas aplicaciones y asociarlas a los activos adecuados. Puede asociar las aplicaciones con los siguientes activos: Hosts, máquinas virtuales, volúmenes, volúmenes internos, qtrees, recursos compartidos e hipervisores.
 
 Este tema proporciona un ejemplo de seguimiento del uso de equipos virtuales que el equipo de marketing utiliza para su correo electrónico de Exchange.
 
-Puede que desee crear una tabla similar a la siguiente para identificar las aplicaciones utilizadas en su entorno y anotar el grupo o unidad de negocio que utiliza cada aplicación.
+Puede que desee crear una tabla similar a la siguiente para identificar las aplicaciones utilizadas en el inquilino y anotar el grupo o unidad de negocio que utiliza cada aplicación.
 
 [cols="5*"]
 |===

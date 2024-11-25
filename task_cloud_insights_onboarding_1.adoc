@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_cloud_insights_onboarding_1.html 
-summary: Regístrate en Data Infrastructure Insights y crea tu entorno. 
+summary: Inscríbase en Data Infrastructure Insights y cree su inquilino. 
 keywords: onboarding, new user 
 ---
 = Incorporación de información sobre la infraestructura de datos
@@ -49,11 +49,11 @@ image:BlueXP_CloudInsights.png["Prueba gratuita de información de infraestructu
 
 == Inicia la prueba gratuita de Data Infrastructure Insights
 
-Si es la primera vez que inicia sesión en Data Infrastructure Insights, en la oferta Data Infrastructure Insights, haga clic en *Iniciar prueba gratuita*. Data Infrastructure Insights le guiará por la creación del entorno de su empresa, incluida la selección de la región en la que desea que resida su entorno.
+Si es la primera vez que inicia sesión en Data Infrastructure Insights, en la oferta Data Infrastructure Insights, haga clic en *Iniciar prueba gratuita*. El análisis de la infraestructura de datos le guiará por la creación del inquilino de su empresa, incluida la selección de la región en la que desea que residan sus inquilinos.
 
-image:trial_region_selector.png["Selección de la región en la que se alojará su entorno de Data Infrastructure Insights"]
+image:trial_region_selector.png["Selección de la región en la que se alojará el inquilino Data Infrastructure Insights"]
 
-Una vez completada la creación de su entorno, puede utilizar sus credenciales de BlueXP  para iniciar sesión y comenzar su prueba gratuita de 30 días de Data Infrastructure Insights. Durante esta prueba, podrá explorar las funciones que ofrece Data Infrastructure Insights.
+Una vez que se haya completado la creación de su inquilino, puede usar sus credenciales de BlueXP  para iniciar sesión y comenzar su prueba gratuita de 30 días de Data Infrastructure Insights. Durante esta prueba, podrá explorar las funciones que ofrece Data Infrastructure Insights.
 
 Durante la prueba gratuita, link:concept_subscribing_to_cloud_insights.html["inicie su suscripción"]puedes acceder a Data Infrastructure Insights en cualquier momento. Una vez suscrito, puede utilizar las funciones de Data Infrastructure Insights basadas en su suscripción actual.
 
@@ -61,17 +61,17 @@ Durante la prueba gratuita, link:concept_subscribing_to_cloud_insights.html["ini
 
 == Inicie sesión y go
 
-Una vez creado el entorno, puede iniciar sesión en el portal de NetApp BlueXP  en cualquier momento y hacer clic en *Ir a información sobre la infraestructura de datos*. Se le llevará directamente a su entorno Data Infrastructure Insights.
+Una vez que se haya creado su inquilino, en cualquier momento puede iniciar sesión en el portal de NetApp BlueXP  y hacer clic en *Ir a información sobre infraestructura de datos*. Se le dirigirá directamente a su inquilino de Data Infrastructure Insights.
 
-También puede abrir un navegador directamente a la URL de su entorno de Data Infrastructure Insights, por ejemplo:
+También puede abrir un navegador directamente a la URL de inquilino de Data Infrastructure Insights, por ejemplo:
 
- \https://<environment-prefix>.c01.cloudinsights.netapp.com/
+ \https://<tenant-prefix>.c01.cloudinsights.netapp.com/
 La URL también se incluirá en el correo electrónico de invitación de cada usuario para un acceso sencillo y marcadores. Si el usuario no ha iniciado sesión en BlueXP, se le pedirá que inicie sesión.
 
 
-NOTE: Los nuevos usuarios aún deben registrarse para acceder a BlueXP antes de poder acceder a la URL de su entorno.
+NOTE: Los nuevos usuarios aún deben registrarse para acceder a BlueXP  antes de poder acceder a la URL de su inquilino.
 
-La primera vez que inicie sesión en un nuevo entorno, se le guiará a través de la configuración de hasta link:task_getting_started_with_cloud_insights.html["*comenzar a recopilar datos*"].
+La primera vez que inicie sesión en un nuevo inquilino, se le guiará a través de la configuración de hasta link:task_getting_started_with_cloud_insights.html["*comenzar a recopilar datos*"].
 
 
 

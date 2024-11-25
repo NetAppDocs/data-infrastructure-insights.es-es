@@ -407,7 +407,7 @@ image::SecondaryAxisExplained.png[Ejemplo de eje secundario]
 
 == Expresiones en widgets
 
-En un panel de control, cualquier widget de serie temporal (línea, spline, área, área apilada) gráfico de barras, gráfico de columnas, gráfico circular o widget de tabla le permite crear expresiones a partir de las métricas que elija y mostrar el resultado de esas expresiones en un único gráfico (o columna en el caso de <<expressions-in-a-table-widget,widget de tabla>>). Los ejemplos siguientes utilizan expresiones para resolver problemas específicos. En el primer ejemplo, queremos mostrar IOPS de lectura como un porcentaje de IOPS total para todos los activos de almacenamiento de nuestro entorno. El segundo ejemplo proporciona visibilidad de las IOPS del "sistema" o "sobrecarga" que se producen en su entorno: Las IOPS que no se leen ni escriben directamente.
+En un panel de control, cualquier widget de serie temporal (línea, spline, área, área apilada) gráfico de barras, gráfico de columnas, gráfico circular o widget de tabla le permite crear expresiones a partir de las métricas que elija y mostrar el resultado de esas expresiones en un único gráfico (o columna en el caso de <<expressions-in-a-table-widget,widget de tabla>>). Los ejemplos siguientes utilizan expresiones para resolver problemas específicos. En el primer ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de IOPS totales para todos los activos de almacenamiento de su cliente. El segundo ejemplo proporciona visibilidad de las IOPS de «sistema» o «sobrecarga» que se producen en su inquilino, aquellas IOPS que no proceden directamente de la lectura o la escritura de datos.
 
 Puede utilizar variables en expresiones (por ejemplo, _$Var1 * 100_)
 
@@ -537,7 +537,7 @@ La selección de una variable de tipo de atributo permite filtrar los datos del 
 
 image:Variables_Node_Example_Before_Variable_Applied.png["Nodos de agente antes del filtro de variable"]
 
-Pero si desea ver temporalmente solo nodos en subredes individuales en su entorno, puede establecer o cambiar la variable a una IP o IP de nodo de agente específica. Aquí sólo estamos viendo los nodos de la subred "123":
+Pero si temporalmente desea ver solo nodos en subredes individuales de su arrendatario, puede establecer o cambiar la variable a una IP o IP de nodo de agente específicos. Aquí sólo estamos viendo los nodos de la subred "123":
 
 image:Variables_Node_Example_After_Variable_Applied.png["Nodos de agente tras filtro variable"]
 
@@ -808,7 +808,7 @@ image:AutoRefreshPaused.png["Actualización automática pausada"]
 
 == Grupos de consolas
 
-La agrupación permite ver y gestionar paneles relacionados. Por ejemplo, puede tener un grupo de consola dedicado al almacenamiento de su entorno. Los grupos de paneles se gestionan en la página *Paneles > Mostrar todos los paneles*.
+La agrupación permite ver y gestionar paneles relacionados. Por ejemplo, puede tener un grupo de consola dedicado al almacenamiento en su inquilino. Los grupos de paneles se gestionan en la página *Paneles > Mostrar todos los paneles*.
 
 image:DashboardGroupNoPin.png["Agrupación de tablero de a bordo"]
 
@@ -822,7 +822,7 @@ El número de paneles incluidos en cada grupo se muestra junto al nombre del gru
 
 Para crear un grupo nuevo, haga clic en el botón *"+" Crear nuevo grupo de paneles*. Introduzca un nombre para el grupo y haga clic en *Crear grupo*. Se crea un grupo vacío con ese nombre.
 
-Para agregar paneles al grupo, haga clic en el grupo _All Dashboards_ para mostrar todos los paneles de control en su entorno, de haga clic en _My Dashboards_ si sólo desea ver los paneles que posee y realice una de las siguientes acciones:
+Para agregar paneles de control al grupo, haga clic en el grupo _All Dashboards_ para mostrar todos los paneles de control del inquilino, haga clic en _My Dashboards_ si solo desea ver los paneles de control de su propiedad y realice una de las siguientes acciones:
 
 * Para agregar un único panel, haga clic en el menú situado a la derecha del panel y seleccione _Add to Group_.
 * Para agregar varios paneles a un grupo, selecciónelos haciendo clic en la casilla de verificación situada junto a cada panel y, a continuación, haga clic en el botón *acciones masivas* y seleccione _Add to Group_.

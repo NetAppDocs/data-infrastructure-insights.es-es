@@ -38,7 +38,7 @@ Para comenzar a explorar, selecciona *ONTAP Essentials* en el menú principal de
 
 image:OE_Overview.png["Consola de información general para ONTAP Essentials"]
 
-El panel *Descripción general* muestra información útil como el número de clústeres de su entorno con sus porcentajes de capacidad y rendimiento generales. También verá datos predictivos relacionados con el número de días esperados hasta que la capacidad de almacenamiento o la capacidad de rendimiento se queda sin espacio. Además, si alguna controladora de su infraestructura se ejecuta con su CPU en más del 65 %, lo que puede suponer un riesgo para su clúster en caso de recuperación tras fallos, ONTAP Essentials muestra las controladoras como controladoras "calientes".
+El panel de control *Overview* muestra información útil como el número de clústeres en su inquilino con su capacidad general y porcentajes de rendimiento. También verá datos predictivos relacionados con el número de días esperados hasta que la capacidad de almacenamiento o la capacidad de rendimiento se queda sin espacio. Además, si alguna controladora de su infraestructura se ejecuta con su CPU en más del 65 %, lo que puede suponer un riesgo para su clúster en caso de recuperación tras fallos, ONTAP Essentials muestra las controladoras como controladoras "calientes".
 
 Los gráficos informativos le ofrecen una mirada al rendimiento con el tiempo y los problemas durante el uso de la capacidad. Cada uno de estos gráficos o puntos de datos se puede utilizar como punto de partida para la exploración o la investigación.
 
@@ -158,7 +158,7 @@ Los detalles anti-ransomware muestran si una máquina virtual de almacenamiento 
 
 == Alertas
 
-Aquí puede ver las alertas Active en su entorno y profundizar rápidamente en los posibles problemas. Seleccione la ficha _Resolved_ para ver las alertas que se han resuelto.
+Aquí puede ver las alertas activas en su inquilino y profundizar rápidamente en los problemas potenciales. Seleccione la ficha _Resolved_ para ver las alertas que se han resuelto.
 
 image:OE_Alerts.png["Lista de alertas de aspectos básicos de ONTAP"]
 
@@ -184,7 +184,7 @@ image:ONTAP_Essentials_Alerts_Menu.png["Menú de red de ONTAP Essentials"] image
 
 == Cargas de trabajo
 
-Consulte y Explore cargas de trabajo en LUN/volúmenes, recursos compartidos de NFS o SMB o qtree en su entorno.
+Vea y explore cargas de trabajo en LUN/volúmenes, recursos compartidos NFS o SMB o qtrees en su inquilino.
 
 image:ONTAP_Essentials_Workloads_Menu.png["Menú cargas de trabajo"]
 

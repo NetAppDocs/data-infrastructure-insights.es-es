@@ -135,7 +135,7 @@ Su suscripción se medirá mediante uno de estos métodos, dependiendo de si tie
 
 ==== Medición de capacidad
 
-Información sobre la infraestructura de datos La observabilidad mide el uso en función del nivel de almacenamiento de su entorno. Es posible que tenga almacenamientos que se incluyan en una o más de estas categorías:
+Información sobre la infraestructura de datos La observabilidad mide el uso según el nivel de almacenamiento en su inquilino. Es posible que tenga almacenamientos que se incluyan en una o más de estas categorías:
 
 * Bruto primario
 * Objeto sin procesar

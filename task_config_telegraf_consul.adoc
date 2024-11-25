@@ -27,7 +27,7 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 . En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione Cónsul.
 +
-Si no ha configurado un agente para la recopilación, se le solicitará que lo haga link:task_config_telegraf_agent.html["instale un agente"] en su entorno.
+Si no ha configurado un agente para la recopilación, se le pedirá que lo haga link:task_config_telegraf_agent.html["instale un agente"] en su inquilino.
 
 +
 Si ya ha configurado un agente, seleccione el sistema operativo o la plataforma adecuados y haga clic en *continuar*.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_install_manual_au.html 
 keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstall, delete, deleting, move, moving, manual, AU, Patch 
-summary: Data Infrastructure Insights se puede configurar para que el software AU se actualice manualmente, lo que proporciona más control sobre el software instalado en su entorno. 
+summary: Data Infrastructure Insights se puede configurar para que el software AU se actualice manualmente, lo que proporciona más control sobre el software instalado en su inquilino. 
 ---
 = Instalación manual del software de la unidad de adquisición
 :hardbreaks:
@@ -16,7 +16,7 @@ summary: Data Infrastructure Insights se puede configurar para que el software A
 
 
 [role="lead"]
-De forma predeterminada, Data Infrastructure Insights actualiza automáticamente el software de la unidad de adquisición (AU) a medida que se implementan las actualizaciones. Sin embargo, en entornos controlados y seguros, es posible que la actualización automática no sea posible o no se desee. En estos casos, Data Infrastructure Insights se puede configurar para que el software AU se actualice manualmente, lo que proporciona un mayor control sobre el software instalado en su entorno.
+De forma predeterminada, Data Infrastructure Insights actualiza automáticamente el software de la unidad de adquisición (AU) a medida que se implementan las actualizaciones. Sin embargo, en entornos controlados y seguros, es posible que la actualización automática no sea posible o no se desee. En estos casos, Data Infrastructure Insights se puede configurar para que el software AU se actualice manualmente, lo que proporciona un mayor control sobre el software instalado en su inquilino.
 
 Para descargar e instalar manualmente el software AU, siga estos pasos. Data Infrastructure Insights proporciona una página de documentación de Swagger muy útil que puede utilizar en muchos de estos pasos o puede utilizar su propio script/comandos de API. Vaya a Admin > API Access y haga clic en el enlace «Documentación de API».
 

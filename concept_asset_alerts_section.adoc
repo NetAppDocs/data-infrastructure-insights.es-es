@@ -19,7 +19,7 @@ keywords: asset, landing page, violations, Alerts,
 
 
 [role="lead"]
-Puede utilizar la sección Alertas relacionadas de una página de activos para ver las alertas que se produzcan en el entorno como resultado de un monitor asignado a un activo. Los monitores generan alertas basadas en las condiciones establecidas y permiten identificar la implicación y analizar el impacto y la causa raíz del problema de forma que permita una corrección rápida y efectiva.
+Puede utilizar la sección Alertas Relacionadas de una página de activos para ver cualquier alerta que se produzca en su arrendatario como resultado de un monitor asignado a un activo. Los monitores generan alertas basadas en las condiciones establecidas y permiten identificar la implicación y analizar el impacto y la causa raíz del problema de forma que permita una corrección rápida y efectiva.
 
 En el siguiente ejemplo se muestra una sección Alertas relacionadas típicas que se muestra en una página de activos:
 

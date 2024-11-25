@@ -19,7 +19,7 @@ keywords: dashboard, gallery, import
 
 
 [role="lead"]
-Data Infrastructure Insights proporciona una serie de consolas recomendadas para proporcionar información empresarial sobre sus datos. Cada panel contiene widgets diseñados para ayudar a responder a una pregunta concreta o resolver un problema concreto relacionado con los datos que se recopilan actualmente en su entorno.
+Data Infrastructure Insights proporciona una serie de consolas recomendadas para proporcionar información empresarial sobre sus datos. Cada panel de control contiene widgets diseñados para ayudar a responder una pregunta en particular o resolver un problema particular relevante para los datos que se recopilan actualmente en su inquilino.
 
 Para importar un panel desde la galería, haga lo siguiente:
 

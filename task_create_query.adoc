@@ -19,7 +19,7 @@ keywords: query, queries
 
 
 [role="lead"]
-Las consultas le permiten buscar los activos de su entorno a un nivel granular, lo que permite filtrar los datos que desea y ordenar los resultados según su gusto.
+Las consultas le permiten buscar los activos en su arrendatario a un nivel granular, lo que permite filtrar los datos que desea y ordenar los resultados a su gusto.
 
 Por ejemplo, puede crear una consulta para _Volumes_, agregar un filtro para buscar un _storages_ asociado a los volúmenes seleccionados, agregar otro filtro para buscar un _anotación_ particular, como "nivel 1" en los almacenamientos seleccionados, Y finalmente añadir otro filtro para encontrar todos los almacenamientos con _IOPS - Leer (IO/s)_ mayor que 25. Cuando se muestran los resultados, puede ordenar las columnas de información asociadas a la consulta en orden ascendente o descendente.
 

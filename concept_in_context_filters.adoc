@@ -19,11 +19,11 @@ keywords: Assets, landing page, filtering, context, related
 
 
 [role="lead"]
-Al configurar un widget en la página de inicio de un activo, puede establecer filtros _in-context_ para que sólo muestren objetos directamente relacionados con el activo actual. De forma predeterminada, al agregar un widget, se muestran los objetos _All_ del tipo seleccionado en el entorno. Los filtros en contexto permiten mostrar sólo los datos relevantes para el activo actual.
+Al configurar un widget en la página de inicio de un activo, puede establecer filtros _in-context_ para que sólo muestren objetos directamente relacionados con el activo actual. De forma predeterminada, cuando agrega un widget, se muestran los objetos _all_ del tipo seleccionado en su arrendatario. Los filtros en contexto permiten mostrar sólo los datos relevantes para el activo actual.
 
 En la mayoría de las páginas de destino de activos, los widgets le permiten filtrar los objetos relacionados con el activo actual. En las listas desplegables de filtros, los tipos de objetos que muestran un icono de enlace se pueden filtrar en contexto al activo actual.
 
-Por ejemplo, en una página Storage Asset, puede añadir un widget Bar Chart para mostrar el IOPS superior en los volúmenes internos solo en ese almacenamiento. De forma predeterminada, al agregar un widget, se muestran los volúmenes _All_ internos del entorno.
+Por ejemplo, en una página Storage Asset, puede añadir un widget Bar Chart para mostrar el IOPS superior en los volúmenes internos solo en ese almacenamiento. De forma predeterminada, cuando agrega un widget, se muestran _all_ volúmenes internos en su inquilino.
 
 Para mostrar solo los volúmenes internos en el activo de almacenamiento actual, haga lo siguiente:
 
@@ -46,6 +46,6 @@ El gráfico de barras muestra sólo los volúmenes internos que residen en el ac
 
 El widget se mostrará en las páginas de activos para todos los objetos de almacenamiento. Cuando el enlace en contexto está activado en el widget, el gráfico de barras muestra los datos de los volúmenes internos relacionados únicamente con el activo de almacenamiento que se muestra en ese momento.
 
-Para desvincular los datos del objeto, edite el widget y haga clic en el icono de enlace junto al tipo de objeto. El enlace se desactiva y el gráfico muestra los datos de los objetos _all_ del entorno.
+Para desvincular los datos del objeto, edite el widget y haga clic en el icono de enlace junto al tipo de objeto. El enlace se desactiva y el gráfico muestra los datos de los objetos _all_ del inquilino.
 
 También puede utilizar link:concept_dashboard_features.html#variables["*variables especiales en widgets*"] para mostrar información relacionada con activos en páginas de destino.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept_device_resolution_overview.html 
 keywords: Automatic, AR, AHR, Host, automatic device resolution 
-summary: La resolución automática de dispositivos le ayuda a realizar un seguimiento preciso del rendimiento y del inventario en su entorno. 
+summary: La resolución automática de dispositivos le ayuda a realizar un seguimiento preciso del rendimiento y el inventario de su inquilino. 
 ---
 = Descripción general de la resolución automática del dispositivo
 :hardbreaks:
@@ -16,11 +16,11 @@ summary: La resolución automática de dispositivos le ayuda a realizar un segui
 
 
 [role="lead"]
-Es necesario identificar todos los dispositivos que desea supervisar con Data Infrastructure Insights. La identificación es necesaria para realizar un seguimiento preciso del rendimiento y del inventario en su entorno. Normalmente, la mayoría de los dispositivos detectados en su entorno se identifican mediante _Automatic Device Resolution_.
+Es necesario identificar todos los dispositivos que desea supervisar con Data Infrastructure Insights. La identificación es necesaria para realizar un seguimiento preciso del rendimiento y el inventario de su inquilino. Por lo general, la mayoría de los dispositivos detectados en su inquilino se identifican a través de _Automatic Device Resolution_.
 
-Después de configurar los recopiladores de datos, se identifican los dispositivos del entorno, incluidos los switches, las matrices de almacenamiento y la infraestructura virtual de hipervisores y máquinas virtuales. Sin embargo, normalmente esto no identifica el 100% de los dispositivos de su entorno.
+Una vez que se configuran los recopiladores de datos, se identifican los dispositivos de su inquilino, incluidos los switches, las cabinas de almacenamiento y la infraestructura virtual de hipervisores y máquinas virtuales. Sin embargo, esto normalmente no identifica el 100% de los dispositivos en su inquilino.
 
-Una vez configurados los dispositivos de tipo recopilador de datos, la mejor práctica es aprovechar las reglas de resolución de dispositivos para ayudar a identificar los dispositivos desconocidos restantes en su entorno. La resolución del dispositivo puede ayudarle a resolver dispositivos desconocidos como los siguientes tipos de dispositivos:
+Una vez configurados los dispositivos de tipo recopilador de datos, la mejor práctica es aprovechar las reglas de resolución de dispositivos para ayudar a identificar los dispositivos desconocidos restantes en su inquilino. La resolución del dispositivo puede ayudarle a resolver dispositivos desconocidos como los siguientes tipos de dispositivos:
 
 * Hosts físicos
 * Cabinas de almacenamiento
@@ -60,7 +60,7 @@ Debe responder a preguntas similares a las siguientes para ayudarle a crear regl
 * ¿El entorno usa un alias del switch o un alias de almacenamiento y coincide con el nombre del host?
 
 
-* ¿Con qué frecuencia cambian los esquemas de nomenclatura en su entorno?
+* ¿Con qué frecuencia cambian los esquemas de nomenclatura en su inquilino?
 * ¿Ha habido alguna adquisición o fusión que haya introducido diferentes esquemas de nomenclatura?
 
 
@@ -74,7 +74,7 @@ En este ejemplo, el mayor número de dispositivos está representado de forma fi
 
 == Pasos para identificar dispositivos
 
-Por lo general, debería utilizar un flujo de trabajo similar al siguiente para identificar los dispositivos en su entorno. La identificación es un proceso iterativo y podría requerir múltiples pasos de reglas de planificación y refinación.
+Normalmente, utilizaría un flujo de trabajo similar al siguiente para identificar dispositivos en su inquilino. La identificación es un proceso iterativo y podría requerir múltiples pasos de reglas de planificación y refinación.
 
 * Entorno de investigación
 * Reglas del plan
@@ -85,6 +85,6 @@ Por lo general, debería utilizar un flujo de trabajo similar al siguiente para 
 
 
 
-NOTE: Si tiene dispositivos no identificados (conocidos como dispositivos genéricos o desconocidos) en su entorno y, a continuación, configura un origen de datos que identifica esos dispositivos tras el sondeo, ya no se mostrarán ni contarán como dispositivos genéricos.
+NOTE: Si tiene dispositivos no identificados (también conocidos como dispositivos genéricos o desconocidos) en su arrendatario y, posteriormente, configura una fuente de datos que los identifique al realizar el sondeo, ya no se mostrarán ni contarán como dispositivos genéricos.
 
 Relacionado: link:task_device_resolution_rules.html["Creación de Reglas de resolución de dispositivos"] link:task_device_resolution_fibre_channel.html["Resolución de dispositivos Fibre Channel"] link:task_device_resolution_ip.html["Resolución del dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]

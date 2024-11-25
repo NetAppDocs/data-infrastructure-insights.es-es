@@ -19,7 +19,7 @@ summary: Configuración del recopilador de datos de Apache
 
 
 [role="lead"]
-Este recopilador de datos permite la recopilación de datos de servidores Apache en su entorno.
+Este recopilador de datos permite la recopilación de datos de los servidores Apache en su inquilino.
 
 .Requisitos previos
 * Debe tener su servidor Apache HTTP configurado y funcionando correctamente

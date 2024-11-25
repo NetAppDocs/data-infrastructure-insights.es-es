@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: insights_shared_resources_under_stress.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Los conocimientos le permiten ver cómo afectan los recursos a otros recursos de su entorno. 
+summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recursos en su inquilino. 
 ---
 = Perspectivas: Recursos compartidos bajo estrés
 :toc: macro
@@ -19,7 +19,7 @@ summary: Los conocimientos le permiten ver cómo afectan los recursos a otros re
 
 
 [role="lead"]
-Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Esto pone el recurso compartido bajo estrés. Data Infrastructure Insights proporciona herramientas que te ayudan a investigar la saturación de los recursos y el impacto en tu entorno.
+Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Esto pone el recurso compartido bajo estrés. Data Infrastructure Insights proporciona herramientas que le ayudan a investigar la saturación de los recursos y el impacto en su inquilino.
 
 
 
@@ -63,7 +63,7 @@ Debajo de cada tabla hay una lista de cargas de trabajo y/o recursos que afectan
 
 == ¿Qué debo hacer para resolver la saturación?
 
-Hay una serie de pasos que puede realizar para reducir o eliminar la posibilidad de saturación de su entorno. Estos se muestran ampliando el enlace *+Mostrar recomendaciones* de la página. Estas son algunas cosas que puede probar.
+Hay una serie de pasos que puede tomar para reducir o eliminar la posibilidad de saturación en su inquilino. Estos se muestran ampliando el enlace *+Mostrar recomendaciones* de la página. Estas son algunas cosas que puede probar.
 
 * Traslade a consumidores con una alta tasa de IOPS
 +

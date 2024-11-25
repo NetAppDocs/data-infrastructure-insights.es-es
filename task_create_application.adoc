@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_create_application.html 
-summary: Defina las aplicaciones que, a continuación, aplique a los activos del entorno según sea necesario. 
+summary: Defina las aplicaciones que, a continuación, aplique a los activos de su arrendatario según sea necesario. 
 keywords: application, create application, 
 ---
 = Creación de aplicaciones
@@ -16,7 +16,7 @@ keywords: application, create application,
 
 
 [role="lead"]
-Para realizar un seguimiento de los datos asociados con aplicaciones específicas que se ejecutan en su entorno, puede definir las aplicaciones en Data Infrastructure Insights.
+Para realizar un seguimiento de los datos asociados con aplicaciones específicas que se ejecutan en su inquilino, puede definir las aplicaciones en Data Infrastructure Insights.
 
 .Antes de empezar
 Si desea asociar la aplicación a una entidad de negocio, debe crear la entidad de negocio antes de definir la aplicación.

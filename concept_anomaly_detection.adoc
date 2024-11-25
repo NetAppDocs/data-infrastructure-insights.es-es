@@ -19,7 +19,7 @@ summary: Supervisar métricas para detectar anomalías
 
 
 [role="lead"]
-La detección de anomalías proporciona información sobre cambios inesperados en los patrones de datos de su entorno. Una anomalía se produce cuando el patrón de comportamiento de un objeto cambia en su entorno, por ejemplo, si un objeto experimenta un cierto nivel de latencia en un determinado momento los miércoles, pero la latencia se dispara por encima de ese nivel en ese momento el miércoles siguiente, ese pico se consideraría una anomalía. Data Infrastructure Insights permite la creación de monitores para que avisen de cualquier anomalía como este.
+La detección de anomalías proporciona información sobre cambios inesperados en los patrones de datos de su inquilino. Una anomalía se produce cuando el patrón de comportamiento de un objeto cambia, por ejemplo, si un objeto experimenta un cierto nivel de latencia en un determinado momento los miércoles, pero la latencia se dispara por encima de ese nivel en ese momento el miércoles siguiente, ese pico se consideraría una anomalía. Data Infrastructure Insights permite la creación de monitores para que avisen de cualquier anomalía como este.
 
 La detección de anomalías es adecuada para métricas de objetos que muestran un patrón recurrente y predecible. Cuando estas métricas de los objetos se disparan por encima o por debajo de los niveles esperados, Data Infrastructure Insights puede generar una alerta que permita investigarlas rápidamente.
 
@@ -53,7 +53,7 @@ La monitorización de la detección de anomalías puede proporcionar alertas út
 
 * Cuando la definición de _normal_ no está clara. Por ejemplo, las tasas de error de SAN pueden esperarse en cantidades variables en función del puerto. Alertar sobre un error es ruidoso e innecesario, pero un aumento repentino o significativo podría indicar un problema generalizado.
 * Donde hay cambios a lo largo del tiempo. Cargas de trabajo que muestran estacionalidad (es decir, que están ocupadas o silenciosas en determinados momentos). Esto podría incluir períodos de silencio inesperados que pueden indicar un bloqueo de lotes.
-* Trabajar con grandes cantidades de datos en los que definir y ajustar umbrales manualmente es poco práctico. Por ejemplo, un entorno con un gran número de hosts o volúmenes con cargas de trabajo cambiantes. Cada uno puede tener SLA diferentes, por lo que es importante entender los que superan la norma.
+* Trabajar con grandes cantidades de datos en los que definir y ajustar umbrales manualmente es poco práctico. Por ejemplo, un inquilino con un gran número de hosts o volúmenes con cargas de trabajo cambiantes. Cada uno puede tener SLA diferentes, por lo que es importante entender los que superan la norma.
 
 
 

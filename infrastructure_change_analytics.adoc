@@ -16,7 +16,7 @@ summary: Cloud Insights realiza un seguimiento de los cambios en la infraestruct
 
 
 [role="lead"]
-El análisis de cambios de la infraestructura le ofrece una visión integral de los cambios recientes en la infraestructura (almacenamiento, switch, etc.) de su entorno. Con el análisis de cambios, puede realizar un seguimiento de los cambios de configuración y profundizar en los problemas esperados e inesperados.
+El análisis de cambios de la infraestructura le ofrece una visión integral de los cambios recientes en la infraestructura (almacenamiento, switch, etc.) de su cliente. Con el análisis de cambios, puede realizar un seguimiento de los cambios de configuración y profundizar en los problemas esperados e inesperados.
 
 
 

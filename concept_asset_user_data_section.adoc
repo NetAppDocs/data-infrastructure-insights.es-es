@@ -25,7 +25,7 @@ Aparece la sección datos de usuario de una página de activos y permite cambiar
 
 == Uso de la sección datos de usuario para asignar o modificar aplicaciones
 
-Es posible asignar aplicaciones en ejecución en el entorno a ciertos activos (host, máquinas virtuales, volúmenes, volúmenes internos, qtrees, e hipervisores). La sección datos de usuario permite agregar, cambiar o eliminar las aplicaciones asignadas a un activo. En todos estos tipos de activos, excepto en los volúmenes, es posible asignar más de una aplicación.
+Es posible asignar aplicaciones que se ejecutan en el inquilino a ciertos activos (host, máquinas virtuales, volúmenes, volúmenes internos, qtrees e hipervisores). La sección datos de usuario permite agregar, cambiar o eliminar las aplicaciones asignadas a un activo. En todos estos tipos de activos, excepto en los volúmenes, es posible asignar más de una aplicación.
 
 .Pasos
 . Busque una página de activos realizando cualquiera de las siguientes acciones:

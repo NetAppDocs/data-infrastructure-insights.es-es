@@ -16,7 +16,7 @@ keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles
 
 
 [role="lead"]
-Si dispone de Data Infrastructure Insights Premium Edition con informes, todos los usuarios de Data Infrastructure Insights de su entorno también tienen un inicio de sesión único (SSO) en la aplicación de informes (es decir, Cognos). Simplemente haga clic en el enlace *Informes* del menú y se conectará automáticamente a Informes.
+Si tiene Data Infrastructure Insights Premium Edition con informes, todos los usuarios de Data Infrastructure Insights de su inquilino también tienen un inicio de sesión único (SSO) en la aplicación de informes (es decir, Cognos). Simplemente haga clic en el enlace *Informes* del menú y se conectará automáticamente a Informes.
 
 Su rol de usuario en Data Infrastructure Insights determina su rol de usuario de generación de informes:
 
@@ -91,7 +91,7 @@ NOTE: Si cambia las preferencias de correo electrónico del usuario en los infor
 
 === ¿Qué pasos debo seguir para preparar mi entorno actual para habilitar SSO?
 
-Para asegurarse de que sus informes se conservan, migre todos los informes de _My Content_ a _Team Content_ mediante los pasos siguientes. Debe hacerlo antes de habilitar SSO en su entorno:
+Para asegurarse de que sus informes se conservan, migre todos los informes de _My Content_ a _Team Content_ mediante los pasos siguientes. Debe hacer esto antes de habilitar SSO en su inquilino:
 
 . Vaya a *Menú > Contenido*
 

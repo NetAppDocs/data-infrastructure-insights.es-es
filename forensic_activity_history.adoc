@@ -23,7 +23,7 @@ La página All Activity permite comprender las acciones que se realizan en las e
 
 == Examen de todos los datos de actividad
 
-Haga clic en *Forensics > Activity Forensics* y haga clic en la ficha *All Activity* para acceder a la página All Activity. En esta página se proporciona una descripción general de las actividades de su entorno, en la que se destaca la siguiente información:
+Haga clic en *Forensics > Activity Forensics* y haga clic en la ficha *All Activity* para acceder a la página All Activity. Esta página proporciona una descripción general de las actividades de su inquilino, destacando la siguiente información:
 
 * Un gráfico que muestra _Activity History_ (al que se accede por minuto/cada 5 minutos/cada 10 minutos en función del intervalo de tiempo global seleccionado)
 +

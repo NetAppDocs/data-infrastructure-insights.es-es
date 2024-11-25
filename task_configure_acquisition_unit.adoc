@@ -105,7 +105,7 @@ Puede ver las direcciones URL de su punto final proxy haciendo clic en el enlace
 
 image:ProxyEndpoints_NewTable.png["Tabla de puntos finales de proxy"]
 
-Si tiene Seguridad de carga de trabajo en su entorno, las direcciones URL de extremo configuradas también se mostrarán en esta lista.
+Si tiene Seguridad de carga de trabajo en su arrendatario, las URL de punto final configuradas también se mostrarán en esta lista.
 
 
 
@@ -161,7 +161,7 @@ Puede ver las direcciones URL de su punto final proxy haciendo clic en el enlace
 
 image:ProxyEndpoints_NewTable.png["Tabla de puntos finales de proxy"]
 
-Si tiene Seguridad de carga de trabajo en su entorno, las direcciones URL de extremo configuradas también se mostrarán en esta lista.
+Si tiene Seguridad de carga de trabajo en su arrendatario, las URL de punto final configuradas también se mostrarán en esta lista.
 
 
 

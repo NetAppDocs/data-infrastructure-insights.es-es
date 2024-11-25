@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: insights_reclaim_ontap_cold_storage.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Los conocimientos le permiten ver cómo afectan los recursos a otros recursos de su entorno. 
+summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recursos en su inquilino. 
 ---
 = Información: Recupere el almacenamiento de datos fríos de ONTAP
 :toc: macro

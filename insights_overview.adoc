@@ -31,7 +31,7 @@ Hay disponible una serie de información. Navega a *Dashboards > Insights* para 
 
 === Recursos compartidos bajo estrés
 
-Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Esto pone el recurso compartido bajo estrés. Data Infrastructure Insights proporciona herramientas que te ayudan a investigar la saturación de los recursos y el impacto en tu entorno. link:insights_shared_resources_under_stress.html["Más información"]
+Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Esto pone el recurso compartido bajo estrés. Data Infrastructure Insights proporciona herramientas que le ayudan a investigar la saturación de los recursos y el impacto en su inquilino. link:insights_shared_resources_under_stress.html["Más información"]
 
 
 

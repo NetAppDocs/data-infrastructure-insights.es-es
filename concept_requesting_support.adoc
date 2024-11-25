@@ -113,7 +113,7 @@ Además de las opciones de autosoporte mencionadas anteriormente, si tiene una s
 
 NOTE: Debe registrarse para <<activating-support-entitlement,active el soporte>>los productos en el cloud de NetApp. Para registrarse, vaya a NetApp's link:https://register.netapp.com["Registro de soporte de servicios de datos en el cloud"].
 
-Se recomienda marcar la casilla para permitir que un ingeniero de soporte de NetApp acceda al entorno de Data Infrastructure Insights durante su sesión de soporte. Esto permitirá al ingeniero solucionar el problema y ayudarle a resolverlo rápidamente. Cuando se resuelva el problema o la sesión de soporte haya finalizado, puede anular la selección de la casilla.
+Se recomienda encarecidamente que marque la casilla para permitir que un ingeniero de soporte de NetApp acceda a su inquilino de información de infraestructura de datos durante la sesión de soporte. Esto permitirá al ingeniero solucionar el problema y ayudarle a resolverlo rápidamente. Cuando se resuelva el problema o la sesión de soporte haya finalizado, puede anular la selección de la casilla.
 
 Puede solicitar soporte mediante cualquiera de los siguientes métodos. Debe tener una suscripción activa a Data Infrastructure Insights para utilizar las siguientes opciones de soporte:
 

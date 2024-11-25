@@ -104,8 +104,8 @@ Para obtener explicaciones más detalladas de estas y otras funciones del panel 
 
 == Configuración de un panel como página de inicio
 
-Puede elegir el panel que desea establecer como *página de inicio* de su entorno utilizando cualquiera de los siguientes métodos:
+Puede elegir qué panel de control configurar como la *página de inicio* de su inquilino utilizando cualquiera de los siguientes métodos:
 
-* Vaya a *Paneles > Mostrar todos los paneles* para ver la lista de paneles de su entorno. Haga clic en el menú de opciones situado a la derecha del panel deseado y seleccione *establecer como página de inicio*.
+* Vaya a *Paneles de Control > Mostrar todos los Paneles de Control* para mostrar la lista de Paneles de Control en su inquilino. Haga clic en el menú de opciones situado a la derecha del panel deseado y seleccione *establecer como página de inicio*.
 * Haga clic en un panel de la lista para abrir el panel. Haga clic en el menú desplegable de la esquina superior y seleccione *establecer como página de inicio*.
 
