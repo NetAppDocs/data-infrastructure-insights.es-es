@@ -19,8 +19,6 @@ summary: El operador de supervisión de Kubernetes recopila datos de Kubernetes 
 Data Infrastructure Insights ofrece el *Operador de Monitoreo de Kubernetes* para la colección de Kubernetes. Vaya a *Kubernetes > Colectores > +Kubernetes Collector* para implementar un nuevo operador.
 
 
-toc::[]
-
 
 == Antes de instalar el operador de supervisión de Kubernetes
 
@@ -65,15 +63,11 @@ image:KubernetesModifyDeploymentMenu.png["Modificar el menú de implementación 
 
 La pantalla muestra el estado actual de cada componente y le permite desactivar o activar componentes para ese recopilador según sea necesario.
 
-image:KubernetesModifyDeploymentScreen.png["Opciones de implementación de Mody, 700"]
+image:KubernetesModifyDeploymentScreen.png["Modifique las opciones de despliegue, width=700"]
 
 
 
-== Actualizar
-
-
-
-=== Actualiza al operador de supervisión de Kubernetes más reciente
+== Actualiza al operador de supervisión de Kubernetes más reciente
 
 Determine si existe una AgentConfiguration con el operador existente (si el espacio de nombres no es el valor predeterminado _netapp-monitoring_, sustituya el espacio de nombres adecuado):
 
