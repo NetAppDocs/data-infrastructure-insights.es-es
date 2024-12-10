@@ -11822,4 +11822,40 @@
   <block id="55d6bfb079ee69230d07a9a9c1c17b66" category="list-text">Verifique las imágenes usando el signo cosign. Consulte el siguiente ejemplo de uso de signo conjunto</block>
   <block id="f0eddc4fb4218ed4ec07da7604fbc1c8" category="inline-image-macro">Modifique las opciones de despliegue, width=700</block>
   <block id="593e78308f625f4551ee5b44b6d582e5" category="paragraph"><block ref="593e78308f625f4551ee5b44b6d582e5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ee063f6b962df93a461d2ffc011f30c6" category="inline-link-macro">Recopilador de cabinas All-SAN (ASA) NetApp ONTAP</block>
+  <block id="9e21612beb462f7bd1f813292fecce9e" category="cell"><block ref="9e21612beb462f7bd1f813292fecce9e" category="inline-link-macro-rx"></block></block>
+  <block id="b9b8d4cf4d94212bab3d8ce132b74a37" category="inline-link-macro">Almacén de datos vasto</block>
+  <block id="9b445526869ff95a6549cc8c81c4131b" category="cell"><block ref="9b445526869ff95a6549cc8c81c4131b" category="inline-link-macro-rx"></block></block>
+  <block id="53c9e67c854dc8f210a1632d7ec33799" category="summary">Recopilador de datos de cabinas All-SAN ONTAP</block>
+  <block id="a6415bd2448b7919eed8f0af42d67ee9" category="doc">Recopilador de datos de cabinas All-SAN (ASA) NetApp ONTAP</block>
+  <block id="b405c90a99544fe264526a99edd2f41c" category="paragraph">Este recopilador de datos adquiere inventario, registros de EMS y datos de rendimiento de sistemas de almacenamiento que ejecutan ONTAP 9.16.0 y posteriores mediante llamadas de API DE REST.</block>
+  <block id="87df89e1b5a76047447b71a01aec2982" category="list-text">ONTAP versión 9.16.0 o posterior.</block>
+  <block id="7032ac73bd8241edcec890cdcfabcfa3" category="summary">Configuración del recopilador de DATOS de almacenamiento de almacenes de datos DE VAST.</block>
+  <block id="ffc9339c36ed95025058c23ec2753b24" category="doc">Recopilador de DATOS de VASTOS almacenes de datos</block>
+  <block id="db6d41642fd36481ced7748f3f81bc64" category="paragraph">Data Infrastructure Insights utiliza el AMPLIO recopilador de datos de almacenes de datos para recopilar datos de inventario y de rendimiento.</block>
+  <block id="1d6af794b2599c1407a83029a09d1ecf" category="cell">Transportistas</block>
+  <block id="457f8d4c765467475ea256add7a3fdc6" category="cell">Discos (parte de la bandeja de discos del campo Ubicación)</block>
+  <block id="5b90b71cdc32ad1ac3a7c9235afb9c2f" category="cell">CNodes</block>
+  <block id="c514ac300b6b6e64d5d0b5cc21c5406a" category="cell">StorageNode (tipo = cnode)</block>
+  <block id="abcef8b528b45f6e48e135521400cf7f" category="cell">DNodes</block>
+  <block id="da316cef9dacf85ad51ef2feaf010065" category="cell">StorageNode (tipo = dnode)</block>
+  <block id="15a01110f16efe243b3f75f198287ea2" category="cell">NVRAMs</block>
+  <block id="2d4aef30a49a581a6ed89ce840054235" category="cell">Discos</block>
+  <block id="c8e6306840fb73fee1dbc570f9991451" category="cell">Rutas protegidas</block>
+  <block id="41ad9be6d4308d2a5b19ec77094e428e" category="cell">Sincronización de volúmenes interna</block>
+  <block id="4ea922c8a9600ba45c7d092b9fac3071" category="cell">Políticas de CALIDAD DE SERVICIO</block>
+  <block id="8d83e8b6efd5f54fe3b580a2f28b2f16" category="cell">Volumen interno (límites DE QOS)</block>
+  <block id="fb0d8a1c841cd92afd4cb16ddedaeed5" category="cell">Cuotas</block>
+  <block id="80307ff54caa7cf20882ee314544c98d" category="cell">SSD</block>
+  <block id="ab46b0da4c689d676afbc74038c40f71" category="cell">Clientes</block>
+  <block id="c86f4cd8354a2b53d0d427eea434f0bc" category="cell">ViewPolicies</block>
+  <block id="a1c6152b473e54093548a39b0a49cf60" category="cell">Recursos compartidos de archivos (para permisos)</block>
+  <block id="ed4832a84ee072b00a6740f657183598" category="cell">Vistas</block>
+  <block id="e2ab08588eb609321db99af452ec8dbd" category="list-text">Dirección IP del sistema de almacén de datos de VAST o Nombre de dominio completo</block>
+  <block id="9658c9c5c5e1ce7340ab09e1dcacf227" category="list-text">Nombre de usuario / Contraseña para acceder al sistema VAST</block>
+  <block id="7abb31f5998b15d8c5e15f3bff14bab8" category="list-text">Requisito de puerto: HTTPS 443</block>
+  <block id="32ff8302603799728a4e2397623f2b3a" category="cell">Nombre de host/IP de almacenamiento de almacén de datos de VAST</block>
+  <block id="a59ed6c78eadc966927de4b65adc1801" category="cell">La dirección IP o el FQDN del sistema de almacenamiento</block>
+  <block id="9f329f951728d9fd2dc3c86d970b2e7f" category="cell">Nombre de usuario de VAST Storage</block>
+  <block id="50f8e432f3a17936f4fd1dee864d7ff1" category="cell">Contraseña de almacenamiento de VAST</block>
 </blocks>

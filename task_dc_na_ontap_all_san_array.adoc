@@ -1,0 +1,258 @@
+---
+sidebar: sidebar 
+permalink: task_dc_na_ontap_all_san_array.html 
+keywords: data collector, ontap, ontap, CDOT, REST, SAN, ASA 
+summary: Recopilador de datos de cabinas All-SAN ONTAP 
+---
+= Recopilador de datos de cabinas All-SAN (ASA) NetApp ONTAP
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Este recopilador de datos adquiere inventario, registros de EMS y datos de rendimiento de sistemas de almacenamiento que ejecutan ONTAP 9.16.0 y posteriores mediante llamadas de API DE REST.
+
+
+
+== Requisitos
+
+A continuación se enumeran los requisitos para configurar y utilizar este recopilador de datos:
+
+* Debe tener acceso a una cuenta de usuario con el nivel de acceso requerido. Tenga en cuenta que se requieren permisos de administrador si se crea un nuevo rol/usuario de REST.
++
+** Funcionalmente, Data Infrastructure Insights realiza principalmente solicitudes de lectura, pero se requieren algunos permisos de escritura para que la información de infraestructura de datos se registre en la cabina de ONTAP. Consulte la _Nota sobre los permisos_ inmediatamente más abajo.
+
+
+* ONTAP versión 9.16.0 o posterior.
+* Requisitos del puerto: 443
+
+
+
+
+== Una nota sobre los permisos
+
+Dado que varios paneles de control de ONTAP de Información de Infraestructura de Datos dependen de contadores ONTAP avanzados, debe mantener habilitado *Habilitar Recopilación Avanzada de Datos de Contador* en la sección Configuración Avanzada del recopilador de datos.
+
+Para crear una cuenta local para Data Infrastructure Insights en el nivel del clúster, inicie sesión en ONTAP con el nombre de usuario/contraseña de administrador de administración del clúster y ejecute los siguientes comandos en el servidor de ONTAP:
+
+. Antes de empezar, debe iniciar sesión en ONTAP con una cuenta _Administrator_ y _Diagnostic-level Commands_ deben estar habilitados.
+. Recupere el nombre del Vserver del tipo _admin_. Utilizará este nombre en los comandos posteriores.
++
+ vserver show -type admin
+. Cree un rol mediante los siguientes comandos:
++
+....
+security login rest-role create -role {role name} -api /api -access readonly
+security login rest-role create -role {role name} -api /api/cluster/agents -access all
+vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
+security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
+....
+. Cree el usuario de solo lectura mediante el comando siguiente. Una vez ejecutado el comando create, se le pedirá que introduzca una contraseña para este usuario.
++
+ security login create -username ci_user -application http -authentication-method password -role ci_readonly
+
+
+Si se utiliza la cuenta AD/LDAP, el comando debería ser
+
+ security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
+El rol y el inicio de sesión de usuario resultantes tendrán algo parecido a lo siguiente. Su salida real puede variar:
+
+[listing]
+----
+security login rest-role show -vserver <vserver name> -role restRole
+
+               Role                                    Access
+Vserver        Name            API                     Level
+----------     -------------   -------------------     ------
+<vserver name> restRole        /api                    readonly
+                               /api/cluster/agents     all
+2 entries were displayed.
+
+security login show -vserver <vserver name> -user-or-group-name restUser
+
+Vserver: <vserver name>
+                                                                 Second
+User/Group                 Authentication                 Acct   Authentication
+Name           Application Method        Role Name        Locked Method
+-------------- ----------- ------------- ---------------- ------ --------------
+restUser       http        password      restRole         no     none
+----
+
+
+== Migración
+
+Para migrar desde un recopilador de datos de ONTAP (ontapi) anterior al recopilador de REST DE ONTAP más reciente, haga lo siguiente:
+
+. Agregue el recopilador REST. Se recomienda introducir información para un usuario diferente al configurado para el recopilador anterior. Por ejemplo, utilice el usuario indicado en la sección Permisos anterior.
+. Pausar el recopilador anterior para que no continúe recopilando datos.
+. Deje que el nuevo recolector REST adquiera datos durante al menos 30 minutos. Ignore cualquier dato durante este tiempo que no parezca normal.
+. Después del período de descanso, deberías ver cómo tus datos se estabilizan a medida que el recolector REST continúa adquiriendo.
+
+
+Si lo desea, puede utilizar este mismo proceso para volver al recopilador anterior.
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP de administración de ONTAP | La dirección IP o el nombre de dominio completo del clúster de NetApp. Debe ser IP/FQDN de administración del clúster. 
+
+
+| Nombre de usuario REST DE ONTAP | Nombre de usuario del clúster de NetApp 
+
+
+| Contraseña REST DE ONTAP | Contraseña para el clúster de NetApp 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos. 
+
+
+| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 60 segundos. 
+
+
+| Recopilación avanzada de datos de contador | Seleccione esta opción para incluir datos de contador avanzado de ONTAP en sondeos. Activado de forma predeterminada. 
+
+
+| Habilite la recogida de eventos de EMS | Seleccione esto para incluir los datos del evento de registro de ONTAP EMS. Activado de forma predeterminada. 
+
+
+| Intervalo de sondeo de EMS (seg) | El valor predeterminado es 60 segundos. 
+|===
+
+
+== Terminología
+
+Información de la infraestructura de datos adquiere datos de inventario, registros y rendimiento del recopilador de datos de ONTAP. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+
+
+| Disco | Disco 
+
+
+| Grupo RAID | Grupo de discos 
+
+
+| Clúster | Reducida 
+
+
+| Nodo | Nodo de almacenamiento 
+
+
+| Agregado | Pool de almacenamiento 
+
+
+| LUN | Volumen 
+
+
+| Volumen | Volumen interno 
+
+
+| Máquina virtual de almacenamiento/Vserver | Máquina virtual de almacenamiento 
+|===
+
+
+== Terminología de gestión de datos ONTAP
+
+Los siguientes términos se aplican a objetos o referencias que puede encontrar en las páginas de destino de activos de almacenamiento para la gestión de datos de ONTAP. Muchos de estos términos también se aplican a otros recopiladores de datos.
+
+
+
+=== Reducida
+
+* Model: Una lista delimitada por comas de los nombres de modelo de nodos discretos únicos dentro de este clúster. Si todos los nodos de los clústeres tienen el mismo tipo de modelo, solo aparecerá un nombre de modelo.
+* Proveedor: El mismo nombre de proveedor que se vería si estuviera configurando un nuevo origen de datos.
+* Número de serie: El UUID de la cabina
+* IP: Generalmente serán las IP o los hostname tal como están configurados en el origen de datos.
+* Versión de microcódigo: Firmware.
+* Capacidad bruta: Suma base 2 de todos los discos físicos del sistema, sin importar su función.
+* Latencia: Representación de lo que experimentan las cargas de trabajo a las que se enfrentan el host, tanto en lecturas como escrituras. Lo ideal es que Data Infrastructure Insights obtenga este valor directamente pero este no es el caso. En lugar de que la cabina que ofrece esta opción, Data Infrastructure Insights suele realizar un cálculo ponderado por IOPS derivado de las estadísticas de los volúmenes internos individuales.
+* Rendimiento: Agregado de volúmenes internos. Administración: Puede contener un hipervínculo para la interfaz de gestión del dispositivo. Creado mediante programación por el origen de datos de Data Infrastructure Insights como parte de los informes de inventario.
+
+
+
+
+=== Pool de almacenamiento
+
+* Almacenamiento: En qué cabina de almacenamiento vive este pool. Obligatorio.
+* Tipo: Valor descriptivo de una lista de posibilidades enumeradas. La mayoría de las veces será “agregado” o “grupo RAID”.
+* Nodo: Si la arquitectura de esta cabina de almacenamiento pertenece a un nodo de almacenamiento específico, su nombre se verá aquí como un hipervínculo a su propia página de destino.
+* Utiliza Flash Pool – Sí/no valor – ¿este pool basado en SATA/SAS tiene SSD utilizados para la aceleración del almacenamiento en caché?
+* Redundancia: Esquema de protección o nivel de RAID. RAID_DP es de doble paridad, RAID_TP es de triple paridad.
+* Capacidad: Los valores aquí son los lógicos utilizados, la capacidad utilizable y la capacidad total lógica, así como el porcentaje utilizado en estos.
+* Capacidad sobreasignada: Si se utilizan tecnologías de eficiencia, se asignó una suma total de capacidades de volumen o volumen interno mayores que la capacidad lógica del pool de almacenamiento, el valor del porcentaje será mayor que 0 %.
+* Snapshot: Las capacidades Snapshot se utilizan y en total, si su arquitectura de pool de almacenamiento dedica parte de su capacidad a los segmentos, en exclusiva para los snapshots. Es probable que las configuraciones de ONTAP en MetroCluster lo muestren, mientras que otras configuraciones de ONTAP son menos.
+* Aprovechamiento: Un valor de porcentaje que muestra el mayor porcentaje de ocupación de disco de cualquier disco que contribuye a la capacidad de este pool de almacenamiento. El uso de discos no tiene necesariamente una fuerte correlación con el rendimiento de las cabinas. El aprovechamiento puede ser elevado debido a la recompilación de discos, a actividades de deduplicación, etc. en ausencia de cargas de trabajo dirigidas por el host. Además, las implementaciones de replicación de muchas matrices pueden impulsar el uso del disco sin mostrar como volumen interno o carga de trabajo de volumen.
+* IOPS: La suma de IOPS de todos los discos que contribuyen a la capacidad de este pool de almacenamiento. Rendimiento: La suma del rendimiento de todos los discos que contribuyen a la capacidad de este pool de almacenamiento.
+
+
+
+
+=== Nodo de almacenamiento
+
+* Almacenamiento: ¿De qué cabina de almacenamiento forma parte este nodo? Obligatorio.
+* Partner de ALTA DISPONIBILIDAD: En las plataformas en las que un nodo se conmuta al nodo de respaldo uno y solo otro, normalmente se verá aquí.
+* Estado: Estado del nodo. Solo disponible cuando la matriz está lo suficientemente sana para ser inventariada por una fuente de datos.
+* Model: Nombre de modelo del nodo.
+* Versión: Nombre de versión del dispositivo.
+* Número de serie: El número de serie del nodo.
+* Memoria: Memoria base 2 si está disponible.
+* Uso: En ONTAP, se trata de un índice de tensión de la controladora de un algoritmo propio. Con cada encuesta de rendimiento, se informará de una cifra entre 0 y 100 % que es la más alta entre la contención de disco WAFL o el uso medio de CPU. Si observa un valor sostenido > 50 %, esto indica que el dimensionamiento es insuficiente: Puede ser que una controladora/nodo no sea lo suficientemente grande o no haya suficientes discos giratorios para absorber la carga de trabajo de escritura.
+* IOPS: Se deriva directamente de las llamadas REST DE ONTAP del objeto del nodo.
+* Latencia: Se deriva directamente de las llamadas DE REST DE ONTAP del objeto del nodo.
+* Rendimiento: Se deriva directamente de las llamadas REST DE ONTAP del objeto del nodo.
+* Procesadores: Número de CPU.
+
+
+
+
+== Métricas de potencia de ONTAP
+
+Varios modelos de ONTAP ofrecen métricas de potencia para análisis de infraestructura de datos que se pueden usar para supervisar o generar alertas. Las listas de modelos compatibles y no compatibles a continuación no son exhaustivas, pero deben proporcionar alguna orientación; en general, si un modelo está en la misma familia que uno de la lista, el soporte debe ser el mismo.
+
+Modelos compatibles:
+
+A200 A220 A250 A300 A320 A400 A700 A700S A800 A900 C190 FAS2240-4 FAS2552 FAS2650 FAS2720 FAS2750 FAS8200 FAS8300 FAS8700 FAS9000
+
+Modelos no admitidos:
+
+FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/AFF 8020 FAS/AFF 8040 FAS/AFF 8060 FAS/AFF 8080
+
+
+
+== Resolución de problemas
+
+Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
+| Al intentar crear un recopilador de DATOS REST DE ONTAP, aparece un error como el siguiente: Configuration: 10.193.70.14: La API REST de ONTAP en 10.193.70.14 no está disponible: 10.193.70.14 no se pudo OBTENER /api/cluster: 400 Solicitud incorrecta | Esto probablemente se deba a una cabina ONTAP más antigua, por ejemplo, ONTAP 9,6), que no tiene funcionalidades de API DE REST. ONTAP 9.14.1 es la versión de ONTAP mínima admitida por el recopilador de REST DE ONTAP. Se deben esperar respuestas de «Solicitud incorrecta de 400» en versiones de ONTAP previas a LA REST. Para las versiones de ONTAP que admiten REST pero no son 9.14.1 o posteriores, puede ver el siguiente mensaje similar: Configuración: 10.193.98.84: ONTAP REST API at 10.193.98.84 is not available: 10.193.98.84: ONTAP REST API at 10.193.98.84 is available: cheryl5-cluster-2 9.10.1 a3cb3247-3d3c-11ee-8ff3-005056b364a7 pero no es de la versión mínima 9.14.1. 
+
+
+| Veo métricas vacías o «0» donde el recopilador de ontapi de ONTAP muestra datos. | ONTAP REST no informa sobre métricas que se utilizan internamente en el sistema ONTAP únicamente. Por ejemplo, ONTAP REST no recopilará agregados del sistema, solo se recopilarán las SVM de tipo «datos». Otros ejemplos de métricas REST DE ONTAP que pueden informar de datos cero o vacíos: InternalVolumes: REST ya no informa vol0. Agregados: REST ya no informa aggr0. Almacenamiento: La mayoría de las métricas son un paquete acumulativo de las métricas de volumen interno y se verán afectadas por las anteriores. Máquinas virtuales de almacenamiento: REST ya no informa de SVM de otro tipo distinto de 'data' (por ejemplo, 'cluster', 'mgmt', 'nodo'). También es posible observar un cambio en la apariencia de los gráficos que sí tienen datos debido al cambio en el período de sondeo de rendimiento predeterminado de 15 minutos a 5 minutos. Sondeos más frecuentes significan más puntos de datos que trazar. 
+|===
+Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

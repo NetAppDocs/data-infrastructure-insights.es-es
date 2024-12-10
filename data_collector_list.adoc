@@ -250,6 +250,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_na_ontap_rest.html["RECOPILADOR de REST de NetApp ONTAP"] | De almacenamiento 
 
 
+| link:task_dc_na_ontap_all_san_array.html["Recopilador de cabinas All-SAN (ASA) NetApp ONTAP"] | De almacenamiento 
+
+
 | link:task_dc_na_cdot.html["ONTAP Select de NetApp"] | De almacenamiento 
 
 
@@ -305,6 +308,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 
 
 | link:task_config_telegraf_agent.html#ubuntu-and-debian["Ubuntu  Debian"] | Servicio 
+
+
+| link:task_dc_vast_datastore.html["Almacén de datos vasto"] | De almacenamiento 
 
 
 | link:task_dc_vmware.html["VSphere de VMware"] | De almacenamiento 
