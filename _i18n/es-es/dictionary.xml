@@ -6197,15 +6197,10 @@
   <block id="4bf5863c996526f74970c19dc17d7167" category="doc">Análisis forenses: Toda la actividad</block>
   <block id="58ecb418298e803c7a0ae49007466440" category="paragraph">La página All Activity permite comprender las acciones que se realizan en las entidades del entorno Workload Security.</block>
   <block id="33a203d3623a54e6d264ebf5af5db210" category="section-title">Examen de todos los datos de actividad</block>
-  <block id="c86905ef58808f0a9e9e433a9f0ef22e" category="list-text">Un gráfico que muestra _Activity History_ (al que se accede por minuto/cada 5 minutos/cada 10 minutos en función del intervalo de tiempo global seleccionado)</block>
   <block id="dde100b78d6d436ad1c738fca1b98fc6" category="paragraph">Puede ampliar el gráfico arrastrando un rectángulo del gráfico. Se cargará toda la página para mostrar el intervalo de tiempo ampliado. Cuando se amplía, se muestra un botón que permite al usuario alejar el zoom.</block>
-  <block id="e7247ec6fc6f0b522bf9ec41eece5696" category="list-text">Un gráfico de _Activity Types_. Para obtener datos del historial de actividades por tipo de actividad, haga clic en el enlace de etiqueta del eje X correspondiente.</block>
-  <block id="6e50520e7dc49bfd428e7f668c37d876" category="list-text">Un gráfico de actividad en _Entity Types_. Para obtener datos del historial de actividades por tipo de entidad, haga clic en el enlace de etiqueta del eje X correspondiente.</block>
-  <block id="5b5144202e6576c79b813b887fea658e" category="list-text">Una lista de los datos _All Activity_</block>
   <block id="be2a0bbd0e52bd10107615bcddc56fba" category="paragraph">La tabla _*All Activity*_ muestra la siguiente información. Tenga en cuenta que no todas estas columnas se muestran de forma predeterminada. Puede seleccionar las columnas que desea mostrar haciendo clic en el icono de engranaje.</block>
   <block id="10b85952c1ec4b6508b7012df066ef83" category="list-text">El *tiempo* se accedió a una entidad incluyendo el año, mes, día y hora del último acceso.</block>
   <block id="38d1b0982212e47a2dd73e4c40793793" category="inline-link-macro">Información del usuario</block>
-  <block id="6e4775595cef760df16cfc31845a509d" category="list-text">El *usuario* que accedió a la entidad con un enlace a la <block ref="62cf04ad66abc0c5964885d5ae0624ca" category="inline-link-macro-rx"></block>.</block>
   <block id="6bf51f11b7d2354b7c099ad162d81b7a" category="list-text">La *actividad* que realizó el usuario. Los tipos admitidos son:</block>
   <block id="9a04c053eaff60b85a2cae86b2356445" category="inline-link-macro">este enlace.</block>
   <block id="53972c5d1f69f8d23ae301127e80e7e7" category="list-text">*Cambiar propiedad de grupo*: La propiedad de grupo es de archivo o carpeta que se cambia. Para obtener más detalles sobre la propiedad del grupo, consulte <block ref="6cc284c6f1b230da48f23553af5add55" category="inline-link-macro-rx"></block></block>
@@ -6220,15 +6215,11 @@
   <block id="bc2e1628223bbd57334a725f0401d199" category="list-text">*Escribir metadatos* - los metadatos del archivo se escriben, por ejemplo, el permiso cambiado.</block>
   <block id="d05ab97003568ddbd1e124e280eff44d" category="list-text">*Otro Cambio* - cualquier otro evento que no se describe anteriormente. Todos los eventos no asignados se asignan al tipo de actividad “otros cambios”. Aplicable a archivos y carpetas.</block>
   <block id="d97c308acbc0f0d3e5a290abc82e12a0" category="inline-link-macro">Datos de detalle de entidad</block>
-  <block id="f88377a34fbf609b422c589ee5d35273" category="list-text">El *Path* a la entidad con un enlace al <block ref="633539366fa6408c302917ca137b4662" category="inline-link-macro-rx"></block></block>
-  <block id="37e766be9feefb3190b34a91a3d508a1" category="list-text">El *Tipo de entidad*, incluida la extensión de entidad (por ejemplo, archivo) (.doc, .docx, .tmp, etc.)</block>
-  <block id="e62fdb6053340eb340a1208c156c6121" category="list-text">El *dispositivo* donde residen las entidades</block>
   <block id="5d7a5f24f08d7baa937ba58212dc4cb3" category="list-text">El *Protocolo* utilizado para obtener eventos.</block>
   <block id="760b2221e00b39c02b810e7c86cb4944" category="list-text">La *Ruta original* se utiliza para cambiar el nombre de los eventos cuando se cambió el nombre del archivo original. Esta columna no está visible de forma predeterminada en la tabla. Utilice el selector de columna para agregar esta columna a la tabla.</block>
   <block id="5da00530f210d269eaa47bd0630398c7" category="list-text">El *volumen* donde residen las entidades. Esta columna no está visible de forma predeterminada en la tabla. Utilice el selector de columna para agregar esta columna a la tabla.</block>
   <block id="119f264c2e26701f999cacca54ff6a5a" category="section-title">Filtrado de datos del historial de actividades forenses</block>
   <block id="e2dc5b88c4f53d2a648a9f81fdc77ecb" category="paragraph">Existen dos métodos que se pueden utilizar para filtrar datos.</block>
-  <block id="377a8e308f4633976cbdc6b890bb79fe" category="list-text">Pase el ratón sobre el campo de la tabla y haga clic en el icono de filtro que aparece. El valor se agrega a los filtros apropiados en la lista Top _Filter by_.</block>
   <block id="b44d27d7b6b6912f12597adc1f9fa486" category="list-text">Filtre los datos escribiendo en el campo _Filter by_:</block>
   <block id="94d39d472f5515f9137731ff36ee8221" category="paragraph">Seleccione el filtro adecuado en el widget "Filtrar por" superior haciendo clic en el botón *[+]*:</block>
   <block id="9aca188b05e6e40de4b37c9a1ae88452" category="inline-image-macro">Archivador de entidad, width=500</block>
@@ -6244,7 +6235,6 @@
   <block id="3a6aae5bc174d27a503441e1d24d0c68" category="list-text">*Dominio* del usuario que realiza la actividad. Debe proporcionar el *dominio exacto* para filtrar. La búsqueda de dominio parcial, o dominio parcial con prefijo o sufijo con comodín ('*'), no funcionará. _None_ se puede especificar para buscar el dominio que falta.</block>
   <block id="5e5226f8443d6c79a977ffd6e71a8d9d" category="paragraph">Los siguientes campos están sujetos a reglas de filtrado especiales:</block>
   <block id="28894211649d8f9f99c54dc12f77784e" category="list-text">*Tipo de entidad*, usando la extensión de entidad (archivo) - es preferible especificar el tipo de entidad exacto dentro de las comillas. Por ejemplo _“txt”_.</block>
-  <block id="cfacc3a890c7b76e916de509a258355f" category="list-text">*Ruta* de la entidad - Los filtros de ruta de directorio (cadena de ruta que termina con /) hasta 4 directorios de profundidad se recomiendan para obtener resultados más rápidos. Por ejemplo, _/home/userX/nested1/nested2/_ O _”/home/userX/nested1/nested2/”_. Consulte la siguiente tabla para obtener más información.</block>
   <block id="0d97b222b080d69a549c4eb4a4bfe399" category="list-text">*Usuario* realizando la actividad - es preferible especificar el usuario exacto dentro de las comillas. Por ejemplo, _ “Administrador”_.</block>
   <block id="793b0425edef55b10657fd6cc2a5ab5a" category="list-text">*Dispositivo* (SVM) donde residen las entidades</block>
   <block id="6bbd4f26d0615caf6a29b9c2d238dad2" category="list-text">*Volumen* donde residen las entidades</block>
@@ -6258,27 +6248,17 @@
   <block id="13876d45cb0b459833e4aebb72877939" category="cell">Resultado esperado</block>
   <block id="b77349ead71592d04cbccd89fee71c70" category="cell">Evaluación del rendimiento</block>
   <block id="0be8406951cdfda82f00f79328cf4efc" category="cell">Comentar</block>
-  <block id="f2e392688127fe27ba86956a289d1516" category="cell">Path = /home/userX/nested1/nested2/ o /home/userX/nested1/nested2/* o «/home/userX/nested1/nested2/»</block>
   <block id="1fec62ac6ef0096301dec6c9552701f7" category="cell">Búsqueda recursiva de todos los archivos y carpetas en el directorio dado</block>
   <block id="e16b5b7f26f54214445cbe38d72c2828" category="cell">Y rápido</block>
   <block id="f6a092f816e6eb604694d6a921395ccb" category="cell">Las búsquedas en directorios de hasta 4 directorios serán rápidas.</block>
-  <block id="aec252fe472926926066b015c61018d2" category="cell">Path = /home/userX/nested1/ o /home/userX/nested1/* o «/home/userX/nested1/»</block>
-  <block id="83f594a149a47f77a9d0ffd06bd887fa" category="cell">Path = /home/userX/nested1/test* o /home/userX/nested1/test</block>
   <block id="840207e609d7b9a7b687b3b2712e903d" category="cell">Búsqueda recursiva de todos los archivos y carpetas bajo la ruta de acceso regex (prueba* podría significar archivo O directorio O ambos)</block>
   <block id="e7b02c274fe199317927b2a2d54e280e" category="cell">Más lento</block>
   <block id="4b88bc6659fa6ffa1353db049ea38556" category="cell">La búsqueda de directorio+archivo regex será más lenta en comparación con las búsquedas de directorio.</block>
-  <block id="5ebfaf9d735f32f7095e67382caa89fa" category="cell">Path = /home/userX/nested1/nested2/nested3/ o /home/userX/nested1/nested2/nested3/* o «/home/userX/nested1/nested2/nested3/»</block>
   <block id="1bd0462f5987c1382af61035c6ea62ff" category="cell">Más de 4 búsquedas de directorios son más lentas para realizar búsquedas.</block>
-  <block id="60f679d95b13137d0f02dac90990fa24" category="cell">Path=\*userX/nested1/test*</block>
-  <block id="42779f1f471dcd0efc744707a9d12fb3" category="cell">Búsqueda recursiva de todos los archivos y carpetas bajo la cadena de ruta de acceso comodín dada (prueba* podría significar archivo O directorio O ambos)</block>
-  <block id="53ad658aa3b68ee6f8ac34262f27efc5" category="cell">La más lenta</block>
-  <block id="baf0959545ccd91564d61f6f09d3d6fc" category="cell">La búsqueda inicial con comodines son búsquedas más lentas.</block>
   <block id="2127f473d96f54c997a492a6ca024c5b" category="cell">Cualquier otro filtro no basado en ruta. Filtros de tipo de usuario y entidad recomendados para estar entre comillas, por ejemplo, User= “Administrator” Entity Type= “txt”</block>
   <block id="9b9935ad5969c28de13381a2e512b47c" category="paragraph">NOTA:</block>
   <block id="d8255e556913387acdb6c6f885c59f99" category="list-text">El recuento de actividades que se muestra junto al icono Todas las actividades se redondea a 30 minutos cuando el intervalo de tiempo seleccionado abarca más de 3 días. Por ejemplo, un intervalo de tiempo de _sept 1st 10:15 am a sept 7th 10:15 am_ mostrará recuentos de actividades desde sept 1st 10:00 am hasta sept 7th 10:30 am.</block>
-  <block id="3ba96afd89f810071e642a2580c035d0" category="list-text">Del mismo modo, las métricas de recuento que se muestran en Tipos de actividad, Actividad en tipos de entidad e Historial de actividad se redondean a 30 minutos cuando el intervalo de tiempo seleccionado abarca más de 3 días.</block>
   <block id="b94c2ef661065c39f8d83558c3eafe45" category="section-title">Ordenar datos del historial de actividades forenses</block>
-  <block id="95389b3cb82b7172ea6147fa876a9ffa" category="paragraph">Puede ordenar los datos del historial de actividades por _Tiempo, Usuario, IP de origen, Actividad,_ y _Tipo de entidad_. De forma predeterminada, la tabla se ordena por orden _time_ descendente, lo que significa que los datos más recientes se mostrarán primero. La ordenación está desactivada para los campos _Device_ y _Protocol_.</block>
   <block id="5203772926767a923fffeec0454915d0" category="section-title">Guía de usuario para exportaciones asíncronas</block>
   <block id="e51ee07acf4b7676b7e8d7d9ddfcc237" category="paragraph">La función de exportaciones asíncronas de Storage Workload Security está diseñada para gestionar grandes exportaciones de datos.</block>
   <block id="34e6887c3fe7a34ac28d932e0916f098" category="section-title">Guía paso a paso: Exportación de datos con exportaciones asíncronas</block>
@@ -6299,37 +6279,24 @@
   <block id="5ac805f98623b1f23909793e4ff3a262" category="cell">Aplicable a estos filtros</block>
   <block id="b1b275726951e4adc620b69d947baf49" category="cell">No aplicable a estos filtros</block>
   <block id="0a3087cfc2ea9ac71095f821d14ee027" category="cell">Auto*03172022 Si el texto de búsqueda contiene guiones o guiones bajos, dar expresión entre paréntesis, por ejemplo, (svm*) para buscar svm-123</block>
-  <block id="a95d3431c2b5559d818d2555fcc3e835" category="cell">Usuario, RUTA, tipo de entidad, dispositivo, volumen, ruta original</block>
-  <block id="de49d77f1ec8a76ce0ab6d070d1a883c" category="cell">Devuelve todos los recursos que empiezan por “Auto” y terminan por “03172022”</block>
   <block id="3518217f55c95e834c4ea7984f8aa0cd" category="cell">AutoSabotageUser1_03172022?</block>
-  <block id="4e264b37a7e8d68a4e163769aad53d58" category="cell">Usuario, Tipo de entidad, dispositivo, volumen</block>
   <block id="a28771ee6ad9a7771a86f5d6ceeed78e" category="cell">Devuelve AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225, etc.</block>
   <block id="3adefd54fc738f8196af6304ed8929ac" category="cell">AutoSabotageUser1_03172022 o AutoRansomUser4_03162022</block>
-  <block id="c7cf1f6ecae876f330364b876e6cbc83" category="cell">Usuario, Dominio, RUTA DE ACCESO, Tipo de Entidad, Ruta de Acceso Original</block>
   <block id="0a01700b4705c6c47c24699ad7d4a4cb" category="cell">Devuelve cualquiera de los valores de AutoSabotageUser1_03172022 O AutoRansomUser4_03162022</block>
   <block id="0ca071eb91357e8d4685daee24bd3360" category="cell">NO es AutoRansomero4_03162022</block>
-  <block id="317a59d89beb67b7ebe23ef56d3b409e" category="cell">Usuario,Dominio, RUTA DE ACCESO, Tipo de Entidad, RUTA DE ACCESO Original</block>
   <block id="e0ac20adce6ffee48c7151b070aa5737" category="cell">Dispositivo</block>
   <block id="e0c965c954b5a9fdc33c5b0516799f7d" category="cell">Devuelve todo lo que no empieza con"AutoRansomUser4_03162022"</block>
   <block id="eae639a70006feff484a39363c977e24" category="cell">Dominio</block>
   <block id="3c16a1572c295ef2bbd770516679c559" category="cell">devuelve los resultados en los que el campo de destino está vacío</block>
   <block id="012f3ec70fcf8eccc1fce56e4a0b94b6" category="section-title">Ruta / Búsqueda de ruta original</block>
   <block id="64048c881c93933680d02730e9d9ce63" category="paragraph">Los resultados de búsqueda con y sin / serán diferentes</block>
-  <block id="cc2d816075324608acf344b23cf3e6bb" category="cell">/AutoDir1/AutoFile</block>
-  <block id="7b8af977b90a67e053ff2667a26828fe" category="cell">Funciona</block>
-  <block id="d8c67b8ac649f41c2a92277fb6c013ce" category="cell">AutoDir1/AutoArchivo</block>
   <block id="53ca5edb3205aa3468395e1789114a60" category="cell">No funciona</block>
-  <block id="5ccae7957209ff321acad5f697fee3fb" category="cell">/AutoDir1/Autoarchivo (Dir1)</block>
-  <block id="63f523ece51ecefa957ca39c100af8cb" category="cell">La subcadena parcial dir1 no funciona</block>
   <block id="1d7531d059e4088a0878ea4eb94d32b6" category="cell">"/AutoDir1/Autofile03242022"</block>
-  <block id="a38f318e70e36e7cc00c72afcc7e5fc0" category="cell">La búsqueda exacta funciona</block>
-  <block id="7cce9e39c248f665a5808932eb5899ed" category="cell">Auto*03242022</block>
   <block id="888f8ecf6256a9875ff5de4f10099453" category="cell">/AutoDir1/AutoFile03242022 O /AutoDir1/AutoFile03242022</block>
   <block id="d87dd477d16107bb862f99dedbcacce4" category="cell">NO /AutoDir1/AutoFile03242022</block>
   <block id="867d74d5a7cefddb9c7bc445d7c5b7e1" category="cell">NO /AutoDir1</block>
   <block id="137812c306b0ede761fedbc1e1b88824" category="cell">NO /Autofile03242022</block>
   <block id="3389dae361af79b04c9c8e7057f60cc6" category="cell">*</block>
-  <block id="8bc6542329adc040b119d4b8973c0d7f" category="cell">Muestra todas las entradas</block>
   <block id="6170d8ef618bd7f0badc437283eafda2" category="section-title">Cambios en la actividad de un usuario raíz SVM local</block>
   <block id="9c8deec3d6d59e3389ce0b911bb6d4e8" category="paragraph">Si un usuario de SVM raíz local realiza alguna actividad, la IP del cliente en el que se monta el recurso compartido de NFS ahora se considera en el nombre de usuario, que se mostrará como root@&lt;ip-address-of-the-client&gt; tanto en las páginas de actividad forense como de actividad del usuario.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Por ejemplo:</block>
@@ -6342,11 +6309,9 @@
   <block id="65524feb61d50c77bb7ba2638a763f8e" category="cell">Algunos eventos de NFS no se ven en la interfaz de usuario de.</block>
   <block id="57312d53719f5635163cdff04dd88136" category="cell">Compruebe lo siguiente: 1. Se debe ejecutar un recopilador de directorios de usuarios para el servidor AD con el conjunto de atributos POSIX con el atributo unixid habilitado desde la interfaz de usuario. 2. Cualquier usuario que haga acceso a NFS debe verse cuando se busque en la página de usuario desde UI 3. Los eventos sin formato (los eventos para los que aún no se ha detectado el usuario) no son compatibles con NFS 4. El acceso anónimo a la exportación de NFS no se supervisará. 5. Asegúrese de que la versión de NFS se utiliza en menos de NFS4,1.</block>
   <block id="9bb3efbd29374edfd5411d3bf02b3b92" category="cell">Después de escribir algunas letras que contienen un carácter comodín como asterisco (*) en los filtros de las páginas Forensics _All Activity_ o _entities_, las páginas se cargan muy lentamente.</block>
-  <block id="a4bef4c7f69527b57f21a4e1042859e6" category="cell">Un asterisco (\*) en la cadena de búsqueda busca todo. Sin embargo, las cadenas comodín iniciales como _*&lt;searchTerm&gt;_ o _*&lt;searchTerm&gt;*_ resultarán en una consulta lenta. Para obtener un mejor rendimiento, utilice cadenas de prefijo en su lugar, en el formato _&lt;searchTerm&gt;*_ (en otras palabras, agregue el asterisco (*) _after_ un término de búsqueda). Ejemplo: Utilice la cadena _testvolume*_, en lugar de _*testvolume_ o _*test*volume_. Utilice una búsqueda de directorio para ver todas las actividades debajo de una carpeta dada de forma recursiva (búsqueda jerárquica). Por ejemplo, /path1/path2/path3/ o “/path1/path2/path3/” enumerará todas las actividades de forma recursiva en /path1/path2/path3. Alternativamente, use la opción “Agregar a filtro” en la pestaña Todas las actividades.”</block>
   <block id="e7b6c39291eb31c1a3a49eb83274bc99" category="cell">Encuentro un error de solicitud fallida con el código de estado 500/503 al utilizar un filtro de ruta.</block>
   <block id="62ce499553ccf0270c3a01cc146e46fd" category="cell">Intente utilizar un rango de fechas más pequeño para filtrar registros.</block>
   <block id="1fb20c216d1008aa26dd3559c9f0c877" category="cell">La interfaz de usuario forense carga los datos lentamente cuando se utiliza el filtro _PATH_.</block>
-  <block id="5476c41b7c022f91a0f9bbdf0fc8ce23" category="cell">Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, si la ruta de directorio es /AAA/BBB/CCC/DDD, intente buscar /AAA/BBB/CCC/DDD/ o “/AAA/BBB/CCC/DDD/” para cargar datos más rápido.</block>
   <block id="4ed13073e0e17eddac59bbd07534d454" category="summary">detalles de alertas</block>
   <block id="2bd2674780743dda05f63eee21fd6a4a" category="doc">Detalles de alertas</block>
   <block id="98948b727c85548add2cbc9deee42e44" category="paragraph">Al hacer clic en la sinopsis de una alerta, se abre la página con información detallada del usuario y de la alerta que han generado.</block>
@@ -11858,4 +11823,65 @@
   <block id="a59ed6c78eadc966927de4b65adc1801" category="cell">La dirección IP o el FQDN del sistema de almacenamiento</block>
   <block id="9f329f951728d9fd2dc3c86d970b2e7f" category="cell">Nombre de usuario de VAST Storage</block>
   <block id="50f8e432f3a17936f4fd1dee864d7ff1" category="cell">Contraseña de almacenamiento de VAST</block>
+  <block id="73b3856e20fbea83dc1573f8203ad6a4" category="section-title">Diciembre de 2024</block>
+  <block id="250ed06d5f29637379abd3edd8ccb4fe" category="section-title">Presentación de SAN Analyzer: Mayor visibilidad para las cargas de trabajo de bloques</block>
+  <block id="49191bde032b0a06cb7d8c4dbf4e0c2b" category="paragraph">SAN tiene un papel crucial en la gestión de las cargas de trabajo vitales, pero su complejidad puede provocar interrupciones del servicio significativas y interrupciones en los clientes. Con el *SAN Analyzer* de DII, la gestión de SAN se vuelve más sencilla y eficiente. Esta potente herramienta ofrece una visibilidad integral al asignar dependencias desde el equipo virtual/host a la red y a la LUN y el almacenamiento. Al proporcionar un mapa topológico interactivo, SAN Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de SAN en ENTORNOS DE TI complejos con SAN Analyzer y aumente la visibilidad de las cargas de trabajo de bloque.</block>
+  <block id="61d4e461f8538411417e8b8c7ff23e5f" category="inline-image-macro">Mapa de topología de un sistema de almacenamiento de SAN Analyzer</block>
+  <block id="88fcd4bccce9d01f199341d0e9984b17" category="paragraph"><block ref="88fcd4bccce9d01f199341d0e9984b17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c2681c9d6c3db841d3a049c6bbf8d82a" category="section-title">Optimice los costes de equipos virtuales con el desmantelamiento inteligente de hosts y la recuperación de equipos virtuales</block>
+  <block id="a58daa9ad322ff0d5d1bea8593ec6261" category="paragraph">Data Infrastructure Insights le ayuda a gestionar los costes de infraestructura y licencias mediante el análisis del comportamiento histórico del entorno y el establecimiento de predicciones a corto y largo plazo, generando recomendaciones detalladas para el desmantelamiento de hosts y la recuperación de máquinas virtuales inactivas y apagadas. Estas recomendaciones le ayudan a garantizar la estabilidad del rendimiento, liberar capacidad no utilizada y reducir la asignación de memoria y CPU.</block>
+  <block id="ed0aa60d6c4877c4d0602878ae188670" category="inline-image-macro">Pantalla Resumen de Optimización de VM</block>
+  <block id="c50d71fa323ac9b252a5fd01ae4f0fa8" category="paragraph"><block ref="c50d71fa323ac9b252a5fd01ae4f0fa8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a2400ca2503817e25cc3cce30596342c" category="section-title">Descubre Log Insights con gráficos de tiempo y soporte de widget de tabla</block>
+  <block id="6c12a3962815cd3e42c1cdf63f2da995" category="paragraph">Ahora puede aprovechar los gráficos de tiempo (barra, línea, área) para identificar tendencias y patrones en los datos de registro, como errores recurrentes o picos de actividad, proporcionando información valiosa sobre el comportamiento del sistema a lo largo del tiempo. Además, con las tablas, ahora puede incluir mensajes de registro directamente en el panel de control, lo que permite una vista más completa de los detalles del registro.</block>
+  <block id="8f54ba922e1fc5987015f85316b5754e" category="inline-image-macro">registre la información en una consola</block>
+  <block id="809b6f360aa1cdf48739240c3cd4bd18" category="paragraph"><block ref="809b6f360aa1cdf48739240c3cd4bd18" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="465a0839e1a3baa7c16a3570422d8192" category="section-title">Nueva API de alertas de seguridad de cargas de trabajo</block>
+  <block id="80d907c59267477074ffff0c4bc596d1" category="inline-link-macro">*Cloudsecure_forsics.alerts* API</block>
+  <block id="660f68f674a802a6f62dc93554bb9bc7" category="paragraph">Recuperar detalles de alerta forense con la nueva seguridad de carga de trabajo <block ref="7e52918b1486a19a183009a277dadce1" category="inline-link-macro-rx"></block>.</block>
+  <block id="9e589be99db071a43e160359db57efaa" category="inline-image-macro">API de alertas forenses de seguridad de cargas de trabajo</block>
+  <block id="3208596ca58c1fef6b7222123babb2fc" category="paragraph"><block ref="3208596ca58c1fef6b7222123babb2fc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c55b8bf6c1b8aab646e91366d10f4c2" category="list-text">Un gráfico que muestra _Activity History_ (basado en el rango de tiempo global seleccionado)</block>
+  <block id="977eedf5743a236d4137f46ddfcd8dea" category="list-text">Una lista de los datos _All Activity_.</block>
+  <block id="ce0a4ef9bdcf713141ba5af92b5449a2" category="list-text">Una lista desplegable GROUP BY proporcionará la opción de agrupar la actividad por usuarios, ruta, tipo de entidad, etc.</block>
+  <block id="2f67a7ee2834facb4c2289f3f9f8a7b0" category="list-text">Un botón de ruta común estará disponible sobre la tabla en clic del que podemos obtener el panel deslizante con detalles de ruta de la entidad.</block>
+  <block id="2b9b3cac1b8e073b6533f3389ac6ad5f" category="list-text">El *usuario* que accedió a la entidad con un enlace a la <block ref="62cf04ad66abc0c5964885d5ae0624ca" category="inline-link-macro-rx"></block> como un panel deslizante.</block>
+  <block id="06bc22bdba9ef782b6246496ad8db1bd" category="list-text">El *Path* es _entity_ path.</block>
+  <block id="2c20ae8e4eac25c0be12e73a9aea15f8" category="list-text">La carpeta de nivel *1st (root)* es el directorio raíz de la ruta de la entidad en minúscula.</block>
+  <block id="d56292c623739eef9a2dbb8219169c5c" category="list-text">La carpeta de nivel *2nd* es el directorio de segundo nivel de la ruta de la entidad en minúscula.</block>
+  <block id="21a75329f45abb51a3f768e3caaf47c5" category="list-text">La carpeta de nivel *3rd* es el directorio de tercer nivel de la ruta de la entidad en minúsculas.</block>
+  <block id="7b8aa77c3f1deb89d25b5f29c9ce9fe7" category="list-text">La carpeta de nivel *4th* es el directorio de nivel cuarto de la ruta de la entidad en minúscula.</block>
+  <block id="1cfc47a3f4a9a458bac6b849750a7166" category="list-text">El *Tipo de entidad*, incluyendo la extensión de entidad (es decir, archivo) (.doc, .docx, .tmp, etc.).</block>
+  <block id="6b55724425c02fae17e4fff5b3336a9e" category="list-text">El *Dispositivo* donde residen las entidades.</block>
+  <block id="08390553f30a685240a7ae2bc8cdd70c" category="paragraph">Al seleccionar una fila de tabla, se abre un panel desplegable con el perfil de usuario en una pestaña y la vista general de actividad y entidad en otra pestaña.</block>
+  <block id="357b8ac20b345bb5aee27a2fb53ee941" category="inline-image-macro">página forense en la que se muestra la presentación que muestra la actividad del usuario</block>
+  <block id="e08e6c5ce4260f7b4811b0e35d723120" category="paragraph"><block ref="e08e6c5ce4260f7b4811b0e35d723120" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ef9a972d6440d68fa4034bb513b1a1f1" category="paragraph">El método _Group by_ por defecto es _Activity forsics_. Si selecciona un método _Group by_ distinto--por ejemplo, Tipo de entidad--se mostrará la tabla _Group by_ de entidad. Si no se realiza ninguna selección, se muestra _Agrupar por_ *Todo*.</block>
+  <block id="80662c9452da0395efcb752fc6efd791" category="list-text">El recuento de actividades se muestra como un hipervínculo; al seleccionarlo, se agregará la agrupación seleccionada como filtro. La tabla de actividad se actualizará en función de ese filtro.</block>
+  <block id="f5048103eec701282d4bd47edb30c0dd" category="list-text">Tenga en cuenta que si cambia el filtro, modifica el intervalo de tiempo o actualiza la pantalla, no podrá volver a los resultados filtrados sin volver a configurar el filtro.</block>
+  <block id="a7b9ef6a74f521c07a42dfe2b3ba5984" category="list-text">El filtro se puede añadir desde el panel deslizante. El valor se agrega a los filtros apropiados en la lista Top _Filter by_.</block>
+  <block id="a6c33488a3d8762852d55cced3c5bf96" category="list-text">*Ruta* de la entidad - Los filtros de ruta de directorio (cadena de ruta que termina con /) hasta 4 directorios de profundidad se recomiendan para obtener resultados más rápidos. Por ejemplo, _”/home/userX/nested1/nested2/”_. Consulte la siguiente tabla para obtener más información.</block>
+  <block id="abc9548bbf938c1b00d7d7943eea69c6" category="list-text">Carpeta de nivel 1st (raíz) - Directorio raíz de la ruta de la entidad como filtros. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar home O home.</block>
+  <block id="ef05d086fd7703f59da830094683f26b" category="list-text">Carpeta de nivel 2nd - Directorio de nivel 2nd de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces userX O “userX” se puede utilizar.</block>
+  <block id="d09c77be27888e5715284768b4b56a37" category="list-text">Carpeta de nivel 3rd: Directorio de nivel 3rd de los filtros de ruta de la entidad.</block>
+  <block id="af2e930a257c8313695f9a6d5e9c587c" category="list-text">Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces nested1 O “nested1” se pueden utilizar.</block>
+  <block id="73563b05b63d5f6abf9aac631e04c7b1" category="list-text">Carpeta de nivel 4th - Directorio de nivel 4th de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces nested2 O “nested2” se pueden utilizar.</block>
+  <block id="4f1f0488f8878a68e5eb50610b690092" category="cell">Path = «/home/userX/nested1/nested2/»</block>
+  <block id="bd12893dcbe3201853dc72f0c6467347" category="cell">Ruta = «/home/userX/nested1/»</block>
+  <block id="1d0c26b23985cb45609efc05c13c3294" category="cell">Path = “/home/userX/nested1/test”</block>
+  <block id="735bdb9fe63d4b5dcefb1fab563b1783" category="cell">Path = «/home/userX/nested1/nested2/nested3/»</block>
+  <block id="fa9485df6d085377bf71d0ebb0343af0" category="list-text">Del mismo modo, las métricas de recuento que se muestran en el gráfico Historial de actividades se redondean a 30 minutos cuando el intervalo de tiempo seleccionado abarca más de 3 días.</block>
+  <block id="20b023807d41f295e71a0807936532d8" category="paragraph">Puede ordenar los datos del historial de actividades por _Tiempo, Usuario, IP de origen, Actividad,_, _Tipo de entidad_, Carpeta de 1st niveles (raíz), Carpeta de 2nd niveles, Carpeta de 3rd niveles y Carpeta de 4th niveles. De forma predeterminada, la tabla se ordena por orden _time_ descendente, lo que significa que los datos más recientes se mostrarán primero. La ordenación está desactivada para los campos _Device_ y _Protocol_.</block>
+  <block id="3ba465c35d8b2ac685818d0b9a9ba4f7" category="cell">Usuario, Tipo de entidad, Dispositivo, Volumen, Ruta original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel</block>
+  <block id="6273bbd8f9632e4d401abdeec82c9a39" category="cell">Devuelve todos los recursos que comienzan con “Auto” y terminan con “03172022”</block>
+  <block id="3917b61839732c75ca8202af25ad4257" category="cell">Usuario, Tipo de entidad, Dispositivo, Volumen, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel</block>
+  <block id="18575a59bc1468900953267afdfc5c81" category="cell">Usuario, Dominio, Tipo de entidad, Ruta de acceso original</block>
+  <block id="7c76f178211d14484e376bc483bd1077" category="cell">Usuario, Dominio, Tipo de entidad, Ruta original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel</block>
+  <block id="44144cdf07fe03ca4c4d71ecf2ee830c" category="cell">Solo funciona la búsqueda exacta; devuelve todas las actividades con la ruta exacta como /AutoDir1/AutoFile03242022 (caso insensible)</block>
+  <block id="f7bf447e3a19a294d681133f069ea62c" category="cell">«/AutoDir1/ »</block>
+  <block id="8431be8aa2f333f025452fc93c584143" category="cell">Funciona; devuelve todas las actividades con un directorio de 1st niveles que coincide con AutoDir1 (caso insensible)</block>
+  <block id="dac09bc6942369c2d0f8d36f26d2e201" category="cell">«/AutoDir1/AutoFile03242022/ »</block>
+  <block id="17411e5191f440928552bd359518e697" category="cell">Funciona; devuelve todas las actividades con un directorio de 1st niveles que coincide con el directorio de AutoDir1 y 2nd niveles que coincide con AutoFile03242022 (sin sensibilidad)</block>
+  <block id="a874dae9695be1c2a6ef02373776f7b7" category="cell">Un asterisco (\*) en la cadena de búsqueda busca todo. Sin embargo, las cadenas comodín iniciales como _*&lt;searchTerm&gt;_ o _*&lt;searchTerm&gt;*_ resultarán en una consulta lenta. Para obtener un mejor rendimiento, utilice cadenas de prefijo en su lugar, en el formato _&lt;searchTerm&gt;*_ (en otras palabras, agregue el asterisco (*) _after_ un término de búsqueda). Ejemplo: Utilice la cadena _testvolume*_, en lugar de _*testvolume_ o _*test*volume_. Utilice una búsqueda de directorio para ver todas las actividades debajo de una carpeta dada de forma recursiva (búsqueda jerárquica). Por ejemplo, “/path1/path2/path3/” enumerará todas las actividades de forma recursiva en /path1/path2/path3. Alternativamente, use la opción “Agregar a filtro” en la pestaña Todas las actividades.”</block>
+  <block id="980f8b6539b7c131f66cdde66f81a98f" category="cell">Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, si la ruta de directorio es /AAA/BBB/CCC/DDD, intente buscar “/AAA/BBB/CCC/DDD/” para cargar datos más rápido.</block>
 </blocks>

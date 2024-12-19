@@ -20,7 +20,43 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== Diciembre de 2024
+
+
+
+=== Presentación de SAN Analyzer: Mayor visibilidad para las cargas de trabajo de bloques
+
+SAN tiene un papel crucial en la gestión de las cargas de trabajo vitales, pero su complejidad puede provocar interrupciones del servicio significativas y interrupciones en los clientes. Con el *SAN Analyzer* de DII, la gestión de SAN se vuelve más sencilla y eficiente. Esta potente herramienta ofrece una visibilidad integral al asignar dependencias desde el equipo virtual/host a la red y a la LUN y el almacenamiento. Al proporcionar un mapa topológico interactivo, SAN Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de SAN en ENTORNOS DE TI complejos con SAN Analyzer y aumente la visibilidad de las cargas de trabajo de bloque.
+
+image:san_analyzer_example_with_panel.png["Mapa de topología de un sistema de almacenamiento de SAN Analyzer"]
+
+
+
+=== Optimice los costes de equipos virtuales con el desmantelamiento inteligente de hosts y la recuperación de equipos virtuales
+
+Data Infrastructure Insights le ayuda a gestionar los costes de infraestructura y licencias mediante el análisis del comportamiento histórico del entorno y el establecimiento de predicciones a corto y largo plazo, generando recomendaciones detalladas para el desmantelamiento de hosts y la recuperación de máquinas virtuales inactivas y apagadas. Estas recomendaciones le ayudan a garantizar la estabilidad del rendimiento, liberar capacidad no utilizada y reducir la asignación de memoria y CPU.
+
+image:vm_optimization_summary.png["Pantalla Resumen de Optimización de VM"]
+
+
+
+=== Descubre Log Insights con gráficos de tiempo y soporte de widget de tabla
+
+Ahora puede aprovechar los gráficos de tiempo (barra, línea, área) para identificar tendencias y patrones en los datos de registro, como errores recurrentes o picos de actividad, proporcionando información valiosa sobre el comportamiento del sistema a lo largo del tiempo. Además, con las tablas, ahora puede incluir mensajes de registro directamente en el panel de control, lo que permite una vista más completa de los detalles del registro.
+
+image:log_insights_dashboard_example.png["registre la información en una consola"]
+
+
+
 == Noviembre de 2024
+
+
+
+=== Nueva API de alertas de seguridad de cargas de trabajo
+
+Recuperar detalles de alerta forense con la nueva seguridad de carga de trabajo link:concept_cs_api.html["*Cloudsecure_forsics.alerts* API"].
+
+image:ws_forensics_alerts_api.png["API de alertas forenses de seguridad de cargas de trabajo"]
 
 
 
