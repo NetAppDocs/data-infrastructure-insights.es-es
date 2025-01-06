@@ -119,12 +119,6 @@ Tenga en cuenta que AWS distingue entre mayúsculas y minúsculas, mientras que 
 
 
 
-== Incluir regiones adicionales
-
-En la sección AWS Data Collector *Configuración avanzada*, puede configurar el campo *incluir regiones adicionales* para que incluya regiones adicionales separadas por coma o punto y coma. De forma predeterminada, este campo se establece en *_US-.*_*, que recoge todas las regiones de AWS de EE.UU.. Para recopilar en _All_ regiones, establezca este campo en *_.*_*. Si el campo *incluir regiones adicionales* está vacío, el recopilador de datos recopilará en los activos especificados en el campo *Región de AWS* según se especifica en la sección *Configuración*.
-
-
-
 == Recopilación de cuentas secundarias de AWS
 
 Data Infrastructure Insights admite la recopilación de cuentas secundarias de AWS en un único recopilador de datos de AWS. La configuración de esta colección se realiza en el entorno AWS:

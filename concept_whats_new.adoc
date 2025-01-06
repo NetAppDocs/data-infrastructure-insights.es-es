@@ -48,6 +48,15 @@ image:log_insights_dashboard_example.png["registre la información en una consol
 
 
 
+=== Gestione el riesgo de forma proactiva con Forensics Grouping
+
+¡Presentamos nuestra última función diseñada para mejorar sus capacidades de seguridad y gestión de recursos! Con la funcionalidad grupal-por forense avanzada y el soporte jerárquico de varios grupos, ahora puede identificar fácilmente qué usuarios accedieron a carpetas específicas, determinar los usuarios y recursos compartidos más activos, y administrar el riesgo de manera proactiva mediante el seguimiento de las direcciones IP de los clientes activos. Optimice el uso de almacenamiento y ancho de banda mediante la identificación de los archivos y carpetas a los que se accede con más frecuencia y obtenga un mayor control sobre el acceso al sistema identificando usuarios reales.
+
+image:forensics-group-by-example-screen.png["pantalla de ejemplo forense que muestra el grupo por"]
+
+'''
+
+
 == Noviembre de 2024
 
 
