@@ -29,7 +29,7 @@ Para obtener información sobre la instalación en Kubernetes, consulte la link:
 NOTE: Para una auditoría y un informe de datos precisos, se recomienda encarecidamente sincronizar el tiempo en el equipo del agente mediante *Protocolo de tiempo de red (NTP)* o *Protocolo simple de tiempo de red (SNTP)*.
 
 
-NOTE: Si desea verificar los archivos de instalación antes de instalar el agente, consulte la sección siguiente en <<Verificando sumas de comprobación>>.
+NOTE: Si desea verificar los archivos de instalación antes de instalar el agente, consulte la sección siguiente en <<Verifying Checksums>>.
 
 
 
@@ -364,15 +364,15 @@ systemctl stop telegraf (If your operating system is using systemd)
 
 
 
-== Verificando sumas de comprobación
+== Verificando sumas de comprobación del paquete de Telegraf
 
-El instalador del agente de Data Infrastructure Insights realiza comprobaciones de integridad, pero es posible que algunos usuarios deseen realizar sus propias verificaciones antes de instalar o aplicar artefactos descargados. Esto se puede hacer descargando el instalador y generando una suma de comprobación para el paquete descargado y, a continuación, comparando la suma de comprobación con el valor que se muestra en las instrucciones de instalación.
+El instalador del agente Data Infrastructure Insights realiza comprobaciones de integridad, pero es posible que algunos usuarios deseen realizar sus propias verificaciones antes de instalar el binario Telegraf descargado. Esto se puede hacer descargando el instalador y generando una suma de comprobación para el paquete descargado y, a continuación, comparando la suma de comprobación con el valor que se muestra en las instrucciones de instalación.
 
 
 
 === Descargue el paquete del instalador sin instalar
 
-Para realizar una operación de sólo descarga (a diferencia de la descarga e instalación predeterminadas), los usuarios pueden editar el comando de instalación del agente obtenido de la interfaz de usuario y eliminar la opción de instalación final.
+Para realizar una operación de solo descarga (a diferencia de la opción predeterminada download-and-install), los usuarios pueden editar el comando de instalación del agente obtenido de la interfaz de usuario y eliminar la opción “install”.
 
 Siga estos pasos:
 
@@ -387,35 +387,36 @@ Sin Windows (estos ejemplos son para Kubernetes; los nombres reales de los scrip
 
 * Descargar e instalar (predeterminado):
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download –-install
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify && sudo -E -H ./$installerName --install
 * Solo descarga:
 +
- installerName=cloudinsights-kubernetes.sh … && sudo -E -H ./$installerName --download
+ installerName=cloudinsights-ubuntu_debian.sh … && ./$installerName --download --verify
 
 
 Windows.
 
 * Descargar e instalar (predeterminado):
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download -install)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify -install } else { Write-Host "Install script checksum does not match"})"
 * Solo descarga:
 +
- !$($installerName=".\cloudinsights-windows.ps1") … -and $(&$installerName -download)
+ !$($installerName=".\cloudinsights-windows.ps1") … -and $(if(((Get-FileHash $installerName).Hash).ToLower() -eq "INSTALLER_CHECKSUM ") { &$installerName -download -verify } else { Write-Host "Install script checksum does not match"})"
 
 
 El comando download-only descargará todos los artefactos necesarios de Data Infrastructure Insights en el directorio de trabajo. Los artefactos incluyen, pero no se pueden limitar a:
 
 * una secuencia de comandos de instalación
 * un archivo de entorno
-* Archivos YAML
-* un archivo de suma de comprobación (que termina en sha256.signed o sha256.ps1)
+* Un binario de Telegraf
+* Una firma para el binario de Telegraf
+* certificado público para verificar la firma binaria
 
 
-La secuencia de comandos de instalación, el archivo de entorno y los archivos YAML se pueden verificar mediante inspección visual.
+El fragmento de instalación descargado y copiado desde DII comprueba automáticamente el script de instalación, y la firma del binario de telegraf se verifica mediante el script de instalación.
 
 
 
-=== Generar valor de suma de comprobación
+=== Verifique el valor de suma de comprobación
 
 Para generar el valor de suma de comprobación, ejecute el siguiente comando en su plataforma adecuada:
 
@@ -425,20 +426,6 @@ Para generar el valor de suma de comprobación, ejecute el siguiente comando en 
 * Windows.
 +
  Get-FileHash telegraf.zip -Algorithm SHA256 | Format-List
-
-
-
-
-=== Verifique la suma de comprobación
-
-Extraiga la suma de comprobación esperada del archivo de suma de comprobación
-
-* No Windows:
-+
- openssl smime -verify -in telegraf*.sha256.signed -CAfile netapp_cert.pem -purpose any -nosigs -noverify
-* Windows.
-+
- (Get-Content telegraf.zip.sha256.ps1 -First 1).toUpper()
 
 
 

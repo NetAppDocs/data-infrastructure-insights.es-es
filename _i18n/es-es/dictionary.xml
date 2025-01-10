@@ -8769,10 +8769,7 @@
   <block id="b5648f15565fb8185bfc83aaabee9577" category="paragraph">Si el sistema operativo no utiliza systemd:</block>
   <block id="936ff88b3ce432ac2624f7f2bb4998a4" category="paragraph">Para desinstalar el agente en Ubuntu/Debian, en un terminal Bash, ejecute lo siguiente:</block>
   <block id="7f3a9bda6122a676154f73d5edf02232" category="list-text"><block ref="760050cb55c606cd7ef0af21f798bf45" category="inline-link-macro-rx"></block>.</block>
-  <block id="99b7973dda927022b1a7232d7b78e926" category="section-title">Verificando sumas de comprobación</block>
-  <block id="6a9aa39bb342c83778b90096fb82f44f" category="paragraph">El instalador del agente de Data Infrastructure Insights realiza comprobaciones de integridad, pero es posible que algunos usuarios deseen realizar sus propias verificaciones antes de instalar o aplicar artefactos descargados. Esto se puede hacer descargando el instalador y generando una suma de comprobación para el paquete descargado y, a continuación, comparando la suma de comprobación con el valor que se muestra en las instrucciones de instalación.</block>
   <block id="1078df24543dad61e1b5b51f611f5b0f" category="section-title">Descargue el paquete del instalador sin instalar</block>
-  <block id="48feb91430f93bd8ac9740e9cdc40c75" category="paragraph">Para realizar una operación de sólo descarga (a diferencia de la descarga e instalación predeterminadas), los usuarios pueden editar el comando de instalación del agente obtenido de la interfaz de usuario y eliminar la opción de instalación final.</block>
   <block id="deadee5e2cfce7600cfd5def40a7d618" category="paragraph">Siga estos pasos:</block>
   <block id="8c386e0a7a8cfc20ef9a26dacd925e69" category="list-text">Copie el fragmento de instalador del agente como se indica.</block>
   <block id="225b18b0098145b352b8fbf6c04e8098" category="list-text">En lugar de pegar el fragmento en una ventana de comandos, péguelo en un editor de texto.</block>
@@ -8786,14 +8783,8 @@
   <block id="37756806bad02e3e8fb3d5413278c336" category="paragraph">El comando download-only descargará todos los artefactos necesarios de Data Infrastructure Insights en el directorio de trabajo. Los artefactos incluyen, pero no se pueden limitar a:</block>
   <block id="8d4a361a3f25b78818c569d8f15cf4a6" category="list-text">una secuencia de comandos de instalación</block>
   <block id="b015398c226e1e3576258432ece31819" category="list-text">un archivo de entorno</block>
-  <block id="004cac3ce7d67014b5fadcffaf9b5b70" category="list-text">Archivos YAML</block>
-  <block id="9f32134bbefffdc9df70a2d73c2df6a6" category="list-text">un archivo de suma de comprobación (que termina en sha256.signed o sha256.ps1)</block>
-  <block id="4f1c754cd67cd57cebe0be2f5e8638a4" category="paragraph">La secuencia de comandos de instalación, el archivo de entorno y los archivos YAML se pueden verificar mediante inspección visual.</block>
-  <block id="d8f6d626cfe2a4f97d97ff93d95db51b" category="section-title">Generar valor de suma de comprobación</block>
   <block id="d1703bc5bb53c90ffbbae52dfe829603" category="paragraph">Para generar el valor de suma de comprobación, ejecute el siguiente comando en su plataforma adecuada:</block>
   <block id="9374ddadb9776b458a2963573b22f63d" category="list-text">RHEL/Ubuntu:</block>
-  <block id="aacd43790bd404cab1a350cb047a9a9d" category="section-title">Verifique la suma de comprobación</block>
-  <block id="43e3c65a555911ad6d7235d9e9206e4c" category="paragraph">Extraiga la suma de comprobación esperada del archivo de suma de comprobación</block>
   <block id="47a6cd89e04d0d805a75aa0fe5822c20" category="list-text">No Windows:</block>
   <block id="b59ea01f26635c31c3c1df660848f6c8" category="section-title">Instale el paquete descargado</block>
   <block id="6c32334bfce9f857b0fdbdca68040a0b" category="paragraph">Una vez que todos los artefactos han sido verificados satisfactoriamente, la instalación del agente se puede iniciar ejecutando:</block>
@@ -11888,4 +11879,12 @@
   <block id="d932f771e537d16693bed2e69269a746" category="paragraph"><block ref="d932f771e537d16693bed2e69269a746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee0b2f1c8ad7945cf603e8d752a5e7b5" category="inline-link-macro">Ediciones de información sobre la infraestructura de datos</block>
   <block id="bbf9080a1bf1fb2f62558ce683d64be0" category="paragraph">Para obtener una comparación completa de las características disponibles en Data Infrastructure Insights Basic y Premium Editions, consulte <block ref="49bb501f6c401ae5b06c3dbe5fc987bd" category="inline-link-macro-rx"></block>la página.</block>
+  <block id="3bbdd1e5a1fbf0d58680e594b8806722" category="section-title">Verificando sumas de comprobación del paquete de Telegraf</block>
+  <block id="7ff5578ba477d9e2321cffdc188dd439" category="paragraph">El instalador del agente Data Infrastructure Insights realiza comprobaciones de integridad, pero es posible que algunos usuarios deseen realizar sus propias verificaciones antes de instalar el binario Telegraf descargado. Esto se puede hacer descargando el instalador y generando una suma de comprobación para el paquete descargado y, a continuación, comparando la suma de comprobación con el valor que se muestra en las instrucciones de instalación.</block>
+  <block id="741ebc51b7127a27c632897c49b71ad3" category="paragraph">Para realizar una operación de solo descarga (a diferencia de la opción predeterminada download-and-install), los usuarios pueden editar el comando de instalación del agente obtenido de la interfaz de usuario y eliminar la opción “install”.</block>
+  <block id="8b5391cb0617a6870147a0c34743013d" category="list-text">Un binario de Telegraf</block>
+  <block id="6b15d8f349fa2e771a92e4131bcae2d2" category="list-text">Una firma para el binario de Telegraf</block>
+  <block id="b7e85347cdffb5889c57e4b1ad785a2e" category="list-text">certificado público para verificar la firma binaria</block>
+  <block id="bfc63dcde995168de645c7c0b1b67357" category="paragraph">El fragmento de instalación descargado y copiado desde DII comprueba automáticamente el script de instalación, y la firma del binario de telegraf se verifica mediante el script de instalación.</block>
+  <block id="26f2872f4049fcba9927c1b41d6502d3" category="section-title">Verifique el valor de suma de comprobación</block>
 </blocks>
