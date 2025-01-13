@@ -55,7 +55,7 @@ La tabla _*All Activity*_ muestra la siguiente información. Tenga en cuenta que
 ** *Otro Cambio* - cualquier otro evento que no se describe anteriormente. Todos los eventos no asignados se asignan al tipo de actividad “otros cambios”. Aplicable a archivos y carpetas.
 
 
-* El *Path* es _entity_ path.
+* El *Path* es _entity_ path. Esto debería ser una ruta de acceso exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O una porción de directorio de la ruta de acceso para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, _userX_) NO están permitidos aquí. Como alternativa, los filtros de nivel de carpeta de ruta de acceso individual, como se menciona a continuación, también se pueden especificar para el filtrado de ruta de acceso.
 * La carpeta de nivel *1st (root)* es el directorio raíz de la ruta de la entidad en minúscula.
 * La carpeta de nivel *2nd* es el directorio de segundo nivel de la ruta de la entidad en minúscula.
 * La carpeta de nivel *3rd* es el directorio de tercer nivel de la ruta de la entidad en minúsculas.
@@ -112,7 +112,7 @@ Puede filtrar los datos de la actividad forense por los siguientes campos:
 Los siguientes campos están sujetos a reglas de filtrado especiales:
 
 * *Tipo de entidad*, usando la extensión de entidad (archivo) - es preferible especificar el tipo de entidad exacto dentro de las comillas. Por ejemplo _“txt”_.
-* *Ruta* de la entidad - Los filtros de ruta de directorio (cadena de ruta que termina con /) hasta 4 directorios de profundidad se recomiendan para obtener resultados más rápidos. Por ejemplo, _”/home/userX/nested1/nested2/”_. Consulte la siguiente tabla para obtener más información.
+* *Ruta* de la entidad - esto debe ser la ruta exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O la porción del directorio de la ruta para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, *userX*) NO están permitidos aquí. Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, «_/home/userX/nested1/nested2/_». Consulte la siguiente tabla para obtener más información.
 * Carpeta de nivel 1st (raíz) - Directorio raíz de la ruta de la entidad como filtros. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar home O home.
 * Carpeta de nivel 2nd - Directorio de nivel 2nd de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces userX O “userX” se puede utilizar.
 * Carpeta de nivel 3rd: Directorio de nivel 3rd de los filtros de ruta de la entidad.
@@ -145,7 +145,7 @@ Los campos anteriores están sujetos a lo siguiente al filtrar:
 | Ruta = «/home/userX/nested1/» | Búsqueda recursiva de todos los archivos y carpetas en el directorio dado | Y rápido | Las búsquedas en directorios de hasta 4 directorios serán rápidas. 
 
 
-| Path = “/home/userX/nested1/test” | Búsqueda recursiva de todos los archivos y carpetas bajo la ruta de acceso regex (prueba* podría significar archivo O directorio O ambos) | Más lento | La búsqueda de directorio+archivo regex será más lenta en comparación con las búsquedas de directorio. 
+| Path = “/home/userX/nested1/test” | Coincidencia exacta donde el valor de la ruta coincide con /home/userX/nested1/test | Más lento | La búsqueda exacta será más lenta en comparación con las búsquedas de directorio. 
 
 
 | Path = «/home/userX/nested1/nested2/nested3/» | Búsqueda recursiva de todos los archivos y carpetas en el directorio dado | Más lento | Más de 4 búsquedas de directorios son más lentas para realizar búsquedas. 
@@ -230,7 +230,7 @@ El historial de actividad se conserva durante 13 meses para entornos de segurida
 |===
 
 
-== Ruta / Búsqueda de ruta original
+== Búsqueda de rutas
 
 Los resultados de búsqueda con y sin / serán diferentes
 

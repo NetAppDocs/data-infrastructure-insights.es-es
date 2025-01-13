@@ -20,6 +20,27 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== A enero de 2025
+
+
+
+=== Gestione el riesgo de forma proactiva con Forensics Grouping
+
+¡Presentamos nuestra última función diseñada para mejorar sus capacidades de seguridad y gestión de recursos! Gracias a la funcionalidad de grupo avanzado y a la compatibilidad jerárquica de varios grupos, ahora puede identificar fácilmente a los usuarios que accedieron a carpetas específicas, determinar los usuarios y recursos compartidos más activos y gestionar de forma proactiva el riesgo mediante el seguimiento de las direcciones IP de los clientes activos. Optimice el uso de ancho de banda y almacenamiento identificando los archivos y carpetas a los que se accede con más frecuencia y obtenga un mayor control sobre el acceso al sistema identificando a los usuarios.
+
+image:forensics_activity_example.png["pantalla de ejemplo de seguimiento de actividades forenses"]
+
+
+
+=== Control de acceso al panel de control
+
+Data Infrastructure Insights le proporciona ahora un mayor control sobre el acceso a las consolas que crea. Elija quién puede modificar los gráficos. Usted controla la exposición a información potencialmente sensible. ¿Sigues trabajando en un panel que no está listo para la visibilidad general? Puede mantenerlo privado hasta que esté listo para compartirlo.
+
+image:Dashboard_Sharing_Options.png["opciones de uso compartido de la consola"]
+
+'''
+
+
 == Diciembre de 2024
 
 
@@ -45,14 +66,6 @@ image:vm_optimization_summary.png["Pantalla Resumen de Optimización de VM"]
 Ahora puede aprovechar los gráficos de tiempo (barra, línea, área) para identificar tendencias y patrones en los datos de registro, como errores recurrentes o picos de actividad, proporcionando información valiosa sobre el comportamiento del sistema a lo largo del tiempo. Además, con las tablas, ahora puede incluir mensajes de registro directamente en el panel de control, lo que permite una vista más completa de los detalles del registro.
 
 image:log_insights_dashboard_example.png["registre la información en una consola"]
-
-
-
-=== Gestione el riesgo de forma proactiva con Forensics Grouping
-
-¡Presentamos nuestra última función diseñada para mejorar sus capacidades de seguridad y gestión de recursos! Con la funcionalidad grupal-por forense avanzada y el soporte jerárquico de varios grupos, ahora puede identificar fácilmente qué usuarios accedieron a carpetas específicas, determinar los usuarios y recursos compartidos más activos, y administrar el riesgo de manera proactiva mediante el seguimiento de las direcciones IP de los clientes activos. Optimice el uso de almacenamiento y ancho de banda mediante la identificación de los archivos y carpetas a los que se accede con más frecuencia y obtenga un mayor control sobre el acceso al sistema identificando usuarios reales.
-
-image:forensics-group-by-example-screen.png["pantalla de ejemplo forense que muestra el grupo por"]
 
 '''
 
