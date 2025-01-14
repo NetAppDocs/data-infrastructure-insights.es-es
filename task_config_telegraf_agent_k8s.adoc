@@ -484,5 +484,8 @@ Nota: Para que estos ajustes sean persistentes en todos los reinicios de nodos, 
  fs.inotify.max_user_instances=<something larger than current setting>
  fs.inotify.max_user_watches=<something larger than current setting>
 ----
+
+
+| Los pods de telegraf DS están reportando errores relacionados con el plugin de entrada de kubernetes que no realiza solicitudes HTTP debido a la incapacidad de validar el certificado TLS. Por ejemplo: E! [Inputs.kubernetes] Error en el plugin: Error al hacer la solicitud HTTP para  obtener "https://<kubelet_IP>:10250/stats/summary":[] tls: Error "https://<kubelet_IP>:10250/stats/summary":[]al verificar el certificado: X509: No se puede validar el certificado para <kubelet_IP> porque no contiene ninguna SAN IP | Esto ocurrirá si el kubelet está utilizando certificados autofirmados y/o el certificado especificado no incluye el <kubelet_IP> en la lista de certificados _Nombre Alternativo del Sujeto_. Para resolver esto, el usuario puede modificar link:telegraf_agent_k8s_config_options.html["configuración del agente"], y definir _telegraf:insecureK8sSkipVerify_ en _true_. Esto configurará el plugin de entrada de telegraf para omitir la verificación. Alternativamente, el usuario puede configurar el kubelet para link:https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/["ServerTLSBootstrap"], que activará una solicitud de certificado desde la API 'certificates.k8s.io'. 
 |===
 Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
