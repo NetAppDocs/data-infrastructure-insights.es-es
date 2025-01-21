@@ -115,9 +115,6 @@ Para entornos de seguridad de cargas de trabajo * basados en APAC*:
 | TCP | 35000 - 55000 | Direcciones IP de LIF de datos de SVM | Agente de Seguridad de Carga de Trabajo | Comunicación de ONTAP al agente de seguridad de carga de trabajo para eventos de Fpolicy. Estos puertos deben abrirse hacia el agente de seguridad de carga de trabajo para que ONTAP le envíe eventos, incluido cualquier firewall del propio agente de seguridad de carga de trabajo (si está presente). TENGA EN CUENTA que no es necesario reservar *todos* de estos puertos, pero los puertos que reserve para esto deben estar dentro de este rango. Se recomienda comenzar reservando ~100 puertos y aumentando si es necesario. 
 
 
-| TCP | 7 | Agente de Seguridad de Carga de Trabajo | Direcciones IP de LIF de datos de SVM | Eco del agente a los LIF de datos de SVM 
-
-
 | SSH | 22 | Agente de Seguridad de Carga de Trabajo | Gestión de clústeres | Necesario para el bloqueo de usuarios CIFS/SMB. 
 |===
 
