@@ -278,11 +278,12 @@ En las versiones de ONTAP anteriores a 9.9.1, no es necesario definir _data-fpol
 
 == Reproducir-Pausa del recopilador de datos
 
-Ahora se muestran 2 nuevas operaciones en el menú kebab del colector (PAUSA y REANUDACIÓN).
-
 Si el recopilador de datos se encuentra en estado _Running_, puede pausar la recopilación. Abra el menú de tres puntos para el recopilador y seleccione PAUSE. Mientras el recopilador está en pausa, no se recopilan datos desde ONTAP y no se envía ningún dato del recopilador a ONTAP. Esto significa que no habrá eventos de Fpolicy que fluyan de ONTAP al recopilador de datos y de allí a Información de la infraestructura de datos.
 
 Tenga en cuenta que si se crean volúmenes nuevos, etc. en ONTAP mientras el recopilador está en pausa, la seguridad de la carga de trabajo no recopilará los datos y esos volúmenes, etc., no se reflejará en las consolas ni las tablas.
+
+
+NOTE: Un recopilador no se puede pausar si tiene usuarios restringidos. Restaure el acceso del usuario antes de hacer una pausa en el recopilador.
 
 Tenga en cuenta lo siguiente:
 

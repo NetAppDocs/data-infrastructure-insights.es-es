@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: san_anayzer_overview.html 
+summary: SAN Analyzer proporciona topología para los activos en su inquilino 
+keywords: topology, analyze, analysis, map 
+---
+= Descripción general del analizador de SAN
+:hardbreaks:
+:toclevels: 2
+:allow-uri-read: 
+:toclevels: 2
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+SAN tiene un papel crucial en la gestión de las cargas de trabajo vitales, pero su complejidad puede provocar interrupciones del servicio significativas y interrupciones en los clientes. Con el *SAN Analyzer* de DII, la gestión de SAN se vuelve más sencilla y eficiente. Esta potente herramienta ofrece una visibilidad integral al asignar dependencias desde el equipo virtual/host a la red y a la LUN y el almacenamiento.
+
+Al proporcionar un mapa topológico interactivo, SAN Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de SAN en ENTORNOS DE TI complejos con SAN Analyzer y aumente la visibilidad de las cargas de trabajo de bloque.
+
+image:san_analyzer_example_with_panel.png["Mapa de topología de un sistema de almacenamiento de SAN Analyzer"]
+
+
+
+== Explora las conexiones entre tus activos
