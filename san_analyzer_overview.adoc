@@ -25,3 +25,11 @@ image:san_analyzer_example_with_panel.png["Mapa de topología de un sistema de a
 
 
 == Explora las conexiones entre tus activos
+
+Seleccione *Observabilidad > Analizar > Analizador de SAN* para ver el Analizador de SAN. Establezca un filtro para Aplicación, Host, Estructura y/o Almacenamiento. Se muestra el mapa de los objetos, mostrando los objetos conectados. Pase el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
+
+image:san_analyzer_traffic_metrics.png[""]
+
+Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. La diapositiva incluye fichas que muestran un resumen, detalles de puerto e información de zona, si está disponible.
+
+image:san_analyzer_slideout_example.png[""]
