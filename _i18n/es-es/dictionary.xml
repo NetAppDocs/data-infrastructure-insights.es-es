@@ -11927,4 +11927,16 @@
   <block id="fde6f74861c217b576ec5d769f2467c3" category="paragraph"><block ref="fde6f74861c217b576ec5d769f2467c3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3cfbb427bd17b95ae08e5597561217ef" category="paragraph">Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. La diapositiva incluye fichas que muestran un resumen, detalles de puerto e información de zona, si está disponible.</block>
   <block id="7512260392fef04bf211fab22007addd" category="paragraph"><block ref="7512260392fef04bf211fab22007addd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18082cdb9388e2686e081dd6012e47b8" category="summary">Determina si un panel de control que crea es público o privado.</block>
+  <block id="cc5c681651d638257ae03658c963c7c6" category="doc">Gestión de acceso al panel de control</block>
+  <block id="571ad98bb1054a211a5d3fa3a3240265" category="paragraph">Data Infrastructure Insights le proporciona ahora un mayor control sobre el acceso a las consolas que crea. Elija quién puede modificar los gráficos. Usted controla la exposición a información potencialmente sensible. Mantener un panel de control privado le permite finalizar sus visualizaciones hasta que estén listas para ser consumidas por otros en su organización.</block>
+  <block id="505e6238dfdc62d1b4bbdf930fa887b8" category="inline-image-macro">opciones de uso compartido del panel de control, width=300</block>
+  <block id="43b5d7a5affce9056fb3d7ec4b82fe17" category="paragraph"><block ref="43b5d7a5affce9056fb3d7ec4b82fe17" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="547a803d844f9925f62c57d49f10caf6" category="paragraph">Por defecto, cuando crea un nuevo panel de control, ese panel solo es visible para usted, el creador. Ningún otro usuario puede ver o modificar el panel de control.</block>
+  <block id="78d12ef818f574226b0780765511e2d5" category="paragraph">Cuando haya finalizado el panel de control, puede optar por permitir que otros miembros de su organización lo vean. Para compartir un panel de control, en la lista del panel de control, seleccione _Share_ en el menú de la derecha.</block>
+  <block id="8e561a2090f27ed80a24e59dff11dcce" category="inline-image-macro">uso compartido de acceso al panel de control desde el menú</block>
+  <block id="5fc6afe4cfc7bc7e58ad6e7119812663" category="paragraph"><block ref="5fc6afe4cfc7bc7e58ad6e7119812663" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">Puede elegir compartir el panel de control con todos o seleccionar usuarios, con permisos de edición o de solo lectura.</block>
+  <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">Desplegables para compartir un panel de control con el permiso Editar o Leer</block>
+  <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

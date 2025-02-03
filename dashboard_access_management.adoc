@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: dashboard_access_management.html 
+summary: Determina si un panel de control que crea es público o privado. 
+keywords: dashboard, public, shared, private 
+---
+= Gestión de acceso al panel de control
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights le proporciona ahora un mayor control sobre el acceso a las consolas que crea. Elija quién puede modificar los gráficos. Usted controla la exposición a información potencialmente sensible. Mantener un panel de control privado le permite finalizar sus visualizaciones hasta que estén listas para ser consumidas por otros en su organización.
+
+image:Dashboard_Sharing_Options.png["opciones de uso compartido del panel de control, width=300"]
+
+Por defecto, cuando crea un nuevo panel de control, ese panel solo es visible para usted, el creador. Ningún otro usuario puede ver o modificar el panel de control.
+
+Cuando haya finalizado el panel de control, puede optar por permitir que otros miembros de su organización lo vean. Para compartir un panel de control, en la lista del panel de control, seleccione _Share_ en el menú de la derecha.
+
+image:dashboard_access_share_menu.png["uso compartido de acceso al panel de control desde el menú"]
+
+Puede elegir compartir el panel de control con todos o seleccionar usuarios, con permisos de edición o de solo lectura.
+
+image:dashboard_access_share_drop-down.png["Desplegables para compartir un panel de control con el permiso Editar o Leer"]
