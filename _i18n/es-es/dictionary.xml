@@ -11939,4 +11939,15 @@
   <block id="16442b20a2319083af65dedb2d7e942e" category="paragraph">Puede elegir compartir el panel de control con todos o seleccionar usuarios, con permisos de edición o de solo lectura.</block>
   <block id="1dcba5cd7d6049883623c0653a2031f6" category="inline-image-macro">Desplegables para compartir un panel de control con el permiso Editar o Leer</block>
   <block id="ac0466f21ebde71eed9f3673b4c7da1b" category="paragraph"><block ref="ac0466f21ebde71eed9f3673b4c7da1b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="98465e4573c2849304e85edaeef13370" category="summary">Optimización de máquinas virtuales</block>
+  <block id="761ab7bf046ac25fda0da8f1af542322" category="paragraph">Para empezar, desplácese hasta Observabilidad &gt; Analizar &gt; Optimización de máquinas virtuales. Se muestra un resumen del ahorro potencial desglosado por número de núcleos y ahorros de almacenamiento. Puede establecer filtros para que se centren por centro de datos, IP de centro virtual o clúster, o bien definir sus propios filtros para reducir aún más el enfoque.</block>
+  <block id="045386d087f10e1f0ae1e3bf75624afe" category="inline-image-macro">información general sobre la optimización de máquinas virtuales</block>
+  <block id="7110454d98ba958eec64260bbc5dec80" category="paragraph"><block ref="7110454d98ba958eec64260bbc5dec80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="03f6f40a2cf552119978ffce0238086f" category="paragraph">La pestaña Descomisionado de hipervisor muestra el ahorro de costes potencial en función de la estrategia de optimización que seleccione. Cada estrategia utiliza diferentes umbrales para determinar el ahorro potencial.</block>
+  <block id="6e3975fe060cfaed5d52ef53dce4935b" category="paragraph">Seleccione un clúster de la lista para abrir un panel deslizante con detalles sobre el uso de la CPU y la memoria para el clúster.</block>
+  <block id="f76142da98b557ade1c2d52abf0a207b" category="inline-image-macro">pestaña de optimización de hipervisor</block>
+  <block id="bfea8ae8feffd62a3b499ac0dc5015ac" category="paragraph"><block ref="bfea8ae8feffd62a3b499ac0dc5015ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0dc236d363c2d7f668f1ee1391ffab69" category="paragraph">La pestaña VM Reclamation proporciona detalles sobre las máquinas virtuales que están inactivas o apagadas durante más de 30, 60 o 90 días, junto con los ahorros potenciales en capacidad, memoria y vCPU. Al seleccionar una máquina virtual de la lista se abre la página de detalles para esa máquina virtual.</block>
+  <block id="5edbd52aee44c2dfb6c01abc4128600a" category="inline-image-macro">pestaña de recuperación de máquinas virtuales</block>
+  <block id="e2e66b001cd3f2f1481c4b23049ca899" category="paragraph"><block ref="e2e66b001cd3f2f1481c4b23049ca899" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

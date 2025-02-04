@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: cvm_optimization_overview.html 
+summary: Optimización de máquinas virtuales 
+keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
+---
+= Optimización de máquinas virtuales
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:toclevels: 1
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Data Infrastructure Insights le ayuda a gestionar los costes de infraestructura y licencias mediante el análisis del comportamiento histórico del entorno y el establecimiento de predicciones a corto y largo plazo, generando recomendaciones detalladas para el desmantelamiento de hosts y la recuperación de máquinas virtuales inactivas y apagadas. Estas recomendaciones le ayudan a garantizar la estabilidad del rendimiento, liberar capacidad no utilizada y reducir la asignación de memoria y CPU.
+
+image:vm_optimization_summary.png["Pantalla Resumen de Optimización de VM"]
+
+Para empezar, desplácese hasta Observabilidad > Analizar > Optimización de máquinas virtuales. Se muestra un resumen del ahorro potencial desglosado por número de núcleos y ahorros de almacenamiento. Puede establecer filtros para que se centren por centro de datos, IP de centro virtual o clúster, o bien definir sus propios filtros para reducir aún más el enfoque.
+
+image:vm_optimization_overview.png["información general sobre la optimización de máquinas virtuales"]
+
+La pestaña Descomisionado de hipervisor muestra el ahorro de costes potencial en función de la estrategia de optimización que seleccione. Cada estrategia utiliza diferentes umbrales para determinar el ahorro potencial.
+
+Seleccione un clúster de la lista para abrir un panel deslizante con detalles sobre el uso de la CPU y la memoria para el clúster.
+
+image:vm_optimization_hypervisor_decommissioning_tab.png["pestaña de optimización de hipervisor"]
+
+La pestaña VM Reclamation proporciona detalles sobre las máquinas virtuales que están inactivas o apagadas durante más de 30, 60 o 90 días, junto con los ahorros potenciales en capacidad, memoria y vCPU. Al seleccionar una máquina virtual de la lista se abre la página de detalles para esa máquina virtual.
+
+image:vm_optimization_reclamation_tab.png["pestaña de recuperación de máquinas virtuales"]
