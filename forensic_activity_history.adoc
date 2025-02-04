@@ -34,7 +34,7 @@ Puede ampliar el gráfico arrastrando un rectángulo del gráfico. Se cargará t
 * Un botón de ruta común estará disponible sobre la tabla en clic del que podemos obtener el panel deslizante con detalles de ruta de la entidad.
 
 
-La tabla _*All Activity*_ muestra la siguiente información. Tenga en cuenta que no todas estas columnas se muestran de forma predeterminada. Puede seleccionar las columnas que desea mostrar haciendo clic en el icono de engranaje.
+La tabla *All Activity* muestra la siguiente información. Tenga en cuenta que no todas estas columnas se muestran de forma predeterminada. Puede seleccionar las columnas que desea mostrar haciendo clic en el icono de engranaje.
 
 * El *tiempo* se accedió a una entidad incluyendo el año, mes, día y hora del último acceso.
 * El *usuario* que accedió a la entidad con un enlace a la link:forensic_user_overview.html["Información del usuario"] como un panel deslizante.
@@ -52,10 +52,10 @@ La tabla _*All Activity*_ muestra la siguiente información. Tenga en cuenta que
 ** *Renombrar*: Permite cambiar el nombre del archivo o carpeta.
 ** *Escribir*: Los datos se escriben en un archivo.
 ** *Escribir metadatos* - los metadatos del archivo se escriben, por ejemplo, el permiso cambiado.
-** *Otro Cambio* - cualquier otro evento que no se describe anteriormente. Todos los eventos no asignados se asignan al tipo de actividad “otros cambios”. Aplicable a archivos y carpetas.
+** *Otro Cambio* - cualquier otro evento que no se describe anteriormente. Todos los eventos sin asignar se asignan al tipo de actividad «Otro cambio». Aplicable a archivos y carpetas.
 
 
-* El *Path* es _entity_ path. Esto debería ser una ruta de acceso exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O una porción de directorio de la ruta de acceso para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, _userX_) NO están permitidos aquí. Como alternativa, los filtros de nivel de carpeta de ruta de acceso individual, como se menciona a continuación, también se pueden especificar para el filtrado de ruta de acceso.
+* El *Path* es _entity_ path. Debe ser una ruta de acceso exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O una porción de directorio de la ruta de acceso para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, \*anidados*) NO están permitidos aquí. Como alternativa, los filtros de nivel de carpeta de ruta de acceso individual, como se menciona a continuación, también se pueden especificar para el filtrado de ruta de acceso.
 * La carpeta de nivel *1st (root)* es el directorio raíz de la ruta de la entidad en minúscula.
 * La carpeta de nivel *2nd* es el directorio de segundo nivel de la ruta de la entidad en minúscula.
 * La carpeta de nivel *3rd* es el directorio de tercer nivel de la ruta de la entidad en minúsculas.
@@ -65,6 +65,7 @@ La tabla _*All Activity*_ muestra la siguiente información. Tenga en cuenta que
 * El *Protocolo* utilizado para obtener eventos.
 * La *Ruta original* se utiliza para cambiar el nombre de los eventos cuando se cambió el nombre del archivo original. Esta columna no está visible de forma predeterminada en la tabla. Utilice el selector de columna para agregar esta columna a la tabla.
 * El *volumen* donde residen las entidades. Esta columna no está visible de forma predeterminada en la tabla. Utilice el selector de columna para agregar esta columna a la tabla.
+* El *Entity Name* es el último componente de la ruta de la entidad; para el Entity Type as file, es el nombre del archivo.
 
 
 Al seleccionar una fila de tabla, se abre un panel desplegable con el perfil de usuario en una pestaña y la vista general de actividad y entidad en otra pestaña.
@@ -75,6 +76,7 @@ El método _Group by_ por defecto es _Activity forsics_. Si selecciona un métod
 
 * El recuento de actividades se muestra como un hipervínculo; al seleccionarlo, se agregará la agrupación seleccionada como filtro. La tabla de actividad se actualizará en función de ese filtro.
 * Tenga en cuenta que si cambia el filtro, modifica el intervalo de tiempo o actualiza la pantalla, no podrá volver a los resultados filtrados sin volver a configurar el filtro.
+* Tenga en cuenta que cuando se selecciona Nombre de entidad como filtro, se desactivará la lista desplegable Agrupar por; además, cuando el usuario ya esté en la pantalla Agrupar por, se desactivará el Nombre de entidad como filtro.
 
 
 
@@ -86,7 +88,7 @@ Existen dos métodos que se pueden utilizar para filtrar datos.
 * El filtro se puede añadir desde el panel deslizante. El valor se agrega a los filtros apropiados en la lista Top _Filter by_.
 * Filtre los datos escribiendo en el campo _Filter by_:
 +
-Seleccione el filtro adecuado en el widget "Filtrar por" superior haciendo clic en el botón *[+]*:
+Seleccione el filtro apropiado en el widget 'Filtrar por' superior haciendo clic en el botón *[+]*:
 
 +
 image:Forensic_Activity_Filter.png["Archivador de entidad, width=500"]
@@ -102,34 +104,42 @@ Pulse Intro o haga clic fuera del cuadro de filtro para aplicar el filtro.
 Puede filtrar los datos de la actividad forense por los siguientes campos:
 
 * El tipo *actividad*.
-* *IP de origen* desde la que se accedió a la entidad. Debe proporcionar una dirección IP de origen válida entre comillas dobles, por ejemplo “10.1.1.1”. Los IP incompletos, como “10.1.1.*”, “10.1.*.*”, etc., no funcionarán.
 * *Protocolo* para obtener actividades específicas del protocolo.
-* *Nombre de usuario* del usuario que realiza la actividad. Debe proporcionar el nombre de usuario exacto para filtrar. La búsqueda con nombre de usuario parcial o nombre de usuario parcial con prefijo o sufijo ‘*’ no funcionará.
+* *Nombre de usuario* del usuario que realiza la actividad. Debe proporcionar el nombre de usuario exacto para filtrar. La búsqueda con nombre de usuario parcial, o nombre de usuario parcial con prefijo o sufijo '*' no funcionará.
 * *Reducción de ruido* para filtrar los archivos que el usuario crea en las últimas 2 horas. También se utiliza para filtrar archivos temporales (por ejemplo, archivos .tmp) a los que accede el usuario.
 * *Dominio* del usuario que realiza la actividad. Debe proporcionar el *dominio exacto* para filtrar. La búsqueda de dominio parcial, o dominio parcial con prefijo o sufijo con comodín ('*'), no funcionará. _None_ se puede especificar para buscar el dominio que falta.
 
 
 Los siguientes campos están sujetos a reglas de filtrado especiales:
 
-* *Tipo de entidad*, usando la extensión de entidad (archivo) - es preferible especificar el tipo de entidad exacto dentro de las comillas. Por ejemplo _“txt”_.
-* *Ruta* de la entidad - esto debe ser la ruta exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O la porción del directorio de la ruta para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, *userX*) NO están permitidos aquí. Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, «_/home/userX/nested1/nested2/_». Consulte la siguiente tabla para obtener más información.
+* *Tipo de entidad*, usando la extensión de entidad (archivo) - es preferible especificar el tipo de entidad exacto dentro de las comillas. Por ejemplo, _“txt”_.
+* *Ruta* de la entidad - esto debe ser la ruta exacta de la entidad (por ejemplo, “_/home/userX/nested1/nested2/abc.txt_”) O la porción del directorio de la ruta para la búsqueda recursiva (por ejemplo, “_/home/userX/nested1/nested2/_”). NOTA: Los patrones de ruta de regex (por ejemplo, \*anidados*) NO están permitidos aquí. Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, «_/home/userX/nested1/nested2/_». Consulte la siguiente tabla para obtener más información.
 * Carpeta de nivel 1st (raíz) - Directorio raíz de la ruta de la entidad como filtros. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar home O home.
-* Carpeta de nivel 2nd - Directorio de nivel 2nd de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces userX O “userX” se puede utilizar.
+* Carpeta de nivel 2nd - Directorio de nivel 2nd de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar userX O userX.
 * Carpeta de nivel 3rd: Directorio de nivel 3rd de los filtros de ruta de la entidad.
-* Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces nested1 O “nested1” se pueden utilizar.
-* Carpeta de nivel 4th - Directorio de nivel 4th de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, entonces nested2 O “nested2” se pueden utilizar.
+* Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar nested1 O “nested1”.
+* Carpeta de nivel 4th - Directorio de nivel 4th de los filtros de ruta de la entidad. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/nested2/, se puede utilizar nested2 O “nested2”.
 * *Usuario* realizando la actividad - es preferible especificar el usuario exacto dentro de las comillas. Por ejemplo, _ “Administrador”_.
 * *Dispositivo* (SVM) donde residen las entidades
 * *Volumen* donde residen las entidades
 * La *Ruta original* se utiliza para cambiar el nombre de los eventos cuando se cambió el nombre del archivo original.
+* *IP de origen* desde la que se accedió a la entidad.
++
+** Puede utilizar comodines * y ?. Por ejemplo: 10,0.0.*, 10,0?.0,10, 10,10*
+** Si se requiere una coincidencia exacta, debe proporcionar una dirección IP de origen válida entre comillas dobles, por ejemplo, «10,1.1,1». Las IPs incompletas con comillas dobles como “10,1.1.”, “10,1..*”, etc. no funcionarán.
+
+
+* El *Entity Name* - el nombre de archivo de la Entity Path como filtros. Por ejemplo, si la ruta de acceso de la entidad es /home/userX/nested1/Testfile.txt, el nombre de la entidad es testfile.txt. Tenga en cuenta que se recomienda especificar el nombre exacto del archivo entre comillas; intente evitar las búsquedas con comodines. Por ejemplo, “testfile.txt”. Además, tenga en cuenta que este filtro de nombre de entidad se recomienda para rangos de tiempo más cortos (hasta 3 días).
 
 
 Los campos anteriores están sujetos a lo siguiente al filtrar:
 
 * El valor exacto debe estar entre comillas: Ejemplo: "searchtext"
-* Las cadenas con caracteres comodín no deben contener comillas: Ejemplo: searchtext, \*searchtext*, filtrará las cadenas que contengan ‘reconfigurar texto’.
-* Cadena con un prefijo, ejemplo: searchtext* , buscará cualquier cadena que comience por ‘reconfigurar texto’.
+* Las cadenas de comodines no deben contener comillas: Por ejemplo: Searchtext, \*searchtext*, filtrará cualquier cadena que contenga 'texto de archivo'.
+* Cadena con un prefijo, ejemplo: Searchtext* , buscará cualquier cadena que empiece por 'texto_archivo'.
 
+
+Tenga en cuenta que todos los campos de filtro son una búsqueda sensible a mayúsculas/minúsculas. Por ejemplo: Si el filtro aplicado es Tipo de entidad con el valor 'texto_arquitectura', devolverá los resultados con Tipo de entidad como 'texto_arquitectura', 'Texto_búsqueda', 'SEARCHTEXT'
 
 
 
@@ -145,13 +155,28 @@ Los campos anteriores están sujetos a lo siguiente al filtrar:
 | Ruta = «/home/userX/nested1/» | Búsqueda recursiva de todos los archivos y carpetas en el directorio dado | Y rápido | Las búsquedas en directorios de hasta 4 directorios serán rápidas. 
 
 
-| Path = “/home/userX/nested1/test” | Coincidencia exacta donde el valor de la ruta coincide con /home/userX/nested1/test | Más lento | La búsqueda exacta será más lenta en comparación con las búsquedas de directorio. 
+| Path = «/home/userX/nested1/test» | Coincidencia exacta donde el valor de la ruta coincide con /home/userX/nested1/test | Más lento | La búsqueda exacta será más lenta en comparación con las búsquedas de directorio. 
 
 
 | Path = «/home/userX/nested1/nested2/nested3/» | Búsqueda recursiva de todos los archivos y carpetas en el directorio dado | Más lento | Más de 4 búsquedas de directorios son más lentas para realizar búsquedas. 
 
 
 | Cualquier otro filtro no basado en ruta. Filtros de tipo de usuario y entidad recomendados para estar entre comillas, por ejemplo, User= “Administrator” Entity Type= “txt” |  | Y rápido |  
+
+
+| Nombre de entidad = test.log | Coincidencia exacta donde el nombre de archivo es Test.log | Y rápido | Como es la coincidencia exacta 
+
+
+| Nombre de entidad = *Test.log | Nombres de archivo que terminan en Test.log | Lento | Debido al comodín, puede ser lento. 
+
+
+| Nombre de entidad = test*.log | Nombres de archivo que comienzan con test y terminan en .log | Lento | Debido al comodín, puede ser lento. 
+
+
+| Nombre de entidad = test.lo | Nombres de archivo que comienzan con test.lo Por ejemplo: Coincidirán con test.log, test.log.1, test.log1 | Más lento | Debido al comodín al final, puede ser lento. 
+
+
+| Nombre de entidad = prueba | Nombres de archivo que comienzan con la prueba | La más lenta | Debido al comodín al final y al valor más genérico utilizado, puede ser más lento. 
 |===
 NOTA:
 
@@ -184,8 +209,8 @@ La función de exportaciones asíncronas de Storage Workload Security está dise
 . *Descargar*: Haga clic en el botón “Descargar último archivo de exportación creado” para obtener los datos exportados en un formato .zip. Estos datos estarán disponibles para su descarga hasta que el usuario inicie otra exportación asíncrona o hayan transcurrido 3 días, lo que ocurra primero. El botón permanecerá activado hasta que se inicie otra exportación asíncrona.
 . *Limitaciones*:
 +
-** El número de descargas asíncronas está limitado actualmente a 1 por usuario y 3 por inquilino.
-** Los datos exportados están limitados a un máximo de 1 millones de registros.
+** El número de descargas asíncronas está limitado actualmente a 1 por usuario para cada tabla de análisis de actividades y actividades y 3 por inquilino.
+** Los datos exportados están limitados a un máximo de 1 millones de registros para la tabla de actividades; mientras que para el grupo por, el límite es de medio millón de registros.
 
 
 
@@ -214,16 +239,16 @@ El historial de actividad se conserva durante 13 meses para entornos de segurida
 | Filtro | Qué hace | Ejemplo | Aplicable a estos filtros | No aplicable a estos filtros | Resultado 
 
 
-| * (Asterisk) | le permite buscar todo | Auto*03172022 Si el texto de búsqueda contiene guiones o guiones bajos, dar expresión entre paréntesis, por ejemplo, (svm*) para buscar svm-123 | Usuario, Tipo de entidad, Dispositivo, Volumen, Ruta original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel |  | Devuelve todos los recursos que comienzan con “Auto” y terminan con “03172022” 
+| * (Asterisk) | le permite buscar todo | Auto*03172022 Si el texto de búsqueda contiene guiones o guiones bajos, dar expresión entre paréntesis, por ejemplo, (svm*) para buscar svm-123 | Usuario, Tipo de entidad, Dispositivo, Volumen, Ruta original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel, Nombre de entidad, IP de origen |  | Devuelve todos los recursos que comienzan con “Auto” y terminan con “03172022” 
 
 
-| ? (signo de interrogación) | le permite buscar un número específico de caracteres | AutoSabotageUser1_03172022? | Usuario, Tipo de entidad, Dispositivo, Volumen, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel |  | Devuelve AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225, etc. 
+| ? (signo de interrogación) | le permite buscar un número específico de caracteres | AutoSabotageUser1_03172022? | Usuario, Tipo de entidad, Dispositivo, Volumen, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel, Nombre de entidad, IP de origen |  | Devuelve AutoSabotageUser1_03172022A, AutoSabotageUser1_03172022B, AutoSabotageUser1_031720225, etc. 
 
 
-| O. | permite especificar varias entidades | AutoSabotageUser1_03172022 o AutoRansomUser4_03162022 | Usuario, Dominio, Tipo de entidad, Ruta de acceso original |  | Devuelve cualquiera de los valores de AutoSabotageUser1_03172022 O AutoRansomUser4_03162022 
+| O. | permite especificar varias entidades | AutoSabotageUser1_03172022 o AutoRansomUser4_03162022 | Usuario, Dominio, Tipo de entidad, Ruta de acceso original, Nombre de entidad, IP de origen |  | Devuelve cualquiera de los valores de AutoSabotageUser1_03172022 O AutoRansomUser4_03162022 
 
 
-| NO | permite excluir el texto de los resultados de la búsqueda | NO es AutoRansomero4_03162022 | Usuario, Dominio, Tipo de entidad, Ruta original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel | Dispositivo | Devuelve todo lo que no empieza con"AutoRansomUser4_03162022" 
+| NO | permite excluir el texto de los resultados de la búsqueda | NO es AutoRansomero4_03162022 | Usuario,Dominio, Tipo de Entidad, Ruta de Acceso Original, Carpeta 1stLevel, Carpeta 2ndLevel, Carpeta 3rdlevel, Carpeta 4thLevel, Nombre de Entidad, IP de Origen | Dispositivo | Devuelve todo lo que no empieza con “AutoRansomUser4_03162022” 
 
 
 | Ninguno | Busca valores NULL en todos los campos | Ninguno | Dominio |  | devuelve los resultados en los que el campo de destino está vacío 
@@ -284,17 +309,20 @@ Por ejemplo:
 | Problema | Pruebe esto 
 
 
-| En la tabla "todas las actividades", bajo la columna "Usuario", el nombre de usuario se muestra como: "ldap:HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817” o "ldap:default:80038003" | Las posibles razones pueden ser: 1. Aún no se ha configurado ningún colimador de directorios de usuarios. Para agregar uno, vaya a *Workload Security > Collectors > User Directory Collectors* y haga clic en *+User Directory Collector*. Seleccione _Active Directory_ o _LDAP Directory Server_. 2. Se ha configurado un recopilador de directorios de usuario, sin embargo, se ha detenido o está en estado de error. Vaya a *Colectores > Colectores de directorios de usuarios* y compruebe el estado. Consulte link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["Solución de problemas del recopilador de directorios de usuarios"]la sección de la documentación para obtener consejos sobre solución de problemas. Una vez configurada correctamente, el nombre se resolverá automáticamente en 24 horas. Si todavía no se resuelve, compruebe si ha agregado el recopilador de datos de usuario correcto. Asegúrese de que el usuario forma parte del servidor de directorio de Active Directory/LDAP agregado. 
+| En la tabla “Todas las actividades”, en la columna “Usuario”, el nombre de usuario se muestra como “ldap:HQ.COMPANYNAME.COM:S-1-5-21-3577637-1906459482-1437260136-1831817" o “ldap:default:80038003” | Las posibles razones pueden ser: 1. Aún no se ha configurado ningún colimador de directorios de usuarios. Para agregar uno, vaya a *Workload Security > Collectors > User Directory Collectors* y haga clic en *+User Directory Collector*. Seleccione _Active Directory_ o _LDAP Directory Server_. 2. Se ha configurado un recopilador de directorios de usuario, sin embargo, se ha detenido o está en estado de error. Vaya a *Colectores > Colectores de directorios de usuarios* y compruebe el estado. Consulte link:http://docs.netapp.com/us-en/cloudinsights/task_config_user_dir_connect.html#troubleshooting-user-directory-collector-configuration-errors["Solución de problemas del recopilador de directorios de usuarios"]la sección de la documentación para obtener consejos sobre solución de problemas. Una vez configurada correctamente, el nombre se resolverá automáticamente en 24 horas. Si todavía no se resuelve, compruebe si ha agregado el recopilador de datos de usuario correcto. Asegúrese de que el usuario forma parte del servidor de directorio de Active Directory/LDAP agregado. 
 
 
 | Algunos eventos de NFS no se ven en la interfaz de usuario de. | Compruebe lo siguiente: 1. Se debe ejecutar un recopilador de directorios de usuarios para el servidor AD con el conjunto de atributos POSIX con el atributo unixid habilitado desde la interfaz de usuario. 2. Cualquier usuario que haga acceso a NFS debe verse cuando se busque en la página de usuario desde UI 3. Los eventos sin formato (los eventos para los que aún no se ha detectado el usuario) no son compatibles con NFS 4. El acceso anónimo a la exportación de NFS no se supervisará. 5. Asegúrese de que la versión de NFS se utiliza en menos de NFS4,1. 
 
 
-| Después de escribir algunas letras que contienen un carácter comodín como asterisco (*) en los filtros de las páginas Forensics _All Activity_ o _entities_, las páginas se cargan muy lentamente. | Un asterisco (\*) en la cadena de búsqueda busca todo. Sin embargo, las cadenas comodín iniciales como _*<searchTerm>_ o _*<searchTerm>*_ resultarán en una consulta lenta. Para obtener un mejor rendimiento, utilice cadenas de prefijo en su lugar, en el formato _<searchTerm>*_ (en otras palabras, agregue el asterisco (*) _after_ un término de búsqueda). Ejemplo: Utilice la cadena _testvolume*_, en lugar de _*testvolume_ o _*test*volume_. Utilice una búsqueda de directorio para ver todas las actividades debajo de una carpeta dada de forma recursiva (búsqueda jerárquica). Por ejemplo, “/path1/path2/path3/” enumerará todas las actividades de forma recursiva en /path1/path2/path3. Alternativamente, use la opción “Agregar a filtro” en la pestaña Todas las actividades.” 
+| Después de escribir algunas letras que contienen un carácter comodín como asterisco (*) en los filtros de las páginas Forensics _All Activity_ o _entities_, las páginas se cargan muy lentamente. | Un asterisco (\*) en la cadena de búsqueda busca todo. Sin embargo, las cadenas comodín iniciales como _*<searchTerm>_ o _*<searchTerm>*_ resultarán en una consulta lenta. Para obtener un mejor rendimiento, utilice cadenas de prefijo en su lugar, en el formato _<searchTerm>*_ (en otras palabras, agregue el asterisco (*) _after_ un término de búsqueda). Ejemplo: Utilice la cadena _testvolume*_, en lugar de _*testvolume_ o _*test*volume_. Utilice una búsqueda de directorio para ver todas las actividades debajo de una carpeta determinada de forma recursiva (búsqueda jerárquica). Por ejemplo, «/path1/path2/path3/» mostrará una lista de todas las actividades de forma recursiva en /path1/path2/path3. También puede utilizar la opción “Agregar a filtro” en la pestaña Todas las actividades. 
 
 
 | Encuentro un error de solicitud fallida con el código de estado 500/503 al utilizar un filtro de ruta. | Intente utilizar un rango de fechas más pequeño para filtrar registros. 
 
 
-| La interfaz de usuario forense carga los datos lentamente cuando se utiliza el filtro _PATH_. | Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, si la ruta de directorio es /AAA/BBB/CCC/DDD, intente buscar “/AAA/BBB/CCC/DDD/” para cargar datos más rápido. 
+| La interfaz de usuario forense carga los datos lentamente cuando se utiliza el filtro _PATH_. | Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, si la ruta de directorio es /AAA/BBB/CCC/DDD, intente buscar «/AAA/BBB/CCC/DDD/» para cargar datos más rápidamente. 
+
+
+| La interfaz de usuario forense carga los datos lentamente y enfrenta fallos al utilizar el filtro de nombre de entidad. | Pruebe con intervalos de tiempo más pequeños y con valores exactos de búsqueda con comillas dobles. Por ejemplo, si entityPath es “/home/userX/nested1/nested2/nested3/testfile.txt”, pruebe con “testfile.txt” como filtro de nombre de entidad. 
 |===
