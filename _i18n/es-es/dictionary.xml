@@ -8655,7 +8655,6 @@
   <block id="da7e75e5407636a24c1c7cce20e7d225" category="paragraph">La versión actual de Telegraf para Data Infrastructure Insights es *1.24.0*.</block>
   <block id="2041337c363c1ecaeb2a1aa9c8999494" category="paragraph">Para obtener información sobre la instalación en Kubernetes, consulte la <block ref="f0d3e43e41da35ba651820db811551cd" category="inline-link-macro-rx"></block> página.</block>
   <block id="ae2f2b5e87a12f1cd650f0e46b92e4ec" category="admonition">Para una auditoría y un informe de datos precisos, se recomienda encarecidamente sincronizar el tiempo en el equipo del agente mediante *Protocolo de tiempo de red (NTP)* o *Protocolo simple de tiempo de red (SNTP)*.</block>
-  <block id="f97f94f0ff0c35a96686e2fd00940ac8" category="admonition">Si desea verificar los archivos de instalación antes de instalar el agente, consulte la sección siguiente en <block ref="1d9f3d6343939e76574c60762a7f2fae" category="inline-xref-macro-rx"></block>.</block>
   <block id="137bac1c26ca6d0b61bc783c9a2fcbbd" category="section-title">Instalación de un agente</block>
   <block id="a4c0f3c4bd8931418c028fb88c45e72f" category="paragraph">Si está instalando un recopilador de datos de servicio y aún no ha configurado un agente, se le pedirá que instale primero un agente para el sistema operativo adecuado. En este tema se proporcionan instrucciones para instalar el agente Telegraf en los siguientes sistemas operativos:</block>
   <block id="8d6f7baf6fd8e47d9316fcc507ab0f85" category="list-text"><block ref="85415f26af88eac138de6f713927df0c" category="inline-xref-macro-rx"></block></block>
@@ -11974,4 +11973,5 @@
   <block id="43bfa97b37a997b631be2c5c6423c5fc" category="cell">Se recomiendan filtros de ruta de directorio (cadena de ruta que termina con /) de hasta 4 directorios de profundidad para obtener resultados más rápidos. Por ejemplo, si la ruta de directorio es /AAA/BBB/CCC/DDD, intente buscar «/AAA/BBB/CCC/DDD/» para cargar datos más rápidamente.</block>
   <block id="76b6bb11709d612b89ea4e85c1289694" category="cell">La interfaz de usuario forense carga los datos lentamente y enfrenta fallos al utilizar el filtro de nombre de entidad.</block>
   <block id="9047530966d5f017f54aa4479b25a938" category="cell">Pruebe con intervalos de tiempo más pequeños y con valores exactos de búsqueda con comillas dobles. Por ejemplo, si entityPath es “/home/userX/nested1/nested2/nested3/testfile.txt”, pruebe con “testfile.txt” como filtro de nombre de entidad.</block>
+  <block id="af8cb62c8a34ba6726d4859a2c8c7e95" category="admonition">Si desea verificar los archivos de instalación antes de instalar el agente, consulte la sección siguiente en <block ref="bf4e2f55c3503e0739d2135298b462c7" category="inline-xref-macro-rx"></block>.</block>
 </blocks>
