@@ -28,8 +28,17 @@ image:san_analyzer_example_with_panel.png["Mapa de topología de un sistema de a
 
 Seleccione *Observabilidad > Analizar > Analizador de SAN* para ver el Analizador de SAN. Establezca un filtro para Aplicación, Host, Estructura y/o Almacenamiento. Se muestra el mapa de los objetos, mostrando los objetos conectados. Pase el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
 
+
+NOTE: La mayoría de los filtros de SAN Analyzer (incluidos los que puede agregar) son contextuales; cuando selecciona un objeto en uno de estos filtros, las opciones que aparecen en los otros desplegables de filtros se actualizan en contexto con el objeto u objetos seleccionados. Las únicas excepciones a esto son Aplicación, Puerto y Switch; estos filtros no son contextuales.
+
 image:san_analyzer_traffic_metrics.png[""]
 
-Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. La diapositiva incluye fichas que muestran un resumen, detalles de puerto e información de zona, si está disponible.
+Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. El panel deslizante muestra un resumen, que proporciona detalles sobre el objeto seleccionado (por ejemplo, IP, hipervisor, estructuras conectadas, etc., según el tipo de objeto) y gráficos que muestran métricas para el objeto como la latencia o las IOPS, y cambia y alerta si es relevante. También puede seleccionar mostrar métricas para los objetos correlacionados principales en los gráficos, si lo desea.
+
+Además de la pestaña Resumen, el panel de desplazamiento muestra fichas para elementos como Detalles de puerto o Información de zona, según corresponda al objeto seleccionado.
 
 image:san_analyzer_slideout_example.png[""]
+
+Si su entorno incluye dispositivos iSCSI, al pasar el cursor sobre el objeto _iSCSi_ se resaltan las conexiones relacionadas con esos dispositivos iSCSI relevantes.
+
+image:san_analyzer_iscsi_traffic.png["Tráfico de iSCSI resaltado"]
