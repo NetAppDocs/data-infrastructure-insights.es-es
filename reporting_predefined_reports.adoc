@@ -40,7 +40,7 @@ Al abrir Reporting Portal, la carpeta _Team Content_ es el punto de partida para
 . Selecciona *Informes* para acceder a los informes predefinidos.
 
 
-image:Reporting_Menu.png["Menú Informes"] image:Reporting_Team_Content.png["Contenido del equipo que muestra los informes resaltados"]
+image:Reporting_Menu.png["Menú Informes"] image:Reporting_Team_Content.png["Contenido del equipo que muestra los informes resaltados, width=800"]
 
 
 

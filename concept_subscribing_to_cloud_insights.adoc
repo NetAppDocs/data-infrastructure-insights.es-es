@@ -70,17 +70,6 @@ Si su prueba gratuita ha caducado y aún no se ha suscrito a Data Infrastructure
 
 
 
-== ¿Qué pasa si mi suscripción ha caducado?
-
-Si tiene una suscripción a Data Infrastructure Insights, pero esa suscripción ha caducado, tendrá un período de gracia de cinco días para renovar su suscripción. Toda la funcionalidad de información sobre la infraestructura de datos se mantendrá activa durante este periodo de gracia.
-
-Una vez transcurrido el período de gracia, la funcionalidad Data Infrastructure Insights se suspenderá hasta que realice la renovación. Para renovar, consulte la página *Admin > Suscripción* o póngase en contacto con Ventas de NetApp.
-
-
-NOTE: Tus datos de Data Infrastructure Insights recopilados hasta el final del período de gracia permanecen intactos durante 30 días después del periodo de gracia. Si renueva su suscripción dentro de este tiempo, todos sus datos hasta el momento en que transcurra el período de gracia estarán disponibles para usted.
-
-
-
 == ¿Qué pasa si mi *Suscripción* ha expirado?
 
 Si tiene una suscripción a Data Infrastructure Insights, pero esa suscripción ha caducado, tendrá un período de gracia de cinco días para renovar su suscripción. Toda la funcionalidad de información sobre la infraestructura de datos se mantendrá activa durante este periodo de gracia.
