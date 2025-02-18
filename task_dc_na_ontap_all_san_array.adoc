@@ -34,6 +34,11 @@ A continuación se enumeran los requisitos para configurar y utilizar este recop
 
 
 
+NOTE: ASA R2 denota los modelos de última generación de la plataforma de almacenamiento ONTAP ASA. Esto incluye los modelos de cabina ASA A1K, A90, A70, A50, A30 y A20.
+
+Para todos los sistemas ASA de la generación anterior, utilice el link:task_dc_na_ontap_rest.html["ONTAP REST"] recopilador.
+
+
 
 == Una nota sobre los permisos
 
