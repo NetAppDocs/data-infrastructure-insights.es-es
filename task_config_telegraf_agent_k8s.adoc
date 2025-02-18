@@ -69,6 +69,34 @@ image:KubernetesModifyDeploymentScreen.png["Modifique las opciones de despliegue
 
 == Actualiza al operador de supervisión de Kubernetes más reciente
 
+
+
+=== Actualizaciones de botón pulsador DII
+
+Puedes actualizar el operador de monitoreo de Kubernetes a través de la página de recopiladores de Kubernetes de DII. Haga clic en el menú junto al clúster que desea actualizar y seleccione _Upgrade_. El operador verificará las firmas de imagen, realizará una instantánea de la instalación actual y realizará la actualización. En unos minutos, debería ver el progreso del estado del operador a través de Actualización en curso a Último. Si encuentra un error, puede seleccionar el estado Error para obtener más detalles y consulte la tabla Solución de problemas de actualizaciones con botón pulsador que aparece a continuación.
+
+
+
+==== Actualizaciones con repositorios privados con solo pulsar un botón
+
+Si el operador está configurado para utilizar un repositorio privado, asegúrese de que todas las imágenes necesarias para ejecutar el operador y sus firmas estén disponibles en el repositorio. Si encuentra un error durante el proceso de actualización de imágenes que faltan, simplemente añádalas al repositorio y vuelva a intentar la actualización. Para cargar las firmas de imagen en su repositorio, utilice la herramienta de cosigno de la siguiente manera, asegurándose de cargar firmas para todas las imágenes especificadas en 3 Opcional: Cargue las imágenes del operador en su repositorio privado > Image Pull Snippet
+
+[listing]
+----
+cosign copy example.com/src:v1 example.com/dest:v1
+#Example
+cosign copy <DII container registry>/netapp-monitoring:<image version> <private repository>/netapp-monitoring:<image version>
+----
+
+
+==== Retroceder a una versión que se estaba ejecutando anteriormente
+
+Si ha actualizado con la función de actualizaciones de botón pulsador y encuentra cualquier dificultad con la versión actual del operador dentro de los siete días posteriores a la actualización, puede cambiar a la versión que se estaba ejecutando anteriormente mediante la instantánea creada durante el proceso de actualización. Haga clic en el menú junto al clúster que desea revertir y seleccione _Retroceder_.
+
+
+
+=== Actualizaciones manuales
+
 Determine si existe una AgentConfiguration con el operador existente (si el espacio de nombres no es el valor predeterminado _netapp-monitoring_, sustituya el espacio de nombres adecuado):
 
  kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
