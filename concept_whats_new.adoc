@@ -20,6 +20,10 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== Febrero de 2025
+
+
+
 === ONTAP Essentials para la última generación de sistemas ASA
 
 ONTAP Essential ahora incluye la capacidad de gestión inmediata para la última generación de link:task_dc_na_ontap_all_san_array.html["ASA"]dispositivos. Esto incluye el analizador de SAN para topologías de VM a LUN de cargas de trabajo que se ejecuten en ONTAP, ahora también disponible con compatibilidad con NetApp como parte de Data Infrastructure Insights Basic Edition.
