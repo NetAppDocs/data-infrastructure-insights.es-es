@@ -56,6 +56,15 @@ A continuación se muestran ejemplos de los tipos de notificaciones que se puede
 
 | La cuenta de prueba o suscripción ha caducado y dejará de recopilar datos en 48 horas. La cuenta se eliminará después de 48 horas | Contacto link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Ventas de NetApp"] para comprar una suscripción 
 |===
+[NOTE]
+====
+Para garantizar que los destinatarios reciban notificaciones de Data Infrastructure Insights, añada las siguientes direcciones de correo electrónico en cualquier lista de permiso:
+
+* \accounts@service.cloudinsights.netapp.com
+* \DoNotReply@cloudinsights.netapp.com
+
+
+====
 
 
 == Lista global de destinatarios para alertas
