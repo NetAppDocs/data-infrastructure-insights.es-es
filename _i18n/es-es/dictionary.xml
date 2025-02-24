@@ -11627,7 +11627,6 @@
   <block id="a5692a71664d8513828d30dad7c829ca" category="list-text">¿Con qué frecuencia cambian los esquemas de nomenclatura en su inquilino?</block>
   <block id="71ff3a9d48edc0f7244689324f167d1b" category="paragraph">Normalmente, utilizaría un flujo de trabajo similar al siguiente para identificar dispositivos en su inquilino. La identificación es un proceso iterativo y podría requerir múltiples pasos de reglas de planificación y refinación.</block>
   <block id="6923128dfebc9b724f26745512b0b891" category="admonition">Si tiene dispositivos no identificados (también conocidos como dispositivos genéricos o desconocidos) en su arrendatario y, posteriormente, configura una fuente de datos que los identifique al realizar el sondeo, ya no se mostrarán ni contarán como dispositivos genéricos.</block>
-  <block id="3283326b105a290a6a4699e952c4bb7a" category="paragraph">Data Infrastructure Insights incluye una serie de tutoriales de vídeo para ayudarle a comprender estas funciones e implementar mejor sus estrategias de información empresarial. Todos los usuarios que tengan acceso a su inquilino de Data Infrastructure Insights pueden sacar partido de estos tutoriales.</block>
   <block id="555fd4883eff42c3c7a47a8af5c0d4c2" category="summary">Los datos le dan un vistazo a cómo afectan los recursos a otros recursos en su inquilino.</block>
   <block id="e59c6b6bc918194e22abd3fa59a5ca7d" category="paragraph">Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Data Infrastructure Insights proporciona herramientas que le ayudan a investigar la saturación de los recursos y el impacto en su inquilino.</block>
   <block id="509083e073a2e0f15ee1570b73d69d00" category="paragraph">Hay una serie de pasos que puede tomar para reducir o eliminar la posibilidad de saturación en su inquilino. Estas son algunas cosas que puede probar.</block>
@@ -12014,4 +12013,5 @@
   <block id="bcaea0fa3a691efcd767e69c0bf6c611" category="paragraph">Para garantizar que los destinatarios reciban notificaciones de Data Infrastructure Insights, añada las siguientes direcciones de correo electrónico en cualquier lista de permiso:</block>
   <block id="920ab4b11a04d50637a16a5c9699b3ba" category="list-text">\accounts@service.cloudinsights.netapp.com</block>
   <block id="b68146f7d3be586c34e5b6d021541f50" category="list-text">\DoNotReply@cloudinsights.netapp.com</block>
+  <block id="b496ede8f397a48079afe818e67e759f" category="paragraph">Data Infrastructure Insights incluye una serie de tutoriales de vídeo para ayudarle a comprender estas funciones e implementar mejor sus estrategias de información empresarial.</block>
 </blocks>
