@@ -22,4 +22,4 @@ keywords: data collector, NetApp, Cloud agent, ONTAP
 Este recopilador de datos crea una conexión con el cloud para admitir la recogida de datos de los sistemas ONTAP 9.9+ CVO, AFF y FAS.
 
 
-NOTE: Este recopilador de datos ya no se puede instalar en Data Infrastructure Insights a partir del 4 de abril de 2023 y se eliminará de todas las instalaciones de Data Infrastructure Insights en julio de 2023. Para obtener más información sobre la transición a la recopilación de datos basada en AU, consulte la link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/How_to_transition_from_NetApp_Cloud_Connection_to_AU_based_data_collector["Base de conocimientos"^].
+NOTE: Este recopilador de datos ya no se puede instalar en Data Infrastructure Insights a partir del 4 de abril de 2023 y se eliminará de todas las instalaciones de Data Infrastructure Insights en julio de 2023.

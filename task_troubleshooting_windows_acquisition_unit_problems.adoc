@@ -83,6 +83,6 @@ image:ProxyEndpoints_NewTable.png["Tabla de puntos finales de proxy"]
 
 == Recursos
 
-Puede encontrar consejos adicionales para la solución de problemas en el  (es necesario iniciar sesión en ellink:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conocimientos de NetApp"]).
+Puede encontrar consejos adicionales para la solución de problemas en el  (es necesario iniciar sesión en ellink:https://kb.netapp.com/Cloud/BlueXP/DII["Base de conocimientos de NetApp"]).
 
 Puede encontrar más información sobre soporte en la página Data Infrastructure Insightslink:concept_requesting_support.html["Soporte técnico"].

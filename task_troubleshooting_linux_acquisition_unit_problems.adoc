@@ -30,7 +30,7 @@ Aquí encontrará sugerencias para solucionar problemas con las unidades de adqu
 | En la página *Observabilidad > Colectores* de la pestaña *Unidades de adquisición* se muestra “Certificado caducado” o “Certificado revocado”. | Haga clic en el menú situado a la derecha de la unidad AU y seleccione *Restaurar conexión*. Siga las instrucciones para restaurar su unidad de adquisición: 1. Detenga el servicio Unidad de adquisición (AU). Puede hacer clic en el botón _Copy Stop Command_ para copiar rápidamente el comando en el portapapeles y, a continuación, pegar este comando en un símbolo del sistema en el equipo de la unidad de adquisición. 2. Cree un archivo llamado “token” en la carpeta _/var/lib/NetApp/cloudinsights/acq/conf_ en la AU. 3. Haga clic en el botón _Copy Token_ y pegue este token en el archivo que ha creado. 4. Reinicie el servicio AU. Haga clic en el botón _Copy Restart Command_ y pegue el comando en un símbolo del sistema de la unidad AU. 
 
 
-| Permiso denegado al iniciar el servicio de servidor de unidades de adquisición | Cuando la AU está instalada en SELINUX, se debe establecer en modo _permisive_. El modo _imponer_ no es compatible. Después de establecer SELINUX en modo permisivo, reinicie el servicio AU. link:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights/Permission_denied_when_starting_the_Cloud_Insight_Acquisition_Unit_Server_Service["Leer más"]. 
+| Permiso denegado al iniciar el servicio de servidor de unidades de adquisición | Cuando la AU está instalada en SELINUX, se debe establecer en modo _permisive_. El modo _imponer_ no es compatible. Después de establecer SELINUX en modo permisivo, reinicie el servicio AU. link:https://kb.netapp.com/Cloud/BlueXP/DII/Permission_denied_when_starting_the_Cloud_Insight_Acquisition_Unit_Server_Service["Leer más"]. 
 
 
 | No se cumplen los requisitos del servidor | Asegúrese de que el servidor de la unidad de adquisición o la VM cumplen link:concept_acquisition_unit_requirements.html["requisitos"] 
@@ -99,6 +99,6 @@ image:ProxyEndpoints_NewTable.png["Tabla de puntos finales de proxy"]
 
 == Recursos
 
-Puede encontrar consejos adicionales para la solución de problemas en el  (es necesario iniciar sesión en ellink:https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Insights["Base de conocimientos de NetApp"]).
+Puede encontrar consejos adicionales para la solución de problemas en el  (es necesario iniciar sesión en ellink:https://kb.netapp.com/Cloud/BlueXP/DII["Base de conocimientos de NetApp"]).
 
 Puede encontrar más información sobre soporte en la página Data Infrastructure Insightslink:concept_requesting_support.html["Soporte técnico"].
