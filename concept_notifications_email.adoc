@@ -48,13 +48,13 @@ A continuación se muestran ejemplos de los tipos de notificaciones que se puede
 | Se ha actualizado la versión de prueba o la suscripción | Revise los detalles de la suscripción en link:concept_subscribing_to_cloud_insights.html["Suscripción"]la página 
 
 
-| La suscripción caducará en 90 días. La suscripción caducará en 30 días | No es necesario realizar ninguna acción si la opción “Renovación automática” está habilitada Contacto link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Ventas de NetApp"] para renovar la suscripción 
+| La suscripción caducará en 90 días. La suscripción caducará en 30 días | No es necesario realizar ninguna acción si la opción “Renovación automática” está habilitada, póngase en contacto con el departamento de ventas de NetApp para renovar la suscripción 
 
 
-| La prueba finaliza en 2 días | Renueve la prueba desde link:concept_subscribing_to_cloud_insights.html["Suscripción"]la página. Puede renovar una versión de prueba una vez. Contacto link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Ventas de NetApp"] para comprar una suscripción 
+| La prueba finaliza en 2 días | Renueve la prueba desde link:concept_subscribing_to_cloud_insights.html["Suscripción"]la página. Puede renovar una versión de prueba una vez. Póngase en contacto con el departamento de ventas de NetApp para adquirir una suscripción 
 
 
-| La cuenta de prueba o suscripción ha caducado y dejará de recopilar datos en 48 horas. La cuenta se eliminará después de 48 horas | Contacto link:https://www.netapp.com/us/forms/sales-inquiry/cloud-insights-sales-inquiries.aspx["Ventas de NetApp"] para comprar una suscripción 
+| La cuenta de prueba o suscripción ha caducado y dejará de recopilar datos en 48 horas. La cuenta se eliminará después de 48 horas | Póngase en contacto con el departamento de ventas de NetApp para adquirir una suscripción 
 |===
 [NOTE]
 ====

@@ -10,7 +10,7 @@ summary: Con Workload Security, puede restringir el acceso de los usuarios en ca
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]

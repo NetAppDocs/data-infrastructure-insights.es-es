@@ -5,13 +5,16 @@ keywords: applications, asset, cost
 summary: Comprender las aplicaciones utilizadas en el entorno de su empresa ayuda a realizar un seguimiento del uso de los activos y de los costes. 
 ---
 = Realizar un seguimiento del uso de activos por aplicación
+:hardbreaks:
 :allow-uri-read: 
-:firstname: [.lead]
-:author: [.lead]
-:authorinitials: [
-:authors: [.lead]
-:revdate: Understanding the applications used in your company's environment helps you to keep track of asset usage and cost.
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
+
+[role="lead"]
+Comprender las aplicaciones utilizadas en el entorno de su empresa le ayuda a realizar un seguimiento del uso de los activos y los costes.
 
 Antes de poder realizar un seguimiento de los datos asociados a las aplicaciones que se ejecutan en el arrendatario, primero debe definir dichas aplicaciones y asociarlas a los activos adecuados. Puede asociar las aplicaciones con los siguientes activos: Hosts, máquinas virtuales, volúmenes, volúmenes internos, qtrees, recursos compartidos e hipervisores.
 

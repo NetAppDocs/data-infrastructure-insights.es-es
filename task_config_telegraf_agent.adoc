@@ -21,8 +21,6 @@ summary: Data Infrastructure Insights admite Telegraf como su agente para la rec
 [role="lead"]
 Data Infrastructure Insights utiliza link:https://docs.influxdata.com/telegraf["Telegraf"] como su agente para la recopilación de datos de integración. Telegraf es un agente de servidor basado en complementos que se puede utilizar para recopilar e informar estadísticas, eventos y registros. Los complementos de entrada se utilizan para recopilar la información deseada en el agente mediante el acceso al sistema/SO directamente, llamando a API de terceros o escuchando flujos configurados (por ejemplo, Kafka, statsD, etc.). Los plugins de salida se utilizan para enviar las métricas, los eventos y los registros recopilados del agente a Data Infrastructure Insights.
 
-La versión actual de Telegraf para Data Infrastructure Insights es *1.24.0*.
-
 Para obtener información sobre la instalación en Kubernetes, consulte la link:task_config_telegraf_agent_k8s.html["Operador de supervisión Kubernetes de NetApp"] página.
 
 

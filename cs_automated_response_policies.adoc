@@ -10,7 +10,7 @@ summary: 'Puede definir políticas de respuesta automatizadas para ataques poten
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media
+:imagesdir: ./media/
 
 
 [role="lead"]
