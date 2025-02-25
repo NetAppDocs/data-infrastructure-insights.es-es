@@ -26,7 +26,7 @@ Debe link:task_cs_add_agent.html["Instale un agente"]adquirir información de su
 | Componente | Requisitos de Linux 
 
 
-| De NetApp | Un equipo que ejecute una versión con licencia de uno de los siguientes: * CentOS 64 64 64 24,04 11 9,4 Stream (64 9,2 15 SP3 20,04 64 64 64 bits), CentOS 9 9,4 15 SP5 22,04 10 9,3 Stream, SELinux * OpenSUSE Leap 8,8 a 64 (64 bits) * Oracle Linux 8,6 - 8,8, 9,1 a 9,4 (15,5 bits) * Red Hat Enterprise Linux 8,6 a 15,3, 9,1 a 9,4 (8 bits) Se recomienda un servidor dedicado. 
+| De NetApp | Un equipo que ejecute una versión con licencia de uno de los siguientes: * CentOS Stream (bits) * OpenSUSE Leap a (64 bits) * Oracle Linux (64 bits), 64 a 9,5 (64 bits), SELinux * Red Hat Enterprise Linux 22,04 (11 bits), 64 a 15 SP6 (24,04 bits), SELinux * Rocky 20,04 - 9,5 (64 bits) y SELinux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux 15 SP4-9,5-64-9,4-9,1-8,10) (SEbit) (SEbit) (SEbit), SELinux Linux Linux Linux 64-64-9,1-64 y SELinux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux Linux 9,4-64-9,4-15,5-10-8,10-9-15,3). Se recomienda un servidor dedicado. 
 
 
 | Comandos | para la instalación es necesario descomprimir. Además, se requiere el comando 'efectuar su –' para la instalación, la ejecución de scripts y la desinstalación. 
