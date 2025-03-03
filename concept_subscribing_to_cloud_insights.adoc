@@ -58,8 +58,6 @@ NOTE: Si necesita tiempo adicional para evaluar Data Infrastructure Insights y e
 
 También puede inscribirse para una prueba gratuita a través de AWS Marketplace. La prueba gratuita de AWS Marketplace le da acceso a Data Infrastructure Insights durante un período de prueba de 33 días y permite hasta 499 <<observability-metering,Unidades administradas>> (MU).
 
-Nota: Si configura más de 499 MU, entrará el estado "incumplido". Mientras la prueba se encuentra en estado violado, perderá el acceso a algunas funciones de Data Infrastructure Insights hasta que se resuelva la brecha, ya sea reduciendo el número de MU configuradas o suscribiéndose a Data Infrastructure Insights.
-
 La prueba gratuita de AWS Marketplace no se puede ampliar. En cualquier momento durante la prueba, puede cambiar a una suscripción a Data Infrastructure Insights Basic Edition o cambiar a una suscripción de pago a Data Infrastructure Insights visitando la página *Admin -> Suscripción*.
 
 
@@ -142,7 +140,7 @@ Cada nivel se mide a una tasa diferente, con el conjunto calculado juntos para d
 
  Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
 
-NOTE: La suma de unidades administradas puede diferir ligeramente del recuento de recopiladores de datos de la sección de resumen. Esto se debe a que los recuentos de unidades administradas se redondean a la unidad administrada más cercana. La suma de estos números en la lista de recopiladores de datos puede ser ligeramente superior al total de unidades administradas en la sección de estado. La sección de resumen refleja el recuento real de unidades administradas para su suscripción. Para facilitar esto, DII calcula un único número de *derecho efectivo* basado en cantidades _subscribed_; luego calcula ese mismo número basado en el almacenamiento _discovered_ y solo declara la violación si la capacidad efectiva descubierta es mayor que el derecho efectivo. Esto le da flexibilidad para supervisar las cantidades que varían de las cantidades suscritas para cada nivel, lo que DII permite siempre que el almacenamiento total descubierto se encuentre dentro del derecho efectivo suscrito.
+NOTE: La suma de unidades administradas puede diferir ligeramente del recuento de recopiladores de datos de la sección de resumen. Esto se debe a que los recuentos de unidades administradas se redondean a la unidad administrada más cercana. La suma de estos números en la lista de recopiladores de datos puede ser ligeramente superior al total de unidades administradas en la sección de estado. La sección de resumen refleja el recuento real de unidades administradas para su suscripción. Para facilitar esto, DII calcula un único número de *derecho efectivo* basado en cantidades _Subscrited_; luego calcula ese mismo número basado en el almacenamiento _discovered_. Esto le da flexibilidad para supervisar las cantidades que varían de las cantidades suscritas para cada nivel, lo que DII permite siempre que el almacenamiento total descubierto se encuentre dentro del derecho efectivo suscrito.
 
 
 
