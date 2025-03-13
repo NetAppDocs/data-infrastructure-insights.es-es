@@ -158,8 +158,6 @@ Análisis de la infraestructura de datos Observabilidad de la infraestructura y 
 
 
 
-Si su entorno incluye o se espera que incluya 1,000 o más unidades gestionadas, podrá optar a *precios por volumen* y se le pedirá que se contacte con el departamento de ventas de NetApp para suscribirse. Consulte <<how-do-i-subscribe,a continuación>> para obtener más información.
-
 
 
 === Medición de Seguridad de Carga de Trabajo
@@ -183,7 +181,7 @@ Si el número de unidades gestionadas es inferior a 1.000, puedes suscribirte a 
 
 === Suscríbase a través de Sales direct de NetApp
 
-Si el número esperado de unidades gestionadas es 1.000 o superior, haga clic en el link:https://bluexp.netapp.com/contact-cds["*Póngase en contacto con Ventas*"] botón para suscribirse mediante el equipo de ventas de NetApp.
+Si el número esperado de unidades gestionadas es 1.000 o superior, haga clic en el link:https://www.netapp.com/forms/cloud-insights-contact-us["*Póngase en contacto con Ventas*"] botón para suscribirse mediante el equipo de ventas de NetApp.
 
 Debe facilitar su *Número de serie* de Data Infrastructure Insights a su representante de ventas de NetApp para que su suscripción de pago se pueda aplicar a su entorno de Data Infrastructure Insights. El número de serie identifica de forma exclusiva su entorno de prueba Data Infrastructure Insights y se puede encontrar en la página *Admin > Suscripción*.
 
