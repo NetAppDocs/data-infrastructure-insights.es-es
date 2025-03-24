@@ -78,6 +78,39 @@ Consulte link:concept_cs_agent_requirements.html["Requisitos del agente"] para o
 
 
 
+== Prueba de conectividad para recolectores de datos
+
+La función de conectividad de prueba (presentada en marzo de 2025) tiene como objetivo ayudar a los usuarios finales a identificar las causas específicas de los fallos al configurar recopiladores de datos en Data Infrastructure Insights (DII) Workload Security. Esto permite a los usuarios corregir automáticamente los problemas relacionados con la comunicación de red o la falta de roles.
+
+Esta función ayudará a los usuarios a determinar si todas las comprobaciones relacionadas con la red están en su lugar antes de configurar un recopilador de datos. Además, informará a los usuarios sobre las características a las que pueden acceder en función de la versión de ONTAP, las funciones y los permisos asignados a ellos en ONTAP.
+
+
+NOTE: La conectividad de prueba no es compatible con los recopiladores de directorios de usuario
+
+
+
+=== Requisitos previos para la prueba de conexión
+
+* Las credenciales de nivel de clúster son necesarias para que esta función funcione en su totalidad.
+* La comprobación de acceso a la función no se admite en modo SVM.
+* Si utiliza credenciales de administración del clúster, no es necesario contar con permisos nuevos.
+* Si utiliza un usuario personalizado (por ejemplo, _csuser_), proporcione los permisos obligatorios y los permisos específicos de características para las funciones que desea utilizar.
+
+
+image:ws_test_connection_button.png["botón de conexión de prueba de seguridad de carga de trabajo"]
+
+Asegúrese de revisar la <<a-note-about-permissions,Permisos>> sección a continuación también.
+
+
+
+=== Pruebe la conexión
+
+El usuario puede ir a la página del recopilador de agregar/editar, ingresar los detalles del nivel del clúster (en Modo Cluster) o los detalles del nivel de SVM (en Modo SVM), y hacer clic en el botón *Probar Conexión*. A continuación, Workload Security procesará la solicitud y mostrará un mensaje de éxito o fallo adecuado.
+
+image:ws_test_connection_success_example.png["Mensaje 'Probar conexión' de seguridad de carga de trabajo correcto"]
+
+
+
 == Requisitos previos para bloqueo de acceso del usuario
 
 Tenga en cuenta lo siguiente paralink:cs_restrict_user_access.html["Bloqueo de acceso de usuario"]:
