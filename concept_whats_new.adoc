@@ -32,13 +32,25 @@ image:ontap_essentials_asa_views.png["Lista desplegable de aspectos básicos de 
 
 
 
+=== ONTAP Essentials para la última generación de sistemas ASA
+
+ONTAP Essential ahora incluye la capacidad de gestión inmediata para la última generación de link:task_dc_na_ontap_all_san_array.html["ASA"]dispositivos. Esto incluye el analizador de SAN para topologías de VM a LUN de cargas de trabajo que se ejecuten en ONTAP, ahora también disponible con compatibilidad con NetApp como parte de Data Infrastructure Insights Basic Edition.
+
+image:ontap_essentials_asa_views.png["Lista desplegable de aspectos básicos de ONTAP que muestra a ASA como diferente de Unified"]
+
+
+
 === Seguimiento del uso de la API DII: Mejore la seguridad y la eficiencia
 
-Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
+Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas. Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
 
-Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
+Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo. Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
 
 image:api_usage_analytics_screenshot.png["Ejemplo de análisis de uso de la API"]
+
+
+
+=== API de seguridad de carga de trabajo para restringir usuarios
 
 
 
