@@ -19,7 +19,7 @@ keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying
 
 
 [role="lead"]
-Puede personalizar el formato de salida y la entrega de un informe, establecer las propiedades o los horarios de los informes y enviar informes por correo electrónico.
+Puede personalizar el formato de salida y la entrega de un informe, establecer propiedades o programas de informe e informes de correo electrónico.
 
 
 NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"].
@@ -39,8 +39,6 @@ Puede personalizar el formato y el método de entrega de los informes.
 image:Reporting_Output_and_Delivery.png["Salida y entrega del informe"]
 
 . Haga clic en *Propiedades > Programación*
-
-
 . Puede establecer las siguientes opciones:
 +
 ** *Programar* cuando desee que se ejecuten los informes.

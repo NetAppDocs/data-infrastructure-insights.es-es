@@ -20,6 +20,67 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== Marzo de 2025
+
+
+
+=== Navegación contextual mejorada para una gestión eficiente de la infraestructura
+
+Ahorre tiempo aprovechando la información sobre la infraestructura de datos para lograr la excelencia operativa. Ahora estamos agregando enlaces de menú contextual que le permiten saltar directamente de cualquier objeto a la página de destino de activos para obtener información sobre el rendimiento del dispositivo, SAN Analyzer para la visualización de topología de red, registros para el conocimiento operativo o Change Analyzer para la gestión de la configuración.
+
+Con el acceso instantáneo a los datos clave a través de varias vistas, puede comprender más fácilmente las relaciones de objetos más rápidamente. Este flujo de trabajo optimizado acelera la toma de decisiones y la resolución de problemas, lo que en última instancia le ahorra tiempo y mejora sus capacidades generales de análisis.
+
+image:contextual_menu_example.png["Ejemplo de menú contextual, width=500"]
+
+
+
+=== Conservar el historial de activos eliminados
+
+Nuestra función mejorada de cambio de infraestructura ahora conserva el historial de activos eliminados, como qtrees y volúmenes que se han movido y ya no están disponibles.
+
+¿Le falta algo en su puzzle de solución de problemas? ¡Ya no! Verá todo, incluidos los objetos eliminados marcados con un tachado, lo que le proporcionará un contexto completo incluso después de eliminar los activos, lo que garantiza que nunca se pierda elementos críticos de cambios o alertas anteriores en la ruta de extremo a extremo.
+
+¿El resultado? Tiempos de resolución más rápidos y decisiones de infraestructura más seguras, incluso cuando los activos en cuestión ya no existen.
+
+image:infra_change_removed_assets.png["activos eliminados en cambio de infraestructura mostrando con un tachado, width=300"]
+
+
+
+=== Actualización del operador de Kubernetes con solo pulsar un botón
+
+¿Quieres estar seguro de que tienes el último operador de Kubernetes? Actualice el operador bajo demanda desde el menú del clúster de los recopiladores de Kubernetes de DII. Simplemente seleccione Actualizar en el menú, y el operador verificará las firmas de imagen, capturará una instantánea de su instalación actual y realizará la actualización.
+
+La actualización de botón pulsador es una característica opcional y su activación se puede gestionar por clúster.
+
+image:dii_push_button_upgrade.png["actualización del operador con botón pulsador desde el menú del grupo de instrumentos, width=600"]
+
+
+
+=== Prueba de conectividad para recopiladores de datos de seguridad de cargas de trabajo de almacenamiento
+
+La función de conectividad de prueba tiene como objetivo ayudar a los usuarios finales a identificar las causas específicas de los fallos al configurar recopiladores de datos en Seguridad de cargas de trabajo de Data Infrastructure Insights (DII). Esto permite a los usuarios corregir automáticamente los problemas relacionados con la comunicación de red o la falta de roles.
+
+image:ws_test_connection_button.png["botón de conexión de prueba de seguridad de carga de trabajo"] image:ws_test_connection_success_example.png["Mensaje 'Probar conexión' de seguridad de carga de trabajo correcto"]
+
+
+
+=== Soporte del sistema operativo
+
+Los siguientes sistemas operativos ahora son compatibles con las unidades de adquisición de información sobre la infraestructura de datos, además de las siguienteslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["ya es compatible"]:
+
+* AlmaLinux 9,5
+* Debian (64 bits) 11
+* OpenSUSE Leap 15,6
+* Oracle Enterprise Linux (64 bits) 8,9, 8,10, 9,5
+* Red Hat (64 bits) 8,9, 8,10, 9,5
+* Rocoso 9,5
+* SUSE Linux Enterprise Server 15 SP6
+* Sistema operativo Ubuntu Server 24.04 LTS
+
+
+'''
+
+
 == Febrero de 2025
 
 
@@ -34,15 +95,11 @@ image:ontap_essentials_asa_views.png["Lista desplegable de aspectos básicos de 
 
 === Seguimiento del uso de la API DII: Mejore la seguridad y la eficiencia
 
-Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas. Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
+Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
 
-Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo. Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
+Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
 
 image:api_usage_analytics_screenshot.png["Ejemplo de análisis de uso de la API"]
-
-
-
-=== API de seguridad de carga de trabajo para restringir usuarios
 
 
 
