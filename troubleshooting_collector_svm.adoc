@@ -78,5 +78,8 @@ image:CS_Data_Collector_Error.png["Enlace Más Detalle de Error de Recopilador d
 
 
 | El recopilador de datos está fuera de servicio cuando se selecciona el modo SVM. | Mientras se conecta en modo SVM, si se utiliza la IP de gestión del clúster para conectarse en lugar de la IP de gestión de SVM, la conexión se producirá un error. Asegúrese de que se usa la IP de SVM correcta. 
+
+
+| El recopilador de datos muestra un mensaje de error cuando la función Acceso denegado está activada: El conector está en estado de error. Nombre del servicio: Auditoría. Motivo del fallo: No se pudo configurar fpolicy en la SVM test_svm. Motivo: El usuario no está autorizado. | Es posible que al usuario le falten los permisos REST necesarios para la función Acceso denegado. Siga las instrucciones de link:concept_ws_integration_with_ontap_access_denied.html["esta página"] para establecer los permisos. Reinicie el recopilador una vez definidos los permisos. 
 |===
 Si todavía tiene problemas, póngase en contacto con los enlaces de soporte mencionados en la página *Ayuda > Soporte*.
