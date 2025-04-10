@@ -22049,28 +22049,6 @@ Modelos y versiones compatibles con este recopilador de datos:
 * NetappRelease 9.15.1RC2: Mon Jun 24 04:49:55 UTC 2024
 * NetappRelease 9.16.1: Sáb Ene 18 19:31:15 UTC 2025
 * NetappRelease 9.16.1P1: Vie Feb 14 03:53:50 UTC 2025
-* NetappRelease 9.16.1RC1: LUN Nov 04 10:39:46 UTC 2024
-* NetappRelease 9.16.1X26: Mon Dec 09 10:27:42 UTC 2024
-* NetappRelease 9.16.1X29: Dom Ene 12 11:18:25 UTC 2025
-* NetappRelease 9.17.1X7: Vie Feb 14 11:21:52 UTC 2025
-* NetappRelease Clawhammer__9.14.1: Sábado 18 09 de mayo: 23:49 UTC 2024
-* NetappRelease Cloudstream__9.16.1: Mon Nov 04 05:51:46 UTC 2024
-* NetappRelease Cloudstream__9.16.1: Jue Mar 13 20:55:54 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Mon Mar 03 05:57:49 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Sun Mar 09 05:56:14 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Sun Mar 16 04:54:53 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Mar Ene 28 11:48:14 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Mar 18 04:59:54 UTC 2025
-* NetappRelease Electricjellyfish__9.17.1: Mié Mar 12 04:42:03 UTC 2025
-* NetappRelease Mightysquirrel__9.15.1: Vie May 24 05:03:10 UTC 2024
-* NetappRelease Mightysquirrel__9.15.1: Sáb Ene 18 11:39:42 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Vie Feb 21 14:02:58 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: LUN Feb 17 08:18:14 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Thu Feb 20 08:11:55 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Thu Feb 27 04:15:40 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Mar Feb 18 14:00:54 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Mié Feb 26 08:19:21 UTC 2025
-* NetappRelease Tropicallightning__9.18.0: Mié Ene 29 08:34:06 UTC 2025
 
 
 |===
