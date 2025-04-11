@@ -6,13 +6,7 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 ---
 = Suscripción a Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -136,11 +130,10 @@ Información sobre la infraestructura de datos La observabilidad mide el uso seg
 * Consumido en el cloud
 
 
-Cada nivel se mide a una tasa diferente, con el conjunto calculado juntos para darle un derecho _efectivo_. La fórmula para calcular el uso efectivo es la siguiente:
+Cada nivel se mide a una tasa diferente, con el conjunto calculado juntos para darle un derecho ponderado. La fórmula para calcular el uso ponderado es la siguiente:
 
- Effective usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
-
-NOTE: La suma de unidades administradas puede diferir ligeramente del recuento de recopiladores de datos de la sección de resumen. Esto se debe a que los recuentos de unidades administradas se redondean a la unidad administrada más cercana. La suma de estos números en la lista de recopiladores de datos puede ser ligeramente superior al total de unidades administradas en la sección de estado. La sección de resumen refleja el recuento real de unidades administradas para su suscripción. Para facilitar esto, DII calcula un único número de *derecho efectivo* basado en cantidades _Subscrited_; luego calcula ese mismo número basado en el almacenamiento _discovered_. Esto le da flexibilidad para supervisar las cantidades que varían de las cantidades suscritas para cada nivel, lo que DII permite siempre que el almacenamiento total descubierto se encuentre dentro del derecho efectivo suscrito.
+ Weighted usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+Para facilitar esto, DII calcula un único número de *derecho ponderado* basado en cantidades _Subscribe_; a continuación, calcula ese mismo número basado en el almacenamiento _discovered_ y solo declara incumplimiento si la capacidad descubierta es mayor que el derecho ponderado. Esto le da flexibilidad para supervisar las cantidades que varían de las cantidades suscritas para cada nivel, lo que DII permite siempre que el almacenamiento total descubierto se encuentre dentro del derecho ponderado suscrito.
 
 
 
