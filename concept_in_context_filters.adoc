@@ -5,17 +5,8 @@ summary: Puede filtrar los objetos que estén relacionados directamente con el a
 keywords: Assets, landing page, filtering, context, related 
 ---
 = Filtrado de objetos en contexto
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

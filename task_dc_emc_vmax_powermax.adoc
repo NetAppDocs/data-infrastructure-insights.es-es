@@ -5,17 +5,8 @@ keywords: data collector, EMC, DELL, vmax, powermax
 summary: Configuración del recopilador de datos de la familia de dispositivos VMAX y PowerMax de Dell EMC. 
 ---
 = Recopilación de datos de la familia de dispositivos VMAX y PowerMax de Dell EMC
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

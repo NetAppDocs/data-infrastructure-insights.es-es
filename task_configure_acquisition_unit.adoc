@@ -5,17 +5,8 @@ keywords: Acquisition Unit, AU, install, configure, Linux, add, remove, uninstal
 summary: Unidad de adquisición instalación, desinstalación, configuración del soporte de proxy, etc. en Windows y Linux. 
 ---
 = Configuración de unidades de adquisición
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -120,7 +111,8 @@ El sistema muestra el cuadro de diálogo _Install Acquisition Unit_ (instalar un
 
 
 
-image::NewWindowsAUInstall.png[Instalación AU de Windows]
+[role="thumb"]
+image:NewWindowsAUInstall.png["Instalación AU de Windows"]
 
 . Compruebe que el servidor o el equipo virtual que aloja la unidad de adquisición cumple los requisitos del sistema recomendados.
 . Compruebe que el servidor ejecuta una versión compatible de Windows. Haga clic en _OS Versions soportadas (i)_ para obtener una lista de las versiones compatibles.

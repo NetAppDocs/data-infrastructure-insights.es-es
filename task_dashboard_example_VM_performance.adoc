@@ -5,17 +5,8 @@ summary: Ejemplo de consola en el que se destaca el rendimiento de las máquinas
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = Ejemplo de consola: Rendimiento de máquina virtual
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

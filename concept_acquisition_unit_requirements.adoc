@@ -5,17 +5,8 @@ summary: El servidor o la VM que utilice como Unidad de adquisición debe cumpli
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = Requisitos de la unidad de adquisición
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

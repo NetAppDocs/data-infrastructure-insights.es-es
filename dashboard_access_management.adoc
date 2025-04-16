@@ -5,17 +5,9 @@ summary: Determina si un panel de control que crea es público o privado.
 keywords: dashboard, public, shared, private 
 ---
 = Gestión de acceso al panel de control
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

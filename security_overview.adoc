@@ -5,17 +5,8 @@ summary: Data Infrastructure Insights utiliza las mejores prácticas de segurida
 keywords: security, risk, protection 
 ---
 = Información sobre seguridad de la infraestructura de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

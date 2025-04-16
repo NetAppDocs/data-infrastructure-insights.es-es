@@ -6,13 +6,7 @@ summary: Recopilador de DATOS REST DE ONTAP
 ---
 = Recopilador de DATOS REST DE NetApp ONTAP
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

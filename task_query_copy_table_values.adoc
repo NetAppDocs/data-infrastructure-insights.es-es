@@ -5,17 +5,8 @@ summary: Puede copiar valores de una tabla al portapapeles para utilizarlos en o
 keywords: query, queries, copy, values, clipboard 
 ---
 = Copiando valores de tabla
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

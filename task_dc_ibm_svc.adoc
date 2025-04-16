@@ -5,17 +5,8 @@ keywords: IBM, SVC,SAN
 summary: Configurar el recopilador de datos de IBM SAN Volume Controller. 
 ---
 = Configurar el recopilador de datos de IBM SAN Volume Controller
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

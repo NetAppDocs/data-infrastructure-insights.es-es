@@ -6,13 +6,7 @@ summary: Data Infrastructure Insights se puede configurar para que el software A
 ---
 = Instalación manual del software de la unidad de adquisición
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

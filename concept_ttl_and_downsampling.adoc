@@ -5,17 +5,8 @@ summary: Explicación de los tiempos de retención de datos y la reducción de m
 keywords: time-to-live, TTL, downsampling, downsample, retention 
 ---
 = Retención de datos y reducción de muestreo de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

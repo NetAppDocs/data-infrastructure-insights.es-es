@@ -5,17 +5,8 @@ keywords: agent, Workload Security, delete agent, Cloud Secure
 summary: Eliminando agentes de seguridad de carga de trabajo 
 ---
 = Eliminar un agente de seguridad de carga de trabajo
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

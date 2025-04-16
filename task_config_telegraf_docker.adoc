@@ -5,17 +5,8 @@ keywords: telegraf, installation, install, docker
 summary: Configuración de recopilador de datos de Docker 
 ---
 = Recopilador de datos de Docker
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

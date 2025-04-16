@@ -5,17 +5,8 @@ summary: Data Infrastructure Insights puede proporcionar vistas sobre el almacen
 keywords: storage, virtual, virtualized, virtualization, 
 ---
 = Virtualización del almacenamiento
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

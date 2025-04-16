@@ -6,13 +6,8 @@ summary: El operador de supervisión de Kubernetes recopila datos de Kubernetes 
 ---
 = Instalación y configuración del operador de supervisión de Kubernetes
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
 :nofooter: 
-:toclevels: 2
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

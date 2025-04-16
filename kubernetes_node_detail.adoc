@@ -6,13 +6,7 @@ summary: La página de detalles del nodo de Kubernetes proporciona información 
 ---
 = Página de detalles del nodo de Kubernetes
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

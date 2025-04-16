@@ -5,17 +5,8 @@ keywords: data collector, VMware,
 summary: Configurar recopilador de datos de VMware. 
 ---
 = Configurar el recopilador de datos de VMware vSphere
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

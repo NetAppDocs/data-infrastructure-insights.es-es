@@ -5,17 +5,8 @@ summary: Mejores prácticas para sacar el máximo partido de los paneles
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
 = Mejores prácticas para Paneles y widgets
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -6,18 +6,55 @@ keywords: features
 ---
 = Novedades en Data Infrastructure Insights
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
 NetApp mejora y mejora continuamente sus productos y servicios. A continuación se muestran algunas de las características y funcionalidades más recientes disponibles en Data Infrastructure Insights (anteriormente Cloud Insights).
 
+
+
+== Abril de 2025
+
+
+
+=== Límites de anomalías alimentados con ML en widgets de línea para la resolución proactiva de problemas
+
+Para solucionar problemas de rendimiento con los widgets de gráfico de línea o spline, ahora puede mostrar los límites de comportamiento esperados junto con las métricas reales, lo que le permite distinguir entre tendencias métricas normales y anormales.
+
+El aprendizaje automático DII con análisis de datos estacionales establece umbrales inteligentes basados en patrones históricos. Cuando las métricas se desvían de los rangos esperados, el sistema las destaca como anomalías, lo que permite identificar rápidamente los problemas, reducir el tiempo medio de resolución y abordar los problemas antes de que afecten a las operaciones.
+
+image:expected_bounds_example_showing_spike.png["límites esperados que muestran el pico por encima, ancho=400"]
+
+
+
+=== Optimice los costes de VMware con la compatibilidad con almacenamiento VSAN
+
+Nuestra función de optimización de máquinas virtuales ahora incluye compatibilidad con entornos VMware con almacenamiento VSAN. Además del uso de la CPU y la memoria, el análisis ahora considera el almacenamiento VSAN local para recuperar recomendaciones, lo que ayuda a reducir aún más los costes de licencias.
+
+image:vm_optimization_with_vsan.png["Ejemplo de optimización de máquinas virtuales con VSAN"]
+
+
+
+=== Detalles de alerta al alcance de la mano
+
+Investigar las alertas es más fácil que nunca con el nuevo panel deslizante. Seleccione una alerta para ver los detalles de esa alerta y cambie fácilmente entre alertas sin perder su lugar mientras investiga los problemas.
+
+image:alert_slideout_example.png["Alerta deslizante para una navegación más fácil"]
+
+
+
+=== Exportación asincrónica de Forensics de Seguridad de Carga de Trabajo
+
+La exportación de datos forenses puede tardar desde unos pocos segundos hasta varias horas, dependiendo de la cantidad de datos que se van a exportar. Workload Security exporta los datos de forma asíncrona, por lo que puede seguir trabajando mientras se está compilando el .CSV.
+
+
+
+=== Notificaciones del recopilador de datos agrupadas en reglas
+
+Si ha configurado notificaciones en recopiladores de datos, a partir del 15 de abril esas notificaciones se gestionarán en Reglas de notificación, con una sola regla para recopiladores que tengan destinatarios idénticos. Los coleccionistas con diferentes destinatarios tendrán reglas separadas. Las notificaciones de recopilador existentes se migran a reglas de notificación.
+
+'''
 
 
 == Marzo de 2025
@@ -64,6 +101,14 @@ image:ws_test_connection_button.png["botón de conexión de prueba de seguridad 
 
 
 
+=== Prueba de conectividad para recopiladores de datos de seguridad de cargas de trabajo de almacenamiento
+
+La función de conectividad de prueba tiene como objetivo ayudar a los usuarios finales a identificar las causas específicas de los fallos al configurar recopiladores de datos en Seguridad de cargas de trabajo de Data Infrastructure Insights (DII). Esto permite a los usuarios corregir automáticamente los problemas relacionados con la comunicación de red o la falta de roles.
+
+image:ws_test_connection_button.png["botón de conexión de prueba de seguridad de carga de trabajo"] image:ws_test_connection_success_example.png["Mensaje 'Probar conexión' de seguridad de carga de trabajo correcto"]
+
+
+
 === Soporte del sistema operativo
 
 Los siguientes sistemas operativos ahora son compatibles con las unidades de adquisición de información sobre la infraestructura de datos, además de las siguienteslink:https://docs.netapp.com/us-en/cloudinsights/concept_acquisition_unit_requirements.html["ya es compatible"]:
@@ -93,13 +138,25 @@ image:ontap_essentials_asa_views.png["Lista desplegable de aspectos básicos de 
 
 
 
+=== ONTAP Essentials para la última generación de sistemas ASA
+
+ONTAP Essential ahora incluye la capacidad de gestión inmediata para la última generación de link:task_dc_na_ontap_all_san_array.html["ASA"]dispositivos. Esto incluye el analizador de SAN para topologías de VM a LUN de cargas de trabajo que se ejecuten en ONTAP, ahora también disponible con compatibilidad con NetApp como parte de Data Infrastructure Insights Basic Edition.
+
+image:ontap_essentials_asa_views.png["Lista desplegable de aspectos básicos de ONTAP que muestra a ASA como diferente de Unified"]
+
+
+
 === Seguimiento del uso de la API DII: Mejore la seguridad y la eficiencia
 
-Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
+Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas. Refuerce su posición de seguridad y optimice la gestión de recursos con un seguimiento mejorado del uso de la API de REST, disponible para los usuarios administradores. Con el seguimiento del uso de la API puede ver qué tokens de API se están utilizando, desde qué direcciones IP y el volumen de tráfico que generan. Al vincular tokens a direcciones IP específicas y niveles de uso, obtendrá información potente sobre el acceso al sistema y las tendencias de uso, lo que le brinda el control que necesita para mantener un entorno seguro y eficiente y mantener las operaciones funcionando sin problemas.
 
-Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
+Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo. Para ver el uso de la API, navegue hasta *Observabilidad > Administrador > Acceso a la API* y seleccione _Ver uso de la API_. Tenga en cuenta que esta API solo está disponible para las API de observabilidad de DII; no se aplica a la seguridad de carga de trabajo.
 
 image:api_usage_analytics_screenshot.png["Ejemplo de análisis de uso de la API"]
+
+
+
+=== API de seguridad de carga de trabajo para restringir usuarios
 
 
 

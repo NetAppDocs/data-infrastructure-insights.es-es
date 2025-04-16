@@ -6,13 +6,7 @@ summary: La resolución automática de dispositivos le ayuda a realizar un segui
 ---
 = Descripción general de la resolución automática del dispositivo
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

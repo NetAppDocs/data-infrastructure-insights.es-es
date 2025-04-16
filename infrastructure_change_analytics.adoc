@@ -6,13 +6,7 @@ summary: Cloud Insights realiza un seguimiento de los cambios en la infraestruct
 ---
 = Análisis de cambios de infraestructura
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

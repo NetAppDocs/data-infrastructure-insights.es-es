@@ -5,17 +5,8 @@ summary: Búsqueda avanzada techniquest puede ayudarle a localizar los activos q
 keywords: asset page, objects, search, advanced, alerts 
 ---
 = Sugerencias y consejos para buscar activos y alertas
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

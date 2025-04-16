@@ -6,13 +6,7 @@ summary: Recopilador de Resolver de Host de Base de Datos Genérica
 ---
 = Resolución de host de base de datos genérica de NetApp
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

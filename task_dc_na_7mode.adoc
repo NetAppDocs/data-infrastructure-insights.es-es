@@ -5,17 +5,8 @@ keywords: data collector, 7-mode, NetApp
 summary: Configurar recopilador de datos de 7-Mode de NetApp. 
 ---
 = Recopilador de datos de NetApp Data ONTAP con funcionamiento en 7-Mode
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

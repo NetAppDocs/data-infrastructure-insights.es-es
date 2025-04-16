@@ -5,17 +5,8 @@ summary: Aspectos básicos de ONTAP es un conjunto de consolas y flujos de traba
 keywords: dashboard, widget, ontap, overview, insight 
 ---
 = Aspectos básicos de ONTAP
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

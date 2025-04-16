@@ -6,13 +6,7 @@ summary: Puedes importar anotaciones y aplicaciones con la API de Data Infrastru
 ---
 = Importación de anotaciones
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

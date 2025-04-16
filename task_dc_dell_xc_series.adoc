@@ -5,17 +5,8 @@ keywords: data collector, Dell, EMC, xc
 summary: Configuración del recopilador de datos Dell EMC XC Series. 
 ---
 = Recopilador de datos de la serie EMC XC de Dell
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: logs, monitors, alerts, EMS,
 summary: El Explorador de registros es una herramienta eficaz para investigar problemas a través de diferentes registros del sistema. 
 ---
 = Explorador de registros
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

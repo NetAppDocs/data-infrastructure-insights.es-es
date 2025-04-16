@@ -5,17 +5,8 @@ keywords: audit, users, activities
 summary: La auditoría proporciona una vista de las actividades del sistema y del usuario en el sistema Data Infrastructure Insights. 
 ---
 = Auditoría
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

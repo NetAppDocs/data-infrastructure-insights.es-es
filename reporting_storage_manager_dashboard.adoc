@@ -5,17 +5,8 @@ summary: Es posible usar la consola de Storage Manager para la gestión diaria d
 keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard 
 ---
 = Consola de Storage Manager
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

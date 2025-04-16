@@ -6,13 +6,7 @@ summary: La identificación de dispositivos inactivos le permite elegir eliminar
 ---
 = Identificación de dispositivos inactivos
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

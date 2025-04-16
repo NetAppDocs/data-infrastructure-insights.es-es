@@ -5,17 +5,8 @@ summary: Sugerencias para la solución de problemas de la unidad de adquisición
 keywords: AU, acquisition unit, trioubleshooting 
 ---
 = Solución de problemas de la unidad de adquisición en Linux
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

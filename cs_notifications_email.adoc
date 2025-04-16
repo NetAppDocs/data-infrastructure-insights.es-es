@@ -5,17 +5,8 @@ summary: Adición de direcciones de correo electrónico para notificaciones de a
 keywords: email, notifications, alerts, warnings, attacks 
 ---
 = Configuración de notificaciones por correo electrónico para alertas, advertencias y el estado del agente/colector de origen de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

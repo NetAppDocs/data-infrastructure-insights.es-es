@@ -5,17 +5,8 @@ keywords: data collector, Hitachi Vantara Command Suite, Hitachi
 summary: Configuración del recopilador de datos de HDS Command Suite Device Manager. 
 ---
 = Recopilador de datos de Hitachi Vantara Command Suite
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

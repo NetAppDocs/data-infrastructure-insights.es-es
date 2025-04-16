@@ -6,13 +6,7 @@ keywords: dashboard, widget, custom, view, data
 ---
 = Información general sobre consolas
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -21,8 +15,8 @@ Data Infrastructure Insights proporciona a los usuarios la flexibilidad para cre
 
 IMPORTANT: Los ejemplos de estas secciones son sólo para fines de explicación y no cubren todos los escenarios posibles. Los conceptos y pasos aquí indicados pueden utilizarse para crear sus propios paneles de control con el fin de resaltar los datos específicos de sus necesidades particulares.
 
+índice:[]
 
-toc::[]
 
 
 == Crear una consola

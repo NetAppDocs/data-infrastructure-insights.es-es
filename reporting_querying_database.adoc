@@ -5,17 +5,8 @@ summary: Utilice las API de Data Infrastructure Insights para consultar directam
 keywords: reporting, cognos, data warehouse, dwh, API 
 ---
 = Acceda a la base de datos de informes a través de API
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

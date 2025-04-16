@@ -5,17 +5,8 @@ keywords: webhook, notification, Microsoft, Teams, integration
 summary: Cree un enlace web para alertar sobre el rendimiento o los umbrales de inventario de los equipos de Microsoft 
 ---
 = Ejemplo de Webhook para equipos de Microsoft
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: telegraf, installation, install, redis
 summary: Configuración del recopilador de datos Reedis 
 ---
 = Recopilador de datos de RethinkDB
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: Puede importar paneles recomendados para ayudarle a responder preguntas
 keywords: dashboard, gallery, import 
 ---
 = Importando desde la galería de paneles
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ summary: Seguridad de carga de trabajo se integra con ONTAP para recibir eventos
 keywords: ransomware, ARP, Protection, Security, access 
 ---
 = Integración con acceso ONTAP denegado
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

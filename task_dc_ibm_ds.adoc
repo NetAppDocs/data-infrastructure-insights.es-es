@@ -5,17 +5,8 @@ keywords: data collector, IBM DS6xxx, IBM DS6xxx, IBM, IBM DS
 summary: Configurar el recopilador de datos de la serie DS8000 de System Storage. 
 ---
 = Recopilador de datos IBM System Storage de la serie DS8000
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

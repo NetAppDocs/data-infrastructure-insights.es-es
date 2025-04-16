@@ -6,13 +6,7 @@ summary: Las cuentas de usuario de seguridad de carga de trabajo se gestionan a 
 ---
 = Gestión de usuarios
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

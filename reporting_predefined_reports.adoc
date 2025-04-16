@@ -5,17 +5,8 @@ summary: Descripción general de los informes predefinidos
 keywords: reporting, cognos, data warehouse, dwh, pre-defined 
 ---
 = Informes predefinidos más sencillos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

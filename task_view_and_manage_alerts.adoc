@@ -5,17 +5,8 @@ summary: Ver alertas que han activado los monitores
 keywords: monitor, alert, viewing 
 ---
 = Visualización y administración de alertas desde monitores
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

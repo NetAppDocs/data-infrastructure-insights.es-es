@@ -41,11 +41,7 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
-
-
-== Código abierto
-
-Los archivos de notificación proporcionan información sobre los derechos de autor y las licencias de terceros que se utilizan en software de NetApp.
+Incluir:https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
 
 link:media/Data_Infrastructure_Insights-On-prem-Components-ReleaseNotice1.pdf["Aviso para información sobre la infraestructura de datos (antes Cloud Insights)"]
 

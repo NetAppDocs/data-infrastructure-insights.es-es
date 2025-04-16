@@ -5,24 +5,16 @@ summary: Funciones y conceptos de la consola.
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = Funciones de la consola
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
 :nofooter: 
-:toclevels: 1
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
 Los paneles y widgets ofrecen una gran flexibilidad en la visualización de los datos. Estos son algunos conceptos que le ayudarán a sacar el máximo partido de sus paneles personalizados.
 
+índice:[]
 
-toc::[]
 
 
 == Nomenclatura de widgets
@@ -66,13 +58,17 @@ Cuando se muestren las leyendas, si se puede navegar hasta la página de destino
 
 Información sobre la infraestructura de datos proporciona diferentes opciones de *transformación* para ciertas métricas en widgets (específicamente, aquellas métricas llamadas “personalizadas” o métricas de integración, como de Kubernetes, datos avanzados de ONTAP, plugins de Telegraf, etc.), lo que le permite mostrar los datos de varias maneras. Al añadir medidas transformables a un widget, se presenta con una lista desplegable dando las siguientes opciones de transformación:
 
-Ninguno:: Los datos se muestran tal cual, sin manipulación.
-Velocidad:: Valor actual dividido entre el intervalo de tiempo desde la observación anterior.
-Acumulativo:: Acumulación de la suma de valores anteriores y del valor actual.
-Delta:: La diferencia entre el valor de observación anterior y el valor actual.
-Tasa diferencial:: Valor delta dividido por el intervalo de tiempo desde la observación anterior.
-Tasa acumulada:: Valor acumulativo dividido entre el intervalo de tiempo desde la observación anterior.
+Ninguno: Los datos se muestran tal cual, sin manipulación.
 
+Tasa: Valor actual dividido por el rango de tiempo desde la observación anterior.
+
+Acumulativo: La acumulación de la suma de los valores anteriores y el valor actual.
+
+Delta: La diferencia entre el valor de observación anterior y el valor actual.
+
+Delta rate: Valor Delta dividido por el rango de tiempo desde la observación anterior.
+
+Tasa Acumulada: Valor acumulativo dividido por el rango de tiempo desde la observación anterior.
 
 Tenga en cuenta que la transformación de las métricas no cambia los datos subyacentes en sí, sino sólo la forma en que se muestran los datos.
 
@@ -401,7 +397,7 @@ La línea latencia se dibuja ahora a su propia escala, que se muestra en el lado
 
 
 
-image::SecondaryAxisExplained.png[Ejemplo de eje secundario]
+image:SecondaryAxisExplained.png["Ejemplo de eje secundario"]
 
 
 

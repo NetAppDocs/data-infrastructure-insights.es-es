@@ -5,17 +5,8 @@ summary: Utilice una consulta para asignar varias aplicaciones o anotaciones a o
 keywords: query, queries, application, annotation, multiple 
 ---
 = Asignar múltiples aplicaciones a o quitar varias aplicaciones de activos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

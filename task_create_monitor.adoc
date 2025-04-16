@@ -5,17 +5,8 @@ keywords: monitors, alerts, log, metric, system-defined, system, metric,
 summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventario, así como las condiciones de métricas o registros. 
 ---
 = Alerta con monitores
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -24,8 +15,8 @@ Se crean monitores para establecer umbrales que activen alertas para notificarle
 
 TIP: Los monitores y alertas están disponibles en todas las ediciones de Data Infrastructure Insights, sin embargo, Basic Edition está sujeta a lo siguiente: * Es posible que solo tenga activos hasta cinco monitores personalizados a la vez. Los monitores que superen los cinco se crearán en el estado _pausado_ o se moverán a ellos. * No se admiten los monitores de métricas de VMDK, máquina virtual, host y almacén de datos. Si ha creado monitores para estas métricas, se pondrán en pausa y no se podrán reanudar al cambiar a Basic Edition.
 
+índice:[]
 
-toc::[]
 Los monitores le permiten establecer umbrales sobre métricas generadas por objetos de "infraestructura" como almacenamiento, VM, EC2 y puertos, así como datos de "integración" como los recopilados para Kubernetes, métricas avanzadas de ONTAP y plugins de Telegraf. Estos monitores _Metric_ le avisan cuando se cruzan umbrales de nivel de advertencia o de nivel crítico.
 
 También puede crear monitores para activar alertas de nivel de aviso, crítico o informativo cuando se detecten _log Events_ especificados.

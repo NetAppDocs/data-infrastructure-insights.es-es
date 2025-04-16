@@ -5,17 +5,8 @@ keywords: annotations, monitor, notes, tags
 summary: Realizar un seguimiento de los datos mediante anotaciones. 
 ---
 = Definición de anotaciones
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -109,25 +100,15 @@ Es posible introducir hasta 255 caracteres en estos campos.
 
 
 .Tipos de anotaciones
-Booleano:: Crea una lista desplegable con las opciones de sí y no. Por ejemplo, la anotación de conexión directa es booleana.
-Fecha:: Esto crea un campo que contiene una fecha. Por ejemplo, si la anotación será una fecha, selecciónela.
-Lista:: Crea una de las siguientes opciones:
-+
---
-* Una lista desplegable fija
-+
-Cuando otros están asignando este tipo de anotación en un dispositivo, no pueden agregar más valores a la lista.
+Booleano: Crea una lista desplegable con las opciones de sí y no. Por ejemplo, la anotación “Conexión directa” es booleana. Fecha: Crea un campo que contiene una fecha. Por ejemplo, si la anotación será una fecha, selecciónela. Lista: Crea una de las siguientes opciones: * Una lista fija desplegable
 
-* Una lista desplegable flexible
-+
-Si selecciona la opción Agregar nuevos valores sobre la marcha al crear esta lista, cuando otros están asignando este tipo de anotación en un dispositivo, pueden agregar más valores a la lista.
++ Cuando otros asignan este tipo de anotación en un dispositivo, no pueden agregar más valores a la lista. * Una lista desplegable flexible
 
++ Si selecciona la opción Agregar nuevos valores al vuelo al crear esta lista, cuando otros asignan este tipo de anotación en un dispositivo, pueden agregar más valores a la lista.
 
+Número: Crea un campo en el que el usuario que asigna la anotación puede introducir un número. Por ejemplo, si el tipo de anotación es "planta", el usuario puede seleccionar el tipo de valor "número" e introducir el número de planta.
 
---
-Número:: Crea un campo en el que el usuario que asigna la anotación puede introducir un número. Por ejemplo, si el tipo de anotación es "planta", el usuario puede seleccionar el tipo de valor "número" e introducir el número de planta.
-Texto:: Crea un campo que permite texto de formato libre. Por ejemplo, puede escribir "Idioma" como tipo de anotación, seleccionar "texto" como tipo de valor e introducir un idioma como valor.
-
+Texto: Crea un campo que permite texto en formato libre. Por ejemplo, puede escribir "Idioma" como tipo de anotación, seleccionar "texto" como tipo de valor e introducir un idioma como valor.
 
 
 NOTE: Después de establecer el tipo y guardar los cambios, no puede cambiar el tipo de anotación. Si necesita cambiar el tipo, debe eliminar la anotación y crear una nueva.

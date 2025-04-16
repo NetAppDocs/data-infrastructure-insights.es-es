@@ -5,17 +5,8 @@ keywords: data collector, Lenovo, HX
 summary: Configuración del recopilador de datos HX de Lenovo. 
 ---
 = Recopilador de datos HX de Lenovo
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

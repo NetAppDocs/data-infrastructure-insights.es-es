@@ -5,17 +5,8 @@ summary: Estado de adquisición del recopilador de datos
 keywords: collector, acquisition, status 
 ---
 = Determinar el estado de adquisición del recopilador de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: telegraf, installation, install, flink
 summary: Configuración del recopilador de datos de Flink 
 ---
 = Colector de datos Flink
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

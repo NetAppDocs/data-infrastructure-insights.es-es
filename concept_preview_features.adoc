@@ -5,17 +5,8 @@ summary: Las funciones de vista previa están disponibles en capacidad limitada 
 keywords: coming soon, preview, 
 ---
 = Funciones y funcionalidad de vista previa
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

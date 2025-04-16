@@ -6,13 +6,7 @@ summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventa
 ---
 = Notificación mediante Webanzuelos
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]

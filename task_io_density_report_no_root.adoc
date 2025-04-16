@@ -5,17 +5,8 @@ summary: Al consultar la densidad de I/o alta, se desean excluir volúmenes raí
 keywords: NetApp, root volume, high I/O, 
 ---
 = Si se asegura la generación de informes de densidad de I/o, se describen solo los volúmenes de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

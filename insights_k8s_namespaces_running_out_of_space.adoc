@@ -5,17 +5,8 @@ keywords: insight, pv, persistent volume, backend
 summary: La información puede ayudarle a predecir cuándo es probable que los espacios de Kubernetes se llenen. 
 ---
 = Estadísticas: Se están quedando sin espacio los espacios de nombres de Kubernetes
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

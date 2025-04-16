@@ -5,17 +5,8 @@ keywords: data collector, EC2,
 summary: Configurar el recopilador de datos de Amazon EC2. 
 ---
 = Configurar el recopilador de datos de Amazon EC2
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

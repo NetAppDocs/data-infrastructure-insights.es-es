@@ -5,17 +5,8 @@ summary: Utilice este procedimiento para crear un informe utilizando los informe
 keywords: reporting, cognos, data warehouse, dwh, create, report 
 ---
 = Creación de un informe (ejemplo)
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

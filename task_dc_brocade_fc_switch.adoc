@@ -5,17 +5,8 @@ keywords: data collector, Brocade, FC switch,
 summary: Configurar el recopilador de datos de los switches FC de Brocade. 
 ---
 = Recopilador de datos de switches Brocade FC
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

@@ -5,17 +5,8 @@ keywords: changes, management, analysis
 summary: El seguimiento de los cambios de Kubernetes es más fácil que nunca. 
 ---
 = Análisis de cambios de Kubernetes
-:toc: macro
 :hardbreaks:
-:toclevels: 1
 :allow-uri-read: 
-:toc: 
-:toclevels: 1
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]

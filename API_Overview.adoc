@@ -5,17 +5,8 @@ keywords: API, customer API, premium, JSON, Swagger, Access Token, token, rotate
 summary: La API de Data Infrastructure Insights permite la integración con otras aplicaciones, como los sistemas de supervisión y generación de informes. 
 ---
 = API de información de infraestructura de datos
-:toc: macro
 :hardbreaks:
-:toclevels: 2
 :allow-uri-read: 
-:toc: 
-:toclevels: 2
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
-:toc-position: content
 
 
 [role="lead"]
@@ -230,8 +221,7 @@ Los objetos con atributos de capacidad utilizan tipos de datos básicos y la cap
 
 CapacityItem es una única unidad lógica de capacidad. Tiene “valor” y “umbral alto” en unidades definidas por su objeto principal. También admite un mapa de desglose opcional que explica cómo se construye el valor de capacidad. Por ejemplo, la capacidad total de un pool de almacenamiento de 100 TB sería una capacidadItem con un valor de 100. El desglose puede mostrar 60 TB asignados para “datos” y 40 TB para “instantáneas”.
 
-Nota:: El “umbral alto” representa umbrales definidos por el sistema para las métricas correspondientes, que un cliente puede utilizar para generar alertas o señales visuales sobre valores que están fuera de rangos configurados aceptables.
-
+Nota: “HighThreshold” representa umbrales definidos por el sistema para las métricas correspondientes, que un cliente puede utilizar para generar alertas o señales visuales sobre valores que están fuera de los rangos configurados aceptables.
 
 A continuación, se muestra la capacidad de los pools de almacenamiento con varios contadores de capacidad:
 
