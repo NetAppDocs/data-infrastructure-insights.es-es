@@ -131,6 +131,13 @@ Validar la cuenta de usuario y contraseña de ZFS
 
 
  a| 
+La solicitud ha fallado con el estado 404 \https://.....:215/api/access/v1"
+ a| 
+Es posible que la matriz ZFS sea demasiado antigua para admitir la API REST. AK 2013.1.3.0 fue la primera versión de SO ZFS compatible con API REST y no todos los dispositivos ZFS se pueden actualizar a ella.
+
+
+
+ a| 
 "Error de configuración" con el mensaje de error "el servicio DE REPOSO está desactivado"
  a| 
 Compruebe que el servicio REST esté activado en este dispositivo.

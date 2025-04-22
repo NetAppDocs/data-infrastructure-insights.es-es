@@ -22,6 +22,8 @@ Esto creará un usuario «NetAppCIUser» con la contraseña «Qwerty!». Este us
 
 De forma predeterminada, este recopilador intentará descubrir todos los dispositivos FOS que forman parte de todas las telas de las que forma parte el conmutador.
 
+Nota: El usuario de solo lectura predeterminado de FOS NO tiene permisos de visualización en todas las estructuras virtuales ni tiene permisos de función de chasis. Esto significa que tendrá una baja probabilidad de éxito utilizando «usuario» con Data Infrastructure Insights, que necesita comprender la configuración física y lógica del dispositivo FOS.
+
 
 
 == Terminología

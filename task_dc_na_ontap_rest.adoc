@@ -48,13 +48,13 @@ Para crear una cuenta local para Data Infrastructure Insights en el nivel del cl
 security login rest-role create -role {role name} -api /api -access readonly
 security login rest-role create -role {role name} -api /api/cluster/agents -access all
 vserver services web access create -name spi -role {role name} -vserver {vserver name as retrieved above}
-security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
 ....
+
+
 . Cree el usuario de solo lectura mediante el comando siguiente. Una vez ejecutado el comando create, se le pedirá que introduzca una contraseña para este usuario.
-+
- security login create -username ci_user -application http -authentication-method password -role ci_readonly
 
 
+ security login create -user-or-group-name {username} -application http -authentication-method password -role {role name}
 Si se utiliza la cuenta AD/LDAP, el comando debería ser
 
  security login create -user-or-group-name DOMAIN\aduser/adgroup -application http -authentication-method domain -role ci_readonly
