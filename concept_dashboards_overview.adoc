@@ -7,6 +7,10 @@ keywords: dashboard, widget, custom, view, data
 = Información general sobre consolas
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -14,8 +18,6 @@ Data Infrastructure Insights proporciona a los usuarios la flexibilidad para cre
 
 
 IMPORTANT: Los ejemplos de estas secciones son sólo para fines de explicación y no cubren todos los escenarios posibles. Los conceptos y pasos aquí indicados pueden utilizarse para crear sus propios paneles de control con el fin de resaltar los datos específicos de sus necesidades particulares.
-
-índice:[]
 
 
 
@@ -34,17 +36,15 @@ Cree un nuevo panel en uno de estos dos lugares:
 La pantalla del panel tiene varios controles:
 
 * *Selector de tiempo*: Permite ver los datos del panel de control durante un intervalo de tiempo desde los últimos 15 minutos hasta los últimos 30 días, o un intervalo de tiempo personalizado de hasta 31 días. Puede optar por reemplazar este intervalo de tiempo global en widgets individuales.
-* Botón *Editar*: Si selecciona esta opción, se activará el modo Editar, que le permitirá realizar cambios en el panel de control. Los nuevos paneles se abren de forma predeterminada en el modo de edición.
 * *Botón Guardar*: Permite guardar o eliminar el panel de control.
 +
-Puede cambiar el nombre del panel actual escribiendo un nuevo nombre antes de hacer clic en *Guardar*.
+Puede cambiar el nombre del panel actual haciendo clic en *Renombrar* en el menú Guardar.
 
-
-
-* *Botón Añadir widget*, que le permite añadir cualquier número de tablas, gráficos u otros widgets al panel de control.
+* *+ Agregar widget* botón, que le permite agregar cualquier número de tablas, gráficos u otros widgets al tablero de instrumentos.
 +
 Los widgets se pueden cambiar de tamaño y reubicarse en diferentes posiciones dentro del panel de control, para proporcionarle la mejor vista de sus datos según sus necesidades actuales.
 
+* Botón *+ Agregar variable*, que le permite utilizar variables para filtrar activamente los datos del panel de control.
 
 
 
@@ -88,6 +88,11 @@ image:PieChart.png["Gráfico circular"]
 * *Nota widget*: Hasta 1000 caracteres de texto libre.
 +
 image:NoteWidget.png["Widget de nota"]
+
+* *Gráfico de barras de tiempo*: Muestra los datos de log o métrica a lo largo del tiempo.
+
+
+image:time_bar_chart.png["ejemplo de gráfico de barras de tiempo que muestra los datos de registro, width=200"]
 
 * *Tabla de alertas*: Muestra hasta las últimas 1,000 alertas.
 

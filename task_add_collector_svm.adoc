@@ -348,6 +348,43 @@ security login rest-role create -role csrestrole -api /api/cluster/jobs/ -access
 ....
 
 
+== Migrar recopiladores
+
+Puede migrar fácilmente un recopilador de seguridad de carga de trabajo de un agente a otro, lo que permite un equilibrio de carga eficaz de recopiladores entre agentes.
+
+
+
+=== Requisitos previos
+
+* El agente de origen debe estar en estado _CONNECTED_.
+* El recopilador que se va a migrar debe estar en el estado _Running_.
+
+
+Nota:
+
+* La migración es compatible con los recopiladores de datos y directorios de usuario.
+* La migración de un recopilador no está soportada para los inquilinos gestionados manualmente.
+
+
+
+
+=== Migrar recopilador
+
+Para migrar un recopilador, siga estos pasos:
+
+. Vaya a la página Editar recopilador.
+. Seleccione un agente de destino en la lista desplegable del agente.
+. Haga clic en el botón «Guardar recopilador».
+
+
+Seguridad de carga de trabajo procesará la solicitud. En la migración correcta, el usuario será redirigido a la página de la lista de recopiladores. En caso de fallo, se mostrará un mensaje apropiado en la página de edición.
+
+Nota: Cualquier cambio de configuración realizado anteriormente en la página Editar recopilador permanecerá aplicado cuando el recopilador se migre correctamente al agente de destino.
+
+image:ws_migrate_collector_to_another_agent.png["migrar un recopilador seleccionando otro agente"]
+
+
+
 == Resolución de problemas
 
 Consulte link:troubleshooting_collector_svm.html["Solucionar problemas del recopilador de SVM"]la página para obtener consejos sobre la solución de problemas.
