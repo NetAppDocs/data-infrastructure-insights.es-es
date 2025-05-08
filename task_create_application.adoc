@@ -12,9 +12,6 @@ keywords: application, create application,
 [role="lead"]
 Para realizar un seguimiento de los datos asociados con aplicaciones específicas que se ejecutan en su inquilino, puede definir las aplicaciones en Data Infrastructure Insights.
 
-.Antes de empezar
-Si desea asociar la aplicación a una entidad de negocio, debe crear la entidad de negocio antes de definir la aplicación.
-
 .Acerca de esta tarea
 Data Infrastructure Insights le permite realizar un seguimiento de los datos de los activos asociados con las aplicaciones, como la elaboración de informes de uso o de costes.
 

@@ -8483,7 +8483,6 @@
   <block id="12deeaac5f633c54b730f8c247dbf7e0" category="paragraph">Las versiones más recientes del operador de supervisión se pueden desinstalar con los siguientes comandos:</block>
   <block id="aee5f180cc531b30ec6cf8dcf509d9b8" category="paragraph">Si el operador de supervisión se ha desplegado en su propio espacio de nombres dedicado, suprima el espacio de nombres:</block>
   <block id="97e76f0c81cc1c26b3d8ffe0d972c5af" category="paragraph">Si el primer comando devuelve “no se han encontrado recursos”, utilice las siguientes instrucciones para desinstalar versiones anteriores del operador de supervisión.</block>
-  <block id="0b14d0fbc4256c7ec7c3bb39b2c28854" category="paragraph">Ejecute cada uno de los comandos siguientes en orden. Dependiendo de su instalación actual, algunos de estos comandos pueden devolver mensajes de ‘no se ha encontrado el objeto’. Estos mensajes pueden ignorarse con seguridad.</block>
   <block id="82a8cca794947463478c2f08445a8ff4" category="paragraph">Si se ha creado previamente una restricción de contexto de seguridad:</block>
   <block id="a945216a5c61e628c867b8948c797454" category="section-title">Acerca de las métricas de estado de Kube</block>
   <block id="951a50d1b55837ddb5ff4cb5af4ebc8a" category="paragraph">El operador de supervisión de Kubernetes de NetApp instala sus propias métricas de estado kube para evitar conflictos con otras instancias.</block>
@@ -9360,7 +9359,6 @@
   <block id="9931bdf1120e743a2d938e061f7df898" category="paragraph">Aparecerá un mensaje de confirmación en el que se le preguntará si desea eliminar la regla.</block>
   <block id="b101d3b5c8c4309f4cffa3adfd387b6b" category="list-text">Haga clic en *Aceptar*</block>
   <block id="e42dae64f8e80d611352315992a2460d" category="doc">Creación de aplicaciones</block>
-  <block id="598c4639acaf0f3c5a419f9cf865ef56" category="paragraph">Si desea asociar la aplicación a una entidad de negocio, debe crear la entidad de negocio antes de definir la aplicación.</block>
   <block id="ba52eab802a385ced7d6e9782614bf0b" category="paragraph">Data Infrastructure Insights le permite realizar un seguimiento de los datos de los activos asociados con las aplicaciones, como la elaboración de informes de uso o de costes.</block>
   <block id="91ee28fc3faa982ecdc71598fe7ce8b9" category="list-text">En el menú Información de la infraestructura de datos, haga clic en *Observabilidad &gt; Enriquecimiento &gt; Aplicaciones*. Seleccione</block>
   <block id="8358341ae527ee11b5b1dc8e8f22edea" category="paragraph">Aparece el cuadro de diálogo Agregar aplicación.</block>
@@ -12379,4 +12377,5 @@
   <block id="839fd302fc2dc5dee66803e94e9f95dc" category="paragraph">Asegúrese de que no hay errores relacionados con fpolicy.</block>
   <block id="6e393b37e77fb2093e24fb776c6faf55" category="paragraph">*Problema:* El recopilador de datos entra en estado de error y luego entra en estado de EJECUCIÓN después de un tiempo, luego vuelve a Error de nuevo. Este ciclo se repite. *Prueba esto:* Esto suele ocurrir en el siguiente escenario:</block>
   <block id="8202c6a36256606217ad100be587d707" category="paragraph">*Problema:* Data Collector muestra el mensaje de error: “Error: Fallo al determinar el estado del recopilador en 2 reintentos, intente reiniciar el recopilador de nuevo (Código de error: AGENT008)”. *Pruebe esto:*</block>
+  <block id="c073fe7a74166cd5d73ec57ce2d1f76e" category="paragraph">Ejecute cada uno de los comandos siguientes en orden. Dependiendo de su instalación actual, algunos de estos comandos pueden devolver mensajes de 'objeto no encontrado'. Estos mensajes pueden ignorarse con seguridad.</block>
 </blocks>
