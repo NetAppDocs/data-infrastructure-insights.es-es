@@ -159,7 +159,7 @@ La seguridad de las cargas de trabajo se mide por el clúster utilizando el mism
 
 Puede ver el uso de Seguridad de carga de trabajo en la página *Admin > Suscripción* de la pestaña *Seguridad de carga de trabajo*.
 
-image:ws_metering_example_page.png["'Pestaña Admin > Subscription > Workload Security que muestra los recuentos de nodos de gama alta, media y básica'"]
+image:ws_metering_example_page.png["Admin> Suscripción > Ficha Seguridad de carga de trabajo que muestra los recuentos de nodos de gama alta, gama media y nivel básico"]
 
 
 NOTE: Las suscripciones de Workload Security existentes tienen su uso de MU ajustado para que el uso del nodo no consuma unidades gestionadas. Data Infrastructure Insights mide el uso para garantizar el cumplimiento de normativas con licencia.
