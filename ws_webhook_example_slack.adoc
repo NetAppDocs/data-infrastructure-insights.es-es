@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: ws_webhook_example_slack.html 
+keywords: webhook, notification, Slack, integration, 
+summary: Cree un webhook de seguridad de carga de trabajo para Slack para alertar sobre la seguridad 
+---
+= Ejemplo de Webhook de seguridad de carga de trabajo para Slack
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Los enlaces Web permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones mediante un canal de webhook personalizado. Esta página proporciona un ejemplo para configurar los enlaces web para Slack.
+
+Esta página hace referencia a instrucciones de terceros, que están sujetas a cambios. Consulte la documentación de Slack para obtener la información más actualizada.
+
+
+
+==== Ejemplo de Slack
+
+* Vaya a https://api.slack.com/apps[] y cree una nueva aplicación Asígnele un nombre significativo y seleccione un espacio de trabajo.
+
+
+image:ws_create_slack_app.png["cree una aplicación slack, width=400"]
+
+* Vaya a WebHooks entrantes, haga clic en _Activar WebHooks entrantes_, seleccione _Agregar nuevo Webhook_ y seleccione el canal en el que publicar.
+* Copie la URL de Webhook. Esta URL se proporcionará al crear un webhook de seguridad de carga de trabajo.
+
+
+
+
+==== Crear Webhook de Slack de Seguridad de Carga de Trabajo
+
+. Vaya a Administración > Notificaciones y seleccione la pestaña _Workload Security WebHooks_. Seleccione _+ Webhook_ para crear un nuevo webhook.
+. Asigne al webhook un nombre significativo.
+. En el menú desplegable _Template Type_, seleccione _slack_.
+. Pegue la URL copiada desde arriba.
+
+
+image:ws_webhook_slack_example.png["Ejemplo de Webhook Slack para Workload Security, width=400"]
+
+
+
+==== Notificaciones a través de webhook
+
+* Para notificar eventos a través de webhook, vaya a _Workload Security > Policies_. Haga clic en _+Política de ataque_ o _+Política de advertencia_.
+* Introduzca un nombre de política significativo.
+* Seleccione los tipos de ataque necesarios, los dispositivos a los que debe adjuntarse la política y las acciones necesarias.
+* En el menú desplegable _WebHooks Notifications_, seleccione los WebHooks necesarios. Guarde la política.
+
+
+Nota: Los WebHooks también se pueden adjuntar a las políticas existentes editándolas.
+
+image:ws_add_attack_policy.png["cuadro de diálogo agregar política de ataque, width=400"]
