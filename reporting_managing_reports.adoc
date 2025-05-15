@@ -97,4 +97,10 @@ Aquí encontrará sugerencias para la solución de problemas con la creación de
 
 
 | Cuando se programa el envío de un informe por correo electrónico, el nombre del usuario que inició sesión se rellena previamente en el campo “to” del correo electrónico. Sin embargo, el nombre tiene la forma de "nombre apellido" (nombre, espacio, apellido). Dado que no se trata de una dirección de correo electrónico válida, el correo electrónico no se enviará cuando se ejecute el informe programado. | Al programar el informe que se va a enviar por correo electrónico, borre el nombre rellenado previamente e introduzca una dirección de correo electrónico válida con el formato correcto en el campo “to”. 
+
+
+| Mi informe programado se envía por correo electrónico, pero no se puede acceder al informe si el origen es de la carpeta “Mi contenido”. | Para evitarlo, el informe o la vista de informe deben guardarse en la carpeta «Contenido del equipo > Informes personalizados - xxxxxx» y en la programación creada a partir de esa versión guardada. La carpeta Informes personalizados - xxxxxx es visible para todos los usuarios del inquilino. 
+
+
+| Al guardar un trabajo, la carpeta puede mostrar “Contenido del equipo” con la lista de contenido de “Informes personalizados - xxxxxx”, sin embargo, no puede guardar el trabajo aquí porque Cognos cree que esta es la carpeta “Contenido del equipo” donde no tiene acceso para escribir. | El trabajo es crear una nueva carpeta con un nombre único (es decir, “NewFolder”) y guardarla allí, o guardarla en “Mi contenido” y luego copiar / mover a “Informes personalizados - xxxxxx”. 
 |===

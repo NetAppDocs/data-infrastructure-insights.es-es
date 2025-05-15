@@ -28,7 +28,7 @@ NOTE: Esta página hace referencia a instrucciones de terceros, que están sujet
 +
 image:Webhooks_PagerDutyScreen1.png["Pantalla PagerDuty"]
 
-. Seleccione la pestaña _Integraciones_ para ver la *Clave de integración*. Necesitará esta clave cuando cree el webhook de Data Infrastructure Insights a continuación.
+. Seleccione la pestaña _Integraciones_ para ver la *Clave de integración*. Necesitará esta clave cuando cree el webhook de seguridad de carga de trabajo a continuación.
 
 
 . Vaya a *Incidents* o *Servicios* para ver Alertas.

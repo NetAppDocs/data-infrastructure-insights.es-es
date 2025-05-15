@@ -105,12 +105,22 @@ sidebar:
         url: "/task_create_monitor.html"
       - title: Ver y gestionar alertas
         url: "/task_view_and_manage_alerts.html"
-      - title: Configuración de destinatarios de notificaciones
-        url: "/concept_notifications_email.html"
       - title: Monitores definidos por el sistema
         url: "/task_system_monitors.html"
-      - title: Notificación de Webhook
-        url: "/task_create_webhook.html"
+      - title: Configuración de destinatarios de notificaciones
+        url: "/concept_notifications_email.html"
+      - title: Notificaciones de Webhook
+        entries:
+        - title: Configuración de WebHooks
+          url: "/task_create_webhook.html"
+        - title: Ejemplo de Webhook - Discord
+          url: "/task_webhook_example_discord.html"
+        - title: 'Ejemplo de Webhook: PagerDuty'
+          url: "/task_webhook_example_pagerduty.html"
+        - title: Ejemplo de Webhook - Slack
+          url: "/task_webhook_example_slack.html"
+        - title: Ejemplo de Webhook - Equipos
+          url: "/task_webhook_example_teams.html"
     - title: Trabajar con anotaciones
       entries:
       - title: Definición de anotaciones
@@ -263,8 +273,20 @@ sidebar:
       url: "/cs_restrict_user_access.html"
     - title: Simulación de un ataque de ransomware
       url: "/concept_cs_attack_simulator.html"
-    - title: Notificaciones
+    - title: Notificaciones por correo electrónico
       url: "/cs_notifications_email.html"
+    - title: Notificaciones de Webhook
+      entries:
+      - title: Creación de WebHooks
+        url: "/ws_notifications_using_webhooks.html"
+      - title: Ejemplo de Discord Webhook
+        url: "/ws_webhook_example_discord.html"
+      - title: Ejemplo de PagerDuty Webhook
+        url: "/ws_webhook_example_pagerduty.html"
+      - title: Ejemplo de slack Webhook
+        url: "/ws_webhook_example_slack.html"
+      - title: Ejemplo de Team Webhook
+        url: "/ws_webhook_example_teams.html"
     - title: API de seguridad de cargas de trabajo
       url: "/concept_cs_api.html"
     - title: Solucionar problemas del recopilador de SVM
