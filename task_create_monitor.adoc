@@ -7,6 +7,10 @@ summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventa
 = Alerta con monitores
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -14,8 +18,6 @@ Se crean monitores para establecer umbrales que activen alertas para notificarle
 
 
 TIP: Los monitores y alertas están disponibles en todas las ediciones de Data Infrastructure Insights, sin embargo, Basic Edition está sujeta a lo siguiente: * Es posible que solo tenga activos hasta cinco monitores personalizados a la vez. Los monitores que superen los cinco se crearán en el estado _pausado_ o se moverán a ellos. * No se admiten los monitores de métricas de VMDK, máquina virtual, host y almacén de datos. Si ha creado monitores para estas métricas, se pondrán en pausa y no se podrán reanudar al cambiar a Basic Edition.
-
-índice:[]
 
 Los monitores le permiten establecer umbrales sobre métricas generadas por objetos de "infraestructura" como almacenamiento, VM, EC2 y puertos, así como datos de "integración" como los recopilados para Kubernetes, métricas avanzadas de ONTAP y plugins de Telegraf. Estos monitores _Metric_ le avisan cuando se cruzan umbrales de nivel de advertencia o de nivel crítico.
 
@@ -187,6 +189,8 @@ NOTE: Las notificaciones del recopilador de datos de ONTAP tienen prioridad sobr
 Puede agregar una descripción opcional, así como información adicional y/o acciones correctivas rellenando la sección *Agregar una descripción de alerta*. La descripción puede tener hasta 1024 caracteres y se enviará con la alerta. El campo de información/acción correctiva puede tener hasta 67,000 caracteres y se mostrará en la sección de resumen de la página de destino de alertas.
 
 En estos campos, puede proporcionar notas, enlaces o pasos para corregir o abordar la alerta de algún otro modo.
+
+Es posible añadir cualquier atributo de objeto (por ejemplo, nombre de almacenamiento) como un parámetro para una descripción de alerta. Por ejemplo, puede definir parámetros para el nombre del volumen y el nombre del almacenamiento en una descripción como: «Latencia alta para el volumen: _%%relatedObject.volume.name%%_, Almacenamiento: _%%relatedObject.storage.name%%_".
 
 image:Monitors_Alert_Description.png["Acciones correctivas de alerta y descripción"]
 

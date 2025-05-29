@@ -7,10 +7,72 @@ keywords: asset page, objects, landing page, Virtual machine, VM, Storage Virtua
 = Descripción general de la página de activos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Las páginas de activos resumen el estado actual de un activo y contienen vínculos a información adicional sobre el activo y sus activos relacionados.
+Las páginas de destino de activos resumen el estado actual de un activo y contienen enlaces a información adicional sobre el activo y sus activos relacionados.
+
+Las páginas de destino proporcionan una vista de una sola página del objeto, con información de resumen, rendimiento y recursos relacionados.
+
+image:lp_new_design.png["Nuevo diseño LP"]
+
+
+
+== Sección Resumen
+
+En la parte superior de una página de destino se encuentra la sección Resumen expandible, que incluye varios gráficos de minigráficos que muestran tendencias de datos recientes para aspectos como el rendimiento o la latencia, así como información y atributos de objetos, y cualquier monitor que pueda estar alertando sobre el objeto.
+
+La sección Resumen también muestra y permite cambiar las anotaciones asignadas al activo.
+
+
+
+== Sección de rendimiento
+
+La sección Rendimiento muestra los datos de rendimiento del objeto. Seleccione _Settings_ para agregar gráficos adicionales a la pantalla, como rendimiento o capacidad, o seleccione recursos correlacionados o que contribuyan a crear un gráfico de sus datos junto con los del objeto. Los dispositivos que pueden estar causando contención también se enumerarán en la sección Rendimiento. Los datos de los gráficos se actualizan automáticamente a medida que los recopiladores de datos sondean y se adquieren datos actualizados.
+
+Puede seleccionar el <<performance-metric-definitions,métricas>> que desea ver en el gráfico de rendimiento para el período de tiempo seleccionado. Haga clic en el menú desplegable _Settings_ y elija una de las métricas mostradas.
+
+Además de los datos de rendimiento, también se mostrarán las alertas que estén o estén activas dentro del intervalo de tiempo de página seleccionado.
+
+image:lp_alert_example.png["ejemplo de alerta en una página de destino"]
+
+Puede seleccionar entre los siguientes dispositivos que se pueden enumerar en la sección Rendimiento:
+
+* Arriba correlacionado
++
+Muestra los activos con una alta correlación (porcentaje) con una o más métricas de rendimiento al activo base.
+
+* Principales colaboradores
++
+Muestra los activos que contribuyen (porcentaje) al activo base.
+
+* Cambios superiores
++
+Activos relacionados con cambios recientes.
+
+* Contensiones de cargas de trabajo
++
+Muestra los activos que afectan o afectan a otros recursos compartidos, como hosts, redes y almacenamiento. A veces se les llama recursos _codiciosos_ y _degradados_.
+
+
+
+
+
+== Sección Recursos adicionales
+
+La sección Recursos adicionales muestra tablas de datos para los recursos relacionados con el tipo de objeto actual. Puede expandir y contraer estas tablas para centrarse en recursos específicos. Seleccione el icono de engranaje para mostrar temporalmente métricas o atributos adicionales en una tabla.
+
+
+
+== Agregar widgets personalizados
+
+Puede añadir sus propios widgets a cualquier página de activo. Los widgets que agregue aparecerán en las páginas de activos de todos los objetos de ese tipo. Por ejemplo, si se añade un widget personalizado a una página de activos de almacenamiento, aparecerá el widget correspondiente en las páginas de activos de todos los activos de almacenamiento.
+
+Los widgets personalizados se colocan en la parte inferior de una página de destino, debajo de las secciones Rendimiento y Recursos.
 
 
 
@@ -34,15 +96,15 @@ Data Infrastructure Insights proporciona páginas de activos para los siguientes
 * Puerto
 * Conmutador
 * Estructura
+* Host
+* Zona
 
 
 
 
 == Cambio del intervalo de tiempo de los datos mostrados
 
-De forma predeterminada, una página de activos muestra las últimas 24 horas de datos; sin embargo, puede cambiar el segmento de datos que se muestra seleccionando otro intervalo de tiempo fijo o un intervalo de tiempo personalizado para ver menos o más datos.
-
-Puede cambiar el segmento de tiempo de los datos mostrados mediante una opción que se encuentra en cada página de activos, independientemente del tipo de activo. Para cambiar el intervalo de tiempo, haga clic en el intervalo de tiempo que se muestra en la barra superior y elija entre los siguientes segmentos de tiempo:
+Por defecto, una página de activos muestra las últimas 3 horas de datos; sin embargo, puede cambiar el segmento de tiempo de los datos mostrados mediante una opción que se encuentra en cada página de activos, independientemente del tipo de activo. Para cambiar el intervalo de tiempo, haga clic en el intervalo de tiempo que se muestra en la barra superior y elija entre los siguientes segmentos de tiempo:
 
 * Últimos 15 minutos
 * Últimos 30 minutos
@@ -55,16 +117,122 @@ Puede cambiar el segmento de tiempo de los datos mostrados mediante una opción 
 * Últimos 2 días
 * Últimos 3 días
 * Últimos 7 días
+* Últimos 14 días
 * Últimos 30 días
 * Intervalo de tiempo personalizado
 
 
 El intervalo de tiempo personalizado le permite seleccionar hasta 31 días consecutivos. También puede establecer la hora de inicio y la hora de finalización del día para este intervalo. La hora de inicio predeterminada es 12:00 AM en el primer día seleccionado y la hora de finalización predeterminada es 11:59 PM en el último día seleccionado. Al hacer clic en aplicar se aplicará el intervalo de tiempo personalizado a la página del activo.
 
-La información de una sección de resumen de la página de activos, así como en cualquier tabla o widgets personalizados de la página, se actualiza automáticamente en función del intervalo de tiempo seleccionado. La tasa de actualización actual se muestra en la esquina superior derecha de la sección Resumen, así como en las tablas o widgets relevantes de la página.
+La información de la página se actualiza automáticamente en función del intervalo de tiempo seleccionado. La tasa de actualización actual se muestra en la esquina superior derecha de la sección Resumen, así como en las tablas o widgets relevantes de la página.
 
 
 
-== Agregar widgets personalizados
+== Definiciones de métricas de rendimiento
 
-Puede añadir sus propios widgets a cualquier página de activo. Los widgets que agregue aparecerán en las páginas de activos de todos los objetos de ese tipo. Por ejemplo, si se añade un widget personalizado a una página de activos de almacenamiento, aparecerá el widget correspondiente en las páginas de activos de todos los activos de almacenamiento.
+La sección Rendimiento puede mostrar varias métricas en función del período de tiempo seleccionado para el activo. Cada métrica se muestra en su propio gráfico de rendimiento. Puede agregar o eliminar métricas y activos relacionados de los gráficos en función de los datos que desee ver; las métricas que puede elegir varían en función del tipo de activo.
+
+|===
+
+
+| *Sistema métrico* | *Descripción* 
+
+
+| BB Credit Zero Rx, Tx | Número de veces que el recuento de créditos de búfer a búfer de recepción/transmisión pasó a cero durante el período de muestreo. Esta métrica representa el número de veces que el puerto conectado tuvo que dejar de transmitir porque este puerto estaba fuera de créditos para proporcionar. 
+
+
+| BB duración cero de crédito Tx | Tiempo en milisegundos durante el cual el crédito de transmisión BB fue cero durante el intervalo de muestreo. 
+
+
+| Proporción de aciertos de caché (total, lectura, escritura) % | Porcentaje de solicitudes que provocan aciertos en caché. Cuanto mayor sea el número de aciertos en comparación con el acceso al volumen, mejor será el rendimiento. Esta columna está vacía para las cabinas de almacenamiento que no recopilan información de acierto en caché. 
+
+
+| Uso de caché (total) % | Porcentaje total de solicitudes de caché que producen aciertos en caché 
+
+
+| Clase 3 descarta | Recuento de descartes de transporte de datos de clase 3 de Fibre Channel. 
+
+
+| % De uso de CPU (total) | Cantidad de recursos de CPU utilizados activamente, como porcentaje del total disponible (en todas las CPU virtuales). 
+
+
+| Error de CRC | Número de tramas con comprobaciones de redundancia cíclicas no válidas (CRCs) detectadas por el puerto durante el período de muestreo 
+
+
+| Velocidad de fotogramas | Velocidad de transmisión de fotogramas por segundo (FPS) 
+
+
+| Promedio de tamaño de cuadro (Rx, Tx) | Relación entre el tráfico y el tamaño del fotograma. Esta métrica le permite identificar si hay alguna estructura general. 
+
+
+| Tamaño del marco demasiado largo | El número de tramas de transmisión de datos de Fibre Channel es demasiado largo. 
+
+
+| Tamaño del marco demasiado corto | El número de tramas de transmisión de datos de Fibre Channel es demasiado corto. 
+
+
+| Densidad de I/o (total, lectura, escritura) | Número de IOPS dividido por la capacidad usada (tal como se adquirió de la encuesta de inventario más reciente del origen de datos) para el volumen, el volumen interno o el elemento de almacenamiento. Medida en el número de operaciones de I/o por segundo por TB. 
+
+
+| IOPS (total, lectura, escritura) | Número de solicitudes de servicio de I/o de lectura/escritura que pasan por el canal de I/o o o una parte de ese canal por unidad de tiempo (medidas en I/o por segundo) 
+
+
+| Rendimiento de IP (total, lectura, escritura) | Total: Velocidad agregada a la que se transmitieron y recibieron datos IP en megabytes por segundo. 
+
+
+| Lectura: Rendimiento de IP (recepción): | Tasa media a la que se recibieron los datos de IP en megabytes por segundo. 
+
+
+| Escritura: Rendimiento de IP (transmisión): | Velocidad media a la que se transmitieron los datos de IP en megabytes por segundo. 
+
+
+| Latencia (total, lectura, escritura) | Latencia (I+W): Tasa a la que se leen o se escriben los datos en las máquinas virtuales en un tiempo fijo. El valor se mide en megabytes por segundo. 
+
+
+| Latencia: | Tiempo de respuesta medio de las máquinas virtuales de un almacén de datos. 
+
+
+| Latencia superior: | El tiempo de respuesta más alto de las máquinas virtuales de un almacén de datos. 
+
+
+| Error de enlace | Número de fallos de enlace detectados por el puerto durante el período de muestreo. 
+
+
+| Restablecer Rx, Tx | El número de enlaces de recepción o transmisión se restablece durante el período de muestreo. Esta métrica representa el número de restablecimientos de enlace que emitió el puerto conectado a este puerto. 
+
+
+| Uso de memoria (total) % | Umbral de la memoria utilizada por el host. 
+
+
+| R/W parcial (total) % | Número total de veces que una operación de lectura/escritura cruza un límite de franja en cualquier módulo de disco en una LUN RAID 5, RAID 1/0 o RAID 0 en general, los pasos de franja no son beneficiosos, ya que cada uno requiere un I/o adicional Un porcentaje bajo indica un tamaño de elemento de franja eficiente y es un indicador de alineación incorrecta de un volumen (o un LUN de NetApp). Para CLARiiON, este valor es el número de cruces de franja dividido por el número total de IOPS. 
+
+
+| Errores de puerto | Informe de errores de puerto durante el período de muestreo/período de tiempo dado. 
+
+
+| Recuento de pérdidas de señal | Número de errores de pérdida de señal. Si se produce un error de pérdida de señal, no hay conexión eléctrica y existe un problema físico. 
+
+
+| Tasa de intercambio (tasa total, tasa en tasa, tasa de salida) | Velocidad a la que se cambia la memoria, hacia fuera o ambos desde el disco a la memoria activa durante el período de muestreo. Este contador se aplica a las máquinas virtuales. 
+
+
+| Número de pérdidas de sincronización | Cantidad de errores de pérdida de sincronización. Si se produce un error de pérdida de sincronización, el hardware no puede detectar el tráfico ni bloquearlo. Es posible que todos los equipos no utilicen la misma velocidad de datos, o que la óptica o las conexiones físicas puedan ser de mala calidad. El puerto debe resincronizar después de cada uno de estos errores, lo que afecta al rendimiento del sistema. Se mide en KB/s. 
+
+
+| Rendimiento (total, lectura, escritura) | Velocidad a la que se transmiten, reciben o ambos datos en un tiempo fijo en respuesta a las solicitudes de servicio de I/o (medidas en MB por segundo). 
+
+
+| Tiempo de espera descartar tramas - Tx | Recuento de tramas de transmisión descartadas causadas por el tiempo de espera. 
+
+
+| Velocidad de tráfico (total, lectura, escritura) | Tráfico transmitido, recibido o ambos recibidos durante el período de muestreo, en mebibytes por segundo. 
+
+
+| Utilización del tráfico (total, lectura, escritura) | Relación entre el tráfico recibido/transmitido/total y la capacidad de recepción/transmisión/total durante el período de muestreo. 
+
+
+| Porcentaje de utilización (total, lectura, escritura | Porcentaje del ancho de banda disponible utilizado para la transmisión (Tx) y la recepción (Rx). 
+
+
+| Escritura pendiente (total) | Número de solicitudes de servicio I/o de escritura pendientes. 
+|===

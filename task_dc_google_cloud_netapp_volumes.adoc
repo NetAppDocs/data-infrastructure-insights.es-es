@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: task_dc_google_cloud_netapp_volumes.html 
+summary: Configure el recopilador de datos de Google Cloud NetApp Volumes 
+keywords: data collector, queries, create, google, cloud, volumes, 
+---
+= Recopilador de datos de Google Cloud NetApp Volumes de NetApp
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Este recopilador de datos admite la colección de inventario y rendimiento de las configuraciones de plataformas de cloud Cloud Volumes de Google NetApp. Este recopilador buscará descubrir todos los recursos de cómputo dentro de todos los proyectos dentro de una organización de Google. Si tiene varias organizaciones de Google que quiera descubrir con Data Infrastructure Insights, querrá poner en marcha un recopilador de Data Infrastructure Insights por organización.
+
+
+
+== Requisitos de la cuenta de servicio
+
+* Debe crear una cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación/gestión de cuentas de servicio"]. Dicha cuenta de servicio se identifica mediante un ID único, conocido como su _ClientID_, que se utilizará como nombre de usuario.
+* Además, cree una clave de cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Creación/gestión de claves de cuenta de servicio"]. Esta clave se puede descargar como un archivo json, cuyo contenido se utilizará como contraseña.
+* La cuenta de servicio debe estar delimitada para _compute.readonly_, _monitoring.read_ y _cloud-platform_.
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| ID de la organización | El ID de organización que desea descubrir con este recopilador. Este campo es obligatorio si su cuenta de servicio puede ver más de una organización 
+
+
+| Seleccione 'Excluir' o 'Incluir' para filtrar los activos de GCNV por ubicación | De forma predeterminada, Excluir, ya que este recopilador tiene la intención de descubrir todos los volúmenes de GCNV en todo el mundo dentro de su organización. 
+
+
+| GCNV Excluir/Incluir ubicaciones | El valor predeterminado es Vacío y se utiliza junto con la opción Elegir 'Excluir' o 'Incluir'. Si uno solo quiere descubrir activos dentro de ciertas regiones del mundo, estas 2 opciones pueden ser manipuladas para limitar el alcance de este coleccionista 
+
+
+| ID del proyecto | La lista de Id. De proyecto que desea filtrar dentro o fuera de la detección, según el valor de la opción "Seleccionar"...." valor. La lista predeterminada está vacía 
+
+
+| ID del cliente | ID de cliente para la configuración de Google Cloud Platform 
+
+
+| Copie y pegue aquí el contenido de su archivo de credenciales de Google | Copie sus credenciales de Google para la cuenta de la plataforma de cloud en este campo 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos 
+
+
+| Usar proxy AU para llamadas API REST | Esta casilla de verificación hará que el recopilador utilice el mismo proxy en el que reside el recopilador. Esto no está habilitado de forma predeterminada, lo que significa que el recopilador intentará enviar llamadas a la API HTTPS directamente a Google. 
+
+
+| Claves de etiqueta y valores en los que se filtran las VM | Haga clic en *+ etiqueta de filtro* para elegir qué equipos virtuales (y discos asociados) incluir/excluir filtrando claves y valores que coincidan con claves y valores de etiquetas en el equipo virtual. Se requiere clave de etiqueta; el valor de etiqueta es opcional. Cuando el valor de etiqueta está vacío, la VM se filtra siempre que coincida con la clave de etiqueta. 
+
+
+| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 segundos 
+|===
+
+
+== Resolución de problemas
+
+Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

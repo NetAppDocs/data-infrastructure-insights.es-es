@@ -7,6 +7,10 @@ summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventa
 = Notificación mediante Webanzuelos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -64,6 +68,8 @@ image:Webhook_Default_Parameters.png["Parámetros de Webhook predeterminados de 
 === Parámetros: ¿Cuáles son y cómo los utilizo?
 
 Los parámetros de alerta son valores dinámicos rellenados por alerta. Por ejemplo, el parámetro _%%TriggeredOn%_ se reemplazará por el objeto en el que se activó la alerta.
+
+Puede agregar cualquier atributo de objeto (por ejemplo, nombre de almacenamiento) como parámetro a un webhook. Por ejemplo, puede definir parámetros para el nombre del volumen y el nombre del almacenamiento en una descripción de webhook como: «Latencia alta para volumen: _%%relatedObject.volume.name%%_, Almacenamiento: _%%relatedObject.storage.name%%_".
 
 Tenga en cuenta que en esta sección, las sustituciones se realizan _not_ al hacer clic en el botón "probar enlace web"; el botón envía una carga útil que muestra las sustituciones _%_ pero no las reemplaza con datos.
 

@@ -14,6 +14,47 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== Mayo de 2025
+
+
+
+=== Las nuevas páginas de aterrizaje te mantienen en el flujo
+
+Las páginas de aterrizaje rediseñadas muestran todo lo que necesita - datos de resumen, gráficos de rendimiento, correlaciones, alertas y cambios, y recursos clave - en una sola vista.
+
+Ahora puede solucionar problemas más rápido y mantenerse en flujo, sin saltar entre pestañas o perder el contexto.
+
+image:lp_new_design.png["nuevo diseño de página de destino que muestra la ubicación de las secciones de resumen y rendimiento y recursos adicionales"]
+
+
+
+=== Mejoras en la seguridad de las cargas de trabajo
+
+*WebHooks ahora disponible para alertas de seguridad de carga de trabajo*
+
+La seguridad de la carga de trabajo ahora admite notificaciones webhook listas para usar a herramientas como Slack, PagerDuty, Teams y más. Además, ofrecemos plantillas personalizables que le permiten personalizar el mensaje o integrarse con cualquier otra aplicación SIEM o de terceros. Dirija alertas críticas directamente a sus flujos de trabajo de seguridad actuales, para que su equipo pueda investigar y responder más rápido.
+
+image:ws_webhook_slack_example.png["Ejemplo de Webhook Slack para Workload Security, width=400"]
+
+*Migrar los recopiladores de seguridad de carga de trabajo entre los agentes*
+
+Puede migrar fácilmente un recopilador de seguridad de carga de trabajo de un agente a otro, lo que permite un equilibrio de carga eficaz de recopiladores entre agentes. La migración es tan fácil como editar el recopilador y seleccionar el agente de destino de la lista.
+
+image:ws_migrate_collector_to_another_agent.png["recolector de migración, width=500"]
+
+
+
+=== .CSV Exportación asincrónica
+
+La exportación de datos a .CSV puede tardar desde unos segundos hasta varias horas, dependiendo de la cantidad de datos a exportar. Data Infrastructure Insights ahora exporta esos datos de forma asíncrona, por lo que puede seguir trabajando mientras se compila el .CSV.
+
+Vea sus exportaciones .CSV seleccionando el icono “Campana” en la barra de herramientas superior derecha.
+
+image:csv_export_async.png["icono de campana con lista de exportaciones .csv listas para descargar, width=400"]
+
+'''
+
+
 == Abril de 2025
 
 

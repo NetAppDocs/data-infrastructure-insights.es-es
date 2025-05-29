@@ -133,4 +133,6 @@ Nota: Las notificaciones por correo electrónico son independientes de las polí
 
 === Ejemplos de Webhook de Seguridad de Carga de Trabajo
 
-WebHooks link:ws_webhook_example_slack.html["Slack"]para WebHooks link:ws_webhook_example_pagerduty.html["PagerDuty"]para WebHooks link:ws_webhook_example_teams.html["Equipos"]link:ws_webhook_example_discord.html["Discordia"]
+WebHooks para link:ws_webhook_example_slack.html["Slack"]
+
+WebHooks link:ws_webhook_example_pagerduty.html["PagerDuty"]para WebHooks link:ws_webhook_example_teams.html["Equipos"] para link:ws_webhook_example_discord.html["Discordia"]
