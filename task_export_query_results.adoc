@@ -25,9 +25,27 @@ Se muestra la página consultas.
 
 NOTE: La exportación a .CSV también está disponible en el menú "tres puntos" de los widgets de la tabla del panel de control, así como en la mayoría de las tablas de página de inicio.
 
+
+
+== Exportación asincrónica
+
+La exportación de datos a .CSV puede tardar desde unos segundos hasta varias horas, dependiendo de la cantidad de datos a exportar. Data Infrastructure Insights exporta esos datos de forma asincrónica, por lo que puede seguir trabajando mientras se compila el archivo .CSV.
+
+Vea y descargue sus exportaciones .CSV seleccionando el ícono "Campana" en la barra de herramientas superior derecha.
+
+image:csv_export_async.png["Icono de campana con lista de exportaciones .csv listas para descargar, ancho=400"]
+
 Los datos exportados reflejarán el filtrado actual, las columnas y los nombres de columna mostrados.
 
+
+
+== Comas en los nombres de los activos
+
 Nota: Cuando aparece una coma en un nombre de activo, la exportación incluye el nombre entre comillas, conservando el nombre del activo y el formato .csv adecuado.
+
+
+
+== ¿Formato de hora o no formato de hora?
 
 Al abrir un archivo .CSV exportado con Excel, si tiene un nombre de objeto u otro campo con el formato NN:NN (dos dígitos seguidos de dos puntos seguidos de dos dígitos más), Excel interpretará a veces ese nombre como un formato de hora, en lugar de texto. Esto puede resultar en que Excel muestre valores incorrectos en esas columnas. Por ejemplo, un objeto llamado "81:45" se mostraría en Excel como "81:45:00".
 
