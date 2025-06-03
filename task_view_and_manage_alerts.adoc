@@ -52,11 +52,11 @@ Al hacer clic en un ID de alerta se abre la página Detalle de alerta.
 
 
 
-== Página de detalles de alertas
+== Panel de detalles de alertas
 
-La página de detalles de alertas proporciona detalles adicionales sobre la alerta, incluyendo un _Summary_, un _Expert View_ que muestra gráficos relacionados con los datos del objeto, cualquier _Related Assets_ y _Comments_ introducidos por los investigadores de alertas.
+Seleccione cualquier fila de alerta para abrir el panel de detalles. Este panel proporciona información adicional sobre la alerta, incluyendo un _Resumen_, una _Vista de experto_ con gráficos relacionados con los datos del objeto, cualquier _Recurso relacionado_ y _Comentarios_ introducidos por los investigadores de la alerta.
 
-image:alert_detail_page.png["Página de detalles de alertas"]
+image:metric_alert_detail_pane.png["panel de detalles de alertas métricas"]
 
 
 

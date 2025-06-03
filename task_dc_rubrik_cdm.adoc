@@ -59,10 +59,13 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | IP | Dirección IP del clúster Rubrik 
 
 
-| Nombre de usuario | El nombre de usuario del clúster 
+| Nombre de usuario / Cuenta de servicio | El nombre de usuario del clúster 
 
 
-| Contraseña | Contraseña del clúster 
+| Contraseña / Secreto | Contraseña del clúster 
+
+
+| ID de la organización para la cuenta de servicio | Esta debe ser la cadena completa como "Organization:::nnnnnn-nnnn....." 
 |===
 
 
@@ -93,6 +96,6 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 | He recibido un mensaje que indica que se ha creado más de un almacenamiento. | Compruebe que el clúster esté configurado correctamente y que el recopilador apunte a un único clúster. 
 
 
-| Recibí una advertencia de que la API de disco devolvió más datos | Póngase en contacto con el servicio de soporte para obtener más datos. 
+| La encuesta falla con 400 [Solicitud incorrecta]....Id. administrado no válido.... | Ha completado el campo ID de organización con un valor, pero el clúster de Rubrik NO cree que sea un ID de organización válido, a pesar del mensaje de error de Rubrik que se refiere a él como "ManagedId". 
 |===
 Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
