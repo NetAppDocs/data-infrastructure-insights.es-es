@@ -4,9 +4,13 @@ permalink: san_analyzer_overview.html
 summary: SAN Analyzer proporciona topología para los activos en su inquilino 
 keywords: topology, analyze, analysis, map 
 ---
-= Descripción general del analizador de SAN
+= Descripción general del analizador SAN
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -32,6 +36,10 @@ Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona 
 Además de la pestaña Resumen, el panel de desplazamiento muestra fichas para elementos como Detalles de puerto o Información de zona, según corresponda al objeto seleccionado.
 
 image:san_analyzer_slideout_example.png["Panel deslizante del analizador de SAN"]
+
+Si su entorno tiene diferentes protocolos, puede filtrar por iSCSI o FC:
+
+image:san_analyzer_protocols.png["Protocolos del analizador SAN"]
 
 Si su entorno incluye dispositivos iSCSI, al pasar el cursor sobre el objeto _iSCSi_ se resaltan las conexiones relacionadas con esos dispositivos iSCSI relevantes.
 

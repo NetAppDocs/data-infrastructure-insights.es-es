@@ -187,7 +187,10 @@ Data Infrastructure Insights tiene la capacidad de recopilar datos de switch del
 
 == Métricas de potencia de ONTAP
 
-Varios modelos de ONTAP ofrecen métricas de potencia para análisis de infraestructura de datos que se pueden usar para supervisar o generar alertas. Las listas de modelos compatibles y no compatibles a continuación no son exhaustivas, pero deben proporcionar alguna orientación; en general, si un modelo está en la misma familia que uno de la lista, el soporte debe ser el mismo.
+Varios modelos de ONTAP ofrecen métricas de potencia para análisis de infraestructura de datos que se pueden usar para supervisar o generar alertas.
+
+
+NOTE: Estas listas no son exhaustivas y están sujetas a cambios. En general, si un modelo pertenece a la misma familia que otro de la lista, la compatibilidad debería ser la misma, pero no se garantiza. Si no está seguro de si su modelo admite métricas de potencia, contacte con el soporte de ONTAP.
 
 Modelos compatibles:
 
