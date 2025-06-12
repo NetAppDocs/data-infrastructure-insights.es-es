@@ -10,7 +10,7 @@ summary: Configurar el recopilador de DATOS REST DE Brocade FOS.
 
 
 [role="lead"]
-Información de infraestructura de datos utiliza el recopilador REST FOS de Brocade para detectar inventario y rendimiento de dispositivos de switch Brocade que ejecutan el firmware de Fabric OS (FOS) 8,2 y posteriores.
+Información de infraestructura de datos utiliza el recopilador REST FOS de Brocade para detectar inventario y rendimiento de dispositivos de switch Brocade que ejecutan el firmware de Fabric OS (FOS) 8,2 y posteriores. Tenga en cuenta que las primeras versiones de FOS 8.2 pueden tener errores en la API REST; se recomienda encarecidamente ejecutar la última versión posible de FOS que admita su plataforma.
 
 Nota: El nivel de usuario predeterminado de FOS no es suficientemente potente para que la información de la infraestructura de datos pueda ver todos los aspectos lógicos de un dispositivo. Necesitamos una cuenta de usuario con la función de chasis activada, así como permisos en todas las estructuras virtuales configuradas en un conmutador.
 
@@ -124,6 +124,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 
 | La función de prueba me advierte de que no se puede acceder a un protocolo | Un dispositivo Brocade FOS 8,2+ solo querrá hablar en HTTP o HTTPS. Si un conmutador tiene un certificado digital instalado, el conmutador emitirá errores HTTP si se intenta comunicarse con HTTP sin cifrar frente a HTTPS. La función de prueba intenta la comunicación con HTTP y HTTPS: Si la prueba le indica que un protocolo pasa, puede guardar el recopilador de forma segura y no preocuparse de que el otro protocolo no se haya realizado correctamente, el recopilador intentará ambos protocolos durante la recopilación y solo fallará si ninguno de los dos funciona. 
+
+
+| Error: El inventario falla con 401 No autorizado...Clave de sesión no válida... | Este es un error característico de algunas versiones anteriores de FOS 8.2, como la 8.2.1c, que no admiten correctamente la autenticación básica HTTP. Actualice a una versión posterior 8.2 o 9.*. 
 
 
 | Error: «Información de infraestructura de datos recibida rol de chasis no válido» | Compruebe que el usuario configurado en este origen de datos ha obtenido el permiso de función de chasis. 
