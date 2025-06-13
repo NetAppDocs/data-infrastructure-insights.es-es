@@ -1855,8 +1855,6 @@
   <block id="140b66a6d0a9e50bee73565be1467b63" category="list-text">Si la instalación del agente se realiza correctamente, se pueden eliminar los archivos descargados del instalador del agente.</block>
   <block id="58130a8aadcaf720b42fcca8adaae36c" category="section-title">Instalación de un nuevo recopilador de datos.</block>
   <block id="1b36b33046ab8bd17922fc367347e295" category="paragraph">Nota: Este documento contiene instrucciones para la instalación de «Recopilador de datos de SVM de ONTAP». Los mismos pasos se aplican al «recopilador de datos de Cloud Volumes ONTAP» y al «recopilador de datos de Amazon FSx para NetApp ONTAP».</block>
-  <block id="a8dd0cd5ec6aa2fa59984595d5711e4f" category="list-text">Vaya al sistema en el que el recopilador necesita ser instalado y cree un directorio llamado “recopiladores” bajo el directorio “/tmp”.</block>
-  <block id="8343fe03336dda69cffe501d86dc3bd7" category="list-text">Cambie la propiedad del directorio “recopiladores” a “cssys:cssys” (el usuario y el grupo de cssys se crearán durante la instalación del agente).</block>
   <block id="f88df495978aea1949fd994d1bd434f5" category="list-text">Ahora necesitamos recuperar la versión del recopilador y el UUID del recopilador. Navegue a la API «cloudsecure_config.collector-types».</block>
   <block id="d01630b920021fdbcfded91d28c943bb" category="list-text">Vaya a Swagger, «cloudsecure_config.collector-types &gt; /v1/cloudsecure/collector-types» (GET). En el menú desplegable “collectorCategory”, selecciona el tipo de recopilador como “DATA”. Seleccione “ALL” para obtener todos los detalles del tipo de recopilador.</block>
   <block id="f48b5207fe43ebc5402b9c278bd7fcce" category="list-text">Copie el UUID del tipo de recopilador necesario.</block>
@@ -1866,14 +1864,12 @@
   <block id="c1c6a754702a1c4ab63fc9982a6ce591" category="list-text">Navegue hasta «cloudsecure_installers.collector &gt; /v1/cloudsecure/collector-types/installers/{collectorTypeUUID}» (GET) API. Introduzca el UUID copiado del paso anterior y descargue el archivo del instalador.</block>
   <block id="58210a3367e2b67875991e5b52c1c1b3" category="inline-image-macro">API para descargar recopilador por UUID</block>
   <block id="77cc9fd7ee910c50aad73ab2803c0802" category="paragraph"><block ref="77cc9fd7ee910c50aad73ab2803c0802" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="960963d0b016c92eaeccc263ef52fdba" category="list-text">Si el archivo de instalación se descarga externamente en una máquina diferente, copie el archivo de instalación en el sistema donde se está ejecutando el agente y colóquelo en el directorio “/tmp/collector”.</block>
   <block id="55a4c61aa7efda1711d77921e1a92a8d" category="list-text">También puede copiar el comando cURL desde la misma API y ejecutarlo directamente en el sistema donde se va a instalar el recopilador.</block>
   <block id="1fee2c4ec45fbe47ced2acd43c9d4447" category="paragraph">Tenga en cuenta que el nombre del archivo debe ser el mismo que el presente en las cabeceras de respuesta de la API del recopilador de descargas. Consulte la captura de pantalla a continuación.</block>
   <block id="f97ed5d4ec9a9f6892a5bd58c8d7f8d1" category="inline-image-macro">Ejemplo de comando Curl que muestra un token ofuscado</block>
   <block id="56c50c17d4584aa507435906081eea90" category="paragraph"><block ref="56c50c17d4584aa507435906081eea90" category="inline-image-macro-rx" type="image"></block></block>
   <block id="45212f4567fd41d5e2982cda11096e58" category="list-text">Navegue hasta *Workload Security &gt; Collectors* y seleccione *+Collector*. Seleccione el recopilador _ONTAP SVM_.</block>
   <block id="615d69b66e616d31e597f5daab30304d" category="list-text">Configure los detalles del recopilador y _Save_ el recopilador.</block>
-  <block id="86ecf670dbd931937d00a5378aa07840" category="list-text">Al hacer clic en “Guardar”, el proceso del agente localizará el instalador del recopilador en el directorio “/tmp/collector/” e instalará el recopilador.</block>
   <block id="6787ef48e0f1a2e3871017f73c1104d0" category="list-text">Como opción alternativa, en lugar de agregar el recopilador a través de la interfaz de usuario, también se puede agregar a través de la API.</block>
   <block id="b27df93d8844fa78c07fad879a901800" category="list-text">Desplácese hasta «cloudsecure_config.collector» &gt; «/v1/cloudsecure/collector» (PUBLICACIÓN) API.</block>
   <block id="d91a6e2ddbc6f9b866b28804de7d2ea2" category="list-text">En el menú desplegable de ejemplo, selecciona «ONTAP SVM data collector json sample», update collector config details y Execute.</block>
@@ -1882,7 +1878,6 @@
   <block id="65430216dd6e04aeb4ec77900543d9c0" category="list-text">El recopilador debería ser ahora visible en la sección “Recopiladores de datos”.</block>
   <block id="94d2a0ff1886282d7a22d96e6a125118" category="inline-image-macro">Página de lista de interfaz de usuario que muestra los recopiladores</block>
   <block id="865fce37c12842e5291be9b402a14d00" category="paragraph"><block ref="865fce37c12842e5291be9b402a14d00" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e2dcb3aa661588b80bf624cee20a4d9a" category="list-text">Si la instalación del recopilador es correcta, todos los archivos en el directorio “/tmp/collector” se pueden eliminar.</block>
   <block id="5c988949b33fdff8d1cb685edd772a78" category="section-title">Instalación de un nuevo recopilador de directorios de usuario</block>
   <block id="c1d3d73ef2be97edc6318c8b9e1be652" category="paragraph">Nota: En este documento hemos mencionado los pasos para instalar un recopilador LDAP. Los mismos pasos se aplican para instalar un recopilador de AD.</block>
   <block id="c19db618d23b8481a170708a9d8e0ff7" category="list-text">Ahora necesitamos recuperar la versión y UUID del recopilador. Navegue a la API «cloudsecure_config.collector-types». En la lista desplegable collectorCategory, selecciona el tipo de recopilador como “USUARIO”. Seleccione “TODOS” para obtener todos los detalles del tipo de recopilador en una sola solicitud.</block>
@@ -1895,7 +1890,6 @@
   <block id="cac3390b8d7c3963dd149f531a17b42d" category="list-text">Desplácese hasta «cloudsecure_installers.collector» &gt; «/v1/cloudsecure/collector-types/installers/{collectorTypeUUID}» (GET) API. Introduzca el UUID copiado del paso anterior y descargue el archivo del instalador.</block>
   <block id="5be257826b8572b5399a6ac7cb45e005" category="inline-image-macro">API y respuesta al recopilador de descargas</block>
   <block id="24c87b789cdc065736704bc2ddff3be6" category="paragraph"><block ref="24c87b789cdc065736704bc2ddff3be6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4c57cd0ffcecf9cea5cc8cd058524581" category="list-text">Si el archivo de instalación se descarga externamente en una máquina diferente, copie el archivo de instalación en el sistema donde se ejecuta el agente y en el directorio “/tmp/collector”.</block>
   <block id="58237ddf4e8c451c3f1c93e5c96bf452" category="list-text">También puede copiar el comando cURL desde la misma API y ejecutarlo directamente en el sistema donde se debe instalar el recopilador.</block>
   <block id="8bafa229baea4166d12e6934ba137aa8" category="paragraph">Tenga en cuenta que el nombre del archivo debe ser el mismo que el presente en las cabeceras de respuesta de la API del recopilador de descargas. Consulte la captura de pantalla a continuación.</block>
   <block id="1408f74b7a92dffe6114bf5f799f0f8a" category="inline-image-macro">API de comando curl</block>
@@ -1910,7 +1904,6 @@
   <block id="fe0c0f9a77be12447da802b62442e67e" category="list-text">Ingrese los detalles del servidor de directorios LDAP y haga clic en “Guardar”</block>
   <block id="7138e06d350a6ac3024a0be6b832038e" category="inline-image-macro">Interfaz de usuario que muestra los detalles del usuario LDAP</block>
   <block id="e395013e4e274cc2911f786ff10b3457" category="paragraph"><block ref="e395013e4e274cc2911f786ff10b3457" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e632d5518578306a762a61b755d4c5be" category="list-text">Al hacer clic en “Guardar”, el servicio del agente localizará el instalador del recopilador en el directorio “/tmp/collector/” e instalará el recopilador.</block>
   <block id="63a6b3c8c2e58ddc47bddb7e0e1765c6" category="list-text">Como opción alternativa, en lugar de agregar recopilador a través de la interfaz de usuario, también se puede agregar a través de la API.</block>
   <block id="a0a7d3e7a6cb2e91beed5114cc067cce" category="list-text">En el ejemplo desplegable, seleccione “LDAP Directory Server user collector json sample”, actualice los detalles de configuración del recopilador y haga clic en “Execute”.</block>
   <block id="0a721b8d54227b40387265009bce8ac5" category="inline-image-macro">API para recopilador LDAP</block>
@@ -1933,14 +1926,12 @@
   <block id="73c28ff5675693eddcb79999e10da4d0" category="paragraph"><block ref="73c28ff5675693eddcb79999e10da4d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f8f9f7f0d4337aaef721604bd0326c44" category="section-title">Actualizando recopiladores</block>
   <block id="d64a61695a0497568adb11f38b555611" category="paragraph">Nota: Los pasos de actualización son los mismos para todos los tipos de recopiladores. En este documento mostraremos la actualización del recopilador «SVM de ONTAP».</block>
-  <block id="1788421524c681e92ffb072cb2b16ba4" category="list-text">Ve al sistema en el que los coleccionistas necesitan ser actualizados y crea el directorio “/tmp/collector” si no está ya presente.</block>
   <block id="055271148610e8cb492f1a5f67d7061f" category="list-text">Asegúrese de que el directorio “recopiladores” es propiedad de _cssys:cssys_.</block>
   <block id="30cb8ff7690cb51e2ba4a45fa1fec47b" category="list-text">En Swagger, desplácese hasta «cloudsecure_config.collector-types» GET API. En el menú desplegable “collectorCategory”, seleccione “DATA” (seleccione “USER” para el recopilador de directorios de usuario o “ALL”).</block>
   <block id="b63f1156c2b0b306d2c21686c4671290" category="paragraph">Copiar UUID y versión del cuerpo de la respuesta.</block>
   <block id="bdb4d7354cc8a41b106b9c9d369890b9" category="inline-image-macro">Respuesta de la API que muestra el UUID del recopilador y la versión resaltados</block>
   <block id="983e33a17fd037d75d7911eb30c9e4dd" category="paragraph"><block ref="983e33a17fd037d75d7911eb30c9e4dd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="26f085ec96f326a83a2cd1c9a101547a" category="list-text">Descargue el archivo del instalador del recopilador más reciente.</block>
-  <block id="38836b79dd635a5e513204082f0d059b" category="list-text">Desplácese hasta «cloudsecure_installers.collector» &gt; «/v1/cloudsecure/collector-types/installers/{collectorTypeUUID}» API. Ingresa “collectorTypeUUID” copiado del paso anterior. Descargue el instalador en el directorio “/tmp/collector”.</block>
   <block id="4aca3370873bcc20704038a3b449349c" category="list-text">Alternativamente, también se puede usar el comando cURL de la misma API.</block>
   <block id="fb627a04ed10e35b8c6fd5fdca19b796" category="inline-image-macro">Ejemplo de comando cURL</block>
   <block id="bc8d31643a32bf3e4e8aa0ce44aece11" category="paragraph"><block ref="bc8d31643a32bf3e4e8aa0ce44aece11" category="inline-image-macro-rx" type="image"></block></block>
@@ -1956,11 +1947,9 @@
   <block id="59e00ac512bd959d2a3ded4209823e6f" category="list-text">Comprobación de estado.</block>
   <block id="eac5a780e5ba342d31bf3d406ab502ca" category="paragraph">Los recopiladores deben estar en estado de ejecución en la interfaz de usuario.</block>
   <block id="aefca8640c6f7317db4ede982986441e" category="list-text">Limpieza posterior a la actualización:</block>
-  <block id="f27db76a6388239fb1cfc200d1f859b7" category="list-text">Si la actualización del recopilador se realiza correctamente, todos los archivos del directorio “/tmp/collector” se pueden eliminar.</block>
   <block id="991fefa76287bfa32eacbff100d426b8" category="paragraph">Repita los pasos anteriores para actualizar otros tipos de colectores también.</block>
   <block id="9d72500e8a5c053eafcdfe4056754eb8" category="section-title">Problemas y correcciones de Commons.</block>
   <block id="0b2c01fe038efdc8f7b27285140c4a04" category="list-text">AGENT014 Error</block>
-  <block id="21375ff3b38428634b0bb8f11745059a" category="paragraph">Este error se producirá si el archivo instalador del recopilador no está presente en el directorio “/tmp/collector” o no es accesible. Asegúrese de que el archivo de instalación está descargado y el directorio “recopiladores” y el archivo zip del instalador es propiedad de cssys:cssys y el servicio del agente de reinicio – “systemctl restart cloudsecure-agent.service”</block>
   <block id="d8490c9089d989bf468613ea9b946f89" category="inline-image-macro">Pantalla de interfaz de usuario que muestra el error de agente 014</block>
   <block id="275f1fc2756027a2e9293774dfb2629e" category="paragraph"><block ref="275f1fc2756027a2e9293774dfb2629e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="80c03754030e95a93e8d8526693ae86d" category="list-text">Error no autorizado</block>
@@ -2660,14 +2649,11 @@
   <block id="d0c65e48e2de27f37b54853eb602f10b" category="cell">Agente de Seguridad de Carga de Trabajo</block>
   <block id="1e5d29d467aa39ff7343d30dc2f8de5b" category="cell">&lt;site_name&gt;.cs01.cloudinsights.netapp.com &lt;site_name&gt;.c01.cloudinsights.netapp.com &lt;site_name&gt;.c02.cloudinsights.netapp.com</block>
   <block id="e3af7e29e4f0d53ce53a1e5fef5c3577" category="cell">Acceso a Información sobre la infraestructura de datos</block>
-  <block id="4ce4e8664144d2ca2f89818a65da41cc" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com</block>
   <block id="d4fedc7f035f96436f1598f9626876e2" category="cell">Acceso a los servicios de autenticación</block>
   <block id="cd901a4d0c763788558340776fd2cdb5" category="paragraph">Para entornos de seguridad de cargas de trabajo * basados en Europa:</block>
   <block id="c4bd63902a8959d209469ec987ed87db" category="cell">&lt;site_name&gt;.cs01-eu-1.cloudinsights.netapp.com &lt;site_name&gt;.c01-eu-1.cloudinsights.netapp.com &lt;site_name&gt;.c02-eu-1.cloudinsights.netapp.com</block>
-  <block id="71459f50e034484f40116ee14f3856f9" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01-eu-1.cloudinsights.netapp.com</block>
   <block id="fa226e3679ae6b7dab2869292b192728" category="paragraph">Para entornos de seguridad de cargas de trabajo * basados en APAC*:</block>
   <block id="2a7a1c69f19a2dce7c6cd235a0426527" category="cell">&lt;site_name&gt;.cs01-ap-1.cloudinsights.netapp.com &lt;site_name&gt;.c01-ap-1.cloudinsights.netapp.com &lt;site_name&gt;.c02-ap-1.cloudinsights.netapp.com</block>
-  <block id="ccc64c65f1e8c75ec95b9e7045b1e7da" category="cell">gateway.c01.cloudinsights.netapp.com agentlogin.cs01-ap-1.cloudinsights.netapp.com</block>
   <block id="0cd58d8585970b5311e84ca2c34ba5ef" category="section-title">Reglas dentro de la red</block>
   <block id="1b09a58921479be87f9dae639915150f" category="cell">389(LDAP) 636 (LDAPS / start-tls)</block>
   <block id="84caee864977bc98db0b0df24853f63c" category="cell">URL del servidor LDAP</block>
@@ -2696,7 +2682,6 @@
   <block id="c346aec8c5c8cd10c853a9dc4560f5cd" category="admonition">El token sólo estará disponible para copiar en el portapapeles y guardar durante el proceso de creación. Los tokens no se pueden recuperar una vez creados, por lo que se recomienda encarecidamente copiar el token y guardarlo en una ubicación segura. Se le pedirá que haga clic en el botón Copiar clave de acceso de API antes de cerrar la pantalla de creación de token.</block>
   <block id="057865fdced8cf279cb948d9a000b58a" category="paragraph">La aplicación recibe un token de acceso después de que un usuario autentica correctamente y autoriza el acceso, a continuación, pasa el token de acceso como credencial cuando llama a la API de destino. El token pasado informa a la API de que el portador del token ha sido autorizado para acceder a la API y realizar acciones específicas en función del ámbito que se haya concedido durante la autorización.</block>
   <block id="4885bebed0a488d050e9e3b9016b3fda" category="paragraph">El encabezado HTTP donde se pasa el token de acceso es *X-CloudInsights-ApiKey:*</block>
-  <block id="eceeec5380f54a75da4fa160c300d56b" category="paragraph">Donde _&lt;API_Access_Token&gt;_ es el token que ha guardado durante la creación de la clave de acceso de API.</block>
   <block id="b9250c46598db43daf799f07c7d996da" category="paragraph">Puede encontrar información detallada en el enlace _API Documentation_ en *Admin &gt; API Access*.</block>
   <block id="ce86a5aaf36b8b44516c9a3d547bc544" category="section-title">Script para extraer datos a través de la API</block>
   <block id="abd1c518dbb73a973f62bdeac0383a1f" category="paragraph">Los agentes de seguridad de carga de trabajo incluyen un script de exportación para facilitar las llamadas paralelas a la API de v2 dividiendo el rango de tiempo solicitado en lotes más pequeños.</block>
@@ -2707,54 +2692,15 @@
   <block id="fca4fedbe53af4420a279beead573bdf" category="doc">Seguridad de la carga de trabajo: Simulación de un ataque</block>
   <block id="85bec7dd725b26542ae7c0d1c759836a" category="paragraph">Puede utilizar las instrucciones de esta página para simular un ataque con el fin de probar o demostrar la seguridad de la carga de trabajo mediante el script de simulación de Ransomware incluido.</block>
   <block id="c8722d0a5f0f718756806afb0f63faf3" category="section-title">Cosas que tomar en cuenta antes de empezar</block>
-  <block id="228b6b559614ae017988e0b66c4ab82c" category="list-text">El script de simulación de ransomware sólo funciona en Linux.</block>
   <block id="16fa78539f96944e79f64b961036e74d" category="list-text">La secuencia de comandos se proporciona con los archivos de instalación del agente de seguridad de carga de trabajo. Está disponible en cualquier equipo que tenga instalado un agente de seguridad de carga de trabajo.</block>
   <block id="749376c343309b5abf1f8bc2f1e6e9f7" category="list-text">Puede ejecutar la secuencia de comandos en la propia máquina del agente de seguridad de carga de trabajo; no es necesario preparar otra máquina Linux. Sin embargo, si prefiere ejecutar la secuencia de comandos en otro sistema, simplemente copie la secuencia de comandos y ejecútela donde desee.</block>
-  <block id="7507a6fc6500d36cd4c727aec7187901" category="section-title">Tener al menos 1,000 archivos de ejemplo</block>
-  <block id="0b2c7f99606e39c9dac8c555454ca6a7" category="paragraph">Este script debe ejecutarse en una SVM con una carpeta que tenga archivos para cifrar. Recomendamos tener al menos 1,000 archivos dentro de esa carpeta y cualquier subcarpeta. Los archivos no deben estar vacíos. No cree los archivos ni los cifre utilizando el mismo usuario. La seguridad de la carga de trabajo considera que se trata de una actividad de bajo riesgo y, por lo tanto, no generará una alerta (es decir, el mismo usuario modifica los archivos que acaba de crear).</block>
-  <block id="497ca441ba939bb60a530a6e3409b407" category="inline-link-macro">cree archivos no vacíos mediante programación</block>
-  <block id="af64720caca21622d75cb553bfdb8bd9" category="paragraph">Consulte a continuación las instrucciones para <block ref="e4fffc8648374f8ac4aafa6cb656ffb6" category="inline-link-macro-rx"></block>.</block>
-  <block id="2855135907eef979db329ca6aebe0464" category="section-title">Directrices antes de ejecutar el simulador:</block>
-  <block id="d786b68b9cf5f686784afa64b69b3bce" category="list-text">Asegúrese de que los archivos cifrados no están vacíos.</block>
-  <block id="dc77d098f1840a6fa69f5b878fac260d" category="list-text">Asegúrese de cifrar &gt; 50 archivos. Se ignorará un pequeño número de archivos.</block>
-  <block id="9cdd30f36b5b67d9fc64c9bd48e9fac8" category="list-text">No ejecute un ataque varias veces con el mismo usuario. Después de algunas veces, Workload Security aprenderá el comportamiento de este usuario y asumirá que es el comportamiento normal del usuario.</block>
-  <block id="7a5e4b833809f504d9c40568ed0a5cec" category="list-text">No cifre los archivos que acaba de crear el mismo usuario. El cambio de un archivo que acaba de crear un usuario no se considera una actividad arriesgada. En su lugar, utilice los archivos creados por otro usuario O espere unas horas entre crear los archivos y cifrarlos.</block>
-  <block id="3eee06b6e6c02b14b6bf0a76a8e1ee71" category="section-title">Prepare el sistema</block>
-  <block id="0864c33fc7e49f7b5dabd2b27c2805d5" category="paragraph">En primer lugar, monte el volumen objetivo en la máquina. Puede montar un montaje NFS o una exportación CIFS.</block>
   <block id="6a2eb10d0f7d8e6c5942069b7aa730bf" category="paragraph">Para montar la exportación NFS en Linux:</block>
   <block id="dd94533008fec4ee5889a56fd78e2a26" category="paragraph">No monte NFS versión 4.1; no es compatible con Fpolicy.</block>
   <block id="6006ea3f9ae2b497be9e9bce2d0ead62" category="paragraph">Para montar CIFS en Linux:</block>
   <block id="a22c6eb3597528c16b0d46880ae4b1ae" category="paragraph">A continuación, configure un recopilador de datos:</block>
   <block id="5e7fe8c41f8a34a29dc01b5eced565e8" category="list-text">Configure el agente de seguridad de carga de trabajo si no lo ha hecho todavía.</block>
-  <block id="173dfa4be4da90a7d5d1ced4c9f85a25" category="list-text">Configure el recopilador de datos de SVM si aún no ha terminado.</block>
   <block id="79e81469dc70b00e14fd266807fa2813" category="section-title">Ejecute el script Ransomware Simulator</block>
-  <block id="f133c978b541b977d0cbc025827ccf6d" category="list-text">Inicie sesión (ssh) en la máquina del agente de seguridad de carga de trabajo.</block>
-  <block id="785c0d55edba879bb891f6155bc195ee" category="list-text">Desplácese hasta: _/opt/netapp/cloudsecure/agent/install_</block>
-  <block id="430319bb139c1067cd6f898a565a8e7f" category="list-text">Llame al script del simulador sin parámetros para ver el uso:</block>
-  <block id="873038227b1d58f9be9ac08fa093fdc8" category="section-title">Cifre sus archivos de prueba</block>
-  <block id="d6dd6615fa7234326463921d688a17cd" category="paragraph">Para cifrar los archivos, ejecute el siguiente comando:</block>
-  <block id="76b9b68624d8f14bfe2d4fa26a74327e" category="section-title">Restaurar archivos</block>
-  <block id="05b9537d4d6b18cde99b176600c5b6cb" category="paragraph">Para descifrar, ejecute el siguiente comando:</block>
-  <block id="508c80147534839c8ece65596b3e23ca" category="section-title">Ejecute el script varias veces</block>
-  <block id="dd844f5768b1b38bb3eaa8aad66cc28d" category="paragraph">Después de generar un ataque de ransomware para un usuario, cambie a otro usuario para generar un ataque adicional. Workload Security aprende el comportamiento del usuario y no avisa sobre los ataques repetidos de ransomware dentro de un período de tiempo breve para el mismo usuario.</block>
-  <block id="3c00df162167ecfa7cae1012f21e271a" category="section-title">Cree archivos mediante programación</block>
-  <block id="ddc197f26701abc15014fe5035957110" category="paragraph">Antes de crear los archivos, primero debe detener o pausar el procesamiento del recopilador de datos. Realice los pasos siguientes antes de agregar el recopilador de datos al agente. Si ya ha agregado el recopilador de datos, simplemente edite el recopilador de datos, introduzca una contraseña no válida y guárdelo. Esto pondrá temporalmente el recopilador de datos en el estado de error. NOTA: Asegúrese de anotar la contraseña original.</block>
-  <block id="ce9b2cd4bcab7dbbf52b62cd18cb5c55" category="inline-link-macro">pausar el recopilador</block>
-  <block id="3fc1bb029faccb362d05bb964b9a5532" category="admonition">La opción recomendada es <block ref="fab3704c9565365da788d72b33d2f55f" category="inline-link-macro-rx"></block>antes de crear los archivos.]</block>
-  <block id="7fb4f29b2fbada5675e1ca18652cf155" category="paragraph">Antes de ejecutar la simulación, primero debe agregar archivos para su cifrado. Puede copiar manualmente los archivos que se van a cifrar en la carpeta de destino o utilizar una secuencia de comandos (vea el ejemplo siguiente) para crear los archivos mediante programación. Sea cual sea el método que utilice, copie al menos 1,000 archivos.</block>
-  <block id="ab1689bf65069d89f2858a33f94e7a0c" category="paragraph">Si elige crear los archivos mediante programación, haga lo siguiente:</block>
   <block id="1ccbd3884a5f46ebee24ea2d455e82c6" category="list-text">Inicie sesión en el cuadro Agente.</block>
-  <block id="aa0db2c21e2f148a0198b8084fbcecf2" category="list-text">Monte una exportación NFS desde la SVM del servidor dedicado a almacenamiento al equipo del agente. CD en esa carpeta.</block>
-  <block id="02f49225afe032e62af33156eb24f4d0" category="list-text">En esa carpeta, cree un archivo denominado createfiles.sh</block>
-  <block id="8c8c6d282bc49384bfe84c90829113ba" category="list-text">Copie las siguientes líneas en ese archivo.</block>
-  <block id="01d3a32280cc94c7c057cd3d14488785" category="list-text">Guarde el archivo.</block>
-  <block id="03efecbfeba0123b6899f901d60d957a" category="list-text">Asegúrese de que ejecuta el permiso en el archivo:</block>
-  <block id="6013cd3d50482e751e798f6b95a53f7e" category="list-text">Ejecute el script:</block>
-  <block id="f4cc1c9a55de42a2dbb9d5aa67b0ad18" category="paragraph">se crearán archivos 1000 en la carpeta actual.</block>
-  <block id="f9c38f6218e4bf4132fd48e2dd8413c2" category="list-text">Vuelva a habilitar el recopilador de datos</block>
-  <block id="123d317d6377a1184be4f3542b76e7fc" category="paragraph">Si deshabilitó el recopilador de datos en el paso 1, edite el recopilador de datos, introduzca la contraseña correcta y guárdelo. Asegúrese de que el recopilador de datos vuelve a estar en estado de ejecución.</block>
-  <block id="77b868151a2234cc10d342f43b6cbb14" category="inline-link-macro">reanude el recopilador</block>
-  <block id="7cf0ebff62dd478662f71d56cd0334d1" category="list-text">Si pausó el recopilador antes de seguir estos pasos, asegúrese de <block ref="277e805b18142e57dd69c30e47ad86c3" category="inline-link-macro-rx"></block>.</block>
   <block id="b3431d54476e0f70ea6fc00bae48572b" category="summary">Este script se puede ejecutar para comprobar la tasa de eventos en la SVM antes de instalar una máquina virtual de almacenamiento DSC de ONTAP</block>
   <block id="2723c4d559ff96bb42870d86c109708e" category="doc">Comprobador de tasa de eventos de SVM (guía de ajuste de tamaño del agente)</block>
   <block id="0a2bd44573247d8e7748ce7d2d2a4b8f" category="paragraph">El comprobador de tasa de eventos se utiliza para comprobar la tasa de eventos combinada de NFS/SMB en la SVM antes de instalar un recopilador de datos de SVM de ONTAP, a fin de ver cuántas SVM podrá supervisar un equipo de agente. Utilice el Comprobador de tasa de eventos como guía de tamaño para ayudar a planificar su entorno de seguridad.</block>
@@ -12590,4 +12536,94 @@
   <block id="b25b84328544405f6b0ef29d21ec179a" category="list-text">Debian (64 bits) 12</block>
   <block id="fc4f76c3c67141253726c8c6550bc344" category="list-text">Oracle Enterprise Linux (64 bits) 9.6</block>
   <block id="3f9083673db59761ee75134079acb794" category="list-text">Red Hat (64 bits) 9.6</block>
+  <block id="142b47c359d647af9faff9ef084152c7" category="cell">agentlogin.cs01.cloudinsights.netapp.com</block>
+  <block id="29acd3d3cfc5f8e3cb650abeb2622a68" category="cell">agentlogin.cs01-eu-1.cloudinsights.netapp.com</block>
+  <block id="012f0abca78822d24d27455403c3d089" category="cell">agentlogin.cs01-ap-1.cloudinsights.netapp.com</block>
+  <block id="5638f0cd643e22827b55eec8b52ab7e4" category="paragraph">Donde _&lt;API_Access_Token&gt;_ es el token que guardó durante la creación de la clave de acceso a la API y _&lt;Workload Security Tenant&gt;_ es la URL del inquilino de su entorno de Workload Security.</block>
+  <block id="9e2b8018039d7d99b04df272bce4aba9" category="list-text">El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.</block>
+  <block id="61622ea1d4086909bd90c0efc1d6a2e5" category="list-text">Workload Security detectará eventos y alertas generados con NFS 4.1 solo si la versión de ONTAP es 9.15 o superior.</block>
+  <block id="18ce72511b1d5c5efd6fbe69db6d9b27" category="list-text">Los usuarios pueden optar por el script Python o shell según sus preferencias y los requisitos del sistema.</block>
+  <block id="9efded9e764f04e1a9d0996a56b10881" category="list-text">El script de Python requiere instalaciones previas. Si no desea usar Python, utilice el script de shell.</block>
+  <block id="9a759ff4b26a758a5b3f576e750e2b4f" category="section-title">Pautas:</block>
+  <block id="53ed8ffe6fb7e1643cb7f04fdaec4316" category="paragraph">Este script debe ejecutarse en una SVM que contenga una carpeta con una cantidad considerable de archivos para cifrar, idealmente 100 o más, incluyendo los archivos en subcarpetas. Asegúrese de que los archivos no estén vacíos.</block>
+  <block id="210fca07871efb876c9cd258ccc87ac5" category="paragraph">Para generar la alerta, pause temporalmente el recopilador antes de crear los datos de prueba. Una vez generados los archivos de muestra, reanude el recopilador e inicie el proceso de cifrado.</block>
+  <block id="8f218e93bbeebaaf042e1b9c1eca99a1" category="section-title">Preparar el sistema:</block>
+  <block id="5e6702b9d02b30df0d4015b6d94c3ef5" category="paragraph">Primero, monte el volumen de destino en la máquina. Puede montar una exportación NFS o CIFS.</block>
+  <block id="d39b1e189739fcc0a92bdb5bb1b3e4d0" category="section-title">Habilitar la protección contra ransomware de ONTAP Autonomous (opcional):</block>
+  <block id="ad3dd38cdf18de03b5ea7c975f541873" category="paragraph">Si la versión de su clúster ONTAP es 9.11.1 o superior, puede habilitar el servicio de protección contra ransomware ONTAP ejecutando el siguiente comando en la consola de comandos ONTAP.</block>
+  <block id="de5a41e583385a4169ca3909e0a409ca" category="list-text">Configure un recopilador de datos SVM si aún no lo ha hecho.</block>
+  <block id="9fe53685b26e1438594a879d69be82a9" category="list-text">Asegúrese de que el protocolo de montaje esté seleccionado al configurar el recopilador de datos.</block>
+  <block id="8242f31ea73970eea49f1da9ec4c8682" category="section-title">Genere los archivos de muestra mediante programación:</block>
+  <block id="7bfd7dac59b3ec340e6de12e5559587b" category="inline-link-macro">pausar el recopilador de datos</block>
+  <block id="e626adb133db9ae242d1ac6846c15bd4" category="paragraph">Antes de crear los archivos, primero debe detener o <block ref="87f29f7287bc84941d1661609339f171" category="inline-link-macro-rx"></block> tratamiento.</block>
+  <block id="5c0a7e6abb86aa633f255b3930a2a4f7" category="paragraph">Antes de ejecutar la simulación, primero debe agregar archivos para su cifrado. Puede copiar manualmente los archivos que desea cifrar en la carpeta de destino o usar uno de los scripts incluidos para crearlos programáticamente. Independientemente del método que utilice, asegúrese de tener al menos 100 archivos para cifrar.</block>
+  <block id="33f27f0c62992f4d122b27235df0dcf6" category="paragraph">Si elige crear los archivos mediante programación, puede utilizar Shell o Python:</block>
+  <block id="7277c05557764137b065798ba5f5b395" category="section-title">Caparazón:</block>
+  <block id="081d3bad0447c442fd5e047e6aa5fd40" category="list-text">Monte un recurso compartido NFS o CIFS desde el SVM del archivador a la máquina del Agente. CD en esa carpeta.</block>
+  <block id="2f13c93c7b1aeabc37869487983edb01" category="list-text">Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/create_dataset.sh) a la ubicación de montaje de destino.</block>
+  <block id="7a00868b97e9df2a262e9df4e2e7853c" category="list-text">Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para crear la carpeta y los archivos del conjunto de datos de prueba:</block>
+  <block id="e67fb27f4270ecbdb972cec0c186f34e" category="list-text">Esto creará 100 archivos no vacíos con varias extensiones dentro de la carpeta de montaje bajo un directorio llamado "test_dataset".</block>
+  <block id="913ffb6e71174bb165d75e7127aff4c1" category="section-title">Pitón:</block>
+  <block id="70a2ef78424951a3f5229370056803f9" category="section-title">Script de Python Requisito previo:</block>
+  <block id="c05c637867101ef9406f64dbe4ff6c30" category="list-text">Instalar Python (si aún no está instalado).</block>
+  <block id="ce5abe1f3afb5729781cd65948bc066d" category="list-text">Descargue Python 3.5.2 o superior desde <block ref="98836946d56800459eb00ec3494ce132" category="inline-link-rx"></block> .</block>
+  <block id="b2f1121510db38af62339a4ec7be8937" category="list-text">Para comprobar la instalación de Python, ejecute <block ref="ac719163117fd79e0e5eddf5be2929c4" prefix=" " category="inline-code"></block> .</block>
+  <block id="9fad0479a2dd9bda83a459acb14393be" category="list-text">El script de Python ha sido probado en versiones anteriores a la 3.5.2.</block>
+  <block id="07923b667d14a8eb9e798afd4aa2f8bf" category="list-text">Instalar pip si aún no está instalado:</block>
+  <block id="b18187b45e35c02d4c0c88829cb4a40c" category="list-text">Descargue el script get-pip.py desde <block ref="e0a45e3d4ae57a2773c9b48c2e796662" category="inline-link-rx"></block> .</block>
+  <block id="05f4aae53801ade399e1059b3e0c25f3" category="list-text">Instalar pip usando <block ref="6466c1eab2e387cb6ad425357d1876b3" prefix=" " category="inline-code"></block> .</block>
+  <block id="99751a3316b411e4e720694cd4828cc1" category="list-text">Verificar la instalación de pip con <block ref="3327b3fc56e7d8a50b0df977a4c20e3b" prefix=" " category="inline-code"></block> .</block>
+  <block id="c504dca378218d6cdf3d28b602fbcdd5" category="list-text">Biblioteca PyCryptodome:</block>
+  <block id="55e7051b4957c7e336a593c0e6b0559d" category="list-text">El script utiliza la biblioteca PyCryptodome.</block>
+  <block id="75e9ec642b87389a9b86b5ce6e71ed6e" category="list-text">Instalar PyCryptodome con <block ref="194fc90597125afc86caf1d15cbf368c" prefix=" " category="inline-code"></block> .</block>
+  <block id="9433a1ee6fa8d9e22e21e24c09ea7eba" category="list-text">Confirme la instalación de PyCryptodome ejecutando <block ref="ee7f1b491d78d8f365fc68f9f583d45a" prefix=" " category="inline-code"></block> .</block>
+  <block id="48e7e220919f1b9672323e91cc617634" category="section-title">Script de creación de archivo de Python:</block>
+  <block id="78aa60bb27e1d3ef6ce810fba0dfd39a" category="list-text">Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py) a la ubicación de montaje de destino.</block>
+  <block id="07f758b769fe4a6e63f6174d18e2b514" category="list-text">Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para crear la carpeta y los archivos del conjunto de datos de prueba:</block>
+  <block id="9adc0908c00f75ca29814b238088a0cd" category="list-text">Esto creará 100 archivos no vacíos con varias extensiones dentro de la carpeta de montaje bajo un directorio llamado "test_dataset"</block>
+  <block id="155946ddf8d31167ae2abad50439caac" category="section-title">Reanudar el colector</block>
+  <block id="58d83dc1e6706a52cd311f9c66f193d5" category="paragraph">Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo una vez que se hayan creado los archivos de muestra.</block>
+  <block id="e6e76755f42136002c51ecb7c7acc410" category="paragraph">Para generar una alerta de ransomware, puede ejecutar el script incluido que simulará una alerta de ransomware en Workload Security.</block>
+  <block id="210e93b8c7253e00f2206b155a242c53" category="list-text">Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh) a la ubicación de montaje de destino.</block>
+  <block id="66a8eca27475656430ae411ce0277447" category="list-text">Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para cifrar el conjunto de datos de prueba:</block>
+  <block id="71242fab4b4978991a34104b8fa81ff5" category="list-text">Esto cifrará los archivos de muestra creados en el directorio "test_dataset".</block>
+  <block id="53892e18f05e7f30f463f70e99469111" category="list-text">Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) a la ubicación de montaje de destino.</block>
+  <block id="1f5e50416d91123b2c5d110570af5cbd" category="list-text">Tenga en cuenta que los requisitos previos de Python se instalan según la sección de requisitos previos del script de Python</block>
+  <block id="fc3fcfa41943a7c1be3c50948fd1afce" category="section-title">Generar una alerta en Seguridad de la carga de trabajo</block>
+  <block id="3773b4e166f62daeb6ab1370cdd8bfb8" category="paragraph">Una vez finalizada la ejecución del script del simulador, se verá una alerta en la interfaz web dentro de unos minutos.</block>
+  <block id="c604216470772517b98066aae99e75be" category="paragraph">Nota: En el caso de que se cumplan todas las condiciones siguientes, se generará una alerta de alta confianza.</block>
+  <block id="bb37a91d3a7d038f7f196d7f342f5d41" category="list-text">Se monitoreó la versión ONTAP de SVM superior a 9.11.1</block>
+  <block id="9ce553df4934ac43b957143d21b265ff" category="list-text">Protección autónoma contra ransomware de ONTAP configurada</block>
+  <block id="ea7f417542fef98806d54f7dcd8a2d26" category="list-text">Se agrega el recopilador de datos de seguridad de carga de trabajo en el modo de clúster.</block>
+  <block id="7a59fff38776feaa8a27e18c15f3f839" category="paragraph">Workload Security detecta patrones de ransomware según el comportamiento del usuario, mientras que ONTAP ARP detecta la actividad de ransomware según las actividades de cifrado en los archivos.</block>
+  <block id="59c0cecf99f5b7877b7f320da1734140" category="paragraph">Si se cumplen las condiciones, Workload Security marca las alertas como alerta de alta confianza.</block>
+  <block id="560a82b95d26c61a25e2894422b4eec0" category="paragraph">Ejemplo de alerta de alta confianza en la página de lista de alertas:</block>
+  <block id="dfbab6292d93300a244b9e81de9798af" category="inline-image-macro">Ejemplo de alerta de alta confianza, página de lista</block>
+  <block id="684c628694341fccce0653b8e1661d28" category="paragraph"><block ref="684c628694341fccce0653b8e1661d28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ea018ede78b5776eeee3e65c898067a" category="paragraph">Ejemplo de detalle de alerta de alta confianza:</block>
+  <block id="4864e30f3543ce6ffefe6866cd4df439" category="inline-image-macro">Ejemplo de alerta de alta confianza, página de detalles</block>
+  <block id="8901b7a1034f6e31fa7c2f5929bdd211" category="paragraph"><block ref="8901b7a1034f6e31fa7c2f5929bdd211" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="36aed75d347e158fecfc525dc1d66a22" category="section-title">Activación de alertas varias veces</block>
+  <block id="95d269995653ffa8a24d0a028366adbc" category="paragraph">Workload Security aprende el comportamiento del usuario y no generará alertas sobre ataques de ransomware repetidos dentro de las 24 horas para el mismo usuario.</block>
+  <block id="7000a55791f1de1983f9adc601ad2e4e" category="paragraph">Para generar una nueva alerta con un usuario diferente, siga los mismos pasos nuevamente (crear datos de prueba y luego cifrarlos).</block>
+  <block id="7fa8dbe788a697deed7782e6b66dda37" category="cell">* Verifique la marca de tiempo de recopilación en el archivo de registro y modifique el intervalo de sondeo en consecuencia. * Espere más tiempo.</block>
+  <block id="0dd0cb2a89009ebb8c43491b158c51e9" category="list-text">Vaya al sistema en el que se debe instalar el recopilador y cree un directorio llamado _./tmp/collectors_ en el directorio _agent install path_.</block>
+  <block id="160be90f41a3aa40c38fd58b92d331a5" category="paragraph">Nota: si el agente está instalado en _/opt/netapp_, navegue a _/opt/netapp/cloudsecure_.</block>
+  <block id="1bb789b4ee521f82afb89e5f0a083791" category="list-text">Cambie recursivamente la propiedad del directorio _tmp_ a *cssys:cssys* (el usuario y el grupo cssys se crearán durante la instalación del agente).</block>
+  <block id="38a58c80edfd4b43de4d5799824f9540" category="list-text">Si el archivo de instalación se descarga externamente en una máquina diferente, copie el archivo de instalación al sistema donde se ejecuta el agente y colóquelo en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors_.</block>
+  <block id="1fcd3fe285cf6e02b7e385f38ef121c4" category="paragraph">Nota: si el agente está instalado en _/opt/netapp_, navegue a _/opt/netapp/cloudsecure/tmp/collectors_.</block>
+  <block id="15222b952186a89ae0af94ef3138670d" category="list-text">Cambiar la propiedad del archivo zip del instalador del recopilador a *cssys:cssys*.</block>
+  <block id="fc062559e675b7f328021e6c13796f74" category="list-text">Al hacer clic en _Guardar_, el proceso del agente ubicará el instalador del recopilador en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors/_ e instalará el recopilador.</block>
+  <block id="57a553eefeb08a7b001e85e69a8b0fb0" category="list-text">Si la instalación del recopilador es exitosa, se podrán eliminar todos los archivos en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors_.</block>
+  <block id="ddd1a3a80069f8ff96d5c2e94fb10103" category="list-text">1. Vaya al sistema en el que se debe instalar el recopilador y cree un directorio llamado _./tmp/collectors_ en el directorio _agent install path_.</block>
+  <block id="aa635673bd6f483378389839d0a8b528" category="list-text">Cambie la propiedad del directorio _collectors_ a *cssys:cssys*</block>
+  <block id="f6a25ca8fac6fa2dc1d34ae3f8db8b18" category="list-text">Si el archivo de instalación se descarga externamente en una máquina diferente, copie el archivo de instalación al sistema donde se ejecuta el agente y en el directorio _/{agent-installation-path}/cloudsecure/tmp/collectors_.</block>
+  <block id="a7bb06f1f9304b3d3c9123250901fa9c" category="paragraph">Tenga en cuenta también que si el agente está instalado en _/opt/netapp_, navegue a _/opt/netapp/cloudsecure/tmp/collectors_.</block>
+  <block id="2746097ba019e65ac9795a5791b28bde" category="list-text">Al hacer clic en _Guardar_, el servicio del agente ubicará el instalador del recopilador en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors/_ e instalará el recopilador.</block>
+  <block id="3dbd3b781eed03e778b5e63a963dc871" category="list-text">El agente debe estar visible en la página “Agentes” y debe estar en estado “conectado”.</block>
+  <block id="e050e46ae9f60994ae399079f3a4b7e0" category="list-text">Vaya al sistema en el que se deben actualizar los recolectores y cree el directorio _./tmp/collectors_ en el directorio _agent install path_, si aún no está presente.</block>
+  <block id="87f32e15c34ddfa8d208297ef6b3199e" category="paragraph">Nota: si el agente está instalado en _/opt/netapp_, navegue al directorio _/opt/netapp/cloudsecure_.</block>
+  <block id="34d4df065e8cb474864212e7cbd25aab" category="list-text">Vaya a _cloudsecure_installers.collector_ &gt; _/v1/cloudsecure/collector-types/installers/{collectorTypeUUID}_ API. Introduzca el _collectorTypeUUID_ copiado del paso anterior. Descargue el instalador en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors_.</block>
+  <block id="875ee097a763d140a4468d57aabb8d80" category="list-text">Si la actualización del recopilador es exitosa, se podrán eliminar todos los archivos en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors_.</block>
+  <block id="f7185660114f7b999956b1355a59005c" category="paragraph">Este error aparecerá si el archivo de instalación del recopilador no se encuentra en el directorio _/{agent-install-path}/cloudsecure/tmp/collectors_ o no es accesible. Asegúrese de que el archivo de instalación esté descargado y que la estructura completa de directorios de _collectors_ y el archivo zip del instalador sean propiedad de cssys:cssys. Luego, reinicie el servicio del agente: _systemctl restart cloudsecure-agent.service_.</block>
 </blocks>

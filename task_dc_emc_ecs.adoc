@@ -87,7 +87,7 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 
 
-==== Inventario
+=== Inventario
 
 [cols="2*"]
 |===
@@ -98,14 +98,14 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 |===
 
 
-==== Rendimiento
+=== Rendimiento
 
 [cols="2*"]
 |===
 | Problema: | Pruebe lo siguiente: 
 
 
-| Error: No se han recogido suficientes datos. | • Compruebe la Marca de hora de la colección en el archivo de registro y modifique el intervalo de sondeo en consecuencia • espere más tiempo 
+| Error: No se han recogido suficientes datos. | * Verifique la marca de tiempo de recopilación en el archivo de registro y modifique el intervalo de sondeo en consecuencia. * Espere más tiempo. 
 
 
 | Error: El intervalo de sondeo de rendimiento es demasiado grande. | Compruebe la Marca de hora de la colección en el archivo de registro ${logfile} y modifique el intervalo de sondeo en consecuencia 

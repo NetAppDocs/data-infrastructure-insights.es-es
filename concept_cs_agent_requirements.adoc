@@ -62,7 +62,7 @@ Para entornos de seguridad de cargas de trabajo *basados en EE.UU.*:
 | TCP | 443 | Agente de Seguridad de Carga de Trabajo | <site_name>.cs01.cloudinsights.netapp.com <site_name>.c01.cloudinsights.netapp.com <site_name>.c02.cloudinsights.netapp.com | Acceso a Información sobre la infraestructura de datos 
 
 
-| TCP | 443 | Agente de Seguridad de Carga de Trabajo | gateway.c01.cloudinsights.netapp.com agentlogin.cs01.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
+| TCP | 443 | Agente de Seguridad de Carga de Trabajo | agentlogin.cs01.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
 |===
 Para entornos de seguridad de cargas de trabajo * basados en Europa:
 
@@ -74,7 +74,7 @@ Para entornos de seguridad de cargas de trabajo * basados en Europa:
 | TCP | 443 | Agente de Seguridad de Carga de Trabajo | <site_name>.cs01-eu-1.cloudinsights.netapp.com <site_name>.c01-eu-1.cloudinsights.netapp.com <site_name>.c02-eu-1.cloudinsights.netapp.com | Acceso a Información sobre la infraestructura de datos 
 
 
-| TCP | 443 | Agente de Seguridad de Carga de Trabajo | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-eu-1.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
+| TCP | 443 | Agente de Seguridad de Carga de Trabajo | agentlogin.cs01-eu-1.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
 |===
 Para entornos de seguridad de cargas de trabajo * basados en APAC*:
 
@@ -86,7 +86,7 @@ Para entornos de seguridad de cargas de trabajo * basados en APAC*:
 | TCP | 443 | Agente de Seguridad de Carga de Trabajo | <site_name>.cs01-ap-1.cloudinsights.netapp.com <site_name>.c01-ap-1.cloudinsights.netapp.com <site_name>.c02-ap-1.cloudinsights.netapp.com | Acceso a Información sobre la infraestructura de datos 
 
 
-| TCP | 443 | Agente de Seguridad de Carga de Trabajo | gateway.c01.cloudinsights.netapp.com agentlogin.cs01-ap-1.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
+| TCP | 443 | Agente de Seguridad de Carga de Trabajo | agentlogin.cs01-ap-1.cloudinsights.netapp.com | Acceso a los servicios de autenticación 
 |===
 
 
