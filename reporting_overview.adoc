@@ -13,7 +13,7 @@ keywords: reporting, cognos, data warehouse, dwh
 La generación de informes de Data Infrastructure Insights es una herramienta de inteligencia empresarial que le permite ver informes predefinidos o crear informes personalizados.
 
 
-NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"].
+NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"]. La disponibilidad de la función de informes está sujeta a un requisito de espacio mínimo. link:https://www.netapp.com/forms/cloud-insights-contact-us/["Comuníquese con su representante de ventas de NetApp"] Para más información.
 
 Con la generación de informes de Data Infrastructure Insights, podrá realizar las siguientes tareas:
 
