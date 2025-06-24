@@ -20,7 +20,7 @@ Puede utilizar las instrucciones de esta página para simular un ataque con el f
 
 == Cosas que tomar en cuenta antes de empezar
 
-* El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.
+* El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en el caso de que el usuario haya integrado ONTAP ARP con Workload Security.
 * Workload Security detectará eventos y alertas generados con NFS 4.1 solo si la versión de ONTAP es 9.15 o superior.
 * La secuencia de comandos se proporciona con los archivos de instalación del agente de seguridad de carga de trabajo. Está disponible en cualquier equipo que tenga instalado un agente de seguridad de carga de trabajo.
 * Puede ejecutar la secuencia de comandos en la propia máquina del agente de seguridad de carga de trabajo; no es necesario preparar otra máquina Linux. Sin embargo, si prefiere ejecutar la secuencia de comandos en otro sistema, simplemente copie la secuencia de comandos y ejecútela donde desee.
@@ -154,7 +154,9 @@ Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo u
 
 
 
-== Ejecute el script Ransomware Simulator
+== Genere los archivos de muestra mediante programación:
+
+Antes de crear los archivos, primero debe detener o link:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
 
 Para generar una alerta de ransomware, puede ejecutar el script incluido que simulará una alerta de ransomware en Workload Security.
 

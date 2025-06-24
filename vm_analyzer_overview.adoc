@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: vm_analyzer_overview.html 
+summary: VM Analyzer proporciona topología para activos virtuales en su inquilino 
+keywords: topology, analyze, analysis, map, virtual, vm, vmware 
+---
+= Descripción general del analizador VM
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con *VM Analyzer* de DII, la gestión de sus activos virtuales se vuelve más sencilla y eficiente. Esta potente herramienta ofrece visibilidad integral, mapeando dependencias desde VMDK/VM al host, al almacén de datos, al volumen interno o al volumen al almacenamiento.
+
+Al proporcionar un mapa topológico interactivo, VM Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de máquinas virtuales y aumente su visibilidad en las cargas de trabajo virtuales.
+
+image:vm_analyzer_example_with_panel_a.png["Mapa de topología de un sistema de almacenamiento de VM Analyzer"]
+
+
+
+== Explora las conexiones entre tus activos
+
+Seleccione *Observabilidad > Analizar > Analizador de VM* para ver el Analizador de VM. Establezca un filtro para Aplicación, Máquina virtual, Volumen, Volumen interno o agregue sus propios filtros. Se muestra el mapa de los objetos, mostrando los objetos conectados. Pase el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
+
+image:vm_analyzer_performance_metrics.png["Ejemplo de métricas de rendimiento del analizador de VM"]
+
+
+NOTE: La mayoría de los filtros de VM Analyzer (incluidos los que puede agregar) son contextuales; cuando selecciona un objeto en uno de estos filtros, las opciones que aparecen en los otros desplegables de filtros se actualizan en contexto con el objeto u objetos seleccionados.
+
+Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. El panel desplegable muestra un resumen con detalles sobre el objeto seleccionado (por ejemplo, rendimiento o utilización, según el tipo de objeto) y gráficos con métricas, como latencia o IOPS. Las pestañas adicionales permiten explorar recursos adicionales relacionados, cambios y alertas. Si lo desea, también puede mostrar las métricas de los objetos más correlacionados o en conflicto en los gráficos.
+
+
+
+== Véalo en acción
+
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solución de problemas simplificada con VM Analyzer (vídeo)"]

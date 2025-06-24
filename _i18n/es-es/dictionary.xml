@@ -2698,7 +2698,6 @@
   <block id="dd94533008fec4ee5889a56fd78e2a26" category="paragraph">No monte NFS versión 4.1; no es compatible con Fpolicy.</block>
   <block id="a22c6eb3597528c16b0d46880ae4b1ae" category="paragraph">A continuación, configure un recopilador de datos:</block>
   <block id="5e7fe8c41f8a34a29dc01b5eced565e8" category="list-text">Configure el agente de seguridad de carga de trabajo si no lo ha hecho todavía.</block>
-  <block id="79e81469dc70b00e14fd266807fa2813" category="section-title">Ejecute el script Ransomware Simulator</block>
   <block id="1ccbd3884a5f46ebee24ea2d455e82c6" category="list-text">Inicie sesión en el cuadro Agente.</block>
   <block id="b3431d54476e0f70ea6fc00bae48572b" category="summary">Este script se puede ejecutar para comprobar la tasa de eventos en la SVM antes de instalar una máquina virtual de almacenamiento DSC de ONTAP</block>
   <block id="2723c4d559ff96bb42870d86c109708e" category="doc">Comprobador de tasa de eventos de SVM (guía de ajuste de tamaño del agente)</block>
@@ -12538,7 +12537,6 @@
   <block id="29acd3d3cfc5f8e3cb650abeb2622a68" category="cell">agentlogin.cs01-eu-1.cloudinsights.netapp.com</block>
   <block id="012f0abca78822d24d27455403c3d089" category="cell">agentlogin.cs01-ap-1.cloudinsights.netapp.com</block>
   <block id="5638f0cd643e22827b55eec8b52ab7e4" category="paragraph">Donde _&lt;API_Access_Token&gt;_ es el token que guardó durante la creación de la clave de acceso a la API y _&lt;Workload Security Tenant&gt;_ es la URL del inquilino de su entorno de Workload Security.</block>
-  <block id="9e2b8018039d7d99b04df272bce4aba9" category="list-text">El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.</block>
   <block id="61622ea1d4086909bd90c0efc1d6a2e5" category="list-text">Workload Security detectará eventos y alertas generados con NFS 4.1 solo si la versión de ONTAP es 9.15 o superior.</block>
   <block id="18ce72511b1d5c5efd6fbe69db6d9b27" category="list-text">Los usuarios pueden optar por el script Python o shell según sus preferencias y los requisitos del sistema.</block>
   <block id="9efded9e764f04e1a9d0996a56b10881" category="list-text">El script de Python requiere instalaciones previas. Si no desea usar Python, utilice el script de shell.</block>
@@ -12628,4 +12626,23 @@
   <block id="9cff751c63b93d5cf30de3f9b1c5ae37" category="admonition">La función Informes está disponible en Data Infrastructure Insights <block ref="e53fcfe2d8e430963458770e616738bd" category="inline-link-macro-rx"></block>. La disponibilidad de la función de informes está sujeta a un requisito de espacio mínimo. <block ref="1609ad57ad0e13d165eb8d59f42fcd45" category="inline-link-macro-rx"></block> Para más información.</block>
   <block id="49efdacfb2c6deb2da842846699cf1e7" category="cell">Un equipo que ejecuta una versión con licencia de uno de los siguientes: * AlmaLinux 9.4 y 9.5 (64 bits), incluido SELinux * CentOS 9 Stream (64 bits) * Debian 11 (64 bits) y 12 (64 bits), incluido SELinux * OpenSUSE Leap 15.3 (64 bits) a 15.6 (64 bits) * Oracle Linux 8.10 (64 bits) y 9.1 (64 bits) a 9.6 (64 bits), incluido SELinux * Red Hat Enterprise Linux 8.10 (64 bits) y 9.1 (64 bits) a 9.6 (64 bits), incluido SELinux * Rocky 9.4 (64 bits) y 9.5 (64 bits), incluido SELinux * SUSE Linux Enterprise Server 15 SP4 (64 bits) a 15 SP6 (64 bits), incluido SELinux * Ubuntu 20.04 LTS (64 bits), 22.04 LTS (64 bits) y 24.04 LTS (64 bits) Esta computadora no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado.</block>
   <block id="edf63ae7e3cf0cd744884c156cab7abb" category="section-title">Para montar CIFS en Linux:</block>
+  <block id="ee817f2b2a73b759041de15700c640ab" category="list-text">El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en el caso de que el usuario haya integrado ONTAP ARP con Workload Security.</block>
+  <block id="aeb28c68bc1dab765c30f59d6d996ff2" category="section-title">Véalo en acción</block>
+  <block id="c8d448b9409555cf2e8422b8c3317946" category="inline-link-macro">Explorar y analizar con consultas en Data Infrastructure Insights (video)</block>
+  <block id="e0d2c40c23e890868e573da2463ab970" category="paragraph"><block ref="e0d2c40c23e890868e573da2463ab970" category="inline-link-macro-rx"></block></block>
+  <block id="dc144dad3008fbf761d88b6231252fe9" category="summary">VM Analyzer proporciona topología para activos virtuales en su inquilino</block>
+  <block id="12a96e4209d40670da1501e5ae32f7c1" category="doc">Descripción general del analizador VM</block>
+  <block id="90184485963d030ad4dd7567d71584f9" category="paragraph">Con *VM Analyzer* de DII, la gestión de sus activos virtuales se vuelve más sencilla y eficiente. Esta potente herramienta ofrece visibilidad integral, mapeando dependencias desde VMDK/VM al host, al almacén de datos, al volumen interno o al volumen al almacenamiento.</block>
+  <block id="28966c9414b6884efd36e8984f749976" category="paragraph">Al proporcionar un mapa topológico interactivo, VM Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de máquinas virtuales y aumente su visibilidad en las cargas de trabajo virtuales.</block>
+  <block id="38bb6439d9226f9f886c24401bfc4271" category="paragraph"><block ref="38bb6439d9226f9f886c24401bfc4271" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9b7a93ca7c70a47d59513eb8fc49881" category="paragraph">Seleccione *Observabilidad &gt; Analizar &gt; Analizador de VM* para ver el Analizador de VM. Establezca un filtro para Aplicación, Máquina virtual, Volumen, Volumen interno o agregue sus propios filtros. Se muestra el mapa de los objetos, mostrando los objetos conectados. Pase el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.</block>
+  <block id="7485c59fee0f1341e68427d50b2c0b5f" category="inline-image-macro">Ejemplo de métricas de rendimiento del analizador de VM</block>
+  <block id="09562317f0e4300c8d530df45c626200" category="paragraph"><block ref="09562317f0e4300c8d530df45c626200" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fdbcd622aeb7794a55d5a3c57f4ed433" category="admonition">La mayoría de los filtros de VM Analyzer (incluidos los que puede agregar) son contextuales; cuando selecciona un objeto en uno de estos filtros, las opciones que aparecen en los otros desplegables de filtros se actualizan en contexto con el objeto u objetos seleccionados.</block>
+  <block id="86975522d809db49e0c205d536440123" category="paragraph">Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. El panel desplegable muestra un resumen con detalles sobre el objeto seleccionado (por ejemplo, rendimiento o utilización, según el tipo de objeto) y gráficos con métricas, como latencia o IOPS. Las pestañas adicionales permiten explorar recursos adicionales relacionados, cambios y alertas. Si lo desea, también puede mostrar las métricas de los objetos más correlacionados o en conflicto en los gráficos.</block>
+  <block id="d2471c4bc746eeea68ab17452321a403" category="inline-link-macro">Solución de problemas simplificada con VM Analyzer (vídeo)</block>
+  <block id="6e27a8c95ed5ddbd5bf8c70b3cdcde35" category="paragraph"><block ref="6e27a8c95ed5ddbd5bf8c70b3cdcde35" category="inline-link-macro-rx"></block></block>
+  <block id="f463cb1a5df7d729d273f46c1e5cb861" category="sidebar">Análisis de datos</block>
+  <block id="c917a46858bc7b65af2e1c90ee0a1453" category="sidebar">Analizador SAN</block>
+  <block id="2e2565dd8910383ad2b3626e2b5d37b2" category="sidebar">Analizador de máquinas virtuales</block>
 </blocks>
