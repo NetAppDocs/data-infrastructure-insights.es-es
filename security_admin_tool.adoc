@@ -39,7 +39,7 @@ La herramienta SecurityAdmin permite gestionar las opciones de seguridad de Data
 Después de la instalación de AU, la herramienta SecurityAdmin se encuentra en el sistema de unidades de adquisición en cualquiera de estas ubicaciones:
 
 ....
-Windows - C:\Program Files\SANscreen\securityadmin\bin\securityadmin.bat
+Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\bin\securityadmin.bat
 Linux - /bin/oci-securityadmin.sh
 ....
 
@@ -61,7 +61,7 @@ Crea un archivo zip de copia de seguridad del almacén que contiene todas las co
 
 +
 ....
-Windows - C:\Program Files\SANscreen\backup\vault
+Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\backup\vault
 Linux - /var/log/netapp/oci/backup/vault
 ....
 +
