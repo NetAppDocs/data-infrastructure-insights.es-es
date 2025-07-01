@@ -915,3 +915,6 @@ Además, puede elegir mostrar la estacionalidad _Hourly_ o _Daily_, así como es
 image:expected_bounds_settings.png["Ajustes para límites de anomalías, incluido el algoritmo de detección, la estacionalidad y la sensibilidad"]
 
 Tenga en cuenta que sólo puede ver los límites esperados cuando el gráfico esté configurado para mostrar una sola línea. Si la configuración o los filtros de Grupo por muestran varias líneas, o si ha establecido varias consultas para el widget, la opción para mostrar los límites esperados se desactivará.
+
+
+NOTE: DII analiza los datos existentes de la semana anterior a la creación del monitor y detecta cualquier pico o caída significativa de datos que dure más de 30 minutos; estos se consideran anomalías. Durante la segunda semana (la fase de "aprendizaje"), a medida que se recopilan y analizan más datos, existe la posibilidad de que aumente el ruido en las alertas. Este ruido suele reducirse a medida que se analizan más datos durante las semanas siguientes.
