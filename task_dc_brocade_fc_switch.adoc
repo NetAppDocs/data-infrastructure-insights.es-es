@@ -153,12 +153,38 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 | Error: «Información de infraestructura de datos recibida rol de chasis no válido» | Compruebe que el usuario configurado en este origen de datos ha obtenido el permiso de función de chasis. 
 
 
-| Error: "La dirección IP del chasis no coincide" | Cambie la configuración del origen de datos para utilizar la dirección IP del chasis. 
+| Error: "La dirección IP del chasis no coincide" | Como norma general, DII no admite la Traducción de Direcciones de Red ni la Traducción de Direcciones de Puerto entre la Unidad de Adquisición y los dispositivos. Es posible que DII detecte que el nombre de host/dirección IP en la configuración del recopilador NO coincide con ninguna de las direcciones que el dispositivo cree tener. 
 
 
 | Reciba un mensaje que indica que más de 1 nodo ha iniciado sesión en el puerto Access Gateway | Compruebe que el dispositivo NPV funciona correctamente y que se esperan todos los WWN conectados. No adquiera directamente el dispositivo NPV. En lugar de ello, la adquisición del switch de estructura principal recopilará los datos del dispositivo NPV. 
 
 
+| Error: ....Máximo de sesiones remotas para iniciar sesión... | FOS tiene diferentes límites para la cantidad de sesiones SSH simultáneas admitidas por rol de usuario. La sesión SSH de DII a este dispositivo se rechaza al iniciar sesión por infringir dichos límites. Esto puede indicar que hay recopiladores duplicados que detectan el mismo recurso, lo cual debe evitarse. 
+|===
+
+
+=== Rendimiento
+
+[cols="2*"]
+|===
+| Problema: | Pruebe lo siguiente: 
+
+
 | Se produce un error en la recopilación de rendimiento con el tiempo de espera agotado durante el envío de la solicitud SNMP. | En función de las variables de consulta y la configuración del conmutador, algunas consultas pueden superar el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"]. 
+
+
+| La recopilación de rendimiento falla con... Se encontraron filas duplicadas en la tabla SNMP... | DII ha detectado respuestas SNMP incorrectas. Probablemente esté utilizando FOS 8.2.3e. Actualice a 8.2.3e2 o superior. 
+
+
+| Las recopilaciones de rendimiento fallan con...Nombre de usuario desconocido... | Ha configurado su recopilador DII con un valor de "Nombre de usuario SNMP" que no está asignado a ninguna de las ranuras de usuario SNMPv3. La simple creación de un usuario en Brocade FOS NO lo habilita necesariamente como usuario SNMPv3; debe asignarlo a una de las ranuras de usuario v3. 
+
+
+| Las recopilaciones de rendimiento fallan con... Nivel de seguridad no compatible... | Ha configurado su recopilador DII para utilizar SNMPv3, pero con configuraciones de cifrado (también conocidas como privacidad) y/o autorización que no están habilitadas en el dispositivo en cuestión. 
+
+
+| La recopilación de rendimiento falla con... La contraseña de privacidad vacía solo se permite para el protocolo de privacidad NINGUNO | Ha configurado su recopilador DII para usar SNMPv3, con un cifrado, también conocido como protocolo de privacidad (AES, etc.), pero tiene un valor de "Contraseña de privacidad SNMP" vacío, por lo que DII no puede negociar flujos de datos SNMPv3 cifrados con este dispositivo. 
+
+
+| La recopilación de rendimiento falla con .....VF:nn, error: Sin acceso... | Ha configurado su recopilador DII para usar SNMPv3 en un dispositivo con varias estructuras virtuales habilitadas, pero el usuario SNMPv3 no tiene permisos para la red neuronal de la estructura virtual (VF). DII no admite el descubrimiento parcial de un activo físico; siempre debe otorgarle acceso a DII a las 128 VF posibles de forma proactiva, ya que DII siempre intentará recuperar datos de rendimiento de cualquier VF existente en un dispositivo físico determinado. 
 |===
 Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].

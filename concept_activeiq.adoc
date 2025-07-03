@@ -11,7 +11,7 @@ summary: 'Información de infraestructura de datos recopila datos de riesgo del 
 
 
 [role="lead"]
-NetApp link:https://www.netapp.com/us/products/data-infrastructure-management/active-iq.aspx["Asesor digital de Active IQ"](también conocido como asesor digital) proporciona una serie de visualizaciones, análisis y otros servicios relacionados con la asistencia técnica a los clientes de NetApp para sus sistemas de hardware/software. Los datos reportados por Digital Advisor pueden mejorar la solución de problemas del sistema y también proporcionar información sobre la optimización y el análisis predictivo relacionados con sus dispositivos.
+NetApp link:https://docs.netapp.com/us-en/active-iq/["Asesor digital de Active IQ"](también conocido como asesor digital) proporciona una serie de visualizaciones, análisis y otros servicios relacionados con la asistencia técnica a los clientes de NetApp para sus sistemas de hardware/software. Los datos reportados por Digital Advisor pueden mejorar la solución de problemas del sistema y también proporcionar información sobre la optimización y el análisis predictivo relacionados con sus dispositivos.
 
 Información sobre la infraestructura de datos recopila los * riesgos * de cualquier sistema de almacenamiento Clustered Data ONTAP de NetApp supervisado y de los que informa el asesor digital. Data Infrastructure Insights recopila automáticamente los riesgos informados para los sistemas de almacenamiento como parte de la recopilación de datos de dichos dispositivos. Debe añadir el recopilador de datos adecuado a Data Infrastructure Insights para recopilar información sobre riesgos del asesor digital.
 
