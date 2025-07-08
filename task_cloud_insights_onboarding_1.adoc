@@ -7,12 +7,14 @@ keywords: onboarding, new user
 = Incorporación de información sobre la infraestructura de datos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Antes de empezar a trabajar con Información de infraestructura de datos, debe registrarse en el portal *NetApp BlueXP *. Si ya tiene inicio de sesión en NetApp BlueXP , puede iniciar una prueba gratuita de Información sobre infraestructura de datos con unos rápidos pasos.
-
-índice:[]
 
 
 
