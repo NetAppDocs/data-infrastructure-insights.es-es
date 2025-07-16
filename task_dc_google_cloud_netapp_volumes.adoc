@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_google_cloud_netapp_volumes.html 
-summary: Configure el recopilador de datos de Google Cloud NetApp Volumes 
+summary: Configurar el recopilador de datos de Google Cloud NetApp Volumes . 
 keywords: data collector, queries, create, google, cloud, volumes, 
 ---
-= Recopilador de datos de Google Cloud NetApp Volumes de NetApp
+= Recopilador de datos de Google Cloud NetApp Volumes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 [role="lead"]
-Este recopilador de datos admite la colección de inventario y rendimiento de las configuraciones de plataformas de cloud Cloud Volumes de Google NetApp. Este recopilador buscará descubrir todos los recursos de cómputo dentro de todos los proyectos dentro de una organización de Google. Si tiene varias organizaciones de Google que quiera descubrir con Data Infrastructure Insights, querrá poner en marcha un recopilador de Data Infrastructure Insights por organización.
+Este recopilador de datos permite la recopilación de datos de inventario y rendimiento de las configuraciones de Google Cloud NetApp Volumes . Detecta volúmenes de NetApp y recursos de almacenamiento en todos los proyectos de una organización de Google. Si desea supervisar varias organizaciones de Google con Data Infrastructure Insights, implemente un recopilador por organización.
 
 
 
 == Requisitos de la cuenta de servicio
 
-* Debe crear una cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación/gestión de cuentas de servicio"]. Dicha cuenta de servicio se identifica mediante un ID único, conocido como su _ClientID_, que se utilizará como nombre de usuario.
+* Debe crear una cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación/gestión de cuentas de servicio"]. Esta cuenta de servicio se identifica mediante un ID único, conocido como _clientId_, que se utilizará como nombre de usuario.
 * Además, cree una clave de cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Creación/gestión de claves de cuenta de servicio"]. Esta clave se puede descargar como un archivo json, cuyo contenido se utilizará como contraseña.
 * La cuenta de servicio debe estar delimitada para _compute.readonly_, _monitoring.read_ y _cloud-platform_.
 
@@ -29,7 +29,7 @@ Este recopilador de datos admite la colección de inventario y rendimiento de la
 
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -40,7 +40,7 @@ Este recopilador de datos admite la colección de inventario y rendimiento de la
 | Seleccione 'Excluir' o 'Incluir' para filtrar los activos de GCNV por ubicación | De forma predeterminada, Excluir, ya que este recopilador tiene la intención de descubrir todos los volúmenes de GCNV en todo el mundo dentro de su organización. 
 
 
-| GCNV Excluir/Incluir ubicaciones | El valor predeterminado es Vacío y se utiliza junto con la opción Elegir 'Excluir' o 'Incluir'. Si uno solo quiere descubrir activos dentro de ciertas regiones del mundo, estas 2 opciones pueden ser manipuladas para limitar el alcance de este coleccionista 
+| GCNV Excluir/Incluir ubicaciones | Este campo está vacío de forma predeterminada y se utiliza junto con la opción "Elegir 'Excluir' o 'Incluir'". Si desea descubrir activos solo dentro de ciertas regiones, utilice estas dos opciones para limitar el alcance de este recopilador. 
 
 
 | ID del proyecto | La lista de Id. De proyecto que desea filtrar dentro o fuera de la detección, según el valor de la opción "Seleccionar"...." valor. La lista predeterminada está vacía 
@@ -55,7 +55,7 @@ Este recopilador de datos admite la colección de inventario y rendimiento de la
 
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -63,7 +63,7 @@ Este recopilador de datos admite la colección de inventario y rendimiento de la
 | Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos 
 
 
-| Usar proxy AU para llamadas API REST | Esta casilla de verificación hará que el recopilador utilice el mismo proxy en el que reside el recopilador. Esto no está habilitado de forma predeterminada, lo que significa que el recopilador intentará enviar llamadas a la API HTTPS directamente a Google. 
+| Usar proxy AU para llamadas API REST | Seleccione esta opción para que el recopilador use el mismo proxy que la unidad de adquisición donde reside. De forma predeterminada, esta opción está deshabilitada, lo que significa que el recopilador intenta enviar llamadas a la API HTTPS directamente a Google. 
 
 
 | Claves de etiqueta y valores en los que se filtran las VM | Haga clic en *+ etiqueta de filtro* para elegir qué equipos virtuales (y discos asociados) incluir/excluir filtrando claves y valores que coincidan con claves y valores de etiquetas en el equipo virtual. Se requiere clave de etiqueta; el valor de etiqueta es opcional. Cuando el valor de etiqueta está vacío, la VM se filtra siempre que coincida con la clave de etiqueta. 

@@ -2,16 +2,19 @@
 sidebar: sidebar 
 permalink: telegraf_agent_k8s_config_options.html 
 keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration 
-summary: El operador de supervisión de Kubernetes de NetApp tiene una serie de opciones configurables. 
+summary: Configure el operador de monitoreo de Kubernetes de NetApp mediante las opciones de AgentConfiguration. 
 ---
 = Opciones de configuración del operador de supervisión de Kubernetes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-La link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de supervisión de Kubernetes"] configuración se puede personalizar.
+El link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de supervisión de Kubernetes"] Ofrece amplias opciones de personalización mediante el archivo AgentConfiguration. Configure límites de recursos, intervalos de recopilación, configuración de proxy, tolerancias y ajustes específicos de cada componente para Telegraf, Kube-State-Metrics, recopilación de registros, mapeo de cargas de trabajo, gestión de cambios y más para optimizar la monitorización de su entorno de Kubernetes.
 
 La siguiente tabla enumera las posibles opciones para el archivo _AgentConfiguration_:
 
@@ -131,7 +134,7 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 |  | toleraciones | kube-state-metrics toleraciones adicionales. 
 
 
-|  | etiquetas | una lista separada por comas de los recursos que kube-state-metrics debe capturar +++ ejemplo: cronjobs=[*],daemonsets=[*],despliegues=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],replicads=[* 
+|  | etiquetas | una lista separada por comas de recursos para los cuales kube-state-metrics debe capturar etiquetas +++ ejemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++ 
 
 
 | registros |  | Opciones de configuración que pueden personalizar la recopilación de registros y la instalación del operador 
@@ -200,7 +203,7 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 |  | MemRequest | solicitud de mem para change-observer-watch-rs 
 
 
-|  | FailureDeclarationIntervalMins | Intervalo en minutos tras el cual un despliegue incorrecto de una carga de trabajo se marcará como erróneo 
+|  | IntervaloDeDeclaraciónDeFalloDeCargaDeTrabajoSegundos | Intervalo después del cual una implementación no exitosa de una carga de trabajo se marcará como fallida, en segundos 
 
 
 |  | DeployAggrIntervalSeconds | Frecuencia a la que se envían los eventos de implementación de carga de trabajo en curso 
@@ -454,8 +457,8 @@ spec:
     # cpuRequest: '500m'
     # memRequest: '500Mi'
 
-    # # Interval in minutes after which a non-successful deployment of a workload will be marked as failed
-    # failureDeclarationIntervalMins: '30'
+    # # Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
+    # workloadFailureDeclarationIntervalSeconds: '30'
 
     # # Frequency at which workload deployment in-progress events are sent
     # deployAggrIntervalSeconds: '300'
