@@ -12667,4 +12667,6 @@
   <block id="c84711fe6ad5fa23070462b2086412e2" category="cell">una lista separada por comas de recursos para los cuales kube-state-metrics debe capturar etiquetas +++ ejemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++</block>
   <block id="f7b8b6cbce2f95ef7109d41adce08b69" category="cell">IntervaloDeDeclaraciónDeFalloDeCargaDeTrabajoSegundos</block>
   <block id="02c3ccd1d51babc54da2759d79e61c5c" category="cell">Intervalo después del cual una implementación no exitosa de una carga de trabajo se marcará como fallida, en segundos</block>
+  <block id="8edfed76354af11279c58c2d91948eda" category="cell">Ruta de registro del contenedor de bits fluidos</block>
+  <block id="3150c73f1d1522f3b831f0d591077194" category="cell">De forma predeterminada, el DaemonSet de Fluentbit montará las rutas de host /var/log y /var/lib/docker/containers para acceder y leer los registros de los contenedores de Kubernetes. Si Kubernetes se ha configurado para colocar los registros de los contenedores en una ubicación distinta a la predeterminada, utilice esta opción para modificar el DaemonSet de Fluentbit y que monte dicha ruta.</block>
 </blocks>
