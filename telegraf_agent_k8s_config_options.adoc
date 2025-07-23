@@ -14,7 +14,7 @@ summary: Configure el operador de monitoreo de Kubernetes de NetApp mediante las
 
 
 [role="lead"]
-El link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de supervisión de Kubernetes"] Ofrece amplias opciones de personalización mediante el archivo AgentConfiguration. Configure límites de recursos, intervalos de recopilación, configuración de proxy, tolerancias y ajustes específicos de cada componente para Telegraf, Kube-State-Metrics, recopilación de registros, mapeo de cargas de trabajo, gestión de cambios y más para optimizar la monitorización de su entorno de Kubernetes.
+El link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de supervisión de Kubernetes"] Ofrece amplias opciones de personalización mediante el archivo AgentConfiguration. Puede configurar límites de recursos, intervalos de recopilación, configuración de proxy, tolerancias y ajustes específicos de cada componente para optimizar la monitorización de su entorno de Kubernetes. Utilice estas opciones para personalizar Telegraf, Kube-State-Metrics, la recopilación de registros, el mapeo de cargas de trabajo, la gestión de cambios y otros componentes de monitorización.
 
 La siguiente tabla enumera las posibles opciones para el archivo _AgentConfiguration_:
 
@@ -26,13 +26,13 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 | agente |  | Opciones de configuración comunes a todos los componentes que el operador puede instalar. Estas pueden considerarse como opciones “globales”. 
 
 
-|  | Repositorio de documentos | Una anulación de dockerRepo para extraer imágenes de repositorios de Docker privados de clientes en comparación con el repositorio de Docker de Data Infrastructure Insights. El valor predeterminado es el repositorio de datos de información sobre infraestructura de datos 
+|  | Repositorio de documentos | Una anulación de dockerRepo para extraer imágenes de los repositorios de Docker privados del cliente en lugar del repositorio de Docker de Data Infrastructure Insights . El valor predeterminado es el repositorio de Docker de Data Infrastructure Insights . 
 
 
-|  | DockerImagePullSecret | Opcional: Un secreto para el repositorio privado de los clientes 
+|  | DockerImagePullSecret | Opcional: Un secreto para el repositorio privado del cliente. 
 
 
-|  | Nombre del clúster | Campo de texto libre que identifica de forma única un clúster en todos los clústeres de clientes. Debería ser único para un inquilino de Data Infrastructure Insights. El valor predeterminado es lo que introduce el cliente en la interfaz de usuario del campo «Cluster Name» 
+|  | Nombre del clúster | Campo de texto libre que identifica de forma única un clúster entre todos los clústeres del cliente. Debe ser único en un inquilino de Data Infrastructure Insights . El valor predeterminado es el que el cliente introduce en la interfaz de usuario en el campo "Nombre del clúster". 
 
 
 |  | Proxy Format: Proxy: Servidor: Puerto: Nombre de usuario: Contraseña: NoProxy: IsTelegrafProxyEnabled: IsAuProxyEnabled: IsFluentbitProxyEnabled: IsCollectorProxyEnabled: | Opcional para establecer el proxy. Este suele ser el proxy corporativo del cliente. 
@@ -107,7 +107,7 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 |  | SkipProcessorsAfterAggregators | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | sin protección | ee este link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema conocido de Telegraf"]. Si se establece _UNPROTECTED_, se indicará al operador de supervisión de Kubernetes que ejecute Telegraf con el `--unprotected` indicador. 
+|  | sin protección | Mira esto link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema conocido de Telegraf"] . La configuración _unprotected_ indicará al operador de monitoreo de Kubernetes que ejecute Telegraf con el  `--unprotected` bandera. 
 
 
 |  | insecureK8sSkipVerify | Si telegraf no puede verificar el certificado debido a la falta de SAN IP, intente habilitar la omisión de verificación 
@@ -209,10 +209,10 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 |  | IntervaloDeDeclaraciónDeFalloDeCargaDeTrabajoSegundos | Intervalo después del cual una implementación no exitosa de una carga de trabajo se marcará como fallida, en segundos 
 
 
-|  | DeployAggrIntervalSeconds | Frecuencia a la que se envían los eventos de implementación de carga de trabajo en curso 
+|  | Carga de trabajoImplementaciónAggrIntervalSeconds | Frecuencia con la que se combinan y envían las implementaciones de carga de trabajo, en segundos 
 
 
-|  | No WorkloadAggrIntervalSeconds | Frecuencia a la que se combinan y se envían las implementaciones sin cargas de trabajo 
+|  | Segundos de intervalo de agregación de implementación de carga de trabajo no especificada | Frecuencia con la que se combinan y envían implementaciones que no son de carga de trabajo, en segundos 
 
 
 |  | TermsToRedact | Un conjunto de expresiones regulares utilizadas en los nombres env y los mapas de datos cuyo valor será redactado como ejemplo: “Pwd”, “password”, “token”, “apikey”, “api-key”, “jwt” 
@@ -468,11 +468,11 @@ spec:
     # # Interval after which a non-successful deployment of a workload will be marked as failed, in seconds
     # workloadFailureDeclarationIntervalSeconds: '30'
 
-    # # Frequency at which workload deployment in-progress events are sent
-    # deployAggrIntervalSeconds: '300'
+    # # Frequency at which workload deployments are combined and sent, in seconds
+    # workloadDeployAggrIntervalSeconds: '300'
 
-    # # Frequency at which non-workload deployments are combined and sent
-    # nonWorkloadAggrIntervalSeconds: '15'
+    # # Frequency at which non-workload deployments are combined and sent, in seconds
+    # nonWorkloadDeployAggrIntervalSeconds: '15'
 
     # # A set of regular expressions used in env names and data maps whose value will be redacted
     # termsToRedact: '"pwd", "password", "token", "apikey", "api-key", "api_key", "jwt", "accesskey", "access_key", "access-key", "ca-file", "key-file", "cert", "cafile", "keyfile", "tls", "crt", "salt", ".dockerconfigjson", "auth", "secret"'
