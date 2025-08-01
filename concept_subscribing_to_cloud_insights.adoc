@@ -64,7 +64,7 @@ NOTE: Si necesita tiempo adicional para evaluar Data Infrastructure Insights y e
 
 También puede inscribirse para una prueba gratuita a través de AWS Marketplace. La prueba gratuita de AWS Marketplace le brinda acceso a Data Infrastructure Insights durante un período de prueba de 33 días.
 
-La prueba gratuita de AWS Marketplace no se puede ampliar. En cualquier momento durante la prueba, puede cambiar a una suscripción a Data Infrastructure Insights Basic Edition o cambiar a una suscripción de pago a Data Infrastructure Insights visitando la página *Admin -> Suscripción*.
+La prueba gratuita de AWS Marketplace no se puede extender.
 
 
 

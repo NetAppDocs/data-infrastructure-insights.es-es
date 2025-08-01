@@ -8,6 +8,9 @@ summary: El operador de supervisión de Kubernetes recopila datos de Kubernetes 
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -92,7 +95,7 @@ Si ha actualizado con la función de actualizaciones de botón pulsador y encuen
 
 Determine si existe una AgentConfiguration con el operador existente (si el espacio de nombres no es el valor predeterminado _netapp-monitoring_, sustituya el espacio de nombres adecuado):
 
- kubectl -n netapp-monitoring get agentconfiguration netapp-monitoring-configuration
+ kubectl -n netapp-monitoring get agentconfiguration netapp-ci-monitoring-configuration
 Si existe una configuración de agente:
 
 * <<installing-the-kubernetes-monitoring-operator,Instale>> El último operador sobre el operador existente.
@@ -325,8 +328,8 @@ Para eliminar el permiso del operador de supervisión de Kubernetes para ver los
 
 [listing]
 ----
- ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
- ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+ ClusterRole/netapp-ci<namespace>-agent-secret
+ ClusterRoleBinding/netapp-ci<namespace>-agent-secret
 ----
 Si se trata de una actualización, suprima también los recursos del clúster:
 
@@ -334,11 +337,12 @@ Si se trata de una actualización, suprima también los recursos del clúster:
 ----
  kubectl delete ClusterRole/netapp-ci-<namespace>-agent-secret-clusterrole
  kubectl delete ClusterRoleBinding/netapp-ci-<namespace>-agent-secret-clusterrolebinding
+
 ----
 Si el análisis de cambios está activado, modifique _AgentConfiguration_ o _operator-config.yaml_ para anular el comentario de la sección de gestión de cambios e incluya _kindsToIgnoreFromWatch: ''secrets''_ en la sección de gestión de cambios. Observe la presencia y posición de comillas simples y dobles en esta línea.
 
 ....
-# change-management:
+change-management:
   ...
   # # A comma separated list of kinds to ignore from watching from the default set of kinds watched by the collector
   # # Each kind will have to be prefixed by its apigroup

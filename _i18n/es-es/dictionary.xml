@@ -3947,7 +3947,6 @@
   <block id="dcfc2d1a305cec73fa5f84fa3a0ed89c" category="paragraph">Data Infrastructure Insights muestra un banner cuando la prueba gratuita se está acercando a su fin Dentro de ese banner hay un enlace _View Subscription_, que abre la página *Admin -&gt; Subscription*. Los usuarios que no sean administradores verán el banner, pero no podrán ir a la página Suscripción.</block>
   <block id="14e0941a34fd8121073e220481ffa66f" category="admonition">Si necesita tiempo adicional para evaluar Data Infrastructure Insights y está previsto que la prueba caduque en 4 días o menos, puede ampliar la prueba por 30 días adicionales. Sólo puede ampliar la versión de prueba una vez. No puede ampliar si la versión de prueba ha caducado.</block>
   <block id="de41af8028b5287cc6d65bb0e73cae11" category="section-title">Prueba a través de AWS Marketplace</block>
-  <block id="c66bd552dea63071ad19e124c869ab2e" category="paragraph">La prueba gratuita de AWS Marketplace no se puede ampliar. En cualquier momento durante la prueba, puede cambiar a una suscripción a Data Infrastructure Insights Basic Edition o cambiar a una suscripción de pago a Data Infrastructure Insights visitando la página *Admin -&gt; Suscripción*.</block>
   <block id="03742c91392961db83c5540550a3500a" category="section-title">¿Qué pasa si mi prueba ha caducado?</block>
   <block id="55b44e6cb866667b35e33325e5f2b246" category="paragraph">Si su prueba gratuita ha caducado y aún no se ha suscrito a Data Infrastructure Insights, tendrá funcionalidades limitadas hasta que se suscriba. La ingesta de datos puede cesar, y después de unas semanas, sus datos serán eliminados de acuerdo con nuestra política de retención de datos.</block>
   <block id="35b65825e5ac5124cb47e8b94e7e203a" category="paragraph">Si tiene una suscripción a Data Infrastructure Insights, pero esa suscripción ha caducado, tendrá un período de gracia de cinco días para renovar su suscripción. Toda la funcionalidad de información sobre la infraestructura de datos se mantendrá activa durante este periodo de gracia.</block>
@@ -12671,4 +12670,5 @@
   <block id="f5d43bfb3eaf806884e4936fc4453865" category="cell">Frecuencia con la que se combinan y envían las implementaciones de carga de trabajo, en segundos</block>
   <block id="fb937d63289578595fb05fc626554661" category="cell">Segundos de intervalo de agregación de implementación de carga de trabajo no especificada</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frecuencia con la que se combinan y envían implementaciones que no son de carga de trabajo, en segundos</block>
+  <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">La prueba gratuita de AWS Marketplace no se puede extender.</block>
 </blocks>
