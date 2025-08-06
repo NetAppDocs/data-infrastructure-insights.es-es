@@ -278,12 +278,12 @@ Se recomienda lo siguiente para MetroCluster:
 
 . Conecte dos recopiladores de datos, uno a la SVM de origen y otro a la SVM de destino.
 . Los recopiladores de datos deben estar conectados por _Cluster IP_.
-. En cualquier momento, un recopilador de datos debe estar en ejecución, otro será un error.
+. En cualquier momento, un recopilador de datos debe estar en ejecución y otro se mostrará como _Detenido_.
 +
-El recopilador de datos de la SVM actual 'en ejecución' se mostrará como _running_. El recopilador de datos de la SVM 'topped' actual se mostrará como _Error_.
+El recopilador de datos del SVM "en ejecución" actual se mostrará como _En ejecución_.  El recopilador de datos del SVM "detenido" actual se mostrará como _Detenido_.
 
-. Siempre que haya un switchover, el estado del recopilador de datos cambiará de 'running' a 'error' y viceversa.
-. El recopilador de datos tardará hasta dos minutos en pasar del estado error al estado en ejecución.
+. Siempre que se produzca un cambio, el estado del recopilador de datos cambiará de "en ejecución" a "detenido" y viceversa.
+. El recopilador de datos tardará hasta dos minutos en pasar del estado _Detenido_ al estado _En ejecución_.
 
 
 

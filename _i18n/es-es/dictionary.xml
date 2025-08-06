@@ -8020,8 +8020,6 @@
   <block id="eff16f7e2ed55dec2fc30b6481ebf593" category="paragraph">Se recomienda lo siguiente para MetroCluster:</block>
   <block id="65b46bd8eed280f6feefa47f4a74d302" category="list-text">Conecte dos recopiladores de datos, uno a la SVM de origen y otro a la SVM de destino.</block>
   <block id="d5d55b52a220ca4d14feac2aa8b83d23" category="list-text">Los recopiladores de datos deben estar conectados por _Cluster IP_.</block>
-  <block id="c2e2e688fedcc6b98883e05a15afc9b8" category="list-text">En cualquier momento, un recopilador de datos debe estar en ejecución, otro será un error.</block>
-  <block id="34d88af94446d0d86575e402898fc1b0" category="list-text">El recopilador de datos tardará hasta dos minutos en pasar del estado error al estado en ejecución.</block>
   <block id="f0240b95ecfe16d637a84130b5ed57d9" category="section-title">Política de servicio</block>
   <block id="4cb8e0d8b1d299b402fd5ddce7d39cd5" category="paragraph">Si se utiliza la política de servicio con ONTAP *versión 9.9.1 o posterior*, para conectarse al recopilador de fuentes de datos, se requiere el servicio _data-fpolicy-client_ junto con el servicio de datos _data-nfs_ y/o _data-cifs_.</block>
   <block id="ee22588534e4e3b699a85e968f56f4a7" category="paragraph">En las versiones de ONTAP anteriores a 9.9.1, no es necesario definir _data-fpolicy-client_.</block>
@@ -12344,8 +12342,6 @@
   <block id="1b0825e538a70e8323fac1cbfe230ee5" category="paragraph">Nota: Puede crear un único rol para utilizarlo en todos los permisos de funciones de un usuario personalizado. Si hay un usuario existente, elimine primero el usuario y el rol existentes mediante estos comandos:</block>
   <block id="91f83541442d1c49aaf40212bccffad1" category="paragraph">Nota: Puede crear un único rol para utilizarlo en todos los permisos de funciones de un usuario personalizado. Si hay un usuario existente, elimine primero el usuario y el rol existentes mediante estos comandos:</block>
   <block id="858faeb682f19ff16f83d24c86cb97f7" category="cell">Nombre de usuario para acceder a la SVM/Cluster cuando se añade mediante la IP del clúster las opciones son: 1. Administrador de clúster 2. 'csuser' 3. USUARIO AD que tiene un papel similar a csuser. Cuando se agrega mediante IP de SVM, las opciones son: 4. Vsadmin 5. 'csuser' 6. NOMBRE DE USUARIO DE AD que tiene un papel similar a csuser.</block>
-  <block id="0851edbfbb1a0406acbc79df15296b3f" category="paragraph">El recopilador de datos de la SVM actual 'en ejecución' se mostrará como _running_. El recopilador de datos de la SVM 'topped' actual se mostrará como _Error_.</block>
-  <block id="046c8e391630ab49d75409e270a4f4b6" category="list-text">Siempre que haya un switchover, el estado del recopilador de datos cambiará de 'running' a 'error' y viceversa.</block>
   <block id="7a69a2fce9a9acb9c8a84936863c1330" category="paragraph">Tenga en cuenta que si se crean volúmenes nuevos, etc. en ONTAP mientras el recopilador está en pausa, la seguridad de carga de trabajo no recopilará los datos y esos volúmenes, etc., no se reflejará en las consolas ni las tablas.</block>
   <block id="0d55775dbf06cf5596fe0f5c3363f19a" category="list-text">La depuración de instantáneas no se producirá de acuerdo con los ajustes configurados en un recopilador en pausa.</block>
   <block id="f8b4c5607366d38cf806b0860c9cc5e4" category="list-text">Los eventos de EMS (como ARP de ONTAP) no se procesarán en un recopilador en pausa. Esto significa que si ONTAP identifica un ataque de ransomware, la seguridad de carga de trabajo de información sobre la infraestructura de datos no podrá adquirir ese evento.</block>
@@ -12671,4 +12667,8 @@
   <block id="fb937d63289578595fb05fc626554661" category="cell">Segundos de intervalo de agregación de implementación de carga de trabajo no especificada</block>
   <block id="e4685d20c866cca50df5bea5e4230497" category="cell">Frecuencia con la que se combinan y envían implementaciones que no son de carga de trabajo, en segundos</block>
   <block id="1cd8d8ba87dcbd642231ac1e1fb52f76" category="paragraph">La prueba gratuita de AWS Marketplace no se puede extender.</block>
+  <block id="f9140e559462604832a886e4eb558360" category="list-text">En cualquier momento, un recopilador de datos debe estar en ejecución y otro se mostrará como _Detenido_.</block>
+  <block id="a2c39bece4ce05e23c13d7dc078d390f" category="paragraph">El recopilador de datos del SVM "en ejecución" actual se mostrará como _En ejecución_.  El recopilador de datos del SVM "detenido" actual se mostrará como _Detenido_.</block>
+  <block id="e02fc5a08fc17a2cc71f90cc044645af" category="list-text">Siempre que se produzca un cambio, el estado del recopilador de datos cambiará de "en ejecución" a "detenido" y viceversa.</block>
+  <block id="f2d8284860e834b1803b72a789ffeb84" category="list-text">El recopilador de datos tardará hasta dos minutos en pasar del estado _Detenido_ al estado _En ejecución_.</block>
 </blocks>
