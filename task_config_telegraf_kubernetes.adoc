@@ -7,6 +7,10 @@ summary: Recopilador de datos para Kubernetes
 = Recopilador de datos: Kubernetes
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

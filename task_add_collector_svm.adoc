@@ -14,7 +14,7 @@ summary: Adición de recopiladores de datos de Workload Security
 
 
 [role="lead"]
-Workload Security utiliza recopiladores de datos para recopilar datos de acceso de archivos y usuarios desde dispositivos.
+El recopilador de datos ONTAP SVM permite que Workload Security monitoree las actividades de acceso a archivos y usuarios en las máquinas virtuales de almacenamiento (SVM) de NetApp ONTAP .  Esta guía lo guía a través de los requisitos previos, la configuración y la administración del recopilador de datos SVM para proporcionar un monitoreo de seguridad integral de su entorno ONTAP .
 
 
 
@@ -278,11 +278,8 @@ Se recomienda lo siguiente para MetroCluster:
 
 . Conecte dos recopiladores de datos, uno a la SVM de origen y otro a la SVM de destino.
 . Los recopiladores de datos deben estar conectados por _Cluster IP_.
-. En cualquier momento, un recopilador de datos debe estar en ejecución y otro se mostrará como _Detenido_.
-+
-El recopilador de datos del SVM "en ejecución" actual se mostrará como _En ejecución_.  El recopilador de datos del SVM "detenido" actual se mostrará como _Detenido_.
-
-. Siempre que se produzca un cambio, el estado del recopilador de datos cambiará de "en ejecución" a "detenido" y viceversa.
+. En cualquier momento, el recopilador de datos del SVM "en ejecución" actual se mostrará como _En ejecución_. El recopilador de datos del SVM "detenido" actual se mostrará como _Detenido_.
+. Siempre que se produzca un cambio, el estado del recopilador de datos cambiará de _En ejecución_ a _Detenido_ y viceversa.
 . El recopilador de datos tardará hasta dos minutos en pasar del estado _Detenido_ al estado _En ejecución_.
 
 
