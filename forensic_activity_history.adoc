@@ -27,7 +27,7 @@ Haga clic en *Forensics > Activity Forensics* y haga clic en la ficha *All Activ
 Puede ampliar el gráfico arrastrando un rectángulo del gráfico. Se cargará toda la página para mostrar el intervalo de tiempo ampliado. Cuando se amplía, se muestra un botón que permite al usuario alejar el zoom.
 
 * Una lista de los datos _All Activity_.
-* Una lista desplegable GROUP BY proporcionará la opción de agrupar la actividad por usuarios, ruta, tipo de entidad, etc.
+* Un grupo desplegable brindará la opción de agrupar la actividad por usuarios, tipo de entidad, etc.
 * Un botón de ruta común estará disponible sobre la tabla en clic del que podemos obtener el panel deslizante con detalles de ruta de la entidad.
 
 
