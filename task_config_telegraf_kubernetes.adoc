@@ -41,7 +41,11 @@ El Operador de Supervisión de Kubernetes de NetApp extrae los contadores de mé
 . Métricas de volúmenes persistentes
 . Métricas de reclamación de volumen persistente
 . Métricas de POD
-. Métricas replicaset
+. Métricas de ReplicaSet
 . Métricas de servicio
-. Métricas de Statilusionados Set
+. Métricas de StatefulSet
+. Métricas del escalador automático de pods horizontales
+. Métricas de Cronjob
+. Métricas de trabajo
+. Métricas de cuotas de recursos
 

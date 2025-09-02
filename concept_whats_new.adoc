@@ -18,6 +18,49 @@ NetApp mejora y mejora continuamente sus productos y servicios. A continuación 
 
 
 
+== agosto de 2025
+
+
+
+=== Datos de widgets enfocados a su alcance
+
+La nueva función *Analizar* en la mayoría de los widgets le permite observar más de cerca los datos de un widget a la vez.  Simplemente haga clic en el botón "Analizar" en un widget para abrir una vista detallada, donde puede explorar interactivamente los datos subyacentes y hacer zoom para obtener información más profunda, sin salir del contexto de su panel.
+
+image:widget_analyze_panel.png["Panel de análisis para un widget de línea, ancho=900"]
+
+
+
+=== Paneles de exportación e importación
+
+Si administra varios inquilinos y ha desarrollado un panel útil, puede exportarlo e importarlo a otro inquilino.
+
+image:dashboard_import_from_file.png["imagen que muestra la importación"] image:dashboard_export_from_menu.png["imagen que muestra la exportación"]
+
+
+
+=== Integración mejorada con la nube: compatibilidad con Google Cloud NetApp Volumes (GCNV)
+
+* Google Cloud NetApp Volumes* (GCNV) ahora es totalmente compatible como recopilador de datos en DII, lo que completa nuestro ecosistema para el monitoreo de la nube híbrida.  Obtenga visibilidad de objetos de almacenamiento críticos, como organizaciones, grupos y volúmenes, en toda la infraestructura.  Ahora puede realizar un seguimiento de todos sus entornos de almacenamiento (locales o en la nube) desde una única plataforma.
+
+
+
+=== Monitoreo mejorado de StorageGRID
+
+La recopilación de registros de StorageGRID ahora está habilitada de manera predeterminada, lo que proporciona datos de seguimiento de eventos a DII, y hemos ampliado el monitoreo de StorageGrid con más de 50 alertas predeterminadas, seguimiento de eventos en tiempo real y nuevos paneles para simplificar las operaciones complejas de la red de almacenamiento.  Manténgase a la vanguardia de los problemas con conocimientos más profundos sobre las políticas de tráfico y el rendimiento de los segmentos.
+
+
+
+=== Soporte del sistema operativo
+
+Los siguientes sistemas operativos ahora son compatibles con las unidades de adquisición de información sobre la infraestructura de datos, además de las siguienteslink:concept_acquisition_unit_requirements.html["ya es compatible"]:
+
+* AlmaLinux (64 bits) 10
+* Red Hat (64 bits) 10
+* Rocky (64 bits) 9.6
+
+
+
+
 == Junio de 2025
 
 
