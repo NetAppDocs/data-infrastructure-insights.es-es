@@ -7,6 +7,10 @@ summary: La auditoría proporciona una vista de las actividades del sistema y de
 = Auditoría
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -135,11 +139,13 @@ Los eventos de auditoría mostrados se exportarán a un archivo .CSV, hasta un m
 
 == Retención de datos de auditoría
 
-La cantidad de tiempo que Data Infrastructure Insights retiene los datos de auditoría se basa en su edición:
+La cantidad de tiempo que Data Infrastructure Insights conserva los datos de auditoría depende de su suscripción:
 
-* Edición básica: Los datos de auditoría se conservan durante 30 días
-* Ediciones Standard y Premium: Los datos de auditoría se conservan durante 1 año más 1 día
+* Entornos de prueba: los datos de auditoría se conservan durante 30 días
+* Entornos suscritos: Los datos de auditoría se conservan durante 1 año más 1 día
 
+
+Las entradas de auditoría anteriores al tiempo de retención se purgan automáticamente. No es necesaria la interacción del usuario.
 
 Las entradas de auditoría anteriores al tiempo de retención se purgan automáticamente. No es necesaria la interacción del usuario.
 

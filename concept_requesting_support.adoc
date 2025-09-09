@@ -10,9 +10,7 @@ keywords: support, knowledgebase, documentation, community, chat, videos, help, 
 
 
 [role="lead"]
-índice:[]
-
-Puede acceder a las opciones de soporte de Data Infrastructure Insights haciendo clic en *Ayuda > Soporte*. Las opciones de soporte que tiene a su disposición dependen de su Data Infrastructure Insights Edition.
+Puede acceder a las opciones de soporte disponibles en Data Infrastructure Insights seleccionando *Ayuda > Soporte*.
 
 image:SupportPageWithLearningCenter.png["Página de soporte"]
 
@@ -70,11 +68,7 @@ image:SupportPage_SN_Section-NA.png["Pantalla_SN"]
 
 == Obtención de información de soporte
 
-NetApp ofrece compatibilidad con la información sobre la infraestructura de datos de varias maneras. Las amplias opciones de autoservicio gratuitas están disponibles las 24 horas del día, los 7 días de la semana, como los artículos de la base de conocimiento (KB) o la comunidad de NetApp. Para los usuarios que están suscritos* a Data Infrastructure Insights, el soporte técnico está disponible por teléfono o vía web. Se requiere una cuenta SSO del sitio de soporte de NetApp (NSS) para poder abrir incidencias junto con la gestión de casos.
-
-*El soporte está disponible con Basic Edition siempre que todos sus sistemas de almacenamiento NetApp estén cubiertos, al menos, por el nivel de soporte Premium.
-
-Muchas ofertas de NetApp incluyen Data Infrastructure Insights Basic Edition como parte del paquete. Si desea actualizar a Premium Edition, póngase en contacto con su representante de ventas.
+NetApp proporciona soporte para Data Infrastructure Insights de diversas maneras.  Hay amplias opciones de autoayuda gratuitas disponibles las 24 horas, los 7 días de la semana, como artículos de la base de conocimientos (KB) o la comunidad de NetApp .  Para los usuarios suscritos a Data Infrastructure Insights, el soporte técnico está disponible por teléfono o mediante tickets web.  Se requiere una cuenta SSO del sitio de soporte de NetApp (NSS) para los tickets web junto con la gestión de casos.
 
 
 

@@ -7,6 +7,10 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 = Suscripción a Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -38,10 +42,7 @@ Empezar a utilizar Data Infrastructure Insights es tan fácil como tres sencillo
 
 Durante el proceso de registro, puede elegir la región global donde alojar su entorno Data Infrastructure Insights. Para obtener más información, lea Acerca de Data Infrastructure Insights link:security_information_and_region.html["Información y Región"].
 
-Para obtener una comparación completa de las características disponibles en Data Infrastructure Insights Basic y Premium Editions, consulte link:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Ediciones de información sobre la infraestructura de datos"]la página.
-
-
-WARNING: Los entornos inactivos de Data Infrastructure Insights Basic Edition se eliminan y se reclaman sus recursos. Un entorno se considera inactivo si no hay actividad del usuario durante 30 días consecutivos, de si no hay datos ingeridos durante 7 días consecutivos. Data Infrastructure Insights enviará una notificación y proporcionará un periodo de gracia de cuatro días antes de la eliminación de un entorno.
+Para obtener información detallada sobre las características y opciones de precios de Data Infrastructure Insights , consultelink:https://www.netapp.com/cloud-services/cloud-insights/editions-pricing["Ediciones de información sobre la infraestructura de datos"] página.
 
 Al utilizar Data Infrastructure Insights, si ve un icono de candado image:padlock.png["Candado"], significa que la función no está disponible en su suscripción actual o está disponible de forma limitada. Suscríbase a esa función para obtener acceso completo. Algunas funciones están disponibles <<module-evaluation,Evaluación del módulo>> antes de la suscripción.
 
