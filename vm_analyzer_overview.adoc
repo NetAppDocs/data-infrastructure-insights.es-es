@@ -37,4 +37,4 @@ Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona 
 
 == Véalo en acción
 
-link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solución de problemas simplificada con VM Analyzer (vídeo)"]
+link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solución de problemas simplificada con VM Analyzer (video),window=read-later"]

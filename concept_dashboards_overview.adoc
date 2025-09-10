@@ -31,6 +31,12 @@ Cree un nuevo panel en uno de estos dos lugares:
 
 
 
+== Véalo en acción
+
+link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["Cree paneles de control potentes con NetApp (vídeo),window=read-later"]
+
+
+
 == Controles del tablero de a bordo
 
 La pantalla del panel tiene varios controles:

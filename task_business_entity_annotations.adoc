@@ -7,6 +7,10 @@ summary: Las anotaciones de entidad de negocio se pueden utilizar para supervisa
 = Anotaciones de entidad de negocio
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

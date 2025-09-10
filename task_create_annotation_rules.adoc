@@ -7,6 +7,10 @@ keywords: annotate, annotation, rules
 = Creación de reglas de anotación
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -27,8 +27,6 @@ sidebar:
       url: "/security_admin_tool.html"
   - title: Primeros pasos
     entries:
-    - title: Tutoriales de funciones
-      url: "/concept_feature_tutorials.html"
     - title: Recogida de datos
       entries:
       - title: Descripción general

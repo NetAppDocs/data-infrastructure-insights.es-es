@@ -7,6 +7,10 @@ summary: Realizar un seguimiento de los datos mediante anotaciones.
 = Definición de anotaciones
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -24,6 +28,12 @@ Por ejemplo, si un activo se está arrendando y el arrendamiento caduca dentro d
 * Crear reglas para aplicar anotaciones automáticamente a varios activos del mismo tipo.
 * Filtrar activos por sus anotaciones.
 
+
+
+
+== Véalo en acción
+
+link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da["Anotaciones y reglas de anotación (vídeo),window=read-later"]
 
 
 
