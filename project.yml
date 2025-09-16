@@ -419,6 +419,8 @@ sidebar:
           url: "/task_dc_na_cloud_volumes_ontap.html"
         - title: Cloud Volumes Services para AWS
           url: "/task_dc_na_cloud_volumes.html"
+        - title: ONTAP ASA (matriz totalmente SAN) r2
+          url: "/task_dc_na_ontap_all_san_array.html"
         - title: Software de gestión de datos ONTAP
           url: "/task_dc_na_cdot.html"
         - title: RECOPILADOR de REST de ONTAP
