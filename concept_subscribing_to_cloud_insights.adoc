@@ -145,7 +145,7 @@ Información sobre la infraestructura de datos La observabilidad mide el uso seg
 
 Cada nivel se mide a una tasa diferente, con el conjunto calculado juntos para darle un derecho ponderado. La fórmula para calcular el uso ponderado es la siguiente:
 
- Weighted usage = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioning TiB)
+ Weighted Capacity = Raw TiB + (0.1 x Object Tier Raw TiB) + (0.25 x Cloud Tier Provisioned TiB)
 Para facilitar esto, DII calcula un único número de *derecho ponderado* basado en cantidades _Subscribe_; a continuación, calcula ese mismo número basado en el almacenamiento _discovered_ y solo declara incumplimiento si la capacidad descubierta es mayor que el derecho ponderado. Esto le da flexibilidad para supervisar las cantidades que varían de las cantidades suscritas para cada nivel, lo que DII permite siempre que el almacenamiento total descubierto se encuentre dentro del derecho ponderado suscrito.
 
 
