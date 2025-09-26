@@ -12,9 +12,15 @@ keywords: data collector, queries, create, storagegrid
 [role="lead"]
 El recopilador de datos de StorageGRID de NetApp admite el inventario y la recopilación de rendimiento de las configuraciones de StorageGRID.
 
+[NOTE]
+====
+Para proporcionar una medición consistente de los derechos de DII en todos los sistemas StorageGRID independientemente de la configuración y topología del hardware subyacente, Data Infrastructure Insights utiliza la capacidad total disponible (storagegrid_storage_utilization_total_space_bytes), en lugar de la capacidad RAW basada en el diseño del disco físico.
 
-NOTE: La medición de StorageGRID se realiza a una tasa de TB bruta diferente a la de la unidad gestionada. Cada 40 TB de capacidad StorageGRID sin formato se carga como 1 MB link:concept_subscribing_to_cloud_insights.html#pricing["Unidad administrada (UM)"].
+Para los clientes que utilizan el modelo de licencia basado en capacidad, StorageGRID se mide como almacenamiento de “objetos”.
 
+Para los clientes que utilizan el modelo de licencia heredado (MU), StorageGRID se mide como almacenamiento secundario, a una tasa de 40 TiB por 1 MU.
+
+====
 
 
 == Terminología
