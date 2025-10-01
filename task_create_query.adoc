@@ -142,6 +142,18 @@ Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata to
 
 
 
+=== Filtrado de valores booleanos
+
+Al filtrar un valor booleano, es posible que se le presenten las siguientes opciones para filtrar:
+
+* *Cualquiera*: Esto devolverá _todos_ los resultados, incluidos los resultados configurados como "Sí", "No" o no configurados en absoluto.
+* *Sí*: Devuelve sólo resultados "Sí".  Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas.  Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
+* *No*: Devuelve sólo resultados "No".  Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas.  Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
+* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ningún valor.  También conocidos como valores "Nulos".
+
+
+
+
 == ¿Qué debo hacer ahora que tengo resultados de consulta?
 
 La consulta proporciona un lugar sencillo para agregar anotaciones o asignar aplicaciones a activos. Tenga en cuenta que sólo puede asignar aplicaciones o anotaciones a sus activos de inventario (disco, almacenamiento, etc.). Las métricas de integración no pueden asumir anotaciones ni asignaciones de aplicaciones.

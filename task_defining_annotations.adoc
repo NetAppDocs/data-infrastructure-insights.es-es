@@ -31,12 +31,6 @@ Por ejemplo, si un activo se está arrendando y el arrendamiento caduca dentro d
 
 
 
-== Véalo en acción
-
-link:https://media.netapp.com/video-detail/248621bd-6619-5dc8-9718-5d78d0fd21da["Anotaciones y reglas de anotación (vídeo),window=read-later"]
-
-
-
 == Tipos de anotaciones predeterminados
 
 Data Infrastructure Insights proporciona algunos tipos de anotación predeterminados. Estas anotaciones pueden utilizarse para filtrar o agrupar datos.
@@ -88,7 +82,7 @@ La siguiente tabla muestra los tipos de anotación proporcionados por Data Infra
 | Gravedad de la infracción | Clasificación (por ejemplo, mayor) de una infracción (por ejemplo, falta de puertos de host o falta de redundancia), en una jerarquía de mayor a menor importancia. | Lista 
 |===
 
-NOTE: Alias, centro de datos, caliente, nivel de servicio, puesta de sol, El nivel de cambio, el nivel y la gravedad de la infracción son anotaciones a nivel de sistema, que no puede eliminar ni cambiar de nombre; sólo puede cambiar sus valores asignados.
+NOTE: Alias, Centro de datos, Activo, Nivel de servicio, Atardecer, Nivel de conmutador, Nivel y Gravedad de violación son anotaciones a nivel de sistema que no puede eliminar ni cambiar de nombre; solo puede cambiar sus valores asignados.
 
 
 
@@ -110,15 +104,23 @@ Es posible introducir hasta 255 caracteres en estos campos.
 
 
 .Tipos de anotaciones
-Booleano: Crea una lista desplegable con las opciones de sí y no. Por ejemplo, la anotación “Conexión directa” es booleana. Fecha: Crea un campo que contiene una fecha. Por ejemplo, si la anotación será una fecha, selecciónela. Lista: Crea una de las siguientes opciones: * Una lista fija desplegable
+* Booleano: Crea una lista desplegable con opciones de sí y no. Por ejemplo, la anotación "Conexión directa" es booleana.
+* Fecha: Esto crea un campo que contiene una fecha.  Por ejemplo, si la anotación será una fecha, seleccione esto.
+* Lista: crea cualquiera de los siguientes:
++
+** Una lista fija desplegable
++
+Cuando otros asignan este tipo de anotación en un dispositivo, no pueden agregar más valores a la lista.
 
-+ Cuando otros asignan este tipo de anotación en un dispositivo, no pueden agregar más valores a la lista. * Una lista desplegable flexible
+** Una lista desplegable flexible
++
+Si selecciona la opción Agregar nuevos valores sobre la marcha al crear esta lista, cuando otros asignen este tipo de anotación en un dispositivo, podrán agregar más valores a la lista.
 
-+ Si selecciona la opción Agregar nuevos valores al vuelo al crear esta lista, cuando otros asignan este tipo de anotación en un dispositivo, pueden agregar más valores a la lista.
 
-Número: Crea un campo en el que el usuario que asigna la anotación puede introducir un número. Por ejemplo, si el tipo de anotación es "planta", el usuario puede seleccionar el tipo de valor "número" e introducir el número de planta.
 
-Texto: Crea un campo que permite texto en formato libre. Por ejemplo, puede escribir "Idioma" como tipo de anotación, seleccionar "texto" como tipo de valor e introducir un idioma como valor.
+* Número: Crea un campo en el que el usuario que asigna la anotación puede introducir un número. Por ejemplo, si el tipo de anotación es "planta", el usuario puede seleccionar el tipo de valor "número" e introducir el número de planta.
+* Texto: Crea un campo que permite texto en formato libre. Por ejemplo, puede escribir "Idioma" como tipo de anotación, seleccionar "texto" como tipo de valor e introducir un idioma como valor.
+
 
 
 NOTE: Después de establecer el tipo y guardar los cambios, no puede cambiar el tipo de anotación. Si necesita cambiar el tipo, debe eliminar la anotación y crear una nueva.
@@ -138,6 +140,15 @@ Por ejemplo, supongamos que se encuentra en una página de activos y que el acti
 +
 Las anotaciones aparecen en la lista de la página Anotaciones.
 
+
+
+.Una nota sobre las anotaciones booleanas
+Al filtrar una anotación booleana, es posible que se le presenten los siguientes valores para filtrar:
+
+* *Cualquiera*: Esto devolverá _todos_ los resultados, incluidos los resultados configurados como "Sí", "No" o no configurados en absoluto.
+* *Sí*: Devuelve sólo resultados "Sí".  Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas.  Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
+* *No*: Devuelve sólo resultados "No".  Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas.  Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
+* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ninguna anotación.  También conocidos como valores "Nulos".
 
 
 .Después de terminar
