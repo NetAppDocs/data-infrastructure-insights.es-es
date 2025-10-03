@@ -2,23 +2,27 @@
 sidebar: sidebar 
 permalink: concept_requesting_support.html 
 summary: Puede ver artículos de la base de conocimientos, conectarse a la comunidad de NetApp, ver vídeos o abrir una incidencia para solicitar soporte. 
-keywords: support, knowledgebase, documentation, community, chat, videos, help, contact, intercom 
+keywords: support, knowledgebase, documentation, community, videos, help, contact 
 ---
 = Solicitud de soporte
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Puede acceder a las opciones de soporte disponibles en Data Infrastructure Insights seleccionando *Ayuda > Soporte*.
 
-image:SupportPageWithLearningCenter.png["Página de soporte"]
+image:SupportPageExample.png["Página de soporte, ancho=600"]
 
 
 
 == Activación de los derechos de soporte
 
-Data Infrastructure Insights ofrece soporte de autoservicio y por correo electrónico cuando se ejecuta en modo de prueba. Una vez que se haya suscrito al servicio, se recomienda encarecidamente que active el derecho de asistencia técnica. La activación de la autorización de asistencia le permite acceder al soporte técnico a través del chat en línea, el sistema de tickets web y el teléfono. El modo de soporte predeterminado es el autoservicio hasta que se complete el registro. Consulte <<obtaining-support-information,detalles>> a continuación.
+Data Infrastructure Insights ofrece autoservicio y soporte por correo electrónico cuando se ejecuta en modo de prueba.  Una vez que se haya suscrito al servicio, se recomienda encarecidamente que active el derecho de soporte.  La activación del derecho de soporte le permite acceder al soporte técnico a través del sistema de tickets web y por teléfono.  El modo de soporte predeterminado es autoservicio hasta que se complete el registro.  Ver<<obtaining-support-information,detalles>> abajo.
 
 Durante el proceso de suscripción inicial, su instancia de información de su infraestructura de datos generará un número de serie de NetApp de 20 dígitos empezando por «950». Este número de serie de NetApp representa la suscripción a Data Infrastructure Insights asociada con su cuenta. Debe registrar el número de serie de NetApp para activar la autorización de asistencia. Ofrecemos dos opciones de registro de soporte:
 
@@ -60,7 +64,7 @@ image:NewCustomerRegExample.png["nuevo formulario de cliente"]
 image:SupportPage_SN_Section-NA.png["Pantalla_SN"]
 
 . Si no se produce ningún error, se dirigirá al usuario a una página “Registro enviado correctamente”. La dirección de correo electrónico asociada con el nombre de usuario SSO de NSS utilizado para registrarse recibirá un correo electrónico en unas pocas horas indicando que "su producto ahora es elegible para recibir asistencia".
-. Como nuevo cliente de NetApp, también necesitará crear una cuenta de usuario del sitio de soporte de NetApp (NSS) para poder realizar futuros registros y acceder al portal de soporte para el chat de soporte técnico y los billetes web. Este enlace se encuentra en https://mysupport.netapp.com/eservice/public/now.do[]. Puede proporcionar el número de serie de Data Infrastructure Insights recién registrado para acelerar el proceso.
+. Como nuevo cliente de NetApp , también deberá crear una cuenta de usuario del Sitio de soporte de NetApp (NSS) para futuros registros y acceso al portal de soporte para soporte técnico y emisión de tickets web.  Este enlace se encuentra en https://mysupport.netapp.com/eservice/public/now.do[] .  Puede proporcionar su número de serie de Data Infrastructure Insights recién registrado para agilizar el proceso.
 . Este es un registro único para el número de serie de Data Infrastructure Insights NetApp.
 
 
@@ -107,7 +111,6 @@ Puede solicitar soporte mediante cualquiera de los siguientes métodos. Debe ten
 
 * link:https://www.netapp.com/us/contact-us/support.aspx["*Teléfono*"]
 * link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["*Boleto de soporte*"]
-* *Chat* - Usted será conectado con el personal de soporte de NetApp para asistencia (solo días laborables). El chat está disponible en la opción de menú *Ayuda > Chat en directo* en la parte superior derecha de cualquier pantalla de información de infraestructura de datos.
 
 
 También puede solicitar soporte de ventas haciendo clic en el link:https://bluexp.netapp.com/contact-cds["*Póngase en contacto con Ventas*"] enlace.
