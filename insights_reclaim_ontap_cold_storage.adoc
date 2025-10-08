@@ -7,6 +7,10 @@ summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recurs
 = Información: Recupere el almacenamiento de datos fríos de ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

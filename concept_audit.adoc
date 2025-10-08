@@ -89,9 +89,6 @@ Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata to
 Los eventos y acciones auditados por Data Infrastructure Insights se pueden clasificar en las siguientes áreas generales:
 
 * *Cuenta de usuario*: Inicio de sesión, cierre de sesión, cambio de rol, etc.
-+
-Ejemplo: _Usuario *Tony Lavoie* inició sesión desde *10,1.120,15*, agente de usuario *Mozilla/5,0 (Windows NT 10,0; Win64; x64) AppleWebKit/537,36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537,36*, métodos de inicio de sesión *BlueXP Portal Login_*
-
 * *Unidad de adquisición*: Crear, borrar, etc.
 +
 Ejemplo: _Unidad de adquisición *AU-Boston-1* removida_.

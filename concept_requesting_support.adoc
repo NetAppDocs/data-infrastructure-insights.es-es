@@ -80,7 +80,7 @@ NetApp proporciona soporte para Data Infrastructure Insights de diversas maneras
 
 Estas opciones de soporte están disponibles en modo de prueba y están disponibles de forma gratuita las 24 horas del día, los 7 días de la semana:
 
-* *https://kb.netapp.com/Cloud/BlueXP/DII[KnowledgeBase]*
+* * https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs [Base de conocimientos]*
 +
 Al hacer clic en los enlaces de esta sección, accede a la base de conocimientos de NetApp, donde puede buscar artículos relevantes, instrucciones, etc.
 
@@ -113,7 +113,7 @@ Puede solicitar soporte mediante cualquiera de los siguientes métodos. Debe ten
 * link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["*Boleto de soporte*"]
 
 
-También puede solicitar soporte de ventas haciendo clic en el link:https://bluexp.netapp.com/contact-cds["*Póngase en contacto con Ventas*"] enlace.
+También puede solicitar asistencia de ventas haciendo clic en el enlace *Contactar con ventas*.
 
 El número de serie de Data Infrastructure Insights está visible en el servicio desde el menú *Ayuda > Soporte*. Si tiene problemas para acceder al servicio y ha registrado anteriormente un número de serie con NetApp, también puede ver su lista de números de serie de Data Infrastructure Insights en el sitio de soporte de NetApp de la siguiente manera:
 

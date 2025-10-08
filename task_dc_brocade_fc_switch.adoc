@@ -170,7 +170,7 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 | Problema: | Pruebe lo siguiente: 
 
 
-| Se produce un error en la recopilación de rendimiento con el tiempo de espera agotado durante el envío de la solicitud SNMP. | En función de las variables de consulta y la configuración del conmutador, algunas consultas pueden superar el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/BlueXP/DII/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"]. 
+| Se produce un error en la recopilación de rendimiento con el tiempo de espera agotado durante el envío de la solicitud SNMP. | Dependiendo de las variables de consulta y la configuración del conmutador, algunas consultas pueden exceder el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"] . 
 
 
 | La recopilación de rendimiento falla con... Se encontraron filas duplicadas en la tabla SNMP... | DII ha detectado respuestas SNMP incorrectas. Probablemente esté utilizando FOS 8.2.3e. Actualice a 8.2.3e2 o superior. 

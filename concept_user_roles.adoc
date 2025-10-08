@@ -124,7 +124,7 @@ En la siguiente tabla se muestran los permisos de Data Infrastructure Insights o
 
 == Creación de cuentas invitando a usuarios
 
-Crear una nueva cuenta de usuario se consigue a través de BlueXP. Un usuario puede responder a la invitación enviada a través de correo electrónico, pero si el usuario no tiene una cuenta en BlueXP, tendrá que registrarse en BlueXP para poder aceptar la invitación.
+La creación de una nueva cuenta de usuario se logra a través de la consola de NetApp .  Un usuario puede responder a la invitación enviada por correo electrónico, pero si el usuario no tiene una cuenta en Console, deberá registrarse para poder aceptar la invitación.
 
 .Antes de empezar
 * El nombre de usuario es la dirección de correo electrónico de la invitación.
@@ -209,18 +209,18 @@ Tenga en cuenta que los paneles de control, consultas, etc. creados por el usuar
 Con Federación de identidades:
 
 * La autenticación se delega en el sistema de gestión de identidades del cliente, utilizando las credenciales del cliente del directorio corporativo y las políticas de automatización como la autenticación multifactor (MFA).
-* Los usuarios inician sesión una vez en todos los servicios BlueXP de NetApp (inicio de sesión único).
+* Los usuarios inician sesión una vez en todos los servicios de consola de NetApp (inicio de sesión único).
 
 
-Las cuentas de usuario se gestionan en NetApp BlueXP para todos los servicios de nube. De forma predeterminada, la autenticación se realiza mediante un perfil de usuario local de BlueXP. A continuación se ofrece una descripción general simplificada de ese proceso:
+Las cuentas de usuario se administran en la consola de NetApp para todos los servicios de nube.  De forma predeterminada, la autenticación se realiza mediante un perfil de usuario local de la consola.  A continuación se muestra una descripción simplificada de ese proceso:
 
-image:BlueXP_Authentication_Local.png["Autenticación de BlueXP mediante Local"]
+image:Authentication_Local.png["Autenticación mediante Local"]
 
-Sin embargo, algunos clientes desean utilizar su propio proveedor de identidades para autenticar a sus usuarios en Información sobre la infraestructura de datos y otros servicios de NetApp BlueXP . Con la federación de identidades, las cuentas de BlueXP de NetApp se autentican mediante credenciales de su directorio corporativo.
+Sin embargo, algunos clientes desean utilizar su propio proveedor de identidad para autenticar a sus usuarios para Data Infrastructure Insights y sus otros servicios de consola de NetApp .  Con Identity Federation, las cuentas de la consola de NetApp se autentican mediante credenciales de su directorio corporativo.
 
 A continuación se muestra un ejemplo simplificado de ese proceso:
 
-image:BlueXP_Authentication_Federated.png["Autenticación de BlueXP mediante federación"]
+image:Authentication_Federated.png["Autenticación mediante federación"]
 
 En el diagrama anterior, cuando un usuario accede a Data Infrastructure Insights, ese usuario se dirige al sistema de gestión de identidades del cliente para su autenticación. Una vez autenticada la cuenta, se dirige al usuario a la URL del inquilino de Data Infrastructure Insights.
 
@@ -228,16 +228,16 @@ En el diagrama anterior, cuando un usuario accede a Data Infrastructure Insights
 
 === Habilitando federación de identidades
 
-BlueXP utiliza Auth0 para implementar la federación de identidades e integrarse con servicios como los servicios de federación de Active Directory (ADFS) y Microsoft Azure Active Directory (AD). Para configurar la federación de identidades, consulte la link:https://services.cloud.netapp.com/misc/federation-support["Instrucciones de la federación de BlueXP"].
+La consola usa Auth0 para implementar la federación de identidad e integrarse con servicios como Active Directory Federation Services (ADFS) y Microsoft Azure Active Directory (AD).  Para configurar la federación de identidad, consulte lalink:https://services.cloud.netapp.com/misc/federation-support["Instrucciones de la Federación"] .
 
 
-NOTE: Debe configurar la federación de identidad de BlueXP  para poder utilizar SSO con Información de infraestructura de datos.
+NOTE: Debe configurar la federación de identidad antes de poder usar SSO con Data Infrastructure Insights.
 
-Es importante entender que el cambio en la federación de identidades en BlueXP  se aplicará no solo a la información sobre infraestructura de datos, sino a todos los servicios de NetApp BlueXP . El cliente debe hablar sobre este cambio con el equipo de NetApp de cada producto BlueXP que sea propietario para asegurarse de que la configuración que utiliza funcionará con la federación de identidades o si es necesario realizar ajustes en alguna cuenta. El cliente tendrá que implicar también a su equipo de SSO interno en el cambio de la federación de identidades.
+Es importante comprender que el cambio en la federación de identidad se aplicará no solo a Data Infrastructure Insights sino a todos los servicios de consola de NetApp .  El cliente debe discutir este cambio con el equipo de NetApp de cada producto que posee para asegurarse de que la configuración que está usando funcionará con Identity Federation o si es necesario realizar ajustes en alguna cuenta.  El cliente también deberá involucrar a su equipo interno de SSO en el cambio a la federación de identidad.
 
-También es importante tener en cuenta que una vez habilitada la federación de identidades, es probable que cualquier cambio en el proveedor de identidades de la empresa (como pasar de SAML a Microsoft AD) requiera solución de problemas, cambios o atención en BlueXP para actualizar los perfiles de los usuarios.
+También es importante tener en cuenta que una vez habilitada la federación de identidad, cualquier cambio en el proveedor de identidad de la empresa (como pasar de SAML a Microsoft AD) probablemente requerirá resolución de problemas, cambios y atención para actualizar los perfiles de los usuarios.
 
-Para este o cualquier otro problema de la federación, puede abrir un ticket de soporte en https://mysupport.netapp.com/site/help[] y seleccionar la categoría “BlueXP .NetApp.com > Problemas de federación”.
+Para este o cualquier otro problema de la federación, puede abrir un ticket de soporte en https://mysupport.netapp.com/site/help[] .
 
 
 
@@ -246,9 +246,9 @@ Para este o cualquier otro problema de la federación, puede abrir un ticket de 
 Además de invitar a los usuarios, los administradores pueden habilitar el acceso de aprovisionamiento automático de usuario de inicio de sesión único (SSO)* a Data Infrastructure Insights para todos los usuarios de su dominio corporativo, sin tener que invitarlos individualmente. Con SSO habilitado, cualquier usuario con la misma dirección de correo electrónico de dominio puede iniciar sesión en Data Infrastructure Insights con sus credenciales corporativas.
 
 
-NOTE: _SSO User Auto-Provisioning_ está disponible en Data Infrastructure Insights Premium Edition y debe configurarse antes de poder habilitarse para Data Infrastructure Insights. La configuración de aprovisionamiento automático de usuarios de SSO incluye link:https://services.cloud.netapp.com/misc/federation-support["Federación de identidades"] a través de NetApp BlueXP  como se describe en la sección anterior. La federación permite a los usuarios de inicio de sesión único acceder a tus cuentas de NetApp BlueXP a través de credenciales de tu directorio corporativo, usando estándares abiertos como SAML (Security Assertion Markup Language 2,0) y OpenID Connect (OIDC).
+NOTE: _El aprovisionamiento automático de usuarios SSO_ está disponible en Data Infrastructure Insights Premium Edition y debe configurarse antes de poder habilitarlo para Data Infrastructure Insights.  La configuración de aprovisionamiento automático de usuarios SSO incluyelink:https://services.cloud.netapp.com/misc/federation-support["Federación de identidades"] a través de la consola de NetApp como se describe en la sección anterior.  La federación permite que los usuarios de inicio de sesión único accedan a sus cuentas de consola de NetApp utilizando credenciales de su directorio corporativo, utilizando estándares abiertos como Security Assertion Markup Language 2.0 (SAML) y OpenID Connect (OIDC).
 
-Para configurar _SSO User Auto-Provisioning_, en la página *Admin > User Management*, primero debes haber configurado BlueXP Identity Federation. Selecciona el enlace *Set Up Federation* en el banner para continuar a la federación de BlueXP. Una vez configurado, los administradores de Data Infrastructure Insights pueden habilitar el inicio de sesión de usuario SSO. Cuando un administrador habilita _SSO User Auto-Provisioning_, eligen una función predeterminada para todos los usuarios SSO (como Invitado o Usuario). Los usuarios que inicien sesión mediante SSO tendrán el rol predeterminado.
+Para configurar el _Aprovisionamiento automático de usuarios SSO_, en la página *Administrador > Administración de usuarios*, primero debe haber configurado la Federación de identidad.  Seleccione el enlace *Configurar federación* en el banner para continuar con la federación de consola.  Una vez configurado esto, los administradores de Data Infrastructure Insights pueden habilitar el inicio de sesión de usuario SSO.  Cuando un administrador habilita el _Aprovisionamiento automático de usuarios SSO_, elige un rol predeterminado para todos los usuarios SSO (como Invitado o Usuario).  Los usuarios que inicien sesión a través de SSO tendrán ese rol predeterminado.
 
 image:Roles_federation_Banner.png["Gestión de usuarios con Federación"]
 

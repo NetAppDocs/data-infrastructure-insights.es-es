@@ -797,7 +797,7 @@ La actualización automática no está disponible para el intervalo de tiempo pe
 Cuando se combina con *modo TV*, la actualización automática permite la visualización casi en tiempo real de los datos en un panel o página de activos. El modo TV proporciona una visualización desembragada; el menú de navegación está oculto, proporcionando más propiedades de pantalla para la visualización de datos, al igual que el botón Editar. El modo TV ignora los tiempos de espera típicos de Data Infrastructure Insights, dejando la pantalla activa hasta que se cierra la sesión manual o automáticamente mediante protocolos de seguridad de autorización.
 
 
-NOTE: Dado que NetApp BlueXP  tiene su propio tiempo de espera de inicio de sesión de usuario de 7 días, Data Infrastructure Insights también debe cerrar la sesión en ese evento. Simplemente puede iniciar sesión de nuevo y el panel seguirá mostrándose.
+NOTE: Debido a que NetApp Console tiene su propio tiempo de espera de inicio de sesión de usuario de 7 días, Data Infrastructure Insights también debe cerrar la sesión con ese evento.  Simplemente puedes iniciar sesión nuevamente y tu panel de control seguirá mostrándose.
 
 * Para activar el modo TV, haga clic en el botón Modo TV.
 * Para desactivar el modo TV, haga clic en el botón *salir* de la parte superior izquierda de la pantalla.

@@ -16,18 +16,18 @@ keywords: subscribe, trial, subscription, contract, raw capacity, region, data r
 [role="lead"]
 Empezar a utilizar Data Infrastructure Insights es tan fácil como tres sencillos pasos:
 
-. Regístrese para obtener una cuenta link:https://bluexp.netapp.com//["*BlueXP de NetApp*"]para acceder a todas las ofertas cloud de NetApp.
+. Regístrese para obtener una cuenta enlink:https://console.netapp.com//["* Consola NetApp *"] para obtener acceso a todas las ofertas de nube de NetApp.
 . Regístrese para obtener una prueba gratuita de Data Infrastructure Insights para explorar las funciones disponibles. Para registrarse en una prueba gratuita:
 +
 ** Vaya a. https://netapp.com[]
 ** Selecciona *Cómo comprar* en la parte superior de la página.
-** Seleccione *Solicitar prueba*. Si aún no está registrado en BlueXP , introduzca sus datos y regístrese. De lo contrario, inicie sesión.
+** Seleccione *Solicitar prueba*.  Si aún no está registrado en Console, ingrese sus datos y regístrese.  De lo contrario, inicie sesión.
 ** Programe una reunión o espere a que un representante se ponga en contacto con usted sobre su prueba.
 
 
 . *Suscríbase* a Data Infrastructure Insights para obtener acceso continuo e ininterrumpido a sus datos a través de una variedad de opciones de suscripción flexibles:
 +
-** link:https://bluexp.netapp.com/contact-cds["Ventas directas de NetApp"]
+** link:https://console.netapp.com/contact-cds["Ventas directas de NetApp"]
 ** Mercado de AWS:
 +
 *** link:https://aws.amazon.com/marketplace/pp/prodview-axhuy7muvzfx2["Suscripción a plazo fijo"]
@@ -202,7 +202,7 @@ Al hacer clic en el enlace de Amazon Marketplace https://aws.amazon.com/marketpl
 
 Después de haber introducido el recuento total de unidades administradas y haber elegido el plazo de suscripción de 12 o 36 meses, haga clic en *Configurar su cuenta* para finalizar el proceso de suscripción.
 
-Una vez que se haya completado el proceso de suscripción de AWS, volverá a su entorno de información de la infraestructura de datos. O bien, si el entorno ya no está activo (por ejemplo, has cerrado la sesión), irás a la página de inicio de sesión de NetApp BlueXP. Cuando vuelva a iniciar sesión en Data Infrastructure Insights, su suscripción estará activa.
+Una vez completado el proceso de suscripción de AWS, regresará a su entorno de Data Infrastructure Insights .  O bien, si el entorno ya no está activo (por ejemplo, ha cerrado la sesión), se le dirigirá a la página de inicio de sesión de la consola NetAPp.  Cuando vuelva a iniciar sesión en Data Infrastructure Insights , su suscripción estará activa.
 
 
 NOTE: Después de hacer clic en *Configurar su cuenta* en la página AWS Marketplace, deberá completar el proceso de suscripción a AWS en un plazo de una hora. Si no lo completa en una hora, tendrá que hacer clic en *Configurar su cuenta* de nuevo para completar el proceso.
