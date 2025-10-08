@@ -14,9 +14,7 @@ keywords: topology, analyze, analysis, map
 
 
 [role="lead"]
-SAN tiene un papel crucial en la gestión de las cargas de trabajo vitales, pero su complejidad puede provocar interrupciones del servicio significativas y interrupciones en los clientes. Con el *SAN Analyzer* de DII, la gestión de SAN se vuelve más sencilla y eficiente. Esta potente herramienta ofrece una visibilidad integral al asignar dependencias desde el equipo virtual/host a la red y a la LUN y el almacenamiento.
-
-Al proporcionar un mapa topológico interactivo, SAN Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de SAN en ENTORNOS DE TI complejos con SAN Analyzer y aumente la visibilidad de las cargas de trabajo de bloque.
+SAN juega un papel crucial en el manejo de cargas de trabajo vitales, pero su complejidad puede generar interrupciones significativas y disrupciones para los clientes.  Con *SAN Analyzer* de DII, la gestión de SAN se vuelve más sencilla y eficiente.  Esta poderosa herramienta ofrece visibilidad de extremo a extremo, mapeando dependencias desde VM/Host a red, LUN y almacenamiento.  Al proporcionar un mapa de topología interactivo, SAN Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos.  Optimice la gestión de SAN en entornos de TI complejos con SAN Analyzer y aumente su visibilidad en las cargas de trabajo en bloque.
 
 image:san_analyzer_example_with_panel.png["Mapa de topología de un sistema de almacenamiento de SAN Analyzer"]
 
@@ -44,3 +42,17 @@ image:san_analyzer_protocols.png["Protocolos del analizador SAN"]
 Si su entorno incluye dispositivos iSCSI, al pasar el cursor sobre el objeto _iSCSi_ se resaltan las conexiones relacionadas con esos dispositivos iSCSI relevantes.
 
 image:san_analyzer_iscsi_traffic.png["Tráfico de iSCSI resaltado"]
+
+
+
+== Consejos para la solución de problemas
+
+Algunas cosas que puedes probar si tienes problemas:
+
+[cols="2*"]
+|===
+| *Problema:* | *Pruebe esto:* 
+
+
+| Veo <0, =0 o >0 en la leyenda para métricas como _trafficUtilization_ o _trafficRate_. | Esto podría suceder en casos muy raros donde los valores métricos estén por debajo de dos decimales, como 0,000123.  Ampliar la ventana de tiempo podría ayudar a analizar la métrica de manera más efectiva. 
+|===
