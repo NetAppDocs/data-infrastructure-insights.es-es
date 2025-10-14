@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_dc_netapp_eseries_rest.html 
 keywords: data collector, ontap, clustered ontap, REST 
-summary: Configurar el recopilador de DATOS DE REST E-Series de NetApp. 
+summary: Configuración del recopilador de datos REST de NetApp E-Series. 
 ---
-= Recopilador de DATOS DE REST DE E-Series de NetApp
+= Recopilador de datos REST de la serie E de NetApp
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de DATOS DE REST DE E-Series de NetApp recopila datos de inventario y de rendimiento. El recopilador admite el firmware 7.x+ usando las mismas configuraciones y informando de los mismos datos. El recopilador REST supervisa el estado de cifrado de los pools de almacenamiento, así como el estado de cifrado de los discos y volúmenes relacionados, y proporciona la utilización de la CPU de nodo de almacenamiento como contadores de rendimiento. La funcionalidad no se proporciona en el recopilador E-Series de SANtricity heredado.
+El recopilador de datos REST de la serie E de NetApp recopila datos de inventario y rendimiento.  El recopilador admite el firmware 7.x+ y utiliza las mismas configuraciones e informa los mismos datos.  El recopilador REST supervisa el estado de cifrado de los grupos de almacenamiento, así como el estado de cifrado de los discos y volúmenes relacionados, y proporciona la utilización de la CPU del nodo de almacenamiento como contadores de rendimiento (una funcionalidad no proporcionada en el recopilador SANtricity E-Series heredado).
 
 
 
 == Terminología
 
-Cloud Insight adquiere la siguiente información de inventario de E-Series de NetApp, utilizando REST. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Cloud Insight adquiere la siguiente información de inventario de NetApp E-Series, mediante REST.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco | Disco 
@@ -29,7 +29,7 @@ Cloud Insight adquiere la siguiente información de inventario de E-Series de Ne
 | Grupo de volúmenes | Grupo de discos 
 
 
-| Cabina de almacenamiento | Reducida 
+| Matriz de almacenamiento | Almacenamiento 
 
 
 | Controladora | Nodo de almacenamiento 
@@ -40,16 +40,16 @@ Cloud Insight adquiere la siguiente información de inventario de E-Series de Ne
 
 | Volumen | Volumen 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* La dirección IP de cada controladora de la cabina
-* Este recopilador solo admite matrices modelo E-Series con *capacidades de API REST nativas*. La organización de E-Series envía una distribución de API DE REST que se puede instalar fuera de la cabina para cabinas E-Series anteriores: Este recopilador no admite esa situación. Los usuarios con cabinas más antiguas deben seguir usando link:task_dc_na_eseries.html["API de E-Series SANtricity"]el recopilador de Data Infrastructure Insights.
-* El campo «Direcciones IP de controladora E-Series» admite una cadena delimitada por comas de 2 IP/nombres de host; el recopilador intentará inteligentemente el segundo IP/nombre de host si no se puede acceder al primero.
-* Puerto HTTPS: El valor predeterminado es 8443.
+* La dirección IP de cada controlador en la matriz
+* Este recopilador solo admite matrices de modelos de la serie E con *capacidades de API REST nativas*.  La organización E-Series envía una distribución de API REST instalable fuera de la matriz para matrices E-Series más antiguas: este recopilador no admite ese escenario.  Los usuarios con matrices más antiguas deben seguir utilizando Data Infrastructure Insightslink:task_dc_na_eseries.html["API SANtricity de la serie E"] coleccionista.
+* El campo "Direcciones IP del controlador de la serie E" admite una cadena delimitada por comas de 2 IP/nombres de host; el recopilador probará de manera inteligente la segunda IP/nombre de host si el primero es inaccesible.
+* Puerto HTTPS: el predeterminado es 8443.
 
 
 
@@ -61,7 +61,7 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Direcciones IP de la controladora E-Series | Direcciones IP separadas por comas y/o nombres de dominio completo para las controladoras de cabina 
+| Direcciones IP del controlador de la serie E | direcciones IP separadas por comas y/o nombres de dominio completos para los controladores de matriz 
 |===
 
 
@@ -72,69 +72,69 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 30 minutos 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 30 minutos. 
 
 
-| Intervalo de sondeo de rendimiento hasta 3600 segundos | El valor predeterminado es 300 segundos 
+| Intervalo de encuesta de rendimiento de hasta 3600 segundos | El valor predeterminado es 300 segundos 
 |===
 
 
-== Terminología de E-Series (página de destino)
+== Terminología de la serie E (página de inicio)
 
-Los siguientes términos se aplican a objetos o referencias que puede encontrar en las páginas de destino de activos E-Series de NetApp. Muchos de estos términos también se aplican a otros recopiladores de datos.
+Los siguientes términos se aplican a objetos o referencias que pueda encontrar en las páginas de destino de activos de NetApp E-Series.  Muchos de estos términos se aplican también a otros recopiladores de datos.
 
 
 
-=== Reducida
+=== Almacenamiento
 
-* Modelo: Nombre del modelo del dispositivo.
-* Proveedor: El mismo nombre del proveedor que se vería si estaba configurando un origen de datos nuevo
-* Número de serie: El número de serie de la cabina. En sistemas de almacenamiento de arquitectura en clúster como Clustered Data ONTAP de NetApp, este número de serie puede ser menos útil que los números de serie de los «nodos de almacenamiento» individuales
-* IP: Generalmente serán las IP o los hostname tal como están configurados en el origen de datos
-* Versión de microcódigo: Firmware
-* Capacidad bruta: Suma base 2 de todos los discos físicos del sistema, sin importar su función
-* Latencia: Representación de lo que experimentan las cargas de trabajo a las que se enfrentan el host, tanto en lecturas como escrituras. Lo ideal es que Data Infrastructure Insights obtenga este valor directamente pero este no es el caso. En lugar de que la cabina que ofrece esta opción, Data Infrastructure Insights suele realizar un cálculo ponderado por IOPS derivado de las estadísticas de los volúmenes individuales.
-* Rendimiento: El rendimiento total de la cabina frente al host. Si se fuentes idealmente directamente de la cabina, Data Infrastructure Insights suma el rendimiento de los volúmenes para obtener este valor
-* Administración: Puede contener un hipervínculo para la interfaz de gestión del dispositivo. Creado mediante programación por el origen de datos de Data Infrastructure Insights como parte de los informes de inventario  
+* Modelo – nombre del modelo del dispositivo.
+* Proveedor: el mismo nombre de proveedor que vería si estuviera configurando una nueva fuente de datos
+* Número de serie: el número de serie de la matriz.  En sistemas de almacenamiento con arquitectura de clúster como NetApp Clustered Data Ontap, este número de serie puede ser menos útil que los números de serie de los “Nodos de almacenamiento” individuales.
+* IP: generalmente serán las IP o los nombres de host configurados en la fuente de datos
+* Versión del microcódigo – firmware
+* Capacidad bruta: suma en base 2 de todos los discos físicos del sistema, independientemente de su función
+* Latencia: una representación de lo que experimenta el host que enfrenta cargas de trabajo, tanto en lecturas como en escrituras.  Lo ideal sería que Data Infrastructure Insights obtenga este valor directamente, pero a menudo no es así.  En lugar de que la matriz ofrezca esto, Data Infrastructure Insights generalmente realiza un cálculo ponderado por IOP derivado de las estadísticas de los volúmenes individuales.
+* Rendimiento: el rendimiento total de la matriz frente al host.  Lo ideal es obtenerlo directamente de la matriz; si no está disponible, Data Infrastructure Insights suma el rendimiento de los volúmenes para obtener este valor.
+* Administración: puede contener un hipervínculo a la interfaz de administración del dispositivo.  Creado programáticamente por la fuente de Data Infrastructure Insights como parte de los informes de inventario  
 
 
 
 
 === Pool de almacenamiento
 
-* Almacenamiento: En qué cabina de almacenamiento vive este pool. Obligatorio
-* Tipo: Valor descriptivo de una lista de posibilidades enumeradas. Lo más común es “Thin Provisioning” o “RAID Group”.
-* Nodo: Si la arquitectura de esta cabina de almacenamiento pertenece a un nodo de almacenamiento específico, su nombre se verá aquí como un hipervínculo a su propia página de destino
-* Utiliza Flash Pool – valor Sí/no
-* Redundancia: Esquema de protección o nivel de RAID. E-Series informa "RAID 7" para pools DDP
-* Capacidad: Los valores aquí son los lógicos utilizados, la capacidad utilizable y la capacidad total lógica, así como el porcentaje utilizado en estos. Ambos valores incluyen la capacidad de “conservación” de E-Series, lo que resulta en números y el porcentaje es superior a lo que puede mostrar la interfaz de usuario de E-Series
-* Capacidad sobrecomprometida: Si, mediante tecnologías de eficiencia, se ha asignado una suma total de capacidades de volumen o volumen interno mayores que la capacidad lógica del pool de almacenamiento, el valor del porcentaje será mayor que 0 %.
-* Snapshot: Las capacidades Snapshot se utilizan y en total, si su arquitectura de pool de almacenamiento dedica parte de su capacidad a los segmentos, en exclusiva para los snapshots
-* Aprovechamiento: Un valor de porcentaje que muestra el mayor porcentaje de ocupación de disco de cualquier disco que contribuye a la capacidad de este pool de almacenamiento. El uso de discos no tiene necesariamente una fuerte correlación con el rendimiento de las cabinas. El aprovechamiento puede ser elevado debido a la recompilación de discos, a actividades de deduplicación, etc. en ausencia de cargas de trabajo dirigidas por el host. Además, las implementaciones de replicación de muchas matrices pueden impulsar el uso del disco sin mostrar como carga de trabajo de volumen.
-* IOPS: La suma de IOPS de todos los discos que contribuyen a la capacidad de este pool de almacenamiento. Si las IOPS de disco no están disponibles en una plataforma determinada, este valor se obtendrá de la suma de las IOPS del volumen para todos los volúmenes que se encuentran en este pool de almacenamiento
-* Rendimiento: La suma del rendimiento de todos los discos que contribuyen a la capacidad de este pool de almacenamiento. Si el rendimiento de disco no está disponible en una plataforma determinada, este valor se obtendrá de la suma del volumen en todos los volúmenes presentes en este pool de almacenamiento
+* Almacenamiento: en qué matriz de almacenamiento reside este grupo. Obligatorio
+* Tipo: un valor descriptivo de una lista de una lista enumerada de posibilidades.  Lo más común será “Aprovisionamiento fino” o “Grupo RAID”.
+* Nodo: si la arquitectura de esta matriz de almacenamiento es tal que los grupos pertenecen a un nodo de almacenamiento específico, su nombre se verá aquí como un hipervínculo a su propia página de destino.
+* Utiliza Flash Pool – Valor Sí/No
+* Redundancia – Nivel RAID o esquema de protección.  La serie E informa sobre RAID 7 para grupos DDP
+* Capacidad: los valores aquí son la capacidad lógica utilizada, la capacidad utilizable y la capacidad total lógica, y el porcentaje utilizado en estas.  Ambos valores incluyen la capacidad de “preservación” de la Serie E, lo que da como resultado que tanto los números como el porcentaje sean más altos que lo que puede mostrar la propia interfaz de usuario de la Serie E.
+* Capacidad sobrecomprometida: si a través de tecnologías de eficiencia ha asignado una suma total de capacidades de volumen o de volumen interno mayor que la capacidad lógica del grupo de almacenamiento, el valor porcentual aquí será mayor a 0 %.
+* Instantánea: capacidades de instantáneas utilizadas y totales, si la arquitectura de su grupo de almacenamiento dedica parte de su capacidad a áreas de segmentos exclusivamente para instantáneas
+* Utilización: valor porcentual que muestra el mayor porcentaje de ocupación del disco de cualquier disco que aporte capacidad a este grupo de almacenamiento.  La utilización del disco no necesariamente tiene una fuerte correlación con el rendimiento de la matriz: la utilización puede ser alta debido a reconstrucciones de disco, actividades de deduplicación, etc. en ausencia de cargas de trabajo impulsadas por el host.  Además, las implementaciones de replicación de muchas matrices pueden impulsar la utilización del disco sin mostrarse como carga de trabajo de volumen.
+* IOPS: la suma de IOPS de todos los discos que aportan capacidad a este grupo de almacenamiento.  Si las IOP de disco no están disponibles en una plataforma determinada, este valor se obtendrá de la suma de las IOP de volumen de todos los volúmenes que se encuentran en este grupo de almacenamiento.
+* Rendimiento: el rendimiento total de todos los discos que aportan capacidad a este grupo de almacenamiento.  Si el rendimiento del disco no está disponible en una plataforma determinada, este valor se obtendrá de la suma del volumen total de todos los volúmenes que se encuentran en este grupo de almacenamiento.
 
 
 
 
 === Nodo de almacenamiento
 
-* Almacenamiento: ¿De qué cabina de almacenamiento forma parte este nodo? Obligatorio
-* Partner de ALTA DISPONIBILIDAD: En las plataformas en las que un nodo se conmuta al nodo de respaldo uno y solo otro, normalmente se verá aquí
-* Estado: Estado del nodo. Solo disponible cuando la matriz está lo suficientemente sana para ser inventariada por una fuente de datos
-* Model: Nombre de modelo del nodo
-* Versión: Nombre de versión del dispositivo.
-* Número de serie: El número de serie del nodo
-* Memoria: Memoria base 2 si está disponible
-* Utilización: Normalmente un número de utilización de CPU o, en el caso de ONTAP de NetApp, un índice de estrés de la controladora. Actualmente, la utilización no está disponible para E-Series de NetApp
-* IOPS: Número que representa el número de IOPS dirigido por el host en esta controladora. Lo ideal es que se genere directamente desde la cabina y, si no está disponible, se calculará sumando todos los IOPS de los volúmenes que pertenecen exclusivamente a este nodo.
-* Latencia: Un número que representa la latencia del host o el tiempo de respuesta típicos de esta controladora. Lo ideal es que se genere directamente desde la cabina y, si no está disponible, se calculará realizando un cálculo de IOPS ponderado a partir de volúmenes que pertenecen de manera exclusiva a este nodo.
-* Rendimiento: Un número que representa el rendimiento impulsado por el host en esta controladora. Lo ideal es que se genere directamente desde la cabina, si no está disponible, se calculará sumando todo el rendimiento de los volúmenes que pertenecen exclusivamente a este nodo.
-* Procesadores: Número de CPU
+* Almacenamiento: de qué matriz de almacenamiento forma parte este nodo. Obligatorio
+* Socio de HA: en plataformas donde un nodo fallará en uno y solo otro nodo, generalmente se verá aquí
+* Estado – salud del nodo.  Solo disponible cuando la matriz está lo suficientemente saludable como para ser inventariada por una fuente de datos
+* Modelo – nombre del modelo del nodo
+* Versión – nombre de la versión del dispositivo.
+* Número de serie: el número de serie del nodo
+* Memoria: memoria base 2 si está disponible
+* Utilización: generalmente, un número de utilización de CPU o, en el caso de NetApp Ontap, un índice de estrés del controlador.  La utilización no está disponible actualmente para NetApp E-Series
+* IOPS: un número que representa las IOPS impulsadas por el host en este controlador.  Lo ideal es obtenerlo directamente de la matriz; si no está disponible, se calculará sumando todas las IOP de los volúmenes que pertenecen exclusivamente a este nodo.
+* Latencia: un número que representa la latencia típica del host o el tiempo de respuesta en este controlador.  Lo ideal es obtenerlo directamente de la matriz; si no está disponible, se calculará realizando un cálculo ponderado de IOP a partir de los volúmenes que pertenecen exclusivamente a este nodo.
+* Rendimiento: un número que representa el rendimiento impulsado por el host en este controlador.  Lo ideal es obtenerlo directamente de la matriz; si no está disponible, se calculará sumando todo el rendimiento de los volúmenes que pertenecen exclusivamente a este nodo.
+* Procesadores – Cantidad de CPU
 
 
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Información adicional sobre este recopilador de datos se puede encontrar en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

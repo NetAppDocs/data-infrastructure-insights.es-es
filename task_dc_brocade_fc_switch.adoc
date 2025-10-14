@@ -2,40 +2,40 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_fc_switch.html 
 keywords: data collector, Brocade, FC switch, 
-summary: Configurar el recopilador de datos de los switches FC de Brocade. 
+summary: Configuración del recopilador de datos de conmutadores Brocade FC. 
 ---
-= Recopilador de datos de switches Brocade FC
+= Recopilador de datos de Brocade FC Switch
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Información sobre la infraestructura de datos utiliza el origen de datos del switch FC de Brocade (SSH) para detectar inventario de Brocade o dispositivos de switch de nueva marca que ejecutan el firmware de sistema operativo factorizado (FOS) 4,2 y versiones posteriores. Son compatibles los dispositivos en los modos de switch FC y Access Gateway.
+Data Infrastructure Insights utiliza la fuente de datos Brocade FC Switch (SSH) para descubrir el inventario de dispositivos Brocade o conmutadores de marca renombrada que ejecutan el firmware del sistema operativo factorizado (FOS) 4.2 y posteriores.  Se admiten dispositivos en los modos de conmutador FC y puerta de enlace de acceso.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos del switch FC de Brocade. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Brocade FC Switch.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Conmutador | Conmutador 
+| Cambiar | Cambiar 
 
 
 | Puerto | Puerto 
 
 
-| Estructura virtual, estructura física | Estructura 
+| Tejido virtual, tejido físico | Tela 
 
 
 | Zona | Zona 
 
 
-| Cambio lógico | Cambio lógico 
+| Interruptor lógico | Interruptor lógico 
 
 
 | Volumen virtual | Volumen 
@@ -43,17 +43,17 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 | Zona LSAN | Zona IVR 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* La unidad de adquisición de información de la infraestructura de datos (AU) iniciará conexiones al puerto TCP 22 en los conmutadores Brocade para recopilar datos de inventario. El AU también iniciará conexiones al puerto UDP 161 para la recopilación de datos de rendimiento.
-* Debe haber conectividad IP para todos los switches de la estructura. Si selecciona la casilla de comprobación Detectar todos los switches en la estructura, Data Infrastructure Insights identifica todos los switches de la estructura; no obstante, se necesita conectividad IP con estos switches adicionales para detectarlos.
-* La misma cuenta es necesaria globalmente en todos los switches del entramado. Puede utilizar PuTTY (emulador de terminal de código abierto) para confirmar el acceso.
-* Los puertos 161 y 162 deben estar abiertos a todos los switches de la estructura para poder realizar sondeos de rendimiento de SNMP.
-* Cadena de comunidad de sólo lectura SNMP
+* La Unidad de Adquisición de Data Infrastructure Insights (AU) iniciará conexiones al puerto TCP 22 en los conmutadores Brocade para recopilar datos de inventario.  La AU también iniciará conexiones al puerto UDP 161 para la recopilación de datos de rendimiento.
+* Debe haber conectividad IP a todos los conmutadores de la red.  Si selecciona la casilla de verificación Descubrir todos los conmutadores en la estructura, Data Infrastructure Insights identifica todos los conmutadores en la estructura; sin embargo, necesita conectividad IP a estos conmutadores adicionales para descubrirlos.
+* Se necesita la misma cuenta globalmente en todos los conmutadores de la red.  Puede utilizar PuTTY (emulador de terminal de código abierto) para confirmar el acceso.
+* Los puertos 161 y 162 deben estar abiertos a todos los conmutadores en la red para el sondeo del rendimiento de SNMP.
+* Cadena de comunidad de solo lectura SNMP
 
 
 
@@ -65,25 +65,25 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Cambie IP | Dirección IP o nombre de dominio completo del servidor EFC 
+| Cambiar IP | Dirección IP o nombre de dominio completo del servidor EFC 
 
 
-| Nombre de usuario | Nombre de usuario del conmutador 
+| Nombre de usuario | Nombre de usuario para el conmutador 
 
 
-| Contraseña | Contraseña para el conmutador 
+| Password | Contraseña para el conmutador 
 
 
-| SNMP | Versión de SNMP 
+| SNMP | Versión SNMP 
 
 
-| Cadena de comunidad SNMP | Cadena de comunidad de sólo lectura de SNMP que se utiliza para acceder al conmutador 
+| Cadena de comunidad SNMP | Cadena de comunidad de solo lectura SNMP utilizada para acceder al conmutador 
 
 
-| Nombre de usuario de SNMP | Nombre de usuario SNMP 
+| Nombre de usuario SNMP | Nombre de usuario SNMP 
 
 
-| Contraseña de SNMP | Contraseña de SNMP 
+| Contraseña SNMP | Contraseña SNMP 
 |===
 
 
@@ -94,49 +94,49 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Nombre de la estructura | Nombre de la estructura que informará el recopilador de datos. Deje en blanco para informar el nombre de la estructura como WWN. 
+| Nombre de la tela | Nombre de la tela que será informada por el recolector de datos.  Déjelo en blanco para informar el nombre de la tela como WWN. 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 15. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 15. 
 
 
-| Dispositivos excluidos | Lista separada por comas de ID de dispositivo que se van a excluir del sondeo 
+| Dispositivos excluidos | Lista separada por comas de ID de dispositivos que se excluirán del sondeo 
 
 
 | Dominios de administración activos | Seleccione si utiliza dominios de administración 
 
 
-| Recuperar datos MPR | Seleccione esta opción para obtener los datos de enrutamiento del enrutador multiprotocolo. 
+| Recuperar datos MPR | Seleccione esta opción para adquirir datos de enrutamiento de su enrutador multiprotocolo. 
 
 
-| Habilite el solapamiento | Seleccione esta opción para activar la adquisición al recibir una captura SNMP del dispositivo. Si selecciona Activar solapamiento, también debe activar SNMP. 
+| Habilitar Trapping | Seleccione esta opción para habilitar la adquisición al recibir una trampa SNMP desde el dispositivo.  Si selecciona habilitar captura, también deberá activar SNMP. 
 
 
-| Tiempo mínimo entre solapamientos (seg) | Tiempo mínimo entre intentos de adquisición activados por solapamientos. El valor predeterminado es 10. 
+| Tiempo mínimo entre trampas (seg) | Tiempo mínimo entre intentos de adquisición activados por trampas.  El valor predeterminado es 10. 
 
 
-| Descubra todos los switches del entramado | Seleccione para detectar todos los switches de la estructura 
+| Descubra todos los interruptores en la tela | Seleccione para descubrir todos los interruptores en la estructura 
 
 
-| Seleccione Favor HBA vs. Alias de zona | Elija si prefiere los alias de HBA o de zona 
+| Elija entre HBA y alias de zona | Elija si desea favorecer HBA o alias de zona 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 300. 
 
 
 | Protocolo de autenticación SNMP | Protocolo de autenticación SNMP (solo SNMP v3) 
 
 
-| Contraseña de privacidad de SNMP | Contraseña de privacidad de SNMP (sólo SNMP v3) 
+| Contraseña de privacidad de SNMP | Contraseña de privacidad SNMP (solo SNMP v3) 
 
 
-| Reintentos SNMP | Número de intentos de reintento de SNMP 
+| Reintentos SNMP | Número de reintentos de SNMP 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -144,47 +144,47 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| La adquisición de inventario del origen de datos de Brocade falla con el error: ERROR <date> <time> [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource] error 2 de 2: <datasource name> [error interno] - no se puede generar el modelo para el dispositivo <IP>. Mensaje de error de detección ([<name> de nombre de dispositivo]: No se puede generar el modelo para <IP> de dispositivo. Mensaje de error al detectar) | El problema puede deberse a que el switch Brocade tarde demasiado en volver con un aviso, superando el tiempo de espera predeterminado de 5 segundos. En los ajustes de configuración avanzada del recopilador de datos en Data Infrastructure Insights, intente aumentar _SSH Banner Wait Timeout (seg)_ a un valor superior. 
+| La adquisición de inventario de la fuente de datos Brocade falla con el error: <fecha> <hora> ERROR [com.onaro.sanscreen.acquisition.framework.datasource.BaseDataSource] Error 2 de 2: <nombre de la fuente de datos> [Error interno]: no se puede generar el modelo para el dispositivo <IP>.  Error al detectar mensaje ([Nombre del dispositivo <nombre>]: No se puede generar el modelo para el dispositivo <IP>.  Mensaje de error al detectar error) | El problema puede deberse a que el conmutador Brocade tarda demasiado en regresar con un mensaje, superando el tiempo de espera predeterminado de 5 segundos.  En la configuración avanzada del recopilador de datos en Data Infrastructure Insights, intente aumentar _SSH Banner Wait Timeout (sec)_ a un valor más alto. 
 
 
-| Error: «Información de infraestructura de datos recibida rol de chasis no válido» | Compruebe que el usuario configurado en este origen de datos ha obtenido el permiso de función de chasis. 
+| Error: "Data Infrastructure Insights recibió un rol de chasis no válido" | Verifique que al usuario configurado en esta fuente de datos se le haya otorgado el permiso de rol de chasis. 
 
 
-| Error: "La dirección IP del chasis no coincide" | Como norma general, DII no admite la Traducción de Direcciones de Red ni la Traducción de Direcciones de Puerto entre la Unidad de Adquisición y los dispositivos. Es posible que DII detecte que el nombre de host/dirección IP en la configuración del recopilador NO coincide con ninguna de las direcciones que el dispositivo cree tener. 
+| Error: "Dirección IP del chasis no coincidente" | DII NO admite la traducción de direcciones de red o la traducción de direcciones de puerto entre la unidad de adquisición y los dispositivos como regla general.  Es posible que DII esté detectando que el nombre de host/dirección IP en la configuración del recopilador NO coincide con ninguna de las direcciones que el dispositivo cree que tiene. 
 
 
-| Reciba un mensaje que indica que más de 1 nodo ha iniciado sesión en el puerto Access Gateway | Compruebe que el dispositivo NPV funciona correctamente y que se esperan todos los WWN conectados. No adquiera directamente el dispositivo NPV. En lugar de ello, la adquisición del switch de estructura principal recopilará los datos del dispositivo NPV. 
+| Recibir un mensaje que indica que más de un nodo ha iniciado sesión en el puerto de Access Gateway | Verifique que el dispositivo NPV esté funcionando correctamente y que todos los WWN conectados sean los esperados.  No adquiera directamente el dispositivo VPN.  En cambio, la adquisición del conmutador de estructura central recopilará los datos del dispositivo VAN. 
 
 
-| Error: ....Máximo de sesiones remotas para iniciar sesión... | FOS tiene diferentes límites para la cantidad de sesiones SSH simultáneas admitidas por rol de usuario. La sesión SSH de DII a este dispositivo se rechaza al iniciar sesión por infringir dichos límites. Esto puede indicar que hay recopiladores duplicados que detectan el mismo recurso, lo cual debe evitarse. 
+| Error: ....Máximo de sesiones remotas para iniciar sesión... | FOS tiene diferentes límites para la cantidad de sesiones SSH simultáneas admitidas por rol de usuario.  La sesión SSH de DII a este dispositivo está siendo rechazada al iniciar sesión por violar esos límites.  Esto puede ser una señal de que hay coleccionistas duplicados que descubren el mismo activo, lo cual debe evitarse. 
 |===
 
 
-=== Rendimiento
+=== Actuación
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Se produce un error en la recopilación de rendimiento con el tiempo de espera agotado durante el envío de la solicitud SNMP. | Dependiendo de las variables de consulta y la configuración del conmutador, algunas consultas pueden exceder el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"] . 
+| La recopilación de rendimiento falla con el mensaje "Se agotó el tiempo de espera durante el envío de la solicitud SNMP". | Dependiendo de las variables de consulta y la configuración del conmutador, algunas consultas pueden exceder el tiempo de espera predeterminado. link:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Data_Infrastructure_Insights_Brocade_data_source_fails_performance_collection_with_a_timeout_due_to_default_SNMP_configuration["Más información"] . 
 
 
-| La recopilación de rendimiento falla con... Se encontraron filas duplicadas en la tabla SNMP... | DII ha detectado respuestas SNMP incorrectas. Probablemente esté utilizando FOS 8.2.3e. Actualice a 8.2.3e2 o superior. 
+| La recopilación de rendimiento falla con... Se encontraron filas duplicadas en la tabla SNMP... | DII ha detectado respuestas SNMP incorrectas.  Probablemente estés ejecutando FOS 8.2.3e.  Actualice a 8.2.3e2 o superior. 
 
 
-| Las recopilaciones de rendimiento fallan con...Nombre de usuario desconocido... | Ha configurado su recopilador DII con un valor de "Nombre de usuario SNMP" que no está asignado a ninguna de las ranuras de usuario SNMPv3. La simple creación de un usuario en Brocade FOS NO lo habilita necesariamente como usuario SNMPv3; debe asignarlo a una de las ranuras de usuario v3. 
+| Las recopilaciones de rendimiento fallan con...Nombre de usuario desconocido... | Ha configurado su recopilador DII con un valor de "Nombre de usuario SNMP" que no está asignado a una de las ranuras de usuario SNMPv3.  El simple hecho de crear un usuario en Brocade FOS NO lo habilita necesariamente como usuario SNMPv3: debe colocarlo en una de las ranuras de usuario v3. 
 
 
-| Las recopilaciones de rendimiento fallan con... Nivel de seguridad no compatible... | Ha configurado su recopilador DII para utilizar SNMPv3, pero con configuraciones de cifrado (también conocidas como privacidad) y/o autorización que no están habilitadas en el dispositivo en cuestión. 
+| Las recopilaciones de rendimiento fallan con... Nivel de seguridad no compatible... | Ha configurado su recopilador DII para utilizar SNMPv3, pero con configuraciones de cifrado (también conocido como privacidad) y/o autorización que no están habilitadas en el dispositivo en cuestión. 
 
 
-| La recopilación de rendimiento falla con... La contraseña de privacidad vacía solo se permite para el protocolo de privacidad NINGUNO | Ha configurado su recopilador DII para usar SNMPv3, con un cifrado, también conocido como protocolo de privacidad (AES, etc.), pero tiene un valor de "Contraseña de privacidad SNMP" vacío, por lo que DII no puede negociar flujos de datos SNMPv3 cifrados con este dispositivo. 
+| La recopilación de rendimiento falla con... La contraseña de privacidad vacía solo está permitida para el protocolo de privacidad NINGUNO | Ha configurado su recopilador DII para usar SNMPv3, con un cifrado, también conocido como protocolo de privacidad (AES, etc.), pero tiene un valor de "Contraseña de privacidad SNMP" vacío, por lo que DII no puede negociar flujos de datos SNMPv3 cifrados con este dispositivo. 
 
 
-| La recopilación de rendimiento falla con .....VF:nn, error: Sin acceso... | Ha configurado su recopilador DII para usar SNMPv3 en un dispositivo con varias estructuras virtuales habilitadas, pero el usuario SNMPv3 no tiene permisos para la red neuronal de la estructura virtual (VF). DII no admite el descubrimiento parcial de un activo físico; siempre debe otorgarle acceso a DII a las 128 VF posibles de forma proactiva, ya que DII siempre intentará recuperar datos de rendimiento de cualquier VF existente en un dispositivo físico determinado. 
+| La recopilación de rendimiento falla con .....VF:nn, error: Sin acceso... | Ha configurado su recopilador DII para usar SNMPv3 en un dispositivo con múltiples Virtual Fabrics habilitados, pero el usuario SNMPv3 NO tiene derechos para VF NN.  DII no admite el descubrimiento parcial de un activo físico: siempre debe otorgar a DII acceso a los 128 VF posibles de manera proactiva, ya que DII siempre intentará recuperar datos de rendimiento de cualquier VF existente en un dispositivo físico determinado. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

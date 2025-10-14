@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_emc_vnx_file.html 
 keywords: data collector, Celerra, EMC, DELL, VNX File 
-summary: Configuración del recopilador DE datos DE DELL EMC Celerra. 
+summary: Configuración del recopilador de datos DELL EMC Celerra. 
 ---
-= Recopilador DE datos DE DELL EMC VNX File (anteriormente Celerra Unified Storage System)
+= Recopilador de datos de archivos DELL EMC VNX (anteriormente Celerra Unified Storage System)
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este recopilador de datos adquiere información de inventario de VNX File Storage System. Para la configuración, este recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de sólo lectura.
+Este recopilador de datos adquiere información de inventario del sistema de almacenamiento de archivos VNX.  Para la configuración, este recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de solo lectura.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de archivos VNX. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de archivos VNX.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Servidor de red Celerra/pool de almacenamiento Celerra | Pool de almacenamiento 
+| Servidor de red Celerra/Grupo de almacenamiento Celerra | Pool de almacenamiento 
 
 
 | Sistema de archivos | Volumen interno 
 
 
-| Transmisor de datos | Controladora 
+| Transferencia de datos | Controladora 
 
 
-| Sistema de archivos montado en un transportador de datos | Recurso compartido de archivos 
+| Sistema de archivos montado en un transportador de datos | Compartir archivos 
 
 
-| Exportaciones CIFS y NFS | Share 
+| Exportaciones CIFS y NFS | Compartir 
 
 
-| Volumen de disco | LUN back-end 
+| Volumen del disco | LUN de backend 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -62,13 +62,13 @@ Necesita lo siguiente para configurar este recopilador de datos:
 | Campo | Descripción 
 
 
-| Dirección IP de archivo VNX | Dirección IP o nombre de dominio completo del dispositivo VNX File 
+| Dirección IP del archivo VNX | Dirección IP o nombre de dominio completo del dispositivo de archivos VNX 
 
 
-| Nombre de usuario | Nombre utilizado para iniciar sesión en el dispositivo VNX File 
+| Nombre de usuario | Nombre utilizado para iniciar sesión en el dispositivo de archivos VNX 
 
 
-| Contraseña | Contraseña utilizada para iniciar sesión en el dispositivo VNX File 
+| Password | Contraseña utilizada para iniciar sesión en el dispositivo de archivos VNX 
 |===
 
 
@@ -83,9 +83,9 @@ Necesita lo siguiente para configurar este recopilador de datos:
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -93,9 +93,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: No se puede continuar mientras la actualización DART está en curso | Solución posible: Detenga el recopilador de datos y espere a que finalice la actualización de DART antes de intentar otra solicitud de adquisición. 
+| Error: No se puede continuar mientras la actualización de DART está en curso | Posible solución: pause el recopilador de datos y espere a que se complete la actualización de DART antes de intentar otra solicitud de adquisición. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

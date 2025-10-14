@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_docker.html 
 keywords: telegraf, installation, install, docker 
-summary: Configuración de recopilador de datos de Docker 
+summary: Configuración del recopilador de datos de Docker 
 ---
 = Recopilador de datos de Docker
 :hardbreaks:
@@ -10,20 +10,20 @@ summary: Configuración de recopilador de datos de Docker
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de Docker.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de Docker.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Docker.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Seleccione Docker.
 +
-Si no ha configurado un agente para la recopilación, se le pedirá que lo haga link:task_config_telegraf_agent.html["instale un agente"] en su inquilino.
+Si no ha configurado un agente para la recopilación, se le solicitará que lo haga.link:task_config_telegraf_agent.html["instalar un agente"] en su inquilino.
 
 +
-Si ya ha configurado un agente, seleccione el sistema operativo o la plataforma adecuados y haga clic en *continuar*.
+Si ya tiene un agente configurado, seleccione el sistema operativo o la plataforma adecuados y haga clic en *Continuar*.
 
-. Siga las instrucciones de la pantalla de configuración de Docker para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Siga las instrucciones en la pantalla de configuración de Docker para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:DockerDCConfigLinux.png["Configuración de Docker"]
@@ -32,13 +32,13 @@ image:DockerDCConfigLinux.png["Configuración de Docker"]
 
 == Configuración
 
-El complemento de entrada de Telegraf para Docker recopila métricas a través de un socket UNIX o un extremo TCP especificado.
+El complemento de entrada Telegraf para Docker recopila métricas a través de un socket UNIX específico o un punto final TCP.
 
 
 
 === Compatibilidad
 
-La configuración se desarrolló en comparación con Docker, versión 1.12.6.
+La configuración se desarrolló con la versión 1.12.6 de Docker.
 
 
 
@@ -46,12 +46,12 @@ La configuración se desarrolló en comparación con Docker, versión 1.12.6.
 
 
 
-=== Acceso a Docker a través de un socket de UNIX
+=== Acceder a Docker a través de un socket UNIX
 
-Si el agente de Telegraf se está ejecutando en baremetal, agregue el usuario de Unix telegraf al grupo Unix docker ejecutando lo siguiente:
+Si el agente Telegraf se ejecuta en hardware, agregue el usuario Unix de Telegraf al grupo Unix de Docker ejecutando lo siguiente:
 
  sudo usermod -aG docker telegraf
-Si el agente de Telegraf se ejecuta en un pod de Kubernetes, exponga el socket Unix Docker asignando el socket al pod como un volumen y, a continuación, monte dicho volumen a /var/run/docker.sock. Por ejemplo, agregue lo siguiente a PodSpec:
+Si el agente Telegraf se ejecuta dentro de un pod de Kubernetes, exponga el socket Docker Unix asignándolo al pod como un volumen y luego montando ese volumen en /var/run/docker.sock.  Por ejemplo, agregue lo siguiente al PodSpec:
 
 [listing]
 ----
@@ -62,7 +62,7 @@ hostPath:
 path: /var/run/docker.sock
 type: File
 ----
-A continuación, añada lo siguiente al contenedor:
+Luego, agregue lo siguiente al contenedor:
 
 [listing]
 ----
@@ -71,48 +71,48 @@ volumeMounts:
 - name: docker-sock
 mountPath: /var/run/docker.sock
 ----
-Tenga en cuenta que el instalador de Data Infrastructure Insights proporcionado para la plataforma Kubernetes se encarga de esta asignación de forma automática.
+Tenga en cuenta que el instalador de Data Infrastructure Insights proporcionado para la plataforma Kubernetes se encarga de esta asignación automáticamente.
 
 
 
-=== Acceda a Docker a través de un extremo de TCP
+=== Acceder a Docker a través de un punto final TCP
 
-De forma predeterminada, Docker utiliza el puerto 2375 para el acceso no cifrado y el puerto 2376 para el acceso cifrado.
+De forma predeterminada, Docker utiliza el puerto 2375 para acceso sin cifrar y el puerto 2376 para acceso cifrado.
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Motor Docker | Namespace Docker Engine | Nombre de nodo IP nodo UUID nodo OS Kubernetes Cluster Unidad de versión de Docker | Contenedores de memoria Contenedores en pausa Contenedores en ejecución Contenedores CPUs detenidas Ir rutinas Ir Imágenes Listener Eventos usados Descriptores de archivos datos disponibles datos totales datos usados metadatos disponibles total de metadatos usados Tamaño de bloque usado de Pool 
+| Motor Docker | Motor Docker de espacio de nombres | Nombre del nodo IP del nodo UUID del nodo SO del nodo Clúster de Kubernetes Versión de Docker Unidad | Contenedores de memoria Contenedores en pausa Contenedores en ejecución Contenedores detenidos CPU Rutinas Go Imágenes Eventos de escucha Descriptores de archivos Datos disponibles Datos totales utilizados Metadatos disponibles Metadatos totales utilizados Tamaño de bloque del pool 
 
 
-| Contenedor Docker | Nombre de contenedor de espacio de nombres Docker Engine | Contenedor Kubernetes Hash puertos de contenedor Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Message Container Termination período Grace Container Status Container Version Nombre de nodo Nombre de contenedor Kubernetes Container Log Nombre de contenedor Kubernetes Nombre de contenedor Docker Nombre de Kubernetes Pod Nombre de espacio de nombres Kubernetes Pod Pod UID Kubernetes Sandbox ID nodo IP UUID nodo Versión Docker Configuración de Kubernetes IO visto Kubernetes IO Config Source OpenShift IO SCC Kubernetes Descripción Kubernetes Display Name OpenShift Etiquetas Kompose Service Pod Template Hash Controller revisión plantilla Hash Pod Generation License Schema creación Fecha Esquema de licencia Nombre de esquema de licencia URL Esquema de URL de SCHEMA Esquema de proveedor Versión de esquema Versión de esquema Maintainer Customer Pod Kubernetes Statilusionados Nombre de Pod arrendatario Arquitectura de consola web autoritativa URL de origen Fecha de creación de host RH alcance de distribución de componentes instalar Resumen de ejecución Desinstalar VCS Ref Tipo de VCS Id. De contenedor de estado de proveedor Versión de mantenimiento | Memoria Active Anonymous Memory caché de archivos activos memoria de límite jerárquico memoria inactiva memoria de archivos inactivos límite de memoria de archivos asignados memoria de uso máximo memoria de página fallo memoria de página memoria de fallo principal memoria paginada en memoria salida residente memoria Tamaño de conjunto residente Tamaño de memoria Resident Tamaño enorme memoria total activa Memoria anónima memoria total Active File Memory memoria total Anonymous Inactive memoria total Inactive File memoria total asignada total Page memoria total Página falla memoria Principal error memoria total paginado en memoria total paginado agotado memoria total Resident Set Size memoria total Resident Set Size enorme memoria total Memoria de Unevictable uso de memoria de Unevictable uso de memoria porcentaje de uso de código de salida OOM asesinado PID iniciado en fallo de Streak 
+| Contenedor Docker | Espacio de nombres Nombre del contenedor Motor Docker | Hash de contenedor de Kubernetes Puertos de contenedor de Kubernetes Conteo de reinicios de contenedor de Kubernetes Ruta de mensaje de terminación de contenedor de Kubernetes Política de mensaje de terminación de contenedor de Kubernetes Período de gracia de terminación de pod de Kubernetes Imagen de contenedor Estado de contenedor Versión de contenedor Nombre de nodo Ruta de registro de contenedor de Kubernetes Nombre de contenedor de Kubernetes Tipo de Docker de Kubernetes Nombre de pod de Kubernetes Espacio de nombres de pod de Kubernetes UID de pod de Kubernetes ID de Sandbox de Kubernetes IP de nodo UUID de nodo Versión de Docker Configuración de E/S de Kubernetes vista Origen de configuración de E/S de Kubernetes SCC de E/S de OpenShift Descripción de Kubernetes Nombre para mostrar de Kubernetes Etiquetas de OpenShift Hash de plantilla de pod de servicio de Kompose Controlador de revisión Generación de plantilla de pod de hash Esquema de licencia Fecha de compilación Licencia de esquema Nombre de esquema URL de esquema URL de VCS de esquema Proveedor de esquema Versión de esquema Mantenedor de versión de esquema Pod de cliente Nombre de pod de StatefulSet de Kubernetes Inquilino Arquitectura de Webconsole URL de origen autorizada Fecha de compilación Host de compilación de RH Componente de RH Ámbito de distribución Instalar Versión Ejecutar Resumen Desinstalar VCS Ref. VCS Tipo Proveedor Versión Estado de salud ID del contenedor | Memoria activa Memoria anónima Memoria activa Archivo caché Memoria Límite jerárquico Memoria inactiva Memoria anónima Límite de memoria de archivo inactivo Archivo asignado a memoria Uso máximo de memoria Fallo de página de memoria Fallo mayor de página de memoria Memoria paginada de entrada Memoria paginada de salida Tamaño de conjunto residente de memoria Tamaño de conjunto residente de memoria Enorme Memoria total Memoria anónima activa Total Memoria de archivo activa Total Memoria caché Total Memoria anónima inactiva Total Memoria de archivo inactiva Total Memoria de archivo asignado Total Memoria de archivo asignado Total Fallo de página de memoria Total Fallo mayor de página de memoria Total paginada de entrada Memoria total paginada de salida Memoria total Tamaño de conjunto residente Total de memoria Tamaño de conjunto residente Enorme Memoria total Memoria no desalojable Uso de memoria no desalojable Porcentaje de uso de memoria Código de salida OOM PID eliminado Iniciado en racha de fallos 
 
 
-| Docker Container Block IO | Nombre de contenedor de espacio de nombres dispositivo Docker Engine | Contenedor Kubernetes Hash puertos de contenedor Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Message Container Termination período Grace Container Status Container Version Nombre de nodo Nombre de contenedor Kubernetes Container Log Nombre de contenedor Kubernetes Nombre de contenedor Docker Nombre de Kubernetes Pod Nombre de espacio de nombres Kubernetes Pod Pod UID Kubernetes Sandbox ID nodo IP UUID de nodo Versión Docker Configuración de Kubernetes vista Código de configuración de Kubernetes OpenShift SCC Kubernetes Descripción de Kubernetes Nombre de visualización OpenShift Etiquetas Esquema Versión de esquema plantilla Pod Revisión de controlador de hash generación de plantilla de Pod de esquema de servicio creación de esquema de fecha de creación de esquema de licencia Nombre de esquema de esquema de cliente de proveedor Pod Kubernetes StatefugSet Pod Name Intenant WebConsole Fecha de creación Arquitectura de proveedor Dirección URL de origen autoritativa RH Build Host RH Component Distribution Scope Install Maintainer Release Run Summary Uninstall VCS Ref VCS Type Version Schema URL Schema de dirección URL VCS ID de contenedor de versión del esquema | Bytes de servicio IO asíncrono recursivo bytes de servicio IO de lectura recursiva bytes de servicio IO de sincronización recursiva bytes de servicio IO total de servicio E/S bytes de servicio E/S de escritura recursiva E/S de escritura recursiva E/S asincrónica Serviced Recursive Read IO Serviced Recursive Sync IO Serviced Recursive total IO total IO Serviced Recursive Write 
+| E/S de bloque de contenedor Docker | Espacio de nombres Nombre del contenedor Dispositivo Docker Motor | Hash de contenedor de Kubernetes Puertos de contenedor de Kubernetes Conteo de reinicios de contenedor de Kubernetes Ruta de mensaje de terminación de contenedor de Kubernetes Política de mensaje de terminación de contenedor de Kubernetes Período de gracia de terminación de pod de Kubernetes Imagen de contenedor Estado de contenedor Versión de contenedor Nombre de nodo Ruta de registro de contenedor de Kubernetes Nombre de contenedor de Kubernetes Tipo de Docker de Kubernetes Nombre de pod de Kubernetes Espacio de nombres de pod de Kubernetes UID de pod de Kubernetes ID de Sandbox de Kubernetes IP de nodo UUID de nodo Versión de Docker Configuración de Kubernetes vista Origen de configuración de Kubernetes OpenShift SCC Kubernetes Descripción Nombre para mostrar de Kubernetes Etiquetas de OpenShift Esquema Versión de esquema Hash de plantilla de pod Controlador Revisión Generación de plantilla de pod de hash Esquema de servicio Kompose Fecha de compilación Licencia de esquema Nombre de esquema Proveedor de esquema Pod de cliente Conjunto de estado de Kubernetes Nombre de pod Inquilino Fecha de compilación de Webconsole Proveedor de licencia Arquitectura URL de origen autorizada Host de compilación de RH Componente de RH Distribución Ámbito Instalar Mantenedor Resumen de ejecución de lanzamiento Desinstalar Referencia de VCS Tipo de VCS Esquema de versión Esquema de URL VCS Esquema de URL Versión ID del contenedor | Bytes de servicio de E/S recursivos asíncronos Bytes de servicio de E/S recursivos Lectura Bytes de servicio de E/S recursivos síncronos Bytes de servicio de E/S recursivos Total Bytes de servicio de E/S recursivos Escritura E/S con servicio recursivo asíncrono Lectura recursiva E/S con servicio recursivo síncrono Total E/S con servicio recursivo Escritura recursiva 
 
 
-| Red de contenedores Docker | Namespace Container Name Network Docker Engine | Contenedor Image Container Status Container Status Container Version Nombre de nodo IP nodo UUID de nodo SO K8s Cluster Docker Version Container ID | RX bytes borrados RX errores RX paquetes RX bytes TX bytes TX errores TX paquetes TX 
+| Red de contenedores Docker | Espacio de nombres Nombre del contenedor Red Motor Docker | Imagen del contenedor Estado del contenedor Versión del contenedor Nombre del nodo IP del nodo UUID del nodo Sistema operativo del nodo Clúster K8s Versión de Docker ID del contenedor | Bytes de RX descartados Bytes de RX Errores de RX Paquetes de RX Bytes de TX descartados Bytes de TX Errores de TX Paquetes de TX 
 
 
-| CPU de contenedor Docker | Namespace Container Name CPU Docker Engine | Kubernetes Container Hash Kubernetes Container Ports Kubernetes Container Restart Count Kubernetes Container Termination Message Path Kubernetes Container Termination Message Policy Kubernetes Pod Termination Message período Grace Kubernetes Config visto Kubernetes Config OpenShift SCC Container Image Container Status Container Version Nombre de nodo Nombre de contenedor Kubernetes Container Log Nombre de contenedor Kubernetes Docker Escriba Kubernetes Pod Name Kubernetes Pod Namespace Kubernetes Pod UID Kubernetes Sandbox ID nodo IP UUID nodo SO nodo Kubernetes Cluster Docker Versión Kubernetes Descripción Kubernetes Mostrar nombre OpenShift Etiquetas Esquema Versión plantilla Pod Revisión controladora Hash plantilla generación Hash Pod Nombre de esquema de servicio creación de esquema de fecha de creación de esquema de licencia Nombre de esquema de licencia Esquema Proveedor de cliente ilusionados Kubernetes StatSet Pod Nombre de Pod arrendatario WebConsole Fecha de creación Licencia Arquitectura de proveedor Dirección de origen autoritativa RH construir Host RH ámbito de distribución de componentes instalar Maintainer Versión de mantenimiento Resumen Desinstalar VCS Ref Tipo de VCS Versión de esquema URL Esquema de VCS ID de contenedor de versión de esquema de VCS | Los períodos de aceleración aceleran los períodos de regulación acelerando el uso de tiempo en modo Kernel en uso de modo Usuario Porcentaje de uso de sistema total 
+| CPU de contenedor Docker | Espacio de nombres Nombre del contenedor CPU Motor Docker | Hash de contenedor de Kubernetes Puertos de contenedor de Kubernetes Conteo de reinicios de contenedor de Kubernetes Ruta de mensaje de terminación de contenedor de Kubernetes Política de mensaje de terminación de contenedor de Kubernetes Período de gracia de terminación de pod de Kubernetes Configuración de Kubernetes vista Origen de la configuración de Kubernetes Imagen de contenedor de SCC de OpenShift Estado del contenedor Versión del contenedor Nombre del nodo Ruta de registro de contenedor de Kubernetes Nombre del contenedor de Kubernetes Tipo de Docker de Kubernetes Nombre del pod de Kubernetes Espacio de nombres del pod de Kubernetes UID del pod de Kubernetes ID de Sandbox de Kubernetes IP del nodo UUID del nodo Sistema operativo del nodo Versión de Docker del clúster de Kubernetes Descripción de Kubernetes Nombre para mostrar de Kubernetes Etiquetas de OpenShift Versión del esquema Hash de plantilla de pod Revisión del controlador Generación de plantilla de pod de hash Esquema de servicio Kompose Fecha de compilación Licencia del esquema Nombre del esquema Proveedor del esquema Pod del cliente Nombre del pod de StatefulSet de Kubernetes Fecha de compilación de Webconsole Proveedor de licencia Arquitectura URL de origen autorizada Host de compilación de RH Componente de RH Distribución Ámbito Instalar Mantenedor Resumen de ejecución de lanzamiento Desinstalar VCS Ref Tipo de VCS Versión Esquema URL Esquema URL de VCS Versión del esquema ID del contenedor | Periodos de limitación Periodos de limitación Tiempo de limitación Uso en modo kernel Uso en modo usuario Porcentaje de uso Uso del sistema Total 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| No veo mis métricas de Docker en Data Infrastructure Insights después de seguir las instrucciones en la página de configuración. | Compruebe si el agente de Telegraf registra el siguiente error: E! Error en el plugin [inputs.docker]: Se le ha denegado el permiso al intentar conectarse a la toma del demonio Docker. Si lo hace, siga los pasos necesarios para proporcionar al agente Telegraf acceso al socket Unix Docker según se ha especificado anteriormente. 
+| No veo mis métricas de Docker en Data Infrastructure Insights después de seguir las instrucciones en la página de configuración. | Consulte los registros del agente Telegraf para ver si informa el siguiente error: E!  Error en el complemento [inputs.docker]: Se denegó el permiso al intentar conectarse al socket del demonio Docker. Si es así, tome las medidas necesarias para proporcionar al agente Telegraf acceso al socket Unix de Docker como se especificó anteriormente. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

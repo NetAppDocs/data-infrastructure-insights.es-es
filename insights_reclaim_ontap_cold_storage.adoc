@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: insights_reclaim_ontap_cold_storage.html 
 keywords: insight, greedy, degraded, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recursos en su inquilino. 
+summary: Insights le brinda una visión de cómo los recursos impactan a otros recursos en su inquilino. 
 ---
-= Información: Recupere el almacenamiento de datos fríos de ONTAP
+= Perspectivas: Recupere el almacenamiento en frío de ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,44 +14,44 @@ summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recurs
 
 
 [role="lead"]
-La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre capacidad fría, ahorros potenciales de costes y energía, y elementos de acción recomendados para volúmenes en sistemas de ONTAP.
+La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre la capacidad de frío, los posibles ahorros de costos y energía y las acciones recomendadas para los volúmenes en los sistemas ONTAP .
 
-Para ver estos detalles, navegue a *Paneles de mando > Información* y eche un vistazo a la información _Reclaim ONTAP Cold Storage_. Tenga en cuenta que este Insight solo incluirá los almacenamientos afectados si Data Infrastructure Insights ha detectado almacenamiento en frío; de lo contrario, aparecerá un mensaje que indica que todos se pueden borrar.
+Para ver esta información, vaya a *Paneles > Información* y eche un vistazo a la información _Reclaim ONTAP Cold Storage_.  Tenga en cuenta que este Insight solo enumerará los almacenamientos afectados si Data Infrastructure Insights ha detectado almacenamiento en frío; de lo contrario, verá un mensaje de "todo despejado".
 
-Tenga en cuenta que no se muestran los datos inactivos de menos de 30 días de antigüedad.
+Tenga en cuenta que no se muestran los datos fríos con menos de 30 días de antigüedad.
 
-image:Cold_Data_Insight_List.png["Lista de Insight que muestra 3 almacenamientos con datos fríos"]
+image:Cold_Data_Insight_List.png["Lista de información que muestra 3 almacenamientos con datos fríos"]
 
-La descripción de Insight ofrece una indicación rápida de la cantidad de datos detectados como «inactivos» y del almacenamiento en el que residen los datos. La tabla también proporciona un recuento de cargas de trabajo con datos inactivos.
+La descripción de Insight proporciona una indicación rápida de la cantidad de datos detectados como "fríos" y en qué almacenamiento residen esos datos.  La tabla también proporciona un recuento de cargas de trabajo con datos fríos.
 
-Al seleccionar un Insight de la lista se abre una página que muestra más detalles, incluidas recomendaciones para mover datos al cloud o reducir el ciclo de discos unificados, así como un ahorro estimado en costes y energía que podría obtener al implementar estas recomendaciones. La página incluso proporciona un enlace útil link:https://bluexp.netapp.com/cloud-tiering-service-tco["Calculadora de TCO de NetApp"]para que pueda experimentar con los números.
+Al seleccionar una Insight de la lista, se abre una página que muestra más detalles, incluidas recomendaciones para mover datos a la nube o dejar de usar discos unificados, así como un estimado de costos y ahorros de energía que podría obtener al implementar esas recomendaciones.  La página incluso proporciona un enlace útil alink:https://bluexp.netapp.com/cloud-tiering-service-tco["Calculadora de TCO de NetApp"] para que puedas experimentar con los números.
 
-image:Cold_Data_Power_Info.png["Información de alimentación de datos fríos"]
+image:Cold_Data_Power_Info.png["Información sobre el poder de los datos fríos"]
 
 
 
 === Recomendaciones
 
-En la página de Insight, expanda las *Recomendaciones* para explorar las siguientes opciones:
+En la página Insight, expanda las *Recomendaciones* para explorar las siguientes opciones:
 
-* Mueva cargas de trabajo no utilizadas (zombis) a un nivel de almacenamiento de menor coste (HDD).
+* Mueva las cargas de trabajo no utilizadas (zombies) a un nivel de almacenamiento de menor costo (HDD)
 +
-Utilizando el indicador zombie, el almacenamiento de datos de reserva y el número de días, encontrar la mayor cantidad de datos más inactivos y mover la carga de trabajo a un nivel de almacenamiento de menor coste (como un pool de almacenamiento que utiliza almacenamiento en disco duro). Una carga de trabajo se considera un “zombi” cuando IS no ha recibido ninguna solicitud de E/S significativa durante 30 días o más.
+Utilizando la bandera zombie, el almacenamiento en frío y la cantidad de días, encuentre la cantidad de datos más grande y más fría y mueva la carga de trabajo a un nivel de almacenamiento de menor costo (como un grupo de almacenamiento que utiliza almacenamiento en disco duro).  Una carga de trabajo se considera "zombie" cuando no ha recibido ninguna solicitud de E/S significativa durante 30 días o más.
 
-* Elimine las cargas de trabajo no utilizadas
+* Eliminar cargas de trabajo no utilizadas
 +
 Verifique qué cargas de trabajo no están en uso y considere archivarlas o eliminarlas del sistema de almacenamiento.
 
 * Considere la solución Fabric Pool de NetApp
 +
-NetApp link:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Solución Fabric Pool"]organiza automáticamente en niveles los datos fríos en un almacenamiento en cloud de bajo coste, lo que aumenta la eficiencia de su nivel de rendimiento y ofrece protección de datos remota.
+De NetApplink:https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html#features["Solución para piscinas de tela"] clasifica automáticamente los datos fríos en un almacenamiento en la nube de bajo costo, lo que aumenta la eficiencia de su nivel de rendimiento y proporciona protección de datos remota.
 
 
 
 
 
-=== Visualiza y explora
+=== Visualizar y explorar
 
-Los gráficos y la tabla proporcionan información adicional sobre tendencias, así como permiten profundizar en las cargas de trabajo individuales.
+Los gráficos y la tabla proporcionan información de tendencias adicional y también le permiten analizar en profundidad las cargas de trabajo individuales.
 
 image:Cold_Data_Storage_Trend.png["Gráficos de resumen de datos fríos"] image:Cold_Data_Workload_Table.png["Tabla de carga de trabajo de datos fríos"]

@@ -1,106 +1,106 @@
 ---
 sidebar: sidebar 
 permalink: reporting_managing_reports.html 
-summary: 'Personalización de la salida y entrega de informes, copia de informes en el portapapeles, apertura de informes (XML).' 
+summary: 'Personalizar la salida y entrega de informes, copiar informes al portapapeles, abrir informes (XML).' 
 keywords: reporting, cognos, data warehouse, dwh, managing, customizing, copying 
 ---
-= Gestión de Informes
+= Gestión de informes
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Puede personalizar el formato de salida y la entrega de un informe, establecer propiedades o programas de informe e informes de correo electrónico.
+Puede personalizar el formato de salida y la entrega de un informe, establecer propiedades o programaciones de informes y enviar informes por correo electrónico.
 
 
-NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"].
+NOTE: La función de informes está disponible en Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edición Premium"] .
 
 
-IMPORTANT: Antes de realizar cambios en los permisos de informes o en la seguridad, debe copiar los informes de «Mi contenido» en la carpeta «Contenido del equipo» para asegurarse de que se guardan los informes.
+IMPORTANT: Antes de realizar cambios en los permisos de informes o en la seguridad, debe copiar los informes de "Mi contenido" a la carpeta "Contenido del equipo" para asegurarse de que se guarden los informes.
 
 
 
-== Personalización del formato de salida y la entrega de un informe
+== Personalizar el formato de salida y la entrega de un informe
 
 Puede personalizar el formato y el método de entrega de los informes.
 
-. En el portal de informes de información sobre la infraestructura de datos, vaya a *Menú > Contenido > Mi contenido/Contenido del equipo*. Pase el ratón sobre el informe que desee personalizar y abra el menú de tres puntos.
+. En el Portal de informes de Data Infrastructure Insights , vaya a *Menú > Contenido > Mi contenido/Contenido del equipo*.  Pase el cursor sobre el informe que desea personalizar y abra el menú de "tres puntos".
 
 
-image:Reporting_Output_and_Delivery.png["Salida y entrega del informe"]
+image:Reporting_Output_and_Delivery.png["Salida y entrega de informes"]
 
 . Haga clic en *Propiedades > Programación*
-. Puede establecer las siguientes opciones:
+. Puede configurar las siguientes opciones:
 +
-** *Programar* cuando desee que se ejecuten los informes.
-** Elija *Opciones* para el formato del informe y la entrega (Guardar, Imprimir, Correo electrónico) e Idiomas para el informe.
+** *Programe* cuándo desea que se ejecuten los informes.
+** Elija *Opciones* para el formato y la entrega del informe (Guardar, Imprimir, Correo electrónico) e Idiomas para el informe.
 
 
-. Haga clic en *Guardar* para producir el informe utilizando las selecciones que realizó.
+. Haga clic en *Guardar* para generar el informe utilizando las selecciones realizadas.
 
 
 
 
-== Copia de un informe en el portapapeles
+== Copiar un informe al portapapeles
 
-Utilice este proceso para copiar un informe en el portapapeles.
+Utilice este proceso para copiar un informe al portapapeles.
 
-. Seleccione un informe para copiar (*Menú > Contenido > Mi contenido o Contenido del equipo*)
+. Seleccione un informe para copiar desde (*Menú > Contenido > Mi contenido o Contenido del equipo*)
 . Seleccione _Editar informe_ en el menú desplegable del informe
 +
 image:Reporting_Edit_Report.png["Edición de un informe"]
 
-. En la parte superior derecha de la pantalla, abre el menú de tres puntos junto a “Propiedades”.
-. Selecciona *Copiar informe al portapapeles*.
+. En la parte superior derecha de la pantalla, abra el menú de "tres puntos" junto a "Propiedades".
+. Seleccione *Copiar informe al portapapeles*.
 +
-image:Reporting_Copy_To_Clipboard.png["Copia de un informe en el portapapeles"]
+image:Reporting_Copy_To_Clipboard.png["Copiar un informe al portapapeles"]
 
 
 
 
 
-== Apertura de informes desde el portapapeles
+== Abrir informes desde el portapapeles
 
-Puede abrir una especificación de informe que se haya copiado previamente en el portapapeles.
+Puede abrir una especificación de informe que se haya copiado previamente al portapapeles.
 
-Acerca de esta tarea Comience creando un nuevo informe o abriendo un informe existente que desea reemplazar con el informe copiado. Los pasos a continuación son para un nuevo informe.
+Acerca de esta tarea Comience creando un nuevo informe o abriendo un informe existente que desee reemplazar con el informe copiado.  Los pasos a continuación son para un nuevo informe.
 
-. Selecciona *Menú > +Nuevo > Informe* y crea un informe en blanco.
-. En la parte superior derecha de la pantalla, abre el menú de tres puntos junto a “Propiedades”.
-. Selecciona *Abrir informe desde el portapapeles*.
+. Seleccione *Menú > +Nuevo > Informe* y cree un informe en blanco.
+. En la parte superior derecha de la pantalla, abra el menú de "tres puntos" junto a "Propiedades".
+. Seleccione *Abrir informe desde el portapapeles*.
 
 
 image:Reporting_Open_From_Clipboard.png["Abrir un informe desde el portapapeles"]
 
-. Pega el código copiado en la ventana y selecciona *OK*.
-. Seleccione el icono de disquete para guardar el informe.
-. Seleccione dónde guardar el informe (_My Content_, _Team Content_ o cree una nueva carpeta).
-. Dale al nuevo informe un nombre significativo y selecciona *Guardar*.
+. Pegue el código copiado en la ventana y seleccione *Aceptar*.
+. Seleccione el icono del disquete para guardar el informe.
+. Elija dónde guardar el informe (_Mi contenido_, _Contenido del equipo_ o crear una nueva carpeta).
+. Dale un nombre significativo al nuevo informe y selecciona *Guardar*.
 
 
 
 
 == Editar un informe existente
 
-Tenga en cuenta que la edición de archivos en su ubicación predeterminada corre el riesgo de que esos informes se sobrescriban en la siguiente actualización del catálogo de informes. Se recomienda guardar el informe editado con un nuevo nombre o almacenarlo en una ubicación no predeterminada.
+Tenga en cuenta que editar archivos en su ubicación predeterminada implica el riesgo de que dichos informes se sobrescriban en la próxima actualización del catálogo de informes.  Se recomienda guardar el informe editado con un nombre nuevo o almacenarlo en una ubicación que no sea la predeterminada.
 
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Aquí encontrará sugerencias para la solución de problemas con la creación de informes.
+Aquí encontrará sugerencias para solucionar problemas con los informes.
 
 |===
 
 
-| *Problema:* | *Pruebe esto:* 
+| *Problema:* | *Prueba esto:* 
 
 
-| Cuando se programa el envío de un informe por correo electrónico, el nombre del usuario que inició sesión se rellena previamente en el campo “to” del correo electrónico. Sin embargo, el nombre tiene la forma de "nombre apellido" (nombre, espacio, apellido). Dado que no se trata de una dirección de correo electrónico válida, el correo electrónico no se enviará cuando se ejecute el informe programado. | Al programar el informe que se va a enviar por correo electrónico, borre el nombre rellenado previamente e introduzca una dirección de correo electrónico válida con el formato correcto en el campo “to”. 
+| Al programar el envío de un informe por correo electrónico, el nombre del usuario que inició sesión se completa previamente en el campo “Para” del correo electrónico.  Sin embargo, el nombre tiene el formato "nombre apellido" (nombre, espacio, apellido).  Dado que esta no es una dirección de correo electrónico válida, el correo electrónico no se podrá enviar cuando se ejecute el informe programado. | Al programar el envío del informe por correo electrónico, borre el nombre previamente completado e ingrese una dirección de correo electrónico válida y con el formato correcto en el campo “Para”. 
 
 
-| Mi informe programado se envía por correo electrónico, pero no se puede acceder al informe si el origen es de la carpeta “Mi contenido”. | Para evitarlo, el informe o la vista de informe deben guardarse en la carpeta «Contenido del equipo > Informes personalizados - xxxxxx» y en la programación creada a partir de esa versión guardada. La carpeta Informes personalizados - xxxxxx es visible para todos los usuarios del inquilino. 
+| Mi informe programado se envía por correo electrónico, pero no se puede acceder a él si el origen proviene de la carpeta “Mi contenido”. | Para evitar esto, el informe o la vista del informe se deben guardar en la carpeta “Contenido del equipo > Informes personalizados - xxxxxx” y el cronograma se debe crear a partir de esa versión guardada.  La carpeta "Informes personalizados - xxxxxx" es visible para todos los usuarios del inquilino. 
 
 
-| Al guardar un trabajo, la carpeta puede mostrar “Contenido del equipo” con la lista de contenido de “Informes personalizados - xxxxxx”, sin embargo, no puede guardar el trabajo aquí porque Cognos cree que esta es la carpeta “Contenido del equipo” donde no tiene acceso para escribir. | El trabajo es crear una nueva carpeta con un nombre único (es decir, “NewFolder”) y guardarla allí, o guardarla en “Mi contenido” y luego copiar / mover a “Informes personalizados - xxxxxx”. 
+| Al guardar un trabajo, la carpeta puede mostrar “Contenido del equipo” con la lista de contenido de “Informes personalizados - xxxxxx”, sin embargo, no puede guardar el trabajo aquí porque Cognos piensa que esta es la carpeta “Contenido del equipo” donde no tiene acceso para escribir. | La solución alternativa es crear una nueva carpeta con un nombre único (es decir, “NuevaCarpeta”) y guardarla allí, o guardarla en “Mi contenido” y luego copiarla/moverla a “Informes personalizados - xxxxxx”. 
 |===

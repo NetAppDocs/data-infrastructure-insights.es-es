@@ -1,42 +1,42 @@
 ---
 sidebar: sidebar 
 permalink: security_admin_tool.html 
-summary: Data Infrastructure Insights utiliza las mejores prácticas de seguridad durante todo el ciclo de vida de la versión. 
+summary: Data Infrastructure Insights sigue las mejores prácticas de seguridad durante todo el ciclo de vida del lanzamiento. 
 keywords: security, risk, protection 
 ---
-= Herramienta securityadmin
+= Herramienta SecurityAdmin
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights incluye funciones de seguridad que permiten que tu entorno funcione con una seguridad mejorada. Las características incluyen mejoras en el cifrado, hash de contraseñas y la capacidad de cambiar contraseñas de usuario internas, así como pares de claves que cifran y descifran contraseñas.
+Data Infrastructure Insights Incluye funciones de seguridad que permiten que su entorno funcione con mayor seguridad.  Las características incluyen mejoras en el cifrado, el hash de contraseñas y la capacidad de cambiar las contraseñas de usuarios internos, así como los pares de claves que cifran y descifran las contraseñas.
 
-Para proteger los datos confidenciales, NetApp recomienda cambiar las claves predeterminadas y la contraseña de usuario _Acquisition_ después de realizar una instalación o actualización.
+Para proteger datos confidenciales, NetApp recomienda cambiar las claves predeterminadas y la contraseña de usuario _Acquisition_ después de una instalación o actualización.
 
-Las contraseñas cifradas de origen de datos se almacenan en Data Infrastructure Insights, que utiliza una clave pública para cifrar contraseñas cuando un usuario las introduce en una página de configuración del recopilador de datos. Data Infrastructure Insights no tiene las claves privadas necesarias para descifrar las contraseñas del recopilador de datos; solo las Unidades de Adquisición (AUS) tienen la clave privada del recopilador de datos necesaria para descifrar las contraseñas del recopilador de datos.
+Las contraseñas cifradas de la fuente de datos se almacenan en Data Infrastructure Insights, que utiliza una clave pública para cifrar las contraseñas cuando un usuario las ingresa en una página de configuración del recopilador de datos.  Data Infrastructure Insights no tiene las claves privadas necesarias para descifrar las contraseñas del recopilador de datos; solo las unidades de adquisición (AU) tienen la clave privada del recopilador de datos necesaria para descifrar las contraseñas del recopilador de datos.
 
 
 
-== Consideraciones sobre la actualización y la instalación
+== Consideraciones de actualización e instalación
 
-Cuando el sistema Insight contiene configuraciones de seguridad no predeterminadas (es decir, contraseñas recodificadas), debe realizar una copia de seguridad de sus configuraciones de seguridad. La instalación de software nuevo o, en algunos casos, la actualización de software, revierte el sistema a una configuración de seguridad predeterminada. Cuando el sistema vuelve a la configuración predeterminada, debe restaurar la configuración no predeterminada para que el sistema funcione correctamente.
+Cuando su sistema Insight contiene configuraciones de seguridad no predeterminadas (es decir, ha reingresado contraseñas), debe realizar una copia de seguridad de sus configuraciones de seguridad.  Instalar software nuevo, o en algunos casos actualizar software, revierte el sistema a una configuración de seguridad predeterminada.  Cuando el sistema vuelva a la configuración predeterminada, deberá restaurar la configuración no predeterminada para que el sistema funcione correctamente.
 
 
 
 == Gestión de la seguridad en la unidad de adquisición
 
-La herramienta SecurityAdmin permite gestionar las opciones de seguridad de Data Infrastructure Insights y se ejecuta en el sistema de unidades de adquisición. La gestión de seguridad incluye la gestión de claves y contraseñas, el guardado y la restauración de configuraciones de seguridad que se crean o restauran con la configuración predeterminada.
+La herramienta SecurityAdmin le permite administrar las opciones de seguridad para Data Infrastructure Insights y se ejecuta en el sistema de la unidad de adquisición.  La gestión de seguridad incluye la gestión de claves y contraseñas, el guardado y la restauración de las configuraciones de seguridad creadas o la restauración de las configuraciones a los valores predeterminados.
 
 
 
 == Antes de empezar
 
-* Debe tener privilegios de administrador en el sistema AU para instalar el software de la unidad de adquisición (que incluye la herramienta SecurityAdmin).
-* Si tiene usuarios que no son administradores y que posteriormente necesitarán acceder a la herramienta SecurityAdmin, deben agregarse al grupo _cisys_. El grupo _cisys_ se crea durante la instalación de AU.
+* Debe tener privilegios de administrador en el sistema AU para poder instalar el software de la Unidad de Adquisición (que incluye la herramienta SecurityAdmin).
+* Si tiene usuarios que no sean administradores y que posteriormente necesitarán acceder a la herramienta SecurityAdmin, deben agregarse al grupo _cisys_.  El grupo _cisys_ se crea durante la instalación de AU.
 
 
-Después de la instalación de AU, la herramienta SecurityAdmin se encuentra en el sistema de unidades de adquisición en cualquiera de estas ubicaciones:
+Después de instalar AU, la herramienta SecurityAdmin se encuentra en el sistema de la unidad de adquisición en cualquiera de estas ubicaciones:
 
 ....
 Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\bin\securityadmin.bat
@@ -44,20 +44,20 @@ Linux - /bin/oci-securityadmin.sh
 ....
 
 
-== Con la herramienta SecurityAdmin
+== Uso de la herramienta SecurityAdmin
 
 Inicie la herramienta SecurityAdmin en modo interactivo (-i).
 
 
-NOTE: Se recomienda utilizar la herramienta SecurityAdmin en modo interactivo, para evitar pasar secretos en la línea de comandos, que se pueden capturar en los registros.
+NOTE: Se recomienda utilizar la herramienta SecurityAdmin en modo interactivo, para evitar pasar secretos en la línea de comandos, que pueden quedar capturados en los registros.
 
 Se muestran las siguientes opciones:
 
-image:SecurityAdminMenuChoices.png["Opciones para SecurityAdmin Tool (Linux)"]
+image:SecurityAdminMenuChoices.png["Opciones para la herramienta SecurityAdmin (Linux)"]
 
-. *Backup*
+. *Respaldo*
 +
-Crea un archivo zip de copia de seguridad del almacén que contiene todas las contraseñas y claves y coloca el archivo en una ubicación especificada por el usuario o en las siguientes ubicaciones predeterminadas:
+Crea un archivo zip de respaldo de la bóveda que contiene todas las contraseñas y claves, y coloca el archivo en una ubicación especificada por el usuario o en las siguientes ubicaciones predeterminadas:
 
 +
 ....
@@ -65,56 +65,56 @@ Windows - <install_path>\Cloud Insights\Acquisition Unit\acq\securityadmin\backu
 Linux - /var/log/netapp/oci/backup/vault
 ....
 +
-Se recomienda que las copias de seguridad de vault se mantengan seguras, ya que incluyen información confidencial.
+Se recomienda que las copias de seguridad de la bóveda se mantengan seguras, ya que incluyen información confidencial.
 
 . *Restaurar*
 +
-Restaura la copia de seguridad zip del almacén que se creó. Una vez restaurada, todas las contraseñas y claves se revierten a valores existentes en el momento de la creación del backup.
+Restaura la copia de seguridad zip de la bóveda que se creó.  Una vez restaurada, todas las contraseñas y claves vuelven a los valores existentes en el momento de la creación de la copia de seguridad.
 
 +
-La restauración se puede utilizar para sincronizar contraseñas y claves en varios servidores, por ejemplo, siguiendo estos pasos: 1) Cambiar las claves de cifrado en la AU. 2) Crear una copia de seguridad del almacén. 3) Restaurar la copia de seguridad del almacén en cada uno de los AUS.
+La restauración se puede utilizar para sincronizar contraseñas y claves en varios servidores, por ejemplo, siguiendo estos pasos: 1) Cambiar las claves de cifrado en la AU.  2) Cree una copia de seguridad de la bóveda.  3) Restaure la copia de seguridad de la bóveda en cada una de las AU.
 
-. *Registrar / Actualizar Script de Recuperación de Clave Externa*
+. *Registrar/Actualizar script de recuperación de clave externa*
 +
 Utilice un script externo para registrar o cambiar las claves de cifrado AU utilizadas para cifrar o descifrar las contraseñas del dispositivo.
 
 +
-Al cambiar las claves de cifrado, debe realizar un backup de la nueva configuración de seguridad para poder restaurarla después de una actualización o instalación.
+Cuando cambie las claves de cifrado, deberá realizar una copia de seguridad de su nueva configuración de seguridad para poder restaurarla después de una actualización o instalación.
 
 +
-Nota Esta opción solo está disponible en Linux.
+Tenga en cuenta que esta opción sólo está disponible en Linux.
 
 +
-Cuando utilice su propio script de recuperación de claves con la herramienta SecurityAdmin, tenga en cuenta lo siguiente:
+Al utilizar su propio script de recuperación de claves con la herramienta SecurityAdmin, tenga en cuenta lo siguiente:
 
 +
-** El algoritmo soportado actual es RSA con un mínimo de 2048 bits.
-** El script debe devolver las claves privadas y públicas en texto sin formato. El script no debe devolver claves públicas y privadas cifradas.
-** El script debe devolver contenido sin procesar y codificado (solo en formato PEM).
-** El script externo debe tener permisos _execute_.
+** El algoritmo admitido actualmente es RSA con un mínimo de 2048 bits.
+** El script debe devolver las claves privadas y públicas en texto sin formato.  El script no debe devolver claves públicas y privadas cifradas.
+** El script debe devolver contenido sin procesar y codificado (sólo formato PEM).
+** El script externo debe tener permisos de _ejecución_.
 
 
-. * Girar claves de cifrado*
+. *Rotar claves de cifrado*
 +
-Gire sus claves de cifrado (anula el registro de las claves actuales y registra las nuevas claves). Para usar una clave desde un sistema de gestión de claves externa, se deben especificar el identificador de clave pública y el identificador de clave privada.
+Rota tus claves de cifrado (anula el registro de las claves actuales y registra claves nuevas).  Para utilizar una clave de un sistema de administración de claves externo, debe especificar el ID de la clave pública y el ID de la clave privada.
 
 
 
-. *Restablecer a las teclas predeterminadas*
+. *Restablecer claves predeterminadas*
 +
-Restablece la contraseña de usuario de adquisición y las claves de cifrado de usuario de adquisición a los valores predeterminados, los valores predeterminados son los que se proporcionan durante la instalación.
+Restablece la contraseña del usuario de adquisición y las claves de cifrado del usuario de adquisición a los valores predeterminados. Los valores predeterminados son los proporcionados durante la instalación.
 
 . *Cambiar contraseña de Truststore*
 +
-Cambie la contraseña del almacén de confianza.
+Cambiar la contraseña del almacén de confianza.
 
-. *Cambiar Contraseña de Almacén de Claves*
+. *Cambiar la contraseña del almacén de claves*
 +
-Cambie la contraseña del almacén de claves.
+Cambiar la contraseña del almacén de claves.
 
-. * Cifrar contraseña de recopilador*
+. *Contraseña del recopilador de cifrado*
 +
-Cifrar contraseña del recopilador de datos.
+Cifrar la contraseña del recopilador de datos.
 
 . *Salida*
 +
@@ -122,35 +122,35 @@ Salga de la herramienta SecurityAdmin.
 
 
 
-Elija la opción que desea configurar y siga las indicaciones.
+Elija la opción que desea configurar y siga las instrucciones.
 
 
 
-== Especificación de un usuario para ejecutar la herramienta
+== Especificar un usuario para ejecutar la herramienta
 
-Si se encuentra en un entorno controlado y consciente de la seguridad, es posible que no tenga el grupo _cisys_, pero aún así desee que usuarios específicos ejecuten la herramienta SecurityAdmin.
+Si se encuentra en un entorno controlado y consciente de la seguridad, es posible que no tenga el grupo _cisys_ pero aún así desee que usuarios específicos ejecuten la herramienta SecurityAdmin.
 
-Puede lograr esto instalando manualmente el software AU y especificando el usuario/grupo al que desea acceder.
+Puede lograr esto instalando manualmente el software AU y especificando el usuario/grupo para el cual desea acceso.
 
-* Con la API, descargue el instalador de CI en el sistema AU y descomprima.
+* Usando la API, descargue el instalador CI al sistema AU y descomprímalo.
 +
-** Necesitará un token de autorización única. Consulte la documentación de API Swagger (_Admin > API Access_ y seleccione el enlace _API Documentation_) y busque la sección _GET /au/oneTimeToken_ API.
-** Una vez que tenga el token, utilice la API _GET /au/installers/{platform}/{version}_ para descargar el archivo del instalador. Deberá proporcionar la plataforma (Linux o Windows), así como la versión del instalador.
+** Necesitará un token de autorización de un solo uso.  Consulte la documentación de API Swagger (_Admin > Acceso a API_ y seleccione el enlace _Documentación de API_) y busque la sección API _GET /au/oneTimeToken_.
+** Una vez que tenga el token, use la API _GET /au/installers/{platform}/{version}_ para descargar el archivo de instalación.  Necesitará proporcionar la plataforma (Linux o Windows) así como la versión del instalador.
 
 
-* Copie el archivo de instalación descargado en el sistema AU y descomprima el archivo.
+* Copie el archivo de instalación descargado al sistema AU y descomprímalo.
 * Navegue a la carpeta que contiene los archivos y ejecute el instalador como root, especificando el usuario y el grupo:
 +
  ./cloudinsights-install.sh <User> <Group>
 
 
-Si el usuario y/o grupo especificados no existen, se crearán. El usuario tendrá acceso a la herramienta SecurityAdmin.
+Si el usuario y/o grupo especificado no existe, se crearán.  El usuario tendrá acceso a la herramienta SecurityAdmin.
 
 
 
-== Actualizando o eliminando proxy
+== Actualización o eliminación de proxy
 
-La herramienta SecurityAdmin se puede utilizar para establecer o eliminar información de proxy para la unidad de adquisición ejecutando la herramienta con el parámetro _-pr_:
+La herramienta SecurityAdmin se puede utilizar para configurar o eliminar información de proxy para la Unidad de adquisición ejecutando la herramienta con el parámetro _-pr_:
 
 [listing]
 ----
@@ -196,58 +196,58 @@ Para actualizar un proxy, el comando es
 
 == Recuperación de clave externa
 
-Si proporciona un script de shell UNIX, puede ser ejecutado por la unidad de adquisición para recuperar la *clave privada* y la *clave pública* de su sistema de gestión de claves.
+Si proporciona un script de shell de UNIX, la unidad de adquisición puede ejecutarlo para recuperar la *clave privada* y la *clave pública* de su sistema de administración de claves.
 
-Para recuperar la clave, Data Infrastructure Insights ejecutará el script y pasará dos parámetros: _Key id_ y _key type_. _Key id_ se puede usar para identificar la clave en su sistema de gestión de claves. _Key type_ es “public” o “private”. Cuando el tipo de clave es “public”, el script debe devolver la clave public. Cuando el tipo de clave es privado, se debe devolver la clave privada.
+Para recuperar la clave, Data Infrastructure Insights ejecutará el script, pasando dos parámetros: _key id_ y _key type_.  _Key id_ se puede utilizar para identificar la clave en su sistema de gestión de claves.  El tipo de clave es "pública" o "privada".  Cuando el tipo de clave es "pública", el script debe devolver la clave pública.  Cuando el tipo de clave es "privada", se debe devolver la clave privada.
 
-Para devolver la tecla a la unidad de adquisición, el script debe imprimir la tecla en la salida estándar. El script debe imprimir _ONLY_ la clave para la salida estándar; no se debe imprimir ningún otro texto en la salida estándar. Una vez que la clave solicitada se imprime en la salida estándar, el script debe salir con un código de salida de 0; cualquier otro código de retorno se considera un error.
+Para enviar la clave de vuelta a la unidad de adquisición, el script debe imprimir la clave en la salida estándar.  El script debe imprimir _sólo_ la clave en la salida estándar; no se debe imprimir ningún otro texto en la salida estándar.  Una vez que la clave solicitada se imprime en la salida estándar, el script debe salir con un código de salida de 0; cualquier otro código de retorno se considera un error.
 
-El script debe registrarse en la unidad de adquisición mediante la herramienta SecurityAdmin, que ejecutará el script junto con la unidad de adquisición. El script debe tener permisos _READ_ y _EXECUTE_ para el usuario root y cisys. Si el script de shell se modifica después de registrarse, el script de shell modificado debe volver a registrarse con la unidad de adquisición.
+El script debe registrarse en la unidad de adquisición mediante la herramienta SecurityAdmin, que ejecutará el script junto con la unidad de adquisición.  El script debe tener permisos de _lectura_ y _ejecución_ para el usuario root y "cisys".  Si el script de shell se modifica después del registro, el script de shell modificado debe volver a registrarse en la unidad de adquisición.
 
 |===
 
 
-| parámetro de entrada: id de clave | Identificador de clave utilizado para identificar la clave en el sistema de gestión de claves de los clientes. 
+| parámetro de entrada: id de clave | Identificador de clave utilizado para identificar la clave en el sistema de gestión de claves del cliente. 
 
 
 | parámetro de entrada: tipo de clave | público o privado. 
 
 
-| salida | La clave solicitada debe imprimirse en la salida estándar. Actualmente se admite la clave RSA de 2048 bits. Las claves deben estar codificadas e impresas en el siguiente formato - formato de clave privada - PEM, DER-codificado PKCS8 PrivateKeyInfo RFC 5958 formato de clave pública - PEM, DER-codificado X,509 SubjectPublicKeyInfo RFC 5280 
+| producción | La clave solicitada debe imprimirse en la salida estándar.  Actualmente se admite una clave RSA de 2048 bits.  Las claves deben codificarse e imprimirse en el siguiente formato: formato de clave privada: PEM, codificado en DER PKCS8 PrivateKeyInfo RFC 5958 formato de clave pública: PEM, codificado en DER X.509 SubjectPublicKeyInfo RFC 5280 
 
 
-| código de salida | Código de salida cero para éxito. Todos los demás valores de salida se consideran fallidos. 
+| código de salida | Código de salida de cero para el éxito.  Todos los demás valores de salida se consideran un fracaso. 
 
 
-| permisos de script | El script debe tener permisos de lectura y ejecución para el usuario root y cisys. 
+| permisos de script | El script debe tener permisos de lectura y ejecución para el usuario root y "cisys". 
 
 
-| registros | Se registran las ejecuciones de script. Los registros se pueden encontrar en - /var/log/NetApp/cloudinsights/securityadmin/securityadmin.log /var/log/NetApp/cloudinsights/acq/acq.log 
+| registros | Las ejecuciones de scripts se registran.  Los registros se pueden encontrar en: /var/log/netapp/cloudinsights/securityadmin/securityadmin.log /var/log/netapp/cloudinsights/acq/acq.log 
 |===
 
 
-== Cifrado de una contraseña para su uso en la API
+== Cifrado de una contraseña para su uso en API
 
 La opción 8 le permite cifrar una contraseña, que luego puede pasar a un recopilador de datos a través de API.
 
-Inicie la herramienta SecurityAdmin en modo interactivo y seleccione la opción 8: _Encrypt Password_.
+Inicie la herramienta SecurityAdmin en modo interactivo y seleccione la opción 8: _Cifrar contraseña_.
 
  securityadmin.sh -i
-Se le pedirá que introduzca la contraseña que desea cifrar. Tenga en cuenta que los caracteres que escriba no se muestran en la pantalla. Vuelva a introducir la contraseña cuando se le solicite.
+Se le solicitará que ingrese la contraseña que desea cifrar.  Tenga en cuenta que los caracteres que escribe no se muestran en la pantalla.  Vuelva a ingresar la contraseña cuando se le solicite.
 
-Alternativamente, si va a utilizar el comando en un script, en una línea de comandos utilice _securityadmin.sh_ con el parámetro «-enc», pasando su contraseña no cifrada:
+Alternativamente, si va a utilizar el comando en un script, en una línea de comando use _securityadmin.sh_ con el parámetro "-enc", pasando su contraseña sin cifrar:
 
  securityadmin -enc mypassword
 image:SecurityAdmin_Encrypt_Key_API_CLI_Example.png["Ejemplo de CLI"]
 
-La contraseña cifrada se muestra en la pantalla. Copie toda la cadena, incluidos los símbolos iniciales o finales.
+La contraseña cifrada se muestra en la pantalla.  Copiar la cadena completa, incluidos los símbolos iniciales o finales.
 
-image:SecurityAdmin_Encrypt_Key_1.png["Contraseña de cifrado en modo interactivo, width=640"]
+image:SecurityAdmin_Encrypt_Key_1.png["Modo interactivo Cifrar contraseña, ancho=640"]
 
-Para enviar la contraseña cifrada a un recopilador de datos, puede utilizar la API de recopilación de datos. El Swagger para esta API se puede encontrar en *Admin > API Access* y haga clic en el enlace «Documentación de API». Seleccione el tipo de API de recopilación de datos. En el encabezado _data_collection.data_collector_, seleccione la API _/collector/datasources_ POST para este ejemplo.
+Para enviar la contraseña cifrada a un recopilador de datos, puede utilizar la API de recopilación de datos.  La documentación de esta API se puede encontrar en *Admin > Acceso a la API* y hacer clic en el enlace "Documentación de la API".  Seleccione el tipo de API "Recopilación de datos".  Bajo el encabezado _data_collection.data_collector_, elija la API POST _/collector/datasources_ para este ejemplo.
 
 image:SecurityAdmin_Encrypt_Key_Swagger_API.png["API para la recopilación de datos"]
 
-Si establece la opción _preEncrypted_ en _True_, cualquier contraseña que pase a través del comando API se tratará como *ya cifrada*; la API no volverá a cifrar la(s) contraseña(s). Al crear su API, simplemente pegue la contraseña cifrada previamente en la ubicación adecuada.
+Si establece la opción _preEncrypted_ en _True_, cualquier contraseña que pase a través del comando API será tratada como *ya cifrada*; la API no volverá a cifrar las contraseñas.  Al crear su API, simplemente pegue la contraseña previamente cifrada en la ubicación adecuada.
 
-image:SecurityAdmin_Encrypt_Key_API_Example.png["Ejemplo de API, width=600"]
+image:SecurityAdmin_Encrypt_Key_API_Example.png["Ejemplo de API, ancho=600"]

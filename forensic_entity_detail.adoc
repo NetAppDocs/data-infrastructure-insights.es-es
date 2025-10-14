@@ -14,18 +14,18 @@ summary: Página de entidades forenses
 
 
 [role="lead"]
-La página Entidades de Forensics proporciona información detallada sobre la actividad de la entidad en su arrendatario.
+La página Entidades forenses proporciona información detallada sobre la actividad de la entidad en su inquilino.
 
 
 
-== Examen de la Información de entidad
+== Información de la entidad examinadora
 
-Haga clic en *Forensics > Activity Forensics* y haga clic en la ficha _Entities_ para acceder a la página de entidades.
+Haga clic en *Análisis forense > Análisis forense de actividades* y haga clic en la pestaña _Entidades_ para acceder a la página Entidades.
 
-Esta página proporciona una descripción general de la actividad de la entidad en su arrendatario, resaltando la siguiente información: * Un gráfico que muestra _Entidades únicas_ accedidas por minuto * Un gráfico de _Tipos de Entidad accedidos_ * Un desglose de las _Rutas comunes_ * Una lista de las _50 entidades principales_ del número total de entidades
+Esta página proporciona una descripción general de la actividad de las entidades en su inquilino, destacando la siguiente información: * Un gráfico que muestra las _Entidades únicas_ a las que se accede por minuto * Un cuadro de _Tipos de entidades a las que se accede_ * Un desglose de las _Rutas comunes_ * Una lista de las _50 entidades principales_ del número total de entidades
 
-image:CS-Entities-Page.png["Página entidades"]
+image:CS-Entities-Page.png["Página de entidades"]
 
-Al hacer clic en una entidad de la lista se abre una página de resumen de la entidad, mostrando un perfil de la entidad con detalles como nombre, tipo, nombre del dispositivo, dirección IP de la ubicación y ruta de acceso a los que se accede más, así como el comportamiento de la entidad, como el usuario, la dirección IP, y hora a la que se accedió por última vez a la entidad.
+Al hacer clic en una entidad de la lista, se abre una página de descripción general de la entidad, que muestra un perfil de la entidad con detalles como nombre, tipo, nombre del dispositivo, ubicación IP más accedida y ruta, así como el comportamiento de la entidad, como el usuario, la IP y la hora en que se accedió a la entidad por última vez.
 
-image:CS-entity-detail-page.png["Página Descripción general de la entidad"]
+image:CS-entity-detail-page.png["Página de descripción general de la entidad"]

@@ -2,46 +2,46 @@
 sidebar: sidebar 
 permalink: task_dc_vast_datastore.html 
 keywords: data collector, VAST storage, VAST data 
-summary: Configuración del recopilador de DATOS de almacenamiento de almacenes de datos DE VAST. 
+summary: Configuración del recopilador de datos de almacenamiento VAST Data DataStore. 
 ---
-= Recopilador de DATOS de VASTOS almacenes de datos
+= Recopilador de datos VAST DataStore
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el AMPLIO recopilador de datos de almacenes de datos para recopilar datos de inventario y de rendimiento.
+Data Infrastructure Insights utiliza el recopilador de datos VAST DataStore para recopilar datos de inventario y rendimiento.
 
 
 
 == Terminología
 
-Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Transportistas | Discos (parte de la bandeja de discos del campo Ubicación) 
+| Transportistas | Discos (parte del estante de discos del campo de ubicación) 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
-| CNodes | StorageNode (tipo = cnode) 
+| CNodos | Nodo de almacenamiento (tipo = cnode) 
 
 
-| DNodes | StorageNode (tipo = dnode) 
+| DNodes | Nodo de almacenamiento (tipo = dnode) 
 
 
-| NVRAMs | Discos 
+| NVRAM | Discos 
 
 
-| Rutas protegidas | Sincronización de volúmenes interna 
+| Caminos protegidos | Sincronización de volumen interno 
 
 
-| Políticas de CALIDAD DE SERVICIO | Volumen interno (límites DE QOS) 
+| Políticas de calidad de servicio | Volumen interno (límites de QOS) 
 
 
 | Cuotas | Cuota 
@@ -50,21 +50,21 @@ Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra 
 | SSD | Discos 
 
 
-| Clientes | Máquina virtual de almacenamiento 
+| Inquilinos | Máquina virtual de almacenamiento 
 
 
-| ViewPolicies | Recursos compartidos de archivos (para permisos) 
+| Ver políticas | FileShare (para permisos) 
 
 
 | Vistas | Volumen interno 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* Dirección IP del sistema de almacén de datos de VAST o Nombre de dominio completo
+* Dirección IP del sistema VAST DataStore o nombre de dominio completo
 * Nombre de usuario / Contraseña para acceder al sistema VAST
 * Requisito de puerto: HTTPS 443
 
@@ -78,13 +78,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Nombre de host/IP de almacenamiento de almacén de datos de VAST | La dirección IP o el FQDN del sistema de almacenamiento 
+| IP/nombre de host de almacenamiento de VAST DataStore | Dirección IP o FQDN del sistema de almacenamiento 
 
 
-| Usuario | Nombre de usuario de VAST Storage 
+| Usuario | Nombre de usuario de almacenamiento VAST 
 
 
-| Contraseña | Contraseña de almacenamiento de VAST 
+| Password | Contraseña de almacenamiento VAST 
 |===
 
 
@@ -95,22 +95,22 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Tipo de conexión | Elija HTTP o HTTPS. También muestra el puerto predeterminado. 
+| Tipo de conexión | Elija HTTP o HTTPS.  También muestra el puerto predeterminado. 
 
 
-| Anular puerto TCP | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, introduzca el puerto de conexión que desea utilizar 
+| Anular el puerto TCP | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, ingrese el puerto de conexión a utilizar. 
 
 
-| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -118,9 +118,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Credenciales de inicio de sesión no válidas" con mensajes de error "la directiva no permite" o "no está autorizado" | Valide la cuenta de usuario y la contraseña de Pure a través de la interfaz http de Pure 
+| "Credenciales de inicio de sesión no válidas" con mensajes de error como "La política no lo permite" o "No está autorizado". | Validar la cuenta de usuario y la contraseña de Pure a través de la interfaz http de Pure 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

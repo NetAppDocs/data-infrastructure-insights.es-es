@@ -4,55 +4,55 @@ permalink: reporting_overview.html
 summary: Informes predefinidos y personalizados de sus datos con Data Infrastructure Insights. 
 keywords: reporting, cognos, data warehouse, dwh 
 ---
-= Información general sobre informes de infraestructura de datos
+= Descripción general de los informes de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-La generación de informes de Data Infrastructure Insights es una herramienta de inteligencia empresarial que le permite ver informes predefinidos o crear informes personalizados.
+Los informes de Data Infrastructure Insights son una herramienta de inteligencia empresarial que le permite ver informes predefinidos o crear informes personalizados.
 
 
-NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"]. La disponibilidad de la función de informes está sujeta a un requisito de espacio mínimo. link:https://www.netapp.com/forms/cloud-insights-contact-us/["Comuníquese con su representante de ventas de NetApp"] Para más información.
+NOTE: La función de informes está disponible en Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edición Premium"] .  La disponibilidad de la función de informes está sujeta a un requisito de espacio mínimo. link:https://www.netapp.com/forms/cloud-insights-contact-us/["Comuníquese con su representante de ventas de NetApp"] Para más información.
 
-Con la generación de informes de Data Infrastructure Insights, podrá realizar las siguientes tareas:
+Con los informes de Data Infrastructure Insights puede realizar las siguientes tareas:
 
-* Ejecute un informe predefinido
-* Cree un informe personalizado
+* Ejecutar un informe predefinido
+* Crear un informe personalizado
 * Personalizar el formato y el método de entrega de un informe
-* Programar informes para que se ejecuten automáticamente
+* Programe informes para que se ejecuten automáticamente
 * Informes por correo electrónico
-* Utilice colores para representar umbrales de datos
+* Utilice colores para representar los umbrales en los datos
 
 
-Los informes de información sobre la infraestructura de datos pueden generar informes personalizados para áreas como el pago por uso, el análisis de consumo y la previsión, además de ayudar a responder preguntas como las siguientes:
+Los informes de Data Infrastructure Insights pueden generar informes personalizados para áreas como contracargos, análisis de consumo y pronósticos, y pueden ayudar a responder preguntas como las siguientes:
 
-* ¿Qué inventario tengo?
+* ¿Que inventario tengo?
 * ¿Dónde está mi inventario?
 * ¿Quién utiliza nuestros activos?
-* ¿Cuál es el pago por uso para el almacenamiento asignado a una unidad de negocio?
-* ¿Cuánto tiempo hasta que necesite adquirir capacidad de almacenamiento adicional?
-* ¿Las unidades de negocio están alineadas en los niveles de almacenamiento adecuados?
+* ¿Cuál es el contracargo por el almacenamiento asignado para una unidad de negocio?
+* ¿Cuánto tiempo pasará hasta que necesite adquirir capacidad de almacenamiento adicional?
+* ¿Están las unidades de negocio alineadas a lo largo de los niveles de almacenamiento adecuados?
 * ¿Cómo cambia la asignación de almacenamiento a lo largo de un mes, trimestre o año?
 
 
 
 
-== Acceso a los informes de Data Infrastructure Insights
+== Acceso a informes de Data Infrastructure Insights
 
-Puede acceder a los informes de información de infraestructura de datos haciendo clic en el enlace *Informes* del menú.
+Puede acceder a los informes de Data Infrastructure Insights haciendo clic en el enlace *Informes* en el menú.
 
-Se le llevará a la interfaz de Informes. Data Infrastructure Insights utiliza IBM Cognos Analytics para su motor de generación de informes.
+Serás llevado a la interfaz de informes.  Data Infrastructure Insights utiliza IBM Cognos Analytics para su motor de informes.
 
 
 
 == ¿Qué es ETL?
 
-Al trabajar con Reporting, oirá los términos "almacén de datos" y "ETL". ETL significa "Extracción, transformación y carga". El proceso ETL recupera los datos recopilados en Data Infrastructure Insights y los transforma en un formato para su uso en Reporting. "Data Warehouse" se refiere a los datos recogidos disponibles para la elaboración de informes.
+Cuando trabaje con informes, escuchará los términos "Almacén de datos" y "ETL".  ETL significa "Extraer, Transformar y Cargar".  El proceso ETL recupera datos recopilados en Data Infrastructure Insights y transforma los datos en un formato para usar en informes.  "Almacén de datos" se refiere a los datos recopilados disponibles para la elaboración de informes.
 
 El proceso ETL incluye estos procesos individuales:
 
-* *Extracto*: Toma datos de Data Infrastructure Insights.
-* *Transformar*: Aplica reglas o funciones de lógica de negocio a los datos a medida que se extraen de Data Infrastructure Insights.
-* *Load*: Guarda los datos transformados en el almacén de datos para su uso en Reporting.
+* *Extraer*: toma datos de Data Infrastructure Insights.
+* *Transformar*: aplica reglas o funciones de lógica empresarial a los datos a medida que se extraen de Data Infrastructure Insights.
+* *Cargar*: guarda los datos transformados en el almacén de datos para su uso en informes.
 

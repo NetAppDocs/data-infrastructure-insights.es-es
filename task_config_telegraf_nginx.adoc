@@ -2,54 +2,54 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_nginx.html 
 keywords: telegraf, installation, install, nginx 
-summary: Configuración de recopilador de datos nginx 
+summary: Configuración del recopilador de datos de Nginx 
 ---
-= Recopilador de datos nginx
+= Recopilador de datos de Nginx
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de Nginx.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de Nginx.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Nginx.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija Nginx.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:NginxDCConfigLinux-1.png["Configuración de Linux Nginx"] image:NginxDCConfigLinux-2.png["Configuración de Linux Nginx"]
+image:NginxDCConfigLinux-1.png["Configuración de Nginx en Linux"] image:NginxDCConfigLinux-2.png["Configuración de Nginx en Linux"]
 
 
 
 == Configuración
 
-La recopilación de métricas nginx requiere que se active Nginxlink:http://nginx.org/en/docs/http/ngx_http_stub_status_module.html["http_stub_status_module"].
+La recopilación de métricas de Nginx requiere que Nginxlink:http://nginx.org/en/docs/http/ngx_http_stub_status_module.html["Módulo de estado del stub http"] estar habilitado.
 
-Se puede encontrar información adicional en el link:http://nginx.org/en/docs/["Documentación de nginx"].
+Información adicional se puede encontrar en ellink:http://nginx.org/en/docs/["Documentación de Nginx"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Nginx | Servidor de espacio de nombres | Puerto de nombre de nodo IP | Acepta solicitudes de lectura gestionadas activas en espera de escritura 
+| Nginx | Servidor de espacio de nombres | IP del nodo Nombre del nodo Puerto | Acepta solicitudes de lectura manejadas activas en espera de escritura 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

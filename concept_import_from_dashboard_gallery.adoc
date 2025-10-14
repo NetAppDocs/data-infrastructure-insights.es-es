@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_import_from_dashboard_gallery.html 
-summary: Puede importar paneles recomendados para ayudar a responder preguntas de conocimiento empresarial.  También puedes importar paneles personalizados que hayas exportado previamente. 
+summary: Puede importar paneles recomendados para ayudar a responder preguntas de conocimiento empresarial. También puedes importar paneles personalizados que hayas exportado previamente. 
 keywords: dashboard, gallery, import, export 
 ---
 = Importación de paneles
@@ -14,34 +14,34 @@ keywords: dashboard, gallery, import, export
 
 
 [role="lead"]
-Data Infrastructure Insights ofrece una serie de paneles recomendados para brindar información comercial sobre sus datos.  Cada panel contiene widgets diseñados para ayudar a responder una pregunta particular o resolver un problema particular relevante para los datos que se recopilan actualmente sobre su inquilino.  DII también le permite exportar un panel útil e importarlo a otro inquilino.
+Data Infrastructure Insights ofrece una serie de paneles recomendados para brindar información comercial sobre sus datos. Cada panel contiene widgets diseñados para ayudar a responder una pregunta particular o resolver un problema particular relevante para los datos que se recopilan actualmente sobre su inquilino. DII también le permite exportar un panel útil e importarlo a otro inquilino.
 
 
 
-== Importando desde la galería de paneles
+== Importar desde la Galería del Panel de Control
 
 Para importar un panel desde la galería, haga lo siguiente:
 
 . Seleccione *Observabilidad > Explorar > Todos los paneles*
 . Haga clic en *+Importar panel* y seleccione _Importar desde galería_.
 +
-Se muestra una lista de *Paneles recomendados*, según los recopiladores de datos de su entorno.  Hay paneles disponibles para ayudar a responder preguntas sobre diferentes tipos de objetos, incluidos AWS, NetApp, almacenamiento, VMware y otros.
+Se muestra una lista de *Paneles recomendados*, según los recopiladores de datos de su entorno. Hay paneles disponibles para ayudar a responder preguntas sobre diferentes tipos de objetos, incluidos AWS, NetApp, almacenamiento, VMware y otros.
 
-. Seleccione uno o más paneles de la lista y haga clic en *Agregar paneles*.  Estos paneles se mostrarán en su lista de paneles.
+. Seleccione uno o más paneles de la lista y haga clic en *Agregar paneles*. Estos paneles se mostrarán en su lista de paneles.
 
 
-Además de los paneles recomendados, también puede elegir importar *Paneles adicionales* que no sean relevantes para los datos actuales. Por ejemplo, si no tiene actualmente ningún recopilador de datos de almacenamiento instalado pero está planeando configurar algunos en el futuro, puede que decida importar los paneles relevantes para el almacenamiento. Estos paneles estarán disponibles para su visualización, pero es posible que no muestren ningún dato relevante hasta que se configure al menos un recopilador de datos de almacenamiento.
+Además de los paneles recomendados, también puede optar por importar *Paneles adicionales* que no sean relevantes para sus datos actuales.  Por ejemplo, si no tiene recopiladores de datos de almacenamiento instalados actualmente pero planea configurar algunos en el futuro, aún puede optar por importar los paneles relevantes para el almacenamiento.  Estos paneles estarán disponibles para su visualización, pero es posible que no muestren ningún dato relevante hasta que se configure al menos un recopilador de datos de almacenamiento.
 
-La importación desde la galería de paneles está disponible para los usuarios con la función Administrador o propietario de cuenta.
+La importación desde la galería del panel está disponible para usuarios con rol de Administrador o Propietario de cuenta.
 
 
 
 == Importar un panel exportado
 
-Para *exportar* un panel, en la página *Observabilidad > Explorar > Todos los paneles*, haga clic en el menú a la derecha del panel y seleccione _Exportar_.  También puede seleccionar varios paneles y elegir _Exportar_ en el menú desplegable _Acciones masivas_.  Los paneles se guardan en un archivo .ZIP en su sistema local.
+Para *exportar* un panel, en la página *Observabilidad > Explorar > Todos los paneles*, haga clic en el menú a la derecha del panel y seleccione _Exportar_. También puede seleccionar varios paneles y elegir _Exportar_ en el menú desplegable _Acciones masivas_. Los paneles se guardan en un archivo .ZIP en su sistema local.
 
 Para *importar* el panel, navegue hasta el inquilino deseado y haga lo siguiente:
 
 . Seleccione *Observabilidad > Explorar > Todos los paneles*
-. Haga clic en *+Importar panel* y seleccione _Importar desde archivo_.  Seleccione el .ZIP del archivo que exportó anteriormente.  Los paneles se importarán y se mostrarán en su lista de paneles.  Tenga en cuenta que si está importando un panel con el mismo nombre que un panel existente, se agregará un "(2)" al nombre del panel.
+. Haga clic en *+Importar panel* y seleccione _Importar desde archivo_. Seleccione el .ZIP del archivo que exportó anteriormente. Los paneles se importarán y se mostrarán en su lista de paneles. Tenga en cuenta que si está importando un panel con el mismo nombre que un panel existente, se agregará un "(2)" al nombre del panel.
 

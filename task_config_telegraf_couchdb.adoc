@@ -4,25 +4,25 @@ permalink: task_config_telegraf_couchdb.html
 keywords: telegraf, installation, install, couchdb 
 summary: Configuración del recopilador de datos de CouchDB 
 ---
-= CouchDB Collector datos
+= Recopilador de datos de CouchDB
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de CouchDB.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de CouchDB.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija CouchDB.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija CouchDB.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:CouchDBDCConfigLinux.png["Configuración de CouchDB"]
@@ -31,23 +31,23 @@ image:CouchDBDCConfigLinux.png["Configuración de CouchDB"]
 
 == Configuración
 
-La información se puede encontrar en el link:http://docs.couchdb.org/en/stable/["Documentación de CouchDB"].
+La información se puede encontrar en ellink:http://docs.couchdb.org/en/stable/["Documentación de CouchDB"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| CouchDB | Servidor de espacio de nombres | Dirección IP del nodo de nombre | Autentificación Cache Hits Authentication Cache Miss Database Lecturas Database Databases Open OS Files Max Request Time Min Request metodos Copy httpd Request metodos Delete httpd Request metodos Get httpd Request metodos Head httpd Request metodos Post httpd Request metodos put httpd códigos de estado 200 códigos de estado 201 códigos de estado 202 códigos de estado 301 códigos de estado 304 códigos de estado 400 códigos de estado 401 códigos de estado 403 códigos de estado 404 códigos de estado 405 códigos de estado 409 códigos de estado 412 códigos de estado 500 
+| CouchDB | Servidor de espacio de nombres | Nombre del nodo IP del nodo | Accesos a caché de autenticación Errores de caché de autenticación Lecturas de base de datos Escrituras de base de datos Bases de datos abiertas Archivos del SO abiertos Tiempo máximo de solicitud Tiempo mínimo de solicitud Métodos de solicitud HTTP Copiar métodos de solicitud HTTP Eliminar métodos de solicitud HTTP Obtener métodos de solicitud HTTP Encabezar métodos de solicitud HTTP Publicar métodos de solicitud HTTP Poner Códigos de estado 200 Códigos de estado 201 Códigos de estado 202 Códigos de estado 301 Códigos de estado 304 Códigos de estado 400 Códigos de estado 401 Códigos de estado 403 Códigos de estado 404 Códigos de estado 405 Códigos de estado 409 Códigos de estado 412 Códigos de estado 500 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

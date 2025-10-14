@@ -10,31 +10,31 @@ keywords:
 
 
 [role="lead"]
-Data Infrastructure Insights de NetApp (anteriormente Cloud Insights) es una herramienta de supervisión de infraestructuras de cloud que le ofrece visibilidad sobre su infraestructura completa. Con Data Infrastructure Insights, podrá supervisar, solucionar problemas y optimizar todos sus recursos, incluidos los clouds públicos y los centros de datos privados.
+NetApp Data Infrastructure Insights (anteriormente Cloud Insights) es una herramienta de monitoreo de infraestructura en la nube que le brinda visibilidad de su infraestructura completa. Con Data Infrastructure Insights, puede supervisar, solucionar problemas y optimizar todos sus recursos, incluidas sus nubes públicas y sus centros de datos privados.
 
 
 
-== ¿Qué puede hacer por mí Data Infrastructure Insights?
+== ¿Qué puede hacer Data Infrastructure Insights por mí?
 
-Data Infrastructure Insights proporciona supervisión de multinube híbrida, lo que le ofrece una capacidad de observación de toda la pila de la infraestructura y las cargas de trabajo.
+Data Infrastructure Insights proporciona monitoreo multicloud híbrido, lo que le brinda capacidad de observación completa de la infraestructura y las cargas de trabajo.
 
-* Recopiladores de datos para infraestructura y cargas de trabajo heterogéneas, incluido Kubernetes
-* Colector Open Telegraf y API abiertas para una fácil integración
-* Notificaciones y alertas completas
+* Recopiladores de datos para infraestructuras y cargas de trabajo heterogéneas, incluido Kubernetes
+* Recopilador Telegraf abierto y API abiertas para una fácil integración
+* Alertas y notificaciones completas
 * Aprendizaje automático para obtener información inteligente
-* Optimización de la utilización de recursos
-* Paneles integrados o personalizables con filtros avanzados para minimizar el ruido de la pantalla para responder a las preguntas
-* Detectar el estado de las operaciones de almacenamiento de ONTAP 
-* Proteja los activos empresariales más valiosos, los datos, desde el ransomware o el ataque de destrucción de datos
+* Optimizar la utilización de recursos
+* Paneles de control integrados o personalizables con filtros avanzados para minimizar el ruido de la pantalla y responder preguntas
+* Descubra la salud de sus operaciones de almacenamiento de ONTAP 
+* Proteja su activo empresarial más valioso, los datos, del ransomware o ataques de destrucción de datos.
 
 
 '''
 
 
-== Primeros pasos
+== Empezando
 
-* ¿Cómo link:task_cloud_insights_onboarding_1.html["*empezar*"]puedo hacer con Data Infrastructure Insights?
-* Estoy registrado. Ahora, ¿qué hago? link:task_getting_started_with_cloud_insights.html["Adquisición de datos"] link:concept_user_roles.html["Configurar usuarios"]
-* ¡Impresionante! El futuro link:task_defining_annotations.html["Preparación de activos: Anotación"] link:concept_querying_assets.html["Buscar los activos que desea: Consultar"] link:concept_dashboards_overview.html["Ver los datos que desea: Paneles"] link:task_create_monitor.html["Supervisión y alertas"] link:task_cs_getting_started.html["Protección de los datos"]
-* ¡Esto es una gran cosa! Estoy listo para link:concept_subscribing_to_cloud_insights.html["*suscríbase*"].
+* ¿Cómo hago?link:task_cloud_insights_onboarding_1.html["*Comienza*"] ¿con Data Infrastructure Insights?
+* Estoy registrado  ¿Y ahora qué hago?link:task_getting_started_with_cloud_insights.html["Adquisición de datos"] link:concept_user_roles.html["Configuración de usuarios"]
+* ¡Impresionante!  ¿Que sigue?link:task_defining_annotations.html["Preparación de activos: Anotaciones"] link:concept_querying_assets.html["Cómo encontrar los activos que desea: consulta"] link:concept_dashboards_overview.html["Ver los datos que desea: Paneles de control"] link:task_create_monitor.html["Monitoreo y alertas"] link:task_cs_getting_started.html["Protección de datos"]
+* ¡Esto es una cosa fantástica!  Estoy listo paralink:concept_subscribing_to_cloud_insights.html["*suscribir*"] .
 

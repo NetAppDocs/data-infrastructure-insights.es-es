@@ -2,52 +2,52 @@
 sidebar: sidebar 
 permalink: task_dc_pure_flashblade.html 
 keywords: data collector, Pure Storage, pure, FlashBlade 
-summary: Configurar el recopilador de datos de Pure Storage. 
+summary: Configuración del recopilador de datos de Pure Storage. 
 ---
-= Recopilador de datos de Pure Storage FlashBlade
+= Recopilador de datos FlashBlade de Pure Storage
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa el recopilador de datos FlashBlade de Pure Storage para recopilar datos de inventario y rendimiento de clústeres FlashBlade que exponen la versión 2 de su API DE REST
+Data Infrastructure Insights utiliza el recopilador de datos FlashBlade de Pure Storage para recopilar datos de inventario y rendimiento de los clústeres FlashBlade que exponen la versión 2 de su API REST.
 
 
 
 == Terminología
 
-Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Unidad (SSD) | Disco 
 
 
-| Cabina | Reducida 
+| Formación | Almacenamiento 
 
 
-| Hoja | Nodo de almacenamiento 
+| Cuchilla | Nodo de almacenamiento 
 
 
 | Sistema de archivos | Volumen interno 
 
 
-| Cubo de almacenamiento de objetos | Qtree 
+| Cubo de almacenamiento de objetos | Árbol Q 
 
 
-| Iniciador, destino | Máscara de volumen 
+| Iniciador, Objetivo | Máscara de volumen 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* Dirección IP o nombre de dominio completo del sistema de almacenamiento
-* Token API, idealmente con una vida infinita. Un usuario de nivel de sólo lectura debería ser suficiente.
+* Dirección IP del sistema de almacenamiento o nombre de dominio completo
+* Token API, idealmente con una vida útil infinita.  Un usuario de nivel de solo lectura debería ser suficiente.
 * Requisito de puerto: HTTPS 443
 
 
@@ -60,7 +60,7 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Dirección IP del host de FlashBlade | La dirección IP del sistema de almacenamiento 
+| Dirección IP del host de FlashBlade | Dirección IP del sistema de almacenamiento 
 
 
 | Nombre de usuario | Nombre de usuario para ayudar a los administradores de Data Infrastructure Insights a recordar a qué usuario pertenece su token de API 
@@ -77,22 +77,22 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Tipo de conexión | Elija HTTP o HTTPS. También muestra el puerto predeterminado. 
+| Tipo de conexión | Elija HTTP o HTTPS.  También muestra el puerto predeterminado. 
 
 
-| Anular puerto TCP | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, introduzca el puerto de conexión que desea utilizar 
+| Anular el puerto TCP | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, ingrese el puerto de conexión a utilizar. 
 
 
-| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -100,9 +100,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Credenciales de inicio de sesión no válidas" con mensajes de error "la directiva no permite" o "no está autorizado" | Valide la cuenta de usuario y la contraseña de Pure a través de la interfaz http de Pure 
+| "Credenciales de inicio de sesión no válidas" con mensajes de error como "La política no lo permite" o "No está autorizado". | Validar la cuenta de usuario y la contraseña de Pure a través de la interfaz http de Pure 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

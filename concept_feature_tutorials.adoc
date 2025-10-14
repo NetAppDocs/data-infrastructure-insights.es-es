@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_feature_tutorials.html 
-summary: Data Infrastructure Insights cuenta con tutoriales que le muestran cómo realizar muchas tareas. 
+summary: Data Infrastructure Insights tiene tutoriales que le mostrarán cómo realizar muchas tareas. 
 keywords: onboarding, getting started, video, tutorial, resolution, dashboard, query, troubleshooting 
 ---
 = Tutoriales de funciones
@@ -14,27 +14,27 @@ keywords: onboarding, getting started, video, tutorial, resolution, dashboard, q
 
 
 [role="lead"]
-Data Infrastructure Insights se carga con funciones útiles que le permiten resolver problemas de forma rápida y sencilla, y proporcionar información sobre su entorno corporativo. Encuentre datos fácilmente con consultas potentes, visualice datos en paneles y envíe alertas por correo electrónico para los umbrales de datos que ha establecido.
+Data Infrastructure Insights está repleto de funciones útiles que le permiten solucionar problemas de manera rápida y sencilla, y le brindan información sobre su entorno corporativo.  Encuentre datos fácilmente con consultas potentes, visualice datos en paneles y envíe alertas por correo electrónico para los umbrales de datos que establezca.
 
 
 
 == Lista de verificación y tutoriales en vídeo
 
-La *Lista de verificación de inicio* que se muestra en su inquilino de Información de infraestructura de datos contiene una lista de varias tareas y conceptos útiles. La selección de un elemento de la lista de comprobación le llevará a la página Información sobre la infraestructura de datos adecuada para ese concepto. Por ejemplo, al hacer clic en el elemento _Create a Dashboard_ se abre la página Data Infrastructure Insights *Dashboards*.
+La *Lista de verificación de inicio* que se muestra en su inquilino de Data Infrastructure Insights contiene una lista de varias tareas y conceptos útiles.  Al seleccionar un elemento de la lista de verificación, accederá a la página de Data Infrastructure Insights adecuada para ese concepto.  Por ejemplo, al hacer clic en el elemento _Crear un panel_ se abre la página *Paneles* de Data Infrastructure Insights .
 
-image:OnboardingChecklist.png["Curso de la lista de comprobación del tutorial"]
+image:OnboardingChecklist.png["Lista de verificación del tutorial Progreso"]
 
-En la parte superior de la página hay un vínculo a un tutorial de vídeo que muestra cómo crear un panel de control. Puede ver el vídeo tantas veces como desee hasta que haga clic en el _got! No mostrar este enlace de nuevo_ para ese vídeo. El vídeo está disponible cada vez que vaya a la página Paneles, hasta que lo descarte.
+En la parte superior de la página hay un enlace a un video tutorial que muestra cómo crear un tablero.  Puedes ver el vídeo tantas veces como quieras hasta que hagas clic en ¡Entendido!  No mostrar esto otra vez_ enlace para ese video.  El video está disponible cada vez que accedes a la página Paneles, hasta que lo descartas.
 
-image:Startup-DashboardWatchVideo.png["Vea el enlace del vídeo"]
+image:Startup-DashboardWatchVideo.png["Ver enlace de video"]
 
-Después de ver el vídeo al menos una vez, el elemento _Create a Dashboard_ de la lista de comprobación está desactivado, lo que indica que ha completado el tutorial. A continuación, puede continuar con el siguiente tutorial.
-
-
-NOTE: Puede ver los tutoriales en cualquier orden que desee, tantas veces como desee hasta que se desestime.
+Después de ver el video al menos una vez, la opción _Crear un panel_ en la lista de verificación estará marcada, lo que indica que ha completado el tutorial.  Luego puedes pasar al siguiente tutorial.
 
 
+NOTE: Puedes ver los tutoriales en el orden que desees, tantas veces como quieras hasta que los descartes.
 
-=== No se ha recibido la lista de comprobación
 
-La lista de comprobación de inicio se muestra hasta que haga clic en el enlace _No volver a mostrar esto_ en la parte inferior de la lista de comprobación. Incluso después de descartar la lista de comprobación, los tutoriales seguirán disponibles en cada página de Data Infrastructure Insights adecuada hasta que se descarten cada uno de la barra de encabezado de mensaje.
+
+=== Descartando la lista de verificación
+
+La lista de verificación de inicio se muestra hasta que haga clic en el enlace _No mostrar esto nuevamente_ en la parte inferior de la lista de verificación.  Incluso después de descartar la lista de verificación, los tutoriales siguen estando disponibles en cada página de Data Infrastructure Insights correspondiente hasta que descarte cada uno de ellos desde la barra de encabezado del mensaje.

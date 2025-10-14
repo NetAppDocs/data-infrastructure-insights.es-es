@@ -4,7 +4,7 @@ permalink: task_config_telegraf_flink.html
 keywords: telegraf, installation, install, flink 
 summary: Configuración del recopilador de datos de Flink 
 ---
-= Colector de datos Flink
+= Recopilador de datos Flink
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,30 +16,30 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione Flink.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elige Flink.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:FlinkDCConfigWindows.png["Configuración de tinta"]
+image:FlinkDCConfigWindows.png["Configuración de Flink"]
 
 
 
 == Configuración
 
-Un despliegue completo de Flink implica los siguientes componentes:
+Una implementación completa de Flink implica los siguientes componentes:
 
-JobManager: El sistema primario Flink. Coordina una serie de TaskManagers. En una configuración de alta disponibilidad, el sistema tendrá más de un JobManager. TaskManager: Aquí es donde se ejecutan los operadores Flink. El plugin de tinta se basa en el complemento Jolokia de telegraf. Como un requisito para recopilar información de todos los componentes de Flink, JMX debe configurarse y exponerse a través de Jolokia en todos los componentes.
+JobManager: el sistema principal de Flink.  Coordina una serie de TaskManagers.  En una configuración de alta disponibilidad, el sistema tendrá más de un JobManager.  TaskManager: aquí es donde se ejecutan los operadores de Flink.  El complemento Flink se basa en el complemento Jolokia de Telegraf.  Como requisito para recopilar información de todos los componentes de Flink, JMX debe configurarse y exponerse a través de Jolokia en todos los componentes.
 
 
 
 === Compatibilidad
 
-La configuración se desarrolló contra Flink versión 1.7.0.
+La configuración se desarrolló contra la versión 1.7.0 de Flink.
 
 
 
@@ -49,55 +49,55 @@ La configuración se desarrolló contra Flink versión 1.7.0.
 
 ==== Agente Jolokia Jar
 
-Para todos los componentes individuales, se debe descargar una versión del archivo JAR del agente JAR Jolokia. La versión probada con respecto a fue link:https://jolokia.org/download.html["Agente Jolokia 1.6.0"].
+Para todos los componentes individuales, se debe descargar una versión del archivo jar del agente Jolokia.  La versión con la que se realizó la prueba fuelink:https://jolokia.org/download.html["Agente Jolokia 1.6.0"] .
 
-Las instrucciones siguientes asumen que el archivo JAR descargado (jolokia-jvm-1.6.0-agent.jar) se coloca en la ubicación '/opt/flink/lib/'.
+Las instrucciones a continuación asumen que el archivo jar descargado (jolokia-jvm-1.6.0-agent.jar) se encuentra en la ubicación '/opt/flink/lib/'.
 
 
 
-==== JobManager
+==== Administrador de trabajos
 
-Para configurar JobManager para exponer la API de Jolokia, puede configurar la siguiente variable de entorno en los nodos y, a continuación, reiniciar JobManager:
+Para configurar JobManager para exponer la API de Jolokia, puede configurar la siguiente variable de entorno en sus nodos y luego reiniciar JobManager:
 
  export FLINK_ENV_JAVA_OPTS="-javaagent:/opt/flink/lib/jolokia-jvm-1.6.0-agent.jar=port=8778,host=0.0.0.0"
-Puede elegir un puerto diferente para Jolokia (8778). Si usted tiene un IP interno para bloquear Jolokia en usted puede reemplazar el "Catch all" 0.0.0.0 por su propio IP. Tenga en cuenta que este IP debe ser accesible desde el plugin de telegraf.
+Puedes elegir un puerto diferente para Jolokia (8778).  Si tienes una IP interna para bloquear a Jolokia, puedes reemplazar el "catch all" 0.0.0.0 por tu propia IP.  Tenga en cuenta que esta IP debe ser accesible desde el complemento Telegraf.
 
 
 
 ==== Administrador de tareas
 
-Para configurar TaskManager para exponer la API de Jolokia, puede configurar la siguiente variable de entorno en los nodos y, a continuación, reiniciar TaskManager:
+Para configurar TaskManager(s) para exponer la API de Jolokia, puede configurar la siguiente variable de entorno en sus nodos y luego reiniciar TaskManager:
 
  export FLINK_ENV_JAVA_OPTS="-javaagent:/opt/flink/lib/jolokia-jvm-1.6.0-agent.jar=port=8778,host=0.0.0.0"
-Puede elegir un puerto diferente para Jolokia (8778). Si usted tiene un IP interno para bloquear Jolokia en usted puede reemplazar el "Catch all" 0.0.0.0 por su propio IP. Tenga en cuenta que este IP debe ser accesible desde el plugin de telegraf.
+Puedes elegir un puerto diferente para Jolokia (8778).  Si tienes una IP interna para bloquear a Jolokia, puedes reemplazar el "catch all" 0.0.0.0 por tu propia IP.  Tenga en cuenta que esta IP debe ser accesible desde el complemento Telegraf.
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Gestor de tareas de tinta | Servidor de espacio de nombres del cluster | Nombre del nodo Task Manager ID IP del nodo | Segmentos de memoria disponibles en red segmentos de memoria totales recolección de basura PS MarkSweep Count recolección de basura PS MarkSweep Time recolección de elementos basura PS Scavenge Count recolección de elementos de basura PS Scavenge Time Heap Memory Demised Heap Memory Init Heap Max Heap Memory memoria memoria memoria de pila usada recuento de subprocesos recuento de pico recuento de subprocesos Total iniciado 
+| Administrador de tareas de Flink | Servidor de espacio de nombres de clúster | Nombre del nodo ID del administrador de tareas IP del nodo | Segmentos de memoria disponibles en la red Segmentos de memoria total en la red Recolección de basura Recuento de PS MarkSweep Recolección de basura Tiempo de PS MarkSweep Recolección de basura Recuento de PS Scavenge Recolección de basura Tiempo de PS Scavenge Memoria de montón comprometida Memoria de montón inicial Memoria de montón máxima Memoria de montón utilizada Recuento de subprocesos Recuento de subprocesos de demonio Recuento máximo de subprocesos Recuento total de subprocesos iniciados 
 
 
-| Trabajo de tinta | Identificador de trabajo del servidor de espacio de nombres del clúster | Nombre del nodo Nombre del trabajo IP del nodo último punto de comprobación Ruta de acceso externa hora de reinicio | Tiempo de inactividad completo reinicia último punto de comprobación alineación búfer duración último punto de comprobación Tamaño último punto de comprobación número de puntos de comprobación completados número de puntos de comprobación fallidos número de puntos de comprobación en curso número de puntos de comprobación de tiempo de actividad 
+| Trabajo de Flink | ID de trabajo del servidor de espacio de nombres del clúster | Nombre del nodo Nombre del trabajo IP del nodo Último punto de control Ruta externa Hora de reinicio | Tiempo de inactividad Reinicios completos Alineación del último punto de control Buffered Duración del último punto de control Tamaño del último punto de control Número de puntos de control completados Número de puntos de control fallidos Número de puntos de control en progreso Número de puntos de control Tiempo de actividad 
 
 
-| Gestor de trabajos de tinta | Servidor de espacio de nombres del cluster | Dirección IP del nodo de nombre | Recolección de elementos no utilizados PS MarkSweep Count Garbage Collection PS MarkSweep Time Garbage Collection PS Scvenge Count Garbage Collection PS Scavenge Time Heap Memory Asked Heap Memory Init memoria memoria heap Max Heap número usado gestores de tareas número ejecutando trabajos ranuras de tareas disponibles Tragamonedas de tareas total de subprocesos Demon Count Recuento de subprocesos máximos recuento de subprocesos total iniciado 
+| Administrador de trabajos de Flink | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo | Recolección de basura PS MarkSweep Count Recolección de basura PS MarkSweep Time Recolección de basura PS Scavenge Count Recolección de basura PS Scavenge Time Memoria de montón comprometida Memoria de montón inicial Memoria de montón máxima utilizada Número de administradores de tareas registrados Número de trabajos en ejecución Ranuras de tarea disponibles Ranuras de tarea Conteo total de subprocesos Conteo de subprocesos de demonio Conteo máximo de subprocesos Conteo total de subprocesos iniciados 
 
 
-| Tarea de tinta | ID de tarea de ID de trabajo de espacio de nombres del clúster | Nombre de nodo de servidor Nombre de trabajo Subíndice de tarea Id. De intento de tarea número de intento de tarea Nombre de tarea Id. De nodo IP Marca de agua de entrada actual | Búferes en búferes de uso de pool en búferes de longitud de cola fuera búferes de uso de pool fuera búferes de longitud de cola en buffers de número local por segundo búferes de número de cuenta en búferes de número local por segundo en búferes de número de frecuencia remotos en búferes de número de cuenta remotos por segundo en remoto por Segundo número de tasa de búferes de salida número de búferes de salida por segundo número de búferes de salida por segundo número de tasa en bytes de número local por segundo número de bytes en bytes de número de tasa local por segundo en bytes de número de bytes remotos en bytes de número de cuenta remotos por segundo en remoto Por segundo número de tasa bytes de salida número de bytes por segundo número de recuento bytes por segundo número de tasa registros en número de registros por segundo número de recuento registros por segundo número de tasa registros número de salida registros por segundo número de registros salida registros por segundo número de cuenta registros por segunda tasa 
+| Tarea de Flink | Espacio de nombres del clúster ID de trabajo ID de tarea | Nombre del nodo del servidor Nombre del trabajo Índice de subtarea ID de intento de tarea Número de intento de tarea Nombre de la tarea ID del administrador de tareas IP del nodo Entrada actual Marca de agua | Uso de búferes en el grupo Longitud de la cola de búferes de entrada Uso del grupo de búferes de salida Longitud de la cola de búferes de salida Número de búferes de entrada local Número de búferes de entrada local por segundo Número de búferes de entrada local Tasa por segundo Número de búferes de entrada remotos Número de búferes de entrada remotos por segundo Número de búferes de salida Número de búferes de salida por segundo Número de búferes de salida por segundo Tasa de búferes de salida por segundo Número de bytes de entrada local Número de bytes de entrada local por segundo Número de bytes de entrada local por segundo Número de bytes de entrada remoto Número de bytes de entrada remoto por segundo Número de bytes de salida Número de bytes de salida por segundo Número de bytes de salida por segundo Número de registros de entrada Número de registros de entrada por segundo Tasa de registros de entrada Número de registros de salida Número de registros de salida por segundo Número de registros de salida por segundo 
 
 
-| Operador de tareas de tinta | ID de trabajo ID de espacio de nombres de clúster ID de tarea de operador | Nombre del nodo del servidor Nombre del trabajo Nombre del operador Subíndice de tarea número de tarea número de intento de tarea Nombre de tarea ID del administrador de tareas IP del nodo | Registros de número de Marca de agua de entrada actual número de Marca de agua de salida actual registros en número de registros por segundo número de cuenta registros por segundo número de tarifa registros de salida número de registros por segundo número de salida registros por segundo número de tasa registros atrasados particiones asignadas bytes consumidos tasa Commit latencia media Tasa de confirmación máx. De confirmaciones fallidas conexión correcta Convalidación de frecuencia de cierre recuento de conexiones recuento de frecuencia de creación tasa de obtención latencia media de obtención tasa de obtención tasa de obtención Tamaño medio de obtención Tamaño de sesión Máx. Tiempo de aceleración de obtención Promedio tiempo de aceleración velocidad máxima de latido tasa de latidos entrantes tasa de E/S tiempo medio (ns) E/S Ratio de espera tiempo de espera de E/S Avg (ns) tiempo de unión media tiempo de unión Fecha de la última hora de latido de red tasa de E/S de salida registros tasa de frecuencia consumido registros de retraso máx. Registros por solicitud promedio Tamaño de solicitud promedio Tamaño de solicitud tiempo de respuesta máximo Seleccione frecuencia de sincronización de la velocidad tiempo de latido respuesta medio Tiempo máximo tiempo máximo de unión tiempo máximo de sincronización Máx 
+| Operador de tareas de Flink | Espacio de nombres del clúster ID de trabajo ID de operador ID de tarea | Nombre del nodo del servidor Nombre del trabajo Nombre del operador Índice de subtarea ID de intento de tarea Número de intento de tarea Nombre de la tarea ID del administrador de tareas IP del nodo | Marca de agua de entrada actual Marca de agua de salida actual Número de registros de entrada Número de registros de entrada por segundo Número de registros de entrada por segundo Número de registros de salida Número de registros de salida por segundo Número de registros de salida por segundo Número de registros tardíos descartados Particiones asignadas Tasa de bytes consumidos Latencia de confirmación Latencia de confirmación promedio Tasa de confirmación máxima Confirmaciones fallidas Confirmaciones exitosas Tasa de cierre de conexión Recuento de conexiones Tasa de creación de conexión Recuento Latencia de búsqueda promedio Latencia de búsqueda máxima Tasa de búsqueda Tamaño de búsqueda Tamaño de búsqueda promedio Tiempo máximo de aceleración de búsqueda Tiempo promedio de aceleración de búsqueda Tasa máxima de latidos Tasa de bytes entrantes Relación de E/S Tiempo promedio de E/S (ns) Relación de espera de E/S Tiempo promedio de espera de E/S (ns) Tasa de unión Tiempo de unión Promedio del último latido Tasa de E/S de red Tasa de bytes de salida Tasa de registros consumidos Retraso de registros Máximos registros por solicitud Tasa de solicitud promedio Tamaño de solicitud Tamaño de solicitud promedio Tasa de respuesta máxima Tasa de selección Tasa de sincronización Tiempo de sincronización Tiempo promedio de respuesta de latido Máx. de unión Tiempo máximo de sincronización Tiempo máximo 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

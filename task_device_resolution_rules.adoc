@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_device_resolution_rules.html 
 keywords: Automatic, AR, AHR, Host, automatic device resolution 
-summary: Device Resolution le ayuda a realizar un seguimiento preciso del rendimiento y del inventario en su entorno. 
+summary: La resolución del dispositivo le ayuda a realizar un seguimiento preciso del rendimiento y el inventario en su entorno. 
 ---
 = Reglas de resolución de dispositivos
 :hardbreaks:
@@ -10,62 +10,62 @@ summary: Device Resolution le ayuda a realizar un seguimiento preciso del rendim
 
 
 [role="lead"]
-Puede crear reglas de resolución de dispositivos para identificar los hosts, el almacenamiento y las cintas que Data Infrastructure Insights no identifique automáticamente actualmente. Las reglas que crea identifican dispositivos actualmente en su entorno y también identifican dispositivos similares a medida que se agregan a su entorno.
+Crea reglas de resolución de dispositivos para identificar hosts, almacenamiento y cintas que Data Infrastructure Insights no identifica automáticamente en la actualidad.  Las reglas que usted crea identifican los dispositivos que se encuentran actualmente en su entorno y también identifican dispositivos similares a medida que se agregan a su entorno.
 
 
 
-== Creación de Reglas de resolución de dispositivos
+== Creación de reglas de resolución de dispositivos
 
-Al crear reglas que se inician identificando el origen de la información con el que se ejecuta la regla, el método utilizado para extraer información y si se aplica la búsqueda DNS a los resultados de la regla.
+Al crear reglas, comienza por identificar la fuente de información sobre la que se ejecuta la regla, el método utilizado para extraer información y si la búsqueda de DNS se aplica a los resultados de la regla.
 
 [cols="2*"]
 |===
 
 
-| Fuente que se utiliza para identificar el dispositivo | * Alias de SRM para hosts * alias de almacenamiento que contiene un nombre de host o cinta incorporado * alias de conmutador que contiene un nombre de host o cinta integrado * nombres de zona que contienen un nombre de host integrado 
+| Fuente que se utiliza para identificar el dispositivo | * Alias de SRM para hosts * Alias de almacenamiento que contienen un nombre de cinta o host incorporado * Alias de conmutador que contienen un nombre de cinta o host incorporado * Nombres de zona que contienen un nombre de host incorporado 
 
 
-| Método que se utiliza para extraer el nombre del dispositivo del origen | * Como es (extraer un nombre de un SRM) * delimitadores * expresiones regulares 
+| Método que se utiliza para extraer el nombre del dispositivo de la fuente | * Tal cual (extraer un nombre de un SRM) * Delimitadores * Expresiones regulares 
 
 
-| Búsqueda DNS | Especifica si utiliza DNS para verificar el nombre de host 
+| Búsqueda de DNS | Especifica si utiliza DNS para verificar el nombre del host 
 |===
-Las reglas se crean en la ficha Reglas de resolución automática. Los siguientes pasos describen el proceso de creación de reglas.
+Crea reglas en la pestaña Reglas de resolución automática.  Los siguientes pasos describen el proceso de creación de reglas.
 
 .Procedimiento
-. Haga clic en *Administrar > resolución del dispositivo*
-. En la ficha *Reglas de resolución automática*, haga clic en *+ Regla de host* o *+ Regla de cinta*.
+. Haga clic en *Administrar > Resolución del dispositivo*
+. En la pestaña *Reglas de resolución automática*, haga clic en *+ Regla de host* o *+ Regla de cinta*.
 +
-Aparece la pantalla *Regla de resolución*.
+Se muestra la pantalla *Regla de resolución*.
 
 +
 
-NOTE: Haga clic en el vínculo _View Matching Criteria_ para obtener ayuda y ejemplos para crear expresiones regulares.
+NOTE: Haga clic en el enlace _Ver criterios coincidentes_ para obtener ayuda y ejemplos sobre cómo crear expresiones regulares.
 
-. En la lista *Tipo*, seleccione el dispositivo que desea identificar.
+. En la lista *Tipo* seleccione el dispositivo que desea identificar.
 +
 Puede seleccionar _Host_ o _Tape_.
 
 . En la lista *Fuente*, seleccione la fuente que desea utilizar para identificar el host.
 +
-En función del origen que haya elegido, Data Infrastructure Insights muestra la siguiente respuesta:
+Según la fuente que elija, Data Infrastructure Insights muestra la siguiente respuesta:
 
 +
-.. *Zonas* enumera las zonas y WWN que deben ser identificados por Data Infrastructure Insights.
-.. *SRM* enumera los alias no identificados que deben ser identificados por Data Infrastructure Insights
-.. *El alias de almacenamiento* enumera los alias de almacenamiento y WWN que deben ser identificados por Data Infrastructure Insights
-.. *Switch alias* enumera los alias del switch que deben ser identificados por Data Infrastructure Insights
+.. *Zonas* enumera las zonas y WWN que Data Infrastructure Insights debe identificar.
+.. *SRM* enumera los alias no identificados que Data Infrastructure Insights debe identificar
+.. *Alias ​​de almacenamiento* enumera los alias de almacenamiento y WWN que Data Infrastructure Insights debe identificar
+.. *Alias ​​de conmutador* enumera los alias de conmutador que Data Infrastructure Insights debe identificar
 
 
-. En la lista *método*, seleccione el método que desea utilizar para identificar el host.
+. En la lista *Método* seleccione el método que desea emplear para identificar el host.
 +
 |===
 
 
-| Origen | Método 
+| Fuente | Método 
 
 
-| SRM | Como es, delimitadores, expresiones regulares 
+| SRM | Tal cual, Delimitadores, Expresiones regulares 
 
 
 | Alias de almacenamiento | Delimitadores, expresiones regulares 
@@ -77,9 +77,9 @@ En función del origen que haya elegido, Data Infrastructure Insights muestra la
 | Zonas | Delimitadores, expresiones regulares 
 |===
 +
-** Las reglas que utilizan delimitadores requieren los delimitadores y la longitud mínima del nombre de host. La longitud mínima del nombre de host es el número de caracteres que Data Infrastructure Insights debe utilizar para identificar un host. Data Infrastructure Insights realiza búsquedas de DNS solo para nombres de host que son tan largos o largos.
+** Las reglas que utilizan delimitadores requieren los delimitadores y la longitud mínima del nombre de host.  La longitud mínima del nombre de host es la cantidad de caracteres que Data Infrastructure Insights debe usar para identificar un host.  Data Infrastructure Insights realiza búsquedas de DNS solo para nombres de host que tengan esta longitud o más.
 +
-Para las reglas que utilizan delimitadores, el delimitador tokeniza la cadena de entrada y se crea una lista de candidatos de nombre de host mediante varias combinaciones del token adyacente. La lista se ordena entonces, de mayor a menor tamaño. Por ejemplo, para un anillo de entrada de _vipsnq03_hba3_emc3_12ep0_, la lista daría como resultado lo siguiente:
+Para las reglas que utilizan delimitadores, la cadena de entrada se tokeniza mediante el delimitador y se crea una lista de candidatos a nombre de host realizando varias combinaciones del token adyacente.  Luego se ordena la lista del mayor al menor.  Por ejemplo, para un sring de entrada de _vipsnq03_hba3_emc3_12ep0_ la lista daría como resultado lo siguiente:
 
 +
 *** vipsnq03_hba3_emc3_12ep0
@@ -94,25 +94,25 @@ Para las reglas que utilizan delimitadores, el delimitador tokeniza la cadena de
 *** hba3
 
 
-** Las reglas que usan expresiones regulares requieren una expresión regular, el formato y la selección de sensibilidad de casos.
+** Las reglas que utilizan expresiones regulares requieren una expresión regular, el formato y la selección de distinción entre mayúsculas y minúsculas.
 
 
-. Haga clic en *Ejecutar AR* para ejecutar todas las reglas, o haga clic en la flecha hacia abajo del botón para ejecutar la regla que creó (y cualquier otra regla que se haya creado desde la última ejecución completa de AR).
+. Haga clic en *Ejecutar AR* para ejecutar todas las reglas, o haga clic en la flecha hacia abajo en el botón para ejecutar la regla que creó (y cualquier otra regla que se haya creado desde la última ejecución completa de AR).
 +
-Los resultados de la ejecución de reglas se muestran en la ficha *FC Identify*.
+Los resultados de la ejecución de la regla se muestran en la pestaña *Identificación de FC*.
 
 
 
 
 
-== Inicio de una actualización automática de resolución del dispositivo
+== Iniciar una actualización automática de la resolución del dispositivo
 
-Una actualización de resolución de dispositivo confirma los cambios manuales que se han agregado desde la última ejecución automática de resolución de dispositivo completa. La ejecución de una actualización se puede utilizar para confirmar y ejecutar sólo las nuevas entradas manuales realizadas en la configuración de resolución del dispositivo. No se ejecuta ninguna resolución completa del dispositivo.
+Una actualización de la resolución del dispositivo confirma los cambios manuales que se han agregado desde la última ejecución de la resolución automática completa del dispositivo.  La ejecución de una actualización se puede utilizar para confirmar y ejecutar únicamente las nuevas entradas manuales realizadas en la configuración de resolución del dispositivo.  No se realiza ninguna ejecución de resolución completa del dispositivo.
 
 .Procedimiento
-. Inicie sesión en la interfaz de usuario web de Data Infrastructure Insights.
-. Haga clic en *Administrar > resolución del dispositivo*
-. En la pantalla *resolución del dispositivo*, haga clic en la flecha hacia abajo del botón *Ejecutar AR*.
+. Inicie sesión en la interfaz de usuario web de Data Infrastructure Insights .
+. Haga clic en *Administrar > Resolución del dispositivo*
+. En la pantalla *Resolución del dispositivo*, haga clic en la flecha hacia abajo en el botón *Ejecutar AR*.
 . Haga clic en *Actualizar* para iniciar la actualización.
 
 
@@ -120,35 +120,35 @@ Una actualización de resolución de dispositivo confirma los cambios manuales q
 
 == Identificación manual asistida por reglas
 
-Esta función se utiliza en casos especiales en los que desea ejecutar una regla específica o una lista de reglas (con o sin una reordenación puntual) para resolver hosts, dispositivos de almacenamiento y cintas desconocidos.
+Esta función se utiliza para casos especiales en los que desea ejecutar una regla específica o una lista de reglas (con o sin un reordenamiento único) para resolver hosts desconocidos, dispositivos de almacenamiento y de cinta.
 
 .Antes de empezar
-Tiene varios dispositivos que no se han identificado y también varias reglas que han identificado correctamente otros dispositivos.
+Tiene varios dispositivos que no han sido identificados y también tiene varias reglas que identificaron exitosamente otros dispositivos.
 
 
-NOTE: Si el origen sólo contiene parte del nombre de un host o dispositivo, utilice una regla de expresión regular y dé formato para agregar el texto que falta.
+NOTE: Si su fuente solo contiene parte del nombre de un host o dispositivo, utilice una regla de expresión regular y formatéela para agregar el texto faltante.
 
 .Procedimiento
-. Inicie sesión en la interfaz de usuario web de Data Infrastructure Insights.
-. Haga clic en *Administrar > resolución del dispositivo*
-. Haga clic en la ficha *Identificación de canal de fibra*.
+. Inicie sesión en la interfaz de usuario web de Data Infrastructure Insights .
+. Haga clic en *Administrar > Resolución del dispositivo*
+. Haga clic en la pestaña *Identificar canal de fibra*.
 +
 El sistema muestra los dispositivos junto con su estado de resolución.
 
 . Seleccione varios dispositivos no identificados.
-. Haga clic en *acciones masivas* y seleccione *establecer resolución de host* o *establecer resolución de cinta*.
+. Haga clic en *Acciones masivas* y seleccione *Establecer resolución de host* o *Establecer resolución de cinta*.
 +
-El sistema muestra la pantalla de identificación que contiene una lista de todas las reglas que han identificado correctamente los dispositivos.
+El sistema muestra la pantalla Identificar, que contiene una lista de todas las reglas que identificaron los dispositivos correctamente.
 
-. Cambie el orden de las reglas por un orden que satisfaga sus necesidades.
+. Cambie el orden de las reglas a un orden que se ajuste a sus necesidades.
 +
-El orden de las reglas se cambia en la pantalla de identificación, pero no se cambian globalmente.
+El orden de las reglas se modifica en la pantalla Identificar, pero no se modifica globalmente.
 
-. Seleccione el método que se ajuste a sus necesidades.
+. Seleccione el método que mejor se adapte a sus necesidades.
 
 
-Data Infrastructure Insights ejecuta el proceso de resolución del host en el orden en que aparecen los métodos, empezando por los que aparecen en la parte superior.
+Data Infrastructure Insights ejecuta el proceso de resolución del host en el orden en el que aparecen los métodos, comenzando por los que están en la parte superior.
 
-Cuando se encuentran las reglas que se aplican, los nombres de reglas se muestran en la columna rules y se identifican como manuales.
+Cuando se encuentran reglas que se aplican, los nombres de las reglas se muestran en la columna de reglas y se identifican como manuales.
 
-Relacionado: link:task_device_resolution_fibre_channel.html["Resolución de dispositivos Fibre Channel"] link:task_device_resolution_ip.html["Resolución del dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]
+Relacionado:link:task_device_resolution_fibre_channel.html["Resolución del dispositivo de canal de fibra"] link:task_device_resolution_ip.html["Resolución de dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]

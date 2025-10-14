@@ -2,66 +2,66 @@
 sidebar: sidebar 
 permalink: concept_high_consuming_workloads.html 
 keywords: insight, greedy, degraded, bully, victim, impacted, impacting, impactful, impact, resources, consuming, workload 
-summary: Los datos le dan un vistazo a cómo afectan los recursos a otros recursos en su inquilino. 
+summary: Insights le brinda una visión de cómo los recursos impactan a otros recursos en su inquilino. 
 ---
-= Información: Cargas de trabajo de alto consumo
+= Perspectivas: Cargas de trabajo de alto consumo
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Las cargas de trabajo con un alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido. Data Infrastructure Insights proporciona herramientas que le ayudan a investigar la saturación de los recursos y el impacto en su inquilino.
+Las cargas de trabajo de alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido.  Data Infrastructure Insights proporciona herramientas para ayudarlo a investigar la saturación de recursos y el impacto en su inquilino.
 
 
 
 === Terminología
 
-Cuando se habla del impacto de la carga de trabajo o de los recursos, las siguientes definiciones son útiles.
+Cuando hablamos de carga de trabajo o impacto en los recursos, las siguientes definiciones son útiles.
 
-Un recurso *impactante* o _codicioso_ es uno que causa un impacto negativo en otro recurso. Por ejemplo, un volumen que experimenta un IOPS muy alto puede aumentar la latencia en otros volúmenes (por ejemplo, recursos _impactados_ o _degradados_). Los recursos impactados y afectados son “compañeros” que utilizan el mismo recurso compartido, por ejemplo, un pool de almacenamiento o volumen.
+Un recurso *Impactante* o _Codicioso_ es aquel que causa un impacto negativo en otro recurso.  Por ejemplo, un volumen que experimenta IOPS muy altos puede provocar una mayor latencia en otros volúmenes (es decir, recursos _impactados_ o _degradados_).  Los recursos impactados y de impacto son “pares” que utilizan el mismo recurso compartido, por ejemplo, un grupo de almacenamiento o un volumen.
 
-Una *carga de trabajo de alto consumo* es una carga de trabajo que actualmente se identifica como que afecta a otros recursos en el pool de almacenamiento compartido. Estas cargas de trabajo mejoran las IOPS, lo que reduce las IOPS en las cargas de trabajo afectadas. En Data Infrastructure Insights, estas se identifican como *cargas de trabajo exigentes*.
+Una *carga de trabajo de alto consumo* es una carga de trabajo que actualmente se identifica como que afecta a otros recursos en el grupo de almacenamiento compartido.  Estas cargas de trabajo generan IOPS más altos, lo que reduce las IOPS en las cargas de trabajo afectadas.  En Data Infrastructure Insights, estos se identifican como *Cargas de trabajo exigentes*.
 
-Una *carga de trabajo afectada* es una carga de trabajo afectada por una carga de trabajo de alto consumo en el Pool de almacenamiento compartido. Estas cargas de trabajo están experimentando una reducción de IOPS o una latencia superior, debido a las cargas de trabajo más exigentes.
+Una *Carga de trabajo impactada* es una carga de trabajo afectada por una carga de trabajo de alto consumo en el grupo de almacenamiento compartido.  Estas cargas de trabajo experimentan IOPS reducidas y/o mayor latencia, causadas por las cargas de trabajo exigentes.
 
-*Saturación de recursos compartidos* es la relación de impactar IOPS en _basal_.
+*Saturación de recursos compartidos* es la relación entre las IOPS impactantes y la _línea base_.
 
-*La línea de base* se define como el punto de datos máximo notificado para cada carga de trabajo en la hora inmediatamente anterior a la saturación detectada.
+*La línea base* se define como el punto de datos máximo informado para cada carga de trabajo en la hora inmediatamente anterior a la saturación detectada.
 
-Se produce *contención* cuando se determina que las IOPS afectan a otros recursos o cargas de trabajo del pool de almacenamiento compartido.
-
-
-
-=== Cargas de trabajo que requieren un alto consumo
-
-Las cargas de trabajo que consumen mucho tiempo que detecta Data Infrastructure Insights se muestran en _Shared Resources under Stress_ Insight. Navegue a *Observabilidad > Infrastructure Insights* para ver estos detalles.
-
-image:Impacts_Workloads_Menu.png["Comparte los recursos"]
-
-Haga clic en una carga de trabajo para ver la página de detalles correspondiente. El gráfico superior muestra la actividad del recurso compartido (por ejemplo, un pool de almacenamiento) en el que se produce la contención.
-
-image:Insights_Shared_Resource_Contention_Chart.png["Gráfico que muestra la actividad del recurso compartido"]
-
-A continuación, se muestran dos gráficos que muestran las cargas de trabajo exigentes y las cargas de trabajo afectadas por esas cargas de trabajo exigentes.
-
-image:Insights_Demanding_Workload_Chart.png["Gráfico de cargas de trabajo exigentes"] image:Insights_Impacted_Workload_Chart.png["Gráfico influyen en la carga de trabajo"]
+Una *Contención* ocurre cuando se determina que las IOPS afectan otros recursos o cargas de trabajo en el grupo de almacenamiento compartido.
 
 
 
-=== ¿Qué debo hacer para resolver la saturación?
+=== Cargas de trabajo de alto consumo
 
-Hay una serie de pasos que puede tomar para reducir o eliminar la posibilidad de saturación en su inquilino. Estas son algunas cosas que puede probar.
+Cualquier carga de trabajo de alto consumo que Data Infrastructure Insights detecte se muestra en la información _Recursos compartidos bajo estrés_.  Vaya a *Observabilidad > Información de infraestructura* para ver esta información.
 
-* Traslade a consumidores con una alta tasa de IOPS
+image:Impacts_Workloads_Menu.png["Recursos de acciones"]
+
+Haga clic en una carga de trabajo para ver la página de detalles correspondiente.  El gráfico superior muestra la actividad en el recurso compartido (por ejemplo, un grupo de almacenamiento) en el que se produce la contención.
+
+image:Insights_Shared_Resource_Contention_Chart.png["Gráfico que muestra la actividad en el recurso compartido"]
+
+Debajo hay dos gráficos que muestran las cargas de trabajo exigentes y las cargas de trabajo que se ven afectadas por esas cargas de trabajo exigentes.
+
+image:Insights_Demanding_Workload_Chart.png["Cuadro de carga de trabajo exigente"] image:Insights_Impacted_Workload_Chart.png["Gráfico de carga de trabajo impactada"]
+
+
+
+=== ¿Qué hago para resolver la saturación?
+
+Hay una serie de medidas que puede tomar para reducir o eliminar la posibilidad de saturación en su inquilino.  Aquí hay algunas cosas que puedes probar.
+
+* Mover consumidores con alto IOPS
 +
-Traslade las cargas de trabajo "codiciosas" a pools de almacenamiento menos saturados. Se recomienda evaluar el nivel y la capacidad de estos pools antes de mover las cargas de trabajo para evitar costes innecesarios o contensiones adicionales.
+Mueva las cargas de trabajo "codiciosas" a grupos de almacenamiento menos saturados.  Se recomienda evaluar el nivel y la capacidad de estos grupos antes de mover las cargas de trabajo, para evitar costos innecesarios o contenciones adicionales.
 
-* Implemente una política de calidad de servicio (QoS)
+* Implementar una política de calidad de servicio (QoS)
 +
-Implementar una política de calidad de servicio por carga de trabajo para garantizar que haya suficientes recursos libres disponibles reducirá la saturación del pool de almacenamiento. Esta es una solución a largo plazo.
+La implementación de una política de QoS por carga de trabajo para garantizar que haya suficientes recursos libres disponibles aliviará la saturación en el grupo de almacenamiento.  Esta es una solución a largo plazo.
 
-* Añada recursos adicionales
+* Añadir recursos adicionales
 +
-Si el recurso compartido (por ejemplo, Storage Pool) ha alcanzado el punto de saturación de IOPS, añadir más discos o más rápidos al pool garantizará suficientes recursos libres disponibles para aliviar la saturación.
+Si el recurso compartido (por ejemplo, el grupo de almacenamiento) ha alcanzado el punto de saturación de IOPS, agregar más discos o discos más rápidos al grupo garantizará que haya suficientes recursos libres disponibles para aliviar la saturación.
 
 

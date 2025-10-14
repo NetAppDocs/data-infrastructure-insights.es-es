@@ -14,33 +14,33 @@ summary: Recopilador de datos para Kubernetes
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de Kubernetes Pod, nodos y contenedor.
+Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de pods, nodos y contenedores de Kubernetes.
 
 
 
 == Instalación
 
-Para obtener instrucciones de instalación de Kubernetes, consulta la link:task_config_telegraf_agent_k8s.html["Operador de supervisión de Kubernetes"] página.
+Para obtener instrucciones sobre la instalación de Kubernetes, consulte lalink:task_config_telegraf_agent_k8s.html["Operador de monitoreo de Kubernetes"] página.
 
 
 
-== Acerca de las métricas de estado de Kube
+== Acerca de Kube-state-metrics
 
-El operador de supervisión de Kubernetes instala kube-state-metrics automáticamente; no se necesita interacción del usuario.
+El operador de monitoreo de Kubernetes instala kube-state-metrics automáticamente; no se necesita interacción del usuario.
 
 
 
-=== Contadores de métricas-estado-Kube
+=== Contadores de métricas de estado de Kube
 
-El Operador de Supervisión de Kubernetes de NetApp extrae los contadores de métricas de estado de kube que se enumeran a continuación. Puede encontrar más detalles sobre cada contador en: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[].
+El operador de monitoreo de Kubernetes de NetApp extrae los contadores kube-state-metrics que se enumeran a continuación.  Puede encontrar más detalles sobre cada contador en: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[] .
 
-. DemonSet Metrics
-. Métricas de puesta en marcha
-. Métricas de espacio de nombres
+. Métricas de DaemonSet
+. Métricas de implementación
+. Métricas del espacio de nombres
 . Métricas de nodo
-. Métricas de volúmenes persistentes
-. Métricas de reclamación de volumen persistente
-. Métricas de POD
+. Métricas de volumen persistente
+. Métricas de reclamaciones de volumen persistente
+. Métricas de pod
 . Métricas de ReplicaSet
 . Métricas de servicio
 . Métricas de StatefulSet

@@ -10,46 +10,46 @@ summary: Configuración del recopilador de datos de HP Enterprise Command View.
 
 
 [role="lead"]
-El recopilador de datos HP Enterprise Command View Advanced Edition admite la detección de matrices XP y P9500 a través del servidor Command View Advanced Edition (CVAE). Data Infrastructure Insights se comunica con CVAE mediante la API estándar de Command View para recopilar datos de inventario y rendimiento.
+El recopilador de datos HP Enterprise Command View Advanced Edition admite la detección de matrices XP y P9500 a través del servidor Command View Advanced Edition (CVAE).  Data Infrastructure Insights se comunica con CVAE mediante la API Command View estándar para recopilar datos de inventario y rendimiento.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de HP Enterprise Command View. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de HP Enterprise Command View.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | PDEV | Disco 
 
 
-| Piscina de diarios | Grupo de discos 
+| Revista Pool | Grupo de discos 
 
 
-| Cabina de almacenamiento | Reducida 
+| Matriz de almacenamiento | Almacenamiento 
 
 
-| Controlador del puerto | Nodo de almacenamiento 
+| Controlador de puerto | Nodo de almacenamiento 
 
 
-| Grupo de cabinas, DP Pool | Pool de almacenamiento 
+| Grupo de matrices, grupo de DP | Pool de almacenamiento 
 
 
 | Unidad lógica, LDEV | Volumen 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos de inventario
 
-Para recopilar datos de inventario, debe contar con lo siguiente:
+Para poder recopilar datos de inventario, debe tener lo siguiente:
 
 * Dirección IP del servidor CVAE
-* Nombre de usuario y contraseña de sólo lectura para el software CVAE y los privilegios del mismo nivel
+* Nombre de usuario y contraseña de solo lectura para el software CVAE y privilegios de pares
 * Requisito de puerto: 2001
 
 
@@ -57,25 +57,25 @@ Para recopilar datos de inventario, debe contar con lo siguiente:
 
 == Requisitos de rendimiento
 
-Para poder recopilar datos de rendimiento, se deben cumplir los siguientes requisitos:
+Para poder recopilar datos de rendimiento se deben cumplir los siguientes requisitos:
 
-* HDS rendimiento USP, USP V y VSP
+* Rendimiento de HDS USP, USP V y VSP
 +
-** El Monitor de rendimiento debe tener licencia.
-** El interruptor de supervisión debe estar activado.
-** La herramienta de exportación (Export.exe) debe copiarse en la AU de Data Infrastructure Insights y extraerse en una ubicación. En CI Linux AUS, asegúrese de que "cisys" tiene permisos de lectura y ejecución.
-** La versión de la herramienta de exportación debe coincidir con la versión de microcódigo de la matriz de destino.
+** El Monitor de Rendimiento debe tener licencia.
+** El interruptor de monitoreo debe estar habilitado.
+** La herramienta de exportación (Export.exe) debe copiarse en Data Infrastructure Insights AU y extraerse a una ubicación.  En las AU de CI Linux, asegúrese de que "cisys" tenga permisos de lectura y ejecución.
+** La versión de la herramienta de exportación debe coincidir con la versión del microcódigo de la matriz de destino.
 
 
 * Rendimiento de AMS:
 +
-** El Monitor de rendimiento debe tener licencia.
-** La utilidad de CLI de Storage Navigator Modular 2 (SNM2) se instala en Data Infrastructure Insights AU.
+** El Monitor de Rendimiento debe tener licencia.
+** La utilidad CLI de Storage Navigator Modular 2 (SNM2) se debe instalar en Data Infrastructure Insights AU.
 
 
 * Requisitos de red
 +
-** Las Herramientas de exportación están basadas en Java y utilizan RMI para hablar con la matriz. Es posible que estas herramientas no sean compatibles con el firewall, ya que pueden negociar dinámicamente los puertos TCP de origen y destino en cada invocación. Además, las herramientas de exportación de la matriz de modelos diferentes pueden tener un comportamiento diferente en toda la red. Consulte a HPE para conocer los requisitos del modelo
+** Las herramientas de exportación están basadas en Java y utilizan RMI para comunicarse con la matriz.  Es posible que estas herramientas no sean compatibles con el firewall, ya que pueden negociar dinámicamente los puertos TCP de origen y destino en cada invocación.  Además, las herramientas de exportación de diferentes matrices de modelos pueden comportarse de manera diferente en la red: consulte a HPE para conocer los requisitos de su modelo.
 
 
 
@@ -92,31 +92,31 @@ Para poder recopilar datos de rendimiento, se deben cumplir los siguientes requi
 | Servidor de vista de comandos | Dirección IP o nombre de dominio completo del servidor Command View 
 
 
-| Nombre de usuario | Nombre de usuario del servidor Command View. 
+| Nombre de usuario | Nombre de usuario para el servidor Command View. 
 
 
-| Contraseña | Contraseña utilizada para el servidor Command View. 
+| Password | Contraseña utilizada para el servidor Command View. 
 
 
-| DISPOSITIVOS: VSP G1000 (R800), VSP (R700), HUS VM (HM700) Y USP STORAGES | Lista de dispositivos para los sistemas de almacenamiento VSP G1000 (R800), VSP (R700), HUS VM (HM700) y USP. Cada almacenamiento requiere: * La dirección IP del arreglo: Dirección IP del almacenamiento * Nombre de usuario: Nombre de usuario para el almacenamiento * Contraseña: Contraseña para el almacenamiento * carpeta que contiene archivos JAR de la utilidad de exportación 
+| Dispositivos: almacenamientos VSP G1000 (R800), VSP (R700), HUS VM (HM700) y USP | Lista de dispositivos para almacenamientos VSP G1000 (R800), VSP (R700), HUS VM (HM700) y USP.  Cada almacenamiento requiere: * IP de la matriz: dirección IP del almacenamiento * Nombre de usuario: nombre de usuario para el almacenamiento * Contraseña: contraseña para el almacenamiento * Carpeta que contiene los archivos JAR de la utilidad de exportación 
 
 
-| SNM2Devices - almacenes WMS/SMS/AMS | Lista de dispositivos para almacenamientos WMS/SMS/AMS. Cada almacenamiento requiere: * La dirección IP de la cabina: Dirección IP del almacenamiento * Storage Navigator CLI Path: SNM2 CLI path * autenticación de la cuenta válida: Seleccione para elegir una autenticación de cuenta válida * Nombre de usuario: Nombre de usuario para el almacenamiento * Contraseña: Contraseña para el almacenamiento 
+| SNM2Devices - Almacenamientos WMS/SMS/AMS | Lista de dispositivos para almacenamientos WMS/SMS/AMS.  Cada almacenamiento requiere: * IP de la matriz: dirección IP del almacenamiento * Ruta CLI de Storage Navigator: ruta CLI de SNM2 * Autenticación de cuenta válida: seleccione para elegir una autenticación de cuenta válida * Nombre de usuario: nombre de usuario para el almacenamiento * Contraseña: contraseña para el almacenamiento 
 
 
-| Seleccione Tuning Manager para rendimiento | Anular otras opciones de rendimiento 
+| Elija Tuning Manager para el rendimiento | Anular otras opciones de rendimiento 
 
 
-| Tuning Manager Host | Dirección IP o nombre de dominio completo del administrador de ajustes 
+| Host del administrador de sintonización | Dirección IP o nombre de dominio completo del administrador de ajuste 
 
 
-| Puerto del administrador de ajuste | Puerto utilizado para Tuning Manager 
+| Puerto del administrador de sintonización | Puerto utilizado para Tuning Manager 
 
 
-| Nombre de usuario de Tuning Manager | Nombre de usuario de Tuning Manager 
+| Nombre de usuario del administrador de tuning | Nombre de usuario para Tuning Manager 
 
 
-| Tuning Manager Password | Contraseña de Tuning Manager 
+| Contraseña del administrador de sintonización | Contraseña para el administrador de sintonización 
 |===
 Nota: En HDS USP, USP V y VSP, cualquier disco puede pertenecer a más de un grupo de matrices.
 
@@ -130,31 +130,31 @@ Nota: En HDS USP, USP V y VSP, cualquier disco puede pertenecer a más de un gru
 | Campo | Descripción 
 
 
-| Comando Ver puerto de servidor | Puerto utilizado para el servidor Command View 
+| Puerto del servidor de vista de comandos | Puerto utilizado para el servidor Command View 
 
 
 | HTTPS habilitado | Seleccione para habilitar HTTPS 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 40. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 40. 
 
 
-| Elija "excluir" o "incluir" para especificar una lista | Especifique si desea incluir o excluir la lista de matrices a continuación al recopilar datos. 
+| Seleccione “Excluir” o “Incluir” para especificar una lista | Especifique si desea incluir o excluir la lista de matrices a continuación al recopilar datos. 
 
 
-| Excluir o incluir dispositivos | Lista separada por comas de los ID de dispositivo o los nombres de matriz que se van a incluir o excluir 
+| Excluir o incluir dispositivos | Lista separada por comas de ID de dispositivos o nombres de matrices para incluir o excluir 
 
 
-| Consulte Administrador de hosts | Seleccione para consultar al administrador de host 
+| Administrador de host de consultas | Seleccione para consultar al administrador del host 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 300. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -162,47 +162,47 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: El usuario no tiene suficientes permisos | Utilice una cuenta de usuario diferente que tenga más privilegios o aumente el privilegio de cuenta de usuario configurado en el recopilador de datos 
+| Error: El usuario no tiene suficientes permisos | Utilice una cuenta de usuario diferente que tenga más privilegios o aumente los privilegios de la cuenta de usuario configurada en el recopilador de datos 
 
 
-| Error: La lista de almacenamientos está vacía. Los dispositivos no están configurados o el usuario no tiene permisos suficientes | * Utilice DeviceManager para comprobar si los dispositivos están configurados. * Utilice una cuenta de usuario diferente que tenga más privilegios o aumente el privilegio de la cuenta de usuario 
+| Error: la lista de almacenamiento está vacía.  O bien los dispositivos no están configurados o el usuario no tiene suficientes permisos | * Utilice el Administrador de dispositivos para comprobar si los dispositivos están configurados.  * Utilice una cuenta de usuario diferente que tenga más privilegios o aumente los privilegios de la cuenta de usuario 
 
 
-| Error: La cabina de almacenamiento HDS no se actualizó durante algunos días | Investigue por qué esta matriz no se actualiza en HP CommandView AE. 
+| Error: la matriz de almacenamiento HDS no se actualizó durante algunos días | Investigue por qué esta matriz no se actualiza en HP CommandView AE. 
 |===
 
 
-=== Rendimiento
+=== Actuación
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: * Error al ejecutar la utilidad de exportación * error al ejecutar el comando externo | * Confirme que Export Utility está instalada en la unidad de adquisición de datos de Infrastructure Insights * Confirme que la ubicación de Export Utility es correcta en la configuración del recopilador de datos * Confirme que la IP de la matriz USP/R600 es correcta en la configuración del recopilador de datos * Confirme que el nombre de usuario y la contraseña son correctos en la configuración del recopilador de datos * Confirme que la versión de Export Utility es compatible con la versión de código micro * de la matriz de almacenamiento de la versión * desde la unidad de la unidad de la unidad de almacenamiento de datos de adquisición de datos de datos de datos de datos de datos de datos de datos de la unidad de datos de datos de la unidad de información de datos runWin.bat 
+| Error: * Error al ejecutar la utilidad de exportación * Error al ejecutar el comando externo | * Confirme que Export Utility esté instalado en la unidad de adquisición de Data Infrastructure Insights * Confirme que la ubicación de Export Utility sea correcta en la configuración del recopilador de datos * Confirme que la IP de la matriz USP/R600 sea correcta en la configuración del recopilador de datos * Confirme que el nombre de usuario y la contraseña sean correctos en la configuración del recopilador de datos * Confirme que la versión de Export Utility sea compatible con la versión del microcódigo de la matriz de almacenamiento * Desde la unidad de adquisición de Data Infrastructure Insights , abra un símbolo del sistema y haga lo siguiente: - Cambie el directorio al directorio de instalación configurado - Intente realizar una conexión con la matriz de almacenamiento configurada ejecutando el archivo por lotes runWin.bat 
 
 
-| Error: Error al iniciar sesión en la herramienta de exportación para la IP de destino | * Confirme que el nombre de usuario/contraseña es correcto * cree un ID de usuario principalmente para este recopilador de datos de HDS * confirme que no hay otros recopiladores de datos configurados para adquirir esta matriz 
+| Error: Error al iniciar sesión en la herramienta de exportación para la IP de destino | * Confirme que el nombre de usuario y la contraseña sean correctos * Cree un ID de usuario principalmente para este recopilador de datos HDS * Confirme que no haya otros recopiladores de datos configurados para adquirir esta matriz 
 
 
-| Error: Las herramientas de exportación registradas "no se puede obtener el intervalo de tiempo para la supervisión". | * Confirme que la supervisión del rendimiento está activada en la cabina. * Intente invocar las herramientas de exportación fuera de Data Infrastructure Insights para confirmar que el problema está fuera de Data Infrastructure Insights. 
+| Error: Las herramientas de exportación registraron el mensaje "No se puede obtener el rango de tiempo para el monitoreo". | * Confirme que la monitorización del rendimiento esté habilitada en la matriz.  * Intente invocar las herramientas de exportación fuera de Data Infrastructure Insights para confirmar que el problema se encuentra fuera de Data Infrastructure Insights. 
 
 
-| Error: * Error de configuración: La cabina de almacenamiento no es compatible con la utilidad de exportación * error de configuración: La cabina de almacenamiento no es compatible con la CLI modular de Storage Navigator | * Configure solo las cabinas de almacenamiento admitidas. * Utilice “Lista de dispositivos de filtro” para excluir matrices de almacenamiento no compatibles. 
+| Error: * Error de configuración: Matriz de almacenamiento no compatible con la utilidad de exportación * Error de configuración: Matriz de almacenamiento no compatible con Storage Navigator Modular CLI | * Configure únicamente matrices de almacenamiento compatibles.  * Utilice “Filtrar lista de dispositivos” para excluir matrices de almacenamiento no compatibles. 
 
 
-| Error: * Error al ejecutar el comando externo * error de configuración: La matriz de almacenamiento no ha sido informada por el inventario * error de configuración:la carpeta de exportación no contiene archivos JAR | * Compruebe la ubicación de la utilidad de exportación. * Compruebe si Storage Array in Question está configurado en Command View Server * establezca el intervalo de sondeo de rendimiento como múltiplo de 60 segundos. 
+| Error: * Error al ejecutar comando externo * Error de configuración: Matriz de almacenamiento no informada por Inventario * Error de configuración: la carpeta de exportación no contiene archivos jar | *Verifique la ubicación de la utilidad de exportación.  * Verifique si la matriz de almacenamiento en cuestión está configurada en el servidor Command View. * Establezca el intervalo de sondeo de rendimiento como múltiplo de 60 segundos. 
 
 
-| Error: * Error en la CLI del navegador de almacenamiento * error al ejecutar el comando auPerform * error al ejecutar el comando externo | * Confirme que Storage Navigator Modular CLI está instalado en la unidad de adquisición de datos de información de infraestructura * Confirme que Storage Navigator Modular CLI es correcta en la configuración del recopilador de datos * Confirme que la IP de la matriz WMS/SMS/SMS es correcta en la configuración del recopilador de datos * Confirme que Storage Navigator Modular CLI versión es compatible con la versión de código micro de la matriz de almacenamiento configurada en el recopilador de datos * Desde la unidad de adquisición de datos, abra un CMD - Realice una instalación configurada con el siguiente directorio unitaria - Realice la siguiente: 
+| Error: * Error en la CLI del navegador de almacenamiento * Error al ejecutar el comando auperform * Error al ejecutar el comando externo | * Confirme que Storage Navigator Modular CLI esté instalado en la unidad de adquisición de Data Infrastructure Insights * Confirme que la ubicación de Storage Navigator Modular CLI sea correcta en la configuración del recopilador de datos * Confirme que la IP de la matriz WMS/SMS/SMS sea correcta en la configuración del recopilador de datos * Confirme que la versión de Storage Navigator Modular CLI sea compatible con la versión de microcódigo de la matriz de almacenamiento configurada en el recopilador de datos * Desde la unidad de adquisición de Data Infrastructure Insights , abra un símbolo del sistema y haga lo siguiente: - Cambie el directorio al directorio de instalación configurado - Intente realizar una conexión con la matriz de almacenamiento configurada ejecutando el siguiente comando “auunitref.exe” 
 
 
-| Error: Error de configuración: No se informa de la cabina de almacenamiento por inventario | Compruebe si la cabina de almacenamiento en cuestión está configurada en Command View Server 
+| Error: Error de configuración: Matriz de almacenamiento no reportada por el inventario | Compruebe si la matriz de almacenamiento en cuestión está configurada en el servidor Command View 
 
 
-| Error: * No hay ninguna cabina registrada en la matriz de CLI modular 2 de Storage Navigator * no está registrada en la CLI modular 2 de Storage Navigator * error de configuración: Cabina de almacenamiento no registrada en la CLI modular de StorageNavigator | * Abra el símbolo del sistema y cambie el directorio a la ruta configurada * Ejecute el comando “SET=STONAVM_HOME=.” * Ejecute el comando “auunitref” * Confirme que la salida del comando contiene detalles de la matriz con IP * Si la salida no contiene los detalles de la matriz, entonces registre la matriz con Storage Navigator CLI: - Abrir símbolo del sistema y cambie el directorio a la ruta configurada - Ejecute el comando “set=STONAVM_HOME=”. - Ejecutar comando “auunitaddauto -ip ${ip}”. Sustituya ${ip} por IP real 
+| Error: * No hay ninguna matriz registrada en la CLI de Storage Navigator Modular 2 * La matriz no está registrada en la CLI de Storage Navigator Modular 2 * Error de configuración: La matriz de almacenamiento no está registrada en la CLI de StorageNavigator Modular 2 | * Abra el símbolo del sistema y cambie el directorio a la ruta configurada * Ejecute el comando “set=STONAVM_HOME=.”  * Ejecute el comando “auunitref” * Confirme que la salida del comando contiene detalles de la matriz con IP * Si la salida no contiene los detalles de la matriz, registre la matriz con Storage Navigator CLI: - Abra el símbolo del sistema y cambie el directorio a la ruta configurada - Ejecute el comando “set=STONAVM_HOME=.”  - Ejecute el comando “auunitaddauto -ip ${ip}”.  Reemplace ${ip} con IP real 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

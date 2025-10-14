@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: task_dc_emc_isilon.html 
 keywords: data collector, isilon, EMC, DELL, PowerScale 
-summary: 'Configurar el recopilador de datos de Dell EMC PowerScale (anteriormente Isilon).' 
+summary: 'Configuración del recopilador de datos Dell EMC PowerScale (anteriormente Isilon).' 
 ---
-= Recopilador de datos de Dell EMC PowerScale
+= Recopilador de datos Dell EMC PowerScale
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos SSH Dell EMC PowerScale (anteriormente Isilon) para adquirir datos de inventario y rendimiento del almacenamiento NAS de escalabilidad horizontal PowerScale.
+Data Infrastructure Insights utiliza el recopilador de datos SSH de Dell EMC PowerScale (anteriormente Isilon) para adquirir datos de inventario y rendimiento del almacenamiento NAS de escalamiento horizontal de PowerScale.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Unidad | Disco 
+| Conducir | Disco 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
 | Sistema de archivos | Volumen interno 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -43,7 +43,7 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 Necesita la siguiente información para configurar este recopilador de datos:
 
 * Permisos de administrador para el almacenamiento de PowerScale
-* Dirección IP del clúster de PowerScale
+* Dirección IP del clúster PowerScale
 * Acceso SSH al puerto 22
 
 
@@ -56,13 +56,13 @@ Necesita la siguiente información para configurar este recopilador de datos:
 | Campo | Descripción 
 
 
-| Dirección IP | La dirección IP o el nombre de dominio completo del clúster de PowerScale 
+| Dirección IP | La dirección IP o el nombre de dominio completo del clúster PowerScale 
 
 
-| Nombre de usuario | Nombre de usuario del clúster de PowerScale 
+| Nombre de usuario | Nombre de usuario para el clúster PowerScale 
 
 
-| Contraseña | Contraseña utilizada para el clúster de PowerScale 
+| Password | Contraseña utilizada para el clúster PowerScale 
 |===
 
 
@@ -73,19 +73,19 @@ Necesita la siguiente información para configurar este recopilador de datos:
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 20. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 20. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 300. 
 
 
-| Puerto SSH | Puerto del servicio SSH. El valor predeterminado es 22. 
+| Puerto SSH | Puerto de servicio SSH.  El valor predeterminado es 22. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -93,12 +93,12 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Credenciales de inicio de sesión no válidas" con mensajes de error "los comandos no habilitados para la administración basada en roles requieren acceso de usuario raíz" | * Compruebe que el usuario tiene permisos para ejecutar los siguientes comandos en el dispositivo: > versión de isi osrelease > estado de isi -q > estado de isi -n > dispositivos isi -d %s > licencia de isi * Compruebe que las credenciales utilizadas en el asistente coinciden con las del dispositivo 
+| "Credenciales de inicio de sesión no válidas" con mensajes de error: "Los comandos no habilitados para la administración basada en roles requieren acceso de usuario root". | * Verifique que el usuario tenga permisos para ejecutar los siguientes comandos en el dispositivo: > isi version osrelease > isi status -q > isi status -n > isi devices -d %s > isi license * Verifique que las credenciales utilizadas en el asistente coincidan con las credenciales del dispositivo 
 
 
-| "Error interno" con mensajes de error "error al ejecutar Command <Your command> con permiso: <Your current permission>. Problema de permisos de ejecución de comandos sudo” | Verifique que el usuario tenga permisos sudo para ejecutar el siguiente comando en el dispositivo 
+| "Error interno" con mensajes de error “La ejecución del comando <Su comando> falló con el permiso: <Su permiso actual>.  Problema con el permiso de ejecución del comando sudo | Verifique que el usuario tenga permisos de sudo para ejecutar el siguiente comando en el dispositivo 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

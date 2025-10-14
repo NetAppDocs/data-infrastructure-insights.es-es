@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_display_widget_legends.html 
-summary: Mostrar leyendas en los widgets del panel. 
+summary: Visualización de leyendas en los widgets del panel. 
 keywords: dashboard, widget, legends 
 ---
 = Visualización de leyendas de widgets
@@ -10,10 +10,10 @@ keywords: dashboard, widget, legends
 
 
 [role="lead"]
-Los widgets de los paneles se pueden mostrar con o sin leyendas.
+Los widgets en los paneles se pueden mostrar con o sin leyendas.
 
-Al mostrar el panel, las leyendas de los widgets pueden activarse o desactivarse haciendo clic en el botón *Opciones* del widget y seleccionando *Mostrar leyendas* en el menú.
+Al mostrar el panel de control, las leyendas en los widgets se pueden activar o desactivar haciendo clic en el botón *Opciones* en el widget y seleccionando *Mostrar leyendas* en el menú.
 
-A medida que cambian los datos que aparecen en el widget, la leyenda de dicho widget se actualiza dinámicamente.
+A medida que cambian los datos mostrados en el widget, la leyenda de ese widget se actualiza dinámicamente.
 
-Cuando se muestren las leyendas, si se puede navegar hasta la página de destino del activo indicado por la leyenda, la leyenda se mostrará como un enlace a esa página de activos.
+Cuando se muestran leyendas, si se puede navegar a la página de destino del activo indicado por la leyenda, la leyenda se mostrará como un enlace a esa página del activo.

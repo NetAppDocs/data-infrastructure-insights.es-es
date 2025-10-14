@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: ws_webhook_example_discord.html 
 keywords: webhook, notification, Discord, integration 
-summary: Cree un webhook de seguridad de carga de trabajo para Discord para alertar sobre la seguridad 
+summary: Cree un webhook de seguridad de carga de trabajo para Discord para alertar sobre seguridad 
 ---
-= Ejemplo de Webhook de seguridad de carga de trabajo para Discord
+= Ejemplo de webhook de seguridad de carga de trabajo para Discord
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,47 +14,47 @@ summary: Cree un webhook de seguridad de carga de trabajo para Discord para aler
 
 
 [role="lead"]
-Los enlaces Web permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones mediante un canal de webhook personalizado. Esta página proporciona un ejemplo para configurar los enlaces web para Discord.
+Los webhooks permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones utilizando un canal webhook personalizado.  Esta página proporciona un ejemplo para configurar webhooks para Discord.
 
 
-NOTE: Esta página hace referencia a las instrucciones de terceros, que están sujetas a cambios. Consulte la link:https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks["Documentación de discordia"]para obtener la información más actualizada.
-
-
-
-== Configuración de discordia:
-
-* En Discord, seleccione el servidor, en Canales de texto, seleccione Editar canal (icono de engranaje)
-* Seleccione *integración > Ver enlaces web* y haga clic en *Nuevo Webhook*
-* Copie la URL de Webhook. Deberá pegarlo en la configuración del webhook de seguridad de carga de trabajo.
+NOTE: Esta página hace referencia a instrucciones de terceros, que están sujetas a cambios.  Consulte lalink:https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks["Documentación de Discord"] para obtener la información más actualizada.
 
 
 
+== Configuración de Discord:
 
-== Crear Webhook de Seguridad de Carga de Trabajo:
-
-. Vaya a Administración > Notificaciones y seleccione la pestaña _Workload Security WebHooks_. Haga clic en '+ Webhook' para crear un nuevo webhook.
-. Asigne al webhook un nombre significativo.
-. En el menú desplegable _Template Type_, seleccione *Discord*.
-. Pegue la URL de Discord de arriba en el campo _url_.
-
-
-image:ws_webhook_discord_example.png["ejemplo de discordia de webhook de seguridad de carga de trabajo"]
-
-Para probar el webhook, reemplace temporalmente el valor de URL en el cuerpo del mensaje con cualquier URL válida (como _https://netapp.com_) y luego haga clic en el botón _Test Webhook_. Discord requiere que se proporcione una URL válida para que funcione la funcionalidad de Webhook de prueba.
-
-Asegúrese de volver a establecer el cuerpo del mensaje una vez que haya finalizado la prueba.
+* En Discord, selecciona el Servidor, en Canales de texto, selecciona Editar canal (ícono de engranaje)
+* Seleccione *Integraciones > Ver webhooks* y haga clic en *Nuevo webhook*
+* Copiar la URL del webhook.  Necesitará pegar esto en la configuración del webhook de seguridad de carga de trabajo.
 
 
 
-== Notificaciones a través de Webhook
 
-Para notificar eventos a través de webhook, vaya a _Workload Security > Policies_. Haga clic en _+Política de ataque_ o _+Política de advertencia_.
+== Crear un webhook de seguridad de carga de trabajo:
+
+. Vaya a Admin > Notificaciones y seleccione la pestaña _Webhooks de seguridad de carga de trabajo_.  Haga clic en “+ Webhook” para crear un nuevo webhook.
+. Dale al webhook un nombre significativo.
+. En el menú desplegable _Tipo de plantilla_, seleccione *Discord*.
+. Pegue la URL de Discord de arriba en el campo _URL_.
+
+
+image:ws_webhook_discord_example.png["Ejemplo de webhook de seguridad de carga de trabajo en Discord"]
+
+Para probar el webhook, reemplace temporalmente el valor de la URL en el cuerpo del mensaje con cualquier URL válida (como _https://netapp.com_) y luego haga clic en el botón _Probar webhook_.  Discord requiere que se proporcione una URL válida para que la funcionalidad de prueba webhook funcione.
+
+Asegúrese de volver a configurar el cuerpo del mensaje una vez que se complete la prueba.
+
+
+
+== Notificaciones mediante webhook
+
+Para notificar eventos a través de webhook, navegue a _Seguridad de carga de trabajo > Políticas_.  Haga clic en _+Política de ataque_ o _+Política de advertencia_.
 
 * Introduzca un nombre de política significativo.
-* Seleccione los tipos de ataque necesarios, los dispositivos a los que se debe asociar la política y las acciones necesarias.
-* En el menú desplegable _WebHooks Notifications_, seleccione los WebHooks de Discord necesarios y guarde.
+* Seleccione los tipos de ataque requeridos, los dispositivos a los que se debe adjuntar la política y las acciones requeridas.
+* En el menú desplegable _Notificaciones de webhooks_, seleccione los webhooks de Discord necesarios y guárdelos.
 
 
-Nota: Los WebHooks también se pueden adjuntar a las políticas existentes editándolas.
+Nota: Los webhooks también se pueden adjuntar a políticas existentes editándolas.
 
-image:ws_add_attack_policy.png["Cuadro de diálogo de política de ataque que muestra la lista desplegable de webhook"]
+image:ws_add_attack_policy.png["Cuadro de diálogo de política de ataque que muestra el menú desplegable del webhook"]

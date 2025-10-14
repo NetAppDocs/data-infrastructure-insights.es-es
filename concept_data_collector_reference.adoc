@@ -10,6 +10,6 @@ keywords: data collector, vendor, AWS, BROADCOM, Cisco, Dell, EMC, Hitachi, IBM,
 
 
 [role="lead"]
-Los temas de esta sección proporcionan información de referencia específica del proveedor. En la mayoría de los casos, configurar un recopilador de datos es sencillo. En algunos casos, es posible que necesite información adicional o comandos para configurar correctamente el recopilador de datos.
+Los temas de esta sección proporcionan información de referencia específica del proveedor.  En la mayoría de los casos, configurar un recopilador de datos es sencillo.  En algunos casos, es posible que necesite información o comandos adicionales para configurar correctamente el recopilador de datos.
 
-Haga clic en un *vendedor* en el menú de la izquierda para ver la información de sus recopiladores de datos.
+Haga clic en un *proveedor* en el menú de la izquierda para ver información de sus recopiladores de datos.

@@ -2,42 +2,42 @@
 sidebar: sidebar 
 permalink: task_dc_cisco_fc_switch.html 
 keywords: data collector, cisco, FC, cisco FC 
-summary: Configuración del recopilador de datos de Cisco MDS Fablic Switch. 
+summary: Configuración del recopilador de datos del conmutador Fablic de Cisco MDS. 
 ---
-= Recopilador de datos de Cisco MDS Fabric Switches
+= Recopilador de datos de conmutadores de red Cisco MDS
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Información de infraestructura de datos utiliza el recopilador de datos de switches de estructura MDS de Cisco para descubrir inventario de los switches estructurales MDS de Cisco, así como una variedad de switches FCoE Cisco Nexus en los que está activado el servicio FC.
+Data Infrastructure Insights utiliza el recopilador de datos de Cisco MDS Fabric Switches para descubrir el inventario de Cisco MDS Fabric Switches, así como una variedad de conmutadores Cisco Nexus FCoE en los que está habilitado el servicio FC.
 
-Además, con este recopilador de datos podrá descubrir muchos modelos de dispositivos de Cisco que se ejecutan en el modo NPV.
+Además, puede descubrir muchos modelos de dispositivos Cisco que se ejecutan en modo NPV con este recopilador de datos.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos del switch FC de Cisco. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Cisco FC Switch.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Conmutador | Conmutador 
+| Cambiar | Cambiar 
 
 
 | Puerto | Puerto 
 
 
-| VSAN | Estructura 
+| VSAN | Tela 
 
 
 | Zona | Zona 
 
 
-| Cambio lógico | Cambio lógico 
+| Interruptor lógico | Interruptor lógico 
 
 
 | Entrada del servidor de nombres | Entrada del servidor de nombres 
@@ -45,16 +45,16 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 | Zona de enrutamiento entre VSAN (IVR) | Zona IVR 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* Dirección IP de un switch en la estructura o en los switches individuales
-* Detección del chasis para habilitar la detección de estructura
-* Si se utiliza SNMP V2, cadena de comunidad de sólo lectura
-* El puerto 161 se utiliza para acceder al dispositivo
+* Una dirección IP de un conmutador en la red o de conmutadores individuales
+* Descubrimiento de chasis, para permitir el descubrimiento de la estructura
+* Si se utiliza SNMP V2, cadena de comunidad de solo lectura
+* El puerto 161 se utiliza para acceder al dispositivo.
 
 
 
@@ -66,19 +66,19 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Switch IP de Cisco | Dirección IP o nombre de dominio completo del switch 
+| Conmutador IP de Cisco | Dirección IP o nombre de dominio completo del conmutador 
 
 
-| Versión de SNMP | Seleccione V1, V2 o V3. Se requiere V2 o posterior para la adquisición del rendimiento. 
+| Versión SNMP | Seleccione V1, V2 o V3.  Se requiere V2 o posterior para la adquisición de rendimiento. 
 
 
-| Cadena de comunidad SNMP | Cadena de comunidad de solo lectura de SNMP que se utiliza para acceder al switch (no aplicable para SNMP v3) 
+| Cadena de comunidad SNMP | Cadena de comunidad de solo lectura SNMP utilizada para acceder al conmutador (no aplicable para SNMP v3) 
 
 
-| Nombre de usuario | Nombre de usuario para el conmutador (sólo SNMP v3) 
+| Nombre de usuario | Nombre de usuario para el conmutador (solo SNMP v3) 
 
 
-| Contraseña | Contraseña utilizada para el conmutador (sólo SNMPv3) 
+| Password | Contraseña utilizada para el conmutador (sólo SNMPv3) 
 |===
 
 
@@ -89,61 +89,61 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario (predeterminado 40 minutos) 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario (predeterminado 40 minutos) 
 
 
-| Protocolo de autenticación SNMP | Protocolo de autenticación SNMP (sólo SNMPv3) 
+| Protocolo de autenticación SNMP | Protocolo de autenticación SNMP (solo SNMPv3) 
 
 
-| Protocolo de privacidad SNMP | Protocolo de privacidad SNMP (sólo SNMPv3) 
+| Protocolo de privacidad SNMP | Protocolo de privacidad SNMP (solo SNMPv3) 
 
 
 | Contraseña de privacidad de SNMP | Contraseña de privacidad de SNMP 
 
 
-| Reintentos SNMP | Número de intentos de reintento de SNMP 
+| Reintentos SNMP | Número de reintentos de SNMP 
 
 
-| Tiempo de espera de SNMP (ms) | Tiempo de espera de SNMP (5000 ms predeterminado) 
+| Tiempo de espera de SNMP (ms) | Tiempo de espera de SNMP (predeterminado 5000 ms) 
 
 
-| Habilite el solapamiento | Seleccione esta opción para activar el solapamiento. Si habilita el solapamiento, también debe activar las notificaciones SNMP. 
+| Habilitar Trapping | Seleccione para habilitar la captura.  Si habilita la captura, también debe activar las notificaciones SNMP. 
 
 
-| Tiempo mínimo entre solapamientos (seg) | Tiempo mínimo entre intentos de adquisición activados por solapamientos (predeterminado 10 segundos) 
+| Tiempo mínimo entre trampas (seg) | Tiempo mínimo entre intentos de adquisición activados por trampas (predeterminado 10 segundos) 
 
 
-| Descubra los switches de la estructura | Seleccione para detectar todos los switches de la estructura 
+| Descubra todos los interruptores de tela | Seleccione para descubrir todos los interruptores en la estructura 
 
 
-| Dispositivos excluidos | Lista separada por comas de IP de dispositivo que se van a excluir del sondeo 
+| Dispositivos excluidos | Lista separada por comas de direcciones IP de dispositivos que se excluirán del sondeo 
 
 
-| Dispositivos incluidos | Lista separada por comas de IP de dispositivo que se van a incluir en el sondeo 
+| Dispositivos incluidos | Lista separada por comas de direcciones IP de dispositivos para incluir en el sondeo 
 
 
-| Compruebe el tipo de dispositivo | Seleccione esta opción para aceptar sólo los dispositivos que se anuncian explícitamente como dispositivos Cisco 
+| Comprobar el tipo de dispositivo | Seleccione para aceptar solo aquellos dispositivos que se anuncian explícitamente como dispositivos Cisco 
 
 
-| Primer tipo de alias | Proporcione una primera preferencia para la resolución del alias. Elija entre las siguientes opciones: *Dispositivo Alais* este es un nombre fácil de usar para un puerto WWN (pWWN) que se puede utilizar en todos los comandos de configuración, según sea necesario. Todos los switches de la familia Cisco MDS 9000 admiten Distributed Device Alias Services (alias de dispositivo). *Ninguno* no informe ningún alias. *Descripción del puerto* Descripción que ayuda a identificar el puerto en una lista de puertos. *Alias de zona (todos)* Nombre sencillo para un puerto que sólo puede utilizarse para la configuración activa. Este es el valor predeterminado. 
+| Primer tipo de alias | Proporcionar una primera preferencia para la resolución del alias.  Elija entre las siguientes opciones: *Dispositivo Alais* Este es un nombre fácil de usar para un puerto WWN (pWWN) que se puede usar en todos los comandos de configuración, según sea necesario.  Todos los conmutadores de la familia Cisco MDS 9000 admiten servicios de alias de dispositivos distribuidos (alias de dispositivo).  *Ninguno* No reportar ningún alias.  *Descripción del puerto* Una descripción para ayudar a identificar el puerto en una lista de puertos.  *Alias ​​de zona (todos)* Un nombre fácil de usar para un puerto que solo se puede usar para la configuración activa. Este es el valor predeterminado. 
 
 
-| Segundo tipo de alias | Proporcione una segunda preferencia para la resolución del alias 
+| Segundo tipo de alias | Proporcionar una segunda preferencia para la resolución del alias 
 
 
-| Tercer tipo de alias | Proporcione una tercera preferencia para la resolución del alias 
+| Tercer tipo de alias | Proporcionar una tercera preferencia para la resolución del alias 
 
 
-| Habilite la compatibilidad con el modo de proxy de SANTap | Seleccione si el conmutador Cisco está utilizando SANTap en modo proxy. Si utiliza EMC RecoverPoint, es probable que utilice SANTap. 
+| Habilitar la compatibilidad con el modo proxy de SANTap | Seleccione si su conmutador Cisco está utilizando SANTap en modo proxy.  Si está utilizando EMC RecoverPoint, probablemente esté utilizando SANTap. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento (predeterminado 300 segundos) 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento (predeterminado 300 segundos) 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -151,32 +151,32 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: No se pudo detectar el chasis; no se detectaron switches | • Ping el dispositivo con la IP configurada • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante la CLI • intente ejecutar SNMP Walk 
+| Error: No se pudo descubrir el chasis; no se descubrieron conmutadores | • Haga ping al dispositivo con la IP configurada • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante CLI • Intente ejecutar SNMP walk 
 
 
-| Error: El dispositivo no es un conmutador Cisco MDS | • Asegúrese de que la IP de origen de datos configurada para el dispositivo es correcta • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante CLI 
+| Error: El dispositivo no es un conmutador Cisco MDS | • Asegúrese de que la IP de la fuente de datos configurada para el dispositivo sea correcta • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante la CLI 
 
 
-| Error: La información sobre la infraestructura de datos no puede obtener el WWN del switch. | Es posible que no sea un switch FC o FCoE y es posible que, por ejemplo, no sea compatible. Asegúrese de que la IP/FQDN configurada en el origen de datos es realmente un switch FC/FCoE. 
+| Error: Data Infrastructure Insights no puede obtener el WWN del conmutador. | Es posible que no sea un conmutador FC o FCoE y, por lo tanto, es posible que no sea compatible.  Asegúrese de que la IP/FQDN configurada en la fuente de datos sea realmente un conmutador FC/FCoE. 
 
 
-| Error: Se han encontrado más de un nodo conectado al puerto del switch NPV | Desactivar la adquisición directa del conmutador NPV 
+| Error: se encontraron más de un nodo conectado al puerto del conmutador NPV | Deshabilitar la adquisición directa del interruptor NPV 
 
 
-| Error: No se ha podido conectar al interruptor | • Asegúrese de QUE el dispositivo está ACTIVO • Compruebe la dirección IP y el puerto de escucha • Ping el dispositivo • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante la CLI • ejecute SNMP Walk 
+| Error: No se pudo conectar al conmutador | • Asegúrese de que el dispositivo esté ACTIVADO • Verifique la dirección IP y el puerto de escucha • Haga ping al dispositivo • Inicie sesión en el dispositivo mediante la GUI de Cisco Device Manager • Inicie sesión en el dispositivo mediante CLI • Ejecute SNMP walk 
 |===
 
 
-=== Rendimiento
+=== Actuación
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: SNMP v1 no admite la adquisición de rendimiento | • Editar origen de datos y desactivar rendimiento de conmutador • Modificar la configuración de origen de datos y conmutador para utilizar SNMP v2 o superior 
+| Error: La adquisición de rendimiento no es compatible con SNMP v1 | • Editar la fuente de datos y deshabilitar el rendimiento del conmutador • Modificar la fuente de datos y la configuración del conmutador para usar SNMP v2 o superior 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_ws_integration_with_ontap_access_denied.html 
-summary: Seguridad de carga de trabajo se integra con ONTAP para recibir eventos de acceso denegado y proporcionar una capa de análisis y respuestas automáticas adicionales. 
+summary: Workload Security se integra con ONTAP para recibir eventos de acceso denegado y proporcionar una capa adicional de análisis y respuestas automáticas. 
 keywords: ransomware, ARP, Protection, Security, access 
 ---
-= Integración con acceso ONTAP denegado
+= Integración con ONTAP Acceso denegado
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,40 +14,40 @@ keywords: ransomware, ARP, Protection, Security, access
 
 
 [role="lead"]
-La función Acceso denegado de ONTAP utiliza análisis de carga de trabajo en entornos NAS (NFS y SMB) para detectar y advertir de forma proactiva sobre operaciones de archivos fallidas (es decir, un usuario que intenta realizar una operación para la que no tiene permiso). Estas notificaciones de operación de archivos fallidas, especialmente en casos de fallas relacionadas con la seguridad, ayudarán aún más a bloquear los ataques internos en las primeras etapas.
+La función de acceso denegado de ONTAP utiliza el análisis de carga de trabajo en entornos NAS (NFS y SMB) para detectar y advertir de forma proactiva sobre operaciones de archivos fallidas (es decir, un usuario que intenta realizar una operación para la que no tiene permiso).  Estas notificaciones de operaciones de archivos fallidas, especialmente en casos de fallas relacionadas con la seguridad, ayudarán aún más a bloquear ataques internos en etapas tempranas.
 
-Información sobre la infraestructura de datos Seguridad de cargas de trabajo se integra con ONTAP para recibir acceso a eventos denegados y proporcionar una capa adicional de análisis y respuesta automática.
-
-
-
-== Requisitos previos
-
-* Versión mínima de ONTAP: 9.13.0.
-* Un administrador de seguridad de carga de trabajo debe habilitar la función Acceso denegado al agregar un nuevo recopilador o editar un recopilador existente, seleccionando la casilla de control _Monitor Access Deneged Events_ en Configuración avanzada.
+Data Infrastructure Insights Workload Security se integra con ONTAP para recibir eventos de acceso denegado y proporcionar una capa de respuesta automática y analítica adicional.
 
 
-image:WS_Access_Denied_Enable_in_Collector.png["Activar acceso denegado en la configuración avanzada del recopilador de ONTAP"]
+
+== Prerrequisitos
+
+* Versión mínima de ONTAP : 9.13.0.
+* Un administrador de seguridad de carga de trabajo debe habilitar la función Acceso denegado al agregar un nuevo recopilador o editar un recopilador existente, seleccionando la casilla de verificación _Monitorear eventos de acceso denegado_ en Configuración avanzada.
+
+
+image:WS_Access_Denied_Enable_in_Collector.png["Habilitar acceso denegado en la configuración avanzada del recopilador ONTAP"]
 
 
 
 == Se requieren permisos de usuario
 
-Si el recopilador de datos se agrega mediante credenciales de administración de cluster, no se necesitan permisos nuevos.
+Si se agrega el recopilador de datos mediante credenciales de administración del clúster, no se necesitan nuevos permisos.
 
-Si el recopilador se agrega utilizando un usuario personalizado (por ejemplo, _csuser_) con permisos otorgados al usuario, siga los pasos que se indican a continuación para otorgar a Seguridad de carga de trabajo el permiso necesario para registrarse en eventos de acceso denegado con ONTAP.
+Si se agrega el recopilador utilizando un usuario personalizado (por ejemplo, _csuser_) con permisos otorgados al usuario, siga los pasos a continuación para otorgarle a Workload Security el permiso necesario para registrarse en eventos de acceso denegado con ONTAP.
 
-Para csuser con credenciales _cluster_, ejecute los siguientes comandos desde la línea de comandos de ONTAP. Tenga en cuenta que este permiso puede que ya exista.
+Para csuser con credenciales _cluster_, ejecute los siguientes comandos desde la línea de comandos de ONTAP .  Tenga en cuenta que es posible que este permiso ya exista.
 
  security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-Para csuser con credenciales _SVM_, ejecute los siguientes comandos desde la línea de comandos de la ONTAP. Tenga en cuenta que este permiso puede que ya exista.
+Para csuser con credenciales _SVM_, ejecute los siguientes comandos desde la línea de comandos de ONTAP .  Tenga en cuenta que es posible que este permiso ya exista.
 
  security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
-Leer más sobre la configuración de otros link:task_add_collector_svm.html["Permisos de ONTAP"].
+Lea más sobre cómo configurar otroslink:task_add_collector_svm.html["Permisos de ONTAP"] .
 
 
 
-== Acceso denegado a eventos
+== Eventos de acceso denegado
 
-Una vez adquiridos los eventos del sistema ONTAP, la página Forenses de Seguridad de Carga de Trabajo mostrará los eventos Acceso Denegado. Además de la información mostrada, puede ver los permisos de usuario que faltan para una operación en particular agregando la columna _Desired Activity_ a la tabla desde el icono de engranaje.
+Una vez que se hayan adquirido eventos del sistema ONTAP , la página de Análisis forense de seguridad de carga de trabajo mostrará eventos de acceso denegado.  Además de la información mostrada, puede ver los permisos de usuario faltantes para una operación en particular agregando la columna _Actividad deseada_ a la tabla desde el ícono de engranaje.
 
-image:WS_Access_Denied_Example_Event_1.png["Evento de acceso denegado de ejemplo"]
+image:WS_Access_Denied_Example_Event_1.png["Ejemplo de evento de acceso denegado"]

@@ -14,36 +14,36 @@ summary: Realizar un seguimiento de los datos mediante anotaciones.
 
 
 [role="lead"]
-Cuando personalizas Data Infrastructure Insights para hacer un seguimiento de los datos según los requisitos corporativos, puedes definir notas especializadas, denominadas anotaciones y asignarlas a tus activos.
+Al personalizar Data Infrastructure Insights para rastrear datos según sus requisitos corporativos, puede definir notas especializadas, llamadas anotaciones, y asignarlas a sus activos.
 
-Puede asignar anotaciones a activos con información como la finalización de la vida útil de los activos, el centro de datos, la ubicación de creación, el nivel de almacenamiento o el nivel de servicio de volumen.
+Puede asignar anotaciones a los activos con información como el final de la vida útil del activo, el centro de datos, la ubicación del edificio, el nivel de almacenamiento o el nivel de servicio de volumen.
 
-El uso de anotaciones para supervisar su entorno incluye las siguientes tareas de alto nivel:
+El uso de anotaciones para ayudar a monitorear su entorno incluye las siguientes tareas de alto nivel:
 
-* Crear o editar definiciones para todos los tipos de anotaciones.
-* Mostrar páginas de activos y asociar cada activo con una o varias anotaciones.
+* Creación o edición de definiciones para todos los tipos de anotaciones.
+* Visualizar páginas de activos y asociar cada activo con una o más anotaciones.
 +
-Por ejemplo, si un activo se está arrendando y el arrendamiento caduca dentro de dos meses, puede que desee aplicar una anotación de fin de vida al activo. Esto ayuda a evitar que otros utilicen ese activo durante un tiempo prolongado.
+Por ejemplo, si se está arrendando un activo y el contrato de arrendamiento vence dentro de dos meses, es posible que desee aplicar una anotación de fin de vida útil al activo.  Esto ayuda a evitar que otros utilicen ese activo durante un tiempo prolongado.
 
-* Crear reglas para aplicar anotaciones automáticamente a varios activos del mismo tipo.
+* Creación de reglas para aplicar automáticamente anotaciones a múltiples activos del mismo tipo.
 * Filtrar activos por sus anotaciones.
 
 
 
 
-== Tipos de anotaciones predeterminados
+== Tipos de anotación predeterminados
 
-Data Infrastructure Insights proporciona algunos tipos de anotación predeterminados. Estas anotaciones pueden utilizarse para filtrar o agrupar datos.
+Data Infrastructure Insights proporciona algunos tipos de anotaciones predeterminados.  Estas anotaciones se pueden utilizar para filtrar o agrupar datos.
 
 Puede asociar activos con tipos de anotación predeterminados como los siguientes:
 
-* Ciclo de vida de los activos, como cumpleaños, puesta de sol o fin de vida
-* Información sobre la ubicación de un dispositivo, como un centro de datos, un edificio o un piso
-* Clasificación de activos, como por calidad (niveles), por dispositivos conectados (nivel de switch) o por nivel de servicio
+* Ciclo de vida del activo, como cumpleaños, puesta de sol o fin de vida útil
+* Información de ubicación sobre un dispositivo, como centro de datos, edificio o piso
+* Clasificación de activos, como por calidad (niveles), por dispositivos conectados (nivel de conmutador) o por nivel de servicio
 * Estado, como caliente (alta utilización)
 
 
-La siguiente tabla muestra los tipos de anotación proporcionados por Data Infrastructure Insights.
+En la siguiente tabla se enumeran los tipos de anotaciones proporcionados por Data Infrastructure Insights.
 
 [cols="30,53, 16"]
 |===
@@ -52,34 +52,34 @@ La siguiente tabla muestra los tipos de anotación proporcionados por Data Infra
 | Tipos de anotaciones | Descripción | Tipo 
 
 
-| Alias | Nombre sencillo para un recurso | Texto 
+| Alias | Nombre fácil de usar para un recurso | Texto 
 
 
-| Grupo de recursos informáticos | Asignación de grupos utilizada por el recopilador de datos de sistemas de archivos del host y el equipo virtual | Lista 
+| Grupo de recursos informáticos | Asignación de grupo utilizada por el recopilador de datos de sistemas de archivos de host y máquina virtual | Lista 
 
 
 | Centro de datos | Ubicación física | Lista 
 
 
-| Caliente | Dispositivos de uso intensivo de forma regular o en el umbral de capacidad | Booleano 
+| Caliente | Dispositivos sometidos a un uso intensivo de forma regular o al límite de su capacidad | Booleano 
 
 
 | Nota | Comentarios asociados a un recurso | Prueba 
 
 
-| Nivel de servicio | Un conjunto de niveles de servicio compatibles que puede asignar a recursos. Proporciona una lista de opciones ordenadas para volúmenes internos, qtrees y volúmenes. Editar niveles de servicio para establecer políticas de rendimiento para diferentes niveles. | Lista 
+| Nivel de servicio | Un conjunto de niveles de servicio admitidos que puede asignar a los recursos.  Proporciona una lista de opciones ordenada para volúmenes internos, qtree y volúmenes.  Edite los niveles de servicio para establecer políticas de rendimiento para diferentes niveles. | Lista 
 
 
-| Puesta de sol | Límite establecido después del cual no se puede realizar ninguna asignación nueva a ese dispositivo. Útil para migraciones planificadas y otros cambios de red pendientes. | Fecha 
+| Atardecer | Umbral establecido después del cual no se pueden realizar nuevas asignaciones a ese dispositivo.  Útil para migraciones planificadas y otros cambios de red pendientes. | Fecha 
 
 
-| Cambiar el nivel | Opciones predefinidas para configurar categorías para conmutadores. Normalmente, estas designaciones permanecen durante toda la vida útil del dispositivo, aunque puede editarlas. Sólo disponible para interruptores. | Lista 
+| Cambiar nivel | Opciones predefinidas para configurar categorías para conmutadores.  Normalmente, estas designaciones permanecen durante la vida útil del dispositivo, aunque puedes editarlas.  Disponible sólo para conmutadores. | Lista 
 
 
-| Nivel | Puede utilizarse para definir distintos niveles de servicio dentro de su entorno. Los niveles pueden definir el tipo de nivel, como la velocidad necesaria (por ejemplo, oro o plata). Esta función solo está disponible en volúmenes internos, qtrees, cabinas de almacenamiento, pools de almacenamiento y volúmenes. | Lista 
+| Nivel | Se puede utilizar para definir diferentes niveles de servicio dentro de su entorno.  Los niveles pueden definir el tipo de nivel, como la velocidad necesaria (por ejemplo, oro o plata).  Esta función solo está disponible en volúmenes internos, qtrees, matrices de almacenamiento, grupos de almacenamiento y volúmenes. | Lista 
 
 
-| Gravedad de la infracción | Clasificación (por ejemplo, mayor) de una infracción (por ejemplo, falta de puertos de host o falta de redundancia), en una jerarquía de mayor a menor importancia. | Lista 
+| Gravedad de la infracción | Rango (por ejemplo, mayor) de una violación (por ejemplo, puertos de host faltantes o redundancia faltante), en una jerarquía de mayor a menor importancia. | Lista 
 |===
 
 NOTE: Alias, Centro de datos, Activo, Nivel de servicio, Atardecer, Nivel de conmutador, Nivel y Gravedad de violación son anotaciones a nivel de sistema que no puede eliminar ni cambiar de nombre; solo puede cambiar sus valores asignados.
@@ -88,24 +88,24 @@ NOTE: Alias, Centro de datos, Activo, Nivel de servicio, Atardecer, Nivel de con
 
 == Creación de anotaciones personalizadas
 
-Con las anotaciones, puede agregar datos personalizados específicos del negocio que se ajusten a los activos de las necesidades del negocio. Aunque Data Infrastructure Insights proporciona un conjunto de anotaciones predeterminadas, puede descubrir que desea ver datos de otras maneras. Los datos de anotaciones personalizadas complementan los datos del dispositivo ya recopilados, como el fabricante de almacenamiento, los volúmenes de número y las estadísticas de rendimiento. Data Infrastructure Insights no detecta los datos que agregue mediante anotaciones.
+Al usar anotaciones, puede agregar datos personalizados específicos de su negocio que coincidan con las necesidades de su negocio y sus activos.  Si bien Data Infrastructure Insights proporciona un conjunto de anotaciones predeterminadas, es posible que desee ver los datos de otras maneras.  Los datos en anotaciones personalizadas complementan los datos del dispositivo ya recopilados, como el fabricante del almacenamiento, la cantidad de volúmenes y las estadísticas de rendimiento.  Data Infrastructure Insights no descubre los datos que agrega mediante anotaciones.
 
 .Pasos
-. En el menú Información de la infraestructura de datos, haga clic en *Administrar > Anotaciones*.
+. En el menú Data Infrastructure Insights , haga clic en *Administrar > Anotaciones*.
 +
 La página Anotaciones muestra la lista de anotaciones.
 
 . Haga clic en *+Agregar*
-. Introduzca un *Nombre* y *Descripción* de la anotación.
+. Introduzca un *Nombre* y una *Descripción* de la anotación.
 +
-Es posible introducir hasta 255 caracteres en estos campos.
+Puede ingresar hasta 255 caracteres en estos campos.
 
-. Haga clic en *Tipo* y, a continuación, seleccione una de las siguientes opciones que representa el tipo de datos permitidos en esta anotación:
+. Haga clic en *Tipo* y luego seleccione una de las siguientes opciones que represente el tipo de datos permitidos en esta anotación:
 
 
 .Tipos de anotaciones
 * Booleano: Crea una lista desplegable con opciones de sí y no. Por ejemplo, la anotación "Conexión directa" es booleana.
-* Fecha: Esto crea un campo que contiene una fecha.  Por ejemplo, si la anotación será una fecha, seleccione esto.
+* Fecha: Esto crea un campo que contiene una fecha. Por ejemplo, si la anotación será una fecha, seleccione esto.
 * Lista: crea cualquiera de los siguientes:
 +
 ** Una lista fija desplegable
@@ -118,27 +118,27 @@ Si selecciona la opción Agregar nuevos valores sobre la marcha al crear esta li
 
 
 
-* Número: Crea un campo en el que el usuario que asigna la anotación puede introducir un número. Por ejemplo, si el tipo de anotación es "planta", el usuario puede seleccionar el tipo de valor "número" e introducir el número de planta.
-* Texto: Crea un campo que permite texto en formato libre. Por ejemplo, puede escribir "Idioma" como tipo de anotación, seleccionar "texto" como tipo de valor e introducir un idioma como valor.
+* Número: Crea un campo donde el usuario que asigna la anotación puede ingresar un número.  Por ejemplo, si el tipo de anotación es "Piso", el usuario podría seleccionar el Tipo de valor "número" e ingresar el número de piso.
+* Texto: crea un campo que permite texto de formato libre.  Por ejemplo, puede ingresar "Idioma" como tipo de anotación, seleccionar "Texto" como tipo de valor e ingresar un idioma como valor.
 
 
 
-NOTE: Después de establecer el tipo y guardar los cambios, no puede cambiar el tipo de anotación. Si necesita cambiar el tipo, debe eliminar la anotación y crear una nueva.
+NOTE: Después de configurar el tipo y guardar los cambios, no podrá cambiar el tipo de anotación.  Si necesita cambiar el tipo, deberá eliminar la anotación y crear una nueva.
 
 . Si selecciona Lista como tipo de anotación, haga lo siguiente:
 +
-.. Seleccione *Agregar nuevos valores sobre la marcha* si desea la capacidad de agregar más valores a la anotación cuando se encuentra en una página de activos, que crea una lista flexible.
+.. Seleccione *Agregar nuevos valores sobre la marcha* si desea tener la posibilidad de agregar más valores a la anotación cuando esté en una página de activos, lo que crea una lista flexible.
 +
-Por ejemplo, supongamos que se encuentra en una página de activos y que el activo tiene la anotación Ciudad con los valores Detroit, Tampa y Boston. Si ha seleccionado la opción *Agregar nuevos valores sobre la marcha*, puede agregar valores adicionales a Ciudad como San Francisco y Chicago directamente en la página de activos en lugar de tener que ir a la página Anotaciones para agregarlos. Si no selecciona esta opción, no podrá agregar nuevos valores de anotación al aplicar la anotación; esto creará una lista fija.
+Por ejemplo, supongamos que está en una página de activos y el activo tiene la anotación Ciudad con los valores Detroit, Tampa y Boston.  Si seleccionó la opción *Agregar nuevos valores sobre la marcha*, puede agregar valores adicionales a ciudades como San Francisco y Chicago directamente en la página de activos en lugar de tener que ir a la página de Anotaciones para agregarlos.  Si no elige esta opción, no podrá agregar nuevos valores de anotación al aplicar la anotación; esto crea una lista fija.
 
-.. Introduzca un valor y una descripción en los campos *valor* y *Descripción*.
-.. Haga clic en *+Add+* para agregar valores adicionales.
-.. Haga clic en el icono Papelera para eliminar un valor.
+.. Introduzca un valor y una descripción en los campos *Valor* y *Descripción*.
+.. Haga clic en *+Agregar+* para agregar valores adicionales.
+.. Haga clic en el icono de la Papelera para eliminar un valor.
 
 
 . Haga clic en *Guardar*
 +
-Las anotaciones aparecen en la lista de la página Anotaciones.
+Tus anotaciones aparecen en la lista de la página Anotaciones.
 
 
 
@@ -146,9 +146,9 @@ Las anotaciones aparecen en la lista de la página Anotaciones.
 Al filtrar una anotación booleana, es posible que se le presenten los siguientes valores para filtrar:
 
 * *Cualquiera*: Esto devolverá _todos_ los resultados, incluidos los resultados configurados como "Sí", "No" o no configurados en absoluto.
-* *Sí*: Devuelve sólo resultados "Sí".  Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas.  Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
-* *No*: Devuelve sólo resultados "No".  Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas.  Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
-* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ninguna anotación.  También conocidos como valores "Nulos".
+* *Sí*: Devuelve sólo resultados "Sí". Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas. Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
+* *No*: Devuelve sólo resultados "No". Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas. Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
+* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ninguna anotación. También conocidos como valores "Nulos".
 
 
 .Después de terminar

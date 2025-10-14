@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_hds_nas.html 
 keywords: data collector, HDS HNAS, HDS NAS 
-summary: 'Configurar el recopilador de datos HDS NAS (Hnas).' 
+summary: 'Configuración del recopilador de datos HDS NAS (HNAS).' 
 ---
-= Configuración del recopilador de datos Hitachi Vantara NAS
+= Configuración del recopilador de datos NAS de Hitachi Vantara
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos de Hitachi Vantara NAS es un recopilador de datos de inventario y configuración que admite la detección de clústeres NAS de HDS. Data Infrastructure Insights permite detectar recursos compartidos NFS y CIFS, sistemas de archivos (volúmenes internos) y extensores (pools de almacenamiento).
+El recopilador de datos NAS de Hitachi Vantara es un recopilador de datos de inventario y configuración que admite el descubrimiento de clústeres NAS HDS.  Data Infrastructure Insights admite el descubrimiento de recursos compartidos NFS y CIFS, sistemas de archivos (volúmenes internos) y tramos (grupos de almacenamiento).
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos HNAS. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos HNAS.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Nivel | Grupo de discos 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
-| Capacidad de expansión | Pool de almacenamiento 
+| Durar | Pool de almacenamiento 
 
 
-| Unidad del sistema | LUN de back-end 
+| Unidad del sistema | Lun de backend 
 
 
 | Sistema de archivos | Volumen interno 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -49,7 +49,7 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 * Dirección IP del dispositivo
 * Puerto 22, protocolo SSH
 * Nombre de usuario y contraseña - nivel de privilegio: Supervisor
-* Nota: Este recopilador de datos está basado en SSH, por lo que la unidad principal que la aloja debe ser capaz de iniciar sesiones SSH a TCP 22 en el propio Hnas o la unidad de administración de sistemas (SMU) a la que está conectado el clúster.
+* Nota: Este recopilador de datos está basado en SSH, por lo que la AU que lo aloja debe poder iniciar sesiones SSH en TCP 22 en el propio HNAS o en la unidad de administración de sistemas (SMU) a la que está conectado el clúster.
 
 
 
@@ -61,13 +61,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Host Hnas | Dirección IP o nombre de dominio completo del host de gestión Hnas 
+| Anfitrión de HNAS | Dirección IP o nombre de dominio completo del host de administración de HNAS 
 
 
-| Nombre de usuario | Nombre de usuario de Hnas CLI 
+| Nombre de usuario | Nombre de usuario para HNAS CLI 
 
 
-| Contraseña | Contraseña usada para Hnas CLI 
+| Password | Contraseña utilizada para HNAS CLI 
 |===
 
 
@@ -78,13 +78,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 30 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 30 minutos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -92,15 +92,15 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Error al conectar" con mensajes de error "error al configurar el canal del shell:" o "error al abrir el canal del shell" | Probablemente causado por problemas de conectividad de red o SSH está mal configurado. Confirme la conexión con el cliente SSH alternativo 
+| "Error de conexión" con mensajes de error "Error al configurar el canal de shell:" o "Error al abrir el canal de shell" | Probablemente se deba a problemas de conectividad de red o a que SSH está mal configurado.  Confirmar la conexión con el cliente SSH alternativo 
 
 
-| "Timeout" o "error al recuperar datos" con mensajes de error "Command: XXX ha agotado el tiempo de espera." | * Intente el comando con el cliente SSH alternativo * aumente el tiempo de espera 
+| "Tiempo de espera agotado" o "Error al recuperar datos" con mensajes de error "El comando: XXX ha expirado". | * Pruebe el comando con un cliente SSH alternativo * Aumente el tiempo de espera 
 
 
-| "Error al conectar " o "credenciales de inicio de sesión no válidas" con mensajes de error "no se pudo comunicar con el dispositivo:" | * Compruebe la dirección IP * Compruebe el nombre de usuario y la contraseña * confirme la conexión con el cliente SSH alternativo 
+| Error de conexión o Credenciales de inicio de sesión no válidas con el mensaje "No se pudo comunicar con el dispositivo". | * Verificar la dirección IP * Verificar el nombre de usuario y la contraseña * Confirmar la conexión con el cliente SSH alternativo 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

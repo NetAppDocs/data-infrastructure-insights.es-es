@@ -2,31 +2,31 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_powervm.html 
 keywords: IBM, powerVM, 
-summary: Configurar el recopilador de datos de IBM PowerVM. 
+summary: Configuración del recopilador de datos de IBM PowerVM. 
 ---
-= Configurar el recopilador de datos de IBM PowerVM
+= Configuración del recopilador de datos de IBM PowerVM
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos de IBM PowerVM (SSH) se utiliza para recopilar información acerca de las particiones virtuales que se ejecutan en instancias de hardware DE IBM POWER gestionadas por una consola de administración de hardware (HMC).
+El recopilador de datos de IBM PowerVM (SSH) se utiliza para recopilar información sobre particiones virtuales que se ejecutan en instancias de hardware de IBM POWER administradas por una consola de administración de hardware (HMC).
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere información de inventario de las particiones virtuales que se ejecutan en las instancias de hardware de ALIMENTACIÓN DE IBM. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere información de inventario de las particiones virtuales que se ejecutan en instancias de hardware de IBM POWER.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| disco hdisk | Disco virtual 
+| disco duro | Disco virtual 
 
 
-| Sistema gestionado | Host 
+| Sistema administrado | Host 
 
 
 | LPAR, servidor VIO | Máquina virtual 
@@ -37,22 +37,22 @@ Data Infrastructure Insights adquiere información de inventario de las particio
 
 | Volumen físico | LUN 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Se deben cumplir los siguientes requisitos para configurar y utilizar este recopilador de datos:
+Para configurar y utilizar este recopilador de datos se deben cumplir los siguientes requisitos:
 
-* Dirección IP de la Consola de administración de hardware (HMC)
-* Nombre de usuario y contraseña que proporcionan acceso a hardware Management Console (HMC) a través de SSH
-* Se requiere el puerto SSH-22
-* Permiso de vista en todos los sistemas de administración y dominios de seguridad de partición lógica
+* Dirección IP de la consola de administración de hardware (HMC)
+* Nombre de usuario y contraseña que proporcionan acceso a la Consola de administración de hardware (HMC) a través de SSH
+* Requisito de puerto SSH-22
+* Ver permisos en todos los sistemas de administración y dominios de seguridad de particiones lógicas
 +
-El usuario también debe tener permiso View en las configuraciones HMC y la capacidad de recopilar información de VPD para la agrupación de seguridad de la consola HMC. También se debe permitir al usuario el acceso al comando de servidor de E/S virtual en la agrupación de seguridad de partición lógica. Es una práctica recomendada empezar desde un rol de operador y después quitar todas las funciones. Los usuarios de sólo lectura de HMC no tienen privilegios para ejecutar comandos proxy en hosts AIX.
+El usuario también debe tener permiso de visualización en las configuraciones de HMC y la capacidad de recopilar información de VPD para la agrupación de seguridad de la consola HMC.  Al usuario también se le debe permitir el acceso al comando de servidor E/S virtual bajo la agrupación de seguridad Partición lógica.  Se recomienda comenzar desde el rol de un operador y luego eliminar todos los roles.  Los usuarios de solo lectura en la HMC no tienen privilegios para ejecutar comandos proxy en hosts AIX.
 
-* La mejor práctica de IBM es tener los dispositivos controlados por dos o más HMC. Tenga en cuenta que esto puede provocar que OnCommand Insight informe de dispositivos duplicados, por lo que se recomienda encarecidamente agregar dispositivos redundantes a la lista "excluir dispositivos" de la configuración avanzada de este recopilador de datos.
+* La mejor práctica de IBM es que los dispositivos sean monitoreados por dos o más HMC.  Tenga en cuenta que esto puede provocar que OnCommand Insight informe dispositivos duplicados, por lo tanto, se recomienda encarecidamente agregar dispositivos redundantes a la lista "Excluir dispositivos" en la Configuración avanzada para este recopilador de datos.
 
 
 
@@ -64,13 +64,13 @@ El usuario también debe tener permiso View en las configuraciones HMC y la capa
 | Campo | Descripción 
 
 
-| Dirección IP de la consola de administración de hardware (HMC) | Dirección IP o nombre de dominio completo de PowerVM hardware Management Console 
+| Dirección IP de la consola de administración de hardware (HMC) | Dirección IP o nombre de dominio completo de la consola de administración de hardware de PowerVM 
 
 
-| Usuario de HMC | Nombre de usuario de la Consola de administración de hardware 
+| Usuario de HMC | Nombre de usuario para la consola de administración de hardware 
 
 
-| Contraseña | Contraseña utilizada para la Consola de administración de hardware 
+| Password | Contraseña utilizada para la consola de administración de hardware 
 |===
 
 
@@ -81,22 +81,22 @@ El usuario también debe tener permiso View en las configuraciones HMC y la capa
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 20 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 20 minutos. 
 
 
-| Puerto SSH | Puerto que se utiliza para SSH al PowerVM 
+| Puerto SSH | Puerto utilizado para SSH a PowerVM 
 
 
-| Contraseña | Contraseña utilizada para la Consola de administración de hardware 
+| Password | Contraseña utilizada para la consola de administración de hardware 
 
 
 | Número de reintentos | Número de intentos de reintento de inventario 
 
 
-| Excluir dispositivos | Lista separada por comas de ID de dispositivo o nombres de visualización que se van a excluir 
+| Excluir dispositivos | Lista separada por comas de ID de dispositivos o nombres para mostrar que se excluirán 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

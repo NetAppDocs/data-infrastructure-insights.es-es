@@ -2,42 +2,42 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_puppetagent.html 
 keywords: telegraf, installation, install, Puppet 
-summary: Configuración de recopilador de datos de Puppet 
+summary: Configuración del recopilador de datos de Puppet 
 ---
-= Recopilador de datos de Puppet Agent
+= Recopilador de datos del agente Puppet
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de Puppet Agent.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de Puppet Agent.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Puppet.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elige Marioneta.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:PuppetDCConfigWindows.png["Configuración de Puppet"]
+image:PuppetDCConfigWindows.png["Configuración de títeres"]
 
 
 
 == Configuración
 
-Puede encontrar información en la https://puppet.com/docs["Documentación de Puppet"]
+La información se puede encontrar en el https://puppet.com/docs["Documentación de Puppet"]
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
@@ -46,10 +46,10 @@ Se recopilan los objetos siguientes y sus contadores:
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Agente de Puppet | UUID de nodo de espacio de nombres | Nombre de nodo ubicación nodo IP Versión de Configstring Versión Puppet | Cambios total Eventos de fallo Eventos de éxito Eventos de éxito total Recursos cambiados Recursos fallidos Recursos no reinicializar Recursos Outofsync Recursos reiniciados Recursos programados Recursos omitidos Recursos tiempo total ancla tiempo de Configrecuperación tiempo de Crón tiempo Exec tiempo de archivo tiempo de Filebucket tiempo de paquete Hora de programa tiempo de servicio tiempo de Sshauthorizedkey total Usuario de tiempo 
+| Agente títere | UUID del nodo del espacio de nombres | Nombre del nodo Ubicación IP del nodo Versión Cadena de configuración Versión Puppet | Cambios Total de eventos Eventos de error Eventos de éxito Total de recursos Recursos modificados Recursos fallidos Recursos no reiniciados Recursos desincronizados Recursos reiniciados Recursos programados Recursos omitidos Tiempo total Tiempo de anclaje Tiempo de recuperación de configuración Tiempo de cron Tiempo de ejecución Tiempo de archivo Tiempo de Filebucket Tiempo de última ejecución Tiempo de paquete Tiempo de programación Tiempo de servicio Tiempo de Sshauthorizedkey Tiempo total de usuario 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

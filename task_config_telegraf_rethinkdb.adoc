@@ -2,39 +2,39 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_rethinkdb.html 
 keywords: telegraf, installation, install, redis 
-summary: Configuración del recopilador de datos Reedis 
+summary: Configuración del recopilador de datos de Redis 
 ---
-= Recopilador de datos de RethinkDB
+= Recopilador de datos RethinkDB
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de RethinkDB.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de RethinkDB.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione RethinkDB.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija RethinkDB.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:RethinkDBDCConfigWindows.png["Configuración de recopiladores de datos RethinkDB"]
+image:RethinkDBDCConfigWindows.png["Configuración del recopilador de datos RethinkDB"]
 
 
 
 == Configuración
 
-La información se puede encontrar en el link:https://www.rethinkdb.com/docs/["Documentación de RethinkDB"].
+La información se puede encontrar en ellink:https://www.rethinkdb.com/docs/["Documentación de RethinkDB"] .
 
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

@@ -2,64 +2,64 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_rest.html 
 keywords: data collector, Brocade, FC switch, FOS, Rest 
-summary: Configurar el recopilador de DATOS REST DE Brocade FOS. 
+summary: Configuración del recopilador de datos REST de Brocade FOS. 
 ---
-= Recopilador de DATOS REST DE Brocade FOS
+= Recopilador de datos REST de Brocade FOS
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Información de infraestructura de datos utiliza el recopilador REST FOS de Brocade para detectar inventario y rendimiento de dispositivos de switch Brocade que ejecutan el firmware de Fabric OS (FOS) 8,2 y posteriores. Tenga en cuenta que las primeras versiones de FOS 8.2 pueden tener errores en la API REST; se recomienda encarecidamente ejecutar la última versión posible de FOS que admita su plataforma.
+Data Infrastructure Insights utiliza el recopilador REST de Brocade FOS para descubrir el inventario y el rendimiento de los dispositivos conmutadores Brocade que ejecutan el firmware FabricOS (FOS) 8.2 y posteriores.  Tenga en cuenta que las primeras versiones de FOS 8.2 pueden tener errores en la API REST; se recomienda encarecidamente ejecutar la última versión posible de FOS que admita su plataforma.
 
-Nota: El nivel de usuario predeterminado de FOS no es suficientemente potente para que la información de la infraestructura de datos pueda ver todos los aspectos lógicos de un dispositivo. Necesitamos una cuenta de usuario con la función de chasis activada, así como permisos en todas las estructuras virtuales configuradas en un conmutador.
+Tenga en cuenta: el nivel de "usuario" predeterminado de FOS no es lo suficientemente potente para que Data Infrastructure Insights vea todos los aspectos lógicos de un dispositivo: necesitamos una cuenta de usuario con el "Rol de chasis" habilitado, así como permisos en todas las estructuras virtuales configuradas en un conmutador.
 
-A continuación se muestra un ejemplo de cómo puede crear una cuenta de usuario de «mínimo privilegio» para el uso de Data Infrastructure Insights en una sesión SSH en un dispositivo FOS:
+A continuación se muestra un ejemplo de cómo puede crear una cuenta de usuario de "menor privilegio" para el uso de Data Infrastructure Insights en una sesión SSH en un dispositivo FOS:
 
-UserConfig --add NetAppCIUser -r user -l 1-128 -c user -p Qwerty!
+userConfig --add NetAppCIUser -r usuario -l 1-128 -c usuario -p Qwerty!
 
-Esto creará un usuario «NetAppCIUser» con la contraseña «Qwerty!». Este usuario tiene el rol «user» (-r) en las 128 estructuras virtuales posibles ( -l ). Este usuario también tiene el rol “Chassis” requerido ( -c) con acceso de nivel de usuario asignado.
+Esto creará un usuario “NetAppCIUser” con una contraseña “Qwerty!”.  Este usuario tiene el rol de “usuario” (-r) en las 128 estructuras virtuales posibles (-l).  Este usuario también tiene el rol “Chasis” requerido (-c) con acceso de nivel de usuario asignado.
 
-De forma predeterminada, este recopilador intentará descubrir todos los dispositivos FOS que forman parte de todas las telas de las que forma parte el conmutador.
+De forma predeterminada, este recopilador intentará descubrir todos los dispositivos FOS que forman parte de todas las estructuras de las que forma parte el conmutador.
 
-Nota: El usuario de solo lectura predeterminado de FOS NO tiene permisos de visualización en todas las estructuras virtuales ni tiene permisos de función de chasis. Esto significa que tendrá una baja probabilidad de éxito utilizando «usuario» con Data Infrastructure Insights, que necesita comprender la configuración física y lógica del dispositivo FOS.
+Tenga en cuenta: el usuario "usuario" de solo lectura predeterminado de FOS NO tiene permisos de visualización en todas las estructuras virtuales ni tampoco permisos de "rol de chasis".  Esto significa que tendrá pocas probabilidades de éxito al utilizar "usuario" con Data Infrastructure Insights, que necesita comprender tanto la configuración física como lógica del dispositivo FOS.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario al recopilador de DATOS DE REST DE Brocade FOS. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos REST de Brocade FOS.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Conmutador | Conmutador 
+| Cambiar | Cambiar 
 
 
 | Puerto | Puerto 
 
 
-| Estructura virtual, estructura física | Estructura 
+| Tejido virtual, tejido físico | Tela 
 
 
 | Zona | Zona 
 
 
-| Cambio lógico | Cambio lógico 
+| Interruptor lógico | Interruptor lógico 
 
 
 | Zona LSAN | Zona IVR 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* Debe haber conectividad TCP para todos los switches de la estructura. Este tipo de recopilador de datos probará sin problemas tanto HTTP como HTTPS de cada dispositivo de la estructura. Si activa la casilla de comprobación _Discover all switches in the fabric_, Data Infrastructure Insights identifica todos los switches de la estructura; sin embargo, requiere conectividad TCP con estos switches adicionales para detectarlos.
-* La misma cuenta es necesaria globalmente en todos los switches del entramado. Puede utilizar la interfaz web del dispositivo para confirmar el acceso.
+* Debe haber conectividad TCP a todos los conmutadores en la estructura.  Este tipo de recopilador de datos probará sin problemas tanto HTTP como HTTPS para cada dispositivo en la estructura.  Si selecciona la casilla de verificación _Descubrir todos los conmutadores en la estructura_, Data Infrastructure Insights identifica todos los conmutadores en la estructura; sin embargo, necesita conectividad TCP con estos conmutadores adicionales para descubrirlos.
+* Se necesita la misma cuenta globalmente en todos los conmutadores de la red.  Puede utilizar la interfaz web del dispositivo para confirmar el acceso.
 
 
 
@@ -71,13 +71,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Cambie IP | Dirección IP o nombre de dominio completo del conmutador FOS 
+| Cambiar IP | Dirección IP o nombre de dominio completo del conmutador FOS 
 
 
-| Nombre de usuario | Nombre de usuario del conmutador 
+| Nombre de usuario | Nombre de usuario para el conmutador 
 
 
-| Contraseña | Contraseña para el conmutador 
+| Password | Contraseña para el conmutador 
 |===
 
 
@@ -88,31 +88,31 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Dispositivos excluidos | Lista separada por comas de direcciones del dispositivo IPv4 para excluir del sondeo. 
+| Dispositivos excluidos | Lista separada por comas de direcciones IPv4 de dispositivos que se excluirán del sondeo. 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 60. 
 
 
-| Descubra todos los switches del entramado | Seleccione para detectar todos los switches de la estructura. 
+| Descubra todos los interruptores en la tela | Seleccione para descubrir todos los interruptores en la tela. 
 
 
-| Seleccione Favor HBA vs. Alias de zona | Elija si desea preferir el HBA o los alias de zona. 
+| Elija entre HBA y alias de zona | Elija si desea favorecer HBA o alias de zona. 
 
 
 | Tipo de conexión | HTTP o HTTPS. 
 
 
-| Tenga en cuenta que esta configuración solo cambia qué protocolo CI intenta utilizar primero por dispositivo; CI intentará el protocolo opuesto automáticamente si falla el valor predeterminado | Anular puerto TCP 
+| Tenga en cuenta que esta configuración solo cambia qué protocolo intenta usar CI por dispositivo primero: CI intentará el protocolo opuesto automáticamente si el predeterminado falla. | Anular puerto TCP 
 
 
-| Especifique un puerto si no utiliza el valor predeterminado. | Intervalo de sondeo de rendimiento (s) 
+| Especifique un puerto si no utiliza el predeterminado. | Intervalo de encuesta de rendimiento (seg.) 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -120,21 +120,21 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| La función de prueba me advierte de que no se puede acceder a un protocolo | Un dispositivo Brocade FOS 8,2+ solo querrá hablar en HTTP o HTTPS. Si un conmutador tiene un certificado digital instalado, el conmutador emitirá errores HTTP si se intenta comunicarse con HTTP sin cifrar frente a HTTPS. La función de prueba intenta la comunicación con HTTP y HTTPS: Si la prueba le indica que un protocolo pasa, puede guardar el recopilador de forma segura y no preocuparse de que el otro protocolo no se haya realizado correctamente, el recopilador intentará ambos protocolos durante la recopilación y solo fallará si ninguno de los dos funciona. 
+| La función de prueba me advierte que un protocolo es inaccesible | Un dispositivo Brocade FOS 8.2+ determinado solo querrá hablar en HTTP o HTTPS: si un conmutador tiene un certificado digital instalado, el conmutador arrojará errores HTTP si uno intenta comunicarse con él con HTTP sin cifrar en lugar de HTTPS.  La función de prueba intenta la comunicación con HTTP y HTTPS: si la prueba le indica que un protocolo pasa, puede guardar el recopilador de manera segura y no preocuparse de que el otro protocolo no haya tenido éxito: el recopilador intentará ambos protocolos durante la recopilación y solo fallará si ninguno funciona. 
 
 
-| Error: El inventario falla con 401 No autorizado...Clave de sesión no válida... | Este es un error característico de algunas versiones anteriores de FOS 8.2, como la 8.2.1c, que no admiten correctamente la autenticación básica HTTP. Actualice a una versión posterior 8.2 o 9.*. 
+| Error: El inventario falla con 401 No autorizado...Clave de sesión no válida... | Este es un error distintivo de algunas versiones muy tempranas de FOS 8.2, como 8.2.1c, que NO admiten adecuadamente la autenticación básica HTTP.  Actualice a una versión posterior 8.2 o 9.* 
 
 
-| Error: «Información de infraestructura de datos recibida rol de chasis no válido» | Compruebe que el usuario configurado en este origen de datos ha obtenido el permiso de función de chasis. 
+| Error: "Data Infrastructure Insights recibió un rol de chasis no válido" | Verifique que al usuario configurado en esta fuente de datos se le haya otorgado el permiso de rol de chasis. 
 
 
-| Error: "La dirección IP del chasis no coincide" | Cambie la configuración del origen de datos para utilizar la dirección IP del chasis. 
+| Error: "Dirección IP del chasis no coincidente" | Cambie la configuración de la fuente de datos para utilizar la dirección IP del chasis. 
 
 
-| El inventario falla con un 403 Prohibido | Esto puede ser simplemente credenciales erróneas, o puede ser indicativo de que está intentando usar un rol poco potente. Recuerde que los usuarios de nivel de usuario NO tienen el derecho de rol de chasis requerido, ni acceso de visualización a estructuras virtuales no predeterminadas. 
+| El inventario falla con un 403 Prohibido | Esto puede deberse simplemente a credenciales incorrectas o puede ser un indicio de que está intentando usar un rol insuficientemente poderoso: recuerde que los usuarios de nivel "usuario" NO tienen el derecho de "Rol de chasis" requerido ni acceso de visualización a Virtual Fabrics que no sean los predeterminados. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

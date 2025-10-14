@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_dc_infinidat_infinibox.html 
 keywords: data collector, infinidat, InfiniBox 
-summary: Configurar el recopilador de datos Infinidat InfiniBox. 
+summary: Configuración del recopilador de datos Infinidat InfiniBox. 
 ---
-= Recopilador de datos Infinidat InfiniBox
+= Colector de datos Infinidat InfiniBox
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,26 +16,26 @@ El recopilador de datos Infinidat InfiniBox (HTTP) se utiliza para recopilar inf
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Infinidat InfiniBox. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Infinidat InfiniBox.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
 
 
-| Nodo | Controladora 
+| Node | Controladora 
 
 
 | Sistema de archivos | Volumen interno 
 
 
-| Sistema de archivos | Recurso compartido de archivos 
+| Sistema de archivos | Compartir archivos 
 
 
-| Exportaciones de sistemas de archivos | Share 
+| Exportaciones del sistema de archivos | Compartir 
 |===
 
 
@@ -43,9 +43,9 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 Los siguientes son requisitos al configurar este recopilador de datos.
 
-* Dirección IP o FQDN del nodo de gestión de InfiniBox
-* ID de usuario y contraseña de administrador
-* Puerto 443 a través de la API REST
+* Dirección IP o FQDN del nodo de administración de InfiniBox
+* Nombre de usuario y contraseña de administrador
+* Puerto 443 a través de API REST
 
 
 
@@ -57,13 +57,13 @@ Los siguientes son requisitos al configurar este recopilador de datos.
 | Campo | Descripción 
 
 
-| Host InfiniBox | Dirección IP o nombre de dominio completo del nodo de gestión de InfiniBox 
+| Anfitrión de InfiniBox | Dirección IP o nombre de dominio completo del nodo de administración de InfiniBox 
 
 
-| Nombre de usuario | Nombre de usuario para el nodo de gestión de InfiniBox 
+| Nombre de usuario | Nombre de usuario para el nodo de administración de InfiniBox 
 
 
-| Contraseña | Contraseña para el nodo de gestión de InfiniBox 
+| Password | Contraseña para el nodo de administración de InfiniBox 
 |===
 
 
@@ -74,13 +74,13 @@ Los siguientes son requisitos al configurar este recopilador de datos.
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectarse a InfiniBox Server. El valor predeterminado es 443. 
+| Puerto TCP | Puerto TCP utilizado para conectarse al servidor InfiniBox.  El valor predeterminado es 443. 
 
 
 | Intervalo de sondeo de inventario | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

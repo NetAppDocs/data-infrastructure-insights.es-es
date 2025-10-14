@@ -11,20 +11,20 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 
 
 [role="lead"]
-Data Infrastructure Insights le ayuda a gestionar los costes de infraestructura y licencias mediante el análisis del comportamiento histórico del entorno y el establecimiento de predicciones a corto y largo plazo, generando recomendaciones detalladas para el desmantelamiento de hosts y la recuperación de máquinas virtuales inactivas y apagadas. Estas recomendaciones le ayudan a garantizar la estabilidad del rendimiento, liberar capacidad no utilizada y reducir la asignación de memoria y CPU.
+Data Infrastructure Insights le ayuda a gestionar los costos de infraestructura y licencias analizando el comportamiento histórico del entorno y estableciendo predicciones a corto y largo plazo, generando recomendaciones detalladas para el desmantelamiento del host y la recuperación de máquinas virtuales apagadas e inactivas.  Estas recomendaciones le ayudarán a garantizar la estabilidad del rendimiento, liberar capacidad no utilizada y reducir la asignación de memoria y CPU.
 
-image:vm_optimization_summary.png["Pantalla Resumen de Optimización de VM"]
+image:vm_optimization_summary.png["Pantalla de resumen de optimización de VM"]
 
-Para empezar, desplácese hasta Observabilidad > Analizar > Optimización de máquinas virtuales. Se muestra un resumen del ahorro potencial desglosado por número de núcleos y ahorros de almacenamiento. Puede establecer filtros para que se centren por centro de datos, IP de centro virtual o clúster, o bien definir sus propios filtros para reducir aún más el enfoque.
+Para comenzar, navegue a Observabilidad > Analizar > Optimización de VM.  Se le muestra un resumen de los ahorros potenciales desglosados por número de núcleos y ahorro de almacenamiento.  Puede configurar filtros para centrarse en el centro de datos, la IP del centro virtual o el clúster, o configurar sus propios filtros para limitar aún más su enfoque.
 
-image:vm_optimization_overview.png["información general sobre la optimización de máquinas virtuales"]
+image:vm_optimization_overview.png["Descripción general de la optimización de máquinas virtuales"]
 
-La pestaña Descomisionado de hipervisor muestra el ahorro de costes potencial en función de la estrategia de optimización que seleccione. Cada estrategia utiliza diferentes umbrales para determinar el ahorro potencial.
+La pestaña Desmantelamiento de hipervisor muestra sus posibles ahorros de costos en función de la estrategia de optimización que seleccione.  Cada estrategia utiliza diferentes umbrales para determinar los ahorros potenciales.
 
-Seleccione un clúster de la lista para abrir un panel deslizante con detalles sobre el uso de la CPU y la memoria para el clúster.
+Seleccione un clúster en la lista para abrir un panel deslizable con detalles sobre la utilización de CPU y memoria para el clúster.
 
-image:vm_optimization_hypervisor_decommissioning_tab.png["pestaña de optimización de hipervisor"]
+image:vm_optimization_hypervisor_decommissioning_tab.png["pestaña de optimización del hipervisor"]
 
-La pestaña VM Reclamation proporciona detalles sobre las máquinas virtuales que están inactivas o apagadas durante más de 30, 60 o 90 días, junto con los ahorros potenciales en capacidad, memoria y vCPU. Al seleccionar una máquina virtual de la lista se abre la página de detalles para esa máquina virtual.
+La pestaña Recuperación de VM le brinda detalles sobre las VM que están inactivas o apagadas durante más de 30, 60 o 90 días, junto con posibles ahorros de capacidad, memoria y vCPU.  Al seleccionar una VM de la lista, se abre la página de detalles de esa VM.
 
-image:vm_optimization_reclamation_tab.png["pestaña de recuperación de máquinas virtuales"]
+image:vm_optimization_reclamation_tab.png["pestaña de recuperación de vm"]

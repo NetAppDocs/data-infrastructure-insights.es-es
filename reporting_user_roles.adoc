@@ -1,39 +1,39 @@
 ---
 sidebar: sidebar 
 permalink: reporting_user_roles.html 
-summary: Lo que puede hacer con los informes de información de infraestructura de datos depende de su función de usuario. 
+summary: Lo que puede hacer con los informes de Data Infrastructure Insights depende de su rol de usuario. 
 keywords: reporting, cognos, data warehouse, dwh, users, roles, user roles 
 ---
-= Funciones de usuario de informes de información de la infraestructura de datos
+= Roles de usuario de informes de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Si tiene Data Infrastructure Insights Premium Edition con informes, todos los usuarios de Data Infrastructure Insights de su inquilino también tienen un inicio de sesión único (SSO) en la aplicación de informes (es decir, Cognos). Simplemente haga clic en el enlace *Informes* del menú y se conectará automáticamente a Informes.
+Si tiene Data Infrastructure Insights Premium Edition con Reporting, cada usuario de Data Infrastructure Insights en su inquilino también tiene un inicio de sesión único (SSO) en la aplicación Reporting (es decir, Cognos).  Simplemente haga clic en el enlace *Informes* en el menú y automáticamente iniciará sesión en Informes.
 
-Su rol de usuario en Data Infrastructure Insights determina su rol de usuario de generación de informes:
-
-|===
-
-
-| Función de información de infraestructura de datos | Función de creación de informes | Permisos de informes 
-
-
-| Invitado | Consumidor | Puede ver, programar y ejecutar informes y establecer preferencias personales como las de idiomas y zonas horarias. Los consumidores no pueden crear informes ni realizar tareas administrativas. 
-
-
-| Usuario | Autor | Puede realizar todas las funciones de usuario, así como crear y gestionar informes y paneles. 
-
-
-| Administrador | Administrador | Puede realizar todas las funciones de Autor, así como todas las tareas administrativas como la configuración de informes y el cierre y reinicio de tareas de creación de informes. 
-|===
-En la siguiente tabla se muestran las funciones disponibles para cada rol de generación de informes.
+Su rol de usuario en Data Infrastructure Insights determina su rol de usuario de informes:
 
 |===
 
 
-| Función | Consumidor | Autor | Administrador 
+| Rol de Data Infrastructure Insights | Rol de informe | Permisos de informes 
+
+
+| Invitado | Consumidor | Puede ver, programar y ejecutar informes y establecer preferencias personales como idiomas y zonas horarias.  Los consumidores no pueden crear informes ni realizar tareas administrativas. 
+
+
+| Usuario | Autor | Puede realizar todas las funciones del consumidor, así como crear y administrar informes y paneles. 
+
+
+| Administrador | Administrador | Puede realizar todas las funciones de autor, así como todas las tareas administrativas, como la configuración de informes y el apagado y reinicio de las tareas de informes. 
+|===
+La siguiente tabla muestra las funciones disponibles para cada rol de informes.
+
+|===
+
+
+| Característica | Consumidor | Autor | Administrador 
 
 
 | Ver informes en la pestaña Contenido del equipo | Sí | Sí | Sí 
@@ -45,13 +45,13 @@ En la siguiente tabla se muestran las funciones disponibles para cada rol de gen
 | Programar informes | Sí | Sí | Sí 
 
 
-| Cargue archivos externos | No | Sí | Sí 
+| Subir archivos externos | No | Sí | Sí 
 
 
-| Crear trabajos | No | Sí | Sí 
+| Crear empleos | No | Sí | Sí 
 
 
-| Crear historias | No | Sí | Sí 
+| Crea historias | No | Sí | Sí 
 
 
 | Crear informes | No | Sí | Sí 
@@ -63,7 +63,7 @@ En la siguiente tabla se muestran las funciones disponibles para cada rol de gen
 | Realizar tareas administrativas | No | No | Sí 
 
 
-| Agregar/Editar Elemento HTML | No | No | Sí 
+| Agregar/Editar elemento HTML | No | No | Sí 
 
 
 | Ejecutar informe con elemento HTML | Sí | Sí | Sí 
@@ -76,32 +76,32 @@ En la siguiente tabla se muestran las funciones disponibles para cada rol de gen
 |===
 
 
-== Configurar las preferencias de correo electrónico de generación de informes (Cognos)
+== Configuración de las preferencias de correo electrónico de Informes (Cognos)
 
 
-NOTE: Si cambia las preferencias de correo electrónico del usuario en los informes de información de infraestructura de datos (es decir, la aplicación Cognos), esas preferencias estarán activas _solo para la sesión actual_. Cerrar sesión en Cognos y volver a ingresar restablecerá sus preferencias de correo electrónico.
+NOTE: Si cambia sus preferencias de correo electrónico de usuario dentro de Data Infrastructure Insights Reporting (es decir, la aplicación Cognos), esas preferencias estarán activas _solo para la sesión actual_.  Cerrar sesión en Cognos y volver a iniciarla restablecerá sus preferencias de correo electrónico.
 
 
 
-=== ¿Qué pasos debo seguir para preparar mi entorno actual para habilitar SSO?
+=== ¿Qué pasos debo seguir para preparar mi entorno existente para habilitar SSO?
 
-Para asegurarse de que sus informes se conservan, migre todos los informes de _My Content_ a _Team Content_ mediante los pasos siguientes. Debe hacer esto antes de habilitar SSO en su inquilino:
+Para garantizar que se conserven sus informes, migre todos los informes de _Mi contenido_ a _Contenido del equipo_ siguiendo estos pasos.  Debes hacer esto antes de habilitar SSO en tu inquilino:
 
 . Vaya a *Menú > Contenido*
 
 
 image:Reporting_Menu.png["Menú superior izquierdo de Cognos"]
 
-. Cree una nueva carpeta en *_Team Content_*
+. Crea una nueva carpeta en *_Team Content_*
 +
-.. Si se han creado varios usuarios, cree una carpeta independiente para que cada usuario evite sobrescribir informes con nombres duplicados
+.. Si se han creado varios usuarios, cree una carpeta separada para cada usuario para evitar sobrescribir informes con nombres duplicados.
 
 
-. Navegue hasta _My Content_
-. Seleccione todos los informes que desee conservar.
+. Navegar a _Mi contenido_
+. Seleccione todos los informes que desea conservar.
 . En la esquina superior derecha del menú, seleccione "Copiar o mover"
-. Vaya a la carpeta recién creada en _Team Content_
-. Pegue los informes en la carpeta recién creada mediante los botones "Copiar a" o "mover a"
-. Una vez que se haya habilitado SSO para Cognos, inicie sesión en Data Infrastructure Insights con la dirección de correo electrónico utilizada para crear su cuenta.
-. Desplácese a la carpeta _Team Content_ dentro de Cognos y copie o mueva los informes guardados anteriormente a _My Content_.
+. Navegue a la carpeta recién creada en _Contenido del equipo_
+. Pegue los informes en la carpeta recién creada usando los botones "Copiar a" o "Mover a"
+. Una vez que SSO esté habilitado para Cognos, inicie sesión en Data Infrastructure Insights con la dirección de correo electrónico utilizada para crear su cuenta.
+. Navegue a la carpeta _Contenido del equipo_ dentro de Cognos y copie o mueva los informes previamente guardados a _Mi contenido_.
 

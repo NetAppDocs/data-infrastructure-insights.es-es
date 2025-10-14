@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_powerstore.html 
 keywords: data collector, PowerStore, EMC, DELL 
-summary: Configuración del recopilador DE datos Dell EMC PowerStore. 
+summary: Configuración del recopilador de datos de DELL EMC PowerStore. 
 ---
 = Recopilador de datos de Dell EMC PowerStore
 :hardbreaks:
@@ -10,54 +10,54 @@ summary: Configuración del recopilador DE datos Dell EMC PowerStore.
 
 
 [role="lead"]
-El recopilador de datos de EMC PowerStore recopila información de inventario del almacenamiento de EMC PowerStore. Para la configuración, el recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de sólo lectura.
+El recopilador de datos de EMC PowerStore recopila información de inventario del almacenamiento de EMC PowerStore.  Para la configuración, el recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de solo lectura.
 
-El recopilador de datos de EMC PowerStore recopila las relaciones de replicación de volumen a volumen que PowerStore coordina en otras cabinas de almacenamiento. Data Infrastructure Insights muestra una cabina de almacenamiento para cada clúster de PowerStore, y recopila datos de inventario de nodos y puertos de almacenamiento en ese clúster. No se recopilan datos de volúmenes o pool de almacenamiento.
+El recopilador de datos de EMC PowerStore reúne las relaciones de replicación de volumen a volumen que PowerStore coordina entre otras matrices de almacenamiento.  Data Infrastructure Insights muestra una matriz de almacenamiento para cada clúster de PowerStore y recopila datos de inventario de los nodos y puertos de almacenamiento en ese clúster.  No se recopilan datos de volumen ni de grupo de almacenamiento.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| host | host 
+| anfitrión | anfitrión 
 
 
-| asignación_volumen_host | asignación_volumen_host 
+| mapeo de volumen del host | mapeo de volumen del host 
 
 
-| Hardware (tiene unidades bajo objeto "extra_details"): Unidades | Disco 
+| hardware (tiene Unidades bajo el objeto "extra_details"): Unidades | Disco 
 
 
-| Dispositivo | StoragePool 
+| Aparato | Grupo de almacenamiento 
 
 
-| Clúster | Cabina de almacenamiento 
+| Grupo | Matriz de almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
-| puerto_fc | Puerto 
+| puerto fc | Puerto 
 
 
-| volumen | Volumen 
+| volume | Volumen 
 
 
-| InternalVolume | sistema_de_archivos 
+| Volumen interno | sistema de archivos 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos se necesita la siguiente información:
+Se requiere la siguiente información para configurar este recopilador de datos:
 
 * Dirección IP o nombre de dominio completo del procesador de almacenamiento
 * Nombre de usuario y contraseña de solo lectura
@@ -72,13 +72,13 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 | Campo | Descripción 
 
 
-| Puertas de enlace PowerStore | Direcciones IP o nombres de dominio completos de almacenamiento PowerStore 
+| Puerta(s) de enlace de PowerStore | Direcciones IP o nombres de dominio completos del almacenamiento de PowerStore 
 
 
-| Nombre de usuario | Nombre de usuario de PowerStore 
+| Nombre de usuario | Nombre de usuario para PowerStore 
 
 
-| Contraseña | Contraseña usada para PowerStore 
+| Password | Contraseña utilizada para PowerStore 
 |===
 
 
@@ -94,10 +94,10 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 
 | Intervalo de sondeo de inventario (minutos) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 |===
-La colección de rendimiento PowerStore de Cloud Insight utiliza los datos de fuente de granularidad de 5 minutos de PowerStore. Por eso, Data Infrastructure Insights sondea esos datos cada cinco minutos, algo que no se puede configurar.
+La recopilación de rendimiento de PowerStore de Cloud Insight utiliza datos de origen con granularidad de 5 minutos de PowerStore.  Como tal, Data Infrastructure Insights sondea esos datos cada cinco minutos, y esto no es configurable.
 
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

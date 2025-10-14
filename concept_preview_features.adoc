@@ -1,15 +1,15 @@
 ---
 sidebar: sidebar 
 permalink: concept_preview_features.html 
-summary: Las funciones de vista previa están disponibles en capacidad limitada y su función destacada aún no está lista para la hora punta. 
+summary: Las funciones de vista previa están disponibles con una capacidad limitada y resaltan funcionalidades que aún no están listas para su uso en el momento clave. 
 keywords: coming soon, preview, 
 ---
-= Funciones y funcionalidad de vista previa
+= Vista previa de funciones y funcionalidades
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights destaca nuevas funciones y funcionalidades de forma _Preview_. Las funciones de vista previa están disponibles en entornos limitados o con una capacidad limitada.
+Data Infrastructure Insights destaca nuevas características y funcionalidades en modo _vista previa_.  Las funciones de vista previa están disponibles en entornos limitados o con capacidad limitada.
 
 Si está interesado en obtener una vista previa de una o más de estas funciones, comuníquese con su equipo de ventas de NetApp para obtener más información.

@@ -14,15 +14,15 @@ keywords: data collector, queries, create, google, cloud, volumes,
 
 
 [role="lead"]
-Este recopilador de datos permite la recopilación de datos de inventario y rendimiento de las configuraciones de Google Cloud NetApp Volumes . Detecta volúmenes de NetApp y recursos de almacenamiento en todos los proyectos de una organización de Google. Si desea supervisar varias organizaciones de Google con Data Infrastructure Insights, implemente un recopilador por organización.
+Este recopilador de datos admite la recopilación de inventario y rendimiento de las configuraciones de Google Cloud NetApp Volumes .  El recopilador descubre volúmenes de NetApp y recursos de almacenamiento en todos los proyectos dentro de una organización de Google.  Si tiene varias organizaciones de Google que desea supervisar con Data Infrastructure Insights, implemente un recopilador por organización.
 
 
 
 == Requisitos de la cuenta de servicio
 
-* Debe crear una cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación/gestión de cuentas de servicio"]. Esta cuenta de servicio se identifica mediante un ID único, conocido como _clientId_, que se utilizará como nombre de usuario.
-* Además, cree una clave de cuenta de servicio siguiendo las instrucciones de link:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Creación/gestión de claves de cuenta de servicio"]. Esta clave se puede descargar como un archivo json, cuyo contenido se utilizará como contraseña.
-* La cuenta de servicio debe estar delimitada para _compute.readonly_, _monitoring.read_ y _cloud-platform_.
+* Debe crear una cuenta de servicio siguiendo las instrucciones enlink:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación y gestión de cuentas de servicio"] .  Esta cuenta de servicio se identifica mediante un ID único, conocido como _clientId_, que se utilizará como nombre de usuario.
+* Además, cree una clave de cuenta de servicio siguiendo las instrucciones enlink:https://cloud.google.com/iam/docs/creating-managing-service-account-keys["Creación y gestión de claves de cuenta de servicio"] .  Esta clave se puede descargar como un archivo json, cuyo contenido se utilizará como contraseña.
+* La cuenta de servicio debe tener como ámbito _compute.readonly_, _monitoring.read_ y _cloud-platform_.
 
 
 
@@ -34,22 +34,22 @@ Este recopilador de datos permite la recopilación de datos de inventario y rend
 | Campo | Descripción 
 
 
-| ID de la organización | El ID de organización que desea descubrir con este recopilador. Este campo es obligatorio si su cuenta de servicio puede ver más de una organización 
+| ID de la organización | El ID de la organización que desea descubrir con este recopilador.  Este campo es obligatorio si su cuenta de servicio puede ver más de una organización 
 
 
-| Seleccione 'Excluir' o 'Incluir' para filtrar los activos de GCNV por ubicación | De forma predeterminada, Excluir, ya que este recopilador tiene la intención de descubrir todos los volúmenes de GCNV en todo el mundo dentro de su organización. 
+| Elija 'Excluir' o 'Incluir' para filtrar los activos de GCNV por ubicación | El valor predeterminado es Excluir, ya que este recopilador, de manera predeterminada, pretende descubrir todos los volúmenes GCNV en todo el mundo dentro de su organización. 
 
 
-| GCNV Excluir/Incluir ubicaciones | Este campo está vacío de forma predeterminada y se utiliza junto con la opción "Elegir 'Excluir' o 'Incluir'". Si desea descubrir activos solo dentro de ciertas regiones, utilice estas dos opciones para limitar el alcance de este recopilador. 
+| Ubicaciones de inclusión/exclusión de GCNV | Este campo está vacío de forma predeterminada y se utiliza junto con la opción "Elegir 'Excluir' o 'Incluir'".  Si desea descubrir activos solo dentro de ciertas regiones, utilice estas dos opciones para limitar el alcance de este recopilador. 
 
 
-| ID del proyecto | La lista de Id. De proyecto que desea filtrar dentro o fuera de la detección, según el valor de la opción "Seleccionar"...." valor. La lista predeterminada está vacía 
+| Identificadores de proyectos | La lista de ID de proyectos que desea filtrar o excluir del descubrimiento, según el valor de la opción "Elegir 'Excluir'".  La lista predeterminada está vacía 
 
 
-| ID del cliente | ID de cliente para la configuración de Google Cloud Platform 
+| ID de cliente | ID de cliente para la configuración de Google Cloud Platform 
 
 
-| Copie y pegue aquí el contenido de su archivo de credenciales de Google | Copie sus credenciales de Google para la cuenta de la plataforma de cloud en este campo 
+| Copie y pegue el contenido de su archivo de credenciales de Google aquí | Copie sus credenciales de Google para la cuenta de Cloud Platform en este campo 
 |===
 
 
@@ -60,19 +60,19 @@ Este recopilador de datos permite la recopilación de datos de inventario y rend
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos 
 
 
-| Usar proxy AU para llamadas API REST | Seleccione esta opción para que el recopilador use el mismo proxy que la unidad de adquisición donde reside. De forma predeterminada, esta opción está deshabilitada, lo que significa que el recopilador intenta enviar llamadas a la API HTTPS directamente a Google. 
+| Utilice AU Proxy para llamadas a la API REST | Seleccione esta opción para que el recolector utilice el mismo proxy que la Unidad de adquisición en la que reside el recolector.  De forma predeterminada, esta opción está deshabilitada, lo que significa que el recopilador intenta enviar llamadas API HTTPS directamente a Google. 
 
 
-| Claves de etiqueta y valores en los que se filtran las VM | Haga clic en *+ etiqueta de filtro* para elegir qué equipos virtuales (y discos asociados) incluir/excluir filtrando claves y valores que coincidan con claves y valores de etiquetas en el equipo virtual. Se requiere clave de etiqueta; el valor de etiqueta es opcional. Cuando el valor de etiqueta está vacío, la VM se filtra siempre que coincida con la clave de etiqueta. 
+| Claves y valores de etiqueta con los que filtrar las máquinas virtuales | Haga clic en *+ Etiqueta de filtro * para elegir qué máquinas virtuales (y discos asociados) desea incluir o excluir filtrando claves y valores que coincidan con las claves y valores de las etiquetas en la máquina virtual.  La clave de etiqueta es obligatoria, el valor de etiqueta es opcional.  Cuando el valor de la etiqueta está vacío, la máquina virtual se filtra siempre que coincida con la clave de la etiqueta. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 segundos 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300 segundos 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

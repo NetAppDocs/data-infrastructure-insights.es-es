@@ -2,52 +2,52 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_kapacitor.html 
 keywords: telegraf, installation, install, kapacitor 
-summary: configuración de kapacitor 
+summary: configuración del capacitor 
 ---
-= Recopilador de datos de Kapacitor
+= Recopilador de datos Kapacitor
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de influxdata Kapacitor.
+Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de Influxdata Kapacitor.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Kapacitor.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija Kapacitor.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:KapacitorDCConfigWindows.png["Configuración de Kapacitor"]
+image:KapacitorDCConfigWindows.png["Configuración del capacitor"]
 
 
 
 == Configuración
 
-La información de configuración se puede encontrar en la https://docs.influxdata.com/kapacitor/v1.5/["Documentación de Kapacitor"]
+La información de configuración se puede encontrar en https://docs.influxdata.com/kapacitor/v1.5/["Documentación de Kapacitor"]
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto | Identificadores | Atributos | Puntos de datos: 
 
 
-| Kapacitor | Namespace Node Name IP del nodo de espacio de nombres | Arquitectura del sistema operativo Nombre del sistema operativo Versión tiempo de ejecución especificación tiempo de ejecución especificación tiempo de ejecución Proveedor Versión tiempo de ejecución Versión del servidor de tiempo de ejecución VM Nombre tiempo de ejecución VM Proveedor Versión de tiempo de ejecución VM | Bytes asignados sistema Buck Hash libera sistema GC GCC fracción de PU asignación de heap Heap inactivo uso de heap objetos Heap sistema Heap lanzado último GC (ns) Buscar Mallocs Mcache en uso Mcache System Mspan en uso sistema Mspan Next GC (ns) Num GC otros sistema Pause total (ns) pila En usar bytes de sistema de pila errores de tiempo de ejecución promedio (ns) de bytes de sistema totales asignados 
+| Condensador | Espacio de nombres Nombre del nodo IP del nodo | Arquitectura del SO Nombre del SO Versión del SO Especificación de tiempo de ejecución Proveedor de la especificación de tiempo de ejecución Versión de la especificación de tiempo de ejecución Versión de Uptime Kapacitor Nombre de la máquina virtual de tiempo de ejecución Proveedor de la máquina virtual de tiempo de ejecución Versión de la máquina virtual de tiempo de ejecución | Bytes asignados Buck Hash Sistema libera GC Sistema GCC Fracción PU Asignación de montón Montón inactivo Montón en uso Montón de objetos Montón liberado Montón del sistema Último GC (ns) Búsquedas Mallocs Mcache en uso Mcache del sistema Mspan en uso Mspan del sistema Próximo GC (ns) Núm. GC Otro Pausa del sistema Total (ns) Pila en uso Pila del sistema Bytes del sistema Total de bytes asignados Tiempo promedio de ejecución (ns) Errores 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_storage_virtualization.html 
-summary: Data Infrastructure Insights puede proporcionar vistas sobre el almacenamiento virtualizado de interfaz y back-end. 
+summary: Data Infrastructure Insights puede proporcionar vistas del almacenamiento virtualizado tanto front-end como back-end. 
 keywords: storage, virtual, virtualized, virtualization, 
 ---
 = Virtualización del almacenamiento
@@ -10,34 +10,34 @@ keywords: storage, virtual, virtualized, virtualization,
 
 
 [role="lead"]
-Data Infrastructure Insights puede diferenciar entre una cabina de almacenamiento que tiene almacenamiento local o virtualización de otras cabinas de almacenamiento. Esto le ofrece la capacidad de relacionar el coste y distinguir el rendimiento del interfaz hasta el back-end de la infraestructura.
+Data Infrastructure Insights puede diferenciar entre una matriz de almacenamiento que tiene almacenamiento local o virtualización de otras matrices de almacenamiento.  Esto le brinda la capacidad de relacionar costos y distinguir el rendimiento desde el front-end hasta el back-end de su infraestructura.
 
 
 
 === Virtualización en un widget de tabla
 
-Una de las formas más sencillas de empezar a ver la virtualización de su almacenamiento es crear un widget de tabla de consola que muestre el tipo virtualizado. Al crear la consulta para el widget, simplemente agrega “VirtuedType” a tu agrupación o filtro.
+Una de las formas más sencillas de comenzar a analizar la virtualización de su almacenamiento es crear un widget de tabla de panel que muestre el tipo virtualizado.  Al crear la consulta para el widget, simplemente agregue "virtualizedType" a su agrupación o filtro.
 
-image:StorageVirtualization_TableWidgetSettings.png["Consulta básica para mostrar los tipos de almacenamiento virtualizados"]
+image:StorageVirtualization_TableWidgetSettings.png["Consulta básica para mostrar tipos de almacenamiento virtualizados"]
 
-El widget de la tabla resultante muestra los almacenamientos _Standard_, _Backend_ y _Virtual_ en su inquilino.
+El widget de tabla resultante le muestra los almacenamientos _Estándar_, _Backend_ y _Virtual_ en su inquilino.
 
-image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["Tabla en la que se muestran los tipos virtualizados"]
+image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["Tabla que muestra los tipos virtualizados"]
 
 
 
 === Las páginas de destino muestran información virtualizada
 
-En una página de destino de almacenamiento, volumen, volumen interno o disco, puede ver información relevante sobre virtualización. Por ejemplo, si observamos a continuación la página de destino del almacenamiento, podremos observar que se trata de un almacenamiento virtual y que se aplica el sistema de almacenamiento back-end. Las tablas relevantes en las páginas de destino también mostrarán información de virtualización según proceda.
+En una página de inicio de almacenamiento, volumen, volumen interno o disco, puede ver información de virtualización relevante.  Por ejemplo, al observar la página de inicio de almacenamiento a continuación, puede ver que se trata de un almacenamiento virtual y qué sistema de almacenamiento de backend se aplica.  Cualquier tabla relevante en las páginas de destino también mostrará información de virtualización según corresponda.
 
-image:StorageVirtualization_StorageSummary.png["Página de destino de almacenamiento en la que se muestra información sobre almacenamiento virtual y respaldado"]
+image:StorageVirtualization_StorageSummary.png["Página de inicio de almacenamiento que muestra información de almacenamiento virtual y respaldado"]
 
 
 
 === Páginas de destino y paneles de control existentes
 
-Tenga en cuenta que, si actualmente tiene páginas de destino o consolas personalizadas en su inquilino, estos no mostrarán automáticamente toda la información de virtualización de forma predeterminada. Sin embargo, puede _Revertir a default_ cualquier panel de control o página de destino personalizado (tendrá que volver a implementar sus personalizaciones), o modificar los widgets relevantes para incluir los atributos o métricas de virtualización deseados.
+Tenga en cuenta que si actualmente tiene páginas de destino o paneles personalizados en su inquilino, estos no mostrarán automáticamente toda la información de virtualización de manera predeterminada.  Sin embargo, puede _Revertir a los valores predeterminados_ cualquier panel o página de destino personalizados (tendrá que volver a implementar sus personalizaciones) o modificar los widgets relevantes para incluir los atributos o métricas de virtualización deseados.
 
-_Revertir a predeterminado_ está disponible en la esquina superior derecha de un panel de control personalizado o la pantalla de la página de destino.
+_Revertir a valores predeterminados_ está disponible en la esquina superior derecha de un panel personalizado o de la pantalla de una página de destino.
 
-image:RevertToDefault.png["Botón Volver al valor predeterminado"]
+image:RevertToDefault.png["Botón Volver a valores predeterminados"]

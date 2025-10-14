@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_couchbase.html 
 keywords: telegraf, installation, install, couchbase 
-summary: Configuración de recopilador de datos Couchbase 
+summary: Configuración del recopilador de datos de Couchbase 
 ---
 = Recopilador de datos de Couchbase
 :hardbreaks:
@@ -16,13 +16,13 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Couchbase.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija Couchbase.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:CouchbaseDCConfigWindows.png["Configuración de Couchbase"]
@@ -31,26 +31,26 @@ image:CouchbaseDCConfigWindows.png["Configuración de Couchbase"]
 
 == Configuración
 
-La información se puede encontrar en el link:https://docs.couchbase.com/home/index.html["Documentación de Couchbase"].
+La información se puede encontrar en ellink:https://docs.couchbase.com/home/index.html["Documentación de Couchbase"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Nodo Couchbase | Nombre de host del nodo Couchbase del clúster de espacios de nombres | Dirección IP del nodo de nombre | Memoria libre total 
+| Nodo Couchbase | Espacio de nombres Clúster Nodo Couchbase Nombre de host | Nombre del nodo IP del nodo | Memoria Libre Memoria Total 
 
 
-| Bloque de Couchbase | Cluster de bloque de espacio de nombres | Dirección IP del nodo de nombre | Datos usados datos utilizados Conteo de elementos usados memoria usada Operaciones usadas por segundo cupo usado 
+| Cubo Couchbase | Clúster de cubos de espacios de nombres | Nombre del nodo IP del nodo | Datos utilizados Obtención de datos Disco utilizado Cantidad de elementos Memoria utilizada Operaciones por segundo Cuota utilizada 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

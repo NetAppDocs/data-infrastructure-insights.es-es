@@ -2,45 +2,45 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_cs.html 
 keywords: data collector, IBM CS, CS Series 
-summary: Configurar el recopilador de datos de IBM CS. 
+summary: Configuración del recopilador de datos de IBM CS. 
 ---
-= Recopilador de datos IBM CS
+= Recopilador de datos de IBM CS
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza este recopilador de datos para descubrir los datos de inventario y rendimiento de los sistemas de almacenamiento IBM CS.
+Data Infrastructure Insights utiliza este recopilador de datos para descubrir datos de inventario y rendimiento de los sistemas de almacenamiento de IBM CS.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de IBM CS. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de IBM CS.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
 
 
-| Contenedor | Volumen interno 
+| Recipiente | Volumen interno 
 
 
-| Contenedor | Recurso compartido de archivos 
+| Recipiente | Compartir archivos 
 
 
-| Recurso compartido NFS | Share 
+| Compartir NFS | Compartir 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* La dirección IP de servicios de datos externos para el clúster
+* La dirección IP de los servicios de datos externos para el clúster
 * Nombre de usuario y contraseña del administrador
 * Puerto 9440
 
@@ -54,13 +54,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Dirección IP externa del prisma | La dirección IP de servicios de datos externos para el clúster 
+| Dirección IP externa de Prism | La dirección IP de los servicios de datos externos para el clúster 
 
 
-| Nombre de usuario | Nombre de usuario de la cuenta de administrador 
+| Nombre de usuario | Nombre de usuario para la cuenta de administrador 
 
 
-| Contraseña | Contraseña para la cuenta de administrador 
+| Password | Contraseña para la cuenta de administrador 
 |===
 
 
@@ -71,16 +71,16 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectarse a la matriz IBM CS. El valor predeterminado es 9440. 
+| Puerto TCP | Puerto TCP utilizado para conectarse a la matriz IBM CS.  El valor predeterminado es 9440. 
 
 
 | Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

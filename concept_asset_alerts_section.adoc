@@ -1,31 +1,31 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_alerts_section.html 
-summary: Descripción general de la sección Alertas relacionadas de la página de activos de Data Infrastructure Insights. 
+summary: Descripción general de la página de activos Sección de alertas relacionadas en Data Infrastructure Insights. 
 keywords: asset, landing page, violations, Alerts, 
 ---
-= Sección Alertas relacionadas con la página de activos
+= Sección de alertas relacionadas con la página de activos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Puede utilizar la sección Alertas Relacionadas de una página de activos para ver cualquier alerta que se produzca en su arrendatario como resultado de un monitor asignado a un activo. Los monitores generan alertas basadas en las condiciones establecidas y permiten identificar la implicación y analizar el impacto y la causa raíz del problema de forma que permita una corrección rápida y efectiva.
+Puede utilizar la sección Alertas relacionadas de una página de activo para ver cualquier alerta que se produzca en su inquilino como resultado de un monitor asignado a un activo.  Los monitores generan alertas basadas en las condiciones que usted establece y le permiten identificar las implicaciones y analizar el impacto y la causa raíz del problema de una manera que permita una corrección rápida y efectiva.
 
-En el siguiente ejemplo se muestra una sección Alertas relacionadas típicas que se muestra en una página de activos:
+El siguiente ejemplo muestra una sección de Alertas relacionadas típica que se muestra en una página de activos:
 
 image:Alerts_on_Landing_Page.png["Tabla de alertas relacionadas"]
 
-La sección Alertas relacionadas le permite ver y administrar las alertas que se producen en la red como resultado de las condiciones de supervisión asignadas a un activo.
+La sección Alertas relacionadas le permite ver y administrar las alertas que ocurren en su red como resultado de las condiciones del monitor asignadas a un activo.
 
 .Pasos
-* Busque una página de activos realizando cualquiera de las siguientes acciones:
+* Localice una página de activos realizando cualquiera de las siguientes acciones:
 +
-** Escriba el nombre del activo en el área de búsqueda y, a continuación, seleccione el activo en la lista.
-** En el widget de una consola, haga clic en el nombre de un activo.
-** Consulte un conjunto de activos y seleccione en de la lista de resultados.
+** Escriba el nombre del activo en el área de búsqueda y luego seleccione el activo de la lista.
+** En un widget del panel, haga clic en el nombre de un activo.
+** Consulta un conjunto de activos y selecciona uno de la lista de resultados.
 
 
 
 
-Aparece la página Asset. En la sección Related Alerts, se muestra la hora en la que se activó la alerta, así como el estado actual de la alerta y el monitor que la activó. Puede hacer clic en el ID de alerta para abrir la página de destino de la alerta para realizar más investigaciones.
+Se muestra la página de activos.  La sección Alertas relacionadas muestra la hora en que se activó la alerta, así como el estado actual de la alerta y el monitor que la activó.  Puede hacer clic en el ID de alerta para abrir la página de destino de la alerta para una mayor investigación.

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_recoverpoint.html 
 keywords: data collector, RecoverPoint, EMC, DELL 
-summary: Configuración de Dell EMC RecoverPoint data Collector. 
+summary: Configuración del recopilador de datos de DELL EMC RecoverPoint. 
 ---
 = Recopilador de datos de Dell EMC RecoverPoint
 :hardbreaks:
@@ -10,21 +10,21 @@ summary: Configuración de Dell EMC RecoverPoint data Collector.
 
 
 [role="lead"]
-El principal caso de uso del recopilador de datos de EMC RecoverPoint es descubrir las relaciones de replicación de volumen a volumen que facilita el dispositivo de almacenamiento RecoverPoint. Este colector también descubrirá el propio dispositivo RecoverPoint. Tenga en cuenta que Dell/EMC vende una solución de backup de VMware para equipos virtuales, "RecoverPoint for VMs", que no es compatible con este recopilador
+El caso de uso principal del recopilador de datos de EMC RecoverPoint es descubrir las relaciones de replicación de volumen a volumen que facilita el dispositivo de almacenamiento RecoverPoint.  Este recopilador también descubrirá el propio dispositivo Recoverpoint.  Tenga en cuenta que Dell/EMC vende una solución de respaldo de VMware para máquinas virtuales, "RecoverPoint para máquinas virtuales", que no es compatible con este recopilador.
 
-Para la configuración, el recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de sólo lectura.
+Para la configuración, el recopilador de datos requiere la dirección IP de los procesadores de almacenamiento y un nombre de usuario y contraseña de solo lectura.
 
-El recopilador de datos de EMC RecoverPoint recopila las relaciones de replicación de volumen a volumen que RecoverPoint coordina en otras cabinas de almacenamiento. Data Infrastructure Insights muestra una cabina de almacenamiento para cada clúster de RecoverPoint, y recoge datos de inventario de nodos y puertos de almacenamiento en ese clúster. No se recopilan datos de volúmenes o pool de almacenamiento.
+El recopilador de datos de EMC RecoverPoint reúne las relaciones de replicación de volumen a volumen que RecoverPoint coordina entre otras matrices de almacenamiento.  Data Infrastructure Insights muestra una matriz de almacenamiento para cada clúster de RecoverPoint y recopila datos de inventario de los nodos y puertos de almacenamiento en ese clúster.  No se recopilan datos de volumen ni de grupo de almacenamiento.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos se necesita la siguiente información:
+Se requiere la siguiente información para configurar este recopilador de datos:
 
 * Dirección IP o nombre de dominio completo del procesador de almacenamiento
 * Nombre de usuario y contraseña de solo lectura
-* Acceso a API DE REST a través del puerto 443
+* Acceso a la API REST a través del puerto 443
 
 
 
@@ -36,13 +36,13 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 | Campo | Descripción 
 
 
-| Dirección de RecoverPoint | Dirección IP o nombre de dominio completo del clúster RecoverPoint 
+| Dirección de RecoverPoint | Dirección IP o nombre de dominio completo del clúster de RecoverPoint 
 
 
-| Nombre de usuario | Nombre de usuario del clúster RecoverPoint 
+| Nombre de usuario | Nombre de usuario para el clúster de RecoverPoint 
 
 
-| Contraseña | Contraseña utilizada para el clúster RecoverPoint 
+| Password | Contraseña utilizada para el clúster de RecoverPoint 
 |===
 
 
@@ -53,16 +53,16 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectarse al clúster RecoverPoint 
+| Puerto TCP | Puerto TCP utilizado para conectarse al clúster de Recoverpoint 
 
 
 | Intervalo de sondeo de inventario (minutos) | Intervalo entre sondeos de inventario. El valor predeterminado es 20 minutos. 
 
 
-| Clústeres excluidos | Lista de nombres o ID de clúster separados por comas para excluirlos al realizar el sondeo. 
+| Clústeres excluidos | Lista separada por comas de ID o nombres de clústeres que se excluirán durante el sondeo. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

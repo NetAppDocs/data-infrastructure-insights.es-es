@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_notifications_email.html 
-summary: Adición de direcciones de correo electrónico para notificaciones. 
+summary: Agregar direcciones de correo electrónico para notificaciones. 
 keywords: email, notifications, signature, recipient, list, subscription 
 ---
 = Configuración de notificaciones por correo electrónico
@@ -10,9 +10,9 @@ keywords: email, notifications, signature, recipient, list, subscription
 
 
 [role="lead"]
-Puede configurar una lista de correo electrónico para notificaciones relacionadas con la suscripción, así como una lista global de destinatarios para la notificación de infracciones de umbral de la directiva de rendimiento.
+Puede configurar una lista de correo electrónico para notificaciones relacionadas con suscripciones, así como una lista de correo electrónico global de destinatarios para notificaciones de violaciones del umbral de la política de rendimiento.
 
-Para configurar la configuración de los destinatarios de correo electrónico de notificación, vaya a la página *Admin > Notificaciones* y seleccione la ficha _Email_.
+Para configurar los ajustes del destinatario del correo electrónico de notificación, vaya a la página *Admin > Notificaciones* y seleccione la pestaña _Correo electrónico_.
 
 [role="thumb"]
 image:Notifications_email_list.png["Notificaciones por correo electrónico"]
@@ -21,14 +21,14 @@ image:Notifications_email_list.png["Notificaciones por correo electrónico"]
 
 == Destinatarios de notificaciones de suscripción
 
-Para configurar destinatarios para notificaciones de eventos relacionadas con la suscripción, vaya a la sección "destinatarios de notificaciones de suscripción". Puede optar por enviar notificaciones por correo electrónico para eventos relacionados con la suscripción a cualquiera de los siguientes destinatarios o a todos ellos:
+Para configurar destinatarios para notificaciones de eventos relacionados con suscripciones, vaya a la sección "Destinatarios de notificaciones de suscripción".  Puede elegir que se envíen notificaciones por correo electrónico sobre eventos relacionados con la suscripción a cualquiera o todos los siguientes destinatarios:
 
 * Todos los propietarios de cuentas
-* All _Monitor & Optimize_ Administradores
-* Direcciones de correo electrónico adicionales que especifique
+* Todos los administradores de _Monitor & Optimize_
+* Direcciones de correo electrónico adicionales que usted especifique
 
 
-A continuación se muestran ejemplos de los tipos de notificaciones que se pueden enviar y las acciones de usuario que se pueden realizar.
+Los siguientes son ejemplos de los tipos de notificaciones que se pueden enviar y las acciones que puede realizar el usuario.
 
 |===
 
@@ -36,47 +36,47 @@ A continuación se muestran ejemplos de los tipos de notificaciones que se puede
 | *Notificación:* | *Acción del usuario:* 
 
 
-| Se ha actualizado la versión de prueba o la suscripción | Revise los detalles de la suscripción en link:concept_subscribing_to_cloud_insights.html["Suscripción"]la página 
+| Se ha actualizado la versión de prueba o suscripción | Revise los detalles de la suscripción enlink:concept_subscribing_to_cloud_insights.html["Suscripción"] página 
 
 
-| La suscripción caducará en 90 días. La suscripción caducará en 30 días | No es necesario realizar ninguna acción si la opción “Renovación automática” está habilitada, póngase en contacto con el departamento de ventas de NetApp para renovar la suscripción 
+| La suscripción expirará en 90 días. La suscripción expirará en 30 días. | No es necesaria ninguna acción si la “Renovación automática” está habilitada. Comuníquese con el departamento de ventas de NetApp para renovar la suscripción. 
 
 
-| La prueba finaliza en 2 días | Renueve la prueba desde link:concept_subscribing_to_cloud_insights.html["Suscripción"]la página. Puede renovar una versión de prueba una vez. Póngase en contacto con el departamento de ventas de NetApp para adquirir una suscripción 
+| El juicio termina en 2 días | Renovar el juicio desde ellink:concept_subscribing_to_cloud_insights.html["Suscripción"] página.  Puedes renovar una prueba una vez.  Comuníquese con el departamento de ventas de NetApp para comprar una suscripción 
 
 
-| La cuenta de prueba o suscripción ha caducado y dejará de recopilar datos en 48 horas. La cuenta se eliminará después de 48 horas | Póngase en contacto con el departamento de ventas de NetApp para adquirir una suscripción 
+| La prueba o suscripción ha expirado La cuenta dejará de recopilar datos en 48 horas La cuenta se eliminará después de 48 horas | Comuníquese con el departamento de ventas de NetApp para comprar una suscripción 
 |===
 [NOTE]
 ====
-Para garantizar que los destinatarios reciban notificaciones de Data Infrastructure Insights, añada las siguientes direcciones de correo electrónico en cualquier lista de permiso:
+Para garantizar que sus destinatarios reciban notificaciones de Data Infrastructure Insights, agregue las siguientes direcciones de correo electrónico a cualquier lista de "permitidos":
 
-* \accounts@service.cloudinsights.netapp.com
-* \DoNotReply@cloudinsights.netapp.com
+* \cuentas@service.cloudinsights.netapp.com
+* \NoResponder@cloudinsights.netapp.com
 
 
 ====
 
 
-== Lista global de destinatarios para alertas
+== Lista global de destinatarios de alertas
 
-Las notificaciones por correo electrónico de alertas se envían a la lista de destinatarios de alertas para cada acción de la alerta. Puede optar por enviar notificaciones de alerta a una lista global de destinatarios.
+Las notificaciones por correo electrónico de las alertas se envían a la lista de destinatarios de la alerta para cada acción relacionada con la alerta.  Puede elegir enviar notificaciones de alerta a una lista global de destinatarios.
 
-Para configurar los destinatarios de alertas globales, elija los destinatarios deseados en la sección *destinatarios de notificaciones de monitor global*.
+Para configurar los destinatarios de alertas globales, elija los destinatarios deseados en la sección *Destinatarios de notificaciones del Monitor global*.
 
-Siempre puede reemplazar la lista global de destinatarios de un monitor individual al crear o modificar el monitor.
+Siempre puede anular la lista global de destinatarios de un monitor individual al crear o modificar el monitor.
 
 
-NOTE: Las notificaciones del recopilador de datos de ONTAP tienen prioridad sobre cualquier notificación de monitor específica que sea relevante para el clúster/recopilador de datos. La lista de destinatarios establecida para el propio recopilador de datos recibirá las alertas del recopilador de datos. Si no hay alertas activas del recopilador de datos, las alertas generadas por el monitor se enviarán a destinatarios específicos del monitor.
+NOTE: Las notificaciones del recopilador de datos de ONTAP tienen prioridad sobre cualquier notificación de monitor específica que sea relevante para el clúster/recopilador de datos.  La lista de destinatarios que configure para el propio recopilador de datos recibirá las alertas del recopilador de datos.  Si no hay alertas de recopilador de datos activas, se enviarán alertas generadas por el monitor a destinatarios específicos del monitor.
 
 
 
 == Edición de notificaciones para ONTAP
 
-Puede modificar las notificaciones de los clústeres de ONTAP si selecciona _Edit Notifications_ en la lista desplegable superior derecha de una página de destino de Storage.
+Puede modificar las notificaciones de los clústeres de ONTAP seleccionando _Editar notificaciones_ en el menú desplegable superior derecho de una página de inicio de Almacenamiento.
 
 image:EditONTAPNotifications.png["Notificaciones de edición de ONTAP"]
 
-Desde aquí, puede configurar notificaciones para alertas críticas, de advertencia, informativas o resueltas. Cada escenario puede notificar a la lista de destinatarios globales u otros destinatarios que elija.
+Desde aquí, puede configurar notificaciones para alertas críticas, de advertencia, informativas y/o resueltas.  Cada escenario puede notificar a la lista de destinatarios globales u otros destinatarios que usted elija.
 
-image:EditONTAPNotifications_MultipleScenarios.png["Notificaciones ONTAP para diferentes escenarios"]
+image:EditONTAPNotifications_MultipleScenarios.png["Notificaciones de ONTAP para diferentes escenarios"]

@@ -4,25 +4,25 @@ permalink: task_config_telegraf_activemq.html
 keywords: telegraf, installation, install, ActiveMQ 
 summary: Configuración del recopilador de datos HTTP 
 ---
-= Recopilador de datos ActiveMQ
+= Recopilador de datos de ActiveMQ
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de ActiveMQ.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de ActiveMQ.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione ActiveMQ.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Seleccione ActiveMQ.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:ActiveMQDCConfigWindows.png["Configuración de ActiveMQ"]
@@ -31,29 +31,29 @@ image:ActiveMQDCConfigWindows.png["Configuración de ActiveMQ"]
 
 == Configuración
 
-Puede encontrar información en la http://activemq.apache.org/getting-started.html["Documentación de ActiveMQ"]
+La información se puede encontrar en el http://activemq.apache.org/getting-started.html["Documentación de ActiveMQ"]
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Cola ActiveMQ | Servidor de puertos de cola de espacio de nombres | UUID de nodo IP nodo de nombre | Recuento de consumidor Dequeue recuento de colas Tamaño de cola de cola 
+| Cola de ActiveMQ | Servidor de puerto de cola de espacio de nombres | Nombre del nodo IP del nodo UUID del nodo | Conteo de consumidores Conteo de retiradas de cola Conteo de puesta en cola Tamaño de la cola 
 
 
-| Suscriptor de ActiveMQ | ID de cliente Identificador de conexión espacio de nombres de servidor de puerto | Es Active Destination Node Name IP Node UUID de nodo OS Selector de SO de nodo | Recuento de colas recuento de colas enviado Tamaño de cola enviado recuento de colas pendientes Tamaño de cola pendiente 
+| Suscriptor de ActiveMQ | ID de cliente ID de conexión Puerto Servidor Espacio de nombres | ¿Está activo? Nombre del nodo de destino IP del nodo UUID del nodo Selector de sistema operativo del nodo Suscripción | Recuento de retiros de cola Recuento de envíos Tamaño de la cola de envíos Recuento de puesta en cola Tamaño de la cola pendiente 
 
 
-| Tema ActiveMQ | Espacio de nombres de servidor de puerto de tema | Nombre de nodo IP nodo UUID de nodo operativo | Recuento de consumidor Tamaño de recuento de colas de entrada 
+| Tema de ActiveMQ | Espacio de nombres del servidor de puerto de temas | Nombre del nodo IP del nodo UUID del nodo SO del nodo | Conteo de consumidores Recuento de retirada de cola Recuento de puesta en cola Tamaño 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

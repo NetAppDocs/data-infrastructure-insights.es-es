@@ -2,34 +2,34 @@
 sidebar: sidebar 
 permalink: task_dc_hds_ops_center.html 
 keywords: data collector, Hitachi Ops Center 
-summary: Configurar el recopilador de datos del centro de operaciones de HDS. 
+summary: Configuración del recopilador de datos de HDS Ops Center. 
 ---
-= Recopilador de datos del centro de Hitachi OPS
+= Recopilador de datos del Hitachi Ops Center
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este recopilador de datos usa la suite de aplicaciones integrada de Hitachi OPS Center para acceder a los datos de inventario y rendimiento de varios dispositivos de almacenamiento. Para la detección de inventario y capacidad, la instalación del Centro de operaciones debe incluir los componentes de "Servicios comunes" y "Administrador". Para la recopilación del rendimiento, debe tener instalado el "analizador".
+Este recopilador de datos utiliza el conjunto integrado de aplicaciones de Hitachi Ops Center para acceder a los datos de inventario y rendimiento de múltiples dispositivos de almacenamiento.  Para el descubrimiento de inventario y capacidad, su instalación de Ops Center debe incluir los componentes "Servicios comunes" y "Administrador".  Para la recopilación de rendimiento, también debe tener implementado el "Analizador".
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Sistemas de almacenamiento | Reducida 
+| Sistemas de almacenamiento | Almacenamiento 
 
 
 | Volumen | Volumen 
 
 
-| Grupos de paridad | Grupos de discos, Storage Pool(RAID) 
+| Grupos de paridad | Grupo de almacenamiento (RAID), grupos de discos 
 
 
 | Disco | Disco 
@@ -38,36 +38,36 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Pool de almacenamiento | Pool de almacenamiento (fino, SNAP) 
 
 
-| Grupos de paridad externa | Pool de almacenamiento (backend), grupos de discos 
+| Grupos de paridad externa | Grupo de almacenamiento (backend), grupos de discos 
 
 
-| Puerto | Nodo de almacenamiento → nodo de controladora → puerto 
+| Puerto | Nodo de almacenamiento → Nodo controlador → Puerto 
 
 
-| Grupos de hosts | Asignación de volúmenes y enmascaramiento 
+| Grupos anfitriones | Mapeo y enmascaramiento de volumen 
 
 
-| Parejas de volúmenes | Sincronización de almacenamiento 
+| Pares de volumen | Sincronización de almacenamiento 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos de inventario
 
-Para recopilar datos de inventario, debe contar con lo siguiente:
+Para poder recopilar datos de inventario, debe tener lo siguiente:
 
-* Dirección IP o nombre de host del servidor del centro de operaciones que aloja el componente "Servicios comunes"
-* Cuenta de usuario y contraseña de administrador del sistema raíz/administrador del sistema que existen en todos los servidores que alojan componentes del Centro de operaciones. HDS no implementaron la compatibilidad con la API REST para el uso por parte de usuarios LDAP/SSO hasta que OPS Center 10.8+
+* Dirección IP o nombre de host del servidor del Centro de operaciones que aloja el componente "Servicios comunes"
+* Cuenta de usuario y contraseña root/sysadmin que existen en todos los servidores que alojan componentes de Ops Center.  HDS no implementó la compatibilidad con API REST para el uso por parte de usuarios LDAP/SSO hasta Ops Center 10.8+
 
 
 
 
 == Requisitos de rendimiento
 
-Para poder recopilar datos de rendimiento, se deben cumplir los siguientes requisitos:
+Para poder recopilar datos de rendimiento se deben cumplir los siguientes requisitos:
 
-Las cabinas de almacenamiento deben estar instaladas en el módulo "analizador" del centro de operaciones de HDS
+El módulo "Analyzer" de HDS Ops Center debe estar instalado. Las matrices de almacenamiento deben alimentar el módulo "Analyzer" de Ops Center.
 
 
 
@@ -78,13 +78,13 @@ Las cabinas de almacenamiento deben estar instaladas en el módulo "analizador" 
 | Campo | Descripción 
 
 
-| Dirección IP del centro de operaciones de Hitachi | Dirección IP o nombre de dominio completo del servidor del Centro de operaciones que aloja el componente "Servicios comunes" 
+| Dirección IP del Hitachi Ops Center | Dirección IP o nombre de dominio completo del servidor del Centro de operaciones que aloja el componente "Servicios comunes" 
 
 
-| Nombre de usuario | Nombre de usuario del servidor del Centro de operaciones. 
+| Nombre de usuario | Nombre de usuario para el servidor del Centro de operaciones. 
 
 
-| Contraseña | Contraseña que se utiliza para el servidor del centro de operaciones. 
+| Password | Contraseña utilizada para el servidor del Centro de operaciones. 
 |===
 
 
@@ -96,21 +96,21 @@ Las cabinas de almacenamiento deben estar instaladas en el módulo "analizador" 
 | Campo | Descripción 
 
 
-| Tipo de conexión | HTTPS (puerto 443) es la opción predeterminada 
+| Tipo de conexión | HTTPS (puerto 443) es el predeterminado 
 
 
-| Anular puerto TCP | Especifique el puerto que se va a utilizar si no es el predeterminado 
+| Anular puerto TCP | Especifique el puerto a utilizar si no es el predeterminado 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 40. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 40. 
 
 
-| Elija "excluir" o "incluir" para especificar una lista | Especifique si desea incluir o excluir la lista de matrices a continuación al recopilar datos. 
+| Seleccione “Excluir” o “Incluir” para especificar una lista | Especifique si desea incluir o excluir la lista de matrices a continuación al recopilar datos. 
 
 
-| Filtrar lista de dispositivos | Lista separada por comas de los números de serie del dispositivo que se van a incluir o excluir 
+| Lista de dispositivos de filtrado | Lista separada por comas de números de serie de dispositivos para incluir o excluir 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 300. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

@@ -2,27 +2,27 @@
 sidebar: sidebar 
 permalink: task_dc_na_hci.html 
 keywords: data collector, VMware, hci 
-summary: Configurar el recopilador de datos del servidor de gestión de NetApp HCI. 
+summary: Configuración del recopilador de datos del servidor de administración de NetApp HCI . 
 ---
-= Configurar el recopilador de datos del servidor de gestión de NetApp HCI
+= Configuración del recopilador de datos del servidor de administración de NetApp HCI
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos del servidor de administración de NetApp HCI recopila información del host de NetApp HCI y requiere privilegios de sólo lectura en todos los objetos del servidor de administración.
+El recopilador de datos del servidor de administración de NetApp HCI recopila información del host de NetApp HCI y requiere privilegios de solo lectura en todos los objetos dentro del servidor de administración.
 
-Este recopilador de datos sólo adquiere del servidor de administración de *NetApp HCI*. Para recopilar datos del sistema de almacenamiento, también debe configurar link:task_dc_na_solidfire.html["SolidFire de NetApp"]el recopilador de datos.
+Este recopilador de datos adquiere únicamente del *servidor de administración NetApp HCI *.  Para recopilar datos del sistema de almacenamiento, también debe configurar ellink:task_dc_na_solidfire.html["NetApp SolidFire"] recopilador de datos
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco virtual | Disco 
@@ -40,25 +40,25 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | LUN | Volumen 
 
 
-| Puerto Fibre Channel | Puerto 
+| Puerto de canal de fibra | Puerto 
 |===
-Estas son sólo asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos se necesita la siguiente información:
+Se requiere la siguiente información para configurar este recopilador de datos:
 
-* La dirección IP del servidor de gestión de NetApp HCI
-* Nombre de usuario y contraseña de solo lectura para el servidor de gestión de NetApp HCI
-* Privilegios de solo lectura en todos los objetos del servidor de administración de NetApp HCI.
-* Acceso del SDK en el servidor de gestión de NetApp HCI, normalmente ya configurado.
+* Dirección IP del servidor de administración de NetApp HCI
+* Nombre de usuario y contraseña de solo lectura para el servidor de administración de NetApp HCI
+* Privilegios de solo lectura en todos los objetos en el servidor de administración de NetApp HCI .
+* Acceso al SDK en el servidor de administración de NetApp HCI : normalmente ya configurado.
 * Requisitos del puerto: http-80 https-443
 * Validar el acceso:
 +
-** Inicie sesión en el servidor de gestión de NetApp HCI con el nombre de usuario y la contraseña anteriores
-** Verificar SDK activado: telnet <vc_ip> 443
+** Inicie sesión en el servidor de administración de NetApp HCI con el nombre de usuario y la contraseña anteriores
+** Verificar SDK habilitado: telnet <vc_ip> 443
 
 
 
@@ -86,28 +86,28 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 | Campo | Descripción 
 
 
-| MVIP de clúster de almacenamiento de NetApp HCI | Dirección IP virtual de gestión 
+| Clúster de almacenamiento NetApp HCI MVIP | Dirección IP virtual de gestión 
 
 
-| Nodo de gestión de SolidFire (mNode). | Dirección IP del nodo de gestión 
+| Nodo de gestión de SolidFire (mNode) | Dirección IP del nodo de administración 
 
 
-| Nombre de usuario | Nombre de usuario utilizado para acceder al servidor de gestión de NetApp HCI 
+| Nombre de usuario | Nombre de usuario utilizado para acceder al servidor de administración de NetApp HCI 
 
 
-| Contraseña | La contraseña que se utiliza para acceder al servidor de gestión de NetApp HCI 
+| Password | Contraseña utilizada para acceder al servidor de administración de NetApp HCI 
 
 
-| Nombre de usuario de vCenter | Nombre de usuario para vCenter 
+| Nombre de usuario de VCenter | Nombre de usuario para VCenter 
 
 
-| Contraseña de vCenter | Contraseña para vCenter 
+| Contraseña de VCenter | Contraseña para VCenter 
 |===
 
 
 == Configuración avanzada
 
-En la pantalla de configuración avanzada, marque la casilla *VM Performance* para recopilar datos de rendimiento. La recopilación de inventario está habilitada de forma predeterminada. Se pueden configurar los siguientes campos:
+En la pantalla de configuración avanzada, marque la casilla *Rendimiento de VM* para recopilar datos de rendimiento.  La recopilación de inventario está habilitada de forma predeterminada.  Se pueden configurar los siguientes campos:
 
 [cols="2*"]
 |===
@@ -116,25 +116,25 @@ En la pantalla de configuración avanzada, marque la casilla *VM Performance* pa
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (min) | La sordera es 20 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 20 
 
 
-| Filtrar las máquinas virtuales por | Seleccione CLÚSTER, CENTRO de DATOS o HOST ESX 
+| Filtrar máquinas virtuales por | Seleccione CLÚSTER, CENTRO DE DATOS o HOST ESX 
 
 
-| Elija "excluir" o "incluir" para especificar una lista | Especifique si desea incluir o excluir máquinas virtuales 
+| Seleccione “Excluir” o “Incluir” para especificar una lista | Especificar si se deben incluir o excluir las máquinas virtuales 
 
 
-| Lista de dispositivos de filtro | Lista de equipos virtuales que se van a filtrar (separados por comas o separados por punto y coma si se utiliza la coma en el valor) para filtrado por ESX_HOST, CLÚSTER y CENTRO de DATOS únicamente 
+| Filtrar lista de dispositivos | Lista de máquinas virtuales para filtrar (separadas por comas o por punto y coma si se usa una coma en el valor) para filtrar solo por ESX_HOST, CLUSTER y DATACENTER 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+| Intervalo de sondeo de rendimiento (seg.) | El valor predeterminado es 300 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -142,15 +142,15 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Error: La lista de inclusión para filtrar las máquinas virtuales no puede estar vacía | Si se ha seleccionado incluir lista, indique nombres válidos de centro de datos, clúster o host para filtrar las VM 
+| Error: La lista de inclusión para filtrar máquinas virtuales no puede estar vacía | Si se selecciona Incluir lista, enumere nombres válidos de centros de datos, clústeres o hosts para filtrar las máquinas virtuales 
 
 
-| Error: No se ha podido crear una instancia de una conexión a VirtualCenter en IP | Posibles soluciones: * Verificar credenciales y dirección IP introducidos. * Intente comunicarse con Virtual Center mediante Infrastructure Client. * Intente comunicarse con Virtual Center mediante el explorador de objetos administrados (por ejemplo, MOB). 
+| Error: No se pudo crear una conexión a VirtualCenter en IP | Posibles soluciones: * Verificar las credenciales y la dirección IP ingresadas.  * Intente comunicarse con el Centro Virtual mediante el Cliente de Infraestructura.  * Intente comunicarse con el Centro Virtual mediante el Navegador de objetos administrados (por ejemplo, MOB). 
 
 
-| Error: VirtualCenter en IP tiene un certificado no conforme que JVM requiere | Soluciones posibles: * Recomendado: Vuelva a generar el certificado para Virtual Center utilizando una clave RSA más fuerte (por ejemplo, de 1024 bits). * No recomendado: Modifique la configuración de JVM java.security para aprovechar la restricción jdk.certpath.disabledAlgoritms para permitir la clave RSA de 512 bits. Consulte las notas de la versión JDK 7 update 40 en "http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"[] 
+| Error: VirtualCenter en IP tiene un certificado no conforme que requiere JVM | Posibles soluciones: * Recomendado: Vuelva a generar el certificado para el Centro Virtual utilizando una clave RSA más segura (por ejemplo, 1024 bits).  * No recomendado: modificar la configuración java.security de JVM para aprovechar la restricción jdk.certpath.disabledAlgorithms para permitir una clave RSA de 512 bits.  Consulte las notas de la versión de la actualización 40 del JDK 7 en"http://www.oracle.com/technetwork/java/javase/7u40-relnotes-2004172.html"[] 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

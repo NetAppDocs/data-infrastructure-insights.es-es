@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_cs_attack_simulator.html 
 keywords: ransomware, simulation, simulator, restrict, attack 
-summary: Mediante un script, puede simular un ataque de ransomware para probar o demostrar la seguridad de la carga de trabajo 
+summary: Usando un script, puede simular un ataque de ransomware para probar o demostrar la seguridad de la carga de trabajo 
 ---
-= Seguridad de la carga de trabajo: Simulación de un ataque
+= Seguridad de la carga de trabajo: simulación de un ataque
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,27 +14,27 @@ summary: Mediante un script, puede simular un ataque de ransomware para probar o
 
 
 [role="lead"]
-Puede utilizar las instrucciones de esta página para simular un ataque con el fin de probar o demostrar la seguridad de la carga de trabajo mediante el script de simulación de Ransomware incluido.
+Puede utilizar las instrucciones de esta página para simular un ataque para probar o demostrar la seguridad de la carga de trabajo utilizando el script de simulación de ransomware incluido.
 
 
 
-== Cosas que tomar en cuenta antes de empezar
+== Cosas a tener en cuenta antes de empezar
 
-* El script de simulación de ransomware sólo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en el caso de que el usuario haya integrado ONTAP ARP con Workload Security.
+* El script de simulación de ransomware solo funciona en Linux.  El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.
 * Workload Security detectará eventos y alertas generados con NFS 4.1 solo si la versión de ONTAP es 9.15 o superior.
-* La secuencia de comandos se proporciona con los archivos de instalación del agente de seguridad de carga de trabajo. Está disponible en cualquier equipo que tenga instalado un agente de seguridad de carga de trabajo.
-* Puede ejecutar la secuencia de comandos en la propia máquina del agente de seguridad de carga de trabajo; no es necesario preparar otra máquina Linux. Sin embargo, si prefiere ejecutar la secuencia de comandos en otro sistema, simplemente copie la secuencia de comandos y ejecútela donde desee.
-* Los usuarios pueden optar por el script Python o shell según sus preferencias y los requisitos del sistema.
-* El script de Python requiere instalaciones previas. Si no desea usar Python, utilice el script de shell.
+* El script se proporciona con los archivos de instalación del agente de Workload Security.  Está disponible en cualquier máquina que tenga instalado un agente de Workload Security.
+* Puede ejecutar el script en la propia máquina del agente de Workload Security; no es necesario preparar otra máquina Linux.  Sin embargo, si prefiere ejecutar el script en otro sistema, simplemente copie el script y ejecútelo allí.
+* Los usuarios pueden optar por el script Python o shell según sus preferencias y requisitos del sistema.
+* El script de Python tiene instalaciones previas requeridas.  Si no desea utilizar Python, utilice el script de shell.
 
 
 
 
 == Pautas:
 
-Este script debe ejecutarse en una SVM que contenga una carpeta con una cantidad considerable de archivos para cifrar, idealmente 100 o más, incluyendo los archivos en subcarpetas. Asegúrese de que los archivos no estén vacíos.
+Este script debe ejecutarse en un SVM que contenga una carpeta con una cantidad sustancial de archivos para cifrar, idealmente 100 o más, incluidos los archivos en subcarpetas.  Asegúrese de que los archivos no estén vacíos.
 
-Para generar la alerta, pause temporalmente el recopilador antes de crear los datos de prueba. Una vez generados los archivos de muestra, reanude el recopilador e inicie el proceso de cifrado.
+Para generar la alerta, pause temporalmente el recopilador antes de la creación de datos de prueba.  Una vez generados los archivos de muestra, reanude el recopilador e inicie el proceso de cifrado.
 
 
 
@@ -44,7 +44,7 @@ Para generar la alerta, pause temporalmente el recopilador antes de crear los da
 
 === Preparar el sistema:
 
-Primero, monte el volumen de destino en la máquina. Puede montar una exportación NFS o CIFS.
+Primero, monte el volumen de destino en la máquina.  Puede montar una exportación NFS o CIFS.
 
 
 
@@ -55,7 +55,7 @@ Primero, monte el volumen de destino en la máquina. Puede montar una exportaci�
 mount -t nfs -o vers=4.0 10.193.177.158:/svmvol1 /mntpt
 mount -t nfs -o vers=4.0 Vserver data IP>:/nfsvol /destinationlinuxfolder
 ----
-No monte NFS versión 4.1; no es compatible con Fpolicy.
+No monte la versión NFS 4.1; no es compatible con Fpolicy.
 
 
 
@@ -69,12 +69,12 @@ mount -t cifs //10.193.77.91/sharedfolderincluster /root/destinationfolder/ -o u
 
 ==== Habilitar la protección contra ransomware de ONTAP Autonomous (opcional):
 
-Si la versión de su clúster ONTAP es 9.11.1 o superior, puede habilitar el servicio de protección contra ransomware ONTAP ejecutando el siguiente comando en la consola de comandos ONTAP.
+Si la versión de su clúster ONTAP es 9.11.1 o superior, puede habilitar el servicio de protección contra ransomware ONTAP ejecutando el siguiente comando en la consola de comandos ONTAP .
 
  security anti-ransomware volume enable -volume [volume_name] -vserver [svm_name]
 A continuación, configure un recopilador de datos:
 
-. Configure el agente de seguridad de carga de trabajo si no lo ha hecho todavía.
+. Configure el agente de seguridad de carga de trabajo si aún no lo ha hecho.
 . Configure un recopilador de datos SVM si aún no lo ha hecho.
 . Asegúrese de que el protocolo de montaje esté seleccionado al configurar el recopilador de datos.
 
@@ -83,9 +83,9 @@ A continuación, configure un recopilador de datos:
 
 == Genere los archivos de muestra mediante programación:
 
-Antes de crear los archivos, primero debe detener o link:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
+Antes de crear los archivos, primero debe detener olink:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
 
-Antes de ejecutar la simulación, primero debe agregar archivos para su cifrado. Puede copiar manualmente los archivos que desea cifrar en la carpeta de destino o usar uno de los scripts incluidos para crearlos programáticamente. Independientemente del método que utilice, asegúrese de tener al menos 100 archivos para cifrar.
+Antes de ejecutar la simulación, primero debe agregar los archivos que desea cifrar.  Puede copiar manualmente los archivos que desea cifrar en la carpeta de destino o utilizar uno de los scripts incluidos para crear los archivos mediante programación.  Cualquiera sea el método que utilice, asegúrese de que haya al menos 100 archivos para cifrar.
 
 Si elige crear los archivos mediante programación, puede utilizar Shell o Python:
 
@@ -93,8 +93,8 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 === Caparazón:
 
-. Inicie sesión en el cuadro Agente.
-. Monte un recurso compartido NFS o CIFS desde el SVM del archivador a la máquina del Agente. CD en esa carpeta.
+. Inicie sesión en el cuadro de Agente.
+. Monte un recurso compartido NFS o CIFS desde el SVM del archivador a la máquina del Agente.  Cd a esa carpeta.
 . Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/create_dataset.sh) a la ubicación de montaje de destino.
 . Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para crear la carpeta y los archivos del conjunto de datos de prueba:
 +
@@ -112,23 +112,23 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 * Instalar Python (si aún no está instalado).
 +
-** Descargue Python 3.5.2 o superior desde  https://www.python.org/[] .
-** Para comprobar la instalación de Python, ejecute  `python --version` .
-** El script de Python ha sido probado en versiones anteriores a la 3.5.2.
+** Descargue Python 3.5.2 o superior desde https://www.python.org/[] .
+** Para comprobar la instalación de Python, ejecute `python --version` .
+** El script de Python ha sido probado en versiones tan antiguas como la 3.5.2.
 
 
 * Instalar pip si aún no está instalado:
 +
-** Descargue el script get-pip.py desde  https://bootstrap.pypa.io/[] .
-** Instalar pip usando  `python get-pip.py` .
-** Verificar la instalación de pip con  `pip --version` .
+** Descargue el script get-pip.py desde https://bootstrap.pypa.io/[] .
+** Instalar pip usando `python get-pip.py` .
+** Verificar la instalación de pip con `pip --version` .
 
 
 * Biblioteca PyCryptodome:
 +
 ** El script utiliza la biblioteca PyCryptodome.
-** Instalar PyCryptodome con  `pip install pycryptodome` .
-** Confirme la instalación de PyCryptodome ejecutando  `pip show pycryptodome` .
+** Instalar PyCryptodome con `pip install pycryptodome` .
+** Confirme la instalación de PyCryptodome ejecutando `pip show pycryptodome` .
 
 
 
@@ -137,13 +137,13 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 ==== Script de creación de archivo de Python:
 
-. Inicie sesión en el cuadro Agente.
-. Monte un recurso compartido NFS o CIFS desde el SVM del archivador a la máquina del Agente. CD en esa carpeta.
+. Inicie sesión en el cuadro de Agente.
+. Monte un recurso compartido NFS o CIFS desde el SVM del archivador a la máquina del Agente.  Cd a esa carpeta.
 . Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/create_dataset.py) a la ubicación de montaje de destino.
 . Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para crear la carpeta y los archivos del conjunto de datos de prueba:
 +
  'python create_dataset.py'
-. Esto creará 100 archivos no vacíos con varias extensiones dentro de la carpeta de montaje bajo un directorio llamado "test_dataset"
+. Esto creará 100 archivos no vacíos con varias extensiones dentro de la carpeta de montaje en un directorio llamado "test_dataset".
 
 
 
@@ -156,7 +156,7 @@ Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo u
 
 == Genere los archivos de muestra mediante programación:
 
-Antes de crear los archivos, primero debe detener o link:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
+Antes de crear los archivos, primero debe detener olink:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
 
 Para generar una alerta de ransomware, puede ejecutar el script incluido que simulará una alerta de ransomware en Workload Security.
 
@@ -176,7 +176,7 @@ Para generar una alerta de ransomware, puede ejecutar el script incluido que sim
 === Pitón:
 
 . Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) a la ubicación de montaje de destino.
-. Tenga en cuenta que los requisitos previos de Python se instalan según la sección de requisitos previos del script de Python
+. Tenga en cuenta que los requisitos previos de Python se instalan según la sección de requisitos previos del script de Python.
 . Ejecute el siguiente comando utilizando los scripts dentro del directorio montado (por ejemplo, /root/demo) para cifrar el conjunto de datos de prueba:
 +
  'python simulate_attack.py'
@@ -187,7 +187,7 @@ Para generar una alerta de ransomware, puede ejecutar el script incluido que sim
 
 == Generar una alerta en Seguridad de la carga de trabajo
 
-Una vez finalizada la ejecución del script del simulador, se verá una alerta en la interfaz web dentro de unos minutos.
+Una vez finalizada la ejecución del script del simulador, se verá una alerta en la interfaz de usuario web en unos minutos.
 
 Nota: En el caso de que se cumplan todas las condiciones siguientes, se generará una alerta de alta confianza.
 
@@ -210,7 +210,7 @@ image:ws_high_confidence_alert_detail.png["Ejemplo de alerta de alta confianza, 
 
 
 
-== Activación de alertas varias veces
+== Activar alerta varias veces
 
 Workload Security aprende el comportamiento del usuario y no generará alertas sobre ataques de ransomware repetidos dentro de las 24 horas para el mismo usuario.
 

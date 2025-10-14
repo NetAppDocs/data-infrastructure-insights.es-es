@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_audit.html 
 keywords: audit, users, activities 
-summary: La auditoría proporciona una vista de las actividades del sistema y del usuario en el sistema Data Infrastructure Insights. 
+summary: La auditoría proporciona una vista de las actividades del sistema y del usuario en el sistema Data Infrastructure Insights . 
 ---
-= Auditoría
+= Revisión de cuentas
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,35 +14,35 @@ summary: La auditoría proporciona una vista de las actividades del sistema y de
 
 
 [role="lead"]
-Para identificar los cambios esperados (para el seguimiento) o inesperados (para la solución de problemas), puede ver un registro de auditoría de los eventos del sistema Data Infrastructure Insights y las actividades del usuario.
+Para identificar cambios esperados (para seguimiento) o inesperados (para solución de problemas), puede ver un registro de auditoría de los eventos del sistema Data Infrastructure Insights y las actividades de los usuarios.
 
 
 
 == Visualización de eventos auditados
 
-Para ver la página Auditoría, haga clic en *Administración > Auditoría* en el menú. Se muestra la página Auditoría, proporcionando los siguientes detalles para cada entrada de auditoría:
+Para ver la página de Auditoría, haga clic en *Admin > Auditoría* en el menú.  Se muestra la página Auditoría, que proporciona los siguientes detalles para cada entrada de auditoría:
 
-* *Hora*: Fecha y hora del evento o actividad
-* *Usuario*: El usuario que inició la actividad
-* *Rol* - El rol del usuario en Data Infrastructure Insights (invitado, usuario, administrador)
-* *IP*: La dirección IP asociada al evento
-* *Acción*: Tipo de actividad, por ejemplo Inicio de sesión, Crear, Actualizar
-* *Categoría* - la categoría de actividad
+* *Hora* - Fecha y hora del evento o actividad
+* *Usuario* - El usuario que inició la actividad
+* *Rol*: el rol del usuario en Data Infrastructure Insights (invitado, usuario, administrador)
+* *IP* - La dirección IP asociada con el evento
+* *Acción* - Tipo de actividad, por ejemplo Iniciar sesión, Crear, Actualizar
+* *Categoría* - La categoría de la actividad
 * *Detalles* - Detalles de la actividad
 
 
 
 
-== Mostrar entradas de auditoría
+== Visualización de entradas de auditoría
 
-Existen varias formas de ver las entradas de auditoría:
+Hay varias formas diferentes de ver las entradas de auditoría:
 
-* Puede mostrar las entradas de auditoría eligiendo un período de tiempo determinado (1 hora, 24 horas, 3 días, etc.).
-* Puede cambiar el orden de clasificación de las entradas a ascendente (flecha arriba) o descendente (flecha abajo) haciendo clic en la flecha del encabezado de la columna.
+* Puede mostrar las entradas de auditoría eligiendo un período de tiempo particular (1 hora, 24 horas, 3 días, etc.).
+* Puede cambiar el orden de clasificación de las entradas a ascendente (flecha hacia arriba) o descendente (flecha hacia abajo) haciendo clic en la flecha en el encabezado de la columna.
 +
-De forma predeterminada, la tabla muestra las entradas en orden descendente.
+De forma predeterminada, la tabla muestra las entradas en orden temporal descendente.
 
-* Puede utilizar los campos de filtro para mostrar sólo las entradas que desee en la tabla. Haga clic en el botón [+] para agregar filtros adicionales.
+* Puede utilizar los campos de filtro para mostrar sólo las entradas que desee en la tabla.  Haga clic en el botón [+] para agregar filtros adicionales.
 +
 image:Audit_Filters.png["Filtros de auditoría"]
 
@@ -50,87 +50,87 @@ image:Audit_Filters.png["Filtros de auditoría"]
 
 
 
-=== Más información sobre el filtrado
+=== Más sobre el filtrado
 
-Puede utilizar cualquiera de las siguientes opciones para refinar el filtro:
+Puede utilizar cualquiera de los siguientes para refinar su filtro:
 
 |===
 
 
-| Filtro | Qué hace | Ejemplo | Resultado 
+| Filtrar | Qué hace | Ejemplo | Resultado 
 
 
-| * (Asterisk) | le permite buscar todo | vol*rhel | devuelve todos los recursos que comienzan con "vol" y terminan con "rhel" 
+| * (Asterisco) | te permite buscar todo | vol*rhel | devuelve todos los recursos que comienzan con "vol" y terminan con "rhel" 
 
 
-| ? (signo de interrogación) | le permite buscar un número específico de caracteres | BOS-PRD??-S12 | Devuelve BOS-PRD**__12__**-S12, BOS-PRD**__23_**-S12, etc. 
+| ?  (signo de interrogación) | le permite buscar un número específico de caracteres | BOS-PRD??-S12 | devuelve BOS-PRD**__12__**-S12, BOS-PRD**__23__**-S12, y así sucesivamente 
 
 
-| O. | permite especificar varias entidades | FAS2240, CX600 O FAS3270 | Devuelve cualquiera de los modelos FAS2440, CX600 o FAS3270 
+| O | le permite especificar múltiples entidades | FAS2240 O CX600 O FAS3270 | devuelve cualquiera de los modelos FAS2440, CX600 o FAS3270 
 
 
-| NO | permite excluir el texto de los resultados de la búsqueda | NO EMC* | Devuelve todo lo que no empieza con "EMC". 
+| NO | le permite excluir texto de los resultados de búsqueda | NO EMC* | devuelve todo lo que no comience con "EMC" 
 
 
-| _Ninguno_ | Busca blank/NULL/None en cualquier campo en el que se haya seleccionado | _Ninguno_ | devuelve los resultados en los que el campo de destino no está vacío 
+| _Ninguno_ | busca espacios en blanco/NULOS/Ninguno en cualquier campo donde esté seleccionado | _Ninguno_ | devuelve resultados donde el campo de destino no está vacío 
 
 
-| No * | Al igual que con _None_ anteriores, pero también puede utilizar este formulario para buscar valores NULL en los campos _text-only_ | No * | devuelve los resultados en los que el campo de destino no está vacío. 
+| No * | Al igual que con _Ninguno_ arriba, pero también puede usar este formulario para buscar valores NULL en campos _solo texto_ | No * | devuelve resultados donde el campo de destino no está vacío. 
 
 
-| "" | busca una coincidencia exacta | "NetApp*" | Devuelve los resultados que contienen la cadena literal exacta _NetApp*_ 
+| "" | busca una coincidencia exacta | "NetApp*" | devuelve resultados que contienen la cadena literal exacta _NetApp*_ 
 |===
-Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata todo entre el primer y el último presupuesto como una coincidencia exacta. Todos los caracteres especiales o operadores incluidos en las comillas se tratarán como literales. Por ejemplo, el filtrado para "*" devolverá resultados que sean un asterisco literal; en este caso, el asterisco no será tratado como comodín. Los operadores O Y NO también se tratarán como cadenas literales cuando se incluyen entre comillas dobles.
+Si encierra una cadena de filtro entre comillas dobles, Insight trata todo lo que esté entre la primera y la última comilla como una coincidencia exacta.  Cualquier carácter especial u operador dentro de las comillas se tratará como literal.  Por ejemplo, filtrar por "*" devolverá resultados que son un asterisco literal; el asterisco no se tratará como un comodín en este caso.  Los operadores OR y NOT también se tratarán como cadenas literales cuando estén entre comillas dobles.
 
 
 
 == Eventos y acciones auditados
 
-Los eventos y acciones auditados por Data Infrastructure Insights se pueden clasificar en las siguientes áreas generales:
+Los eventos y acciones auditados por Data Infrastructure Insights se pueden categorizar en las siguientes áreas generales:
 
-* *Cuenta de usuario*: Inicio de sesión, cierre de sesión, cambio de rol, etc.
-* *Unidad de adquisición*: Crear, borrar, etc.
+* *Cuenta de usuario*: Iniciar sesión, cerrar sesión, cambiar rol, etc.
+* *Unidad de adquisición*: crear, eliminar, etc.
 +
-Ejemplo: _Unidad de adquisición *AU-Boston-1* removida_.
+Ejemplo: _Unidad de adquisición *AU-Boston-1* eliminada_.
 
-* * Colector de datos*: Añadir, eliminar, modificar, posponer/reanudar, cambiar unidad de adquisición, inicio/parada, etc.
+* *Recopilador de datos*: agregar, eliminar, modificar, posponer/reanudar, cambiar unidad de adquisición, iniciar/detener, etc.
 +
-Ejemplo: _Datasource *FlexPod Lab* eliminado, proveedor *NetApp*, modelo *ONTAP Software de gestión de datos*, ip *192.168.106.5_*.
+Ejemplo: _Datasource * FlexPod Lab* eliminado, proveedor * NetApp*, modelo * ONTAP Data Management Software*, IP *192.168.106.5_*.
 
-* *Aplicación*: Agregar, asignar al objeto, eliminar, etc.
+* *Aplicación*: agregar, asignar a objeto, eliminar, etc.
 +
-Ejemplo: _Internal Volume *ocisedev:t1appSVM01:t1appFlexVol 01* añadido a la aplicación *Test App_*.
+Ejemplo: _Volumen interno *ocisedev:t1appSVM01:t1appFlexVol01* agregado a la aplicación *Test App_*.
 
-* *Anotación*: Agregar, asignar, eliminar, acciones de regla de anotación, cambios de valor de anotación, etc.
+* *Anotación*: agregar, asignar, eliminar, acciones de reglas de anotación, cambios de valores de anotación, etc.
 +
-Ejemplo: _Valor de anotación *Boston* añadido al tipo de anotación *SalesOffice_*.
+Ejemplo: _Valor de anotación *Boston* agregado al tipo de anotación *SalesOffice_*.
 
-* *Consulta*: Agregar, quitar, etc.
+* *Consulta*: agregar, eliminar, etc.
 +
-Ejemplo: _Query *TL Sales Query* is added_.
+Ejemplo: Se agrega _Consulta *TL Sales Query*_.
 
-* *Monitor*: Agregar, quitar, etc.
+* *Monitor*: agregar, eliminar, etc.
 +
-Ejemplo: Monitor _Aggr Size - CI Alerts Notifications Dev_ updated
+Ejemplo: Monitor _Aggr Size - CI Alerts Notifications Dev_ actualizado
 
-* *Notificación*: Cambiar el correo electrónico, etc.
+* *Notificación*: cambio de correo electrónico, etc.
 +
-Ejemplo: Creado por el destinatario _ci-alerts-mations-dl_
+Ejemplo: Destinatario _ci-alerts-notifications-dl_ creado
 
 
 
 
 
-== Exportando eventos de auditoría
+== Exportación de eventos de auditoría
 
-Puede exportar los resultados de la presentación de auditoría a un archivo .CSV, lo que le permitirá analizar los datos o importarlos a otra aplicación.
+Puede exportar los resultados de su auditoría a un archivo .CSV, lo que le permitirá analizar los datos o importarlos a otra aplicación.
 
 .Pasos
-. En la página Auditoría, establezca el intervalo de tiempo deseado y los filtros que desee. Data Infrastructure Insights exportará solo las entradas de auditoría que coincidan con el filtrado y el intervalo de tiempo que haya establecido.
-. Haga clic en el botón _Export_ image:ExportButton.png["Botón Exportar"]en la esquina superior derecha de la tabla.
+. En la página Auditoría, configure el rango de tiempo deseado y los filtros que desee.  Data Infrastructure Insights exportará solo las entradas de auditoría que coincidan con el filtrado y el rango de tiempo que haya configurado.
+. Haga clic en el botón _Exportar_image:ExportButton.png["Botón de exportación"] en la parte superior derecha de la tabla.
 
 
-Los eventos de auditoría mostrados se exportarán a un archivo .CSV, hasta un máximo de 10,000 filas.
+Los eventos de auditoría mostrados se exportarán a un archivo .CSV, hasta un máximo de 10.000 filas.
 
 
 
@@ -142,21 +142,21 @@ La cantidad de tiempo que Data Infrastructure Insights conserva los datos de aud
 * Entornos suscritos: Los datos de auditoría se conservan durante 1 año más 1 día
 
 
-Las entradas de auditoría anteriores al tiempo de retención se purgan automáticamente. No es necesaria la interacción del usuario.
+Las entradas de auditoría más antiguas que el tiempo de retención se eliminan automáticamente.  No se necesita interacción del usuario.
 
-Las entradas de auditoría anteriores al tiempo de retención se purgan automáticamente. No es necesaria la interacción del usuario.
+Las entradas de auditoría más antiguas que el tiempo de retención se eliminan automáticamente.  No se necesita interacción del usuario.
 
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Aquí encontrará sugerencias para solucionar problemas con Audit.
+Aquí encontrará sugerencias para solucionar problemas con Auditoría.
 
 |===
 
 
-| *Problema:* | *Pruebe esto:* 
+| *Problema:* | *Prueba esto:* 
 
 
-| Veo mensajes de auditoría que me indican que se ha exportado un monitor. | Los ingenieros de NetApp suelen usar la exportación de una configuración de monitor personalizada durante las fases de desarrollo y pruebas de nuevas funciones. Si no esperaba ver este mensaje, considere explorar las acciones del usuario mencionadas en la acción auditada o la asistencia de contacto. 
+| Veo mensajes de auditoría que me indican que se ha exportado un monitor. | Los ingenieros de NetApp suelen utilizar la exportación de una configuración de monitor personalizada durante el desarrollo y la prueba de nuevas funciones.  Si no esperaba ver este mensaje, considere explorar las acciones del usuario mencionado en la acción auditada o comuníquese con el soporte técnico. 
 |===

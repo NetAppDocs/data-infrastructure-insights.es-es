@@ -2,27 +2,27 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_postgresql.html 
 keywords: telegraf, installation, install, postgresql 
-summary: Configuración del recopilador de datos PostgreSQL 
+summary: Configuración del recopilador de datos de PostgreSQL 
 ---
-= Recopilador de datos PostgreSQL
+= Recopilador de datos de PostgreSQL
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa este recopilador de datos para recopilar métricas de PostgreSQL.
+Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de PostgreSQL.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija PostgreSQL.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija PostgreSQL.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:PostgreSQLDCConfigLinux.png["Configuración de PostgreSQL"]
@@ -31,26 +31,26 @@ image:PostgreSQLDCConfigLinux.png["Configuración de PostgreSQL"]
 
 == Configuración
 
-La información se puede encontrar en el link:https://www.postgresql.org/docs/["Documentación de PostgreSQL"].
+La información se puede encontrar en ellink:https://www.postgresql.org/docs/["Documentación de PostgreSQL"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Servidor PostgreSQL | Servidor de bases de datos Namespace | Dirección IP del nodo de nombre | Búferes asignados búferes búferes búferes de backend búferes de sincronización de archivos de fondo búferes de punto de comprobación puntos de comprobación puntos de control de tiempo de sincronización puntos de control de tiempo de escritura solicitudes puntos de control Timed Max writed Clean 
+| Servidor PostgreSQL | Servidor de base de datos de espacio de nombres | Nombre del nodo IP del nodo | Búferes asignados Búferes de backend Búferes de sincronización de archivos de backend Búferes de punto de control Puntos de control limpios Tiempo de sincronización Puntos de control Tiempo de escritura Puntos de control Solicitudes Puntos de control cronometrados Máximo escrito Limpio 
 
 
-| Base de datos PostgreSQL | Servidor de bases de datos Namespace | ID de nodo de nombre de nodo de base de datos IP | Bloques de tiempo de lectura bloques de tiempo de escritura bloques de aciertos bloques de lectura conflictos deinterlocks número de cliente Archivos temporales bytes Archivos temporales número de filas eliminadas filas devueltas filas insertadas filas devueltas transacciones confirmadas transacciones actualizadas Rollted 
+| Base de datos PostgreSQL | Servidor de base de datos de espacio de nombres | OID de la base de datos Nombre del nodo IP del nodo | Bloques Tiempo de lectura Bloques Tiempo de escritura Bloques Accesos Bloques Lecturas Conflictos Interbloqueos Número de cliente Archivos temporales Bytes Número de archivos temporales Filas eliminadas Filas obtenidas Filas insertadas Filas devueltas Filas actualizadas Transacciones confirmadas Transacciones revertidas 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

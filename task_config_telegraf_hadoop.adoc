@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_hadoop.html 
 keywords: telegraf, installation, install, Hadoop 
-summary: Configuración de recopiladores de datos de Hadoop 
+summary: Configuración del recopilador de datos de Hadoop 
 ---
 = Recopilador de datos de Hadoop
 :hardbreaks:
@@ -10,19 +10,19 @@ summary: Configuración de recopiladores de datos de Hadoop
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de Hadoop.
+Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de Hadoop.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Elija Hadoop.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija Hadoop.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:HadoopDCConfigLinux-1.png["Configuración de Hadoop"] image:HadoopDCConfigLinux-2.png["Configuración de Hadoop"]
@@ -31,23 +31,23 @@ image:HadoopDCConfigLinux-1.png["Configuración de Hadoop"] image:HadoopDCConfig
 
 == Configuración
 
-Una puesta en marcha completa de Hadoop incluye los siguientes componentes:
+Una implementación completa de Hadoop implica los siguientes componentes:
 
-* NameNode: El sistema primario de archivos distribuidos de Hadoop (HDFS). Coordina una serie de DataNodes.
-* NombreNodo secundario: Una conmutación por error en caliente para el NameNode principal. En Hadoop, la promoción a NameNode no se realiza automáticamente. El NombreNodo secundario recopila información de NameNode para que esté listo para ser promovido cuando sea necesario.
-* DataNode: Propietario real de los datos.
-* ResourceManager: El sistema primario de computación (Yarn). Coordina una serie de NodeManagers.
-* NodeManager: El recurso para la computación. Ubicación real para ejecutar aplicaciones.
-* JobHistoryServer: Responsable del servicio de todas las solicitudes relacionadas con el historial de trabajos.
+* NameNode: el sistema principal del sistema de archivos distribuidos Hadoop (HDFS).  Coordina una serie de DataNodes.
+* NameNode secundario: una conmutación por error cálida para el NameNode principal.  En Hadoop, la promoción a NameNode no se produce automáticamente.  El NameNode secundario recopila información del NameNode para estar listo para ser promocionado cuando sea necesario.
+* DataNode: propietario real de los datos.
+* ResourceManager: El sistema principal de cómputo (Yarn).  Coordina una serie de NodeManagers.
+* NodeManager: El recurso para computar.  Ubicación real para la ejecución de aplicaciones.
+* JobHistoryServer: responsable de atender todas las solicitudes relacionadas con el historial de trabajo.
 
 
-El complemento Hadoop se basa en el complemento Jolokia de telegraf. Como un requisito para recopilar información de todos los componentes de Hadoop, JMX debe configurarse y exponerse a través de Jolokia en todos los componentes.
+El complemento Hadoop se basa en el complemento Jolokia de Telegraf.  Como requisito para recopilar información de todos los componentes de Hadoop, JMX debe configurarse y exponerse a través de Jolokia en todos los componentes.
 
 
 
 === Compatibilidad
 
-La configuración se desarrolló con Hadoop versión 2.9.2.
+La configuración se desarrolló con la versión 2.9.2 de Hadoop.
 
 
 
@@ -57,13 +57,13 @@ La configuración se desarrolló con Hadoop versión 2.9.2.
 
 ==== Agente Jolokia Jar
 
-Para todos los componentes individuales, se debe descargar una versión del archivo JAR del agente JAR Jolokia. La versión probada con respecto a fue link:https://jolokia.org/download.html["Agente Jolokia 1.6.0"].
+Para todos los componentes individuales, se debe descargar una versión del archivo jar del agente Jolokia.  La versión con la que se realizó la prueba fuelink:https://jolokia.org/download.html["Agente Jolokia 1.6.0"] .
 
-Las instrucciones siguientes asumen que el archivo JAR descargado (jolokia-jvm-1.6.0-agent.jar) se coloca en la ubicación '/opt/hadoop/lib/'.
+Las instrucciones a continuación asumen que el archivo jar descargado (jolokia-jvm-1.6.0-agent.jar) se encuentra en la ubicación '/opt/hadoop/lib/'.
 
 
 
-==== NombreNodo
+==== Nodo de nombre
 
 Para configurar NameNode para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
@@ -74,9 +74,9 @@ You can choose a different port for JMX (8000 above) and Jolokia (7800). If you 
 ----
 
 
-==== NombreNodo secundario
+==== Nodo de nombre secundario
 
-Para configurar el nodo secundario NameNode para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
+Para configurar el NameNode secundario para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
 [listing]
 ----
@@ -87,7 +87,7 @@ You can choose a different port for JMX (8002 above) and Jolokia (7802). If you 
 
 ==== Nodo de datos
 
-Para configurar DataNodes para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
+Para configurar los DataNodes para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
 [listing]
 ----
@@ -96,7 +96,7 @@ You can choose a different port for JMX (8001 above) and Jolokia (7801). If you 
 ----
 
 
-==== ResourceManager
+==== Administrador de recursos
 
 Para configurar ResourceManager para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
@@ -107,9 +107,9 @@ You can choose a different port for JMX (8003 above) and Jolokia (7803). If you 
 ----
 
 
-==== NodeManager
+==== Administrador de nodos
 
-Para configurar NodeManagers para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
+Para configurar los NodeManagers para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
 [listing]
 ----
@@ -118,7 +118,7 @@ You can choose a different port for JMX (8004 above) and Jolokia (7804). If you 
 ----
 
 
-==== JobHistoryServer
+==== Servidor de historial de trabajos
 
 Para configurar JobHistoryServer para exponer la API de Jolokia, puede configurar lo siguiente en <HADOOP_HOME>/etc/hadoop/hadoop-env.sh:
 
@@ -131,32 +131,32 @@ You can choose a different port for JMX (8005 above) and Jolokia (7805). If you 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: 
 
 
-| Nombre secundario de Hadoop | Servidor de espacio de nombres del cluster | Nombre del nodo IP Compile Info Version 
+| Nodo de nombre secundario de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo Información de compilación Versión 
 
 
-| NodeManager de Hadoop | Servidor de espacio de nombres del cluster | Dirección IP del nodo de nombre 
+| Administrador de nodos de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo 
 
 
-| Administrador de recursos de Hadoop | Servidor de espacio de nombres del cluster | Dirección IP del nodo de nombre 
+| Administrador de recursos de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo 
 
 
-| Nodo de datos de Hadoop | Servidor de espacio de nombres del cluster | Node Name IP Node Cluster ID Version 
+| Nodo de datos de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo ID del clúster Versión 
 
 
-| NombreHadoop | Servidor de espacio de nombres del cluster | Nombre del nodo ID de transacción IP del nodo última vez que se cargó Edits ha Estado del sistema Estado del sistema bloque ID de grupo ID de clúster compilación Info Versión de recuento de versiones distinta 
+| Nodo de nombre de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo ID de transacción Última escritura Tiempo desde las últimas ediciones cargadas Estado de alta disponibilidad Estado del sistema de archivos ID de grupo de bloques ID de clúster Información de compilación Recuento de versiones distintas Versión 
 
 
-| Hadoop JobHistoryServer | Servidor de espacio de nombres del cluster | Dirección IP del nodo de nombre 
+| Servidor de historial de trabajos de Hadoop | Servidor de espacio de nombres de clúster | Nombre del nodo IP del nodo 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

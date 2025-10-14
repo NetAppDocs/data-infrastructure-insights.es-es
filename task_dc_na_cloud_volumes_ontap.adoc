@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_cloud_volumes_ontap.html 
-summary: Configurar recopilador de datos de Cloud Volumes ONTAP de NetApp 
+summary: Configurar el recopilador de datos de NetApp Cloud Volumes ONTAP 
 keywords: data collector, NetApp, Cloud, ONTAP 
 ---
-= Recopilador de datos de NetApp Cloud Volumes ONTAP
+= Recopilador de datos NetApp Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este recopilador de datos admite la recopilación de inventario de las configuraciones de Cloud Volumes ONTAP.
+Este recopilador de datos admite la recopilación de inventario de las configuraciones de Cloud Volumes ONTAP .
 
 
 
@@ -21,13 +21,13 @@ Este recopilador de datos admite la recopilación de inventario de las configura
 | Campo | Descripción 
 
 
-| Dirección IP de administración de NetApp | La dirección IP para Cloud Volumess ONTAP 
+| Dirección IP de administración de NetApp | Dirección IP para Cloud Volumens ONTAP 
 
 
-| Nombre de usuario | Nombre de usuario de Cloud Volumes ONTAP 
+| Nombre de usuario | Nombre de usuario para Cloud Volumes ONTAP 
 
 
-| Contraseña | Contraseña para el usuario anterior 
+| Password | Contraseña para el usuario anterior 
 |===
 
 
@@ -38,43 +38,43 @@ Este recopilador de datos admite la recopilación de inventario de las configura
 | Campo | Descripción 
 
 
-| Tipo de conexión | Se recomienda HTTPS. También muestra el puerto predeterminado. 
+| Tipo de conexión | Se recomienda HTTPS.  También muestra el puerto predeterminado. 
 
 
-| Anular puerto de comunicación | Puerto que se va a usar si no es el predeterminado. 
+| Anular puerto de comunicación | Puerto a utilizar si no es el predeterminado. 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos. 
 
 
-| Recuento de subprocesos simultáneos de inventario | Número de subprocesos simultáneos. 
+| Recuento de subprocesos simultáneos del inventario | Número de subprocesos simultáneos. 
 
 
-| Fuerce TLS para HTTPS | Fuerce TLS sobre HTTPS 
+| Forzar TLS para HTTPS | Forzar TLS sobre HTTPS 
 
 
-| Buscar automáticamente grupos de redes | Buscar automáticamente grupos de redes 
+| Buscar grupos de red automáticamente | Buscar grupos de red automáticamente 
 
 
-| Expansión de netgroup | Seleccione Shell o File 
+| Expansión del grupo de red | Seleccionar Shell o Archivo 
 
 
-| Tiempo de espera de lectura HTTP segundos | El valor predeterminado es 30 segundos 
+| Tiempo de espera de lectura HTTP en segundos | El valor predeterminado es 30 segundos 
 
 
-| Forzar respuestas como UTF-8 | Forzar respuestas como UTF-8 
+| Respuestas de fuerza como UTF-8 | Respuestas de fuerza como UTF-8 
 
 
-| Intervalo de sondeo de rendimiento (mín.) | El valor predeterminado es 900 segundos. 
+| Intervalo de encuesta de rendimiento (min) | El valor predeterminado es 900 segundos. 
 
 
-| Número de subprocesos simultáneos de rendimiento | Número de subprocesos simultáneos. 
+| Rendimiento del recuento de subprocesos simultáneos | Número de subprocesos simultáneos. 
 
 
-| Recopilación avanzada de datos de contador | Active esta opción para que Data Infrastructure Insights recopile las métricas avanzadas de la lista que aparece a continuación. 
+| Recopilación avanzada de datos de contadores | Marque esta opción para que Data Infrastructure Insights recopile las métricas avanzadas de la lista a continuación. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

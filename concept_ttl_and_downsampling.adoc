@@ -4,22 +4,22 @@ permalink: concept_ttl_and_downsampling.html
 summary: Explicación de los tiempos de retención de datos y la reducción de muestreo 
 keywords: time-to-live, TTL, downsampling, downsample, retention 
 ---
-= Retención de datos y reducción de muestreo de datos
+= Retención de datos y datos submuestreados
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights conserva los datos durante períodos que van desde 7 días hasta 13 meses, según su suscripción.  Al mostrar conjuntos de datos grandes, es posible reducir el tamaño de los datos para garantizar que los gráficos y cuadros se carguen de manera eficiente y al mismo tiempo mantengan la precisión estadística.
+Data Infrastructure Insights conserva los datos durante períodos que van desde 7 días hasta 13 meses, según su suscripción. Al mostrar conjuntos de datos grandes, es posible reducir el tamaño de los datos para garantizar que los gráficos y cuadros se carguen de manera eficiente y al mismo tiempo mantengan la precisión estadística.
 
 
 
-== Conservación de datos
+== Retención de datos
 
 Data Infrastructure Insights retiene los datos durante un período de tiempo determinado según su tipo de suscripción.
 
 |===
-| Tipo de suscripción | Conservación de datos 
+| Tipo de suscripción | Retención de datos 
 
 
 | Ensayo | 7 días 
@@ -31,55 +31,55 @@ Para obtener información detallada sobre las características y opciones de pre
 
 
 
-== Reducción del muestreo de datos
+== Reducción de muestreo de datos
 
-*Downsampling* proporciona una aproximación estadística de sus datos en gráficos, que le proporciona una visión general eficiente de los datos sin tener que mostrar cada punto de datos, manteniendo al mismo tiempo una visión precisa de los datos recopilados.
-
-
-
-=== ¿Por qué es necesario reducir el muestreo?
-
-Dado que se necesita una gran cantidad de procesamiento para preparar los datos para su visualización en gráficos y gráficos, con el fin de permitir que los gráficos se muestren de forma rápida y eficaz, los datos se pueden reducir de forma que mantenga la forma general de un gráfico sin necesidad de procesar cada punto de datos para ese gráfico.
-
-Nota: No se pierden datos reales durante la reducción de la muestra. Puede elegir ver los datos reales del gráfico en lugar de los datos de muestra descendente siguiendo los pasos que se muestran a continuación.
+*Downsampling* proporciona una aproximación estadística de sus datos en gráficos, lo que le proporciona una descripción general eficiente de los datos sin tener que mostrar cada punto de datos, al tiempo que mantiene una vista precisa de los datos recopilados.
 
 
 
-=== Cómo funciona la reducción de muestras
+=== ¿Por qué es necesario el downsampling?
+
+Debido a que se necesita una gran cantidad de procesamiento para preparar datos para su visualización en cuadros y gráficos, para permitir que los gráficos se muestren de manera rápida y eficiente, los datos se pueden reducir de tamaño de manera que mantengan la forma general de un gráfico sin necesidad de procesar cada punto de datos de ese gráfico.
+
+Nota: No se pierden datos reales durante el muestreo reducido.  Puede elegir ver los datos reales de su gráfico en lugar de datos reducidos siguiendo los pasos que se ilustran a continuación.
+
+
+
+=== Cómo funciona el submuestreo
 
 Los datos se reducen en las siguientes condiciones:
 
-* Cuando el intervalo de tiempo seleccionado incluye 7 días de datos o menos, no se produce ninguna reducción de la muestra. Los gráficos muestran datos reales.
-* Cuando el intervalo de tiempo seleccionado incluye más de 7 días de datos pero menos de 1,000 puntos de datos, no se produce ninguna reducción de muestreo. Los gráficos muestran datos reales.
-* Cuando el intervalo de tiempo seleccionado incluye más de 7 días de datos y más de 1,000 puntos de datos, se reduce la muestra de los datos. Los gráficos muestran datos aproximados.
+* Cuando el rango de tiempo seleccionado incluye 7 días de datos o menos, no se produce ningún muestreo reducido.  Los gráficos muestran datos reales.
+* Cuando el rango de tiempo seleccionado incluye más de 7 días de datos pero menos de 1000 puntos de datos, no se produce ningún muestreo reducido.  Los gráficos muestran datos reales.
+* Cuando el rango de tiempo seleccionado incluye más de 7 días de datos y más de 1000 puntos de datos, los datos se muestrean de forma reducida.  Los gráficos muestran datos aproximados.
 
 
-Los siguientes ejemplos muestran la acción de reducción de la muestra. En la primera ilustración, se muestran los gráficos de latencia e IOPS en una página de activo de almacén de datos durante un periodo de 24 horas, como se muestra seleccionando 24 horas en el selector de tiempo de la página Asset. También puede ver los mismos datos seleccionando personalizado y configurando el intervalo de tiempo en el mismo periodo de 24 horas.
+Los siguientes ejemplos muestran el submuestreo en acción.  La primera ilustración muestra gráficos de latencia e IOPS en una página de activos de Datastore para un período de 24 horas, como se muestra al seleccionar 24 h en el selector de tiempo de la página de activos.  También puede ver los mismos datos seleccionando Personalizado y configurando el rango de tiempo en el mismo período de 24 horas.
 
-Dado que estamos eligiendo un intervalo de tiempo inferior a 7 días y tenemos menos de 1,000 puntos de datos para trazar, los datos mostrados son datos reales. No se produce ninguna reducción de la muestra.
+Dado que elegimos un rango de tiempo de menos de 7 días y tenemos menos de 1000 puntos de datos para graficar, los datos mostrados son datos reales.  No se produce reducción de resolución.
 
-image:Charts_NoDownsample.png["No hay reducción de muestreo"]
+image:Charts_NoDownsample.png["Sin reducción de muestreo"]
 
-Sin embargo, si está viendo datos eligiendo 30D en el selector de tiempo de la página de activos o estableciendo un intervalo de tiempo personalizado de más de 7 días (o en el caso de que Data Infrastructure Insights haya recopilado más de 1.000 muestras de datos para el período de tiempo elegido), los datos se reducen de muestra antes de que se muestren. Al ampliar un gráfico de muestra descendente, la pantalla continúa mostrando los datos aproximados.
+Sin embargo, si está visualizando datos eligiendo 30d en el selector de tiempo de la página de activos o configurando un rango de tiempo personalizado de más de 7 días (o en el caso de que Data Infrastructure Insights haya recopilado más de 1000 muestras de datos para el período de tiempo elegido), los datos se reducen de tamaño antes de mostrarse.  Al ampliar un gráfico con muestreo reducido, la pantalla continúa mostrando los datos aproximados.
 
 
-NOTE: Al ampliar un gráfico de muestra descendente, el zoom es un zoom digital. La pantalla continúa mostrando los datos aproximados.
+NOTE: Cuando se amplía un gráfico con muestreo reducido, el zoom es un zoom digital.  La pantalla continúa mostrando los datos aproximados.
 
-Puede verlo en la siguiente ilustración, donde el intervalo de tiempo se establece por primera vez en 30d, y el gráfico se amplía para mostrar el mismo período de 24 horas como se ha indicado anteriormente.
+Puede ver esto en la siguiente ilustración, donde el rango de tiempo se establece primero en 30 días y luego se amplía el gráfico para mostrar el mismo período de 24 horas que el anterior.
 
 image:Charts_Downsampled.png["Reducción de muestreo"]
 
-Los gráficos de muestra descendente muestran el mismo período de 24 horas que los gráficos "reales" anteriores, por lo que las líneas siguen la misma forma general, lo que le permite detectar rápidamente picos o valles interesantes en sus datos de rendimiento.
+Los gráficos reducidos muestran el mismo período de 24 horas que los gráficos "reales" anteriores, por lo que las líneas siguen la misma forma general, lo que le permite detectar rápidamente picos o valles interesantes en sus datos de rendimiento.
 
 
-NOTE: Debido a la forma en que se aproximan los datos para reducir el muestreo, las líneas del gráfico pueden estar ligeramente desactivadas al comparar los datos de menor muestreo con los reales, para permitir una mejor alineación en los gráficos. Sin embargo, la diferencia es mínima y no afecta a la precisión general de los datos mostrados.
+NOTE: Debido a la forma en que se aproximan los datos para el muestreo reducido, las líneas del gráfico pueden estar levemente desviadas al comparar los datos muestreados reducidos con los datos reales, para permitir una mejor alineación en los gráficos.  Sin embargo, la diferencia es mínima y no afecta la precisión general de los datos mostrados.
 
 
 
-=== Infracciones en gráficos con muestreo inferior
+=== Violaciones en gráficos con muestreo reducido
 
-Al ver gráficos con muestras descendentes, tenga en cuenta que no se muestran las infracciones. Para ver las violaciones, puede hacer una de estas dos cosas:
+Al visualizar gráficos con muestreo reducido, tenga en cuenta que no se muestran las violaciones.  Para ver las infracciones, puede realizar una de dos cosas:
 
-* Para ver los datos reales de ese intervalo de tiempo, seleccione personalizado en el selector de tiempo de página de activos e introduzca un intervalo de tiempo inferior a 7 días. Pase el ratón sobre cada punto rojo. La información sobre herramientas mostrará la infracción que se ha producido.
-* Anote el intervalo de tiempo y busque las infracciones en el panel de infracciones.
+* Vea los datos reales para ese rango de tiempo seleccionando Personalizado en el selector de tiempo de la página de activos e ingresando un rango de tiempo menor a 7 días.  Coloque el cursor sobre cada punto rojo.  La información sobre herramientas mostrará la infracción que se produjo.
+* Tenga en cuenta el rango de tiempo y busque las infracciones en el Panel de infracciones.
 

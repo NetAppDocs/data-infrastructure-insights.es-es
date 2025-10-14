@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_memcached.html 
 keywords: telegraf, installation, install, memcached 
-summary: Configuración de recopilador de datos memcached 
+summary: Configuración del recopilador de datos de Memcached 
 ---
-= Recopilador de datos en caché
+= Recopilador de datos de Memcached
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,38 +16,38 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione Memcached.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Seleccione Memcached.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:MemcachedDCConfigWindows.png["Configuración de memcached"]
+image:MemcachedDCConfigWindows.png["Configuración de Memcached"]
 
 
 
 == Configuración
 
-La información se puede encontrar en el link:https://github.com/memcached/memcached/wiki["Wiki memcached"].
+La información se puede encontrar en ellink:https://github.com/memcached/memcached/wiki["Wiki de Memcached"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Memcached | Servidor de espacio de nombres | Nombre del nodo IP | Aceptación de las solicitudes de autenticación gestionadas peticiones de autenticación fallidas bytes usados bytes leídos (por segundo) bytes escritos (por segundo) CAS Badval CAS Hits CAS Misses Flush Reqs (por segundo) Get Reqs (por segundo) Set Reqs (por segundo) resultados de conexión Touch Reqs (por segundo) (por segundo) Estructuras de conexión conexiones abiertas elementos almacenados actuales solicitudes de retirada aciertos (por segundo) solicitudes de retirada omisiones (por segundo) Eliminar solicitudes de eliminación Hits (por segundo) Eliminar solicitudes de falta (por segundo) elementos desalojados elementos válidos de expulsión Artículos caducados obtener Hits (por segundo) obtener omisiones (por segundo) Hash bytes usados hash Hash está ampliando el nivel de potencia Hash solicitudes incl. Aciertos (por segundo) Incr solicitudes de pérdidas (por segundo) Server Max bytes Listen Inescuchar Desactivado Num Reked Worker Threads total de conexiones abiertas total de elementos almacenados Touch Hits Touch Misses servidor tiempo activo 
+| Memcached | Servidor de espacio de nombres | IP del nodo Nombre del nodo | Aceptando conexiones Solicitudes de autenticación manejadas Autenticaciones fallidas Bytes usados Bytes leídos (por segundo) Bytes escritos (por segundo) CAS Badval Aciertos de CAS Errores de CAS Solicitudes de vaciado (por segundo) Solicitudes de obtención (por segundo) Solicitudes de establecimiento (por segundo) Solicitudes de toque (por segundo) Rendimientos de conexión (por segundo) Estructuras de conexión Conexiones abiertas Elementos almacenados actuales Aciertos de solicitudes de declaración (por segundo) Errores de solicitudes de declaración (por segundo) Aciertos de solicitudes de eliminación (por segundo) Errores de solicitudes de eliminación (por segundo) Elementos desalojados Desalojos válidos Elementos caducados Aciertos de obtención (por segundo) Errores de obtención (por segundo) Bytes de hash usados El hash se está expandiendo Nivel de potencia del hash Incr Solicitudes de aciertos (por segundo) Incr Solicitudes de aciertos (por segundo) Bytes máximos del servidor Escucha deshabilitada Núm. Recuento de subprocesos de trabajo recuperados Total de conexiones abiertas Total de elementos almacenados Toque Hits Touch pierde tiempo de actividad del servidor 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

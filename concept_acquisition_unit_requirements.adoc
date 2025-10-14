@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_acquisition_unit_requirements.html 
-summary: El servidor o la VM que utilice como Unidad de adquisición debe cumplir con los requisitos mínimos. 
+summary: El servidor o máquina virtual que utilice como unidad de adquisición debe cumplir con los requisitos mínimos. 
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = Requisitos de la unidad de adquisición
@@ -10,7 +10,7 @@ keywords: AU, acquisition unit, requirements, sizing
 
 
 [role="lead"]
-Debe instalar una unidad de adquisición (AU) para obtener información de los recopiladores de datos de la infraestructura (almacenamiento, VM, puerto, EC2, etc.). Antes de instalar la Unidad de adquisición, debe asegurarse de que el inquilino cumple con los requisitos de espacio en disco, memoria, CPU y sistema operativo.
+Debe instalar una Unidad de Adquisición (AU) para adquirir información de los recopiladores de datos de su infraestructura (almacenamiento, VM, puerto, EC2, etc.).  Antes de instalar la Unidad de Adquisición, debe asegurarse de que su inquilino cumpla con los requisitos de sistema operativo, CPU, memoria y espacio en disco.
 
 
 
@@ -22,45 +22,45 @@ Debe instalar una unidad de adquisición (AU) para obtener información de los r
 | Componente | Requisitos de Linux | Requisitos de Windows 
 
 
-| De NetApp | Un equipo que ejecuta una versión con licencia de uno de los siguientes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux en las plataformas mencionadas anteriormente. Esta computadora no debería estar ejecutando ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado. Si está ejecutando SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición: Sudo semanage fcontext -a -t usr_t «/opt/NetApp/cloudinsights(/.*)?» sudo restorecon -R /opt/NetApp/cloudinsights | Un equipo que ejecute una versión con licencia de uno de los siguientes: * Microsoft Windows 10 64 bits * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Este equipo no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado. 
+| Sistema operativo | Un equipo que ejecuta una versión con licencia de uno de los siguientes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux en las plataformas mencionadas anteriormente. Esta computadora no debería estar ejecutando ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado.  Si está ejecutando SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Una computadora que ejecute una versión con licencia de uno de los siguientes: * Microsoft Windows 10 de 64 bits * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Esta computadora no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado. 
 
 
-| CPU | 2 núcleos de CPU | Igual 
+| UPC | 2 núcleos de CPU | Mismo 
 
 
-| Memoria | 8 GB DE MEMORIA RAM | Igual 
+| Memoria | 8 GB de RAM | Mismo 
 
 
-| Espacio disponible en disco | 50 GB (se recomiendan 100 GB) Para Linux, el espacio en disco debe asignarse de esta manera: /Opt/NetApp 10 GB (20 GB para entornos grandes) /var/log/NetApp 40 GB (80 GB para entornos grandes) /tmp Al menos 1 GB disponibles durante la instalación | 50GB 
+| Espacio disponible en disco | 50 GB (se recomiendan 100 GB) Para Linux, el espacio en disco se debe asignar de esta manera: /opt/netapp 10 GB (20 GB para entornos grandes) /var/log/netapp 40 GB (80 GB para entornos grandes) /tmp al menos 1 GB disponible durante la instalación | 50 GB 
 
 
-| Red | Se requiere una conexión Ethernet de 100 Mbps/1 Gbps, dirección IP estática y conectividad del puerto 80 o 443 (saliente) desde la unidad de adquisición a *.cloudinsights.NetApp.com o su inquilino de información de la infraestructura de datos (por ejemplo, \https://<tenant_id>.C01.cloudinsights.NetApp.com). Para conocer los requisitos entre la unidad de adquisición y cada recopilador de datos, consulte las instrucciones del link:data_collector_list.html["Recopilador de datos"]. Si su organización requiere el uso de proxy para acceder a Internet, es posible que tenga que comprender el comportamiento de proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione. Por ejemplo, ¿bloquea su organización el acceso de forma predeterminada y sólo permite el acceso a sitios o dominios web específicos mediante excepción? Si es así, tendrá que agregar el siguiente dominio a la lista de excepciones: *.cloudinsights.NetApp.com Para más información, lea Acerca de Proxies link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aquí (Linux)"] o link:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["Aquí (Windows)"]. Tenga en cuenta que el puerto 443 debe abrirse «de salida» de la AU a Data Infrastructure Insights. | Igual 
+| Red | Se requiere una conexión Ethernet de 100 Mbps/1 Gbps, una dirección IP estática y conectividad de puerto 80 o 443 (saliente) desde la unidad de adquisición a *.cloudinsights.netapp.com o su inquilino de Data Infrastructure Insights (es decir, \https://<tenant_id>.c01.cloudinsights.netapp.com).  Para conocer los requisitos entre la Unidad de Adquisición y cada Recolector de Datos, consulte las instrucciones para lalink:data_collector_list.html["Recopilador de datos"] .  Si su organización requiere el uso de proxy para acceder a Internet, es posible que deba comprender el comportamiento del proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione.  Por ejemplo, ¿su organización bloquea el acceso de forma predeterminada y solo permite el acceso a sitios web o dominios específicos por excepción?  Si es así, deberá agregar el siguiente dominio a la lista de excepciones: *.cloudinsights.netapp.com Para obtener más información, lea sobre Proxies.link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Linux)"] olink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Windows)"] .  Tenga en cuenta que el puerto 443 debe estar abierto como "saliente" desde la AU a Data Infrastructure Insights. | Mismo 
 
 
-| Permisos | Permisos sudo en el servidor de unidades de adquisición. /tmp debe montarse con capacidades exec. | Permisos de administrador en el servidor de unidades de adquisición 
+| Permisos | Permisos de Sudo en el servidor de la Unidad de Adquisición.  /tmp debe montarse con capacidades de ejecución. | Permisos de administrador en el servidor de la Unidad de Adquisición 
 
 
-| Análisis de virus |  | Durante la instalación, debe desactivar por completo todos los detectores de virus. Tras la instalación, las rutas utilizadas por el software de la Unidad de adquisición deben excluirse del análisis de virus. 
+| Análisis de virus |  | Durante la instalación, debes desactivar por completo todos los escáneres de virus.  Después de la instalación, las rutas utilizadas por el software de la Unidad de Adquisición deben excluirse del análisis de virus. 
 |===
 
 
 == Recomendaciones adicionales
 
-* Para obtener informes precisos de auditoría y datos, se recomienda encarecidamente sincronizar el tiempo en la máquina de la unidad de adquisición mediante *Protocolo de tiempo de red (NTP)* o *Protocolo simple de tiempo de red (SNTP)*.
+* Para obtener informes de datos y auditorías precisos, se recomienda encarecidamente sincronizar la hora en la máquina de la unidad de adquisición utilizando *Protocolo de tiempo de red (NTP)* o *Protocolo simple de tiempo de red (SNTP)*.
 
 
 
 
-== En cuanto al tamaño
+== Respecto al tamaño
 
-Puede empezar con una unidad de adquisición de información sobre la infraestructura de datos con solo 8GB GB de memoria y 50GB GB de espacio en disco. Sin embargo, para entornos de gran tamaño debe hacerse las siguientes preguntas:
+Puede comenzar con una unidad de adquisición de Data Infrastructure Insights con solo 8 GB de memoria y 50 GB de espacio en disco; sin embargo, para entornos más grandes debe hacerse las siguientes preguntas:
 
-¿Espera:
+¿Esperas:
 
-* ¿Descubra más de 2500 máquinas virtuales o 10 clústeres ONTAP de gran tamaño (> 2 nodos), Symmetrix o cabinas HDS/HPE VSP/XP en esta unidad de adquisición?
-* ¿Desplegar 75 o más recopiladores de datos totales en esta unidad de adquisición?
+* Descubra más de 2500 máquinas virtuales o 10 clústeres ONTAP grandes (> 2 nodos), Symmetrix o matrices HDS/HPE VSP/XP en esta unidad de adquisición.
+* ¿Implementar 75 o más recolectores de datos en total en esta unidad de adquisición?
 
 
-Para cada respuesta "Sí" anterior, se recomienda añadir 8 GB de memoria y 50 GB de espacio en disco a la unidad AU. Así pues, si ha respondido afirmativamente a ambos, deberá poner en marcha un sistema de memoria de 24 GB con 150 GB o más de espacio en disco. En Linux, el espacio en disco que se agregará a la ubicación del registro.
+Por cada respuesta "Sí" anterior, se recomienda agregar 8 GB de memoria y 50 GB de espacio en disco al AU.  Entonces, por ejemplo, si respondió "Sí" a ambas preguntas, debería implementar un sistema de memoria de 24 GB con 150 GB o más de espacio en disco.  En Linux, el espacio de disco que se agregará a la ubicación del registro.
 
-Si quiere más preguntas de tamaño, póngase en contacto con el soporte de NetApp.
+Si tiene preguntas adicionales sobre tamaño, comuníquese con el soporte de NetApp .

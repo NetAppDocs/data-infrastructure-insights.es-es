@@ -2,26 +2,26 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_sphereon_intrepid.html 
 keywords: data collector, Brocade, Sphereon Intrepid, 
-summary: Configuración del recopilador de datos Brocade Sphereon/Intrepid Switch 
+summary: Configuración del recopilador de datos del conmutador Brocade Sphereon/Intrepid 
 ---
-= Configuración del recopilador de datos Brocade Sphereon/Intrepid Switch
+= Configuración del recopilador de datos del conmutador Brocade Sphereon/Intrepid
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-La información de la infraestructura de datos utiliza el recopilador de datos del conmutador Brocade Sphereon/Intrepid (SNMP) para detectar el inventario de los switches Brocade Sphereon o Intrepid.
+Data Infrastructure Insights utiliza el recopilador de datos Brocade Sphereon/Intrepid Switch (SNMP) para descubrir el inventario de los conmutadores Brocade Sphereon o Intrepid.
 
 
 
 == Requisitos
 
-Se deben cumplir los siguientes requisitos para configurar este recopilador de datos:
+Para configurar este recopilador de datos se deben cumplir los siguientes requisitos:
 
-* Debe haber conectividad IP para todos los switches de la estructura. Si selecciona la casilla de comprobación Detectar todos los switches en la estructura, Data Infrastructure Insights identifica todos los switches de la estructura; no obstante, se necesita conectividad IP con estos switches adicionales para detectarlos.
-* Cadena de comunidad de sólo lectura si se utiliza SNMP V1 o SNMP V2.
-* Acceso HTTP al switch para obtener información de división en zonas.
-* Acceda a la validación ejecutando la utilidad snmpwalk al conmutador (consulte _<install_path>\bin\_).
+* Debe haber conectividad IP a todos los conmutadores de la red.  Si selecciona la casilla de verificación Descubrir todos los conmutadores en la estructura, Data Infrastructure Insights identifica todos los conmutadores en la estructura; sin embargo, necesita conectividad IP a estos conmutadores adicionales para descubrirlos.
+* Cadena de comunidad de solo lectura si se utiliza SNMP V1 o SNMP V2.
+* Acceso HTTP al conmutador para obtener información de zonificación.
+* Validación de acceso ejecutando la utilidad snmpwalk en el conmutador (consulte _<install_path>\bin\_).
 
 
 
@@ -33,19 +33,19 @@ Se deben cumplir los siguientes requisitos para configurar este recopilador de d
 | Campo | Descripción 
 
 
-| Conmutador Sphereon | Dirección IP o nombre de dominio completo del switch 
+| Interruptor Sphereon | Dirección IP o nombre de dominio completo del conmutador 
 
 
-| Versión de SNMP | Versión de SNMP 
+| Versión SNMP | Versión SNMP 
 
 
-| Cadena de comunidad SNMP | Cadena de comunidad de sólo lectura de SNMP que se utiliza para acceder al conmutador 
+| Cadena de comunidad SNMP | Cadena de comunidad de solo lectura SNMP utilizada para acceder al conmutador 
 
 
-| Nombre de usuario de SNMP | Nombre de usuario SMI-S para el conmutador (sólo SNMP v3) 
+| Nombre de usuario SNMP | Nombre de usuario SMI-S para el conmutador (solo SNMP v3) 
 
 
-| Contraseña de SNMP | Contraseña SMI-S para el conmutador (sólo SNMP v3) 
+| Contraseña SNMP | Contraseña SMI-S para el conmutador (solo SNMP v3) 
 |===
 
 
@@ -56,31 +56,31 @@ Se deben cumplir los siguientes requisitos para configurar este recopilador de d
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 15 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 15 minutos. 
 
 
 | Protocolo de autenticación SNMP | Protocolo de autenticación SNMP (solo SNMP v3) 
 
 
-| Contraseña de privacidad de SNMP | Contraseña de privacidad de SNMP (sólo SNMP v3) 
+| Contraseña de privacidad de SNMP | Contraseña de privacidad SNMP (solo SNMP v3) 
 
 
-| Número SNMP de reintentos | Número de intentos de reintento de SNMP 
+| Número de reintentos de SNMP | Número de reintentos de SNMP 
 
 
-| Nombre de la estructura | Nombre de la estructura que informará el recopilador de datos. Deje en blanco para informar el nombre de la estructura como WWN. 
+| Nombre de la tela | Nombre de la tela que será informada por el recolector de datos.  Déjelo en blanco para informar el nombre de la tela como WWN. 
 
 
-| Habilite el solapamiento | Seleccione esta opción para activar la adquisición al recibir una captura SNMP del dispositivo. Si selecciona Activar solapamiento, también debe activar SNMP. 
+| Habilitar Trapping | Seleccione esta opción para habilitar la adquisición al recibir una trampa SNMP desde el dispositivo.  Si selecciona habilitar captura, también deberá activar SNMP. 
 
 
-| Tiempo mínimo entre solapamientos (segundos) | Tiempo mínimo entre intentos de adquisición activados por solapamientos. El valor predeterminado es 10 segundos. 
+| Tiempo mínimo entre trampas (segundos) | Tiempo mínimo entre intentos de adquisición activados por trampas. El valor predeterminado es 10 segundos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

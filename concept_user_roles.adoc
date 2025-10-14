@@ -2,163 +2,163 @@
 sidebar: sidebar 
 permalink: concept_user_roles.html 
 keywords: roles, guest, user, administrator, SSO, Federate, federation, identity, single sign-on, Account Owner, Reporting, Cloud Secure, Monitor and Optimize, security, observability 
-summary: Data Infrastructure Insights proporciona varias cuentas de usuario con diferentes niveles de permiso. 
+summary: Data Infrastructure Insights proporciona múltiples cuentas de usuario con diferentes niveles de permisos. 
 ---
-= Funciones y cuentas de usuario
+= Cuentas de usuario y roles
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights proporciona hasta cuatro funciones de cuentas de usuario: Propietario de la cuenta, administrador, usuario e invitado. A cada cuenta se le asignan niveles de permiso específicos, como se indica en la tabla siguiente. Los usuarios link:#creating-accounts-by-inviting-users["invitado"]van a Data Infrastructure Insights y se les asigna una función específica, o pueden iniciar sesión mediante link:#single-sign-on-sso-and-identity-federation["Autorización de inicio de sesión único (SSO)"]un rol predeterminado. La autorización de SSO está disponible como una función de Data Infrastructure Insights Premium Edition.
+Data Infrastructure Insights proporciona hasta cuatro roles de cuenta de usuario: Propietario de cuenta, Administrador, Usuario e Invitado.  A cada cuenta se le asignan niveles de permiso específicos como se indica en la siguiente tabla.  Los usuarios son:link:#creating-accounts-by-inviting-users["invitado"] a Data Infrastructure Insights y se le asigna un rol específico, o puede iniciar sesión a través delink:#single-sign-on-sso-and-identity-federation["Autorización de inicio de sesión único (SSO)"] con un rol predeterminado.  La autorización SSO está disponible como una función en Data Infrastructure Insights Premium Edition.
 
 
 
-== Niveles de permisos
+== Niveles de permiso
 
-Utilice una cuenta con privilegios de administrador para crear o modificar cuentas de usuario. A cada cuenta de usuario se le asigna un rol para cada función Data Infrastructure Insights desde los siguientes niveles de permiso.
-
-|===
-| Función | Observabilidad | Seguridad de cargas de trabajo | Creación de informes | Admin 
-
-
-| Propietario de la cuenta | Igual que Administrador | Igual que Administrador | Igual que Administrador | Igual que el administrador, así como gestionar la configuración de autenticación SSO y federación de identidades. También puede asignar propietarios adicionales. 
-
-
-| Administrador | Puede realizar todas las funciones de observabilidad, así como la gestión de recopiladores de datos. | Puede realizar todas las funciones de seguridad, incluidas las de Alertas, Forensics, recopiladores de datos, directivas de respuesta automatizadas y tokens API de seguridad. Un administrador también puede invitar a otros usuarios, pero sólo puede asignar funciones de seguridad. | Puede realizar todas las funciones de usuario/autor, incluida la gestión de tokens de API de informes, así como todas las tareas administrativas como la configuración de informes y el cierre y reinicio de las tareas de creación de informes. Un administrador también puede invitar a otros usuarios, pero sólo puede asignar funciones de informes. | Puede invitar a otros usuarios, pero solo puede asignar roles de observabilidad. Puede ver pero no modificar la configuración de SSO. Puede crear y gestionar tokens de acceso de API. Puede ver la información de auditoría. Puede ver la información de suscripción, el uso y el historial. Puede gestionar las listas de notificaciones de alerta global y de destinatarios de notificaciones de suscripción. 
-
-
-| Usuario | Puede ver y modificar paneles, consultas, alertas, anotaciones, reglas de anotación, y aplicaciones, y administrar la resolución del dispositivo. | Puede ver y gestionar alertas y visualizar información forense. El rol de usuario puede cambiar el estado de alerta, agregar una nota, tomar instantáneas manualmente y gestionar restringir el acceso de usuario. | Puede realizar todas las funciones de invitado/consumidor, así como crear y gestionar informes y paneles. | No disponible 
-
-
-| Invitado | Dispone de acceso de sólo lectura a páginas de activos, paneles, alertas y puede ver y ejecutar consultas. | Puede ver Alertas y Forensics. El rol de invitado no puede cambiar el estado de alerta, agregar una nota, tomar instantáneas manualmente o restringir el acceso de usuario. | Puede ver, programar y ejecutar informes y establecer preferencias personales como las de idiomas y zonas horarias. Los invitados/consumidores no pueden crear informes ni realizar tareas administrativas. | No disponible 
-|===
-La práctica recomendada es limitar el número de usuarios con permisos de administrador. El mayor número de cuentas debe ser cuentas de usuario o de invitado.
-
-
-
-=== Permisos de información de la infraestructura de datos por rol de usuario
-
-En la siguiente tabla se muestran los permisos de Data Infrastructure Insights otorgados a cada rol de usuario.
+Utilice una cuenta que tenga privilegios de administrador para crear o modificar cuentas de usuario.  A cada cuenta de usuario se le asigna un rol para cada función de Data Infrastructure Insights de los siguientes niveles de permiso.
 
 |===
+| Role | Observabilidad | Seguridad de la carga de trabajo | Informes | Administración 
 
 
-| Función | Administrador/propietario de la cuenta | Usuario | Invitado 
+| Titular de la cuenta | Igual que el administrador | Igual que el administrador | Igual que el administrador | Igual que el Administrador, además de administrar la autenticación SSO y la configuración de la federación de identidad.  También puede asignar propietarios adicionales. 
 
 
-| Unidades de adquisición: Agregar/modificar/Eliminar | Y | N | N 
+| Administrador | Puede realizar todas las funciones de observabilidad, así como la gestión de recopiladores de datos. | Puede realizar todas las funciones de seguridad, incluidas las de alertas, análisis forense, recopiladores de datos, políticas de respuesta automatizadas y tokens API para seguridad.  Un administrador también puede invitar a otros usuarios, pero sólo puede asignar roles de seguridad. | Puede realizar todas las funciones de Usuario/Autor, incluida la gestión de tokens de API de informes, así como todas las tareas administrativas como la configuración de informes y el apagado y reinicio de tareas de informes.  Un administrador también puede invitar a otros usuarios, pero sólo puede asignar roles de informes. | Puede invitar a otros usuarios, pero solo puede asignar roles de Observabilidad.  Puede ver pero no modificar la configuración de SSO.  Puede crear y administrar tokens de acceso API.  Puede ver información de auditoría.  Puede ver información de suscripción, uso e historial.  Puede administrar listas de destinatarios de notificaciones de alerta globales y notificaciones de suscripciones. 
 
 
-| Alertas*: Crear/modificar/Eliminar | Y | Y | N 
+| Usuario | Puede ver y modificar paneles, consultas, alertas, anotaciones, reglas de anotación y aplicaciones, y administrar la resolución del dispositivo. | Puede ver y administrar alertas y ver análisis forenses.  El rol de usuario puede cambiar el estado de alerta, agregar una nota, tomar instantáneas manualmente y administrar la restricción de acceso de usuarios. | Puede realizar todas las funciones de invitado/consumidor, así como crear y administrar informes y paneles. | No disponible 
+
+
+| Invitado | Tiene acceso de solo lectura a páginas de activos, paneles, alertas y puede ver y ejecutar consultas. | Puede ver alertas y análisis forenses.  El rol de invitado no puede cambiar el estado de alerta, agregar una nota, tomar instantáneas manualmente ni restringir el acceso de los usuarios. | Puede ver, programar y ejecutar informes y establecer preferencias personales como idiomas y zonas horarias.  Los invitados/consumidores no pueden crear informes ni realizar tareas administrativas. | No disponible 
+|===
+La mejor práctica es limitar la cantidad de usuarios con permisos de administrador.  El mayor número de cuentas deben ser cuentas de usuario o de invitado.
+
+
+
+=== Permisos de Data Infrastructure Insights por rol de usuario
+
+La siguiente tabla muestra los permisos de Data Infrastructure Insights otorgados a cada rol de usuario.
+
+|===
+
+
+| Característica | Administrador/Propietario de la cuenta | Usuario | Invitado 
+
+
+| Unidades de adquisición: Agregar/Modificar/Eliminar | Y | norte | norte 
+
+
+| Alertas*: Crear/Modificar/Eliminar | Y | Y | norte 
 
 
 | Alertas*: Ver | Y | Y | Y 
 
 
-| Reglas de anotación: Crear/Ejecutar/Modificar/Eliminar | Y | Y | N 
+| Reglas de anotación: Crear/Ejecutar/Modificar/Eliminar | Y | Y | norte 
 
 
-| Anotaciones: Crear/modificar/asignar/Ver/Eliminar/Eliminar | Y | Y | N 
+| Anotaciones: Crear/Modificar/Asignar/Ver/Eliminar/Borrar | Y | Y | norte 
 
 
-| Acceso API*: Crear/Cambiar nombre/Desactivar/revocar | Y | N | N 
+| Acceso API*: Crear/Renombrar/Deshabilitar/Revocar | Y | norte | norte 
 
 
-| Aplicaciones: Crear/Ver/Modificar/Eliminar | Y | Y | N 
+| Aplicaciones: Crear/Ver/Modificar/Eliminar | Y | Y | norte 
 
 
-| Páginas de activos: Modificar | Y | Y | N 
+| Páginas de activos: modificar | Y | Y | norte 
 
 
 | Páginas de activos: Ver | Y | Y | Y 
 
 
-| Auditoría: Ver | Y | N | N 
+| Auditoría: Ver | Y | norte | norte 
 
 
-| Coste del cloud | Y | N | N 
+| Costo de la nube | Y | norte | norte 
 
 
-| Seguridad | Y | N | N 
+| Seguridad | Y | norte | norte 
 
 
-| Paneles: Crear/modificar/Eliminar | Y | Y | N 
+| Paneles de control: crear/modificar/eliminar | Y | Y | norte 
 
 
-| Paneles: Ver | Y | Y | Y 
+| Paneles de control: Ver | Y | Y | Y 
 
 
-| Colectores de datos: Agregar/modificar/sondeo/Eliminar | Y | N | N 
+| Recopiladores de datos: Agregar/Modificar/Sondear/Eliminar | Y | norte | norte 
 
 
 | Notificaciones: Ver | Y | Y | Y 
 
 
-| Notificaciones: Modificar | Y | N | N 
+| Notificaciones: Modificar | Y | norte | norte 
 
 
-| Consultas: Crear/modificar/Eliminar | Y | Y | N 
+| Consultas: Crear/Modificar/Eliminar | Y | Y | norte 
 
 
-| Consultas: Ver/ejecutar | Y | Y | Y 
+| Consultas: Ver/Ejecutar | Y | Y | Y 
 
 
-| Resolución del dispositivo | Y | Y | N 
+| Resolución del dispositivo | Y | Y | norte 
 
 
-| Informes*: Ver/ejecutar | Y | Y | Y 
+| Informes*: Ver/Ejecutar | Y | Y | Y 
 
 
-| Informes*: Crear/Modificar/Eliminar/planificar | Y | Y | N 
+| Informes*: Crear/Modificar/Eliminar/Programar | Y | Y | norte 
 
 
-| Suscripción: Ver/modificar | Y | N | N 
+| Suscripción: Ver/Modificar | Y | norte | norte 
 
 
-| Gestión de usuarios: Invitar/Añadir/Modificar/Desactivar | Y | N | N 
+| Gestión de usuarios: Invitar/Agregar/Modificar/Desactivar | Y | norte | norte 
 |===
-*Requiere Premium Edition
+*Requiere Edición Premium
 
 
 
 == Creación de cuentas invitando a usuarios
 
-La creación de una nueva cuenta de usuario se logra a través de la consola de NetApp .  Un usuario puede responder a la invitación enviada por correo electrónico, pero si el usuario no tiene una cuenta en Console, deberá registrarse para poder aceptar la invitación.
+La creación de una nueva cuenta de usuario se logra a través de la NetApp Console.  Un usuario puede responder a la invitación enviada por correo electrónico, pero si el usuario no tiene una cuenta en Console, deberá registrarse para poder aceptar la invitación.
 
 .Antes de empezar
 * El nombre de usuario es la dirección de correo electrónico de la invitación.
-* Comprenda los roles de usuario que va a asignar.
+* Comprenda los roles de usuario que asignará.
 * Las contraseñas las define el usuario durante el proceso de registro.
 
 
 .Pasos
 . Inicie sesión en Data Infrastructure Insights
-. En el menú, haga clic en *Administración > Administración de usuarios*
+. En el menú, haga clic en *Admin > Gestión de usuarios*
 +
-Aparecerá la pantalla Gestión de usuarios. La pantalla contiene una lista de todas las cuentas del sistema.
+Se muestra la pantalla de Gestión de usuarios.  La pantalla contiene una lista de todas las cuentas del sistema.
 
 . Haga clic en *+ Usuario*
 +
-Aparece la pantalla *Invitar usuario*.
+Se muestra la pantalla *Invitar usuario*.
 
-. Introduzca una dirección de correo electrónico o varias direcciones para las invitaciones.
+. Introduzca una dirección de correo electrónico o varias direcciones para recibir invitaciones.
 +
-*Nota:* cuando se introducen varias direcciones, se crean todas con la misma función. Solo puede configurar varios usuarios con el mismo rol.
+*Nota:* Cuando ingresa varias direcciones, todas se crean con el mismo rol.  Sólo puedes configurar varios usuarios para el mismo rol.
 
 
 
 . Seleccione el rol del usuario para cada función de Data Infrastructure Insights.
 +
 
-NOTE: Las funciones y funciones que puede elegir dependen de las funciones a las que tenga acceso en su función de administrador particular. Por ejemplo, si tiene el rol de administrador solo para Reporting, podrá asignar usuarios a cualquier rol en Reporting, pero no podrá asignar roles para Observability o Security.
+NOTE: Las funciones y roles que puede elegir dependen de las funciones a las que tenga acceso en su rol de Administrador particular.  Por ejemplo, si tiene un rol de administrador solo para informes, podrá asignar usuarios a cualquier rol en informes, pero no podrá asignar roles para observabilidad o seguridad.
 
 +
-image:UserRoleChoices.png["Opciones de funciones de usuario"]
+image:UserRoleChoices.png["Opciones de roles de usuario"]
 
 . Haga clic en *Invitar*
 +
-La invitación se envía al usuario. Los usuarios tendrán 14 días para aceptar la invitación. Una vez que un usuario acepte la invitación, se llevará al Cloud Portal de NetApp, donde se inscribirá con la dirección de correo electrónico de la invitación. Si ya tienen una cuenta para esa dirección de correo electrónico, solo tendrán que iniciar sesión y podrán acceder a su entorno Data Infrastructure Insights.
+La invitación se envía al usuario.  Los usuarios tendrán 14 días para aceptar la invitación.  Una vez que un usuario acepta la invitación, será dirigido al Portal de NetApp Cloud, donde se registrará utilizando la dirección de correo electrónico que figura en la invitación.  Si tienen una cuenta existente para esa dirección de correo electrónico, simplemente pueden iniciar sesión y luego podrán acceder a su entorno de Data Infrastructure Insights .
 
 
 
@@ -166,74 +166,74 @@ La invitación se envía al usuario. Los usuarios tendrán 14 días para aceptar
 
 == Modificar el rol de un usuario existente
 
-Para modificar la función de un usuario existente, incluyendo agregarlos como *propietario de cuenta secundaria*, siga estos pasos.
+Para modificar el rol de un usuario existente, incluso agregarlo como *propietario de cuenta secundaria*, siga estos pasos.
 
-. Haga clic en *Admin > Administración de usuarios*. La pantalla muestra una lista de todas las cuentas del sistema.
+. Haga clic en *Admin > Gestión de usuarios*.  La pantalla muestra una lista de todas las cuentas del sistema.
 . Haga clic en el nombre de usuario de la cuenta que desea cambiar.
-. Modifique la función del usuario en cada conjunto de funciones de Data Infrastructure Insights según sea necesario.
-. Haga clic en _Save Changes_.
+. Modifique el rol del usuario en cada conjunto de características de Data Infrastructure Insights según sea necesario.
+. Haga clic en _Guardar cambios_.
 
 
 
 
 === Para asignar un propietario de cuenta secundaria
 
-Debe haber iniciado sesión como propietario de cuenta para Observability a fin de asignar el rol de propietario de cuenta a otro usuario.
+Debe iniciar sesión como propietario de una cuenta de Observability para poder asignar el rol de propietario de una cuenta a otro usuario.
 
-. Haga clic en *Admin > Administración de usuarios*.
+. Haga clic en *Admin > Gestión de usuarios*.
 . Haga clic en el nombre de usuario de la cuenta que desea cambiar.
-. En el cuadro de diálogo Usuario, haga clic en *asignar como propietario*.
+. En el cuadro de diálogo Usuario, haga clic en *Asignar como propietario*.
 . Guarde los cambios.
 
 
-image:Assign_Account_Owner.png["cuadro de diálogo de cambio de usuario que muestra la opción del propietario de la cuenta"]
+image:Assign_Account_Owner.png["Diálogo de cambio de usuario que muestra la elección del propietario de la cuenta"]
 
-Puede tener tantos propietarios de cuentas como desee, pero la mejor práctica es limitar la función de propietario a seleccionar sólo personas.
-
-
-
-== Eliminando usuarios
-
-Un usuario con la función Administrador puede eliminar un usuario (por ejemplo, alguien que ya no tenga la compañía) haciendo clic en el nombre del usuario y haciendo clic en _Delete User_ en el cuadro de diálogo. El usuario se eliminará del entorno Data Infrastructure Insights.
-
-Tenga en cuenta que los paneles de control, consultas, etc. creados por el usuario seguirán disponibles en el entorno de Data Infrastructure Insights incluso después de que se elimine el usuario.
+Puedes tener tantos propietarios de cuentas como desees, pero la mejor práctica es limitar el rol de propietario solo a algunas personas seleccionadas.
 
 
 
-== Inicio de sesión único (SSO) y Federación de identidades
+== Eliminar usuarios
+
+Un usuario con el rol de Administrador puede eliminar un usuario (por ejemplo, alguien que ya no trabaja en la empresa) haciendo clic en el nombre del usuario y haciendo clic en _Eliminar usuario_ en el cuadro de diálogo.  El usuario será eliminado del entorno de Data Infrastructure Insights .
+
+Tenga en cuenta que todos los paneles, consultas, etc. creados por el usuario permanecerán disponibles en el entorno de Data Infrastructure Insights incluso después de que se elimine al usuario.
 
 
 
-=== ¿Qué es la federación de identidades?
-
-Con Federación de identidades:
-
-* La autenticación se delega en el sistema de gestión de identidades del cliente, utilizando las credenciales del cliente del directorio corporativo y las políticas de automatización como la autenticación multifactor (MFA).
-* Los usuarios inician sesión una vez en todos los servicios de consola de NetApp (inicio de sesión único).
+== Inicio de sesión único (SSO) y federación de identidades
 
 
-Las cuentas de usuario se administran en la consola de NetApp para todos los servicios de nube.  De forma predeterminada, la autenticación se realiza mediante un perfil de usuario local de la consola.  A continuación se muestra una descripción simplificada de ese proceso:
+
+=== ¿Qué es la Federación de Identidad?
+
+Con Federación de Identidad:
+
+* La autenticación se delega al sistema de gestión de identidad del cliente, utilizando las credenciales del cliente de su directorio corporativo y políticas de automatización como la autenticación multifactor (MFA).
+* Los usuarios inician sesión una vez en todos los servicios de NetApp Console (inicio de sesión único).
+
+
+Las cuentas de usuario se administran en la NetApp Console para todos los servicios de nube.  De forma predeterminada, la autenticación se realiza mediante un perfil de usuario local de la consola.  A continuación se muestra una descripción simplificada de ese proceso:
 
 image:Authentication_Local.png["Autenticación mediante Local"]
 
-Sin embargo, algunos clientes desean utilizar su propio proveedor de identidad para autenticar a sus usuarios para Data Infrastructure Insights y sus otros servicios de consola de NetApp .  Con Identity Federation, las cuentas de la consola de NetApp se autentican mediante credenciales de su directorio corporativo.
+Sin embargo, algunos clientes desean utilizar su propio proveedor de identidad para autenticar a sus usuarios para Data Infrastructure Insights y sus otros servicios de NetApp Console .  Con Identity Federation, las cuentas de la NetApp Console se autentican mediante credenciales de su directorio corporativo.
 
-A continuación se muestra un ejemplo simplificado de ese proceso:
+El siguiente es un ejemplo simplificado de dicho proceso:
 
 image:Authentication_Federated.png["Autenticación mediante federación"]
 
-En el diagrama anterior, cuando un usuario accede a Data Infrastructure Insights, ese usuario se dirige al sistema de gestión de identidades del cliente para su autenticación. Una vez autenticada la cuenta, se dirige al usuario a la URL del inquilino de Data Infrastructure Insights.
+En el diagrama anterior, cuando un usuario accede a Data Infrastructure Insights, ese usuario es dirigido al sistema de gestión de identidad del cliente para su autenticación.  Una vez autenticada la cuenta, el usuario es dirigido a la URL del inquilino de Data Infrastructure Insights .
 
 
 
-=== Habilitando federación de identidades
+=== Habilitación de la federación de identidades
 
 La consola usa Auth0 para implementar la federación de identidad e integrarse con servicios como Active Directory Federation Services (ADFS) y Microsoft Azure Active Directory (AD).  Para configurar la federación de identidad, consulte lalink:https://services.cloud.netapp.com/misc/federation-support["Instrucciones de la Federación"] .
 
 
 NOTE: Debe configurar la federación de identidad antes de poder usar SSO con Data Infrastructure Insights.
 
-Es importante comprender que el cambio en la federación de identidad se aplicará no solo a Data Infrastructure Insights sino a todos los servicios de consola de NetApp .  El cliente debe discutir este cambio con el equipo de NetApp de cada producto que posee para asegurarse de que la configuración que está usando funcionará con Identity Federation o si es necesario realizar ajustes en alguna cuenta.  El cliente también deberá involucrar a su equipo interno de SSO en el cambio a la federación de identidad.
+Es importante comprender que el cambio en la federación de identidad se aplicará no solo a Data Infrastructure Insights sino a todos los servicios de NetApp Console .  El cliente debe discutir este cambio con el equipo de NetApp de cada producto que posee para asegurarse de que la configuración que está usando funcionará con Identity Federation o si es necesario realizar ajustes en alguna cuenta.  El cliente también deberá involucrar a su equipo interno de SSO en el cambio a la federación de identidad.
 
 También es importante tener en cuenta que una vez habilitada la federación de identidad, cualquier cambio en el proveedor de identidad de la empresa (como pasar de SAML a Microsoft AD) probablemente requerirá resolución de problemas, cambios y atención para actualizar los perfiles de los usuarios.
 
@@ -241,42 +241,42 @@ Para este o cualquier otro problema de la federación, puede abrir un ticket de 
 
 
 
-=== Aprovisionamiento automático del usuario de inicio de sesión único (SSO)
+=== Aprovisionamiento automático de usuarios de inicio de sesión único (SSO)
 
-Además de invitar a los usuarios, los administradores pueden habilitar el acceso de aprovisionamiento automático de usuario de inicio de sesión único (SSO)* a Data Infrastructure Insights para todos los usuarios de su dominio corporativo, sin tener que invitarlos individualmente. Con SSO habilitado, cualquier usuario con la misma dirección de correo electrónico de dominio puede iniciar sesión en Data Infrastructure Insights con sus credenciales corporativas.
+Además de invitar a los usuarios, los administradores pueden habilitar el acceso de *aprovisionamiento automático de usuarios de inicio de sesión único (SSO)* a Data Infrastructure Insights para todos los usuarios de su dominio corporativo, sin tener que invitarlos individualmente.  Con SSO habilitado, cualquier usuario con la misma dirección de correo electrónico del dominio puede iniciar sesión en Data Infrastructure Insights usando sus credenciales corporativas.
 
 
-NOTE: _El aprovisionamiento automático de usuarios SSO_ está disponible en Data Infrastructure Insights Premium Edition y debe configurarse antes de poder habilitarlo para Data Infrastructure Insights.  La configuración de aprovisionamiento automático de usuarios SSO incluyelink:https://services.cloud.netapp.com/misc/federation-support["Federación de identidades"] a través de la consola de NetApp como se describe en la sección anterior.  La federación permite que los usuarios de inicio de sesión único accedan a sus cuentas de consola de NetApp utilizando credenciales de su directorio corporativo, utilizando estándares abiertos como Security Assertion Markup Language 2.0 (SAML) y OpenID Connect (OIDC).
+NOTE: _El aprovisionamiento automático de usuarios SSO_ está disponible en Data Infrastructure Insights Premium Edition y debe configurarse antes de poder habilitarlo para Data Infrastructure Insights.  La configuración de aprovisionamiento automático de usuarios SSO incluyelink:https://services.cloud.netapp.com/misc/federation-support["Federación de identidad"] a través de la NetApp Console como se describe en la sección anterior.  La federación permite que los usuarios de inicio de sesión único accedan a sus cuentas de NetApp Console utilizando credenciales de su directorio corporativo, utilizando estándares abiertos como Security Assertion Markup Language 2.0 (SAML) y OpenID Connect (OIDC).
 
 Para configurar el _Aprovisionamiento automático de usuarios SSO_, en la página *Administrador > Administración de usuarios*, primero debe haber configurado la Federación de identidad.  Seleccione el enlace *Configurar federación* en el banner para continuar con la federación de consola.  Una vez configurado esto, los administradores de Data Infrastructure Insights pueden habilitar el inicio de sesión de usuario SSO.  Cuando un administrador habilita el _Aprovisionamiento automático de usuarios SSO_, elige un rol predeterminado para todos los usuarios SSO (como Invitado o Usuario).  Los usuarios que inicien sesión a través de SSO tendrán ese rol predeterminado.
 
 image:Roles_federation_Banner.png["Gestión de usuarios con Federación"]
 
-En algunas ocasiones, un administrador querrá promocionar a un único usuario del rol SSO predeterminado (por ejemplo, para hacerlos un administrador). Pueden lograrlo en la página *Admin > User Management* haciendo clic en el menú del lado derecho del usuario y seleccionando _Assign role_. Los usuarios a los que se les asigna un rol explícito de esta forma siguen teniendo acceso a Data Infrastructure Insights, incluso si _SSO User Auto-Provisioning_ se desactiva posteriormente.
+Ocasionalmente, un administrador querrá promover a un solo usuario fuera del rol SSO predeterminado (por ejemplo, para convertirlo en administrador).  Pueden lograr esto en la página *Admin > Gestión de usuarios* haciendo clic en el menú del lado derecho del usuario y seleccionando _Asignar rol_.  Los usuarios a los que se les asigna un rol explícito de esta manera continúan teniendo acceso a Data Infrastructure Insights incluso si _SSO User Auto-Provisioning_ se deshabilita posteriormente.
 
-Si el usuario ya no necesita el rol elevado, puede hacer clic en el menú para _Remove User_. El usuario se eliminará de la lista. Si _SSO User Auto-Provisioning_ está activado, el usuario puede continuar iniciando sesión en Data Infrastructure Insights a través de SSO, con el rol predeterminado.
+Si el usuario ya no necesita el rol elevado, puede hacer clic en el menú para _Eliminar usuario_.  El usuario será eliminado de la lista.  Si _Aprovisionamiento automático de usuarios SSO_ está habilitado, el usuario puede continuar iniciando sesión en Data Infrastructure Insights a través de SSO, con el rol predeterminado.
 
-Puede ocultar a los usuarios SSO desactivando la casilla de verificación *Mostrar usuarios SSO*.
+Puede elegir ocultar los usuarios de SSO desmarcando la casilla de verificación *Mostrar usuarios de SSO*.
 
-Sin embargo, no active _SSO User Auto-Provisioning_ si alguno de estos casos es cierto:
+Sin embargo, no habilite el _Aprovisionamiento automático de usuarios SSO_ si alguna de estas situaciones es verdadera:
 
-* Su organización tiene más de un inquilino de Información sobre infraestructura de datos
-* Su organización no desea que ningún usuario del dominio federado tenga algún nivel de acceso automático al inquilino de Data Infrastructure Insights. _En este momento, no tenemos la capacidad de usar grupos para controlar el acceso a funciones con esta opción_.
-
-
+* Su organización tiene más de un inquilino de Data Infrastructure Insights
+* Su organización no desea que todos los usuarios del dominio federado tengan algún nivel de acceso automático al inquilino de Data Infrastructure Insights .  _En este momento, no tenemos la capacidad de usar grupos para controlar el acceso a los roles con esta opción_.
 
 
-== Restricción del acceso por dominio
 
-Data Infrastructure Insights puede restringir el acceso de los usuarios solo a los dominios que especifique. En la página *Admin > User Management*, selecciona “Restringir dominios”.
 
-image:Restrict_Domains_Modal.png["Restringir dominios a solo dominios predeterminados, valores por defecto más dominios adicionales que especifique o sin restricciones"]
+== Restringir el acceso por dominio
 
-Se le presentan las siguientes opciones:
+Data Infrastructure Insights puede restringir el acceso de los usuarios únicamente a los dominios que usted especifique.  En la página *Admin > Administración de usuarios*, seleccione "Restringir dominios".
 
-* Sin restricciones: Data Infrastructure Insights permanece accesible para los usuarios independientemente de su dominio.
-* Limitar el acceso a los dominios predeterminados: Los dominios predeterminados son los que utilizan los propietarios de las cuentas del entorno de Data Infrastructure Insights. Estos dominios son siempre accesibles.
-* Limite el acceso a los valores por defecto más los dominios que especifique. Enumere los dominios que desee tener acceso a su entorno de información de infraestructura de datos, además de los dominios predeterminados.
+image:Restrict_Domains_Modal.png["Restringir dominios solo a dominios predeterminados, dominios predeterminados más dominios adicionales que especifique, o sin restricciones"]
+
+Se le presentan estas opciones:
+
+* Sin restricciones: Data Infrastructure Insights sigue siendo accesible para los usuarios independientemente de su dominio.
+* Limitar el acceso a los dominios predeterminados: los dominios predeterminados son aquellos que utilizan los propietarios de cuentas de su entorno de Data Infrastructure Insights .  Estos dominios están siempre accesibles.
+* Limite el acceso a los valores predeterminados y a los dominios que especifique.  Enumere todos los dominios que desea que tengan acceso a su entorno de Data Infrastructure Insights , además de los dominios predeterminados.
 
 
 image:Restrict_Domains_Tooltip.png["Información sobre herramientas de restricción de dominios"]

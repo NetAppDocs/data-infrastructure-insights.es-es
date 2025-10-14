@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_cohesity_smartfiles.html 
 keywords: data collector, cohesity 
-summary: Configuración del recopilador de datos de Cohesity SmartFiles. 
+summary: Configuración del recopilador de datos Cohesity SmartFiles. 
 ---
-= Recopilador de datos de Cohesity SmartFiles
+= Recopilador de datos Cohesity SmartFiles
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este recopilador basado en API de REST adquirirá un clúster de Cohesity, que detectará las «vistas» (como volúmenes internos de información de infraestructura de datos) y los distintos nodos, además de recopilar métricas de rendimiento.
+Este recopilador basado en API REST adquirirá un clúster Cohesity, descubriendo las “Vistas” (como volúmenes internos de Data Infrastructure Insights ), los distintos nodos y recopilando métricas de rendimiento.
 
 
 
@@ -21,13 +21,13 @@ Este recopilador basado en API de REST adquirirá un clúster de Cohesity, que d
 | Campo | Descripción 
 
 
-| Cluster IP de Cohesity | La dirección IP del clúster de Cohesity 
+| IP del Clúster de Cohesión | Dirección IP del clúster Cohesity 
 
 
-| Nombre de usuario | Nombre de usuario del clúster de Cohesity 
+| Nombre de usuario | Nombre de usuario para el clúster Cohesity 
 
 
-| Contraseña | Se utilizó la contraseña para el clúster de Cohesity 
+| Password | Contraseña utilizada para el clúster Cohesity 
 |===
 
 
@@ -38,16 +38,16 @@ Este recopilador basado en API de REST adquirirá un clúster de Cohesity, que d
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto utilizado para la comunicación TCP con el clúster de Cohesity 
+| Puerto TCP | Puerto utilizado para la comunicación TCP con el clúster Cohesity 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (mín.) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 900 segundos. 
+| Intervalo de encuesta de rendimiento (min) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 900 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

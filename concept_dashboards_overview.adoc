@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboards_overview.html 
-summary: Descripción general de las consolas de Data Infrastructure Insights. 
+summary: Descripción general de los paneles de control en Data Infrastructure Insights. 
 keywords: dashboard, widget, custom, view, data 
 ---
-= Información general sobre consolas
+= Descripción general de los paneles
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,18 +14,18 @@ keywords: dashboard, widget, custom, view, data
 
 
 [role="lead"]
-Data Infrastructure Insights proporciona a los usuarios la flexibilidad para crear vistas operativas de los datos de la infraestructura, al permitirle crear paneles personalizados con una variedad de widgets, cada uno de los cuales proporciona una amplia flexibilidad para mostrar y registrar los datos.
+Data Infrastructure Insights brinda a los usuarios la flexibilidad de crear vistas operativas de datos de infraestructura, permitiéndole crear paneles personalizados con una variedad de widgets, cada uno de los cuales proporciona una amplia flexibilidad para mostrar y graficar sus datos.
 
 
-IMPORTANT: Los ejemplos de estas secciones son sólo para fines de explicación y no cubren todos los escenarios posibles. Los conceptos y pasos aquí indicados pueden utilizarse para crear sus propios paneles de control con el fin de resaltar los datos específicos de sus necesidades particulares.
+IMPORTANT: Los ejemplos en estas secciones son sólo para fines explicativos y no cubren todos los escenarios posibles.  Los conceptos y pasos aquí presentados se pueden utilizar para crear sus propios paneles de control para resaltar los datos específicos para sus necesidades particulares.
 
 
 
-== Crear una consola
+== Creación de un panel de control
 
-Cree un nuevo panel en uno de estos dos lugares:
+Puedes crear un nuevo panel en uno de dos lugares:
 
-* *Paneles > [+Nuevo panel]*
+* *Paneles de control > [+Nuevo panel de control]*
 * *Paneles > Mostrar todos los paneles >* haga clic en el botón *[+Panel]*
 
 
@@ -37,20 +37,20 @@ link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8[
 
 
 
-== Controles del tablero de a bordo
+== Controles del tablero
 
-La pantalla del panel tiene varios controles:
+La pantalla del Tablero tiene varios controles:
 
-* *Selector de tiempo*: Permite ver los datos del panel de control durante un intervalo de tiempo desde los últimos 15 minutos hasta los últimos 30 días, o un intervalo de tiempo personalizado de hasta 31 días. Puede optar por reemplazar este intervalo de tiempo global en widgets individuales.
-* *Botón Guardar*: Permite guardar o eliminar el panel de control.
+* *Selector de tiempo*: le permite ver los datos del panel durante un rango de tiempo desde los últimos 15 minutos hasta los últimos 30 días, o un rango de tiempo personalizado de hasta 31 días.  Puede optar por anular este rango de tiempo global en widgets individuales.
+* Botón *Guardar*: Le permite guardar o eliminar el tablero.
 +
-Puede cambiar el nombre del panel actual haciendo clic en *Renombrar* en el menú Guardar.
+Puede cambiar el nombre del panel actual haciendo clic en *Cambiar nombre* en el menú Guardar.
 
-* *+ Agregar widget* botón, que le permite agregar cualquier número de tablas, gráficos u otros widgets al tablero de instrumentos.
+* Botón *+ Agregar widget*, que le permite agregar cualquier cantidad de tablas, gráficos u otros widgets al panel.
 +
-Los widgets se pueden cambiar de tamaño y reubicarse en diferentes posiciones dentro del panel de control, para proporcionarle la mejor vista de sus datos según sus necesidades actuales.
+Los widgets se pueden redimensionar y reubicar en diferentes posiciones dentro del tablero, para brindarle la mejor vista de sus datos según sus necesidades actuales.
 
-* Botón *+ Agregar variable*, que le permite utilizar variables para filtrar activamente los datos del panel de control.
+* Botón *+ Agregar variable*, que le permite utilizar variables para filtrar activamente los datos del tablero.
 
 
 
@@ -59,58 +59,58 @@ Los widgets se pueden cambiar de tamaño y reubicarse en diferentes posiciones d
 
 Puede elegir entre los siguientes tipos de widgets:
 
-* *Widget de tabla*: Tabla que muestra datos según filtros y columnas que elija. Los datos de la tabla se pueden combinar en grupos que se pueden contraer y expandir.
+* *Widget de tabla*: una tabla que muestra datos según los filtros y columnas que elijas.  Los datos de la tabla se pueden combinar en grupos que se pueden contraer y expandir.
 +
 image:TableWidgetPerformanceData.png["Widget de tabla"]
 
-* *Cartas de línea, spline, área, área apilada*: Son widgets de gráficos de serie temporal en los que puede visualizar el rendimiento y otros datos a lo largo del tiempo.
+* *Gráficos de líneas, splines, áreas y áreas apiladas*: son widgets de gráficos de series de tiempo en los que puede mostrar el rendimiento y otros datos a lo largo del tiempo.
 +
-image:Time-SeriesCharts.png["Área, área apilada, línea, gráficos de spline"]
+image:Time-SeriesCharts.png["Gráficos de área, área apilada, línea y spline"]
 
-* *Widget de un único valor*: Un widget que permite mostrar un único valor que puede obtenerse directamente de un contador o calcularse utilizando una consulta o expresión. Puede definir umbrales de formato de color para mostrar si el valor está en rango esperado, de advertencia o crítico.
+* *Widget de valor único*: un widget que le permite mostrar un valor único que puede derivarse directamente de un contador o calcularse mediante una consulta o expresión.  Puede definir umbrales de formato de color para mostrar si el valor está en el rango esperado, de advertencia o crítico.
 +
-image:Single-ValueWidgets.png["Widgets de un solo valor con y sin formato"]
+image:Single-ValueWidgets.png["Widgets de valor único con y sin formato"]
 
-* *Widget de indicador*: Muestra datos de un solo valor en un calibre tradicional (sólido) o un indicador de bala, con colores basados en valores “Advertencia” o “Críticos”link:concept_dashboard_features.html#formatting-gauge-widgets["personalizar"].
+* *Widget de indicador*: muestra datos de un solo valor en un indicador tradicional (sólido) o de viñetas, con colores basados en valores de "Advertencia" o "Críticos" que usted elija.link:concept_dashboard_features.html#formatting-gauge-widgets["personalizar"] .
 +
-image:GaugeWidgets.png["Valor único con formato, calibre tradicional, indicador tubular"]
+image:GaugeWidgets.png["Valor único con formato, calibre tradicional, calibre de viñetas"]
 
-* *Bar, gráficos de columna*: Muestra los valores N superior o inferior, por ejemplo, los 10 almacenamientos superiores por capacidad o los 5 volúmenes inferiores por IOPS.
+* *Gráficos de barras y columnas*: muestra los N valores superiores o inferiores, por ejemplo, los 10 principales almacenamientos por capacidad o los 5 últimos volúmenes por IOPS.
 +
 image:BarandColumnCharts.png["Gráficos de barras y columnas"]
 
-* * Gráfico de trazados de caja*: Un trazado del mínimo, máximo, mediano y el rango entre el cuartil inferior y superior de los datos en un solo gráfico.
+* *Gráfico de caja*: un gráfico del mínimo, máximo, mediana y el rango entre el cuartil inferior y superior de los datos en un solo gráfico.
 +
-image:BoxPlot.png["Trazado de cuadro"]
+image:BoxPlot.png["Diagrama de caja"]
 
-* *Scatter Plot Chart*: Traza datos relacionados como puntos, por ejemplo, IOPS y latencia. En este ejemplo, puede localizar rápidamente activos con un alto rendimiento y una baja tasa de IOPS.
+* *Gráfico de dispersión*: representa datos relacionados como puntos, por ejemplo, IOPS y latencia.  En este ejemplo, puede localizar rápidamente activos con alto rendimiento y bajo IOPS.
 +
-image:ScatterPlot.png["Gráfica de dispersión"]
+image:ScatterPlot.png["Diagrama de dispersión"]
 
-* * Gráfico pie*: Gráfico circular tradicional para mostrar datos como parte del total.
+* *Gráfico circular*: un gráfico circular tradicional para mostrar los datos como una parte del total.
 +
 image:PieChart.png["Gráfico circular"]
 
-* *Nota widget*: Hasta 1000 caracteres de texto libre.
+* *Widget de nota*: hasta 1000 caracteres de texto libre.
 +
-image:NoteWidget.png["Widget de nota"]
+image:NoteWidget.png["Widget de notas"]
 
-* *Gráfico de barras de tiempo*: Muestra los datos de log o métrica a lo largo del tiempo.
-
-
-image:time_bar_chart.png["ejemplo de gráfico de barras de tiempo que muestra los datos de registro, width=200"]
-
-* *Tabla de alertas*: Muestra hasta las últimas 1,000 alertas.
+* *Gráfico de barras de tiempo*: muestra datos de registro o métricas a lo largo del tiempo.
 
 
-Para obtener explicaciones más detalladas de estas y otras funciones del panel de control, link:concept_dashboard_features.html["haga clic aquí"].
+image:time_bar_chart.png["Ejemplo de gráfico de barras de tiempo que muestra datos de registro, ancho = 200"]
+
+* *Tabla de alertas*: muestra hasta las últimas 1000 alertas.
+
+
+Para obtener explicaciones más detalladas de estas y otras funciones del panel,link:concept_dashboard_features.html["haga clic aquí"] .
 
 
 
-== Configuración de un panel como página de inicio
+== Configurar un panel de control como página de inicio
 
-Puede elegir qué panel de control configurar como la *página de inicio* de su inquilino utilizando cualquiera de los siguientes métodos:
+Puede elegir qué panel establecer como *página de inicio* de su inquilino utilizando cualquiera de los siguientes métodos:
 
-* Vaya a *Paneles de Control > Mostrar todos los Paneles de Control* para mostrar la lista de Paneles de Control en su inquilino. Haga clic en el menú de opciones situado a la derecha del panel deseado y seleccione *establecer como página de inicio*.
-* Haga clic en un panel de la lista para abrir el panel. Haga clic en el menú desplegable de la esquina superior y seleccione *establecer como página de inicio*.
+* Vaya a *Paneles > Mostrar todos los paneles* para mostrar la lista de paneles de su inquilino.  Haga clic en el menú de opciones a la derecha del panel deseado y seleccione *Establecer como página de inicio*.
+* Haga clic en un panel de la lista para abrirlo.  Haga clic en el menú desplegable en la esquina superior y seleccione *Establecer como página de inicio*.
 

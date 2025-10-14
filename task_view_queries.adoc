@@ -1,24 +1,24 @@
 ---
 sidebar: sidebar 
 permalink: task_view_queries.html 
-summary: Ver consultas creadas 
+summary: Visualización de consultas que se han creado 
 keywords: query, queries, viewing 
 ---
-= Ver consultas
+= Consultas de visualización
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Puede ver sus consultas para supervisar sus activos y cambiar el modo en que sus consultas muestran los datos relacionados con sus activos.
+Puede ver sus consultas para monitorear sus activos y cambiar la forma en que sus consultas muestran los datos relacionados con sus activos.
 
 .Pasos
-. Inicie sesión en su inquilino de Data Infrastructure Insights.
-. Haga clic en *consultas* y seleccione *Mostrar todas las consultas*. Puede cambiar el modo en que se muestran las consultas realizando cualquiera de las siguientes acciones:
-. Puede introducir texto en el cuadro de filtro para buscar para mostrar consultas específicas.
-. Puede cambiar el orden de las columnas de la tabla de consultas a ascendente (flecha arriba) o descendente (flecha abajo) haciendo clic en la flecha del encabezado de la columna.
-. Para cambiar el tamaño de una columna, coloque el ratón sobre el encabezado de la columna hasta que aparezca una barra azul. Coloque el ratón sobre la barra y arrástrelo hacia la derecha o la izquierda.
-. Para mover una columna, haga clic en el encabezado de la columna y arrástrela hacia la derecha o hacia la izquierda.
+. Inicie sesión en su inquilino de Data Infrastructure Insights .
+. Haga clic en *Consultas* y seleccione *Mostrar todas las consultas*.  Puede cambiar la forma en que se muestran las consultas realizando cualquiera de las siguientes acciones:
+. Puede ingresar texto en el cuadro de filtro para buscar y mostrar consultas específicas.
+. Puede cambiar el orden de clasificación de las columnas en la tabla de consultas a ascendente (flecha hacia arriba) o descendente (flecha hacia abajo) haciendo clic en la flecha en el encabezado de la columna.
+. Para cambiar el tamaño de una columna, pase el mouse sobre el encabezado de la columna hasta que aparezca una barra azul.  Coloque el ratón sobre la barra y arrástrela hacia la derecha o hacia la izquierda.
+. Para mover una columna, haga clic en el encabezado de la columna y arrástrelo hacia la derecha o hacia la izquierda.
 
 
-Al desplazarse por los resultados de la consulta, tenga en cuenta que los resultados pueden cambiar a medida que Data Infrastructure Insights sondee automáticamente los recopiladores de datos. Esto puede resultar en que faltan algunos elementos o que algunos elementos aparezcan fuera de servicio en función de cómo se ordenen.
+Al desplazarse por los resultados de la consulta, tenga en cuenta que los resultados pueden cambiar a medida que Data Infrastructure Insights sondea automáticamente a sus recopiladores de datos.  Esto puede provocar que falten algunos elementos o que algunos elementos aparezcan fuera de orden según cómo estén ordenados.

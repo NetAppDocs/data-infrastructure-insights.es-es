@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_best_practices.html 
-summary: Mejores prácticas para sacar el máximo partido de los paneles 
+summary: Mejores prácticas para aprovechar al máximo sus paneles de control 
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
-= Mejores prácticas para Paneles y widgets
+= Mejores prácticas para paneles y widgets
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,32 +18,32 @@ Consejos y trucos para ayudarle a aprovechar al máximo las potentes funciones d
 
 
 
-== Búsqueda de la métrica derecha
+== Encontrar la métrica correcta
 
-Data Infrastructure Insights adquiere contadores y métricas con nombres que en ocasiones difieren del recopilador de datos al recopilador de datos.
+Data Infrastructure Insights adquiere contadores y métricas utilizando nombres que a veces difieren de un recopilador de datos a otro.
 
-Al buscar la métrica o el contador adecuado para el widget de panel, tenga en cuenta que la métrica que desea podría estar con un nombre diferente al que está pensando en. Aunque las listas desplegables de Data Infrastructure Insights suelen ser alfabéticas, a veces es posible que un término no aparezca en la lista donde cree que debería aparecer. Por ejemplo, los términos como "capacidad bruta" y "capacidad utilizada" no aparecen juntos en la mayoría de las listas.
+Al buscar la métrica o el contador adecuado para el widget de su panel, tenga en cuenta que la métrica que desea podría tener un nombre diferente al que está pensando.  Si bien las listas desplegables en Data Infrastructure Insights suelen ser alfabéticas, a veces un término puede no aparecer en la lista donde usted cree que debería aparecer.  Por ejemplo, términos como "capacidad bruta" y "capacidad utilizada" no aparecen juntos en la mayoría de las listas.
 
-*Mejor práctica*: Utilice la función de búsqueda en campos como Filtrar por o lugares como el selector de columnas para encontrar lo que está buscando. Por ejemplo, si busca "cap", se mostrarán todas las métricas con "capacidad" en sus nombres, independientemente de dónde ocurran en la lista. Así, puede seleccionar fácilmente las métricas que desee de esa lista más corta.
+*Mejor práctica*: utilice la función de búsqueda en campos como Filtrar por o lugares como el selector de columnas para encontrar lo que está buscando.  Por ejemplo, si busca "cap", se mostrarán todas las métricas con "capacidad" en sus nombres, sin importar dónde aparezcan en la lista.  Luego, podrá seleccionar fácilmente las métricas que desee de esa lista más corta.
 
-A continuación puede consultar algunas frases alternativas que puede intentar al buscar métricas:
+Aquí hay algunas frases alternativas que puedes probar al buscar métricas:
 
 |===
 
 
-| Cuando desee buscar: | También intente buscar: 
+| Cuando quieras encontrar: | Prueba también a buscar: 
 
 
-| CPU | Procesador 
+| UPC | Procesador 
 
 
-| Capacidad | Capacidad bruta capacidad aprovisionada capacidad aprovisionada capacidad de almacenamiento pools de almacenamiento capacidad escrita de <other asset type> 
+| Capacidad | Capacidad utilizada Capacidad bruta Capacidad aprovisionada Capacidad de pools de almacenamiento Capacidad de <otro tipo de activo> Capacidad escrita 
 
 
-| Velocidad de disco | La velocidad de disco más baja tiene el tipo de disco menos en ejecución 
+| Velocidad del disco | Velocidad de disco más baja Tipo de disco de menor rendimiento 
 
 
-| Host | Hosts de hipervisores 
+| Host | Hosts de hipervisor 
 
 
 | Hipervisor | El host es hipervisor 
@@ -52,83 +52,83 @@ A continuación puede consultar algunas frases alternativas que puede intentar a
 | Microcódigo | Firmware 
 
 
-| Nombre | Alias Hypervisor name Storage name <other asset type> name simple Resource name Fabric Alias 
+| Nombre | Alias Nombre del hipervisor Nombre del almacenamiento Nombre de <otro tipo de activo> Nombre simple Nombre del recurso Alias de Fabric 
 
 
-| Lectura/escritura | I/o parcial IOPS pendiente de escritura: Latencia de capacidad escrita de escritura: Utilización de caché de lectura: Lectura 
+| Leer / escribir | Lectura/escritura parcial Escrituras pendientes IOPS - Escritura Capacidad escrita Latencia - Lectura Utilización de caché - lectura 
 
 
 | Máquina virtual | La máquina virtual es virtual 
 |===
-Esta no es una lista completa. Estos son ejemplos solo de posibles términos de búsqueda.
+Esta no es una lista completa.  Estos son sólo ejemplos de posibles términos de búsqueda.
 
 
 
 == Encontrar los activos adecuados
 
-Los activos a los que puede hacer referencia en los filtros y búsquedas de widgets varían de un tipo de activo a otro.
+Los activos a los que puedes hacer referencia en los filtros y búsquedas de widgets varían según el tipo de activo.
 
-En los paneles y las páginas de activos, el tipo de activo alrededor del que está creando su widget determina los otros contadores de tipos de activos para los que puede filtrar o agregar una columna. Tenga en cuenta lo siguiente al crear el widget:
+En los paneles y páginas de activos, el tipo de activo en torno al cual está creando su widget determina los otros contadores de tipo de activo para los cuales puede filtrar o agregar una columna.  Tenga en cuenta lo siguiente al crear su widget:
 
 |===
 
 
-| Este tipo de activo / contador: | Se puede filtrar según estos activos: 
+| Este tipo de activo/contador: | Se puede filtrar por estos activos: 
 
 
-| Máquina virtual | VMDK 
+| Máquina virtual | Kit de herramientas de gestión de vehículos 
 
 
-| Almacén de datos | Volumen interno de máquina virtual VMDK 
+| Almacén(es) de datos | Volumen interno VMDK Volumen de máquina virtual 
 
 
 | Hipervisor | La máquina virtual es el host del hipervisor 
 
 
-| Hosts | Máquina virtual host de clúster de volúmenes internos 
+| Anfitrión(es) | Volumen interno Volumen Clúster Host Máquina virtual 
 
 
-| Estructura | Puerto 
+| Tela | Puerto 
 |===
 Esta no es una lista completa.
 
-*Mejor práctica*: Si está filtrando un tipo de activo concreto que no aparece en la lista, intente crear la consulta alrededor de un tipo de activo alternativo.
+*Mejor práctica*: Si está filtrando por un tipo de activo en particular que no aparece en la lista, intente construir su consulta en torno a un tipo de activo alternativo.
 
 
 
-== Ejemplo de gráfica de dispersión: Conocer su eje
+== Ejemplo de diagrama de dispersión: conocer su eje
 
-Al cambiar el orden de los contadores en un widget de gráfico de dispersión, los ejes en los que se muestran los datos.
+Cambiar el orden de los contadores en un widget de gráfico de dispersión cambia los ejes en los que se muestran los datos.
 
 .Acerca de esta tarea
-Este ejemplo creará un gráfico de dispersión que le permitirá ver equipos virtuales de bajo rendimiento con una alta latencia en comparación con un IOPS bajo.
+Este ejemplo creará un gráfico de dispersión que le permitirá ver las máquinas virtuales de bajo rendimiento que tienen alta latencia en comparación con IOPS bajos.
 
 .Pasos
-. Cree o abra un panel en modo de edición y añada un widget *Scatter Plot Chart*.
-. Seleccione un tipo de activo, por ejemplo, _Virtual Machine_.
-. Seleccione el primer contador que desea trazar. En este ejemplo, seleccione _Latency - total_.
+. Cree o abra un panel en modo de edición y agregue un widget *Gráfico de dispersión*.
+. Seleccione un tipo de activo, por ejemplo, _Máquina virtual_.
+. Seleccione el primer contador que desea trazar.  Para este ejemplo, seleccione _Latencia - Total_.
 +
-_Latency - total_ se registra a lo largo del eje X del gráfico.
+_Latencia - Total_ se representa gráficamente a lo largo del eje X del gráfico.
 
-. Seleccione el segundo contador que desea trazar. Para este ejemplo, seleccione _IOPS - total_.
+. Seleccione el segundo contador que desea trazar.  Para este ejemplo, seleccione _IOPS - Total_.
 +
-_IOPS - total_ se registra a lo largo del eje y del gráfico. Los equipos virtuales con mayor latencia se muestran en el lado derecho del gráfico. Sólo se muestran los 100 equipos virtuales de mayor latencia, porque el ajuste *Top by X-axis* es actual.
-
-+
-image:ScatterplotExample1.png["Ejemplo de trazado de dispersación 1"]
-
-. Ahora invierte el orden de los contadores estableciendo el primer contador en _IOPS - total_ y el segundo en _Latency - total_.
-+
-_Latency- total_ se registra ahora en el eje y del gráfico y _IOPS - total_ en el eje X. Las máquinas virtuales con una tasa mayor de IOPS ahora se muestran en el lado derecho del gráfico.
+_IOPS - Total_ se representa gráficamente a lo largo del eje Y en el gráfico.  Las máquinas virtuales con mayor latencia se muestran en el lado derecho del gráfico.  Solo se muestran las 100 máquinas virtuales con mayor latencia, porque la configuración *Superior por eje X* es la actual.
 
 +
-Tenga en cuenta que como no hemos cambiado el ajuste *Top by X-Axis*, el widget ahora muestra las 100 VM con más IOPS, ya que es lo que actualmente se traza a lo largo del eje X.
+image:ScatterplotExample1.png["Ejemplo 1 de diagrama de dispersión"]
+
+. Ahora invierta el orden de los contadores estableciendo el primer contador en _IOPS - Total_ y el segundo en _Latencia - Total_.
++
+_Latencia - Total_ ahora se representa a lo largo del eje Y en el gráfico, y _IOPS - Total_ a lo largo del eje X.  Las máquinas virtuales con mayor IOPS ahora se muestran en el lado derecho del gráfico.
 
 +
-image:ScatterplotExample2.png["Ejemplo de trazado de dispersación 2"]
+Tenga en cuenta que debido a que no hemos cambiado la configuración *Superior por eje X*, el widget ahora muestra las 100 principales máquinas virtuales con mayor IOPS, ya que esto es lo que actualmente se traza a lo largo del eje X.
+
++
+image:ScatterplotExample2.png["Ejemplo 2 de diagrama de dispersión"]
 
 
 
-Puede elegir que el gráfico muestre la parte superior N por eje X, la parte superior N por eje y, la parte inferior N por eje X o la parte inferior N por eje Y. En nuestro último ejemplo, el gráfico muestra los 100 equipos virtuales principales con un IOPS total más elevado. Si lo cambiamos a *Top by y-axis*, el gráfico volverá a mostrar los 100 equipos virtuales superiores que tienen la latencia total más alta.
+Puede elegir que el gráfico muestre los N superiores en el eje X, los N superiores en el eje Y, los N inferiores en el eje X o los N inferiores en el eje Y.  En nuestro ejemplo final, el gráfico muestra las 100 principales máquinas virtuales que tienen el mayor total de IOPS.  Si lo cambiamos a *Superior por eje Y*, el gráfico volverá a mostrar las 100 principales máquinas virtuales que tienen la latencia total más alta.
 
-Tenga en cuenta que en un gráfico de trazados de dispersión, puede hacer clic en un punto para acceder a la página de activos de ese recurso.
+Tenga en cuenta que en un gráfico de dispersión, puede hacer clic en un punto para acceder a la página de activos de ese recurso.

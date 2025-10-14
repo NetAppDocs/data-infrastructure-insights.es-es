@@ -4,7 +4,7 @@ permalink: task_config_telegraf_zookeeper.html
 keywords: telegraf, installation, install, apache, zookeeper 
 summary: Configuración del recopilador de datos de Apache Zookeeper 
 ---
-= Recopilador de datos de zookeeper
+= Recopilador de datos de Zookeeper
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,38 +16,38 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Admin > colectores de datos*, haga clic en *+colector de datos*. Elige Apache Zookeeper.
+. Desde *Admin > Recopiladores de datos*, haga clic en *+Recopilador de datos*.  Elija Apache Zookeeper.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
-image:ZookeeperDCConfigLinux.png["Configuración del zomantenimiento"]
+image:ZookeeperDCConfigLinux.png["Configuración de Zookeeper"]
 
 
 
 == Configuración
 
-Como mínimo, debe permitir los comandos del servidor de cuatro letras Zookeeper _mntr_, _srvr_ y _stat_. Puede activar estos comandos con el siguiente formato: _4lw.commands.whitelist=mntr, srvr, stat_ en el archivo _zoo.cfg_. Puede que haya otros cuatro comandos de letras que se requieran en su configuración. Consulte link:https://zookeeper.apache.org/["Zookeeper"]la documentación para obtener más información.
+Como mínimo, debe permitir los comandos de servidor de cuatro letras de Zookeeper: _mntr_, _srvr_ y _stat_.  Puede habilitar estos comandos utilizando el siguiente formato: _4lw.commands.whitelist=mntr, srvr, stat_ en el archivo _zoo.cfg_.  Es posible que haya otros comandos de cuatro letras que sean necesarios en su configuración.  Ver ellink:https://zookeeper.apache.org/["Guardián del zoológico"] documentación para obtener más información.
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Zookeeper | Servidor de espacio de nombres | Puerto de nombre de nodo IP del nodo de estado | Tamaño aproximado de datos promedio de latencia de los Ephementierros recuento máximo de descriptores de archivos latencia máxima latencia mínima número de conexiones de conexión de funcionamiento recuento de descriptores de archivos pendientes recuento de Znode de observación 
+| Guardián del zoológico | Servidor de espacio de nombres | Estado Nodo IP Nombre del nodo Puerto | Tamaño aproximado de los datos Latencia promedio Recuento de efímeros Recuento máximo de descriptores de archivos Latencia máxima Latencia mínima Número de conexiones activas Recuento de descriptores de archivos abiertos Solicitudes pendientes Recuento de vigilancia Recuento de Znode 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

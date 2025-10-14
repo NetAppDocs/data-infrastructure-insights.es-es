@@ -2,23 +2,23 @@
 sidebar: sidebar 
 permalink: task_dc_emc_xio.html 
 keywords: data collector, XtremeIO, EMC 
-summary: Configuración del recopilador de datos de XtremeIO. 
+summary: Configuración del recopilador de datos XtremeIO. 
 ---
-= Recopilador de datos de Dell EMC XtremeIO
+= Recopilador de datos Dell EMC XtremeIO
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos de EMC XtremIO adquiere los datos de inventario y rendimiento del sistema de almacenamiento XtremIO de EMC.
+El recopilador de datos EMC XtremIO adquiere datos de inventario y rendimiento del sistema de almacenamiento EMC XtremIO.
 
 
 
 == Requisitos
 
-Para configurar el recopilador de datos de EMC XtremIO (HTTP), debe tener:
+Para configurar el recopilador de datos EMC XtremIO (HTTP), debe tener:
 
-* La dirección del host de XtremIO Management Server (XMS)
+* La dirección del host del servidor de administración XtremIO (XMS)
 * Una cuenta con privilegios de administrador
 * Acceso al puerto 443 (HTTPS)
 
@@ -27,17 +27,17 @@ Para configurar el recopilador de datos de EMC XtremIO (HTTP), debe tener:
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de EMC XtremIO. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este origen de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos EMC XtremIO.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas con esta fuente de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco (SSD) | Disco 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
 | Controladora | Nodo de almacenamiento 
@@ -46,18 +46,18 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Volumen | Volumen 
 
 
-| Mapa de LUN | Asignación de volumen 
+| Mapa LUN | Mapa de volumen 
 
 
 | Iniciador FC de destino | Máscara de volumen 
 |===
-Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de esta fuente de datos.
 
 
 
 == Requisitos
 
-* La dirección IP del host de XtremIO Management Server (XMS)
+* La dirección IP del host del servidor de administración XtremIO (XMS)
 * Nombre de usuario y contraseña de administrador para XtremIO
 
 
@@ -70,13 +70,13 @@ Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no
 | Campo | Descripción 
 
 
-| Host XMS | La dirección IP o el nombre de dominio completo de XtremIO Management Server 
+| Anfitrión XMS | Dirección IP o nombre de dominio completo del servidor de administración XtremIO 
 
 
-| Nombre de usuario | Nombre de usuario del servidor de gestión de XtremIO 
+| Nombre de usuario | Nombre de usuario para el servidor de administración XtremIO 
 
 
-| Contraseña | Contraseña del servidor de gestión de XtremIO 
+| Password | Contraseña para el servidor de administración de XtremIO 
 |===
 
 
@@ -87,16 +87,16 @@ Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectar con el servidor de administración XTremIO. El valor predeterminado es 443. 
+| Puerto TCP | Puerto TCP utilizado para conectarse al servidor de administración XTremIO.  El valor predeterminado es 443. 
 
 
 | Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

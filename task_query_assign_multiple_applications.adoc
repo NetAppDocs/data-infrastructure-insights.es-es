@@ -1,35 +1,35 @@
 ---
 sidebar: sidebar 
 permalink: task_query_assign_multiple_applications.html 
-summary: Utilice una consulta para asignar varias aplicaciones o anotaciones a objetos o para eliminar varias aplicaciones o anotaciones de ellos. 
+summary: Utilice una consulta para asignar múltiples aplicaciones o anotaciones a objetos, o eliminar múltiples aplicaciones o anotaciones de ellos. 
 keywords: query, queries, application, annotation, multiple 
 ---
-= Asignar múltiples aplicaciones a o quitar varias aplicaciones de activos
+= Asignar varias aplicaciones a los activos o eliminar varias aplicaciones de ellos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Puede asignar varias link:task_create_application.html["más grandes"]aplicaciones a o eliminar varias de los activos mediante una consulta en lugar de tener que asignarlas o eliminarlas manualmente.
+Puedes asignar varioslink:task_create_application.html["aplicaciones"] o eliminar múltiples aplicaciones de los activos mediante una consulta en lugar de tener que asignarlas o eliminarlas manualmente.
 
 
-NOTE: Puede utilizar estos pasos para agregar o eliminar de link:task_defining_annotations.html["anotaciones"]la misma manera.
+NOTE: Puede utilizar estos pasos para agregar o eliminarlink:task_defining_annotations.html["anotaciones"] del mismo modo.
 
 .Antes de empezar
-Debe haber creado una consulta que busque todos los activos que desea editar.
+Ya debe haber creado una consulta que encuentre todos los activos que desea editar.
 
 .Pasos
 . Haga clic en *Explorar* y seleccione *Consultas métricas*.
 +
-Aparece la página consultas.
+Se muestra la página Consultas.
 
 . Haga clic en el nombre de la consulta que encuentra los activos.
 +
-Se muestra la lista de activos asociados a la consulta.
+Se muestra la lista de activos asociados con la consulta.
 
-. Seleccione los activos deseados en la lista o haga clic en la casilla de verificación superior para seleccionar todo.
+. Seleccione los activos deseados en la lista o haga clic en la casilla de verificación superior para seleccionar Todos.
 +
-Se muestra el menú desplegable Bulk Actions.
+Se muestra el menú desplegable Acciones masivas.
 
 . Para agregar una aplicación a los activos seleccionados, haga clic en Acciones masivas y seleccione *Agregar aplicación*.
 . Seleccione una o más aplicaciones.
@@ -42,9 +42,9 @@ Puede seleccionar varias aplicaciones para hosts, volúmenes internos, qtrees y 
 . Haga clic en *Eliminar*.
 
 
-Las aplicaciones nuevas que asigne anulan las aplicaciones del activo que se derivaron de otro activo. Por ejemplo, los volúmenes heredan aplicaciones de hosts y cuando se asignan aplicaciones nuevas a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
+Cualquier aplicación nueva que asigne anulará cualquier aplicación en el activo que se haya derivado de otro activo.  Por ejemplo, los volúmenes heredan aplicaciones de los hosts y, cuando se asignan nuevas aplicaciones a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
 
-Después de hacer clic en _Save_ en una adición masiva o _Remove_ en una acción de eliminación masiva, Data Infrastructure Insights le informa de que la acción tardará algún tiempo. Puede ignorar este mensaje; la acción continuará en segundo plano.
+Después de hacer clic en _Guardar_ en una adición masiva o _Eliminar_ en una acción de eliminación masiva, Data Infrastructure Insights le informa que la acción tardará algún tiempo.  Puede ignorar este mensaje; la acción continuará en segundo plano.
 
 
-NOTE: En el caso de entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a estos activos puede llevar varios minutos. Por favor, deje que se produzca más tiempo para la herencia si tiene muchos activos relacionados.
+NOTE: Para entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a esos activos podría demorar varios minutos.  Por favor, permita más tiempo para que se produzca la herencia si tiene muchos activos relacionados.

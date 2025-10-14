@@ -1,216 +1,220 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_expert_view_section.html 
-summary: La sección Vista de experto de una página de activos es una herramienta eficaz para la solución de problemas o la supervisión. 
-keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh 
+summary: La sección Rendimiento de una página de activos es una herramienta poderosa para solucionar problemas o monitorear. 
+keywords: asset page, expert view, metrics, greedy, degraded, correlated, contributors, chart, refresh, performance 
 ---
-= Vista de experto
+= Sección de Actuación
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-La sección Vista de experto de una página de activos permite ver una muestra de rendimiento del activo base basada en cualquier número de métricas aplicables en contexto con un período de tiempo elegido en el gráfico de rendimiento y cualquier activo relacionado con él. Los datos de los gráficos se actualizan automáticamente a medida que los recopiladores de datos sondean y se adquieren datos actualizados.
+La sección Rendimiento de una página de activos o un panel deslizable le permite ver una muestra de rendimiento del activo base en función de cualquier cantidad de métricas aplicables en contexto con un período de tiempo elegido en el gráfico de rendimiento y cualquier activo relacionado con él.  Los datos de los gráficos se actualizan automáticamente a medida que los recopiladores de datos realizan una encuesta y se adquieren datos actualizados.
 
 
 
-== Uso de la sección Vista experta
+== Uso de la sección Rendimiento
 
-A continuación se muestra un ejemplo de la sección Expert View en una página de activos de almacenamiento:
+El siguiente es un ejemplo de la sección Rendimiento en una página de activos de almacenamiento:
 
-image:Expert_View_2021.png["Ejemplo de Vista de experto"]
+image:asset_page_performance_section.png["Sección de Actuación"]
 
-Puede seleccionar las métricas que desea ver en el gráfico de rendimiento durante el período de tiempo seleccionado. Haga clic en el menú desplegable _Display Metrics_ y elija una de las métricas enumeradas.
+Puede seleccionar las métricas que desea ver en el gráfico de rendimiento para el período de tiempo seleccionado.  Haga clic en el menú desplegable _Mostrar métricas_ y elija entre las métricas enumeradas.
 
-La sección *Recursos* muestra el nombre del activo base y el color que representa el activo base en el gráfico de rendimiento. Si la sección *Arriba correlacionado* no contiene un activo que desea ver en el gráfico de rendimiento, puede utilizar la casilla *Buscar activos* de la sección *Recursos adicionales* para localizar el activo y agregarlo al gráfico de rendimiento. A medida que se añaden recursos, aparecen en la sección Recursos adicionales.
+La sección *Recursos* muestra el nombre del activo base y el color que lo representa en el gráfico de rendimiento.  Si la sección *Principales correlacionados* no contiene un activo que desea ver en el gráfico de rendimiento, puede usar el cuadro *Buscar activos* en la sección *Recursos adicionales* para localizar el activo y agregarlo al gráfico de rendimiento.  A medida que agrega recursos, estos aparecen en la sección Recursos adicionales.
 
-También se muestra en la sección Resources, cuando corresponda, cualquier activo relacionado con el activo base en las siguientes categorías:
+También se muestran en la sección Recursos, cuando corresponda, todos los activos relacionados con el activo base en las siguientes categorías:
 
-* Arriba correlacionado
+* Principales correlacionados
 +
-Muestra los activos con una alta correlación (porcentaje) con una o más métricas de rendimiento al activo base.
+Muestra los activos que tienen una alta correlación (porcentaje) con una o más métricas de rendimiento del activo base.
 
 * Principales colaboradores
 +
 Muestra los activos que contribuyen (porcentaje) al activo base.
 
-* Contensiones de cargas de trabajo
+* Contenciones de carga de trabajo
 +
-Muestra los activos que afectan o afectan a otros recursos compartidos, como hosts, redes y almacenamiento. A veces se les llama recursos _codiciosos_ y _degradados_.
+Muestra los activos que impactan o se ven impactados por otros recursos compartidos, como hosts, redes y almacenamiento.  A veces estos recursos se denominan _codiciosos_ y _degradados_.
 
 
 
 
 
-== Alertas en la vista Expert
+== Alertas en la sección de Rendimiento
 
-Las alertas también se muestran en la sección Vista de experto de una página de destino de activos, que muestra la hora y la duración de la alerta, así como la condición de monitor que la ha activado.
+Las alertas también se muestran en la sección Rendimiento de una página de destino de un activo, mostrando la hora y la duración de la alerta, así como la condición del monitor que la activó.  Pase el cursor sobre un indicador de alerta para ver detalles sobre la alerta.
 
-image:Alerts_In_Expert_View.png["Alertas en la vista Expert"]
+image:asset_page_alert_section.png["Alertas en la sección de rendimiento"]
 
 
 
-== Definiciones de métricas de Expert View
+== Definiciones de métricas de rendimiento
 
-La sección Vista de experto de una página de activos muestra varias métricas en función del período de tiempo seleccionado para el activo. Cada métrica se muestra en su propio gráfico de rendimiento. Puede agregar o quitar métricas y activos relacionados de los gráficos en función de los datos que desee ver. Las métricas que puede elegir varían en función del tipo de activo.
+La sección Rendimiento de una página de activo muestra varias métricas según el período de tiempo seleccionado para el activo.  Cada métrica se muestra en su propio gráfico de rendimiento.  Puede agregar o eliminar métricas y activos relacionados de los gráficos según los datos que desee ver.  Las métricas que puede elegir variarán según el tipo de activo.
 
 |===
 
 
-| *Sistema métrico* | *Descripción* 
+| *Métrico* | *Descripción* 
 
 
-| BB Credit Zero Rx, Tx | Número de veces que el recuento de créditos de búfer a búfer de recepción/transmisión pasó a cero durante el período de muestreo. Esta métrica representa el número de veces que el puerto conectado tuvo que dejar de transmitir porque este puerto estaba fuera de créditos para proporcionar. 
+| Crédito BB cero Rx, Tx | Número de veces que el recuento de créditos de búfer a búfer de recepción/transmisión pasó a cero durante el período de muestreo.  Esta métrica representa la cantidad de veces que el puerto adjunto tuvo que dejar de transmitir porque no tenía créditos para proporcionar. 
 
 
-| BB duración cero de crédito Tx | Tiempo en milisegundos durante el cual el crédito de transmisión BB fue cero durante el intervalo de muestreo. 
+| Crédito BB duración cero Tx | Tiempo en milisegundos durante el cual el crédito BB de transmisión fue cero durante el intervalo de muestreo. 
 
 
-| Proporción de aciertos de caché (total, lectura, escritura) % | Porcentaje de solicitudes que provocan aciertos en caché. Cuanto mayor sea el número de aciertos en comparación con el acceso al volumen, mejor será el rendimiento. Esta columna está vacía para las cabinas de almacenamiento que no recopilan información de acierto en caché. 
+| Tasa de aciertos de caché (total, lectura, escritura) % | Porcentaje de solicitudes que resultan en aciertos de caché.  Cuanto mayor sea el número de visitas en relación con los accesos al volumen, mejor será el rendimiento.  Esta columna está vacía para las matrices de almacenamiento que no recopilan información de aciertos de caché. 
 
 
-| Uso de caché (total) % | Porcentaje total de solicitudes de caché que producen aciertos en caché 
+| Utilización de caché (Total) % | Porcentaje total de solicitudes de caché que resultan en aciertos de caché 
 
 
-| Clase 3 descarta | Recuento de descartes de transporte de datos de clase 3 de Fibre Channel. 
+| Descartes de clase 3 | Recuento de descartes de transporte de datos de clase 3 de canal de fibra. 
 
 
-| % De uso de CPU (total) | Cantidad de recursos de CPU utilizados activamente, como porcentaje del total disponible (en todas las CPU virtuales). 
+| Utilización de CPU (Total) % | Cantidad de recursos de CPU utilizados activamente, como porcentaje del total disponible (sobre todas las CPU virtuales). 
 
 
-| Error de CRC | Número de tramas con comprobaciones de redundancia cíclicas no válidas (CRCs) detectadas por el puerto durante el período de muestreo 
+| Error de CRC | Número de tramas con comprobaciones de redundancia cíclica (CRC) no válidas detectadas por el puerto durante el período de muestreo 
 
 
-| Velocidad de fotogramas | Velocidad de transmisión de fotogramas por segundo (FPS) 
+| Velocidad de cuadros | Velocidad de transmisión de cuadros en fotogramas por segundo (FPS) 
 
 
-| Promedio de tamaño de cuadro (Rx, Tx) | Relación entre el tráfico y el tamaño del fotograma. Esta métrica le permite identificar si hay alguna estructura general. 
+| Tamaño de cuadro promedio (Rx, Tx) | Relación entre el tráfico y el tamaño del marco.  Esta métrica le permite identificar si hay marcos superiores en la tela. 
 
 
-| Tamaño del marco demasiado largo | El número de tramas de transmisión de datos de Fibre Channel es demasiado largo. 
+| El tamaño del marco es demasiado largo | Recuento de tramas de transmisión de datos de canal de fibra que son demasiado largas. 
 
 
-| Tamaño del marco demasiado corto | El número de tramas de transmisión de datos de Fibre Channel es demasiado corto. 
+| El tamaño del marco es demasiado corto | Recuento de tramas de transmisión de datos de canal de fibra que son demasiado cortas. 
 
 
-| Densidad de I/o (total, lectura, escritura) | Número de IOPS dividido por la capacidad usada (tal como se adquirió de la encuesta de inventario más reciente del origen de datos) para el volumen, el volumen interno o el elemento de almacenamiento. Medida en el número de operaciones de I/o por segundo por TB. 
+| Densidad de E/S (total, lectura, escritura) | Número de IOPS dividido por la capacidad utilizada (según lo obtenido a partir de la encuesta de inventario más reciente de la fuente de datos) para el elemento Volumen, Volumen interno o Almacenamiento.  Medido en número de operaciones de E/S por segundo por TB. 
 
 
-| IOPS (total, lectura, escritura) | Número de solicitudes de servicio de I/o de lectura/escritura que pasan por el canal de I/o o o una parte de ese canal por unidad de tiempo (medidas en I/o por segundo) 
+| IOPS (total, lectura, escritura) | Número de solicitudes de servicio de E/S de lectura/escritura que pasan a través del canal de E/S o una parte de ese canal por unidad de tiempo (medido en E/S por segundo) 
 
 
-| Rendimiento de IP (total, lectura, escritura) | Total: Velocidad agregada a la que se transmitieron y recibieron datos IP en megabytes por segundo. 
+| Rendimiento de IP (total, lectura, escritura) | Total: velocidad agregada a la que se transmitieron y recibieron datos IP en megabytes por segundo. 
 
 
-| Lectura: Rendimiento de IP (recepción): | Tasa media a la que se recibieron los datos de IP en megabytes por segundo. 
+| Lectura: Rendimiento de IP (Recepción): | Velocidad promedio a la que se recibieron datos IP en megabytes por segundo. 
 
 
-| Escritura: Rendimiento de IP (transmisión): | Velocidad media a la que se transmitieron los datos de IP en megabytes por segundo. 
+| Escritura: Rendimiento de IP (transmisión): | Velocidad promedio a la que se transmitieron datos IP en megabytes por segundo. 
 
 
-| Latencia (total, lectura, escritura) | Latencia (I+W): Tasa a la que se leen o se escriben los datos en las máquinas virtuales en un tiempo fijo. El valor se mide en megabytes por segundo. 
+| Latencia (total, lectura, escritura) | Latencia (R&W): velocidad a la que se leen o escriben datos en las máquinas virtuales en un período de tiempo fijo.  El valor se mide en megabytes por segundo. 
 
 
-| Latencia: | Tiempo de respuesta medio de las máquinas virtuales de un almacén de datos. 
+| Estado latente: | Tiempo de respuesta promedio de las máquinas virtuales en un almacén de datos. 
 
 
-| Latencia superior: | El tiempo de respuesta más alto de las máquinas virtuales de un almacén de datos. 
+| Latencia máxima: | El tiempo de respuesta más alto de las máquinas virtuales en un almacén de datos. 
 
 
-| Error de enlace | Número de fallos de enlace detectados por el puerto durante el período de muestreo. 
+| Fallo de enlace | Número de fallas de enlace detectadas por el puerto durante el período de muestreo. 
 
 
-| Restablecer Rx, Tx | El número de enlaces de recepción o transmisión se restablece durante el período de muestreo. Esta métrica representa el número de restablecimientos de enlace que emitió el puerto conectado a este puerto. 
+| Restablecimiento de enlace Rx, Tx | Número de restablecimientos de enlaces de recepción o transmisión durante el período de muestreo.  Esta métrica representa la cantidad de restablecimientos de enlace que emitió el puerto conectado a este puerto. 
 
 
-| Uso de memoria (total) % | Umbral de la memoria utilizada por el host. 
+| Utilización de memoria (Total) % | Umbral de la memoria utilizada por el host. 
 
 
-| R/W parcial (total) % | Número total de veces que una operación de lectura/escritura cruza un límite de franja en cualquier módulo de disco en una LUN RAID 5, RAID 1/0 o RAID 0 en general, los pasos de franja no son beneficiosos, ya que cada uno requiere un I/o adicional Un porcentaje bajo indica un tamaño de elemento de franja eficiente y es un indicador de alineación incorrecta de un volumen (o un LUN de NetApp). Para CLARiiON, este valor es el número de cruces de franja dividido por el número total de IOPS. 
+| % R/W parcial (total) | Número total de veces que una operación de lectura/escritura cruza un límite de franja en cualquier módulo de disco en un LUN RAID 5, RAID 1/0 o RAID 0. Generalmente, los cruces de franjas no son beneficiosos, porque cada uno requiere una E/S adicional.  Un porcentaje bajo indica un tamaño de elemento de franja eficiente y es una indicación de una alineación incorrecta de un volumen (o un LUN de NetApp ).  Para CLARiiON, este valor es el número de cruces de franjas dividido por el número total de IOPS. 
 
 
-| Errores de puerto | Informe de errores de puerto durante el período de muestreo/período de tiempo dado. 
+| Errores de puerto | Informe de errores de puerto durante el período de muestreo/período de tiempo determinado. 
 
 
-| Recuento de pérdidas de señal | Número de errores de pérdida de señal. Si se produce un error de pérdida de señal, no hay conexión eléctrica y existe un problema físico. 
+| Recuento de pérdida de señal | Número de errores de pérdida de señal.  Si ocurre un error de pérdida de señal, no hay conexión eléctrica y existe un problema físico. 
 
 
-| Tasa de intercambio (tasa total, tasa en tasa, tasa de salida) | Velocidad a la que se cambia la memoria, hacia fuera o ambos desde el disco a la memoria activa durante el período de muestreo. Este contador se aplica a las máquinas virtuales. 
+| Tasa de swap (tasa total, tasa de entrada, tasa de salida) | Velocidad a la que se intercambia la memoria hacia adentro, hacia afuera, o ambas, desde el disco a la memoria activa durante el período de muestreo.  Este contador se aplica a máquinas virtuales. 
 
 
-| Número de pérdidas de sincronización | Cantidad de errores de pérdida de sincronización. Si se produce un error de pérdida de sincronización, el hardware no puede detectar el tráfico ni bloquearlo. Es posible que todos los equipos no utilicen la misma velocidad de datos, o que la óptica o las conexiones físicas puedan ser de mala calidad. El puerto debe resincronizar después de cada uno de estos errores, lo que afecta al rendimiento del sistema. Se mide en KB/s. 
+| Recuento de pérdida de sincronización | Número de errores de pérdida de sincronización.  Si se produce un error de pérdida de sincronización, el hardware no puede comprender el tráfico ni conectarse a él.  Es posible que no todos los equipos utilicen la misma velocidad de datos o que las conexiones ópticas o físicas sean de mala calidad.  El puerto debe resincronizarse después de cada error de este tipo, lo que afecta el rendimiento del sistema.  Medido en KB/seg. 
 
 
-| Rendimiento (total, lectura, escritura) | Velocidad a la que se transmiten, reciben o ambos datos en un tiempo fijo en respuesta a las solicitudes de servicio de I/o (medidas en MB por segundo). 
+| Rendimiento (total, lectura, escritura) | Velocidad a la que se transmiten, reciben o ambas cosas los datos en un período de tiempo fijo en respuesta a solicitudes de servicio de E/S (medido en MB por segundo). 
 
 
-| Tiempo de espera descartar tramas - Tx | Recuento de tramas de transmisión descartadas causadas por el tiempo de espera. 
+| Descarte de fotogramas por tiempo de espera - Tx | Recuento de tramas de transmisión descartadas debido al tiempo de espera. 
 
 
-| Velocidad de tráfico (total, lectura, escritura) | Tráfico transmitido, recibido o ambos recibidos durante el período de muestreo, en mebibytes por segundo. 
+| Tasa de tráfico (Total, Lectura, Escritura) | Tráfico transmitido, recibido o ambos recibidos durante el período de muestreo, en mebibytes por segundo. 
 
 
-| Utilización del tráfico (total, lectura, escritura) | Relación entre el tráfico recibido/transmitido/total y la capacidad de recepción/transmisión/total durante el período de muestreo. 
+| Utilización del tráfico (total, lectura, escritura) | Relación entre el tráfico recibido/transmitido/total y la capacidad de recepción/transmisión/total, durante el período de muestreo. 
 
 
-| Porcentaje de utilización (total, lectura, escritura | Porcentaje del ancho de banda disponible utilizado para la transmisión (Tx) y la recepción (Rx). 
+| Utilización (total, lectura, escritura) % | Porcentaje de ancho de banda disponible utilizado para transmisión (Tx) y recepción (Rx). 
 
 
-| Escritura pendiente (total) | Número de solicitudes de servicio I/o de escritura pendientes. 
+| Escritura pendiente (Total) | Número de solicitudes de servicio de E/S de escritura que están pendientes. 
 |===
 
 
-== Uso de la sección Vista experta
+== Uso de la sección Rendimiento
 
-La sección Vista de experto le permite ver gráficos de rendimiento de un activo basados en cualquier número de métricas aplicables durante un período de tiempo elegido y agregar activos relacionados para comparar y contrastar el rendimiento de activos y activos relacionados durante diferentes períodos de tiempo.
+La sección Rendimiento le permite ver gráficos de rendimiento de un activo en función de cualquier cantidad de métricas aplicables durante un período de tiempo elegido, y agregar activos relacionados para comparar y contrastar el rendimiento de los activos y los activos relacionados durante diferentes períodos de tiempo.
 
 .Pasos
-. Localice una página de activos realizando una de las siguientes acciones:
+. Localice una página de activos realizando cualquiera de las siguientes acciones:
 +
 ** Busque y seleccione un activo específico.
-** Seleccione un activo en el widget de consola.
-** Consulte un conjunto de activos y seleccione uno en la lista de resultados.
+** Seleccione un activo desde un widget del panel.
+** Consulta un conjunto de activos y selecciona uno de la lista de resultados.
 +
-Aparece la página Asset. De forma predeterminada, el gráfico de rendimiento muestra dos métricas para el período de tiempo seleccionado para la página del activo. Por ejemplo, para un almacenamiento, el gráfico de rendimiento muestra la latencia y el total de IOPS de forma predeterminada. La sección Resources muestra el nombre del recurso y una sección de recursos adicionales, que le permiten buscar activos. Dependiendo del activo, también puede ver los activos en las secciones correlacionadas Top, contribuidor Top, avaricioso y degraded. Si no hay activos relevantes para estas secciones, no se mostrarán.
+Se muestra la página de activos.  De forma predeterminada, el gráfico de rendimiento muestra dos métricas para el período de tiempo seleccionado para la página del activo.  Por ejemplo, para un almacenamiento, el gráfico de rendimiento muestra la latencia y las IOPS totales de forma predeterminada.  La sección Recursos muestra el nombre del recurso y una sección de Recursos adicionales, que le permite buscar activos.  Dependiendo del activo, es posible que también veas activos en las secciones Más correlacionados, Más contribuyentes, Codiciosos y Degradados.  Si no hay activos relevantes para estas secciones, no se muestran.
 
 
 
-. Puede agregar un gráfico de rendimiento para una métrica haciendo clic en *Mostrar métricas* y seleccionando las métricas que desea visualizar.
+. Puede agregar un gráfico de rendimiento para una métrica haciendo clic en el ícono de engranaje de *Configuración* y seleccionando las métricas que desea que se muestren.
 +
-Se muestra un gráfico independiente para cada métrica seleccionada. El gráfico muestra los datos del período de tiempo seleccionado. Puede cambiar el período de tiempo haciendo clic en otro período de tiempo en la esquina superior derecha de la página del activo o haciendo zoom en cualquier gráfico.
+Se muestra un gráfico separado para cada métrica seleccionada.  El gráfico muestra los datos para el período de tiempo seleccionado.  Puede cambiar el período de tiempo haciendo clic en otro período de tiempo en la esquina superior derecha de la página del activo o haciendo zoom en cualquier gráfico.
 
 +
-Haga clic en *Mostrar métricas* para anular la selección de cualquier gráfico. El gráfico de rendimiento de la métrica se elimina de la vista Expert.
+Haga clic en *Configuración* para anular la selección de cualquier gráfico.  El gráfico de rendimiento de la métrica se elimina de la sección Rendimiento.
 
-. Puede colocar el cursor sobre el gráfico y cambiar los datos de métrica que se muestran para ese gráfico haciendo clic en cualquiera de los siguientes, dependiendo del activo:
+. Puede colocar el cursor sobre el gráfico y cambiar los datos métricos que se muestran para ese gráfico haciendo clic en cualquiera de las siguientes opciones, según el activo:
 +
-** Read, Write o total
-** TX, Rx o total
+** Leer, escribir o totalizar
+** Tx, Rx o Total
 +
 Total es el valor predeterminado.
 
 +
-Puede arrastrar el cursor sobre los puntos de datos del gráfico para ver cómo cambia el valor de la métrica en el período de tiempo seleccionado.
+Puede arrastrar el cursor sobre los puntos de datos en el gráfico para ver cómo cambia el valor de la métrica durante el período de tiempo seleccionado.
 
 
 
-. En la sección Resources, puede añadir cualquier activo relacionado a los gráficos de rendimiento:
+. En la sección Recursos, puede agregar cualquier activo relacionado a los gráficos de rendimiento:
 +
-** Puede seleccionar un activo relacionado en las secciones * Top correlated*, *Top Contributors*, *greedy* y *degraded* para agregar datos de ese activo al gráfico de rendimiento de cada métrica seleccionada.
+** Puede seleccionar un activo relacionado en las secciones *Principales correlacionados*, *Principales contribuyentes*, *Codicioso* y *Degradado* para agregar datos de ese activo al gráfico de rendimiento para cada métrica seleccionada.
 +
 Después de seleccionar el activo, aparece un bloque de color junto al activo para indicar el color de sus puntos de datos en el gráfico.
 
 
 
-. Haga clic en *Ocultar recursos* para ocultar el panel de recursos adicionales. Haga clic en *Recursos* para mostrar el panel.
+. Haga clic en *Ocultar recursos* para ocultar el panel de recursos adicionales.  Haga clic en *Recursos* para mostrar el panel.
 +
-** Para cualquier activo mostrado, puede hacer clic en el nombre del activo para mostrar su página de activo, o puede hacer clic en el porcentaje que el activo correlaciona o contribuye con el activo base para ver más información acerca de la relación del activo con el activo base.
+** Para cualquier activo mostrado, puede hacer clic en el nombre del activo para mostrar su página de activos, o puede hacer clic en el porcentaje en que el activo se correlaciona o contribuye con el activo base para ver más información sobre la relación del activo con el activo base.
 +
-Por ejemplo, al hacer clic en el porcentaje vinculado junto a un activo correlacionado superior se muestra un mensaje informativo que compara el tipo de correlación que tiene el activo base.
+Por ejemplo, al hacer clic en el porcentaje vinculado junto a un activo correlacionado superior, se muestra un mensaje informativo que compara el tipo de correlación que tiene ese activo con el activo base.
 
-** Si la sección correlación superior no contiene un activo que desea mostrar en un gráfico de rendimiento con fines de comparación, puede utilizar el cuadro Buscar activos de la sección Recursos adicionales para localizar otros activos.
-
-
+** Si la sección Principales correlacionados no contiene un activo que desea mostrar en un gráfico de rendimiento con fines de comparación, puede utilizar el cuadro Buscar activos en la sección Recursos adicionales para localizar otros activos.
 
 
-Después de seleccionar un activo, este se muestra en la sección de recursos adicionales. Cuando ya no desee ver información sobre el activo, haga clic en el icono de papelera para eliminarlo.
+
+
+Después de seleccionar un activo, este se muestra en la sección de recursos adicionales.  Cuando ya no desee ver información sobre el activo, haga clic en el ícono de la papelera para eliminarlo.

@@ -4,49 +4,49 @@ permalink: task_config_telegraf_node.html
 keywords: telegraf, installation, install, node, host 
 summary: Configuración del recopilador de datos de Flink 
 ---
-= Recopilación de datos de nodo
+= Recopilación de datos de nodos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights recopila métricas del nodo en el que se instala un agente.
+Data Infrastructure Insights recopila métricas del nodo en el que instala un agente.
 
 
 
 == Instalación
 
-. En *Observabilidad > Colectores*, elige un sistema operativo/plataforma. Tenga en cuenta que instalar cualquier recopilador de datos de integración (Kubernetes, Docker, Apache, etc.) también configurará la recogida de datos de nodos.
-. Siga las instrucciones para configurar el agente. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. En *Observabilidad > Recopiladores*, elija un sistema operativo/plataforma.  Tenga en cuenta que la instalación de cualquier recopilador de datos de integración (Kubernetes, Docker, Apache, etc.) también configurará la recopilación de datos del nodo.
+. Siga las instrucciones para configurar el agente.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 
 
 == Objetos y contadores
 
-Los objetos siguientes y sus contadores se recopilan como métricas Node:
+Los siguientes objetos y sus contadores se recopilan como métricas de nodo:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Sistema de archivos de nodos | Tipo de ruta de dispositivo de UUID de nodo | Nodo IP nodo Nombre nodo modo de sistema operativo nodo | Inodos libres inodos total inodos usados total usado total usado 
+| Sistema de archivos de nodo | Tipo de ruta del dispositivo UUID del nodo | IP del nodo Nombre del nodo Modo del sistema operativo del nodo | Inodos libres Inodos libres Total de inodos usados Total usado Total usado 
 
 
-| Disco de nodo | Disco UUID de nodo | Nodo IP nodo Nombre nodo SO nodo | Tiempo de I/o IOPS total en curso bytes de lectura (por segundo) tiempo de lectura total de lecturas (por segundo) tiempo de I/o ponderado total de bytes de escritura (por segundo) tiempo de escritura total de escrituras (por segundo) tiempo de I/o de lectura actual duración de la cola de disco tiempo de escritura tiempo de I/O. 
+| Disco de nodo | Disco UUID de nodo | IP del nodo Nombre del nodo Sistema operativo del nodo | Tiempo de E/S IOPS totales en curso Bytes de lectura (por segundo) Tiempo de lectura Lecturas totales (por segundo) Tiempo de E/S ponderado Bytes de escritura totales (por segundo) Tiempo de escritura Escrituras totales (por segundo) Longitud de cola de disco actual Tiempo de escritura Tiempo de lectura Tiempo de E/S 
 
 
-| CPU de nodo | CPU UUID de nodo | Nodo IP nodo Nombre nodo SO nodo | Uso de CPU del sistema uso de CPU de usuario uso de CPU inactivo procesador uso de CPU interrupción uso de CPU uso de DPC uso de CPU 
+| Nodo CPU | UUID del nodo CPU | IP del nodo Nombre del nodo Sistema operativo del nodo | Uso de CPU del sistema Uso de CPU del usuario Uso de CPU inactivo Uso de CPU del procesador Uso de CPU por interrupción Uso de CPU de DPC 
 
 
-| Nodo | UUID de nodo | Nodo IP nodo Nombre nodo SO nodo | Switches de contexto de kernel de tiempo de arranque del kernel (por segundo) interrupciones de kernel disponibles (por segundo) procesos de kernel Forked (por segundo) Memoria activa memoria total disponible memoria en búfer memoria memoria caché memoria caché memoria caché límite de confirmación memoria comprometida como memoria sucia memoria libre memoria alta memoria total alta memoria enorme tamaño de página memoria enorme memoria libre Páginas enormes memoria total memoria baja memoria total memoria baja memoria asignada total memoria tablas de páginas de memoria asignada total baja memoria Memoria compartida Slab Memory Swap memoria caché intercambio memoria en caché memoria libre intercambio memoria total memoria total utilizada memoria total memoria utilizada memoria utilizada memoria utilizada memoria Vmalloc memoria Vmalloc memoria usada memoria cableada Writeback memoria total Writeback tmp fallos memoria caché memoria demanda cero fallos memoria memoria memoria páginas memoria Memoria no paginada caché de memoria caché de núcleo memoria caché de espera memoria normal memoria en espera Reserva de memoria errores de transición de memoria procesos bloqueados procesos inactivos procesos de espera procesos en ejecución procesos de suspensión procesos detenidos procesos totales procesos procesos totales procesos procesos desconocidos procesos zombis procesador longitud de cola intercambio libre intercambio total de intercambio utilizado total Intercambio usado en intercambio sistema de tiempo de actividad sistema Num CPU System Num usuarios del sistema llamadas del sistema 
+| Node | Nodo UUID | IP del nodo Nombre del nodo Sistema operativo del nodo | Tiempo de arranque del kernel Cambios de contexto del kernel (por segundo) Entropía del kernel Interrupciones del kernel disponibles (por segundo) Procesos del kernel bifurcados (por segundo) Memoria activa Memoria disponible Memoria total disponible Memoria en búfer Memoria en caché Límite de compromiso Memoria comprometida como memoria Memoria sucia Memoria libre alta Memoria libre alta Memoria total Memoria de tamaño de página enorme Memoria Páginas enormes Memoria libre Páginas enormes total Memoria baja Memoria libre baja Memoria total Memoria asignada Tablas de páginas Memoria Memoria compartida Memoria caché de intercambio Memoria de intercambio libre Memoria total Memoria total utilizada Memoria total utilizada Memoria de fragmentos de Vmalloc Memoria total de Vmalloc Memoria utilizada de Vmalloc Memoria cableada Reescritura de memoria total Reescritura temporal Fallos de caché de memoria Demanda de memoria Cero fallos Fallos de página de memoria Páginas de memoria Memoria no paginada Memoria paginada Memoria caché de núcleo Memoria normal Memoria de reserva de caché Fallos de transición de memoria Procesos Procesos bloqueados Procesos muertos Procesos inactivos Procesos de paginación Procesos en ejecución Procesos en suspensión Procesos detenidos Total de procesos Total de subprocesos Procesos desconocidos Procesos Zombies Longitud de la cola del procesador Swap libre Swap total Swap utilizado Swap total utilizado Swap de entrada Swap de salida Tiempo de actividad del sistema N.º de sistema CPU N.º de sistema Usuarios Llamadas del sistema 
 
 
-| Red de nodos | UUID de nodo de interfaz de red | Nombre del nodo IP nodo SO del nodo | Bytes recibidos bytes enviados paquetes Outboud descartados paquetes Outboud errores recibidos paquetes descartados errores recibidos paquetes recibidos paquetes enviados 
+| Red de nodos | UUID del nodo de interfaz de red | Nombre del nodo IP del nodo SO del nodo | Bytes recibidos Bytes enviados Paquetes salientes Paquetes descartados Errores salientes Paquetes recibidos Paquetes descartados Paquetes recibidos Errores Paquetes recibidos Paquetes enviados 
 |===
 
 
 == Configuración
 
-La información de configuración y solución de problemas se puede encontrar en link:task_config_telegraf_agent.html["Configuración de un agente"]la página.
+La información de configuración y solución de problemas se puede encontrar enlink:task_config_telegraf_agent.html["Configurar un agente"] página.

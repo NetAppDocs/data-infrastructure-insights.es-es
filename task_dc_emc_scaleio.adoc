@@ -4,29 +4,29 @@ permalink: task_dc_emc_scaleio.html
 keywords: data collector, scaleIO, PowerFlex EMC, DELL 
 summary: Configuración del recopilador de datos DELL EMC ScaleIO/PowerFlex. 
 ---
-= Recopilador de datos DELL EMC ScaleIO / PowerFlex
+= Recopilador de datos DELL EMC ScaleIO/PowerFlex
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos ScaleIO/PowerFlex recopila información de inventario del almacenamiento ScaleIO y PowerFlex. Para la configuración, este recopilador de datos requiere la dirección de puerta de enlace ScaleIO/PowerFlex y un nombre de usuario y una contraseña de administrador.
+El recopilador de datos ScaleIO/PowerFlex recopila información de inventario del almacenamiento de ScaleIO y PowerFlex.  Para la configuración, este recopilador de datos requiere la dirección de puerta de enlace de ScaleIO/PowerFlex y un nombre de usuario y contraseña de administrador.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos ScaleIO/PowerFlex. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos ScaleIO/PowerFlex.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Clúster MDM (Meta Data Manager) | Reducida 
+| Clúster MDM (Administrador de metadatos) | Almacenamiento 
 
 
-| SDS (servidor de datos ScaleIO/PowerFlex) | Nodo de almacenamiento 
+| SDS (Servidor de datos ScaleIO/PowerFlex) | Nodo de almacenamiento 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
@@ -37,7 +37,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 | Dispositivo | Disco 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -62,7 +62,7 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Nombre de usuario | Nombre de usuario administrador utilizado para iniciar sesión en el dispositivo ScaleIO/PowerFlex 
 
 
-| Contraseña | Contraseña utilizada para iniciar sesión en el dispositivo ScaleIO/PowerFlex 
+| Password | Contraseña utilizada para iniciar sesión en el dispositivo ScaleIO/PowerFlex 
 |===
 
 
@@ -81,10 +81,10 @@ Haga clic en la casilla de verificación Inventario para habilitar la recopilaci
 | Intervalo de sondeo de inventario (min) | El valor predeterminado es 60. 
 
 
-| Tiempo de espera de conexión (s) | El valor predeterminado es 60. 
+| Tiempo de espera de conexión (seg.) | El valor predeterminado es 60. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

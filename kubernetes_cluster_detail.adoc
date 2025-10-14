@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: kubernetes_cluster_detail.html 
 keywords: kubernetes, pods, clusters, nodes. troubleshooting, planning 
-summary: La página de detalles Kubernetes ofrece información y detalles como ayuda en la planificación y la solución de problemas. 
+summary: La página de detalles de Kubernetes proporciona información y detalles para ayudar con la resolución de problemas y la planificación. 
 ---
 = Página de detalles del clúster de Kubernetes
 :hardbreaks:
@@ -12,63 +12,63 @@ summary: La página de detalles Kubernetes ofrece información y detalles como a
 [role="lead"]
 La página de detalles del clúster de Kubernetes muestra una descripción detallada de su clúster de Kubernetes.
 
-image:Kubernetes_Detail_Page_new.png["Página de detalles Cluster"]
+image:Kubernetes_Detail_Page_new.png["Página de detalles del clúster"]
 
 
 
-== Número de espacios de nombres, nodos y POD
+== Número de espacios de nombres, nodos y pods
 
-Los números en la parte superior de la página muestran el número total de espacios de nombres, nodos y pods en el clúster, así como el número de pods que actualmente están alertando y pendientes.
+Los recuentos en la parte superior de la página muestran la cantidad total de espacios de nombres, nodos y pods en el clúster, así como la cantidad de popds que actualmente están en alerta y pendientes.
 
 
 
 == Recursos compartidos y saturación
 
-En la parte superior derecha de la página de detalles, se encuentra la saturación del clúster como porcentaje actual y un gráfico que muestra la tendencia reciente a lo largo del tiempo. La saturación del clúster es la mayor saturación de CPU, memoria o almacenamiento en cada momento.
+En la parte superior derecha de la página de detalles se encuentra la saturación del clúster como porcentaje actual, así como un gráfico que muestra la tendencia reciente a lo largo del tiempo.  La saturación del clúster es el nivel más alto de saturación de CPU, memoria o almacenamiento en cualquier momento.
 
-A continuación, la página muestra por defecto *uso de Recursos compartidos*, con pestañas para CPU, memoria y almacenamiento. Cada pestaña muestra el porcentaje de saturación y la tendencia a lo largo del tiempo, con detalles adicionales de uso. Para el almacenamiento, el valor mostrado es el mayor de saturación de back-end y filesystem, que se calculan de forma independiente.
+Debajo de eso, la página muestra de forma predeterminada el uso de *Recursos compartidos*, con pestañas para CPU, Memoria y Almacenamiento.  Cada pestaña muestra el porcentaje de saturación y la tendencia a lo largo del tiempo, con detalles de uso adicionales.  Para el almacenamiento, el valor mostrado es el mayor entre la saturación del backend y del sistema de archivos, que se calculan de forma independiente.
 
-Los dispositivos con mayor uso se muestran en una tabla de la parte inferior. Haga clic en cualquier enlace para explorar estos dispositivos.
+Los dispositivos con mayor uso se muestran en una tabla en la parte inferior.  Haga clic en cualquier enlace para explorar estos dispositivos.
 
 
 
 == Espacios de nombres
 
-En la pestaña Namespaces, se muestra una lista de todos los espacios de nombres en el entorno Kubernetes, donde se muestra el uso de la CPU y la memoria, así como el recuento de cargas de trabajo en cada espacio de nombres. Haga clic en los vínculos de nombre para explorar cada espacio de nombres.
+La pestaña Espacios de nombres muestra una lista de todos los espacios de nombres en su entorno de Kubernetes, mostrando el uso de CPU y memoria, así como un recuento de cargas de trabajo en cada espacio de nombres.  Haga clic en los enlaces de Nombre para explorar cada espacio de nombres.
 
-image:Kubernetes_Namespace_tab_new.png["Lista de espacios de nombres actuales en el entorno K8s"]
+image:Kubernetes_Namespace_tab_new.png["lista de espacios de nombres actuales en su entorno K8s"]
 
 
 
 == Cargas de trabajo
 
-De igual modo, la pestaña cargas de trabajo muestra una lista de las cargas de trabajo de cada espacio de nombres, mostrando de nuevo el uso de la CPU y la memoria. Al hacer clic en el espacio de nombres, se vinculan los simulacros de cada uno.
+De manera similar, la pestaña Cargas de trabajo muestra una lista de las cargas de trabajo en cada espacio de nombres, mostrando nuevamente el uso de CPU y memoria.  Al hacer clic en los vínculos del espacio de nombres se accede a cada uno de ellos.
 
-image:Kubernetes_Workloads_tab_new.png["Lista de espacios de nombres actuales en el entorno K8s"]
+image:Kubernetes_Workloads_tab_new.png["lista de espacios de nombres actuales en su entorno K8s"]
 
 
 
 == La "rueda" del clúster
 
-image:Kubernetes_Wheel_Section.png["Rueda del grupo de instrumentos"]
+image:Kubernetes_Wheel_Section.png["Rueda de racimo"]
 
-La sección "rueda" de clúster proporciona el estado de nodo y cápsula de un vistazo, en el que puede obtener más información. Si su clúster contiene más nodos de los que se pueden mostrar en esta área de la página, podrá girar la rueda con los botones disponibles.
+La sección "Rueda" del clúster proporciona un vistazo del estado del nodo y del pod, que puede explorar en profundidad para obtener más información.  Si su clúster contiene más nodos de los que se pueden mostrar en esta área de la página, podrá girar la rueda utilizando los botones disponibles.
 
-Los pods o nodos de alertas se muestran en rojo. Las áreas de "advertencia" se muestran en color naranja. Las vainas no programadas (es decir, sin conectar) se mostrarán en la esquina inferior de la "rueda" del grupo de instrumentos.
+Los pods o nodos de alerta se muestran en rojo.  Las áreas de "Advertencia" se muestran en naranja.  Los pods que no estén programados (es decir, no estén adjuntos) se mostrarán en la esquina inferior de la "Rueda" del clúster.
 
-Si pasa el ratón por un pod (círculo) o Node (barra), se ampliará la vista del nodo.
+Al pasar el cursor sobre un pod (círculo) o un nodo (barra), se ampliará la vista del nodo.
 
 image:Kubernetes_Node_Expand.png["Nodo expandido"]
 
-Al hacer clic en el pod o en el nodo de esa vista se amplía a la vista nodo expandida.
+Al hacer clic en el pod o nodo en esa vista, se ampliará la vista del nodo expandida.
 
-image:Kubernetes_Critical_Pod_Zoom.png["Vista de nodos ampliada"]
+image:Kubernetes_Critical_Pod_Zoom.png["Vista de nodo expandida"]
 
-Desde aquí, puede pasar el ratón sobre un elemento para ver detalles sobre ese elemento. Por ejemplo, al pasar por el pod crucial en este ejemplo, se muestran detalles sobre ese pod.
+Desde aquí, puedes pasar el cursor sobre un elemento para mostrar detalles sobre ese elemento.  Por ejemplo, al pasar el cursor sobre el pod crítico en este ejemplo, se muestran detalles sobre ese pod.
 
-image:Kubernetes_Pod_Red.png["Información sobre el POD crítico"]
+image:Kubernetes_Pod_Red.png["Información crítica del pod"]
 
-Puede ver la información del sistema de archivos, la memoria y la CPU pasando por encima de los elementos Node.
+Puede ver información del sistema de archivos, la memoria y la CPU colocando el cursor sobre los elementos del nodo.
 
 image:Kubernetes_Capacity_Info.png["Capacidad y asignación de nodos"]
 
@@ -76,4 +76,4 @@ image:Kubernetes_Capacity_Info.png["Capacidad y asignación de nodos"]
 
 == Una nota sobre los indicadores
 
-Los indicadores de memoria y CPU muestran tres colores, ya que muestran _used_ en relación con _Allocatable Capacity_ y _total Capacity_.
+Los indicadores de memoria y CPU muestran tres colores, ya que muestran lo _usado_ en relación con la _capacidad asignable_ y la _capacidad total_.

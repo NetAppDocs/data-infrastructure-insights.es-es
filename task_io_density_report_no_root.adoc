@@ -1,50 +1,50 @@
 ---
 sidebar: sidebar 
 permalink: task_io_density_report_no_root.html 
-summary: Al consultar la densidad de I/o alta, se desean excluir volúmenes raíz. 
+summary: Al consultar una alta densidad de E/S, conviene excluir los volúmenes raíz. 
 keywords: NetApp, root volume, high I/O, 
 ---
-= Si se asegura la generación de informes de densidad de I/o, se describen solo los volúmenes de datos
+= Garantizar que los informes de densidad de E/S describan únicamente los volúmenes de datos internos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El volumen raíz de NetApp contiene directorios y archivos de configuración para gestionar el sistema de almacenamiento. Al consultar la densidad de I/o alta, desea excluir estos volúmenes raíz.
+El volumen raíz de NetApp contiene directorios y archivos de configuración para administrar el sistema de almacenamiento.  Al consultar una alta densidad de E/S, conviene excluir estos volúmenes raíz.
 
-Al supervisar su entorno, es más importante determinar qué volúmenes de datos internos producen números de densidad de I/o elevados. Para identificar exclusivamente los volúmenes de datos de forma precisa, debe aislar los volúmenes internos de NetApp de las consultas que utilice para supervisar la densidad de I/O.
+Al supervisar su entorno, es más importante determinar qué volúmenes de datos internos están produciendo números de alta densidad de E/S.  Para identificar con precisión solo los volúmenes de datos, debe aislar los volúmenes internos de NetApp de las consultas que utiliza para monitorear la densidad de E/S.
 
-En esta guía se describe cómo identificar fácilmente los agregados raíz de NetApp, aislarlos de los resultados de las consultas de volúmenes internos y crear reglas que excluyen los agregados raíz de NetApp nuevos a medida que se agregan al sistema. Las siguientes funciones de Insight se utilizan para garantizar que sus informes de densidad de I/o se obtienen de los volúmenes de datos internos:
+Esta guía describe cómo identificar fácilmente los agregados raíz de NetApp , aislarlos de los resultados de las consultas de volumen internas y crear reglas que excluyan cualquier agregado raíz de NetApp nuevo a medida que se agrega al sistema.  Las siguientes funciones de Insight se utilizan para garantizar que sus informes de densidad de E/S se deriven de volúmenes de datos internos:
 
-* Se crea una consulta para identificar todos los agregados raíz de NetApp que supervisa Insight.
-* Se asigna una anotación a cada uno de los agregados raíz de NetApp.
-* Se crea una regla de anotación para aplicar la anotación a los nuevos agregados raíz de NetApp.
-
-
-Los pasos de esta guía también se pueden aplicar a sistemas de almacenamiento de otro proveedor. Deberá identificar los volúmenes que contienen directorios y archivos de configuración para gestionar el sistema de almacenamiento y seguir pasos similares para excluir estos volúmenes.
+* Se crea una consulta para identificar todos los agregados raíz de NetApp que monitorea Insight.
+* Se asigna una anotación a cada uno de los agregados raíz de NetApp .
+* Se crea una regla de anotación para aplicar la anotación a los nuevos agregados raíz de NetApp .
 
 
+Los pasos de esta guía también se pueden aplicar a los sistemas de almacenamiento de otros proveedores.  Necesitará identificar los volúmenes que contienen directorios y archivos de configuración para administrar el sistema de almacenamiento y utilizar pasos similares para excluir estos volúmenes.
 
-== Creación de una consulta para identificar los agregados raíz de NetApp
 
-Las consultas proporcionan una búsqueda a nivel granular basada en criterios seleccionados por el usuario. El uso de una consulta le permite buscar volúmenes internos en su inquilino que contienen el agregado raíz de NetApp.
+
+== Creación de una consulta para identificar agregados raíz de NetApp
+
+Las consultas proporcionan búsqueda a un nivel granular, según criterios seleccionados por el usuario.  El uso de una consulta le permite buscar volúmenes internos en su inquilino que contengan el agregado raíz de NetApp .
 
 .Pasos
-. Crea una consulta para identificar los agregados raíz de NetApp en tu inquilino: Haz clic en *Consultas > Nueva consulta > Seleccionar tipo de recurso* (?)
+. Cree una consulta para identificar agregados raíz de NetApp en su inquilino: haga clic en *Consultas > Nueva consulta > Seleccionar tipo de recurso* (?)
 . Haga clic en *Grupo de almacenamiento*
-. Escriba el nombre del agregado raíz
+. Introduzca el nombre para el agregado raíz
 +
-En este ejemplo se utiliza "aggr0" para el nombre. Al crear un agregado, solo deben seguirse los siguientes requisitos para el nombre:
+Este ejemplo utiliza "aggr0" para el nombre.  Al crear un agregado, solo se deben cumplir los siguientes requisitos para el nombre:
 
 +
 .. Debe comenzar con una letra o un guión bajo (_).
-.. Puede contener solo letras, dígitos y guiones bajos.
-.. Puede tener 250 caracteres o menos. En la mayoría de los casos, el agregado es el nombre aggr0, aggr_0 o algo similar. Puede requerir un proceso iterativo para identificar todos los agregados raíz de NetApp en su inquilino.
+.. Sólo puede contener letras, dígitos y guiones bajos.
+.. Puede tener 250 caracteres o menos.  En la mayoría de los casos, el agregado se llama aggr0, aggr_0 o algo similar.  Es posible que se requiera un proceso iterativo para identificar todos los agregados raíz de NetApp en su inquilino.
 
 
-. Haga clic en *Guardar* e introduzca un nombre para la nueva consulta.
+. Haga clic en *Guardar* e ingrese un nombre para la nueva consulta.
 +
-Tal como se ha mencionado anteriormente, puede ser un proceso iterativo y requiere múltiples consultas para identificar todos los agregados raíz de NetApp.
+Como se mencionó anteriormente, este podría ser un proceso iterativo y requerir múltiples consultas para identificar todos los agregados raíz de NetApp .
 
 
 
@@ -52,18 +52,18 @@ Tal como se ha mencionado anteriormente, puede ser un proceso iterativo y requie
 
 == Cree una anotación para los volúmenes raíz devueltos por sus consultas
 
-Las anotaciones son notas especializadas que asigna a sus activos, lo que le permite filtrar los activos por sus anotaciones. La anotación que cree se utilizará para identificar los agregados raíz de NetApp en su cliente y asegurarse de que no se incluyan en un informe concreto.
+Las anotaciones son notas especializadas que usted asigna a sus activos, lo que le permite filtrarlos por sus anotaciones.  La anotación que cree se utilizará para identificar los agregados raíz de NetApp en su inquilino y garantizar que no se incluyan en un informe específico.
 
 .Antes de empezar
 Debe haber identificado todos los agregados raíz que desea excluir del informe "Alta densidad de E/S".
 
 .Pasos
-. En el menú Información de la infraestructura de datos, haga clic en *Administrar > Anotaciones*
+. En el menú Data Infrastructure Insights , haga clic en *Administrar > Anotaciones*
 . Haga clic en *Agregar*
 +
 .. Introduzca el nombre de la anotación: *RootAggr*
-.. Introduzca una descripción de la anotación: *Eliminar agregado raíz del informe "Alta densidad de E/S"*
-.. Introduzca el tipo de anotación: *Boolean*
+.. Introduzca una descripción de la anotación: *Eliminar el agregado raíz del informe "Alta densidad de E/S"*
+.. Introduzca el tipo de anotación: *Booleano*
 
 
 . Haga clic en *Guardar*
@@ -71,21 +71,21 @@ Debe haber identificado todos los agregados raíz que desea excluir del informe 
 
 
 
-== Cree una regla de anotación para automatizar la exclusión de agregados específicos del informe de densidad de E/S.
+== Cree una regla de anotación para automatizar la exclusión de agregados específicos de su informe de densidad de E/S
 
-Como alternativa a la aplicación manual de anotaciones a activos individuales, puede aplicar anotaciones automáticamente a varios activos mediante reglas de anotación. Las reglas de anotación se basan en las consultas que se crean y cuando se ejecutan en el sistema agregan activos nuevos a los conjuntos de activos existentes. Cuando estos conjuntos de activos se excluyen de un informe, los nuevos activos también se excluyen automáticamente.
+Como alternativa a la aplicación manual de anotaciones a activos individuales, puede aplicar anotaciones automáticamente a múltiples activos utilizando reglas de anotación.  Las reglas de anotación se basan en consultas que usted crea y cuando se ejecutan en el sistema, agregan nuevos activos a conjuntos de activos existentes.  Cuando estos conjuntos de activos se excluyen de un informe, los nuevos activos también se excluyen automáticamente.
 
 .Antes de empezar
-Debe haber creado y guardado una consulta que identifique los agregados raíz de NetApp que ha identificado en su inquilino.
+Debe haber creado y guardado una consulta que identifique los agregados raíz de NetApp que identificó en su inquilino.
 
 .Pasos
-. En la barra de herramientas Data Infrastructure Insights, haga clic en *Administrar > Reglas de anotación*.
-. Haga clic en *Agregar*. Aparece el cuadro de diálogo Agregar regla.
+. En la barra de herramientas de Data Infrastructure Insights , haga clic en *Administrar > Reglas de anotación*.
+. Haga clic en *Agregar*. Se muestra el cuadro de diálogo Agregar regla.
 +
-.. En el cuadro Nombre, introduzca un nombre único que describa la regla: *“RootAggrExclude”*
-.. Haga clic en Consulta y seleccione la Consulta que Insight debe utilizar para aplicar la regla de anotación a: *“Aggregate0”*
-.. Haga clic en Anotación y seleccione: *“Root agg exclude”*
-.. Haga clic en *valor* e introduzca *Verdadero*
+.. En el cuadro Nombre, ingrese un nombre único que describa la regla: *"RootAggrExclude"*
+.. Haga clic en Consulta y seleccione la consulta que Insight debe usar para aplicar la regla de anotación a: *"Aggregate0"*
+.. Haga clic en Anotación y seleccione: *"Excluir agregado raíz"*
+.. Haga clic en *Valor* e ingrese *Verdadero*
 
 
 

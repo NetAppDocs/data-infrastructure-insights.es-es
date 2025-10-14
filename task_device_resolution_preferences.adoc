@@ -4,19 +4,19 @@ permalink: task_device_resolution_preferences.html
 keywords: Automatic, AR, AHR, Host, automatic device resolution, FC, Identify 
 summary:  
 ---
-= Opciones de configuración en la ficha Preferencias
+= Configuración de opciones en la pestaña Preferencias
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-La ficha Preferencias de resolución de dispositivos permite crear un programa de resolución automática, especificar proveedores de almacenamiento y cintas para incluir o excluir de la identificación y establecer opciones de búsqueda DNS.
+La pestaña de preferencias de resolución del dispositivo le permite crear un programa de resolución automática, especificar proveedores de almacenamiento y cintas para incluir o excluir de la identificación y configurar opciones de búsqueda de DNS.
 
 
 
 == Programación de resolución automática
 
-Una programación de resolución automática puede especificar cuándo se ejecuta la resolución automática del dispositivo:
+Un programa de resolución automática puede especificar cuándo se ejecuta la resolución automática del dispositivo:
 
 |===
 
@@ -27,34 +27,34 @@ Una programación de resolución automática puede especificar cuándo se ejecut
 | Cada | Utilice esta opción para ejecutar la resolución automática del dispositivo en intervalos de días, horas o minutos. 
 
 
-| Todos los días | Utilice esta opción para ejecutar la resolución automática del dispositivo diariamente a una hora específica. 
+| Cada día | Utilice esta opción para ejecutar la resolución automática del dispositivo diariamente a una hora específica. 
 
 
-| Manualmente | Utilice esta opción para ejecutar la resolución automática del dispositivo de forma manual. 
+| A mano | Utilice esta opción para ejecutar la resolución automática del dispositivo únicamente de forma manual. 
 
 
 | En cada cambio de entorno | Utilice esta opción para ejecutar la resolución automática del dispositivo siempre que haya un cambio en el entorno. 
 |===
-Si especifica _manualmente_, se desactiva la resolución automática nocturna del dispositivo.
+Si especifica _Manualmente_, se deshabilita la resolución automática nocturna del dispositivo.
 
 
 
-== Opciones de procesamiento DNS
+== Opciones de procesamiento de DNS
 
-Las opciones de procesamiento DNS permiten seleccionar las siguientes funciones:
+Las opciones de procesamiento de DNS le permiten seleccionar las siguientes funciones:
 
-* Cuando el procesamiento de resultados de búsqueda DNS está habilitado, puede agregar una lista de nombres DNS para anexarlos a dispositivos resueltos.
-* Puede seleccionar la resolución automática de IP: Para habilitar la resolución automática de host para los iniciadores y los hosts iSCSI que acceden a recursos compartidos NFS mediante la búsqueda DNS. Si no se especifica esta opción, solo se lleva a cabo una resolución basada en FC.
-* En los resultados, es posible optar por permitir guiones bajos en los nombres de host y utilizar un alias "conectado a" en lugar del alias de puerto estándar.
-
-
+* Cuando el procesamiento de resultados de búsqueda de DNS está habilitado, puede agregar una lista de nombres DNS para adjuntar a los dispositivos resueltos.
+* Puede seleccionar Resolución automática de IP: para habilitar la resolución automática de host para iniciadores iSCSI y hosts que acceden a recursos compartidos NFS mediante la búsqueda de DNS.  Si esto no se especifica, solo se realiza la resolución basada en FC.
+* Puede elegir permitir guiones bajos en los nombres de host y utilizar un alias "conectado a" en lugar del alias de puerto estándar en los resultados.
 
 
-=== Incluidos o excluyen proveedores específicos de cintas y almacenamiento
-
-Puede incluir o excluir proveedores específicos de almacenamiento y cintas para su resolución automática. Tal vez desee excluir proveedores específicos si sabe, por ejemplo, que un host específico se convertirá en un host heredado y debería excluirse del nuevo entorno. También puede volver a agregar proveedores que ha excluido anteriormente pero que ya no desea excluir.
 
 
-NOTE: Las reglas de resolución de dispositivos para la cinta sólo funcionan para WWN donde el proveedor para ese WWN está establecido en _included as Tape Only_ en las preferencias del proveedor.
+=== Incluir o excluir proveedores específicos de almacenamiento y cintas
 
-Consulte también: link:concept_device_resolution_regex_examples.html["Ejemplos de expresiones regulares"]
+Puede incluir o excluir proveedores de almacenamiento y cintas específicos para una resolución automática.  Es posible que desee excluir proveedores específicos si sabe, por ejemplo, que un host específico se convertirá en un host heredado y debería excluirse de su nuevo entorno.  También puedes volver a agregar proveedores que hayas excluido anteriormente pero que ya no quieras excluir.
+
+
+NOTE: Las reglas de resolución de dispositivos para cintas solo funcionan para WWN en los que el proveedor de ese WWN está configurado como _Incluido solo como cinta_ en las preferencias de proveedores.
+
+Ver también:link:concept_device_resolution_regex_examples.html["Ejemplos de expresiones regulares"]

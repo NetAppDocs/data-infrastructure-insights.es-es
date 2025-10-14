@@ -2,72 +2,72 @@
 sidebar: sidebar 
 permalink: task_webhook_example_pagerduty.html 
 keywords: webhook, notification, PagerDuty, integration 
-summary: Cree un webhook para alertar sobre el rendimiento o los umbrales de inventario para Pagerduty 
+summary: Cree un webhook para alertar sobre los umbrales de rendimiento o inventario para Pagerduty 
 ---
-= Ejemplo de Webhook para PagerDuty
+= Ejemplo de webhook para PagerDuty
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Los enlaces Web permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones mediante un canal de webhook personalizado. Esta página proporciona un ejemplo para configurar los enlaces Web para PagerDuty.
+Los webhooks permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones utilizando un canal webhook personalizado.  Esta página proporciona un ejemplo para configurar webhooks para PagerDuty.
 
 
-NOTE: Esta página hace referencia a instrucciones de terceros, que podrían estar sujetas a cambios. Consulte la link:https://support.pagerduty.com/docs/services-and-integrations["Documentación de PagerDuty"]para obtener la información más actualizada.
+NOTE: Esta página hace referencia a instrucciones de terceros, que podrían estar sujetas a cambios.  Consulte lalink:https://support.pagerduty.com/docs/services-and-integrations["Documentación de PagerDuty"] para obtener la información más actualizada.
 
 
 
 == Configuración de PagerDuty:
 
-. En PagerDuty, navegue hasta *Servicios > Directorio de servicios* y haga clic en *+Nuevo Servicio* button​
-. Introduzca un _Name_ y seleccione _Use nuestra API directamente_. Haga clic en _Add Service_.
+. En PagerDuty, navegue a *Servicios > Directorio de servicios* y haga clic en el botón *+Nuevo servicio*
+. Ingrese un _Nombre_ y seleccione _Usar nuestra API directamente_.  Haga clic en _Agregar servicio_.
 +
-image:Webhooks_PagerDutyScreen1.png["Pantalla PagerDuty"]
+image:Webhooks_PagerDutyScreen1.png["Pantalla de servicio de buscapersonas"]
 
-. Haga clic en la pestaña _Integration_ para ver la *clave de integración*. Necesitará esta clave cuando cree el webhook de Data Infrastructure Insights a continuación.
+. Haga clic en la pestaña _Integraciones_ para ver la *Clave de integración*.  Necesitará esta clave cuando cree el webhook de Data Infrastructure Insights a continuación.
 
 
-. Vaya a *Incidents* o *Servicios* para ver Alertas.
+. Vaya a *Incidentes* o *Servicios* para ver las alertas.
 +
-image:Webhooks_PagerDutyScreen2.png["Pantalla PagerDuty"]
+image:Webhooks_PagerDutyScreen2.png["Pantalla de servicio de buscapersonas"]
 
 
 
 
 
-== Webhook de Create Data Infrastructure:
+== Crear webhook de Data Infrastructure Insights :
 
-. En Data Infrastructure Insights, navegue hasta *Admin > Notifications* y seleccione la pestaña *WebHooks*. Haga clic en *+Webhook* para crear un nuevo webhook.
-. Dé al webhook un nombre significativo, como "Trigger PagerDuty". Utilizará este webhook para eventos de nivel crítico y de advertencia.
-. En el menú desplegable _Template Type_, seleccione *PagerDuty*.
+. En Data Infrastructure Insights, navegue a *Admin > Notificaciones* y seleccione la pestaña *Webhooks*.  Haga clic en *+Webhook* para crear un nuevo webhook.
+. Dale al webhook un nombre significativo, como por ejemplo "PagerDuty Trigger".  Utilizará este webhook para eventos de nivel crítico y de advertencia.
+. En el menú desplegable _Tipo de plantilla_, seleccione *PagerDuty*.
 
 
-. Cree un secreto de parámetro personalizado denominado _routingKey_ y establezca el valor en el valor PagerDuty _Integration Key_ desde arriba.
+. Cree un parámetro secreto personalizado llamado _routingKey_ y establezca el valor en el valor _Integration Key_ de PagerDuty mencionado anteriormente.
 +
 image:Webhooks_Custom_Secret_Routing_Key.png["Configuración de la clave de enrutamiento"]
 
 
 
-Repita estos pasos para crear un enlace web "PagerDuty Resolve" para eventos resueltos.
+Repita estos pasos para crear un webhook "PagerDuty Resolve" para eventos resueltos.
 
 
 
-== Asignación de campos de PagerDuty to Data Infrastructure Insights
+== Mapeo de campos de PagerDuty para Data Infrastructure Insights
 
 La siguiente tabla e imagen muestran la asignación de campos entre PagerDuty y Data Infrastructure Insights:
 
 [cols="<,<"]
 |===
-| PagerDuty | Información sobre la infraestructura de datos 
+| PagerDuty | Data Infrastructure Insights 
 
 
-| Clave de alerta | ID de alerta 
+| Tecla de alerta | ID de alerta 
 
 
-| Origen | Activado 
+| Fuente | Activado en 
 
 
-| Componente | Nombre de métrica 
+| Componente | Nombre de la métrica 
 
 
 | Grupo | Tipo de objeto 
@@ -75,22 +75,22 @@ La siguiente tabla e imagen muestran la asignación de campos entre PagerDuty y 
 
 | Clase | Nombre del monitor 
 |===
-image:Webhooks-PagerDuty_Fields.png["Campos PagerDuty en CI"]
+image:Webhooks-PagerDuty_Fields.png["Campos de PagerDuty en CI"]
 
 
 
-== Notificaciones a través de Webhook
+== Notificaciones mediante webhook
 
-Para notificar sobre eventos a través de webhook, en Información de infraestructura de datos navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear una nueva link:task_create_monitor.html["supervisar"].
+Para notificar eventos a través de un webhook, en Data Infrastructure Insights navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear un nuevolink:task_create_monitor.html["supervisión"] .
 
 * Seleccione una métrica y defina las condiciones del monitor.
-* En _Configurar notificación(s) de equipo, elija el método de entrega *Webhook*.
-* Elija el enlace web "PagerDuty Trigger" para eventos de nivel crítico y de advertencia.
-* Seleccione "PagerDuty resolve" para los eventos resueltos.
+* En _Configurar notificaciones del equipo_, seleccione el Método de entrega *Webhook*.
+* Seleccione el webhook “PagerDuty Trigger” para eventos de nivel crítico y de advertencia.
+* Seleccione “PagerDuty Resolve” para eventos resueltos.
 +
-image:Webhooks_Notifications.png["Notificaciones de Webhook"]
+image:Webhooks_Notifications.png["Notificaciones de webhook"]
 
 
 
 
-NOTE: La configuración de notificaciones independientes para eventos desencadenadores frente a eventos resueltos es una práctica recomendada, ya que PagerDuty gestiona eventos desencadenadores de forma diferente a los eventos resueltos.
+NOTE: Una buena práctica es configurar notificaciones separadas para eventos desencadenantes y eventos resueltos, ya que PagerDuty maneja los eventos desencadenantes de manera diferente a los eventos resueltos.

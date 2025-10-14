@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_nutanix.html 
 keywords: data collector, Nutanix, NX Series 
-summary: Configurar el recopilador de datos de Nutanix. 
+summary: Configuración del recopilador de datos de Nutanix. 
 ---
 = Recopilador de datos Nutanix NX
 :hardbreaks:
@@ -10,17 +10,17 @@ summary: Configurar el recopilador de datos de Nutanix.
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos Nutanix para detectar datos de inventario y rendimiento de los sistemas de almacenamiento Nutanix NX.
+Data Infrastructure Insights utiliza el recopilador de datos de Nutanix para descubrir datos de inventario y rendimiento de los sistemas de almacenamiento Nutanix NX.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Nutanix. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Nutanix.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
@@ -29,19 +29,19 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Contenedor Nutanix | Volumen interno 
 
 
-| Contenedor Nutanix | Recurso compartido de archivos 
+| Contenedor Nutanix | Compartir archivos 
 
 
-| Recurso compartido NFS | Share 
+| Compartir NFS | Compartir 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* La dirección IP de servicios de datos externos para el clúster
-* El nombre de usuario y la contraseña de solo lectura, a menos que volume_groups estén en uso, en cuyo caso, se requieren el nombre de usuario y la contraseña del administrador
+* La dirección IP de los servicios de datos externos para el clúster
+* Nombre de usuario y contraseña de solo lectura, a menos que se utilicen grupos de volúmenes, en cuyo caso se requieren nombre de usuario y contraseña de administrador
 * Requisito de puerto: HTTPS 443
 
 
@@ -54,13 +54,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Dirección IP externa del prisma | La dirección IP de servicios de datos externos para el clúster 
+| Dirección IP externa de Prism | La dirección IP de los servicios de datos externos para el clúster 
 
 
-| Nombre de usuario | Nombre de usuario de la cuenta de administrador 
+| Nombre de usuario | Nombre de usuario para la cuenta de administrador 
 
 
-| Contraseña | Contraseña para la cuenta de administrador 
+| Password | Contraseña para la cuenta de administrador 
 |===
 
 
@@ -71,16 +71,16 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectarse a la cabina Nutanix. El valor predeterminado es 9440. 
+| Puerto TCP | Puerto TCP utilizado para conectarse a la matriz Nutanix.  El valor predeterminado es 9440. 
 
 
 | Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

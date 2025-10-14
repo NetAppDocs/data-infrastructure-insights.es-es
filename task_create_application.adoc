@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_create_application.html 
-summary: Defina las aplicaciones que, a continuación, aplique a los activos de su arrendatario según sea necesario. 
+summary: Usted define aplicaciones que luego aplica a los activos de su inquilino según sea necesario. 
 keywords: application, create application, 
 ---
 = Creación de aplicaciones
@@ -13,38 +13,38 @@ keywords: application, create application,
 Para realizar un seguimiento de los datos asociados con aplicaciones específicas que se ejecutan en su inquilino, puede definir las aplicaciones en Data Infrastructure Insights.
 
 .Acerca de esta tarea
-Data Infrastructure Insights le permite realizar un seguimiento de los datos de los activos asociados con las aplicaciones, como la elaboración de informes de uso o de costes.
+Data Infrastructure Insights le permite realizar un seguimiento de los datos de los activos asociados con las aplicaciones para cuestiones como el uso o los informes de costos.
 
 .Pasos
-. En el menú Información de la infraestructura de datos, haga clic en *Observabilidad > Enriquecimiento > Aplicaciones*. Seleccione
+. En el menú Data Infrastructure Insights , haga clic en *Observabilidad > Enriquecer > Aplicaciones*.  Seleccionar
 +
-Aparece el cuadro de diálogo Agregar aplicación.
+Se muestra el cuadro de diálogo Agregar aplicación.
 
 . Introduzca un nombre único para la aplicación.
 . Seleccione una prioridad para la aplicación.
 . Haga clic en *Guardar*.
 
 
-Después de definir una aplicación, se puede asignar a activos.
+Después de definir una aplicación, se puede asignar a los activos.
 
 
 
-== Asignar aplicaciones a activos
+== Asignación de aplicaciones a activos
 
-Este procedimiento asigna la aplicación a un host como ejemplo. Es posible asignar volúmenes host, de máquina virtual, de volumen o internos a una aplicación.
+Este procedimiento asigna la aplicación a un host como ejemplo.  Puede asignar host, máquina virtual, volumen o volúmenes internos a una aplicación.
 
 .Pasos
-. Busque el activo al que desea asignar a la aplicación:
-. Haga clic en *consultas > +Nueva consulta* y busque Host.
-. Haga clic en la casilla de verificación situada a la izquierda del host que desea asociar a la aplicación.
-. Haga clic en *acciones masivas > Agregar aplicación*.
-. Seleccione la aplicación a la que está asignando el activo.
+. Localiza el activo al que deseas asignar la aplicación:
+. Haga clic en *Consultas > +Nueva consulta* y busque Host.
+. Haga clic en la casilla de verificación a la izquierda del host que desea asociar con la aplicación.
+. Haga clic en *Acciones masivas > Agregar aplicación*.
+. Seleccione la aplicación a la que va a asignar el activo.
 
 
-Las aplicaciones nuevas que asigne anulan las aplicaciones del activo que se derivaron de otro activo. Por ejemplo, los volúmenes heredan aplicaciones de hosts y cuando se asignan aplicaciones nuevas a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
+Cualquier aplicación nueva que asigne anulará cualquier aplicación en el activo que se haya derivado de otro activo.  Por ejemplo, los volúmenes heredan aplicaciones de los hosts y, cuando se asignan nuevas aplicaciones a un volumen, la nueva aplicación tiene prioridad sobre la aplicación derivada.
 
 
-NOTE: En el caso de entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a estos activos puede llevar varios minutos. Por favor, deje que se produzca más tiempo para la herencia si tiene muchos activos relacionados.
+NOTE: Para entornos con grandes cantidades de activos relacionados, la herencia de las asignaciones de aplicaciones a esos activos podría demorar varios minutos.  Por favor, permita más tiempo para que se produzca la herencia si tiene muchos activos relacionados.
 
 .Después de terminar
-Después de asignar el host a la aplicación, puede asignar los activos restantes a la aplicación. Para acceder a la página de inicio de la aplicación, haga clic en *Administrar > aplicación* y seleccione la aplicación que creó.
+Después de asignar el host a la aplicación, puede asignar los activos restantes a la aplicación.  Para acceder a la página de inicio de la aplicación, haga clic en *Administrar > Aplicación* y seleccione la aplicación que creó.

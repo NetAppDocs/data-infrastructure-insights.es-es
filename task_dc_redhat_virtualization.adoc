@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_dc_redhat_virtualization.html 
 keywords: data collector, Red Hat Virtualization 
-summary: Configurar el recopilador de datos de Red Hat Virtualization. 
+summary: Configuración del recopilador de datos de Red Hat Virtualization. 
 ---
-= Recopilador de datos de Red Hat Virtualization
+= Recopilador de datos de virtualización de Red Hat
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos de Red Hat Virtualization para recopilar datos de inventario de cargas de trabajo virtualizadas de Linux y Microsoft Windows.
+Data Infrastructure Insights utiliza el recopilador de datos de Red Hat Virtualization para reunir datos de inventario de cargas de trabajo virtualizadas de Linux y Microsoft Windows.
 
 
 
 == Terminología
 
-Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para el activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco | Disco virtual 
@@ -37,15 +37,15 @@ Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra 
 
 | Unidad lógica | LUN 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-* Dirección IP del servidor RHEV a través del puerto 443 a través de la API DE REST
+* Dirección IP del servidor RHEV a través del puerto 443 mediante API REST
 * Nombre de usuario y contraseña de solo lectura
-* RHEV versión 3.0+
+* RHEV Versión 3.0+
 
 
 
@@ -57,13 +57,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Dirección IP del servidor RHEV | La dirección IP del sistema de almacenamiento 
+| Dirección IP del servidor RHEV | Dirección IP del sistema de almacenamiento 
 
 
 | Nombre de usuario | Nombre de usuario con privilegios de administrador 
 
 
-| Contraseña de la cuenta con privilegios de administrador | Contraseña 
+| Contraseña para la cuenta privilegiada de administrador | Password 
 |===
 
 
@@ -74,13 +74,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 | Campo | Descripción 
 
 
-| Puerto de comunicación HTTPS | Puerto utilizado para la comunicación HTTPS con RHEV 
+| Puerto de comunicación HTTPS | Puerto utilizado para la comunicación HTTPS a RHEV 
 
 
 | Intervalo de sondeo de inventario (min) | El valor predeterminado es 20 minutos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

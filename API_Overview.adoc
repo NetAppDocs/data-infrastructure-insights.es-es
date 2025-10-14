@@ -2,264 +2,264 @@
 sidebar: sidebar 
 permalink: API_Overview.html 
 keywords: API, customer API, premium, JSON, Swagger, Access Token, token, rotate, expired 
-summary: La API de Data Infrastructure Insights permite la integración con otras aplicaciones, como los sistemas de supervisión y generación de informes. 
+summary: La API de Data Infrastructure Insights permite la integración con otras aplicaciones, como sistemas de monitoreo y generación de informes. 
 ---
-= API de información de infraestructura de datos
+= API de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-La API de información sobre infraestructuras de datos permite que los clientes de NetApp y los proveedores de software independientes (ISV) integren la información sobre infraestructuras de datos con otras aplicaciones, como CMDB u otros sistemas de tickets.
+La API de Data Infrastructure Insights permite a los clientes de NetApp y a los proveedores de software independientes (ISV) integrar Data Infrastructure Insights con otras aplicaciones, como CMDB u otros sistemas de tickets.
 
-Tu información sobre la infraestructura de datos link:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels["función de conjunto de funciones"]determinará a qué API puedes acceder. Los roles de usuario e invitado tienen menos privilegios que el rol de administrador. Por ejemplo, si tiene la función de administrador en Monitor y Optimize, pero la función de usuario en Reporting, puede administrar todos los tipos de API excepto Data Warehouse.
-
-
-
-== Requisitos para acceder a las API
-
-* Se utiliza un modelo de token de acceso de API para conceder acceso.
-* Los usuarios de Data Infrastructure Insights con la función de administrador llevan a cabo la gestión de tokens de API.
+Data Infrastructure Insightslink:https://docs.netapp.com/us-en/cloudinsights/concept_user_roles.html#permission-levels["rol de conjunto de características"] determinará a qué API puede acceder.  Los roles de Usuario e Invitado tienen menos privilegios que el rol de Administrador.  Por ejemplo, si tiene un rol de Administrador en Monitor y Optimizar, pero un rol de Usuario en Informes, puede administrar todos los tipos de API excepto el Almacén de datos.
 
 
 
+== Requisitos para el acceso a la API
 
-== Documentación de API (Swagger)
+* Se utiliza un modelo de token de acceso API para otorgar acceso.
+* La gestión del token API la realizan los usuarios de Data Infrastructure Insights con el rol de administrador.
 
-Para obtener la información más reciente sobre la API, inicie sesión en Data Infrastructure Insights y vaya a *Admin > API acccess*. Haga clic en el enlace *Documentación de API*.
+
+
+
+== Documentación de la API (Swagger)
+
+La información más reciente sobre la API se puede encontrar iniciando sesión en Data Infrastructure Insights y navegando a *Admin > Acceso API*.  Haga clic en el enlace *Documentación de API*.
 
 image:API_Swagger_Types.png["Tipos de API"]
 
-La documentación de la API se basa en Swagger, lo que proporciona una breve descripción e información de uso para la API, y le permite probarla en su inquilino. En función de su rol de usuario o de la edición Data Infrastructure Insights, los tipos de API que tiene a su disposición pueden variar.
+La documentación de la API está basada en Swagger, lo que proporciona una breve descripción e información de uso de la API y le permite probarla en su inquilino.  Según su rol de usuario y/o la edición de Data Infrastructure Insights , los tipos de API disponibles para usted pueden variar.
 
-image:API_Swagger_Example.png["Ejemplo de API de Swagger"]
+image:API_Swagger_Example.png["Ejemplo de API Swagger"]
 
 
 
-== Tokens de acceso API
+== Tokens de acceso a la API
 
-Antes de usar la API de información de la infraestructura de datos, debe crear uno o más tokens de acceso a la API *. Los tokens de acceso se utilizan para los tipos de API especificados y pueden otorgar permisos de lectura y/o escritura. También puede establecer la caducidad de cada token de acceso. Todas las API de los tipos especificados son válidas para el token de acceso. Cada token es nulo de un nombre de usuario o contraseña.
+Antes de utilizar la API de Data Infrastructure Insights , debe crear uno o más *Tokens de acceso a API*.  Los tokens de acceso se utilizan para tipos de API específicos y pueden otorgar permisos de lectura y/o escritura.  También puede establecer la fecha de vencimiento para cada token de acceso.  Todas las API de los tipos especificados son válidas para el token de acceso.  Cada token no tiene nombre de usuario ni contraseña.
 
 Para crear un token de acceso:
 
-* Haga clic en *Admin > API Access*
-* Haga clic en *+símbolo de acceso de API*
+* Haga clic en *Administrador > Acceso API*
+* Haga clic en *+Token de acceso a la API*
 +
-** Introduzca el nombre del token
-** Seleccione API Types
-** Especifique los permisos concedidos para este acceso a la API
-** Especifique caducidad de token
+** Ingrese el nombre del token
+** Seleccionar tipos de API
+** Especifique los permisos otorgados para este acceso a la API
+** Especificar la expiración del token
 
 
 
 
 
-NOTE: El token sólo estará disponible para copiar en el portapapeles y guardar durante el proceso de creación. Los tokens no se pueden recuperar una vez creados, por lo que se recomienda encarecidamente copiar el token y guardarlo en una ubicación segura. Se le pedirá que haga clic en el botón *Copiar clave de acceso de API* antes de cerrar la pantalla de creación de token.
+NOTE: Su token solo estará disponible para copiarlo al portapapeles y guardarlo durante el proceso de creación.  Los tokens no se pueden recuperar una vez creados, por lo que se recomienda copiar el token y guardarlo en una ubicación segura.  Se le pedirá que haga clic en el botón *Copiar token de acceso a API* antes de poder cerrar la pantalla de creación de token.
 
-Puede desactivar, activar y revocar tokens. Se pueden activar los tokens desactivados.
+Puede deshabilitar, habilitar y revocar tokens.  Los tokens que están deshabilitados se pueden habilitar.
 
-Los tokens conceden acceso de uso general a las API desde la perspectiva del cliente; además, gestionan el acceso a las API en el ámbito de su propio inquilino. Los administradores de clientes pueden conceder y revocar estos tokens sin intervención directa del personal de back-end de Data Infrastructure Insights.
+Los tokens otorgan acceso de propósito general a las API desde la perspectiva del cliente; administrando el acceso a las API en el alcance de su propio inquilino.  Los administradores de clientes pueden otorgar y revocar estos tokens sin la participación directa del personal de back-end de Data Infrastructure Insights .
 
-La aplicación recibe un token de acceso después de que un usuario autentica correctamente y autoriza el acceso, a continuación, pasa el token de acceso como credencial cuando llama a la API de destino. El token pasado informa a la API de que el portador del token ha sido autorizado para acceder a la API y realizar acciones específicas especificadas por el ámbito que se concedió durante la autorización.
+La aplicación recibe un token de acceso después de que un usuario se autentica y autoriza el acceso con éxito, luego pasa el token de acceso como credencial cuando llama a la API de destino.  El token pasado informa a la API que el portador del token ha sido autorizado a acceder a la API y realizar acciones específicas especificadas por el alcance que se otorgó durante la autorización.
 
 El encabezado HTTP donde se pasa el token de acceso es *X-CloudInsights-ApiKey:*.
 
-Por ejemplo, utilice lo siguiente para recuperar activos de almacenamientos:
+Por ejemplo, utilice lo siguiente para recuperar activos de almacenamiento:
 
  curl https://<tenant_host_name>/rest/v1/assets/storages -H 'X-CloudInsights-ApiKey:<API_Access_Token>'
-Donde _<API_Access_Token>_ es el token que ha guardado durante la creación del acceso a la API.
+Donde _<API_Access_Token>_ es el token que guardó durante la creación del acceso a la API.
 
-Consulte las páginas de Swagger para ver ejemplos específicos de la API que desea utilizar.
+Consulta las páginas de swagger para ver ejemplos específicos de la API que deseas utilizar.
 
 
 
-== Tipo API
+== Tipo de API
 
 La API de Data Infrastructure Insights se basa en categorías y actualmente contiene los siguientes tipos:
 
-* El tipo DE ACTIVO contiene API de activo, consulta y búsqueda.
+* El tipo ACTIVOS contiene API de activos, consultas y búsquedas.
 +
-** Activos: Enumera los objetos de nivel superior y recupera un objeto específico o una jerarquía de objetos.
-** Consulta: Recuperar y gestionar consultas de Data Infrastructure Insights.
-** Importar: Importe anotaciones o aplicaciones y asígnelas a objetos
-** Búsqueda: Busque un objeto específico sin conocer el ID único del objeto o su nombre completo.
+** Activos: enumerar objetos de nivel superior y recuperar un objeto específico o una jerarquía de objetos.
+** Consulta: recupere y administre consultas de Data Infrastructure Insights .
+** Importar: Importar anotaciones o aplicaciones y asignarlas a objetos
+** Buscar: localiza un objeto específico sin conocer el ID único o el nombre completo del objeto.
 
 
-* El tipo DE RECOPILACIÓN DE DATOS se utiliza para recuperar y administrar recopiladores de datos.
-* El tipo DE INGESTA DE DATOS se utiliza para recuperar y gestionar los datos de ingestión y las métricas personalizadas, como los agentes de Telegraf
-* LA INGESTA DE REGISTROS se utiliza para recuperar y gestionar los datos de registro
+* El tipo RECOLECCIÓN DE DATOS se utiliza para recuperar y administrar recopiladores de datos.
+* El tipo INGESTIÓN DE DATOS se utiliza para recuperar y administrar datos de ingesta y métricas personalizadas, como las de los agentes de Telegraf.
+* INGESTIÓN DE REGISTROS se utiliza para recuperar y administrar datos de registro
 
 
-Es posible que haya disponibles más tipos y/o API a lo largo del tiempo. Puede encontrar la información más reciente de la API en la link:#api-documentation-swagger["Documentación de API Swagger"].
+Es posible que con el tiempo aparezcan disponibles tipos y/o API adicionales.  Puede encontrar la información más reciente sobre la API enlink:#api-documentation-swagger["Documentación de API Swagger"] .
 
-Tenga en cuenta que los tipos de API a los que un usuario tiene acceso dependen también de link:concept_user_roles.html["Rol de usuario"]los que tienen en cada conjunto de funciones de Data Infrastructure Insights (supervisión, seguridad de la carga de trabajo, informes).
+Tenga en cuenta que los tipos de API a los que un usuario tiene acceso también dependen de lalink:concept_user_roles.html["Rol de usuario"] Tienen en cada conjunto de características de Data Infrastructure Insights (monitoreo, seguridad de la carga de trabajo, informes).
 
 
 
-== Transversal de inventario
+== Recorrido del inventario
 
-En esta sección se describe cómo atravesar una jerarquía de objetos de Data Infrastructure Insights.
+Esta sección describe cómo recorrer una jerarquía de objetos de Data Infrastructure Insights .
 
 
 
 === Objetos de nivel superior
 
-Los objetos individuales se identifican en las solicitudes mediante una URL única (denominada «self» en JSON) y requieren conocimiento del tipo de objeto y el identificador interno. Para algunos de los objetos de nivel superior (hosts, almacenamientos, etc.), la API REST proporciona acceso a la recopilación completa.
+Los objetos individuales se identifican en las solicitudes mediante una URL única (denominada "self" en JSON) y requieren conocer el tipo de objeto y su ID interno. Para algunos objetos de nivel superior (hosts, almacenamientos, etc.), la API REST proporciona acceso a la colección completa.
 
 El formato general de una URL de API es:
 
  https://<tenant>/rest/v1/<type>/<object>
-Por ejemplo, para recuperar todos los almacenamientos de un inquilino llamado _mysite.c01.cloudinsights.netapp.com_, la URL de la solicitud es:
+Por ejemplo, para recuperar todos los almacenamientos de un inquilino llamado _mysite.c01.cloudinsights.netapp.com_, la URL de solicitud es:
 
  https://mysite.c01.cloudinsights.netapp.com/rest/v1/assets/storages
 
 
 === Niños y objetos relacionados
 
-Los objetos de nivel superior, como almacenamiento, se pueden utilizar para desplazarse a otros elementos secundarios y objetos relacionados. Por ejemplo, para recuperar todos los discos para un almacenamiento específico, concatene la dirección URL de “self” de almacenamiento con “/disks”, por ejemplo:
+Los objetos de nivel superior, como Almacenamiento, se pueden usar para acceder a otros objetos secundarios y relacionados.  Por ejemplo, para recuperar todos los discos para un almacenamiento específico, concatene la URL “propia” del almacenamiento con “/disks”, por ejemplo:
 
  https://<tenant>/rest/v1/assets/storages/4537/disks
 
 
-== Se amplía
+== Se expande
 
-Muchos comandos de API admiten el parámetro *Expand*, que proporciona detalles adicionales sobre el objeto o las direcciones URL de los objetos relacionados.
+Muchos comandos API admiten el parámetro *expand*, que proporciona detalles adicionales sobre el objeto o las URL de los objetos relacionados.
 
-El único parámetro de expansión común es _expands_. La respuesta contiene una lista de todas las expansi- do específicas disponibles para el objeto.
+El único parámetro de expansión común es _expands_.  La respuesta contiene una lista de todas las expansiones específicas disponibles para el objeto.
 
-Por ejemplo, cuando solicite lo siguiente:
+Por ejemplo, cuando solicita lo siguiente:
 
  https://<tenant>/rest/v1/assets/storages/2782?expand=_expands
-La API devuelve todas las expande disponibles para el objeto de la siguiente manera:
+La API devuelve todas las expansiones disponibles para el objeto de la siguiente manera:
 
 image:expands.gif["expande el ejemplo"]
 
-Cada expansión contiene datos, una URL o ambos. El parámetro expand admite varios atributos anidados, por ejemplo:
+Cada expansión contiene datos, una URL o ambos.  El parámetro expandir admite atributos múltiples y anidados, por ejemplo:
 
  https://<tenant>/rest/v1/assets/storages/2782?expand=performance,storageResources.storage
-La ampliación le permite incorporar una gran cantidad de datos relacionados en una única respuesta. NetApp recomienda no solicitar demasiada información a la vez; esto puede provocar una degradación del rendimiento.
+Expandir le permite incorporar una gran cantidad de datos relacionados en una sola respuesta.  NetApp recomienda no solicitar demasiada información a la vez, ya que esto puede provocar una degradación del rendimiento.
 
-Para desalentarlo, las solicitudes de cobranzas de nivel superior no se pueden expandir. Por ejemplo, no puede solicitar la expansión de los datos de todos los objetos de almacenamiento al mismo tiempo. Los clientes deben recuperar la lista de objetos y, a continuación, elegir objetos específicos para expandirse.
+Para evitarlo, no se pueden ampliar las solicitudes de colecciones de nivel superior.  Por ejemplo, no puede solicitar la expansión de datos para todos los objetos de almacenamiento a la vez.  Los clientes deben recuperar la lista de objetos y luego elegir objetos específicos para expandir.
 
 
 
 == Datos de rendimiento
 
-Los datos de rendimiento se recopilan en muchos dispositivos como muestras independientes. Cada hora (valor predeterminado), Data Infrastructure Insights agrega y resume muestras de rendimiento.
+Los datos de rendimiento se recopilan en muchos dispositivos como muestras independientes.  Cada hora (valor predeterminado), Data Infrastructure Insights agrega y resume muestras de rendimiento.
 
-La API permite el acceso tanto a las muestras como a los datos resumidos. Para un objeto con datos de rendimiento, hay disponible un resumen de rendimiento como _Expand=Performance_. Las series de tiempo del historial de rendimiento están disponibles mediante el _Expand=performance.history_ anidado.
+La API permite acceder tanto a las muestras como a los datos resumidos.  Para un objeto con datos de rendimiento, un resumen de rendimiento está disponible como _expand=performance_.  Las series de tiempo del historial de rendimiento están disponibles a través de _expand=performance.history_ anidado.
 
-Algunos ejemplos de objetos de datos de rendimiento son:
+Algunos ejemplos de objetos de datos de rendimiento incluyen:
 
-* Rendimiento de almacenamiento
-* StoragePoolPerformance
+* Rendimiento del almacenamiento
+* Rendimiento del grupo de almacenamiento
 * Rendimiento del puerto
-* Rendimiento de disco
+* Rendimiento del disco
 
 
-Una métrica de rendimiento tiene una descripción y un tipo y contiene una colección de resúmenes de rendimiento. Por ejemplo, latencia, tráfico y velocidad.
+Una métrica de rendimiento tiene una descripción y un tipo y contiene una colección de resúmenes de rendimiento.  Por ejemplo, latencia, tráfico y velocidad.
 
-Un resumen de rendimiento contiene una descripción, unidad, hora de inicio de la muestra, hora de finalización de la muestra y una recopilación de valores resumidos (actual, mín., máx., promedio, etc.) calculados a partir de un único contador de rendimiento en un intervalo de tiempo (1 hora, 24 horas, 3 días, etc.).
+Un resumen de rendimiento tiene una descripción, unidad, hora de inicio de la muestra, hora de finalización de la muestra y una colección de valores resumidos (actual, mínimo, máximo, promedio, etc.) calculados a partir de un único contador de rendimiento durante un rango de tiempo (1 hora, 24 horas, 3 días, etc.).
 
-image:API_Performance.png["Ejemplo de rendimiento de API"]
+image:API_Performance.png["Ejemplo de rendimiento de la API"]
 
 El diccionario de datos de rendimiento resultante tiene las siguientes claves:
 
-* "Auto" es la URL única del objeto
-* “history” (historial) es la lista de pares de valores de marca de tiempo y de mapa de contadores
-* Cualquier otra clave de diccionario (“diskThroughput”, etc.) es el nombre de una métrica de rendimiento.
+* "self" es la URL única del objeto
+* “historial” es la lista de pares de marcas de tiempo y el mapa de valores de los contadores
+* Cada otra clave de diccionario (“diskThroughput”, etc.) es el nombre de una métrica de rendimiento.
 
 
-Cada tipo de objeto de datos de rendimiento tiene un conjunto único de métricas de rendimiento. Por ejemplo, el objeto de rendimiento de máquina virtual admite “diskThroughput” como métrica de rendimiento. Cada métrica de rendimiento admitida es de una cierta “performanceCategory” presentada en el diccionario de métricas. Data Infrastructure Insights admite varios tipos de métricas de rendimiento que se detallan más adelante en este documento. Cada diccionario de métrica de rendimiento también tendrá el campo “descripción” que es una descripción legible por el usuario de esta métrica de rendimiento y un conjunto de entradas de contador de resumen de rendimiento.
+Cada tipo de objeto de datos de rendimiento tiene un conjunto único de métricas de rendimiento.  Por ejemplo, el objeto de rendimiento de la máquina virtual admite “diskThroughput” como métrica de rendimiento.  Cada métrica de rendimiento admitida pertenece a una determinada “categoría de rendimiento” presentada en el diccionario de métricas.  Data Infrastructure Insights admite varios tipos de métricas de rendimiento que se enumeran más adelante en este documento.  Cada diccionario de métricas de rendimiento también tendrá el campo “descripción”, que es una descripción legible por humanos de esta métrica de rendimiento y un conjunto de entradas de contador de resumen de rendimiento.
 
-El contador de resumen de rendimiento es el resumen de contadores de rendimiento. Presenta valores agregados típicos como min, max y avg para un contador y también el último valor observado, intervalo de tiempo para datos resumidos, tipo de unidad para contador y umbrales para datos. Sólo los umbrales son opcionales; el resto de atributos son obligatorios.
+El contador Resumen de rendimiento es el resumen de los contadores de rendimiento.  Presenta valores agregados típicos como mínimo, máximo y promedio para un contador y también el último valor observado, el rango de tiempo para los datos resumidos, el tipo de unidad para el contador y los umbrales para los datos.  Sólo los umbrales son opcionales; el resto de atributos son obligatorios.
 
-Hay resúmenes de rendimiento disponibles para estos tipos de contadores:
+Los resúmenes de rendimiento están disponibles para estos tipos de contadores:
 
-* Lectura – Resumen para operaciones de lectura
-* Write: Resumen para operaciones de escritura
-* Total: Resumen de todas las operaciones. Puede ser mayor que la simple suma de lectura y escritura; puede incluir otras operaciones.
-* Total Max: Resumen para todas las operaciones. Este es el valor total máximo del intervalo de tiempo especificado.
+* Leer – Resumen de operaciones de lectura
+* Escribir – Resumen de operaciones de escritura
+* Total – Resumen de todas las operaciones.  Puede ser mayor que la simple suma de lectura y escritura; puede incluir otras operaciones.
+* Total Max – Resumen de todas las operaciones.  Este es el valor total máximo en el rango de tiempo especificado.
 
 
 
 
 == Métricas de rendimiento de objetos
 
-La API puede devolver métricas detalladas de los objetos de su inquilino, por ejemplo:
+La API puede devolver métricas detalladas de los objetos en su inquilino, por ejemplo:
 
 * Métricas de rendimiento de almacenamiento como IOPS (número de solicitudes de entrada/salida por segundo), latencia o rendimiento.
-* Cambie las métricas de rendimiento, como la utilización del tráfico, los datos de BB Credit Zero o los errores de puerto.
+* Métricas de rendimiento del conmutador, como utilización de tráfico, datos de crédito cero de BB o errores de puerto.
 
 
-Consulte la link:#api-documentation-swagger["Documentación de API Swagger"] para obtener información sobre las métricas de cada tipo de objeto.
+Ver ellink:#api-documentation-swagger["Documentación de API Swagger"] para obtener información sobre las métricas para cada tipo de objeto.
 
 
 
 == Datos del historial de rendimiento
 
-Los datos del historial se presentan en los datos de rendimiento como una lista de parejas de mapas de Marca de tiempo y de contadores.
+Los datos históricos se presentan en los datos de rendimiento como una lista de pares de marcas de tiempo y mapas de contadores.
 
-El nombre de los contadores de historial se basa en el nombre del objeto de métrica de rendimiento. Por ejemplo, el objeto de rendimiento de máquina virtual admite “diskThroughput”, de modo que el mapa de historia contendrá claves denominadas “diskThroughput.read”, “diskThroughput.write” y “diskThroughput.total”.
+Los contadores de historial se nombran según el nombre del objeto de métrica de rendimiento.  Por ejemplo, el objeto de rendimiento de la máquina virtual admite “diskThroughput”, por lo que el mapa del historial contendrá claves denominadas “diskThroughput.read”, “diskThroughput.write” y “diskThroughput.total”.
 
 
-NOTE: La Marca de hora está en formato de hora UNIX.
+NOTE: La marca de tiempo está en formato de hora UNIX.
 
-Lo siguiente es un ejemplo de JSON de datos de rendimiento para un disco:
+El siguiente es un ejemplo de un JSON de datos de rendimiento para un disco:
 
-image:DiskPerformanceExample.png["Rendimiento de disco JSON"]
+image:DiskPerformanceExample.png["JSON de rendimiento del disco"]
 
 
 
 == Objetos con atributos de capacidad
 
-Los objetos con atributos de capacidad utilizan tipos de datos básicos y la capacidadItem para la representación.
+Los objetos con atributos de capacidad utilizan tipos de datos básicos y CapacityItem para su representación.
 
 
 
-=== CapacidadItem
+=== Artículo de capacidad
 
-CapacityItem es una única unidad lógica de capacidad. Tiene “valor” y “umbral alto” en unidades definidas por su objeto principal. También admite un mapa de desglose opcional que explica cómo se construye el valor de capacidad. Por ejemplo, la capacidad total de un pool de almacenamiento de 100 TB sería una capacidadItem con un valor de 100. El desglose puede mostrar 60 TB asignados para “datos” y 40 TB para “instantáneas”.
+CapacityItem es una única unidad lógica de capacidad.  Tiene “valor” y “umbral alto” en unidades definidas por su objeto padre.  También admite un mapa de desglose opcional que explica cómo se construye el valor de capacidad.  Por ejemplo, la capacidad total de un pool de almacenamiento de 100 TB sería un CapacityItem con un valor de 100.  El desglose puede mostrar 60 TB asignados para “datos” y 40 TB para “instantáneas”.
 
-Nota: “HighThreshold” representa umbrales definidos por el sistema para las métricas correspondientes, que un cliente puede utilizar para generar alertas o señales visuales sobre valores que están fuera de los rangos configurados aceptables.
+Nota: “highThreshold” representa los umbrales definidos por el sistema para las métricas correspondientes, que un cliente puede usar para generar alertas o señales visuales sobre valores que están fuera de los rangos configurados aceptables.
 
-A continuación, se muestra la capacidad de los pools de almacenamiento con varios contadores de capacidad:
+A continuación se muestra la capacidad de los StoragePools con múltiples contadores de capacidad:
 
-image:StoragePoolCapacity.png["Ejemplo de capacidad de pool de almacenamiento"]
+image:StoragePoolCapacity.png["Ejemplo de capacidad de grupo de almacenamiento"]
 
 
 
-== Uso de Buscar para buscar objetos
+== Uso de la búsqueda para buscar objetos
 
-La API de búsqueda es un punto de entrada sencillo al sistema. El único parámetro de entrada a la API es una cadena de forma libre y el JSON resultante contiene una lista clasificada de resultados. Los tipos son los diferentes tipos de activos del inventario, como los almacenamientos, hosts, almacenes de datos, etc. Cada tipo contiene una lista de objetos del tipo que coinciden con los criterios de búsqueda.
+La API de búsqueda es un punto de entrada simple al sistema.  El único parámetro de entrada a la API es una cadena de formato libre y el JSON resultante contiene una lista categorizada de resultados.  Los tipos son diferentes tipos de activos del inventario, como almacenamientos, hosts, almacenes de datos, etc.  Cada tipo contendría una lista de objetos del tipo que coinciden con los criterios de búsqueda.
 
-Data Infrastructure Insights es una solución extensible (amplia y abierta) que permite la integración con sistemas de coordinación, gestión empresarial, control de cambios y tickets de terceros, así como integraciones CMDB personalizadas.
+Data Infrastructure Insights es una solución extensible (totalmente abierta) que permite integraciones con sistemas de orquestación, gestión empresarial, control de cambios y emisión de tickets de terceros, así como integraciones CMDB personalizadas.
 
-La API RESTful de Cloud Insight es un punto principal de integración que permite un movimiento de datos sencillo y efectivo. Además, permite a los usuarios obtener un acceso sencillo a sus datos.
+La API RESTful de Cloud Insight es un punto principal de integración que permite un movimiento de datos simple y efectivo y permite a los usuarios obtener acceso sin inconvenientes a sus datos.
 
 
 
 == Deshabilitar o revocar un token de API
 
-Para desactivar temporalmente un token de API, en la página de lista de tokens de API, haga clic en el menú "tres puntos" de la API y seleccione _Disable_. Puede volver a activar el token en cualquier momento utilizando el mismo menú y seleccionando _Enable_.
+Para deshabilitar temporalmente un token de API, en la página de lista de tokens de API, haga clic en el menú de "tres puntos" de la API y seleccione _Deshabilitar_.  Puede volver a habilitar el token en cualquier momento utilizando el mismo menú y seleccionando _Habilitar_.
 
-Para eliminar permanentemente un token de API, en el menú, seleccione "revocar". No puede volver a habilitar un token revocado; debe crear un nuevo token.
+Para eliminar permanentemente un token de API, en el menú, seleccione "Revocar".  No es posible volver a habilitar un token revocado; debe crear un token nuevo.
 
-image:API_Disable_Token.png["Desactive o revoque y token de API"]
+image:API_Disable_Token.png["Deshabilitar o revocar un token de API"]
 
 
 
-== Rotar tokens de acceso a API caducados
+== Rotación de tokens de acceso a API vencidos
 
-Los tokens de acceso a la API tienen una fecha de caducidad. Cuando caduca un token de acceso a la API, los usuarios deben generar un nuevo token (de tipo _Data ingestión_ con permisos de lectura/escritura) y reconfigurar Telegraf para utilizar el token recién generado en lugar del token caducado. Los siguientes pasos detallan cómo hacer esto.
+Los tokens de acceso a la API tienen una fecha de vencimiento.  Cuando caduca un token de acceso a API, los usuarios deben generar un nuevo token (de tipo _Ingestión de datos_ con permisos de lectura y escritura) y reconfigurar Telegraf para usar el token recién generado en lugar del token caducado.  Los pasos a continuación detallan cómo hacer esto.
 
 
 
 ==== Kubernetes
 
-Tenga en cuenta que estos comandos utilizan el espacio de nombres predeterminado "netapp-Monitoring". Si ha definido su propio espacio de nombres, sustituya este espacio de nombres en estos y todos los comandos y archivos subsiguientes.
+Tenga en cuenta que estos comandos utilizan el espacio de nombres predeterminado "netapp-monitoring".  Si ha configurado su propio espacio de nombres, sustitúyalo en estos y todos los comandos y archivos posteriores.
 
-Nota: Si tiene instalado el último operador de supervisión de Kubernetes de NetApp y utiliza un token de acceso a la API que sea renovable, los tokens que caducan se reemplazarán automáticamente por tokens de acceso a la API nuevos o actualizados. No es necesario realizar los pasos manuales que se indican a continuación.
+Nota: Si tiene instalado el último NetApp Kubernetes Monitoring Operator y utiliza un token de acceso a API renovable, los tokens que caduquen se reemplazarán automáticamente por tokens de acceso a API nuevos o actualizados.  No es necesario realizar los pasos manuales que se enumeran a continuación.
 
 * Crea un nuevo token de API.
 * Siga los pasos paralink:task_config_telegraf_agent_k8s.html#manual-upgrades["Actualización manual"] , seleccionando el nuevo token API.
@@ -271,25 +271,25 @@ Nota: Los clientes que administran su operador de monitoreo de Kubernetes de Net
 
 ==== RHEL/CentOS y Debian/Ubuntu
 
-* Edite los archivos de configuración de Telegraf y sustituya todas las instancias del token de API antiguo por el nuevo token de API.
+* Edite los archivos de configuración de Telegraf y reemplace todas las instancias del token API antiguo con el token API nuevo.
 +
  sudo sed -i.bkup ‘s/<OLD_API_TOKEN>/<NEW_API_TOKEN>/g’ /etc/telegraf/telegraf.d/*.conf
-* Reinicie Telegraf.
+* Reiniciar Telegraf.
 +
  sudo systemctl restart telegraf
 
 
 
 
-==== Windows
+==== Ventanas
 
-* Para cada archivo de configuración de Telegraf de _C:\Archivos de programa\telegraf\telegraf.d_, reemplace todas las instancias del token de API antiguo con el nuevo token de API.
+* Para cada archivo de configuración de Telegraf en _C:\Program Files\telegraf\telegraf.d_, reemplace todas las instancias del token de API antiguo con el nuevo token de API.
 +
 ....
 cp <plugin>.conf <plugin>.conf.bkup
 (Get-Content <plugin>.conf).Replace(‘<OLD_API_TOKEN>’, ‘<NEW_API_TOKEN>’) | Set-Content <plugin>.conf
 ....
-* Reinicie Telegraf.
+* Reiniciar Telegraf.
 +
 ....
 Stop-Service telegraf

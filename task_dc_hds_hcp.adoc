@@ -2,51 +2,51 @@
 sidebar: sidebar 
 permalink: task_dc_hds_hcp.html 
 keywords: data collector, Hitachi HDS, HCP 
-summary: Configurar el recopilador de datos de HDS. 
+summary: Configuración del recopilador de datos HDS. 
 ---
-= Recopilador de datos de Hitachi HCP
+= Colector de datos Hitachi HCP
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Este recopilador de datos admite la Plataforma de Contenido Hitachi (HCP) que utiliza la API de Gestión de HCP.
+Este recopilador de datos es compatible con Hitachi Content Platform (HCP) mediante la API de administración de HCP.
 
 
-NOTE: La Plataforma de Contenido de Hitachi se evalúa con una tasa de TB bruta diferente a la de la Unidad administrada. Cada 40 TB de capacidad de HCP sin formato se carga como 1link:concept_subscribing_to_cloud_insights.html#pricing["Unidad administrada (UM)"].
+NOTE: La plataforma de contenido de Hitachi se mide a una tarifa diferente de TB sin procesar a unidad administrada.  Cada 40 TB de capacidad HCP sin formato se cobra como 1link:concept_subscribing_to_cloud_insights.html#pricing["Unidad Administrada (UM)"] .
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos HCP de Hitachi. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Hitachi HCP.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Clúster HCP | Reducida 
+| Clúster de profesionales sanitarios | Almacenamiento 
 
 
-| Inquilino | Pool de almacenamiento 
+| Arrendatario | Pool de almacenamiento 
 
 
 |  | Espacio de nombres 
 
 
-| Volumen interno | Nodo 
+| Volumen interno | Node 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos de inventario
 
-Para recopilar datos de inventario, debe contar con lo siguiente:
+Para poder recopilar datos de inventario, debe tener lo siguiente:
 
 * Dirección IP del servidor HCP
-* Nombre de usuario y contraseña de sólo lectura para el software HCP y los privilegios del mismo nivel
+* Nombre de usuario y contraseña de solo lectura para el software HCP y privilegios de pares
 
 
 
@@ -58,19 +58,19 @@ Para recopilar datos de inventario, debe contar con lo siguiente:
 | Campo | Descripción 
 
 
-| Host HCP | Dirección IP o nombre de dominio completo del host HCP 
+| Anfitrión de HCP | Dirección IP o nombre de dominio completo del host HCP 
 
 
 | Puerto HCP | El valor predeterminado es 9090 
 
 
-| ID Usuario HCP | Nombre de usuario del host HCP. 
+| ID de usuario de HCP | Nombre de usuario para el host HCP. 
 
 
 | Contraseña de HCP | Contraseña utilizada para el host HCP. 
 
 
-| Tipo de autenticación HCP | Elija HCP_LOCAL o ACTIVE_DIRECTORY 
+| Tipo de autenticación de HCP | Elija HCP_LOCAL o ACTIVE_DIRECTORY 
 |===
 
 
@@ -82,9 +82,9 @@ Para recopilar datos de inventario, debe contar con lo siguiente:
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 60. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 900. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 900. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

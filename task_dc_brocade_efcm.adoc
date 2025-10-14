@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_efcm.html 
 keywords: data collector, Brocade, EFCM, 
-summary: Configurar el recopilador de datos de Brocade. 
+summary: Configuración del recopilador de datos Brocade . 
 ---
-= Configurar el recopilador de datos de Brocade Enterprise Fabric Connectivity Manager
+= Configuración del recopilador de datos de Brocade Enterprise Fabric Connectivity Manager
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El análisis de la infraestructura de datos utiliza el recopilador de datos del Gestor de conectividad de la estructura empresarial (EFCM) de Brocade para detectar el inventario de los switches EFCM de Brocade. Data Infrastructure Insights es compatible con las versiones 9,5, 9,6 y 9,7 de EFCM.
+Data Infrastructure Insights utiliza el recopilador de datos Brocade Enterprise Fabric Connectivity Manager (EFCM) para descubrir el inventario de los conmutadores Brocade EFCM.  Data Infrastructure Insights es compatible con las versiones 9.5, 9.6 y 9.7 de EFCM.
 
 
 
@@ -19,8 +19,8 @@ El análisis de la infraestructura de datos utiliza el recopilador de datos del 
 * Dirección de red o nombre de dominio completo para el servidor EFCM
 * La versión de EFCM debe ser 9.5, 9.6 o 9.7
 * Dirección IP del servidor EFCM
-* Nombre de usuario y contraseña de sólo lectura para el servidor EFCM
-* Acceso validado al conmutador Connectrix por Telnet desde el servidor Data Infrastructure Insights, utilizando el nombre de usuario y la contraseña de solo lectura a través del puerto 51512
+* Nombre de usuario y contraseña de solo lectura para el servidor EFCM
+* Acceso validado al conmutador Connectrix mediante Telnet desde el servidor Data Infrastructure Insights , utilizando el nombre de usuario y la contraseña de solo lectura a través del puerto 51512
 
 
 
@@ -35,10 +35,10 @@ El análisis de la infraestructura de datos utiliza el recopilador de datos del 
 | Servidor EFC | Dirección IP o nombre de dominio completo del servidor EFC 
 
 
-| Nombre de usuario | Nombre de usuario del conmutador 
+| Nombre de usuario | Nombre de usuario para el conmutador 
 
 
-| Contraseña | Contraseña para el conmutador 
+| Password | Contraseña para el conmutador 
 |===
 
 
@@ -49,32 +49,32 @@ El análisis de la infraestructura de datos utiliza el recopilador de datos del 
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 15 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 15 minutos. 
 
 
-| Nombre de la estructura | El nombre de la estructura que debe informar el recopilador de datos de EFCM. Deje en blanco para informar el nombre de la estructura como WWN. 
+| Nombre de la tela | Nombre de la tela que será informada por el recopilador de datos EFCM.  Déjelo en blanco para informar el nombre de la tela como WWN. 
 
 
-| Puerto de comunicación | Puerto que se utiliza para la comunicación con el switch 
+| Puerto de comunicación | Puerto utilizado para la comunicación con el conmutador 
 
 
-| Habilite el solapamiento | Seleccione esta opción para activar la adquisición al recibir una captura SNMP del dispositivo. Si selecciona Activar solapamiento, también debe activar SNMP. 
+| Habilitar Trapping | Seleccione esta opción para habilitar la adquisición al recibir una trampa SNMP desde el dispositivo.  Si selecciona habilitar captura, también deberá activar SNMP. 
 
 
-| Tiempo mínimo entre solapamientos (seg) | Tiempo mínimo entre intentos de adquisición activados por solapamientos. El valor predeterminado es 15 segundos. 
+| Tiempo mínimo entre trampas (seg) | Tiempo mínimo entre intentos de adquisición activados por trampas. El valor predeterminado es 15 segundos. 
 
 
-| Zonesets inactivos | Lista separada por comas de los conjuntos de zonas inactivas en los que realizar la adquisición, además de realizar la adquisición en los conjuntos de zonas activas 
+| Conjuntos de zonas inactivas | Lista separada por comas de conjuntos de zonas inactivos en los que se realizará la adquisición, además de realizar la adquisición en los conjuntos de zonas activos 
 
 
-| NIC para utilizar | Especifique la interfaz de red que se debe utilizar en la RAU al informar sobre dispositivos SAN 
+| NIC a utilizar | Especifique qué interfaz de red se debe utilizar en la RAU al informar sobre dispositivos SAN 
 
 
-| Excluir dispositivos | Lista de nombres de unidades separados por comas para incluir o excluir del sondeo 
+| Excluir dispositivos | Lista separada por comas de nombres de unidades para incluir o excluir de la encuesta 
 
 
-| Utilice el apodo del interruptor EFCM como nombre del conmutador | Seleccione esta opción para utilizar el apodo del conmutador EFCM como nombre del conmutador Data Infrastructure Insights. 
+| Utilice el apodo del conmutador EFCM como nombre del conmutador | Seleccione esta opción para utilizar el apodo del conmutador EFCM como nombre del conmutador de Data Infrastructure Insights . 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===

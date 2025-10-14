@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_ms_azure.html 
 keywords: data collector, azure, 
-summary: Configurar recopilador de datos de computación de Azure. 
+summary: Configuración del recopilador de datos de proceso de Azure. 
 ---
-= Configurar el recopilador de datos de computación de Azure
+= Configuración del recopilador de datos de proceso de Azure
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos informáticos de Azure para adquirir datos de inventario y rendimiento de las instancias de computación de Azure.
+Data Infrastructure Insights utiliza el recopilador de datos de cómputo de Azure para adquirir datos de inventario y rendimiento de las instancias de cómputo de Azure.
 
 
 
@@ -19,14 +19,14 @@ Data Infrastructure Insights utiliza el recopilador de datos informáticos de Az
 Necesita la siguiente información para configurar este recopilador de datos.
 
 * Requisito de puerto: 443 HTTPS
-* URI de redireccionamiento para Azure OAuth 2.0 (login.microsoftonline.com)
-* IP de REST de Azure Management (management.azure.com)
-* IP de Azure Resource Manager (management.core.windows.net)
-* ID de aplicación principal de servicios Azure (cliente) (se requiere rol de lector)
-* Clave de autenticación principal del servicio Azure (contraseña de usuario)
-* Tienes que configurar una cuenta de Azure para la detección de Data Infrastructure Insights.
+* URI de redireccionamiento de Azure OAuth 2.0 (login.microsoftonline.com)
+* IP Rest de administración de Azure (management.azure.com)
+* Dirección IP del Administrador de recursos de Azure (management.core.windows.net)
+* Id. de la aplicación principal de servicio de Azure (cliente) (se requiere rol de lector)
+* Clave de autenticación de entidad de servicio de Azure (contraseña de usuario)
+* Debe configurar una cuenta de Azure para el descubrimiento de Data Infrastructure Insights .
 +
-Una vez que la cuenta esté configurada correctamente y registre la aplicación en Azure, tendrá las credenciales necesarias para detectar la instancia de Azure con Data Infrastructure Insights. El enlace siguiente describe cómo configurar la cuenta para la detección. https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
+Una vez que la cuenta esté configurada correctamente y registres la aplicación en Azure, tendrás las credenciales necesarias para descubrir la instancia de Azure con Data Infrastructure Insights.  El siguiente enlace describe cómo configurar la cuenta para el descubrimiento.https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal[]
 
 
 
@@ -34,23 +34,23 @@ Una vez que la cuenta esté configurada correctamente y registre la aplicación 
 
 == Configuración
 
-Introduzca los datos en los campos del recopilador de datos de acuerdo con la tabla siguiente:
+Introduzca datos en los campos del recopilador de datos de acuerdo con la siguiente tabla:
 
 [cols="2*"]
 |===
 | Campo | Descripción 
 
 
-| ID de aplicación principal de servicios Azure (cliente) (se requiere rol de lector) | ID de inicio de sesión en Azure. Requiere acceso a la función Reader. 
+| Id. de la aplicación principal de servicio de Azure (cliente) (se requiere rol de lector) | ID de inicio de sesión en Azure.  Requiere acceso de rol de lector. 
 
 
-| ID de inquilino de Azure | ID de inquilino de Microsoft 
+| Identificador de inquilino de Azure | ID de inquilino de Microsoft 
 
 
-| Clave de autenticación principal del servicio Azure | Clave de autenticación de inicio de sesión 
+| Clave de autenticación de entidad de servicio de Azure | Clave de autenticación de inicio de sesión 
 
 
-| Entiendo que Microsoft me factura por las solicitudes de API | Marque esto para verificar que Microsoft le da la cuenta de las solicitudes de API que ha realizado el sondeo de Insight. 
+| Entiendo que Microsoft me factura las solicitudes de API. | Marque esto para verificar su comprensión de que Microsoft le factura las solicitudes de API realizadas mediante el sondeo de Insight. 
 |===
 
 
@@ -61,19 +61,19 @@ Introduzca los datos en los campos del recopilador de datos de acuerdo con la ta
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 
 
 
-| Elija "excluir" o "incluir" para aplicar al filtro de VM por etiquetas | Especifique si desea incluir o excluir las VM por etiquetas al recopilar datos. Si se selecciona ‘incluir’, el campo clave de etiqueta no puede estar vacío. 
+| Seleccione “Excluir” o “Incluir” para aplicar el filtro de máquinas virtuales por etiquetas | Especifique si desea incluir o excluir máquinas virtuales por etiquetas al recopilar datos.  Si se selecciona “Incluir”, el campo Clave de etiqueta no puede estar vacío. 
 
 
-| Claves de etiqueta y valores en los que se filtran las VM | Haga clic en *+ Filter Tag* para elegir qué equipos virtuales (y discos asociados) incluir/excluir filtrando claves y valores que coincidan con claves y valores de etiquetas en el equipo virtual. Se requiere clave de etiqueta; el valor de etiqueta es opcional. Cuando el valor de etiqueta está vacío, la máquina virtual se filtra siempre que coincida con la clave de etiqueta. 
+| Claves y valores de etiqueta para filtrar máquinas virtuales | Haga clic en *+ Etiqueta de filtro* para elegir qué máquinas virtuales (y discos asociados) desea incluir o excluir filtrando claves y valores que coincidan con las claves y valores de las etiquetas en la máquina virtual.  La clave de etiqueta es obligatoria, el valor de etiqueta es opcional.  Cuando el valor de etiqueta está vacío, la máquina virtual se filtra siempre que coincida con la clave de etiqueta. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

@@ -14,16 +14,16 @@ summary: Supervise el estado de la infraestructura con una puntuación unificada
 
 
 [role="lead"]
-Data Infrastructure Insights proporciona un monitoreo integral del estado de la infraestructura que rastrea el rendimiento, la capacidad, la configuración y el estado de los componentes de su entorno de almacenamiento.  Los puntajes de salud se calculan en función de las alertas del monitor en estas categorías, lo que le brinda una vista unificada del estado del sistema y permite la resolución proactiva de problemas.
+Data Infrastructure Insights proporciona un monitoreo integral del estado de la infraestructura que rastrea el rendimiento, la capacidad, la configuración y el estado de los componentes de su entorno de almacenamiento. Los puntajes de salud se calculan en función de las alertas del monitor en estas categorías, lo que le brinda una vista unificada del estado del sistema y permite la resolución proactiva de problemas.
 
 
 
 == El panel de control de salud de la infraestructura
 
 
-NOTE: Monitorear la salud de la infraestructura es unalink:concept_preview_features.html["Vista previa"] característica y está sujeta a cambios.
+NOTE: Monitorear la salud de la infraestructura es unalink:concept_preview_features.html["Avance"] característica y está sujeta a cambios.
 
-Vaya a *Observabilidad > Analizar* y seleccione *Salud de la infraestructura*.  El panel de control proporciona una descripción general del estado del sistema, en función de las categorías de alerta del monitor y los puntajes, como se explica a continuación.  Establezca filtros en la parte superior para limitar el enfoque de su investigación.
+Vaya a *Observabilidad > Analizar* y seleccione *Salud de la infraestructura*. El panel de control proporciona una descripción general del estado del sistema, en función de las categorías de alerta del monitor y los puntajes, como se explica a continuación. Establezca filtros en la parte superior para limitar el enfoque de su investigación.
 
 image:infra_health_main_screen.png["descripción general del estado de la infraestructura"]
 
@@ -35,7 +35,7 @@ De forma predeterminada, los puntajes de salud se agrupan por centro de datos; p
 
 Los puntajes de salud se controlan mediante alertas que se configuran para su inclusión en los cálculos de salud del sistema.
 
-Al crear un monitor para un objeto de infraestructura, puede elegir si desea incluir alertas del monitor en los cálculos.  En la parte inferior de la pantalla, expanda la Configuración avanzada y seleccione _Incluir en el cálculo del estado de la infraestructura_.  Seleccione una categoría a la que aplicar el cálculo para el monitor:
+Al crear un monitor para un objeto de infraestructura, puede elegir si desea incluir alertas del monitor en los cálculos. En la parte inferior de la pantalla, expanda la Configuración avanzada y seleccione _Incluir en el cálculo del estado de la infraestructura_. Seleccione una categoría a la que aplicar el cálculo para el monitor:
 
 * *Estado del componente*: falla del ventilador, procesador de servicio fuera de línea, etc.
 * *Salud del rendimiento*: alta utilización del nodo de almacenamiento, pico anormal en la latencia del nodo, etc.
@@ -49,7 +49,7 @@ image:infra_health_monitor_advanced_config.png["Monitorizar configuración avanz
 
 == Explicación de las puntuaciones de salud
 
-Las puntuaciones se presentan en una escala de 0 a 100, donde 100 representa plena salud.  Los objetos de infraestructura monitoreados que actualmente o recientemente hayan experimentado problemas reducirán esta puntuación de acuerdo con los siguientes promedios ponderados:
+Las puntuaciones se presentan en una escala de 0 a 100, donde 100 representa plena salud. Los objetos de infraestructura monitoreados que actualmente o recientemente hayan experimentado problemas reducirán esta puntuación de acuerdo con los siguientes promedios ponderados:
 
 * Componentes, rendimiento o capacidad: 30% cada uno
 * Configuración: 10%

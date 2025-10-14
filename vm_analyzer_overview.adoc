@@ -4,7 +4,7 @@ permalink: vm_analyzer_overview.html
 summary: VM Analyzer proporciona topología para activos virtuales en su inquilino 
 keywords: topology, analyze, analysis, map, virtual, vm, vmware 
 ---
-= Descripción general del analizador VM
+= Descripción general del analizador de máquinas virtuales
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,24 +14,24 @@ keywords: topology, analyze, analysis, map, virtual, vm, vmware
 
 
 [role="lead"]
-Con *VM Analyzer* de DII, la gestión de sus activos virtuales se vuelve más sencilla y eficiente. Esta potente herramienta ofrece visibilidad integral, mapeando dependencias desde VMDK/VM al host, al almacén de datos, al volumen interno o al volumen al almacenamiento.
+Con *VM Analyzer* de DII, administrar sus activos virtuales se vuelve más simple y eficiente.  Esta poderosa herramienta ofrece visibilidad de extremo a extremo, mapeando dependencias desde VMDK/VM al host, al almacén de datos, al volumen interno o al volumen al almacenamiento.
 
-Al proporcionar un mapa topológico interactivo, VM Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos. Optimice la gestión de máquinas virtuales y aumente su visibilidad en las cargas de trabajo virtuales.
+Al proporcionar un mapa de topología interactivo, VM Analyzer le permite identificar problemas, comprender cambios y mejorar la comprensión del flujo de datos.  Optimice la gestión de máquinas virtuales y aumente su visibilidad en las cargas de trabajo virtuales.
 
-image:vm_analyzer_example_with_panel_a.png["Mapa de topología de un sistema de almacenamiento de VM Analyzer"]
+image:vm_analyzer_example_with_panel_a.png["Mapa de topología de VM Analyzer de un sistema de almacenamiento"]
 
 
 
 == Explora las conexiones entre tus activos
 
-Seleccione *Observabilidad > Analizar > Analizador de VM* para ver el Analizador de VM. Establezca un filtro para Aplicación, Máquina virtual, Volumen, Volumen interno o agregue sus propios filtros. Se muestra el mapa de los objetos, mostrando los objetos conectados. Pase el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
+Seleccione *Observabilidad > Analizar > Analizador de VM* para ver el Analizador de VM.  Establezca un filtro para Aplicación, Máquina virtual, Volumen, Volumen interno o agregue sus propios filtros.  Se muestra el mapa de los objetos, mostrando los objetos conectados.  Coloque el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
 
 image:vm_analyzer_performance_metrics.png["Ejemplo de métricas de rendimiento del analizador de VM"]
 
 
-NOTE: La mayoría de los filtros de VM Analyzer (incluidos los que puede agregar) son contextuales; cuando selecciona un objeto en uno de estos filtros, las opciones que aparecen en los otros desplegables de filtros se actualizan en contexto con el objeto u objetos seleccionados.
+NOTE: La mayoría de los filtros de VM Analyzer (incluidos aquellos que puede agregar) son contextuales; cuando selecciona un objeto en uno de estos filtros, las opciones presentadas en los otros menús desplegables de filtros se actualizan en contexto con el objeto o los objetos seleccionados.
 
-Al hacer clic en un objeto o grupo, se abre un panel deslizante que proporciona detalles adicionales sobre el objeto y sus conexiones. El panel desplegable muestra un resumen con detalles sobre el objeto seleccionado (por ejemplo, rendimiento o utilización, según el tipo de objeto) y gráficos con métricas, como latencia o IOPS. Las pestañas adicionales permiten explorar recursos adicionales relacionados, cambios y alertas. Si lo desea, también puede mostrar las métricas de los objetos más correlacionados o en conflicto en los gráficos.
+Al hacer clic en un objeto o grupo, se abre un panel deslizable que proporciona detalles adicionales sobre el objeto y sus conexiones.  El panel deslizable muestra un resumen, que proporciona detalles sobre el objeto seleccionado (por ejemplo, rendimiento o utilización, según el tipo de objeto) y gráficos que muestran métricas del objeto, como latencia o IOPS.  Las pestañas adicionales le permiten explorar recursos adicionales relacionados o cambios y alertas.  También puede seleccionar mostrar métricas para los objetos principales correlacionados o en competencia en los gráficos, si así lo desea.
 
 
 

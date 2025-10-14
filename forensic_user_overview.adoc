@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: forensic_user_overview.html 
 keywords: Forensic, user, user, activity 
-summary: detalles forenses del usuario 
+summary: detalle del usuario forense 
 ---
 = Descripción general del usuario forense
 :hardbreaks:
@@ -14,18 +14,18 @@ summary: detalles forenses del usuario
 
 
 [role="lead"]
-La información de cada usuario se proporciona en la sección Información general del usuario. Utilice estas vistas para comprender las características del usuario, las entidades asociadas y las actividades recientes.
+La información de cada usuario se proporciona en la Descripción general del usuario.  Utilice estas vistas para comprender las características del usuario, las entidades asociadas y las actividades recientes.
 
 
 
 == Perfil de usuario
 
-La información del perfil de usuario incluye la información de contacto y la ubicación del usuario. El perfil proporciona la siguiente información:
+La información del perfil de usuario incluye información de contacto y ubicación del usuario.  El perfil proporciona la siguiente información:
 
 * Nombre del usuario
 * Dirección de correo electrónico del usuario
-* Administrador del usuario
-* Contacto telefónico para el usuario
+* Administrador de usuarios
+* Contacto telefónico del usuario
 * Ubicación del usuario
 
 
@@ -33,12 +33,12 @@ La información del perfil de usuario incluye la información de contacto y la u
 
 == Comportamiento del usuario
 
-La información sobre el comportamiento del usuario identifica las actividades y operaciones recientes realizadas por el usuario. Esta información incluye:
+La información sobre el comportamiento del usuario identifica las actividades y operaciones recientes realizadas por el usuario.  Esta información incluye:
 
 * Actividad reciente
 +
 ** Última ubicación de acceso
-** Gráfico de actividades
+** Gráfico de actividad
 ** Alertas
 
 
@@ -46,14 +46,14 @@ La información sobre el comportamiento del usuario identifica las actividades y
 
 * Operaciones de los últimos siete días
 +
-** Cantidad de operaciones
+** Número de operaciones
 
 
 
 
 
 
-== Actualizar intervalo
+== Intervalo de actualización
 
 La lista de usuarios se actualiza cada 12 horas.
 
@@ -61,4 +61,4 @@ La lista de usuarios se actualiza cada 12 horas.
 
 == Política de retención
 
-Si no se vuelve a actualizar, la lista de usuarios se conserva durante 13 meses. Después de 13 meses, los datos se eliminarán. Si se elimina el entorno Workload Security, se eliminan todos los datos asociados con el entorno.
+Si no se actualiza nuevamente, la lista de usuarios se conserva durante 13 meses.  Después de 13 meses, los datos serán eliminados.  Si se elimina su entorno de seguridad de carga de trabajo, se eliminarán todos los datos asociados con el entorno.

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_haproxy.html 
 keywords: telegraf, installation, install, haproxy 
-summary: Configuración del recopilador de datos de HAProxy 
+summary: Configuración del recopilador de datos HAProxy 
 ---
-= Recopilador de datos de HAProxy
+= Recopilador de datos HAProxy
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,13 +16,13 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione HAProxy.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija HAProxy.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:HAProxyDCConfigLinux.png["Configuración de HAProxy"]
@@ -31,7 +31,7 @@ image:HAProxyDCConfigLinux.png["Configuración de HAProxy"]
 
 == Configuración
 
-El complemento de Telegraf para HAProxy se basa en la habilitación de HAProxy Stats. Se trata de una configuración integrada en HAProxy pero no está activada de forma inmediata. Cuando se habilita, HAProxy expondrá un punto final HTML que se puede ver en el explorador o se puede raspar para extraer el estado de todas las configuraciones de HAProxy.
+El complemento de Telegraf para HAProxy depende de la habilitación de HAProxy Stats.  Esta es una configuración incorporada en HAProxy pero no está habilitada de fábrica.  Cuando está habilitado, HAProxy expondrá un punto final HTML que puede verse en su navegador o extraerse para extraer el estado de todas las configuraciones de HAProxy.
 
 
 
@@ -43,7 +43,7 @@ La configuración se desarrolló contra HAProxy versión 1.9.4.
 
 === Configuración:
 
-Para habilitar las estadísticas, edite el archivo de configuración de haproxy y agregue las siguientes líneas después de la sección 'valores predeterminados', utilizando su propia contraseña/usuario y/o URL de haproxy:
+Para habilitar las estadísticas, edite su archivo de configuración de haproxy y agregue las siguientes líneas después de la sección "valores predeterminados", utilizando su propio usuario/contraseña y/o URL de haproxy:
 
 [listing]
 ----
@@ -51,7 +51,7 @@ stats enable
 stats auth myuser:mypassword
 stats uri  /haproxy?stats
 ----
-A continuación se muestra un ejemplo de archivo de configuración simplificado con estadísticas habilitadas:
+El siguiente es un archivo de configuración de ejemplo simplificado con estadísticas habilitadas:
 
 [listing]
 ----
@@ -84,29 +84,29 @@ backend servers_2
   server server3 10.128.0.57:8080 check ssl verify none
   server server4 10.128.0.58:8080 check ssl verify none
 ----
-Para obtener instrucciones completas y actualizadas, consulte la link:https://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4-stats%20enable["Documentación de HAProxy"].
+Para obtener instrucciones completas y actualizadas, consulte lalink:https://cbonte.github.io/haproxy-dconv/1.8/configuration.html#4-stats%20enable["Documentación de HAProxy"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Interfaz HAProxy | Proxy de direcciones de espacio de nombres | Nodo IP Nombre de nodo ID de proxy modo Id. De proceso sesiones límite de número de sesiones id de servidor Estado de límite | Bytes in bytes OUT Cache Hits Cache LOOKUP bytes de compresión bytes de compresión omitidos en bytes de compresión respuestas de compresión tasa de conexión Max Connections solicitudes totales denegadas por solicitudes de regla de conexión denegadas por respuestas de seguridad denegadas por solicitudes de problemas de seguridad denegadas por solicitudes de regla de sesión respuesta de errores 1xx Respuestas 2xx respuestas 3xx respuestas 4xx respuestas 5xx respuestas otras solicitudes interceptadas sesiones tasa máx. Solicitudes tasa máx. Solicitudes tasa máx. Solicitudes máx. Sesiones sesiones máx. Sesiones sesiones número máx. De solicitudes reescrituras 
+| Interfaz HAProxy | Proxy de dirección de espacio de nombres | IP del nodo Nombre del nodo ID de proxy Modo ID de proceso Límite de velocidad de sesiones ID de servidor Límite de sesiones Estado | Bytes de entrada Bytes de salida Hits de caché Búsquedas de caché Bytes de compresión Bytes omitidos Compresión Bytes de entrada Compresión Bytes de salida Compresión Respuestas Tasa de conexión Tasa de conexión Conexiones máximas Total de solicitudes denegadas por regla de conexión Solicitudes denegadas por problemas de seguridad Respuestas denegadas por problemas de seguridad Solicitudes denegadas por regla de sesión Errores de solicitudes Respuestas 1xx Respuestas 2xx Respuestas 3xx Respuestas 4xx Respuestas 5xx Respuestas Otras solicitudes interceptadas Tasa de sesiones Tasa de sesiones Tasa de solicitudes máximas Tasa de solicitudes Tasa de solicitudes máximas Total de sesiones Sesiones máximas Sesiones Total de solicitudes Reescrituras 
 
 
-| Servidor HAProxy | Servidor proxy de direcciones del espacio de nombres | Nombre de nodo IP Comprobación tiempo de finalización Comprobación Configuración de caída comprobar valor de estado comprobar configuración de elevación comprobar estado ID de proxy última hora última hora última sesión modo de proceso id. De servidor Peso | Servidores activos copia de seguridad servidores bytes en bytes sin comprobar las dus Comprobación de errores cliente falla aborta conexiones Conexión tiempo medio inactividad total respuestas denegadas errores de conexión respuestas 1xx respuestas 2xx respuestas 3xx respuestas 4xx respuestas 5xx otro servidor seleccionado Cola total actual Máx. Cola sesiones de tiempo medio por Segunda sesiones por segundo tiempo máximo de respuesta de reutilización sesiones promedio sesiones transferencia máxima de servidor aborta sesiones total sesiones solicitudes promedio de tiempo total Redistribuye solicitudes de reescrituras de reintentos 
+| Servidor HAProxy | Servidor proxy de direcciones de espacio de nombres | IP del nodo Nombre del nodo Verificar tiempo para finalizar Verificar configuración de caída Verificar valor de salud Verificar configuración de subida Verificar estado ID de proxy Hora del último cambio Hora de la última sesión Modo ID de proceso ID de servidor Estado Peso | Servidores activos Servidores de respaldo Bytes de entrada Bytes de salida Desactivaciones de comprobación Errores de comprobación Conexiones de cliente Tiempo promedio de conexión Tiempo de inactividad Total de respuestas denegadas Errores de conexión Errores de respuesta Respuestas 1xx Respuestas 2xx Respuestas 3xx Respuestas 4xx Respuestas 5xx Respuestas Otro servidor seleccionado Cola total Cola actual Tiempo promedio máximo de cola Sesiones por segundo Sesiones por segundo Tiempo máximo de respuesta de reutilización de conexión Promedio de sesiones Sesiones Transferencia máxima de servidor Aborta sesiones Sesiones totales Tiempo total promedio de solicitudes Redespaciados Solicitudes Reintentos Solicitudes Reescrituras 
 
 
-| Backend de HAProxy | Proxy de direcciones de espacio de nombres | Nodo IP Nombre de nodo ID de proxy última hora de cambio última sesión modo de proceso id. De servidor sesiones límite Peso | Servidores activos copia de seguridad de servidores bytes en bytes caché aciertos en caché consultas en caché Comprobación de clientes de Downs aborta bytes de compresión bytes de compresión omitidos en bytes de compresión respuestas de compresión conexiones tiempo medio de inactividad de conexión solicitudes totales denegadas por problemas de seguridad respuestas denegadas por errores de conexión respuesta errores de respuesta 1xx respuestas 2xx respuestas 3xx respuestas 4xx respuestas 5xx respuestas otro servidor seleccionado Cola total Cola actual Máx. Cola sesiones de tiempo medio por segundo sesiones por segundo número máximo de solicitudes total tiempo de respuesta de reutilización sesiones promedio sesiones Máx. Transferencia de servidores aborta sesiones total sesiones número de sesiones solicitudes promedio de tiempo total Redistribuye solicitudes de reintentos Reescrituras 
+| Backend de HAProxy | Proxy de dirección de espacio de nombres | IP del nodo Nombre del nodo ID de proxy Hora del último cambio Hora de la última sesión Modo ID de proceso ID de servidor Límite de sesiones Estado Peso | Servidores activos Servidores de respaldo Bytes de entrada Bytes de salida Aciertos de caché Búsquedas de caché Desactivaciones de cliente Anulaciones de cliente Bytes de compresión omitidos Bytes de compresión de entrada Bytes de compresión de salida Respuestas de compresión Conexiones Tiempo promedio de conexión Tiempo de inactividad Total de solicitudes denegadas por problemas de seguridad Respuestas denegadas por problemas de seguridad Errores de conexión Errores de respuesta Respuestas 1xx Respuestas 2xx Respuestas 3xx Respuestas 4xx Respuestas 5xx Respuestas Otro servidor seleccionado Cola total Cola actual Tiempo promedio máximo de cola Sesiones por segundo Sesiones por segundo Máximo de solicitudes Reutilización total de conexión Tiempo de respuesta Promedio de sesiones Sesiones Máximo de anulaciones de transferencia de servidor Sesiones Total de sesiones Tiempo total Promedio de solicitudes Redespaciados Solicitudes Reintentos Solicitudes Reescrituras 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

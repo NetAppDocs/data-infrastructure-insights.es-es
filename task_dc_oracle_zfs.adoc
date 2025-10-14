@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_oracle_zfs.html 
 keywords: data collector, Oracle, ZFS, storage applicance 
-summary: Configuración de Oracle ZFS data Collector. 
+summary: Configuración del recopilador de datos de Oracle ZFS. 
 ---
 = Recopilador de datos de Oracle ZFS Storage Appliance
 :hardbreaks:
@@ -10,23 +10,23 @@ summary: Configuración de Oracle ZFS data Collector.
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos de Oracle ZFS Storage Appliance para recopilar datos de inventario y rendimiento.
+Data Infrastructure Insights utiliza el recopilador de datos de Oracle ZFS Storage Appliance para reunir datos de inventario y rendimiento.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere información de inventario con el recopilador de datos Oracle ZFS. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere información de inventario con el recopilador de datos Oracle ZFS.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco (SSD) | Disco 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
 | Controladora | Nodo de almacenamiento 
@@ -35,21 +35,21 @@ Data Infrastructure Insights adquiere información de inventario con el recopila
 | LUN | Volumen 
 
 
-| Mapa de LUN | Asignación de volumen 
+| Mapa LUN | Mapa de volumen 
 
 
-| Iniciador, destino | Máscara de volumen 
+| Iniciador, Objetivo | Máscara de volumen 
 
 
-| Share | Volumen interno 
+| Compartir | Volumen interno 
 |===
-Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de esta fuente de datos.
 
 
 
 == Requisitos
 
-* Nombres de host para ZFS Controller-1 y ZFS Controller-2
+* Nombres de host para el controlador ZFS-1 y el controlador ZFS-2
 * Nombre de usuario y contraseña del administrador
 * Requisito de puerto: 215 HTTP/HTTPS
 
@@ -58,15 +58,15 @@ Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no
 
 == Métricas de rendimiento requeridas
 
-Los dispositivos Oracle ZFS proporcionan a los administradores de almacenamiento una gran cantidad de flexibilidad para capturar estadísticas de rendimiento. Data Infrastructure Insights espera que tenga una controladora _each_ en un par de alta disponibilidad configurado para capturar las siguientes métricas:
+Los dispositivos Oracle ZFS brindan a los administradores de almacenamiento grandes cantidades de flexibilidad para capturar estadísticas de rendimiento.  Data Infrastructure Insights espera que _cada_ controlador en un par de alta disponibilidad esté configurado para capturar las siguientes métricas:
 
-* smb2.ops[share]
-* nfs3.ops[share]
-* nfs4.ops[share]
-* nfs4-1.ops[share]
+* smb2.ops[compartir]
+* nfs3.ops[compartir]
+* nfs4.ops[compartir]
+* nfs4-1.ops[compartir]
 
 
-En caso de que la controladora no capture alguna o todas estas opciones, probablemente provocará que Información de infraestructura de datos no disponga, o que no genere informes suficientes, de la carga de trabajo en los «Volúmenes internos».
+Si el controlador no logra capturar alguno o todos estos datos, es probable que Data Infrastructure Insights no tenga o no informe la carga de trabajo en los "Volúmenes internos".
 
 
 
@@ -77,16 +77,16 @@ En caso de que la controladora no capture alguna o todas estas opciones, probabl
 | Campo | Descripción 
 
 
-| Nombre de host de ZFS Controller-1 | Nombre del host de la controladora de almacenamiento 1 
+| Nombre de host del controlador ZFS-1 | Nombre de host para el controlador de almacenamiento 1 
 
 
-| Nombre de host ZFS Controller-2 | Nombre del host de la controladora de almacenamiento 2 
+| Nombre de host del controlador ZFS-2 | Nombre de host para el controlador de almacenamiento 2 
 
 
-| Nombre de usuario | El nombre de usuario de administrador del sistema de almacenamiento 
+| Nombre de usuario | Nombre de usuario para la cuenta de usuario del administrador del sistema de almacenamiento 
 
 
-| Contraseña | Contraseña de la cuenta de usuario administrador 
+| Password | Contraseña para la cuenta de usuario administrador 
 |===
 
 
@@ -100,19 +100,19 @@ En caso de que la controladora no capture alguna o todas estas opciones, probabl
 | Tipo de conexión | HTTPS o HTTP, también muestra el puerto predeterminado 
 
 
-| Anular puerto de conexión | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, introduzca el puerto de conexión que desea utilizar 
+| Anular puerto de conexión | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, ingrese el puerto de conexión a utilizar. 
 
 
-| Intervalo del sondeo de inventario | El valor predeterminado es 60 segundos 
+| Intervalo de sondeo de inventario | El valor predeterminado es 60 segundos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300. 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -120,43 +120,43 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2a, 2a"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
  a| 
 "Credenciales de inicio de sesión no válidas"
  a| 
-Validar la cuenta de usuario y contraseña de ZFS
+Validar la cuenta de usuario y la contraseña de Zfs
 
 
 
  a| 
-La solicitud ha fallado con el estado 404 \https://.....:215/api/access/v1"
+"La solicitud falló con el estado 404 \https://.....:215/api/access/v1"
  a| 
-Es posible que la matriz ZFS sea demasiado antigua para admitir la API REST. AK 2013.1.3.0 fue la primera versión de SO ZFS compatible con API REST y no todos los dispositivos ZFS se pueden actualizar a ella.
-
-
-
- a| 
-"Error de configuración" con el mensaje de error "el servicio DE REPOSO está desactivado"
- a| 
-Compruebe que el servicio REST esté activado en este dispositivo.
+Es posible que su matriz ZFS sea demasiado antigua para tener soporte de API REST.  AK 2013.1.3.0 fue la primera versión del sistema operativo ZFS compatible con API REST, y no todos los dispositivos ZFS pueden actualizarse a ella.
 
 
 
  a| 
-"Error de configuración " con el mensaje de error "Usuario no autorizado para comando"
+"Error de configuración" con el mensaje de error "El servicio REST está deshabilitado"
  a| 
-Este error se debe probablemente a que ciertos roles (por ejemplo, 'ADVANCED_ANALYTICS') no se incluyen para el usuario configurado.
+Verifique que el servicio REST esté habilitado en este dispositivo.
 
-La aplicación del ámbito de análisis para el usuario con rol de sólo lectura puede eliminar el error. Siga estos pasos:
 
-. En el sistema ZFS, en la pantalla Configuración -> Usuarios, mueva el ratón sobre el rol y haga doble clic para permitir la edición
-. Seleccione "Análisis" en el menú desplegable ámbito. Aparece una lista de las propiedades posibles.
-. Haga clic en la casilla de verificación situada en la parte superior y seleccionará las tres propiedades.
+
+ a| 
+"Error de configuración" con el mensaje de error "Usuario no autorizado para el comando"
+ a| 
+Es probable que este error se deba a que ciertos roles (por ejemplo, 'advanced_analytics') no están incluidos para el usuario configurado.
+
+La aplicación del ámbito de Analytics para el usuario con rol de solo lectura puede eliminar el error. Siga estos pasos:
+
+. En el sistema ZFs, desde la pantalla Configuración -> Usuarios, mueva el mouse sobre el rol y haga doble clic para permitir la edición
+. Seleccione “Análisis” en el menú desplegable Alcance.  Aparece una lista de las posibles propiedades.
+. Haga clic en la casilla de verificación superior y se seleccionarán las tres propiedades.
 . Haga clic en el botón Agregar en el lado derecho.
-. Haga clic en el botón aplicar situado en la parte superior derecha de la ventana emergente. Se cerrará la ventana emergente.
+. Haga clic en el botón Aplicar en la parte superior derecha de la ventana emergente.  La ventana emergente se cerrará.
 
 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

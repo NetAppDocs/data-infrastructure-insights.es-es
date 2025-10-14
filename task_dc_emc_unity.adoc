@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_emc_unity.html 
 keywords: data collector, VNXe, EMC, Unity 
-summary: Configurar el recopilador de datos de VNXe. 
+summary: Configuración del recopilador de datos de VNXe. 
 ---
 = Configuración del recopilador de datos de EMC Unity
 :hardbreaks:
@@ -10,35 +10,35 @@ summary: Configurar el recopilador de datos de VNXe.
 
 
 [role="lead"]
-El recopilador DE datos DE DELL EMC Unity (anteriormente VNXe) proporciona compatibilidad de inventario para las cabinas de almacenamiento unificado de VNXe. Data Infrastructure Insights admite actualmente los protocolos iSCSI y NAS.
+El recopilador de datos de DELL EMC Unity (anteriormente VNXe) proporciona soporte de inventario para matrices de almacenamiento unificadas VNXe.  Data Infrastructure Insights actualmente admite los protocolos iSCSI y NAS.
 
 
 
 == Requisitos
 
-* El recopilador de datos de Unity se basa en la CLI; debe instalar Unisphere para Unity CLI (uemcli.exe) en la unidad de adquisición en la que reside el recopilador de datos de VNXe.
-* uemcli.exe utiliza HTTPS como protocolo de transporte, por lo que la unidad de adquisición necesitará poder iniciar conexiones HTTPS a la unidad Unity.
+* El recopilador de datos de Unity se basa en CLI; debe instalar la CLI de Unisphere para Unity (uemcli.exe) en la unidad de adquisición donde reside el recopilador de datos de VNXe.
+* uemcli.exe utiliza HTTPS como protocolo de transporte, por lo que la unidad de adquisición deberá poder iniciar conexiones HTTPS a Unity.
 * Dirección IP o nombre de dominio completo del dispositivo Unity
-* Debe tener al menos un usuario de sólo lectura para que lo utilice el recopilador de datos.
+* Debe tener al menos un usuario de solo lectura para que lo utilice el recopilador de datos.
 * Se requiere HTTPS en el puerto 443
-* El recopilador de datos de EMC Unity proporciona compatibilidad con NAS e iSCSI para el inventario; se detectarán volúmenes de canal de fibra, pero Data Infrastructure Insights no informa sobre la asignación de FC, el enmascaramiento ni los puertos de almacenamiento.
+* El recopilador de datos de EMC Unity proporciona compatibilidad con NAS e iSCSI para el inventario; se descubrirán volúmenes de canal de fibra, pero Data Infrastructure Insights no informa sobre el mapeo, el enmascaramiento ni los puertos de almacenamiento de FC.
 
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Unity. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Unity.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Cabina de almacenamiento | Reducida 
+| Matriz de almacenamiento | Almacenamiento 
 
 
 | Procesador | Nodo de almacenamiento 
@@ -47,10 +47,10 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Pool de almacenamiento | Pool de almacenamiento 
 
 
-| Información general del bloque iSCSI, VMFS de VMware | Share 
+| Información general del bloque iSCSI, VMware VMFS | Compartir 
 
 
-| Sistema remoto con replicación | Sincronización 
+| Sistema remoto de replicación | Sincronización 
 
 
 | Nodo iSCSI | Nodo de destino iSCSI 
@@ -58,7 +58,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 | Iniciador iSCSI | Iniciador de destino iSCSI 
 |===
-Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de esta fuente de datos.
 
 
 
@@ -69,16 +69,16 @@ Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no
 | Campo | Descripción 
 
 
-| Unidad de almacenamiento | Dirección IP o nombre de dominio completo del dispositivo Unity 
+| Almacenamiento de Unity | Dirección IP o nombre de dominio completo del dispositivo Unity 
 
 
-| Nombre de usuario | Nombre de usuario del dispositivo Unity 
+| Nombre de usuario | Nombre de usuario para el dispositivo Unity 
 
 
-| Contraseña | Contraseña para el dispositivo Unity 
+| Password | Contraseña para el dispositivo Unity 
 
 
-| Ruta completa a la UEMCLI ejecutable | Ruta completa a la carpeta que contiene el ejecutable _uemcli.exe_ 
+| Ruta completa al ejecutable UEMCLI | Ruta completa a la carpeta que contiene el ejecutable _uemcli.exe_ 
 |===
 
 
@@ -89,19 +89,19 @@ Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 40 minutos 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 40 minutos. 
 
 
 | Puerto CLI de Unity | Puerto utilizado para la CLI de Unity 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300. 
+| Intervalo de sondeo de rendimiento (seg.) | El valor predeterminado es 300. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -109,9 +109,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "No se pudo ejecutar la utilidad externa" con mensajes de error "no se pudo encontrar el uemcli ejecutable de Unisphere" | * Verifique la dirección IP correcta, el nombre de usuario y la contraseña * Confirme que Unisphere CLI está instalado en la Unidad de adquisición de información de infraestructura de datos * Confirme que el directorio de instalación de Unisphere CLI es correcto en la configuración del origen de datos * Confirme que la IP de VNXe es correcta en la configuración del origen de datos. En la unidad de adquisición de Data Infrastructure Insights, abra un CMD y cambie al directorio de instalación configurado: ${INSTALLDIR. Intente establecer una conexión con el dispositivo VNXe escribiendo: Uemcli -d <Your IP> -u <Your ID> /sys/general show 
+| "Error al ejecutar la utilidad externa" con mensajes de error "Error al encontrar el ejecutable de Unisphere uemcli" | * Verifique que la dirección IP, el nombre de usuario y la contraseña sean correctos * Confirme que Unisphere CLI esté instalado en la unidad de adquisición de Data Infrastructure Insights * Confirme que el directorio de instalación de Unisphere CLI sea correcto en la configuración de la fuente de datos * Confirme que la IP de VNXe sea correcta en la configuración de la fuente de datos.  Desde la Unidad de adquisición de Data Infrastructure Insights , abra un CMD y cambie al directorio de instalación configurado: ${INSTALLDIR.  Intente establecer una conexión con el dispositivo VNXe escribiendo: uemcli -d <Su IP> -u <Su ID> /sys/general show 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

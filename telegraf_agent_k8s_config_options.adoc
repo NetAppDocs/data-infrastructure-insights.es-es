@@ -4,7 +4,7 @@ permalink: telegraf_agent_k8s_config_options.html
 keywords: telegraf, installation, install, agent, telegraf agent, kubernetes, eks, operator, k8s, options, configuration 
 summary: Configure el operador de monitoreo de Kubernetes de NetApp mediante las opciones de AgentConfiguration. 
 ---
-= Opciones de configuración del operador de supervisión de Kubernetes
+= Opciones de configuración del operador de monitoreo de Kubernetes
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Configure el operador de monitoreo de Kubernetes de NetApp mediante las
 
 
 [role="lead"]
-El link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de supervisión de Kubernetes"] Ofrece amplias opciones de personalización mediante el archivo AgentConfiguration. Puede configurar límites de recursos, intervalos de recopilación, configuración de proxy, tolerancias y ajustes específicos de cada componente para optimizar la monitorización de su entorno de Kubernetes. Utilice estas opciones para personalizar Telegraf, Kube-State-Metrics, la recopilación de registros, el mapeo de cargas de trabajo, la gestión de cambios y otros componentes de monitorización.
+El link:task_config_telegraf_agent_k8s.html#configuringcustomizing-the-operator["Operador de monitoreo de Kubernetes"] Ofrece amplias opciones de personalización mediante el archivo AgentConfiguration. Puede configurar límites de recursos, intervalos de recopilación, configuración de proxy, tolerancias y ajustes específicos de cada componente para optimizar la monitorización de su entorno de Kubernetes. Utilice estas opciones para personalizar Telegraf, Kube-State-Metrics, la recopilación de registros, el mapeo de cargas de trabajo, la gestión de cambios y otros componentes de monitorización.
 
 La siguiente tabla enumera las posibles opciones para el archivo _AgentConfiguration_:
 
@@ -23,190 +23,190 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 | Componente | Opción | Descripción 
 
 
-| agente |  | Opciones de configuración comunes a todos los componentes que el operador puede instalar. Estas pueden considerarse como opciones “globales”. 
+| agente |  | Opciones de configuración comunes a todos los componentes que el operador puede instalar.  Estas pueden considerarse como opciones "globales". 
 
 
-|  | Repositorio de documentos | Una anulación de dockerRepo para extraer imágenes de los repositorios de Docker privados del cliente en lugar del repositorio de Docker de Data Infrastructure Insights . El valor predeterminado es el repositorio de Docker de Data Infrastructure Insights . 
+|  | Repositorio Docker | Una anulación de dockerRepo para extraer imágenes de los repositorios de Docker privados del cliente en lugar del repositorio de Docker de Data Infrastructure Insights . El valor predeterminado es el repositorio de Docker de Data Infrastructure Insights . 
 
 
-|  | DockerImagePullSecret | Opcional: Un secreto para el repositorio privado del cliente. 
+|  | Secreto de extracción de imagen de Docker | Opcional: Un secreto para el repositorio privado del cliente. 
 
 
-|  | Nombre del clúster | Campo de texto libre que identifica de forma única un clúster entre todos los clústeres del cliente. Debe ser único en un inquilino de Data Infrastructure Insights . El valor predeterminado es el que el cliente introduce en la interfaz de usuario en el campo "Nombre del clúster". 
+|  | nombre del clúster | Campo de texto libre que identifica de forma única un clúster entre todos los clústeres del cliente. Debe ser único en un inquilino de Data Infrastructure Insights . El valor predeterminado es el que el cliente introduce en la interfaz de usuario en el campo "Nombre del clúster". 
 
 
-|  | Proxy Format: Proxy: Servidor: Puerto: Nombre de usuario: Contraseña: NoProxy: IsTelegrafProxyEnabled: IsAuProxyEnabled: IsFluentbitProxyEnabled: IsCollectorProxyEnabled: | Opcional para establecer el proxy. Este suele ser el proxy corporativo del cliente. 
+|  | Formato proxy: proxy: servidor: puerto: nombre de usuario: contraseña: noProxy: isTelegrafProxyEnabled: isAuProxyEnabled: isFluentbitProxyEnabled: isCollectorProxyEnabled: | Opcional para configurar proxy.  Generalmente se trata del apoderado corporativo del cliente. 
 
 
-| telegraf |  | Opciones de configuración que pueden personalizar la instalación de telegraf del Operador 
+| telégrafo |  | Opciones de configuración que pueden personalizar la instalación de telegraf del Operador 
 
 
-|  | Intervalo de colección | Intervalo de recopilación de métricas, en segundos (Max=60s) 
+|  | Intervalo de colección | Intervalo de recopilación de métricas, en segundos (máximo = 60 s) 
 
 
-|  | DsCpuLimit | Límite de CPU para telegraf ds 
+|  | dsCpuLimit | Límite de CPU para telegraf ds 
 
 
-|  | DsMemLimit | Límite de memoria para telegraf ds 
+|  | dsMemLimit | Límite de memoria para telegraf ds 
 
 
-|  | DsCpuRequest | Solicitud de CPU para telegraf ds 
+|  | Solicitud de CPU ds | Solicitud de CPU para telegraf ds 
 
 
-|  | DsMemRequest | Solicitud de memoria para telegraf ds 
+|  | Solicitud de dsMem | Solicitud de memoria para telegraf ds 
 
 
-|  | RsCpuLimit | Límite de CPU para telegraf rs 
+|  | Límite de CPU rs | Límite de CPU para telegraf rs 
 
 
-|  | RsMemLimit | Límite de memoria para telegraf rs 
+|  | Límite de memoria rs | Límite de memoria para telegraf rs 
 
 
-|  | RsCpuRequest | Solicitud de CPU para telegraf rs 
+|  | Solicitud de CPU rs | Solicitud de CPU para telegraf rs 
 
 
-|  | RsMemRequest | Solicitud de memoria para telegraf rs 
+|  | Solicitud de rsMem | Solicitud de memoria para telegraf rs 
 
 
-|  | Privilegios de ejecución | Ejecute el contenedor _telegraf-mountstats-poller_ de telegraf DaemonSet en modo privilegiado. Establezca esta opción en true si SELinux está habilitado en sus nodos de Kubernetes. 
+|  | Ejecutar con privilegios | Ejecute el contenedor _telegraf-mountstats-poller_ de telegraf DaemonSet en modo privilegiado.  Establezca esto como verdadero si SELinux está habilitado en sus nodos de Kubernetes. 
 
 
-|  | RunDsPrivileged | Establezca runDsPrivileged en true para ejecutar el contenedor telegraf DaemonSet en modo privilegiado. 
+|  | runDsPrivileged | Establezca runDsPrivileged en verdadero para ejecutar el contenedor telegraf del DaemonSet de telegraf en modo privilegiado. 
 
 
-|  | Tamaño de lote | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | tamaño del lote | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | Buffer Limit | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | límite de búfer | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | RoundInterval | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | intervalo redondo | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | Colección Jitter | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | colecciónJitter | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | precisión | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | precisión | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | FlushInterval | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | intervalo de descarga | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | FlushJitter | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | Fluctuación de descarga | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | Tiempo de espera de salida | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | tiempo de espera de salida | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | DsToleraciones | telegraf-ds toleraciones adicionales. 
+|  | dsToleraciones | telegraf-ds tolerancias adicionales. 
 
 
-|  | RsToleraciones | toleraciones adicionales de telegraf-rs. 
+|  | rsToleraciones | telegraf-rs tolerancias adicionales. 
 
 
-|  | SkipProcessorsAfterAggregators | Consulte link:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
+|  | Saltar procesadores después de agregadores | Verlink:https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent["Documentación de configuración de Telegraf"] 
 
 
-|  | sin protección | Mira esto link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema conocido de Telegraf"] . La configuración _unprotected_ indicará al operador de monitoreo de Kubernetes que ejecute Telegraf con el  `--unprotected` bandera. 
+|  | desprotegido | Mira esto link:https://community.influxdata.com/t/updating-telegraf-to-version-1-29-5-crashes-kubernetes-pod/33376["Problema conocido de Telegraf"] . La configuración _unprotected_ indicará al operador de monitoreo de Kubernetes que ejecute Telegraf con el  `--unprotected` bandera. 
 
 
-|  | insecureK8sSkipVerify | Si telegraf no puede verificar el certificado debido a la falta de SAN IP, intente habilitar la omisión de verificación 
+|  | insecureK8sSkipVerify | Si Telegraf no puede verificar el certificado debido a la falta de SAN IP, intente habilitar la omisión de verificación 
 
 
-| métricas-estado-kube |  | Opciones de configuración que pueden personalizar la instalación de métricas de estado kube del Operador 
+| métricas de estado de kube |  | Opciones de configuración que pueden personalizar la instalación de métricas de estado de kube del Operador 
 
 
-|  | CpuLimit | Límite de CPU para la implementación de métricas de estado-kube 
+|  | Límite de CPU | Límite de CPU para la implementación de kube-state-metrics 
 
 
-|  | MemLimit | Límite de MEM para el despliegue de métricas de estado-kube 
+|  | límite de memoria | Límite de memoria para la implementación de kube-state-metrics 
 
 
-|  | CpuRequest | Solicitud de CPU para el despliegue de métricas de estado de kube 
+|  | Solicitud de CPU | Solicitud de CPU para la implementación de métricas de estado de Kube 
 
 
-|  | MemRequest | Solicitud de MEM para el despliegue de métricas de estado de kube 
+|  | Solicitud de memoria | Solicitud de memoria para la implementación de métricas de estado de Kube 
 
 
-|  | recursos | lista de recursos separados por comas para capturar. ejemplo: cronjobs,daemonsets,deployments,ingresses,jobs,namespaces,nodes,persistentvolumeclaims, persistentvolumes,pods,replicasets,resourcequota,services,statefulsets 
+|  | recursos | Una lista separada por comas de recursos para capturar. Ejemplo: cronjobs, daemonsets, implementaciones, ingresos, trabajos, espacios de nombres, nodos, reclamaciones de volúmenes persistentes, volúmenes persistentes, pods, conjuntos de réplicas, cuotas de recursos, servicios, conjuntos con estado. 
 
 
-|  | toleraciones | kube-state-metrics toleraciones adicionales. 
+|  | tolerancias | Tolerancias adicionales de kube-state-metrics. 
 
 
 |  | etiquetas | una lista separada por comas de recursos para los cuales kube-state-metrics debe capturar etiquetas +++ ejemplo: cronjobs=[*],daemonsets=[*],deployments=[*],ingresses=[*],jobs=[*],namespaces=[*],nodes=[*], persistentvolumeclaims=[*],persistentvolumes=[*],pods=[*],replicasets=[*],resourcequotas=[*],services=[*],statefulsets=[*] +++ 
 
 
-| registros |  | Opciones de configuración que pueden personalizar la recopilación de registros y la instalación del operador 
+| registros |  | Opciones de configuración que pueden personalizar la recopilación de registros y la instalación del Operador 
 
 
-|  | ReadFromHead | verdadero/falso, debe leer con fluidez el log de la cabecera 
+|  | leerDesdeLaCabeza | Verdadero/falso, ¿debería Fluent Bit leer el registro desde la cabeza? 
 
 
-|  | tiempo de espera | timeout, en segundos 
+|  | se acabó el tiempo | tiempo de espera, en segundos 
 
 
-|  | DnsMode | TCP/UDP, modo para DNS 
+|  | modo DNS | TCP/UDP, modo para DNS 
 
 
-|  | toleraciones de bits fluidas | toleraciones adicionales de fluent-bit-ds. 
+|  | tolerancias de bits fluidos | fluent-bit-ds tolerancias adicionales. 
 
 
-|  | toleraciones-exportador-de-eventos | toleraciones adicionales de evento-exportador. 
+|  | tolerancias del exportador de eventos | Tolerancias adicionales del exportador de eventos. 
 
 
-|  | Event-exporter-maxEventAgeSeconds | antigüedad máxima de evento de exportador-evento. Consulte https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
+|  | exportador de eventos-maxEventAgeSeconds | edad máxima del evento del exportador de eventos.  Ver https://github.com/jkroepke/resmoio-kubernetes-event-exporter[] 
 
 
-|  | Ruta de registro del contenedor de bits fluidos | De forma predeterminada, el DaemonSet de Fluentbit montará las rutas de host /var/log y /var/lib/docker/containers para acceder y leer los registros de los contenedores de Kubernetes. Si Kubernetes se ha configurado para colocar los registros de los contenedores en una ubicación distinta a la predeterminada, utilice esta opción para modificar el DaemonSet de Fluentbit y que monte dicha ruta. 
+|  | Ruta de registro del contenedor de bits fluidos | De forma predeterminada, Fluentbit DaemonSet montará las rutas de host /var/log y /var/lib/docker/containers para acceder/leer los registros del contenedor de Kubernetes.  Si Kubernetes se ha configurado para colocar los registros de contenedores en una ubicación no predeterminada, use esta opción para modificar Fluentbit DaemonSet para montar la ruta no predeterminada. 
 
 
-| asignación de carga de trabajo |  | Opciones de configuración que pueden personalizar la recopilación de mapas de carga de trabajo y la instalación del operador. 
+| mapa de carga de trabajo |  | Opciones de configuración que pueden personalizar la recopilación y la instalación de mapas de carga de trabajo del Operador. 
 
 
-|  | CpuLimit | Límite de CPU para ds de observador neto 
+|  | Límite de CPU | Límite de CPU para Net Observer DS 
 
 
-|  | MemLimit | límite de mem para ds de observador neto 
+|  | límite de memoria | Límite de memoria para Net Observer DS 
 
 
-|  | CpuRequest | Solicitud de CPU para ds de observador de red 
+|  | Solicitud de CPU | Solicitud de CPU para el observador de red ds 
 
 
-|  | MemRequest | solicitud de mem para ds de observador neto 
+|  | Solicitud de memoria | Solicitud de memoria para el observador de red ds 
 
 
-|  | MetricAggregationInterval | intervalo de agregación de métricas, en segundos 
+|  | intervalo de agregación métrica | intervalo de agregación métrica, en segundos 
 
 
-|  | BpfPollInterval | Intervalo de sondeo de BPF, en segundos 
+|  | bpfPollInterval | Intervalo de sondeo BPF, en segundos 
 
 
-|  | Habilitar DNSLookup | True/false, active la búsqueda de DNS 
+|  | habilitar DNS Lookup | verdadero/falso, habilitar búsqueda DNS 
 
 
-|  | l4-toleraciones | net-observer-l4-ds toleraciones adicionales. 
+|  | l4-tolerancia | net-observer-l4-ds tolerancias adicionales. 
 
 
-|  | Privilegios de ejecución | True/false - Establece runPrivileged en true si SELinux está habilitado en los nodos de Kubernetes. 
+|  | Ejecutar con privilegios | verdadero/falso: establece runPrivileged en verdadero si SELinux está habilitado en tus nodos de Kubernetes. 
 
 
-| gestión del cambio |  | Opciones de configuración para la administración y análisis de cambios de Kubernetes 
+| gestión del cambio |  | Opciones de configuración para la gestión y el análisis de cambios de Kubernetes 
 
 
-|  | CpuLimit | Límite de CPU para change-observer-watch-rs 
+|  | Límite de CPU | Límite de CPU para change-observer-watch-rs 
 
 
-|  | MemLimit | Límite de MEM para change-observer-watch-rs 
+|  | límite de memoria | Límite de memoria para observadores de cambios 
 
 
-|  | CpuRequest | Solicitud de CPU para change-observer-watch-rs 
+|  | Solicitud de CPU | Solicitud de CPU para change-observer-watch-rs 
 
 
-|  | MemRequest | solicitud de mem para change-observer-watch-rs 
+|  | Solicitud de memoria | Solicitud de memoria para change-observer-watch-rs 
 
 
-|  | IntervaloDeDeclaraciónDeFalloDeCargaDeTrabajoSegundos | Intervalo después del cual una implementación no exitosa de una carga de trabajo se marcará como fallida, en segundos 
+|  | IntervaloDeDeclaraciónDeFalloDeCargaDeTrabajoSegundos | Intervalo después del cual una implementación fallida de una carga de trabajo se marcará como fallida, en segundos 
 
 
 |  | Carga de trabajoImplementaciónAggrIntervalSeconds | Frecuencia con la que se combinan y envían las implementaciones de carga de trabajo, en segundos 
@@ -215,25 +215,25 @@ La siguiente tabla enumera las posibles opciones para el archivo _AgentConfigura
 |  | Segundos de intervalo de agregación de implementación de carga de trabajo no especificada | Frecuencia con la que se combinan y envían implementaciones que no son de carga de trabajo, en segundos 
 
 
-|  | TermsToRedact | Un conjunto de expresiones regulares utilizadas en los nombres env y los mapas de datos cuyo valor será redactado como ejemplo: “Pwd”, “password”, “token”, “apikey”, “api-key”, “jwt” 
+|  | términosParaRedactar | Un conjunto de expresiones regulares utilizadas en nombres de entornos y mapas de datos cuyo valor se redactará. Términos de ejemplo: "pwd", "password", "token", "apikey", "api-key", "jwt" 
 
 
-|  | KindsToWatch adicional | Una lista separada por comas de tipos adicionales para ver desde el conjunto predeterminado de tipos observados por el recopilador 
+|  | tipos adicionales para observar | Una lista separada por comas de tipos adicionales para observar del conjunto predeterminado de tipos observados por el recopilador 
 
 
-|  | KindsToIgnoreFromWatch | Una lista separada por comas de tipos que ignorar de la observación del conjunto predeterminado de tipos observados por el recopilador 
+|  | tiposParaIgnorarDesdeVigilancia | Una lista separada por comas de tipos que se deben ignorar del conjunto predeterminado de tipos observados por el recopilador 
 
 
-|  | LogRecordAggrIntervalSeconds | Frecuencia con la que los registros de registro se envían a CI desde el recopilador 
+|  | logRecordAggrIntervalSeconds | Frecuencia con la que se envían los registros de registro a CI desde el recopilador 
 
 
-|  | toleraciones de vigilancia | tolerancia adicional change-observer-watch-ds. Formato de línea única abreviado solamente. Ejemplo: '{key: taint1, operator: Exists, effect: NoSchedule},{key: taint2, operator: Exists, effect: Noexecute}' 
+|  | tolerancias de vigilancia | cambio-observador-vigilancia-ds tolerancias adicionales.  Formato abreviado de una sola línea únicamente.  Ejemplo: '{clave: taint1, operador: Exists, efecto: NoSchedule},{clave: taint2, operador: Exists, efecto: NoExecute}' 
 |===
 
 
-== Archivo de configuración de AgentConfiguration de ejemplo
+== Archivo de configuración del agente de muestra
 
-A continuación se muestra un archivo _AgentConfiguration_ de ejemplo.
+A continuación se muestra un archivo _AgentConfiguration_ de muestra.
 
 [listing]
 ----

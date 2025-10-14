@@ -2,47 +2,47 @@
 sidebar: sidebar 
 permalink: task_dc_ibm_svc.html 
 keywords: IBM, SVC,SAN 
-summary: Configurar el recopilador de datos de IBM SAN Volume Controller. 
+summary: Configuración del recopilador de datos de IBM SAN Volume Controller. 
 ---
-= Configurar el recopilador de datos de IBM SAN Volume Controller
+= Configuración del recopilador de datos de IBM SAN Volume Controller
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos de IBM SAN Volume Controller (SVC) recopila datos de inventario y rendimiento mediante SSH, lo que admite varios dispositivos que ejecutan el sistema operativo SVC.
+El recopilador de datos de IBM SAN Volume Controller (SVC) recopila datos de inventario y rendimiento mediante SSH y admite una variedad de dispositivos que ejecutan el sistema operativo SVC.
 
-La lista de dispositivos compatibles incluye modelos como SVC, v7000, v5000 y v3700. Consulte la matriz de compatibilidad de Data Infrastructure Insights para ver los modelos y versiones de firmware compatibles.
+La lista de dispositivos compatibles incluye modelos como el SVC, el v7000, el v5000 y el v3700.  Consulte la matriz de soporte de Data Infrastructure Insights para conocer los modelos y versiones de firmware compatibles.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos IBM SVC. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de IBM SVC.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Unidad | Disco 
+| Conducir | Disco 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
 | Grupo Mdisk | Pool de almacenamiento 
 
 
-| VDisk | Volumen 
+| Disco virtual | Volumen 
 
 
-| Disco Mdisk | LUN y rutas de back-end 
+| Disco duro virtual | LUN y rutas de backend 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -55,13 +55,13 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 
 
 
-=== Requisitos de rendimiento
+=== Requisitos de desempeño
 
-* Consola SVC, que es obligatoria para cualquier clúster SVC y necesaria para el paquete básico de la detección SVC.
-* Las credenciales necesitarán el nivel de acceso administrativo solo para copiar los archivos de rendimiento de los nodos del clúster al nodo de configuración.
-* Habilite la recopilación de datos conectando con SSH al clúster de SVC y ejecutando: _Svctask startstats -INTERVAL 1_
+* Consola SVC, que es obligatoria para cualquier clúster SVC y necesaria para el paquete de base de descubrimiento SVC.
+* Las credenciales requerirán un nivel de acceso administrativo solo para copiar archivos de rendimiento de los nodos del clúster al nodo de configuración.
+* Habilite la recopilación de datos conectándose al clúster SVC mediante SSH y ejecutando: _svctask startstats -interval 1_
 +
-Nota: También puede activar la recopilación de datos mediante la interfaz de usuario de administración de SVC.
+Nota: Alternativamente, habilite la recopilación de datos utilizando la interfaz de usuario de administración de SVC.
 
 
 
@@ -77,7 +77,7 @@ Nota: También puede activar la recopilación de datos mediante la interfaz de u
 | Direcciones IP del clúster | Direcciones IP o nombres de dominio completos del almacenamiento SVC 
 
 
-| Nombre de usuario del inventario | Nombre de usuario de la CLI de SVC 
+| Nombre de usuario del inventario | Nombre de usuario para la CLI de SVC 
 
 
 | Contraseña de inventario | Contraseña para la CLI de SVC 
@@ -91,34 +91,34 @@ Nota: También puede activar la recopilación de datos mediante la interfaz de u
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 40 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 40 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 
 
-| Para limpiar los archivos de estadísticas objeto de dumping | Seleccione esta casilla de verificación para limpiar los archivos de estadísticas que se han descargado 
+| Para limpiar archivos de estadísticas volcados | Seleccione esta casilla de verificación para limpiar los archivos de estadísticas volcados 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
 | Error: "No se puede iniciar el comando porque no se ejecutó en el nodo de configuración". | El comando debe ejecutarse en el nodo de configuración. 
 |===
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
 | Error: "No se puede iniciar el comando porque no se ejecutó en el nodo de configuración". | El comando debe ejecutarse en el nodo de configuración. 
 |===
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

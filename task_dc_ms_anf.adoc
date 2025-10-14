@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_dc_ms_anf.html 
 keywords: data collector, azure, Netapp files, anf 
-summary: Configurar el recopilador de datos de Azure NetApp Files. 
+summary: Configuración del recopilador de datos de Azure NetApp Files . 
 ---
-= Configurar el recopilador de datos de Azure NetApp Files
+= Configuración del recopilador de datos de Azure NetApp Files
 :hardbreaks:
 :allow-uri-read: 
 
@@ -19,12 +19,12 @@ Data Infrastructure Insights utiliza el recopilador de datos de Azure NetApp Fil
 Necesita la siguiente información para configurar este recopilador de datos.
 
 * Requisito de puerto: 443 HTTPS
-* IP de REST de Azure Management (management.azure.com)
-* ID del cliente principal del servicio Azure (cuenta de usuario)
-* Clave de autenticación principal del servicio Azure (contraseña de usuario)
-* Tienes que configurar una cuenta de Azure para la detección de Data Infrastructure Insights.
+* IP Rest de administración de Azure (management.azure.com)
+* Identificador de cliente de entidad de servicio de Azure (cuenta de usuario)
+* Clave de autenticación de entidad de servicio de Azure (contraseña de usuario)
+* Debe configurar una cuenta de Azure para el descubrimiento de Data Infrastructure Insights .
 +
-Una vez que la cuenta esté configurada correctamente y registre la aplicación en Azure, tendrá las credenciales necesarias para detectar la instancia de Azure con Data Infrastructure Insights. En el siguiente enlace se describe cómo configurar la cuenta para la detección:
+Una vez que la cuenta esté configurada correctamente y registres la aplicación en Azure, tendrás las credenciales necesarias para descubrir la instancia de Azure con Data Infrastructure Insights.  El siguiente enlace describe cómo configurar la cuenta para el descubrimiento:
 
 
 
@@ -34,23 +34,23 @@ https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-ser
 
 == Configuración
 
-Introduzca los datos en los campos del recopilador de datos de acuerdo con la tabla siguiente:
+Introduzca datos en los campos del recopilador de datos de acuerdo con la siguiente tabla:
 
 [cols="2*"]
 |===
 | Campo | Descripción 
 
 
-| ID del cliente principal del servicio Azure | ID de inicio de sesión en Azure 
+| ID de cliente de entidad de servicio de Azure | ID de inicio de sesión en Azure 
 
 
 | ID de inquilino de Azure | ID de inquilino de Azure 
 
 
-| Clave de autenticación principal del servicio Azure | Clave de autenticación de inicio de sesión 
+| Clave de autenticación de entidad de servicio de Azure | Clave de autenticación de inicio de sesión 
 
 
-| Entiendo que Microsoft me factura por las solicitudes de API | Marque esto para verificar que Microsoft le da la cuenta de las solicitudes de API que ha realizado el sondeo de Insight. 
+| Entiendo que Microsoft me factura las solicitudes de API. | Marque esto para verificar su comprensión de que Microsoft le factura las solicitudes de API realizadas mediante el sondeo de Insight. 
 |===
 
 
@@ -61,14 +61,14 @@ Introduzca los datos en los campos del recopilador de datos de acuerdo con la ta
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-* Las credenciales que utiliza su recopilador de datos de ANF deben tener acceso a todas las suscripciones de Azure que contengan volúmenes de ANF.
-* Si el acceso de Reader provoca un error en la recopilación de rendimiento, intente conceder acceso de colaborador en un nivel de grupo de recursos.
+* Las credenciales utilizadas por el recopilador de datos ANF deben tener acceso a cualquier suscripción de Azure que contenga volúmenes ANF.
+* Si el acceso del lector provoca que la recopilación de rendimiento falle, intente otorgar acceso de colaborador a nivel de grupo de recursos.
 
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

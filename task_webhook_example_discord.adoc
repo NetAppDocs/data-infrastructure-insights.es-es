@@ -2,53 +2,53 @@
 sidebar: sidebar 
 permalink: task_webhook_example_discord.html 
 keywords: webhook, notification, Discord, integration 
-summary: Cree un webhook para alertar sobre el rendimiento o los umbrales de inventario de Discord 
+summary: Crea un webhook para alertar sobre los umbrales de rendimiento o inventario para Discord 
 ---
-= Ejemplo de Webhook para Discord
+= Ejemplo de webhook para Discord
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Los enlaces Web permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones mediante un canal de webhook personalizado. Esta página proporciona un ejemplo para configurar los enlaces web para Discord.
+Los webhooks permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones utilizando un canal webhook personalizado.  Esta página proporciona un ejemplo para configurar webhooks para Discord.
 
 
-NOTE: Esta página hace referencia a instrucciones de terceros, que podrían estar sujetas a cambios. Consulte la link:https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks["Documentación de discordia"]para obtener la información más actualizada.
-
-
-
-== Configuración de discordia:
-
-* En Discord, seleccione el servidor, en Canales de texto, seleccione Editar canal (icono de engranaje)
-* Seleccione *integración > Ver enlaces web* y haga clic en *Nuevo Webhook*
-* Copie la URL de Webhook. Deberá pegarlo en la configuración del webhook de Data Infrastructure Insights.
+NOTE: Esta página hace referencia a instrucciones de terceros, que podrían estar sujetas a cambios.  Consulte lalink:https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks["Documentación de Discord"] para obtener la información más actualizada.
 
 
 
+== Configuración de Discord:
 
-== Webhook de Create Data Infrastructure:
+* En Discord, selecciona el Servidor, en Canales de texto, selecciona Editar canal (ícono de engranaje)
+* Seleccione *Integraciones > Ver webhooks* y haga clic en *Nuevo webhook*
+* Copiar la URL del webhook.  Necesitará pegar esto en la configuración del webhook de Data Infrastructure Insights .
 
-. En Data Infrastructure Insights, navegue hasta *Admin > Notifications* y seleccione la pestaña *WebHooks*. Haga clic en *+Webhook* para crear un nuevo webhook.
-. Dé al webhook un nombre significativo, como "Discord".
-. En el menú desplegable _Template Type_, seleccione *Discord*.
+
+
+
+== Crear webhook de Data Infrastructure Insights :
+
+. En Data Infrastructure Insights, navegue a *Admin > Notificaciones* y seleccione la pestaña *Webhooks*.  Haga clic en *+Webhook* para crear un nuevo webhook.
+. Dale al webhook un nombre significativo, como "Discord".
+. En el menú desplegable _Tipo de plantilla_, seleccione *Discord*.
 . Pegue la URL de arriba en el campo _URL_.
 
 
-image:Webhooks-Discord_example.png["Plantilla de gancho web de discordia"]
+image:Webhooks-Discord_example.png["Plantilla de webhook de Discord"]
 
 
-NOTE: Para probar el webhook, reemplace temporalmente el valor de url en el cuerpo del mensaje con cualquier URL válida (como _https://NetApp.com_) y luego haga clic en el botón _Test Webhook_. Asegúrese de volver a establecer el cuerpo del mensaje una vez que haya finalizado la prueba.
+NOTE: Para probar el webhook, reemplace temporalmente el valor de la URL en el cuerpo del mensaje con cualquier URL válida (como _https://netapp.com_) y luego haga clic en el botón _Probar webhook_.  Asegúrese de volver a configurar el cuerpo del mensaje una vez que se complete la prueba.
 
 
 
-== Notificaciones a través de Webhook
+== Notificaciones mediante webhook
 
-Para notificar sobre eventos a través de webhook, en Información de infraestructura de datos navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear una nueva link:task_create_monitor.html["supervisar"].
+Para notificar eventos a través de un webhook, en Data Infrastructure Insights navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear un nuevolink:task_create_monitor.html["supervisión"] .
 
 * Seleccione una métrica y defina las condiciones del monitor.
-* En _Configurar notificación(s) de equipo, elija el método de entrega *Webhook*.
-* Elija el enlace web "Discord" para los eventos deseados (crítico, Advertencia, resuelto)
+* En _Configurar notificaciones del equipo_, seleccione el Método de entrega *Webhook*.
+* Elija el webhook "Discord" para los eventos deseados (Crítico, Advertencia, Resuelto)
 +
-image:Webhooks_Discord_Notifications.png["Notificaciones de Webhook"]
+image:Webhooks_Discord_Notifications.png["Notificaciones de webhook"]
 
 

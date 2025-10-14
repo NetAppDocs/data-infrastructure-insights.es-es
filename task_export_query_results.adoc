@@ -4,7 +4,7 @@ permalink: task_export_query_results.html
 summary: Cómo exportar los resultados de una consulta a un archivo .csv 
 keywords: query, queries, export, csv 
 ---
-= Exportando resultados de consulta a un archivo .CSV
+= Exportar los resultados de la consulta a un archivo .CSV
 :hardbreaks:
 :allow-uri-read: 
 
@@ -14,51 +14,51 @@ Puede exportar los resultados de cualquier consulta a un archivo .CSV, lo que le
 
 .Pasos
 . Inicie sesión en Data Infrastructure Insights.
-. Haga clic en *consultas* y seleccione *Mostrar todas las consultas*.
+. Haga clic en *Consultas* y seleccione *Mostrar todas las consultas*.
 +
-Se muestra la página consultas.
+Se muestra la página Consultas.
 
 . Haga clic en una consulta.
-. Haga clic image:ExportButton.png["Botón Exportar"] para exportar los resultados de la consulta a un archivo .CSV.
+. Hacer clicimage:ExportButton.png["Botón de exportación"] para exportar los resultados de la consulta a un archivo .CSV.
 
 
 
-NOTE: La exportación a .CSV también está disponible en el menú "tres puntos" de los widgets de la tabla del panel de control, así como en la mayoría de las tablas de página de inicio.
+NOTE: La exportación a .CSV también está disponible en el menú de "tres puntos" en los widgets de la tabla del panel, así como en la mayoría de las tablas de páginas de destino.
 
 
 
 == Exportación asincrónica
 
-La exportación de datos a .CSV puede tardar desde unos segundos hasta varias horas, dependiendo de la cantidad de datos a exportar. Data Infrastructure Insights exporta esos datos de forma asincrónica, por lo que puede seguir trabajando mientras se compila el archivo .CSV.
+Exportar datos a .CSV puede tardar desde unos segundos hasta varias horas, dependiendo de la cantidad de datos a exportar.  Data Infrastructure Insights exporta esos datos de forma asincrónica, por lo que puede seguir trabajando mientras se compila el archivo .CSV.
 
 Vea y descargue sus exportaciones .CSV seleccionando el ícono "Campana" en la barra de herramientas superior derecha.
 
 image:csv_export_async.png["Icono de campana con lista de exportaciones .csv listas para descargar, ancho=400"]
 
-Los datos exportados reflejarán el filtrado actual, las columnas y los nombres de columna mostrados.
+Los datos exportados reflejarán el filtrado actual, las columnas y los nombres de columnas mostrados.
 
 
 
 == Comas en los nombres de los activos
 
-Nota: Cuando aparece una coma en un nombre de activo, la exportación incluye el nombre entre comillas, conservando el nombre del activo y el formato .csv adecuado.
+Nota: Cuando aparece una coma en el nombre de un activo, la exportación encierra el nombre entre comillas, preservando el nombre del activo y el formato .csv adecuado.
 
 
 
 == ¿Formato de hora o no formato de hora?
 
-Al abrir un archivo .CSV exportado con Excel, si tiene un nombre de objeto u otro campo con el formato NN:NN (dos dígitos seguidos de dos puntos seguidos de dos dígitos más), Excel interpretará a veces ese nombre como un formato de hora, en lugar de texto. Esto puede resultar en que Excel muestre valores incorrectos en esas columnas. Por ejemplo, un objeto llamado "81:45" se mostraría en Excel como "81:45:00".
+Al abrir un archivo .CSV exportado con Excel, si tiene un nombre de objeto u otro campo que tiene el formato NN:NN (dos dígitos seguidos de dos puntos seguidos de dos dígitos más), Excel a veces interpretará ese nombre como un formato de hora, en lugar de formato de texto.  Esto puede provocar que Excel muestre valores incorrectos en esas columnas.  Por ejemplo, un objeto llamado "81:45" se mostraría en Excel como "81:45:00".
 
-Para evitar esto, importe .CSV en Excel utilizando los pasos siguientes:
+Para solucionar esto, importe el archivo .CSV a Excel siguiendo estos pasos:
 
 . Abra una nueva hoja en Excel.
-. En la ficha "datos", elija "en texto".
-. Localice el archivo .CSV deseado y haga clic en "Import".
-. En el asistente Importar, elija "delimitado" y haga clic en Siguiente.
-. Elija "coma" para el delimitador y haga clic en Siguiente.
-. Seleccione las columnas deseadas y elija "texto" para el formato de datos de columna.
+. En la pestaña "Datos", seleccione "Desde texto".
+. Localice el archivo .CSV deseado y haga clic en "Importar".
+. En el asistente de importación, seleccione “Delimitado” y haga clic en Siguiente.
+. Seleccione “Coma” como delimitador y haga clic en Siguiente.
+. Seleccione las columnas deseadas y elija "Texto" para el formato de datos de la columna.
 . Haga clic en Finalizar.
 +
-Los objetos deben aparecer en Excel en el formato adecuado.
+Sus objetos deben mostrarse en Excel en el formato adecuado.
 
 

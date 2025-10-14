@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_hpe_nimble.html 
 keywords: data collector, HP Nimble, HP, HPE, Alletra 6000 
-summary: 'Configuración del recopilador de datos de HP Enterprise Alletra 6000 (anteriormente Nimble).' 
+summary: 'Configuración del recopilador de datos HP Enterprise Alletra 6000 (anteriormente Nimble).' 
 ---
 = Recopilador de datos HPE Alletra 6000
 :hardbreaks:
@@ -10,20 +10,20 @@ summary: 'Configuración del recopilador de datos de HP Enterprise Alletra 6000 
 
 
 [role="lead"]
-El recopilador de datos HP Enterprise Alletra 6000 (anteriormente Nimble) admite datos de inventario y rendimiento de las matrices de almacenamiento Alletra 6000.
+El recopilador de datos HP Enterprise Alletra 6000 (anteriormente Nimble) admite datos de inventario y rendimiento para matrices de almacenamiento Alletra 6000.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Cabina | Reducida 
+| Formación | Almacenamiento 
 
 
 | Disco | Disco 
@@ -35,32 +35,32 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Pool | Pool de almacenamiento 
 
 
-| Iniciador | Alias del host de almacenamiento 
+| Iniciador | Alias de host de almacenamiento 
 
 
 | Controladora | Nodo de almacenamiento 
 
 
-| Interfaz Fibre Channel | Controladora 
+| Interfaz de canal de fibra | Controladora 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Para recoger los datos de inventario y configuración de la cabina de almacenamiento, debe ser lo siguiente:
+Debe tener lo siguiente para poder recopilar datos de inventario y configuración de la matriz de almacenamiento:
 
-* La cabina debe estar instalada y configurada, y es posible acceder a ella desde el cliente a través de su nombre de dominio completo (FQDN) o la dirección IP de administración de cabinas.
-* El arreglo debe estar ejecutando NimbleOS 2.3.x o posterior.
-* Debe tener un nombre de usuario y una contraseña válidos en la matriz con al menos el rol de "operador". El rol "invitado" no tiene acceso suficiente para comprender las configuraciones de iniciadores.
-* El puerto 5392 debe estar abierto en la cabina.
+* La matriz debe estar instalada y configurada, y ser accesible desde el cliente a través de su nombre de dominio completo (FQDN) o dirección IP de administración de matriz.
+* La matriz debe ejecutar NimbleOS 2.3.x o posterior.
+* Debe tener un nombre de usuario y una contraseña válidos para la matriz con al menos un rol de nivel "Operador".  El rol "Invitado" no tiene acceso suficiente para comprender las configuraciones del iniciador.
+* El puerto 5392 debe estar abierto en la matriz.
 
 
-Debe tener lo siguiente para recoger datos de rendimiento de la cabina de almacenamiento:
+Debe tener lo siguiente para poder recopilar datos de rendimiento de la matriz de almacenamiento:
 
-* El arreglo debe estar ejecutando NimbleOS 4.0.0 o posterior
-* La cabina debe tener volúmenes configurados. La única API de rendimiento que NimbleOS tiene es para los volúmenes, y cualquier estadística que los informes de Data Infrastructure Insights se deriva de las estadísticas de los volúmenes
+* La matriz debe ejecutar NimbleOS 4.0.0 o posterior
+* La matriz debe tener volúmenes configurados.  La única API de rendimiento que tiene NimbleOS es para volúmenes, y todas las estadísticas que informa Data Infrastructure Insights se derivan de las estadísticas sobre volúmenes.
 
 
 
@@ -72,13 +72,13 @@ Debe tener lo siguiente para recoger datos de rendimiento de la cabina de almace
 | Campo | Descripción 
 
 
-| Dirección IP de administración de cabinas | Nombre de dominio completo (FQDN) o dirección IP de administración de cabinas. 
+| Dirección IP de administración de matriz | Nombre de dominio completo (FQDN) o dirección IP de administración de matriz. 
 
 
-| Nombre de usuario | Nombre de usuario para la cabina 
+| Nombre de usuario | Nombre de usuario para la matriz 
 
 
-| Contraseña | Contraseña para la cabina 
+| Password | Contraseña para la matriz 
 |===
 
 
@@ -90,9 +90,9 @@ Debe tener lo siguiente para recoger datos de rendimiento de la cabina de almace
 | Campo | Descripción 
 
 
-| Puerto | Puerto que utiliza la API DE REST de Nimble. El valor predeterminado es 5392. 
+| Puerto | Puerto utilizado por la API REST de Nimble.  El valor predeterminado es 5392. 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 |===
-Nota: El intervalo de sondeo de rendimiento predeterminado es de 300 segundos y no se puede cambiar. Este es el único intervalo admitido por HPE Alletra 6000.
+Nota: El intervalo de sondeo de rendimiento predeterminado es de 300 segundos y no se puede cambiar.  Este es el único intervalo compatible con HPE Alletra 6000.

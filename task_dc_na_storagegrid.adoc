@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_na_storagegrid.html 
-summary: Configurar recopilador de datos de StorageGRID de NetApp 
+summary: Configurar el recopilador de datos NetApp StorageGRID 
 keywords: data collector, queries, create, storagegrid 
 ---
-= Recopilador de datos de NetApp StorageGRID
+= Recopilador de datos NetApp StorageGRID
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos de StorageGRID de NetApp admite el inventario y la recopilación de rendimiento de las configuraciones de StorageGRID.
+El recopilador de datos StorageGRID de NetApp admite la recopilación de inventario y rendimiento de las configuraciones de StorageGRID .
 
 [NOTE]
 ====
@@ -25,32 +25,32 @@ Para los clientes que utilizan el modelo de licencia heredado (MU), StorageGRID 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de NetApp StorageGRID. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador NetApp StorageGRID .  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| StorageGRID | Reducida 
+| StorageGRID | Almacenamiento 
 
 
-| Nodo | Nodo 
+| Node | Node 
 
 
-| Inquilino | Pool de almacenamiento 
+| Arrendatario | Pool de almacenamiento 
 
 
-| Cucharón | Volumen interno 
+| Balde | Volumen interno 
 |===
 
 
 == Requisitos
 
-A continuación se muestran los requisitos para configurar este origen de datos:
+Los siguientes son los requisitos para configurar esta fuente de datos:
 
-* Dirección IP del host StorageGRID
-* Nombre de usuario y contraseña para un usuario que tiene asignadas las funciones de consulta métrica y acceso de inquilino
+* Dirección IP del host de StorageGRID
+* Un nombre de usuario y una contraseña para un usuario al que se le han asignado los roles de Consulta de métricas y Acceso de inquilino
 * Puerto 443
 
 
@@ -63,13 +63,13 @@ A continuación se muestran los requisitos para configurar este origen de datos:
 | Campo | Descripción 
 
 
-| Dirección IP del host StorageGRID | La dirección IP virtual de gestión del dispositivo StorageGRID 
+| Dirección IP del host de StorageGRID | Dirección IP virtual de administración del dispositivo StorageGRID 
 
 
-| Nombre de usuario | Nombre que se utiliza para iniciar sesión en el dispositivo StorageGRID 
+| Nombre de usuario | Nombre utilizado para iniciar sesión en el dispositivo StorageGRID 
 
 
-| Contraseña | Contraseña utilizada para iniciar sesión en el dispositivo StorageGRID 
+| Password | Contraseña utilizada para iniciar sesión en el dispositivo StorageGRID 
 |===
 
 
@@ -80,21 +80,21 @@ A continuación se muestran los requisitos para configurar este origen de datos:
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 minutos 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 minutos 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 900 segundos 
+| Intervalo de sondeo de rendimiento (seg.) | El valor predeterminado es 900 segundos 
 |===
 
 
 == Inicio de sesión único (SSO)
 
-link:https://docs.netapp.com/sgws-112/index.jsp["StorageGRID"]Las versiones de firmware tienen versiones de API correspondientes; la API 3,0 y las versiones posteriores admiten inicio de sesión único (SSO).
+Ellink:https://docs.netapp.com/sgws-112/index.jsp["StorageGRID"] Las versiones de firmware tienen versiones de API correspondientes; la API 3.0 y las versiones más nuevas admiten el inicio de sesión único (SSO).
 
 |===
 
 
-| Versión de firmware | Versión de API | Inicio de sesión único de soporte (SSO) 
+| Versión de firmware | Versión API | Admite inicio de sesión único (SSO) 
 
 
 | 11,1 | 2 | No 
@@ -107,6 +107,6 @@ link:https://docs.netapp.com/sgws-112/index.jsp["StorageGRID"]Las versiones de f
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

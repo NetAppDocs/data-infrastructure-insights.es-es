@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task_config_telegraf_jvm.html 
 keywords: telegraf, installation, install, jvm 
-summary: Configuración del recopilador de datos JVM 
+summary: Configuración del recopilador de datos de JVM 
 ---
-= Recopilador de datos JVM
+= Recopilador de datos de JVM
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,13 +16,13 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione JVM.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Seleccione JVM.
 +
 Seleccione el sistema operativo o la plataforma en la que está instalado el agente Telegraf.
 
-. Si aún no ha instalado un agente para la recopilación, o si desea instalar un agente para un sistema operativo o plataforma diferente, haga clic en _Mostrar instrucciones_ para ampliar las link:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
-. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos. Puede agregar una nueva clave de acceso del agente haciendo clic en el botón *+ clave de acceso del agente*. Práctica recomendada: Utilice una clave de acceso de agente diferente sólo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo/plataforma.
-. Siga los pasos de configuración para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Si aún no ha instalado un Agente para la recopilación, o desea instalar un Agente para un Sistema operativo o Plataforma diferente, haga clic en _Mostrar instrucciones_ para expandir lalink:task_config_telegraf_agent.html["Instalación del agente"] instrucciones.
+. Seleccione la clave de acceso del agente para utilizarla con este recopilador de datos.  Puede agregar una nueva clave de acceso de agente haciendo clic en el botón *+ Clave de acceso de agente*.  Práctica recomendada: utilice una clave de acceso de agente diferente solo cuando desee agrupar recopiladores de datos, por ejemplo, por sistema operativo o plataforma.
+. Siga los pasos de configuración para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 image:JVMDCConfigLinux.png["Configuración de JVM"]
@@ -31,23 +31,23 @@ image:JVMDCConfigLinux.png["Configuración de JVM"]
 
 == Configuración
 
-La información se puede encontrar en link:https://docs.oracle.com/javase/specs/jvms/se12/html/index.html["Documentación de JVM"].
+La información se puede encontrar enlink:https://docs.oracle.com/javase/specs/jvms/se12/html/index.html["Documentación de JVM"] .
 
 
 
 == Objetos y contadores
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| JVM | JVM de espacio de nombres | Arquitectura del sistema operativo Nombre del sistema operativo Versión tiempo de ejecución especificación de tiempo de ejecución de proveedor Versión de tiempo de ejecución tiempo de ejecución VM Nombre de tiempo de ejecución VM tiempo de ejecución de proveedor VM Versión de nodo Nombre IP de nodo | Clase cargada clase total cargada memoria descargada memoria recargada memoria heap memoria asignada Heap memoria Init Heap memoria máxima utilizada memoria no asignada memoria no heap Init no heap memoria máxima memoria no heap memoria no utilizada objetos de memoria pendientes finalización pendiente procesadores de sistema operativo disponibles SO memoria virtual confirmada SO libre Tamaño de memoria física OS espacio libre intercambio Tamaño de espacio SO máximo número de descriptores de archivos de sistema operativo número de descriptores de archivos de código de sistema procesador de SO carga de CPU tiempo de CPU sistema de sistema de sistema carga media del sistema OS Tamaño total de memoria física SO total intercambio espacio Tamaño total Demonio recuento de subprocesos recuento de subprocesos Recuento de subprocesos total iniciado recuento de basura Coleccionista de copias Colección recuento de basura Coleccionista de basura tiempo recolección de elementos de basura Coleccionista de elementos de basura Coleccionista de marcas-barrido Coleccionista de tiempo de recolección de elementos de la generación antigua G1 Coleccionista de elementos de recolección de elementos de basura Coleccionista de generaciones anteriores G1 Colección de recopilación de elementos de basura Coleccionista de productos de basura G1 Colección de la generación joven Coleccionista de basura Coleccionista de Marca-barrido simultáneo Coleccionista de basura Colecciones paralelas recolección de basura Colecciones paralelas Coleccionista de basura Coleccionista de basura paralela de la recolección de Marca-barrido de la recolección de la recolección de la recolección de la recolección de la basura Coleccionista paralela de la recolección de basura Coleccionista paralela de basura de la recolección de basura Hora de recogida 
+| Máquina virtual Java (JVM) | JVM de espacio de nombres | Arquitectura del SO Nombre del SO Versión del SO Especificación de tiempo de ejecución Proveedor de la especificación de tiempo de ejecución Versión de la especificación de tiempo de ejecución Tiempo de actividad Nombre de la máquina virtual en tiempo de ejecución Proveedor de la máquina virtual en tiempo de ejecución Versión de la máquina virtual en tiempo de ejecución Nombre del nodo IP del nodo | Clase cargada Clase cargada total Clase descargada Memoria del montón Memoria comprometida Memoria de inicialización del montón Memoria máxima utilizada del montón Memoria utilizada del montón Memoria no comprometida del montón Memoria de inicialización no del montón Memoria máxima no utilizada del montón Objetos de memoria pendientes de finalización Procesadores del SO disponibles Tamaño de memoria virtual comprometida del SO Tamaño de memoria física libre del SO Tamaño de espacio de intercambio libre del SO Cantidad máxima de descriptores de archivo del SO Cantidad de descriptores de archivo abiertos del SO Carga de CPU del procesador del SO Tiempo de CPU del procesador del SO Carga de CPU del sistema del SO Carga media del sistema del SO Tamaño total de memoria física del SO Tamaño total del espacio de intercambio del SO Cantidad de daemon de subprocesos Cantidad máxima de subprocesos Cantidad de subprocesos Cantidad total de subprocesos iniciados Cantidad de recopilación de copias del recolector de basura Tiempo de recopilación de copias del recolector de basura Cantidad de recopilación de barrido de marcado del recolector de basura Tiempo de recopilación de barrido de marcado del recolector de basura Cantidad de recopilación de antigua generación G1 del recolector de basura Tiempo de recopilación de antigua generación G1 del recolector de basura Cantidad de recopilación de joven generación G1 del recolector de basura Tiempo de recopilación de joven generación G1 del recolector de basura Concurrente Cantidad de recopilación de barrido de marcado del recolector de basura Concurrente Tiempo de recolección de barrido de marca Recolector de basura Recuento de recolección en paralelo Recolector de basura Tiempo de recolección en paralelo Recolector de basura Recolección en paralelo Recuento de recolección de barrido de marca Recolector de basura Recolección en paralelo Tiempo de recolección de barrido de marca Recolector de basura Recolección en paralelo Recuento de recolección de barrido de marca Recolector de basura Recolección en paralelo Tiempo de recolección de barrido de marca 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

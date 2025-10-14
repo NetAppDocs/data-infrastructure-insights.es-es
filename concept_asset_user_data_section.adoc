@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_user_data_section.html 
-summary: La sección datos de usuario de una página de activos permite asignar anotaciones o aplicaciones al activo actual. 
+summary: La sección Datos de usuario de una página de activos le permite asignar anotaciones o aplicaciones al activo actual. 
 keywords: asset page, user data, applications, annotations 
 ---
 = Sección de datos del usuario
@@ -10,41 +10,41 @@ keywords: asset page, user data, applications, annotations
 
 
 [role="lead"]
-Aparece la sección datos de usuario de una página de activos y permite cambiar cualquier dato definido por el usuario, como aplicaciones y anotaciones.
+La sección Datos de usuario de una página de activos muestra y le permite cambiar cualquier dato definido por el usuario, como aplicaciones y anotaciones.
 
 
 
-== Uso de la sección datos de usuario para asignar o modificar aplicaciones
+== Uso de la sección Datos de usuario para asignar o modificar aplicaciones
 
-Es posible asignar aplicaciones que se ejecutan en el inquilino a ciertos activos (host, máquinas virtuales, volúmenes, volúmenes internos, qtrees e hipervisores). La sección datos de usuario permite agregar, cambiar o eliminar las aplicaciones asignadas a un activo. En todos estos tipos de activos, excepto en los volúmenes, es posible asignar más de una aplicación.
+Puede asignar aplicaciones que se ejecutan en su inquilino a determinados activos (host, máquinas virtuales, volúmenes, volúmenes internos, qtrees e hipervisores).  La sección Datos de usuario le permite agregar, cambiar o eliminar las aplicaciones asignadas a un activo.  Para todos estos tipos de activos, excepto los volúmenes, puede asignar más de una aplicación.
 
 .Pasos
-. Busque una página de activos realizando cualquiera de las siguientes acciones:
+. Localice una página de activos realizando cualquiera de las siguientes acciones:
 +
-.. Consulte una lista de activos y, a continuación, seleccione uno de la lista.
-.. En un panel, busque un nombre de activo y haga clic en él.
+.. Consulte una lista de activos y luego seleccione uno de la lista.
+.. En un panel, busque el nombre de un activo y haga clic en él.
 .. Realice una búsqueda y elija un activo de los resultados.
 +
-Aparece la página Asset. La sección datos de usuario de la página muestra las aplicaciones o anotaciones asignadas actualmente.
+Se muestra la página de activos.  La sección Datos de usuario de la página muestra las aplicaciones o anotaciones asignadas actualmente.
 
 
 
 
 
-Para cambiar la aplicación asignada, o para asignar una aplicación o aplicaciones adicionales, coloque en la lista *aplicación* y seleccione las aplicaciones que desee asignar al activo. Puede escribir para buscar una aplicación o seleccionar una de la lista.
+Para cambiar la aplicación asignada, o para asignar una aplicación o aplicaciones adicionales, despliegue la lista *Aplicación* y seleccione la(s) aplicación(es) que desea asignar al activo.  Puede escribir para buscar una aplicación o seleccionar una de la lista.
 
-Para eliminar una aplicación, coloque la lista de aplicaciones en la lista y elimine la comprobación de la aplicación.
+Para eliminar una aplicación, despliegue la lista de aplicaciones y desmarque la aplicación.
 
 
 
-== Uso de la sección datos de usuario para asignar o modificar anotaciones
+== Uso de la sección Datos de usuario para asignar o modificar anotaciones
 
-Cuando personalice Data Infrastructure Insights para hacer un seguimiento de los datos según los requisitos de su empresa, puede definir notas especializadas llamadas anotaciones y asignarlas a sus activos. La sección datos de usuario de una página de activos muestra las anotaciones asignadas a un activo y también permite cambiar las anotaciones asignadas a ese activo.
+Al personalizar Data Infrastructure Insights para rastrear datos según sus requisitos corporativos, puede definir notas especializadas llamadas anotaciones y asignarlas a sus activos.  La sección Datos de usuario de una página de activos muestra las anotaciones asignadas a un activo y también le permite cambiar las anotaciones asignadas a ese activo.
 
 .Pasos
-. Para agregar una anotación al activo, en la sección datos de usuario de la página del activo, haga clic en *+anotación*.
+. Para agregar una anotación al activo, en la sección Datos de usuario de la página del activo, haga clic en *+Anotación*.
 . Seleccione una anotación de la lista.
-. Haga clic en valor y realice una de las siguientes acciones, según el tipo de anotación que haya seleccionado:
+. Haga clic en Valor y realice una de las siguientes acciones, según el tipo de anotación que haya seleccionado:
 +
 .. Si el tipo de anotación es lista, fecha o booleano, seleccione un valor de la lista.
 .. Si el tipo de anotación es texto, escriba un valor.
@@ -53,8 +53,8 @@ Cuando personalice Data Infrastructure Insights para hacer un seguimiento de los
 . Haga clic en Guardar.
 
 
-La anotación se asigna al activo. Posteriormente, puede filtrar los activos mediante anotaciones mediante una consulta.
+La anotación se asigna al activo.  Posteriormente, puede filtrar los activos por anotación mediante una consulta.
 
-Si desea cambiar el valor de la anotación después de asignarla, coloque una lista desplegable de anotaciones e introduzca un valor diferente.
+Si desea cambiar el valor de la anotación después de asignarla, despliegue la lista de anotaciones e ingrese un valor diferente.
 
-Si la anotación es del tipo de lista para el que está seleccionada la opción _Add new Values on the Fly_, puede escribir para agregar un nuevo valor además de seleccionar un valor existente.
+Si la anotación es de tipo lista para la cual está seleccionada la opción _Agregar nuevos valores sobre la marcha_, puede escribir para agregar un nuevo valor además de seleccionar un valor existente.

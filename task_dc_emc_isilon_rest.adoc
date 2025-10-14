@@ -2,34 +2,34 @@
 sidebar: sidebar 
 permalink: task_dc_emc_isilon_rest.html 
 keywords: data collector, isilon, EMC, DELL, PowerScale 
-summary: Configuración del recopilador de datos REST de Dell EMC Isilon / PowerScale. 
+summary: Configuración del recopilador de datos REST de Dell EMC Isilon/PowerScale. 
 ---
-= Recopilador de datos DE REST de Dell EMC Isilon y PowerScale
+= Recopilador de datos REST de Dell EMC Isilon/PowerScale
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de DATOS REST DE Dell EMC Isilon / PowerScale para adquirir datos de inventario y rendimiento del almacenamiento de Dell EMC Isilon o PowerScale. Este recopilador admite matrices que ejecutan OneFS 8,0.0+.
+Data Infrastructure Insights utiliza el recopilador de datos REST de Dell EMC Isilon/PowerScale para adquirir datos de inventario y rendimiento del almacenamiento de Dell EMC Isilon o PowerScale.  Este recopilador admite matrices que ejecutan OneFS 8.0.0+.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Unidad | Disco 
+| Conducir | Disco 
 
 
-| Clúster | Reducida 
+| Grupo | Almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
 | Sistema de archivos OneFS | Volumen interno 
@@ -38,9 +38,9 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 | Sistema de archivos OneFS | Pool de almacenamiento 
 
 
-| Qtree | Qtree 
+| Árbol Q | Árbol Q 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
@@ -48,66 +48,66 @@ Nota: Sólo son asignaciones de terminología comunes y es posible que no repres
 
 Necesita la siguiente información para configurar este recopilador de datos:
 
-* Una cuenta de usuario y una contraseña. Esta cuenta NO necesita ser admin/root, pero DEBE conceder un número sustancial de privilegios de sólo lectura a su cuenta de servicio; consulte la tabla siguiente
-* Dirección IP / Nombre de dominio completo del clúster Dell EMC Isilon / PowerScale
+* Una cuenta de usuario y contraseña.  Esta cuenta NO necesita ser administrador/root, pero DEBE otorgar una cantidad sustancial de privilegios de solo lectura a su cuenta de servicio: consulte la tabla a continuación
+* Dirección IP/nombre de dominio completo del clúster Dell EMC Isilon/PowerScale
 * Acceso HTTPS al puerto 8080
-* Clúster Isilon/PowerScale que ejecuta OneFS 8.0.0 o posterior
+* Clúster Isilon/PowerScale que ejecuta OneFS 8.0.0 o superior
 
 
 [cols="3*"]
 |===
-| Nombre del privilegio | Descripción | r(lectura) o rw (lectura y escritura) 
+| Nombre del privilegio | Descripción | r(lectura) o rw (lectura+escritura) 
 
 
-| ISI_PRIV_LOGIN_PAPI | API de plataformas | r 
+| ISI_PRIV_LOGIN_PAPI | API de plataforma | o 
 
 
-| ISI_PRIV_SYS_TIME | Tiempo | r 
+| TIEMPO DEL SISTEMA PRIVADO ISI | Tiempo | o 
 
 
-| ISI_PRIV_AUTH | Autor | r 
+| ISI_PRIV_AUTH | Autorización | o 
 
 
-| ISI_PRIV_ROLE | Privilegio | r 
+| ROL PRIVADO ISI | Privilegio | o 
 
 
-| ISI_PRIV_DEVICES | Dispositivos | r 
+| DISPOSITIVOS ISI PRIVADOS | Dispositivos | o 
 
 
-| ISI_PRIV_EVENT | Evento | r 
+| EVENTO PRIVADO ISI | Evento | o 
 
 
-| ISI_PRIV_HDFS | HDFS | r 
+| ISI_PRIV_HDFS | HDFS | o 
 
 
-| ISI_PRIV_NDMP | NDMP | r 
+| ISI_PRIV_NDMP | NDMP | o 
 
 
-| ISI_PRIV_NETWORK | Red | r 
+| RED PRIVADA ISI | Red | o 
 
 
-| ISI_PRIV_NFS | NFS | r 
+| ISI_PRIV_NFS | Sistema Nacional de Archivos | o 
 
 
-| ISI_PRIV_PAPI_CONFIG | Configure la API de la plataforma | r 
+| ISI_PRIV_PAPI_CONFIG | Configurar la API de la plataforma | o 
 
 
-| ISI_PRIV_CUPO | Cuota | r 
+| CUOTA PRIVADA ISI | Cuota | o 
 
 
-| ISI_PRIV_SMARTPOOLS | SmartPools | r 
+| ISI_PRIV_SMARTPOOLS | Piscinas inteligentes | o 
 
 
-| ISI_PRIV_SMB | SMB | r 
+| ISI_PRIV_SMB | SMB | o 
 
 
-| ISI_PRIV_STATISTICS | Estadísticas | r 
+| ESTADÍSTICAS PRIVADAS ISI | Estadística | o 
 
 
-| ISI_PRIV_SWIFT | Swift | r 
+| ISI_PRIV_SWIFT | Rápido | o 
 
 
-| ISI_PRIV_JOB_ENGINE | Motor de trabajo | r 
+| MOTOR DE TRABAJO PRIVADO ISI | Motor de empleo | o 
 |===
 
 
@@ -121,10 +121,10 @@ Necesita la siguiente información para configurar este recopilador de datos:
 | Dirección IP de Isilon | La dirección IP o el nombre de dominio completo del almacenamiento Isilon 
 
 
-| Nombre de usuario | Nombre de usuario de Isilon 
+| Nombre de usuario | Nombre de usuario para Isilon 
 
 
-| Contraseña | Contraseña utilizada para Isilon 
+| Password | Contraseña utilizada para Isilon 
 |===
 
 
@@ -138,16 +138,16 @@ Necesita la siguiente información para configurar este recopilador de datos:
 | Puerto HTTPS | El valor predeterminado es 8080. 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 20. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario.  El valor predeterminado es 20. 
 
 
-| Intervalo de sondeo de rendimiento (s) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300. 
+| Intervalo de encuesta de rendimiento (seg.) | Intervalo entre encuestas de rendimiento.  El valor predeterminado es 300. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -155,12 +155,12 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Credenciales de inicio de sesión no válidas" con mensajes de error "los comandos no habilitados para la administración basada en roles requieren acceso de usuario raíz" | * Compruebe que el usuario tiene permisos para ejecutar los siguientes comandos en el dispositivo: > versión de isi osrelease > estado de isi -q > estado de isi -n > dispositivos isi -d %s > licencia de isi * Compruebe que las credenciales utilizadas en el asistente coinciden con las del dispositivo 
+| "Credenciales de inicio de sesión no válidas" con mensajes de error: "Los comandos no habilitados para la administración basada en roles requieren acceso de usuario root". | * Verifique que el usuario tenga permisos para ejecutar los siguientes comandos en el dispositivo: > isi version osrelease > isi status -q > isi status -n > isi devices -d %s > isi license * Verifique que las credenciales utilizadas en el asistente coincidan con las credenciales del dispositivo 
 
 
-| "Error interno" con mensajes de error "error al ejecutar Command <Your command> con permiso: <Your current permission>. Problema de permisos de ejecución de comandos sudo” | Verifique que el usuario tenga permisos sudo para ejecutar el siguiente comando en el dispositivo 
+| "Error interno" con mensajes de error “La ejecución del comando <Su comando> falló con el permiso: <Su permiso actual>.  Problema con el permiso de ejecución del comando sudo | Verifique que el usuario tenga permisos de sudo para ejecutar el siguiente comando en el dispositivo 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

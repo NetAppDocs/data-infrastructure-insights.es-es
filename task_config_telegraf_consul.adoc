@@ -4,7 +4,7 @@ permalink: task_config_telegraf_consul.html
 keywords: telegraf, installation, install, consul 
 summary: Configuración del recopilador de datos de Consul 
 ---
-= Cónsul colector de datos
+= Recopilador de datos del cónsul
 :hardbreaks:
 :allow-uri-read: 
 
@@ -16,37 +16,37 @@ Data Infrastructure Insights utiliza este recopilador de datos para recopilar m�
 
 == Instalación
 
-. En *Observabilidad > Colectores*, haz clic en *+Recopilador de datos*. Seleccione Cónsul.
+. Desde *Observabilidad > Recopiladores*, haga clic en *+Recopilador de datos*.  Elija Cónsul.
 +
-Si no ha configurado un agente para la recopilación, se le pedirá que lo haga link:task_config_telegraf_agent.html["instale un agente"] en su inquilino.
+Si no ha configurado un agente para la recopilación, se le solicitará que lo haga.link:task_config_telegraf_agent.html["instalar un agente"] en su inquilino.
 
 +
-Si ya ha configurado un agente, seleccione el sistema operativo o la plataforma adecuados y haga clic en *continuar*.
+Si ya tiene un agente configurado, seleccione el sistema operativo o la plataforma adecuados y haga clic en *Continuar*.
 
-. Siga las instrucciones de la pantalla Configuración del Cónsul para configurar el recopilador de datos. Las instrucciones varían en función del tipo de sistema operativo o plataforma que utilice para recopilar datos.
+. Siga las instrucciones en la pantalla de Configuración de Consul para configurar el recopilador de datos.  Las instrucciones varían según el tipo de sistema operativo o plataforma que esté utilizando para recopilar datos.
 
 
 
 
 == Configuración
 
-La información se puede encontrar en el link:https://www.consul.io/docs/index.html["Documentación del Cónsul"].
+La información se puede encontrar en ellink:https://www.consul.io/docs/index.html["Documentación del cónsul"] .
 
 
 
-== Objetos y contadores para consul
+== Objetos y contadores para el cónsul
 
-Se recopilan los objetos siguientes y sus contadores:
+Se recogen los siguientes objetos y sus contadores:
 
 [cols="<.<,<.<,<.<,<.<"]
 |===
 | Objeto: | Identificadores: | Atributos: | Puntos de datos: 
 
 
-| Cónsul | Nodo del servicio de identificación de comprobación de espacio de nombres | Nodo IP nodo OS nodo UUID Nombre de nodo Nombre de servicio comprobar nombre ID de servicio Estado | Advertencia de paso crítico 
+| Cónsul | Nodo de servicio de verificación de ID de espacio de nombres | IP del nodo Sistema operativo del nodo UUID del nodo Nombre del nodo Nombre del servicio Nombre de verificación ID del servicio Estado | Advertencia de paso crítico 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página.
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página.

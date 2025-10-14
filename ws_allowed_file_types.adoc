@@ -2,21 +2,21 @@
 sidebar: sidebar 
 permalink: ws_allowed_file_types.html 
 keywords: workload security, cloud secure, include list, allowed, file types, ransomware 
-summary: Agregue extensiones de archivo a una lista de tipos de archivo permitidos para reducir las alertas. 
+summary: Agregue extensiones de archivo a una lista de tipos de archivos permitidos para reducir las alertas. 
 ---
 = Políticas de tipos de archivos permitidos
 :allow-uri-read: 
 
 
 [role="lead"]
-Si se detecta un ataque de ransomware para una extensión de archivo conocida y se generan alertas en la pantalla Alerts, esa extensión de archivo se puede agregar a una lista _allowed file types_ para evitar alertas innecesarias.
+Si se detecta un ataque de ransomware para una extensión de archivo conocida y se generan alertas en la pantalla Alertas, esa extensión de archivo se puede agregar a una lista de _tipos de archivos permitidos_ para evitar alertas innecesarias.
 
-Vaya a *Workload Security > Policies* y vaya a la pestaña _Allowed File Type Policies_.
+Vaya a *Seguridad de carga de trabajo > Políticas* y vaya a la pestaña _Políticas de tipos de archivos permitidos_.
 
 image:WS_Allowed_File_Type_Policies.png["Políticas de tipos de archivos permitidos"]
 
-Una vez agregado a la lista _allowed file types_, no se generará ninguna alerta de ataque de ransomware para ese tipo de archivo permitido. Tenga en cuenta que la política _Allowed File Types_ solo se aplica para la detección de ransomware.
+Una vez agregado a la lista de _tipos de archivos permitidos_, no se generará ninguna alerta de ataque de ransomware para ese tipo de archivo permitido.  Tenga en cuenta que la política _Tipos de archivos permitidos_ solo se aplica para la detección de ransomware.
 
-Por ejemplo, si se cambia el nombre de un archivo llamado _test.txt_ a _test.txt.abc_ y Workload Security detecta un ataque de ransomware debido a la extensión _.abc_, la extensión _.abc_ se puede agregar a la lista _allowed file types_. Después de ser agregado a la lista, los ataques de ransomware ya no se generarán contra archivos con la extensión _.abc_.
+Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de ransomware debido a la extensión _.abc_, la extensión _.abc_ se puede agregar a la lista de _tipos de archivos permitidos_.  Después de agregarse a la lista, ya no se generarán ataques de ransomware contra archivos con la extensión _.abc_.
 
-Los tipos de archivo permitidos pueden ser coincidencias exactas (por ejemplo, “.abc”) o expresiones (por ejemplo, “.*type”, “.type*” o “*type*”). No se admiten expresiones de tipos “.a*c”, “.p*f”.
+Los tipos de archivos permitidos pueden ser coincidencias exactas (por ejemplo, ".abc") o expresiones (por ejemplo, ".*type", ".type*" o "*type*").  No se admiten expresiones de tipos “.a*c”, “.p*f”.

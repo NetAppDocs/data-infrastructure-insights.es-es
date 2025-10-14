@@ -2,62 +2,62 @@
 sidebar: sidebar 
 permalink: forensic_alert_detail.html 
 keywords: alert, Critical, Warning, Low, alert detail Synopsis, Time range, Start time, End time, user 
-summary: detalles de alertas 
+summary: detalles de la alerta 
 ---
-= Detalles de alertas
+= Detalles de la alerta
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Al hacer clic en la sinopsis de una alerta, se abre la página con información detallada del usuario y de la alerta que han generado.
+Al hacer clic en la sinopsis de una alerta, se abre la página que proporciona información detallada sobre el usuario y la alerta que generó.
 
 
 
-== La página Alert Details muestra al usuario
+== La página Detalles de alerta muestra al usuario
 
-Alert Details proporciona información sobre la alerta seleccionada en la página Alertas.
+Detalles de alerta proporciona información sobre la alerta seleccionada en la página Alertas.
 
 * La gravedad de la alerta
-* El usuario que elevó la alerta y el tipo de alerta:
+* El usuario que generó la alerta y el tipo de alerta:
 +
-** Acceso anormal por el usuario
+** Acceso anormal por parte del usuario
 ** Acceso anormal por comunidad
-** Acceso anormal por el usuario en la comunidad
-** Usuario se unió a muchas comunidades
+** Acceso anormal por parte del usuario en la comunidad
+** El usuario se unió a muchas comunidades
 
 
-* La fecha y la hora en que se detectó la alerta
-* Las medidas adoptadas
+* Fecha y hora en que se detectó la alerta
+* La acción tomada
 +
 ** En cuarentena
-** Otros
-** Otros
+** Otro
+** Otro
 
 
 * El estado de la alerta
 +
 ** Nuevo
 ** En curso
-** Desestimada
+** Despedido
 ** Resuelto
 
 
-* Cambio de la tasa de actividad del usuario
+* Cambio en la tasa de actividad del usuario
 +
 ** Actividades típicas por hora
-** Actividades por hora cuando se elevó la alerta.
+** Actividades por hora cuando se generó la alerta.
 ** Porcentaje de cambio de tasa que provocó la alerta.
 
 
-* Un gráfico que muestra la tasa media histórica y la tasa de actividad que dio lugar a la alerta.
+* Un gráfico que muestra la tasa de actividad promedio histórica y la tasa de actividad que resultó en la alerta.
 
 
 
 
 === Usuario relacionado
 
-* Nombre de usuario y cargo
+* Nombre de usuario y título
 * Departamento
 * Correo electrónico con un enlace a la dirección de correo electrónico
 * Gerente
@@ -69,17 +69,17 @@ Alert Details proporciona información sobre la alerta seleccionada en la págin
 
 === Actividad
 
-Muestra la actividad del usuario durante los últimos 7 días y la última ubicación desde la que se ha accedido.
+Muestra la actividad del usuario durante los últimos 7 días y la última ubicación desde la que accedió.
 
 * Actividades:
 +
-** Lea
-** Otros
-** Cree
+** Leer
+** Otro
+** Crear
 
 
-* Número total de alertas de los últimos siete días.
-* Número total de actividades de los últimos 7 días.
+* Número total de alertas en los últimos siete días.
+* Número total de actividades en los últimos 7 días.
 
 
-Haga clic en *Ver detalle de actividad* para acceder al link:forensic_activity_history["Historial de actividades"]usuario que está siendo examinado.
+Haga clic en *Ver detalles de la actividad* para acceder a lalink:forensic_activity_history["Historial de actividades"] del usuario que está siendo examinado.

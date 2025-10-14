@@ -2,53 +2,53 @@
 sidebar: sidebar 
 permalink: task_dc_fujitsu_eternus.html 
 keywords: data collector, Fujitsu, Eternus 
-summary: Configurar el recopilador de datos ETERNUS de Fujitsu. 
+summary: Configuración del recopilador de datos Fujitsu Eternus. 
 ---
-= Recopilador de datos ETERNUS de Fujitsu
+= Recolector de datos Fujitsu Eternus
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos ETERNUS de Fujitsu adquiere datos de inventario mediante el acceso de administración al sistema de almacenamiento.
+El recopilador de datos Fujitsu Eternus adquiere datos de inventario mediante el acceso de nivel de administración al sistema de almacenamiento.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del almacenamiento ETERNUS de Fujitsu. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del almacenamiento Fujitsu Eternus.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Disco | Disco 
 
 
-| Reducida | Reducida 
+| Almacenamiento | Almacenamiento 
 
 
-| Thin Pool, nivel flexible Pool y RAID Group | Pool de almacenamiento 
+| Grupo reducido, grupo de niveles flexibles, grupo de incursión | Pool de almacenamiento 
 
 
-| Volumen estándar, volumen de datos snap (SDV), volumen de pool de datos Snap (SDPV), volumen de thin provisioning (TPV), volumen de nivel flexible (FTV), volumen de tiras anchas (WSV) | Volumen 
+| Volumen estándar, Volumen de datos instantáneos (SDV), Volumen de grupo de datos instantáneos (SDPV), Volumen de aprovisionamiento fino (TPV), Volumen de nivel flexible (FTV), Volumen de distribución amplia (WSV) | Volumen 
 
 
 | Adaptador de canal | Controladora 
 |===
-Nota: Estas son sólo asignaciones de terminología comunes y puede que no representen todos los casos de este collectior de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos, es necesario lo siguiente:
+Para configurar este recopilador de datos se requiere lo siguiente:
 
-* Dirección IP del almacenamiento ETERNUS, que no se puede delimitar entre comas
-* Nombre de usuario y contraseña en el nivel de administración de SSH
+* Una dirección IP del almacenamiento de Eternus, que no puede estar delimitada por comas
+* Nombre de usuario y contraseña de nivel de administración de SSH
 * Puerto 22
-* Asegúrese de que el desplazamiento de página está desactivado (clienv-show-more-scroll desactivado)
+* Asegúrese de que el desplazamiento de página esté deshabilitado (clienv-show-more-scroll disable)
 
 
 
@@ -60,13 +60,13 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Campo | Descripción 
 
 
-| Dirección IP de almacenamiento ETERNUS | La dirección IP del almacenamiento ETERNUS 
+| Dirección IP de Eternus Storage | Dirección IP del almacenamiento de Eternus 
 
 
-| Nombre de usuario | Nombre de usuario para almacenamiento ETERNUS 
+| Nombre de usuario | Nombre de usuario para el almacenamiento de Eternus 
 
 
-| Contraseña | Contraseña para el almacenamiento ETERNUS 
+| Password | Contraseña para el almacenamiento de Eternus 
 |===
 
 
@@ -77,13 +77,13 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Campo | Descripción 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 20 minutos. 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 20 minutos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -91,12 +91,12 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| "Error al recuperar los datos" con mensajes de error "error al buscar la CLI del símbolo del sistema" o "error al buscar al final de los resultados del shell" | Causa probable por: El sistema de almacenamiento tiene activado el desplazamiento de páginas. Solución posible: * Intente desactivar el desplazamiento de página ejecutando el siguiente comando: Set clienv-show-more -scroll disable 
+| "Error al recuperar datos" con mensajes de error "Error al encontrar el mensaje CLI" o "Error al encontrar el mensaje al final de los resultados del shell". | Probablemente causado por: El sistema de almacenamiento tiene habilitado el desplazamiento de página.  Posible solución: * Intente deshabilitar el desplazamiento de página ejecutando el siguiente comando: set clienv-show-more -scroll disable 
 
 
-| "Error de conexión" con mensajes de error "no se ha podido crear una instancia de una conexión SSH al almacenamiento" o "no se ha podido crear una instancia de una conexión a VirtualCenter" | Causas posibles: * Credenciales incorrectas. * Dirección IP incorrecta. * Problema de red. * El almacenamiento puede estar inactivo o no responder. Posibles soluciones: * Verificar credenciales y dirección IP introducidos. * Intente comunicarse con el almacenamiento mediante SSH Client. 
+| "Error de conexión" con mensajes de error "No se pudo crear una conexión SSH al almacenamiento" o "No se pudo crear una conexión a VirtualCenter" | Causas probables: * Credenciales incorrectas.  * Dirección IP incorrecta.  * Problema de red.  *El almacenamiento puede estar inactivo o no responder.  Posibles soluciones: * Verificar las credenciales y la dirección IP ingresadas.  * Intente comunicarse con el almacenamiento mediante el cliente SSH. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

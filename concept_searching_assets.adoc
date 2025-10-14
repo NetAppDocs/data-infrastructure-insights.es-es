@@ -1,123 +1,123 @@
 ---
 sidebar: sidebar 
 permalink: concept_searching_assets.html 
-summary: Búsqueda avanzada techniquest puede ayudarle a localizar los activos que está buscando. 
+summary: Las técnicas de búsqueda avanzada pueden ayudarle a localizar los activos que está buscando. 
 keywords: asset page, objects, search, advanced, alerts 
 ---
-= Sugerencias y consejos para buscar activos y alertas
+= Consejos y sugerencias para buscar activos y alertas
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Se pueden utilizar varias técnicas de búsqueda para buscar datos u objetos en el entorno supervisado.
+Se pueden utilizar múltiples técnicas de búsqueda para buscar datos u objetos en su entorno monitoreado.
 
-* *Búsqueda con comodín*
+* *Búsqueda con comodines*
 +
-Puede realizar una búsqueda con varios caracteres comodín con el carácter *. Por ejemplo, _aplic*n_ devolverá _Application_.
+Puede realizar una búsqueda de varios caracteres comodín utilizando el carácter *.  Por ejemplo, _applic*n_ devolvería _application_.
 
-* * Frases utilizadas en la búsqueda*
+* *Frases utilizadas en la búsqueda*
 +
-Una frase es un grupo de palabras rodeado de comillas dobles; por ejemplo, "VNX LUN 5". Puede utilizar comillas dobles para buscar documentos que contengan espacios en sus nombres o atributos.
+Una frase es un grupo de palabras rodeadas por comillas dobles; por ejemplo, "VNX LUN 5".  Puede utilizar comillas dobles para buscar documentos que contengan espacios en sus nombres o atributos.
 
 * *Operadores booleanos*
 +
-Mediante operadores booleanos O, Y, y NO, puede combinar varios términos para formar una consulta más compleja.
+Utilizando los operadores booleanos OR, AND y NOT, puede combinar varios términos para formar una consulta más compleja.
 
 +
-O.
+O
 
 +
-EL operador OR es el operador conjunto predeterminado.
+El operador OR es el operador de conjunción predeterminado.
 
 +
-Si no hay ningún operador booleano entre dos términos, se utiliza el operador OR.
+Si no hay un operador booleano entre dos términos, se utiliza el operador OR.
 
 +
-El operador OR vincula dos términos y busca un documento coincidente si alguno de los términos existe en un documento.
+El operador OR vincula dos términos y encuentra un documento coincidente si alguno de los términos existe en un documento.
 
 +
-Por ejemplo, _Storage O netapp_ buscan documentos que contengan _Storage_ o _netapp_.
+Por ejemplo, _storage OR netapp_ busca documentos que contengan _storage_ o _netapp_.
 
 +
-Se dan puntuaciones altas a los documentos que coinciden con la mayoría de los términos.
+Se otorgan puntuaciones altas a los documentos que coinciden con la mayoría de los términos.
 
 +
-Y..
+Y
 
 +
-Puede usar el operador AND para buscar documentos en los que tanto los términos de búsqueda existen en un único documento. Por ejemplo, _Storage Y netapp_ buscan documentos que contengan _Storage_ y _netapp_.
+Puede utilizar el operador AND para buscar documentos en los que ambos términos de búsqueda existan en un solo documento.  Por ejemplo, _storage AND netapp_ busca documentos que contengan _storage_ y _netapp_.
 
 +
-Puede utilizar el símbolo *&&* en lugar de la palabra Y.
+Puede utilizar el símbolo *&&* en lugar de la palabra AND.
 
 +
 NO
 
 +
-Cuando utiliza EL operador NOT, todos los documentos que contienen el término después DE NO se excluyen de los resultados de la búsqueda. Por ejemplo, _Storage NOT netapp_ busca documentos que solo contengan _Storage_ y no _netapp_.
+Cuando se utiliza el operador NOT, todos los documentos que contengan el término después de NOT se excluyen de los resultados de la búsqueda.  Por ejemplo, _storage NOT netapp_ busca documentos que contengan solo _storage_ y no _netapp_.
 
 +
-Puede utilizar el símbolo *!* en lugar DE la palabra NOT.
+Puedes utilizar el símbolo *!* en lugar de la palabra NOT.
 
 
 
-La búsqueda no distingue mayúsculas y minúsculas.
+La búsqueda no distingue entre mayúsculas y minúsculas.
 
 
 
 == Búsqueda mediante términos indexados
 
-Las búsquedas que coinciden con más de los términos indexados tienen como resultado puntuaciones más altas.
+Las búsquedas que coinciden con más términos indexados dan como resultado puntuaciones más altas.
 
-La cadena de búsqueda se divide en términos de búsqueda separados por espacio. Por ejemplo, la cadena de búsqueda "Storage aurora netapp" se divide en tres palabras clave: "Almacenamiento", "aurora" y "netapp". La búsqueda se realiza utilizando los tres términos. Los documentos que coincidan con la mayoría de estos términos tendrán la puntuación más alta. Cuanta más información proporcione, mejores serán los resultados de la búsqueda. Por ejemplo, puede buscar un almacenamiento por su nombre y modelo.
+La cadena de búsqueda se divide en términos de búsqueda separados por espacio.  Por ejemplo, la cadena de búsqueda "almacenamiento aurora netapp" se divide en tres palabras clave: "almacenamiento", "aurora" y "netapp".  La búsqueda se realiza utilizando los tres términos.  Los documentos que coincidan con la mayoría de estos términos tendrán la puntuación más alta.  Cuanto más información proporcione, mejores serán los resultados de la búsqueda.  Por ejemplo, puedes buscar un almacenamiento por su nombre y modelo.
 
-La interfaz de usuario muestra los resultados de la búsqueda en todas las categorías, con los tres resultados principales por categoría. Si no encontró un objeto que esperaba, puede incluir más términos en la cadena de búsqueda para mejorar los resultados de la búsqueda.
+La interfaz de usuario muestra los resultados de la búsqueda en todas las categorías, con los tres resultados principales por categoría.  Si no encontró el objeto que esperaba, puede incluir más términos en la cadena de búsqueda para mejorar los resultados de la búsqueda.
 
-En la tabla siguiente se proporciona una lista de términos indexados que se pueden agregar a la cadena de búsqueda.
+La siguiente tabla proporciona una lista de términos indexados que se pueden agregar a la cadena de búsqueda.
 
 |===
 | Categoría | Términos indexados 
 
 
-| Reducida | modelo de proveedor de nombres "almacenamiento 
+| Almacenamiento | Modelo de proveedor de nombre de "almacenamiento" 
 
 
-| StoragePool | Nombre de «Storage pool» de las direcciones IP de almacenamiento del número de serie de almacenamiento nombres de los modelos de almacenamiento del proveedor de almacenamiento para todos los nombres de los volúmenes internos asociados a todos los discos asociados 
+| Grupo de almacenamiento | "storagepool" nombre nombre del almacenamiento direcciones IP del almacenamiento número de serie del almacenamiento proveedor de almacenamiento modelo de almacenamiento nombres de todos los volúmenes internos asociados nombres de todos los discos asociados 
 
 
-| Volumen interno | Nombre de «internalvolume» de las direcciones IP de almacenamiento del número de serie de almacenamiento del nombre de modelo de almacenamiento del proveedor de almacenamiento de los nombres de los pools de almacenamiento de todos los nombres de recursos compartidos asociados de todas las aplicaciones asociadas 
+| Volumen interno | "internalvolume" nombre nombre del almacenamiento direcciones IP del almacenamiento número de serie del almacenamiento proveedor de almacenamiento modelo de almacenamiento nombre del grupo de almacenamiento nombres de todos los recursos compartidos asociados nombres de todas las aplicaciones asociadas 
 
 
-| Volumen | Nombres de etiqueta de "volume" de todos los volúmenes internos nombre del pool de almacenamiento de las direcciones IP de almacenamiento del número de serie de almacenamiento del modelo de almacenamiento del proveedor de almacenamiento 
+| Volumen | Nombre del "volumen" Etiqueta Nombres de todos los volúmenes internos Nombre del grupo de almacenamiento Nombre del almacenamiento Direcciones IP del almacenamiento Número de serie del almacenamiento Proveedor de almacenamiento Modelo de almacenamiento 
 
 
-| Nodo de almacenamiento | Nombre «storagegrid» de las direcciones IP de almacenamiento del número de serie de almacenamiento del modelo de almacenamiento del proveedor de almacenamiento 
+| Nodo de almacenamiento | Nombre "storagenode" Nombre del almacenamiento Direcciones IP del almacenamiento Número de serie del almacenamiento Proveedor de almacenamiento Modelo de almacenamiento 
 
 
-| Host | Nombres de direcciones IP de "host" de todas las aplicaciones asociadas 
+| Host | Nombre "host" Direcciones IP Nombres de todas las aplicaciones asociadas 
 
 
-| Almacén de datos | "Datastore" name nombres IP de centro virtual de todos los nombres de volúmenes de todos los volúmenes internos 
+| Almacén de datos | Nombre del "almacén de datos" Nombres IP del centro virtual Nombres de todos los volúmenes Nombres de todos los volúmenes internos 
 
 
-| Equipos virtuales | Nombre "virtualmachine" nombre DNS nombre direcciones IP nombre de las direcciones IP del host de los nombres de host de todos los almacenes de datos nombres de todas las aplicaciones asociadas 
+| Máquinas virtuales | "virtualmachine" nombre Nombre DNS Direcciones IP nombre del host Direcciones IP del host nombres de todos los almacenes de datos nombres de todas las aplicaciones asociadas 
 
 
-| Interruptores (normales y NPV) | Nombre wwn de serie de nombre de dirección IP "switch" nombre de dominio de la estructura wwn de la estructura 
+| Interruptores (regulares y VPN) | "switch" Dirección IP wwn Nombre Número de serie Modelo ID de dominio Nombre de la estructura wwn de la estructura 
 
 
-| Cliente más | nombre de "aplicación" línea de inquilino del proyecto de unidad de negocio 
+| Aplicación | Nombre de la "aplicación" Inquilino Línea de negocio Unidad de negocio Proyecto 
 
 
-| Cinta | "Cinta" Nombre de dirección IP proveedor número de serie 
+| Cinta | "cinta" nombre de la dirección IP número de serie proveedor 
 
 
-| Puerto | nombre wwn del puerto 
+| Puerto | nombre wwn del "puerto" 
 
 
-| Estructura | nombre wwn de "estructura" 
+| Tela | "tela" nombre wwn 
 
 
-| Máquina virtual de almacenamiento (SVM) | Nombre UUID de "storageirtualmachine" 
+| Máquina virtual de almacenamiento (SVM) | UUID del nombre de la "máquina virtual de almacenamiento" 
 |===

@@ -2,25 +2,25 @@
 sidebar: sidebar 
 permalink: task_dc_huawei_oceanstor.html 
 keywords: data collector, Huawei, OceanStor, Dorado 
-summary: 'Configurar Huawei OceanStor (REST/HTTPS) recopilador de datos.' 
+summary: 'Configuración del recopilador de datos Huawei OceanStor (REST/HTTPS).' 
 ---
-= Recopilador de datos Huawei OceanStor
+= Colector de datos Huawei OceanStor
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos OceanStor (REST/HTTPS) de Huawei para detectar el inventario y el rendimiento del almacenamiento OceanStor y OceanStor Dorado de Huawei.
+Data Infrastructure Insights utiliza el recopilador de datos Huawei OceanStor (REST/HTTPS) para descubrir el inventario y el rendimiento del almacenamiento Huawei OceanStor y OceanStor Dorado.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario y rendimiento del OceanStor de Huawei. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario y rendimiento de Huawei OceanStor.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
@@ -32,13 +32,13 @@ Data Infrastructure Insights adquiere la siguiente información de inventario y 
 | Controladora | Nodo de almacenamiento 
 
 
-| Puerto FC (asignado) | Asignación de volumen 
+| Puerto FC (Asignado) | Mapa de volumen 
 
 
-| Iniciador de FC de host (asignado) | Máscara de volumen 
+| Iniciador FC del host (asignado) | Máscara de volumen 
 
 
-| Recursos compartidos NFS/CIFS | Share 
+| Compartir NFS/CIFS | Compartir 
 
 
 | Destino de enlace iSCSI | Nodo de destino iSCSI 
@@ -56,7 +56,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario y 
 
 == Requisitos
 
-Para configurar este recopilador de datos se necesitan los siguientes requisitos:
+Se requieren los siguientes requisitos para configurar este recopilador de datos:
 
 * Dirección IP del dispositivo
 * Credenciales para acceder al administrador de dispositivos OceanStor
@@ -72,13 +72,13 @@ Para configurar este recopilador de datos se necesitan los siguientes requisitos
 | Campo | Descripción 
 
 
-| OceanStor Host IP Address | Dirección IP o nombre de dominio completo del Administrador de dispositivos OceanStor 
+| Dirección IP del host de OceanStor | Dirección IP o nombre de dominio completo del Administrador de dispositivos OceanStor 
 
 
 | Nombre de usuario | Nombre utilizado para iniciar sesión en el Administrador de dispositivos OceanStor 
 
 
-| Contraseña | Contraseña utilizada para iniciar sesión en el Administrador de dispositivos OceanStor 
+| Password | Contraseña utilizada para iniciar sesión en el Administrador de dispositivos OceanStor 
 |===
 
 
@@ -89,16 +89,16 @@ Para configurar este recopilador de datos se necesitan los siguientes requisitos
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectar con el Administrador de dispositivos OceanStor. El valor predeterminado es 8088. 
+| Puerto TCP | Puerto TCP utilizado para conectarse al Administrador de dispositivos OceanStor.  El valor predeterminado es 8088. 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (s). | El valor predeterminado es 300 segundos. 
+| Intervalo de sondeo de rendimiento (seg.). | El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

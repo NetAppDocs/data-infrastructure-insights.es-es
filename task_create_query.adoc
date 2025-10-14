@@ -1,144 +1,144 @@
 ---
 sidebar: sidebar 
 permalink: task_create_query.html 
-summary: Las consultas permiten identificar rápida y fácilmente los activos y las métricas de interés. 
+summary: Las consultas permiten identificar de forma rápida y sencilla activos y métricas de interés. 
 keywords: query, queries 
 ---
-= Creando consultas
+= Creación de consultas
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Las consultas le permiten buscar los activos en su arrendatario a un nivel granular, lo que permite filtrar los datos que desea y ordenar los resultados a su gusto.
+Las consultas le permiten buscar los activos de su inquilino a un nivel granular, lo que le permite filtrar los datos que desea y ordenar los resultados a su gusto.
 
-Por ejemplo, puede crear una consulta para _Volumes_, agregar un filtro para buscar un _storages_ asociado a los volúmenes seleccionados, agregar otro filtro para buscar un _anotación_ particular, como "nivel 1" en los almacenamientos seleccionados, Y finalmente añadir otro filtro para encontrar todos los almacenamientos con _IOPS - Leer (IO/s)_ mayor que 25. Cuando se muestran los resultados, puede ordenar las columnas de información asociadas a la consulta en orden ascendente o descendente.
+Por ejemplo, puede crear una consulta para _volúmenes_, agregar un filtro para encontrar _almacenes_ específicos asociados con los volúmenes seleccionados, agregar otro filtro para encontrar una _anotación_ particular como "Nivel 1" en los almacenamientos seleccionados y, finalmente, agregar otro filtro para encontrar todos los almacenamientos con _IOPS - Lectura (IO/s)_ mayor a 25.  Cuando se muestren los resultados, podrá ordenar las columnas de información asociadas con la consulta en orden ascendente o descendente.
 
-Nota: Cuando se agrega un nuevo recopilador de datos que adquiere activos, o se realizan anotaciones o asignaciones de aplicaciones, sólo puede consultar estos nuevos activos, anotaciones o aplicaciones después de indizar las consultas. La indización se produce a intervalos programados regularmente o durante determinados eventos, como la ejecución de reglas de anotación.
+Nota: Cuando se agrega un nuevo recopilador de datos que adquiere activos, o se realizan anotaciones o asignaciones de aplicaciones, puede consultar esos nuevos activos, anotaciones o aplicaciones solo después de que se indexen las consultas.  La indexación se produce en un intervalo programado regularmente o durante ciertos eventos, como la ejecución de reglas de anotación.
 
 .Crear una consulta es muy sencillo:
-. Vaya a *consultas > *+Nueva consulta*.
-. De la página "Seleccionar..." seleccione el tipo de objeto que desee consultar. Puede desplazarse por la lista o puede empezar a escribir para encontrar más rápidamente lo que está buscando.
+. Vaya a *Consultas > *+Nueva consulta*.
+. Desde la lista 'Seleccionar...', seleccione el tipo de objeto que desea consultar.  Puede desplazarse por la lista o comenzar a escribir para encontrar más rápidamente lo que está buscando.
 
 
 .Lista de desplazamiento:
 image:QueryDrop-DownList.png["Consulta desplegable"]
 
-.Tipo a buscar:
-image:QueryPageFilter.png["Escriba para buscar"]
+.Escribir para buscar:
+image:QueryPageFilter.png["Escribiendo para encontrar"]
 
-Puede agregar filtros para delimitar aún más su consulta haciendo clic en el botón *+* del campo *Filtrar por*. Agrupar filas por objeto o atributo. Cuando trabaje con datos de integración (Kubernetes, mediciones avanzadas de ONTAP, etc.), puede agrupar varios atributos si lo desea.
+Puede agregar filtros para limitar aún más su consulta haciendo clic en el botón *+* en el campo *Filtrar por*.  Agrupar filas por objeto o atributo.  Al trabajar con datos de integración (Kubernetes, ONTAP Advanced Metrics, etc.), puede agruparlos por múltiples atributos, si lo desea.
 
 image:QueryFilterExample.png["Filtrado y agrupación de consultas"]
 
-La lista de resultados de la consulta muestra un número de columnas predeterminadas, dependiendo del tipo de objeto buscado. Para agregar, eliminar o cambiar las columnas, haga clic en el icono de engranaje situado a la derecha de la tabla. Las columnas disponibles varían en función del tipo activo/métrico.
+La lista de resultados de la consulta muestra una serie de columnas predeterminadas, según el tipo de objeto buscado.  Para agregar, eliminar o cambiar las columnas, haga clic en el ícono de engranaje a la derecha de la tabla.  Las columnas disponibles varían según el tipo de activo/métrica.
 
-image:QuerySelectColumns.png["Seleccione columnas"]
+image:QuerySelectColumns.png["Seleccionar columnas"]
 
 
 
 == Véalo en acción
 
-link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["Explorar y analizar con consultas en Data Infrastructure Insights (video)"]
+link:https://media.netapp.com/video-detail/d0530e0b-a222-52e7-92b1-dbeeee41b712/explore-and-analyze-with-queries-in-data-infrastructure-insights["Explorar y analizar con consultas en Data Infrastructure Insights (Video)"]
 
 
 
-== Seleccione Agregación, Unidades, Formato condicional
+== Selección de agregación, unidades y formato condicional
 
 
 
-=== Agregación y Unidades
+=== Agregación y unidades
 
-Para las columnas de valor, puede refinar aún más los resultados de la consulta eligiendo cómo se agregan los valores mostrados, así como seleccionando las unidades en las que se muestran esos valores. Estas opciones se encuentran seleccionando el menú “Tres puntos” en la esquina superior de una columna.
+Para las columnas de "valor", puede refinar aún más los resultados de su consulta eligiendo cómo se agregan los valores mostrados, así como seleccionando las unidades en que se muestran esos valores.  Estas opciones se encuentran seleccionando el menú de “tres puntos” en la esquina superior de una columna.
 
-image:Query_Page_Aggregation_etc.png["Resultados de la página de consulta que muestran agregación, formato condicional, visualización de unidades y cambio de nombre de columna"]
+image:Query_Page_Aggregation_etc.png["Resultados de la página de consulta que muestran agregación, formato condicional, visualización de unidades y cambio de nombre de columnas"]
 
 
 
 ==== Unidades
 
-Puede seleccionar las unidades en las que se mostrarán los valores. Por ejemplo, si la columna Seleccionado muestra capacidad bruta y los valores se muestran en GiB, pero prefiere mostrarlos como TiB, simplemente seleccione TiB en el menú desplegable Unit Display.
+Puede seleccionar las unidades en las que desea mostrar los valores.  Por ejemplo, si la columna seleccionada muestra la capacidad bruta y los valores se muestran en GiB, pero prefiere mostrarlos como TiB, simplemente seleccione TiB en el menú desplegable Visualización de unidades.
 
 
 
 ==== Agregación
 
-Por el mismo token, si los valores mostrados se agregan a partir de los datos subyacentes como “promedio”, Pero prefiere mostrar la suma de todos los valores, seleccione “Suma” en la lista desplegable _Agrupar por_ (si desea que los valores agrupados muestren las sumas) o en la lista desplegable _Time Aggregate by_ (si desea que los valores de fila muestren las sumas de los datos subyacentes).
+De la misma manera, si los valores mostrados se agregan a partir de los datos subyacentes como "Promedio", pero prefiere mostrar la suma de todos los valores, seleccione "Suma" en el menú desplegable _Agrupar por_ (si desea que los valores agrupados muestren las sumas) o en el menú desplegable _Agregar por tiempo_ (si desea que los valores de las filas muestren sumas de los datos subyacentes).
 
-Puede optar por agregar puntos de datos agrupados por _Avg, Max, Min o Sum_.
+Puede elegir agregar puntos de datos agrupados por _Promedio, Máx., Mín. o Suma_.
 
-Puede agregar datos de fila individuales por _promedio, último punto de datos adquirido, máximo, mínimo o suma_.
+Puede agregar datos de filas individuales por _Promedio, Último punto de datos adquirido, Máximo, Mínimo o Suma_.
 
 
 
-==== Formato Condicional
+==== Formato condicional
 
-El formato condicional le permite resaltar umbrales de nivel de advertencia y nivel crítico en la lista de resultados de la consulta, lo que proporciona visibilidad instantánea a los valores atípicos y puntos de datos excepcionales.
+El formato condicional le permite resaltar los umbrales de nivel de advertencia y nivel crítico en la lista de resultados de la consulta, lo que brinda visibilidad instantánea a valores atípicos y puntos de datos excepcionales.
 
-image:Query_Page_Conditional_Formatting.png["Formato Condicional en la Página Consulta"]
+image:Query_Page_Conditional_Formatting.png["Formato condicional en la página de consulta"]
 
-El formato condicional se define por separado para cada columna. Por ejemplo, puede elegir un conjunto de umbrales para una columna Capacidad y otro conjunto para una columna Rendimiento.
+El formato condicional se establece por separado para cada columna.  Por ejemplo, puede elegir un conjunto de umbrales para una columna de capacidad y otro conjunto para una columna de rendimiento.
 
 
 
 ==== Cambiar nombre de columna
 
-Cambiar el nombre de una columna cambia el nombre mostrado en la lista de resultados de la consulta. El nuevo nombre de columna también se muestra en el archivo resultante si exporta la lista de consultas a .CSV.
+Al cambiar el nombre de una columna, se cambia el nombre que se muestra en la lista de resultados de la consulta.  El nuevo nombre de la columna también se muestra en el archivo resultante si exporta la lista de consultas a .CSV.
 
 
 
-=== Ahorre
+=== Ahorrar
 
-Después de configurar la consulta para que le muestre los resultados que desea, puede hacer clic en el botón *Guardar* para guardar la consulta para su uso futuro. Déle un nombre significativo y único.
-
-
-
-== Más información sobre el filtrado
+Después de haber configurado su consulta para mostrarle los resultados que desea, puede hacer clic en el botón *Guardar* para guardar la consulta para uso futuro.  Dale un nombre significativo y único.
 
 
 
-=== Caracteres comodín y expresiones
+== Más sobre el filtrado
 
-Cuando esté filtrando valores de texto o lista en consultas o widgets de panel, cuando comience a escribir, se le mostrará la opción de crear un filtro * comodín* basado en el texto actual. Si selecciona esta opción, se devolverán todos los resultados que coincidan con la expresión comodín. También puedes crear *Expresiones* usando NOT o OR, o puedes seleccionar la opción “Ninguno” para filtrar los valores nulos en el campo.
+
+
+=== Comodines y expresiones
+
+Cuando filtra texto o valores de lista en consultas o widgets del panel, a medida que comienza a escribir se le presenta la opción de crear un *filtro comodín* basado en el texto actual.  Al seleccionar esta opción se devolverán todos los resultados que coincidan con la expresión comodín.  También puede crear *expresiones* usando NOT u OR, o puede seleccionar la opción "Ninguno" para filtrar valores nulos en el campo.
 
 image:Type-Ahead-Example-ingest.png["Filtro comodín"]
 
-Los filtros basados en comodines o expresiones (por ejemplo, NOT, O “Ninguno”, etc.) se muestran en azul oscuro en el campo de filtro. Los elementos seleccionados directamente de la lista se muestran en azul claro.
+Los filtros basados en comodines o expresiones (por ejemplo, NO, O, "Ninguno", etc.) se muestran en azul oscuro en el campo de filtro.  Los elementos que seleccione directamente de la lista se muestran en azul claro.
 
 image:Type-Ahead-Example-Wildcard-DirectSelect.png["Resultados del filtro comodín"]
 
-Tenga en cuenta que el filtrado de comodines y expresiones funciona con texto o listas, pero no con valores numéricos, fechas o valores.
+Tenga en cuenta que el filtrado de comodines y expresiones funciona con texto o listas, pero no con números, fechas o valores booleanos.
 
 
 
-=== Filtros de refinado
+=== Filtros de refinación
 
-Puede utilizar lo siguiente para refinar el filtro:
+Puede utilizar lo siguiente para refinar su filtro:
 
 |===
 
 
-| Filtro | Qué hace | Ejemplo | Resultado 
+| Filtrar | Qué hace | Ejemplo | Resultado 
 
 
-| * (Asterisk) | le permite buscar todo | vol*rhel | devuelve todos los recursos que comienzan con "vol" y terminan con "rhel" 
+| * (Asterisco) | te permite buscar todo | vol*rhel | devuelve todos los recursos que comienzan con "vol" y terminan con "rhel" 
 
 
-| ? (signo de interrogación) | le permite buscar un número específico de caracteres | BOS-PRD??-S12 | Devuelve BOS-PRD**__12__**-S12, BOS-PRD**__23_**-S12, etc. 
+| ?  (signo de interrogación) | le permite buscar un número específico de caracteres | BOS-PRD??-S12 | devuelve BOS-PRD**__12__**-S12, BOS-PRD**__23__**-S12, y así sucesivamente 
 
 
-| O. | permite especificar varias entidades | FAS2240, CX600 O FAS3270 | Devuelve cualquiera de los modelos FAS2440, CX600 o FAS3270 
+| O | le permite especificar múltiples entidades | FAS2240 O CX600 O FAS3270 | devuelve cualquiera de los modelos FAS2440, CX600 o FAS3270 
 
 
-| NO | permite excluir el texto de los resultados de la búsqueda | NO EMC* | Devuelve todo lo que no empieza con "EMC". 
+| NO | le permite excluir texto de los resultados de búsqueda | NO EMC* | devuelve todo lo que no comience con "EMC" 
 
 
-| _Ninguno_ | Busca valores NULL en todos los campos | _Ninguno_ | devuelve los resultados en los que el campo de destino está vacío 
+| _Ninguno_ | busca valores NULL en todos los campos | _Ninguno_ | devuelve resultados donde el campo de destino está vacío 
 
 
-| No * | Busca valores NULL en los campos _text-only_ | No * | devuelve los resultados en los que el campo de destino está vacío 
+| No * | busca valores NULL en campos _solo texto_ | No * | devuelve resultados donde el campo de destino está vacío 
 |===
-Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata todo entre el primer y el último presupuesto como una coincidencia exacta. Todos los caracteres especiales o operadores incluidos en las comillas se tratarán como literales. Por ejemplo, el filtrado para "*" devolverá resultados que sean un asterisco literal; en este caso, el asterisco no será tratado como comodín. Los operadores O Y NO también se tratarán como cadenas literales cuando se incluyen entre comillas dobles.
+Si encierra una cadena de filtro entre comillas dobles, Insight trata todo lo que esté entre la primera y la última comilla como una coincidencia exacta.  Cualquier carácter especial u operador dentro de las comillas se tratará como literal.  Por ejemplo, filtrar por "*" devolverá resultados que son un asterisco literal; el asterisco no se tratará como un comodín en este caso.  Los operadores OR y NOT también se tratarán como cadenas literales cuando estén entre comillas dobles.
 
 
 
@@ -147,23 +147,23 @@ Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata to
 Al filtrar un valor booleano, es posible que se le presenten las siguientes opciones para filtrar:
 
 * *Cualquiera*: Esto devolverá _todos_ los resultados, incluidos los resultados configurados como "Sí", "No" o no configurados en absoluto.
-* *Sí*: Devuelve sólo resultados "Sí".  Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas.  Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
-* *No*: Devuelve sólo resultados "No".  Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas.  Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
-* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ningún valor.  También conocidos como valores "Nulos".
+* *Sí*: Devuelve sólo resultados "Sí". Tenga en cuenta que DII muestra "Sí" como una marca de verificación en la mayoría de las tablas. Los valores se pueden establecer en "Verdadero", "Activado", etc.; DII trata todos estos como "Sí".
+* *No*: Devuelve sólo resultados "No". Tenga en cuenta que DII muestra "No" como una "X" en la mayoría de las tablas. Los valores se pueden establecer en "Falso", "Desactivado", etc.; DII trata todos estos como "No".
+* *Ninguno*: Devuelve solo resultados en los que no se ha establecido ningún valor. También conocidos como valores "Nulos".
 
 
 
 
-== ¿Qué debo hacer ahora que tengo resultados de consulta?
+== ¿Qué hago ahora que tengo los resultados de la consulta?
 
-La consulta proporciona un lugar sencillo para agregar anotaciones o asignar aplicaciones a activos. Tenga en cuenta que sólo puede asignar aplicaciones o anotaciones a sus activos de inventario (disco, almacenamiento, etc.). Las métricas de integración no pueden asumir anotaciones ni asignaciones de aplicaciones.
+La consulta proporciona un lugar sencillo para agregar anotaciones o asignar aplicaciones a los activos.  Tenga en cuenta que solo puede asignar aplicaciones o anotaciones a sus activos de inventario (disco, almacenamiento, etc.).  Las métricas de integración no pueden asumir anotaciones ni asignaciones de aplicaciones.
 
-Para asignar una anotación o aplicación a los activos resultantes de la consulta, seleccione por último los activos mediante la columna de casilla de verificación situada a la izquierda de la tabla de resultados y, a continuación, haga clic en el botón *acciones masivas* de la derecha. Elija la acción que desee aplicar a los activos seleccionados.
+Para asignar una anotación o aplicación a los activos resultantes de su consulta, simplemente seleccione el/los activo(s) utilizando la columna de casilla de verificación a la izquierda de la tabla de resultados, luego haga clic en el botón *Acciones masivas* a la derecha.  Seleccione la acción que desea aplicar a los activos seleccionados.
 
-image:QueryVolumeBulkActions.png["Consulte el ejemplo de acciones masivas"]
+image:QueryVolumeBulkActions.png["Ejemplo de acciones masivas de consulta"]
 
 
 
 == Las reglas de anotación requieren consulta
 
-Si está configurando link:task_create_annotation_rules.html["Reglas de anotación"], cada regla debe tener una consulta subyacente con la que trabajar. Pero como has visto anteriormente, las consultas se pueden hacer tan amplias o tan estrechas como sea necesario.
+Si está configurandolink:task_create_annotation_rules.html["Reglas de anotación"] , cada regla debe tener una consulta subyacente con la que trabajar.  Pero como has visto anteriormente, las consultas pueden hacerse tan amplias o tan específicas como necesites.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: Resumen de consultas 
+summary: Descripción general de consultas 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
 = Activos utilizados en consultas
@@ -10,39 +10,39 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-Las consultas le permiten supervisar y solucionar problemas en su red mediante la búsqueda de los activos y las métricas de su arrendatario a un nivel granular basado en criterios seleccionados por el usuario (por ejemplo, anotaciones).
+Las consultas le permiten monitorear y solucionar problemas de su red buscando activos y métricas en su inquilino a un nivel granular según criterios seleccionados por el usuario (por ejemplo, anotaciones).
 
-Tenga en cuenta que las reglas de anotación, que asignan anotaciones automáticamente a los activos, _requieren_ una consulta.
+Tenga en cuenta que las reglas de anotación, que asignan automáticamente anotaciones a los activos, _requieren_ una consulta.
 
-Puedes consultar los activos de inventario físico o virtual (y sus métricas asociadas) de tu inquilino, o las métricas que se proporcionan con integración como Kubernetes o Datos avanzados de ONTAP.
+Puede consultar los activos de inventario físicos o virtuales (y sus métricas asociadas) en su inquilino, o las métricas proporcionadas con la integración, como Kubernetes u ONTAP Advanced Data.
 
 
 
 == Activos de inventario
 
-Los siguientes tipos de activos se pueden utilizar en consultas, widgets de panel y páginas de inicio de activos personalizados. Los campos y contadores disponibles para filtros, expresiones y visualización variarán entre los tipos de activos. No todos los activos se pueden utilizar en todos los tipos de widgets.
+Los siguientes tipos de activos se pueden usar en consultas, widgets de panel y páginas de destino de activos personalizados.  Los campos y contadores disponibles para filtros, expresiones y visualización variarán según el tipo de activo.  No todos los activos se pueden utilizar en todos los tipos de widgets.
 
-* Cliente más
+* Aplicación
 * Almacén de datos
 * Disco
-* Estructura
+* Tela
 * Dispositivo genérico
 * Host
 * Volumen interno
 * Sesión iSCSI
-* Portal de red de iSCSI
-* Ruta
+* Portal de red iSCSI
+* Camino
 * Puerto
-* Qtree
+* Árbol Q
 * Cuota
-* Share
-* Reducida
+* Compartir
+* Almacenamiento
 * Nodo de almacenamiento
 * Pool de almacenamiento
 * Máquina virtual de almacenamiento (SVM)
-* Conmutador
+* Cambiar
 * Cinta
-* VMDK
+* Kit de herramientas de gestión de vehículos
 * Máquina virtual
 * Volumen
 * Zona
@@ -53,6 +53,6 @@ Los siguientes tipos de activos se pueden utilizar en consultas, widgets de pane
 
 == Métricas de integración
 
-Además de consultar los activos de inventario y sus métricas de rendimiento asociadas, también puede consultar métricas de *datos de integración*, como las generadas por Kubernetes o Docker, o proporcionadas con ONTAP Advanced Metrics.
+Además de consultar activos de inventario y sus métricas de rendimiento asociadas, también puede consultar métricas de *datos de integración*, como las generadas por Kubernetes o Docker, o proporcionadas con ONTAP Advanced Metrics.
 
 image:QueryPageFilter.png["Ejemplo de filtro de consulta de integración"]

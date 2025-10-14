@@ -2,24 +2,24 @@
 sidebar: sidebar 
 permalink: task_dc_lenovo_hx.html 
 keywords: data collector, Lenovo, HX 
-summary: Configuración del recopilador de datos HX de Lenovo. 
+summary: Configuración del recopilador de datos Lenovo HX. 
 ---
-= Recopilador de datos HX de Lenovo
+= Colector de datos Lenovo HX
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-El recopilador de datos HX de Lenovo adquiere información de inventario y rendimiento de los sistemas de almacenamiento HX de Lenovo.
+El recopilador de datos Lenovo HX adquiere información de inventario y rendimiento de los sistemas de almacenamiento Lenovo HX.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos se necesita la siguiente información:
+Se requiere la siguiente información para configurar este recopilador de datos:
 
 * Un nombre único para el recopilador de datos
-* La unidad de adquisición asociada con el recopilador de datos
+* La unidad de adquisición asociada al colector de datos
 * Requisito de puerto TCP 9440
 
 
@@ -27,29 +27,29 @@ Para configurar este recopilador de datos se necesita la siguiente información:
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario y rendimiento del recopilador de datos HX de Lenovo. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario y rendimiento del recopilador de datos Lenovo HX.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
 | Pool de almacenamiento | Pool de almacenamiento 
 
 
-| Contenedor | Volumen interno 
+| Recipiente | Volumen interno 
 
 
-| Nodo | Controladora 
+| Node | Controladora 
 
 
-| Share | Recurso compartido de archivos 
+| Compartir | Compartir archivos 
 
 
-| Sistema de archivos distribuidos de Nutanix (NDF) | Share 
+| Sistema de archivos distribuidos de Nutanix (NDFS) | Compartir 
 
 
-| Grupo de volúmenes | LUN back-end 
+| Grupo de volúmenes | LUN de backend 
 |===
 
 
@@ -60,13 +60,13 @@ Data Infrastructure Insights adquiere la siguiente información de inventario y 
 | Campo | Descripción 
 
 
-| Dirección IP externa del prisma | Dirección IP utilizada para conectar con el sistema de almacenamiento 
+| Dirección IP externa de Prism | Dirección IP utilizada para conectarse al sistema de almacenamiento 
 
 
-| Nombre de usuario | Nombre de usuario para iniciar sesión en el sistema de almacenamiento. El valor predeterminado es admin. 
+| Nombre de usuario | Nombre de usuario para iniciar sesión en el sistema de almacenamiento.  El valor predeterminado es admin. 
 
 
-| Contraseña | Contraseña del sistema de almacenamiento HX de Lenovo 
+| Password | Contraseña para el sistema de almacenamiento Lenovo HX 
 |===
 
 
@@ -77,7 +77,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario y 
 | Campo | Descripción 
 
 
-| Puerto TCP | Puerto TCP utilizado para conectar con Lenovo HX. El valor predeterminado es 9440. 
+| Puerto TCP | Puerto TCP utilizado para conectarse a Lenovo HX.  El valor predeterminado es 9440. 
 
 
 | Intervalo de sondeo de inventario | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 

@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_features.html 
-summary: Funciones y conceptos de la consola. 
+summary: Características y conceptos del tablero de instrumentos. 
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
-= Funciones de la consola
+= Características del panel de control
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,54 +14,54 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 
 
 [role="lead"]
-Los paneles y widgets ofrecen una gran flexibilidad en la visualización de los datos. Estos son algunos conceptos que le ayudarán a sacar el máximo partido de sus paneles personalizados.
+Los paneles y widgets permiten una gran flexibilidad en cómo se muestran los datos.  A continuación se presentan algunos conceptos que le ayudarán a aprovechar al máximo sus paneles personalizados.
 
 índice:[]
 
 
 
-== Nomenclatura de widgets
+== Nombre de widgets
 
-Los widgets se nombran automáticamente en función del objeto, métrica o atributo seleccionado para la primera consulta del widget. Si también elige una agrupación para el widget, los atributos "Agrupar por" se incluyen en la nomenclatura automática (método de agregación y métrica).
+Los widgets se nombran automáticamente en función del objeto, la métrica o el atributo seleccionado para la primera consulta del widget.  Si también elige una agrupación para el widget, los atributos "Agrupar por" se incluyen en el nombre automático (método de agregación y métrica).
 
-image:WidgetNamingExample-C.png["Ejemplo de nomenclatura de widgets"]
+image:WidgetNamingExample-C.png["Ejemplo de nombre de widget"]
 
-Al seleccionar un nuevo objeto o un atributo de agrupación, se actualiza el nombre automático.
+Al seleccionar un nuevo objeto o atributo de agrupación se actualiza el nombre automático.
 
-Si no desea utilizar el nombre del widget automático, simplemente puede escribir un nombre nuevo.
-
-
-
-== Ubicación y tamaño del widget
-
-Todos los widgets del panel pueden colocarse y dimensionarse de acuerdo con sus necesidades para cada panel particular.
+Si no desea utilizar el nombre automático del widget, simplemente puede escribir un nombre nuevo.
 
 
 
-== Duplicación de un widget
+== Ubicación y tamaño de los widgets
 
-En el modo de edición del panel, haga clic en el menú del widget y seleccione *Duplicar*. Se inicia el editor de widgets, con la configuración del widget original y con un sufijo de “copia” en el nombre del widget. Puede realizar fácilmente los cambios necesarios y guardar el nuevo widget. El widget se colocará en la parte inferior de la consola y, si es necesario, puede colocarlo. Recuerde guardar el panel cuando haya finalizado todos los cambios.
+Todos los widgets del tablero se pueden posicionar y dimensionar según sus necesidades para cada tablero en particular.
+
+
+
+== Duplicar un widget
+
+En el modo de edición del panel, haga clic en el menú del widget y seleccione *Duplicar*.  Se inicia el editor de widgets, rellenado previamente con la configuración del widget original y con un sufijo “copia” en el nombre del widget.  Puede realizar fácilmente los cambios necesarios y guardar el nuevo widget.  El widget se colocará en la parte inferior de tu panel y podrás posicionarlo según lo necesites.  Recuerde guardar su panel de control cuando se hayan completado todos los cambios.
 
 
 
 == Visualización de leyendas de widgets
 
-La mayoría de los widgets de los paneles se pueden mostrar con o sin leyendas. Las leyendas de los widgets se pueden activar o desactivar en un panel mediante cualquiera de los siguientes métodos:
+La mayoría de los widgets en los paneles se pueden mostrar con o sin leyendas.  Las leyendas en los widgets se pueden activar o desactivar en un panel mediante cualquiera de los siguientes métodos:
 
-* Al mostrar el panel, haga clic en el botón *Opciones* del widget y seleccione *Mostrar leyendas* en el menú.
-
-
-A medida que cambian los datos que aparecen en el widget, la leyenda de dicho widget se actualiza dinámicamente.
-
-Cuando se muestren las leyendas, si se puede navegar hasta la página de destino del activo indicado por la leyenda, la leyenda se mostrará como un enlace a esa página de activos. Si la leyenda muestra "All", al hacer clic en el enlace se mostrará una página de consulta correspondiente a la primera consulta del widget.
+* Al visualizar el panel de control, haga clic en el botón *Opciones* en el widget y seleccione *Mostrar leyendas* en el menú.
 
 
+A medida que cambian los datos mostrados en el widget, la leyenda de ese widget se actualiza dinámicamente.
 
-== Transformando las métricas
+Cuando se muestran leyendas, si se puede navegar a la página de destino del activo indicado por la leyenda, la leyenda se mostrará como un enlace a esa página del activo.  Si la leyenda muestra "todos", al hacer clic en el enlace se mostrará una página de consulta correspondiente a la primera consulta en el widget.
 
-Información sobre la infraestructura de datos proporciona diferentes opciones de *transformación* para ciertas métricas en widgets (específicamente, aquellas métricas llamadas “personalizadas” o métricas de integración, como de Kubernetes, datos avanzados de ONTAP, plugins de Telegraf, etc.), lo que le permite mostrar los datos de varias maneras. Al añadir medidas transformables a un widget, se presenta con una lista desplegable dando las siguientes opciones de transformación:
 
-Ninguno: Los datos se muestran tal cual, sin manipulación.
+
+== Transformando métricas
+
+Data Infrastructure Insights ofrece diferentes opciones de *transformación* para ciertas métricas en widgets (específicamente, aquellas métricas llamadas "Personalizadas" o Métricas de integración, como las de Kubernetes, ONTAP Advanced Data, complementos de Telegraf, etc.), lo que le permite mostrar los datos de varias maneras.  Al agregar métricas transformables a un widget, se le presenta un menú desplegable que ofrece las siguientes opciones de transformación:
+
+Ninguno: Los datos se muestran tal como están, sin manipulación.
 
 Tasa: Valor actual dividido por el rango de tiempo desde la observación anterior.
 
@@ -69,132 +69,132 @@ Acumulativo: La acumulación de la suma de los valores anteriores y el valor act
 
 Delta: La diferencia entre el valor de observación anterior y el valor actual.
 
-Delta rate: Valor Delta dividido por el rango de tiempo desde la observación anterior.
+Tasa delta: valor delta dividido por el rango de tiempo desde la observación anterior.
 
-Tasa Acumulada: Valor acumulativo dividido por el rango de tiempo desde la observación anterior.
+Tasa acumulada: valor acumulado dividido por el rango de tiempo desde la observación anterior.
 
-Tenga en cuenta que la transformación de las métricas no cambia los datos subyacentes en sí, sino sólo la forma en que se muestran los datos.
+Tenga en cuenta que la transformación de métricas no cambia los datos subyacentes en sí, sino solo la forma en que se muestran los datos.
 
 
 
-== Consultas y filtros del widget de panel
+== Consultas y filtros del widget del panel
 
 
 
 === Consultas
 
-El widget Consulta en un panel es una potente herramienta para administrar la visualización de los datos. A continuación, se indican algunos puntos a tener en cuenta sobre las consultas de widgets.
+La consulta en un widget del panel es una herramienta poderosa para administrar la visualización de sus datos.  A continuación se muestran algunas cosas a tener en cuenta sobre las consultas de widgets.
 
-Algunos widgets pueden tener hasta cinco consultas. Cada consulta trazará su propio conjunto de líneas o gráficos en el widget. La configuración de acumulación, agrupación, resultados superiores/inferiores, etc. en una consulta no afecta a ninguna otra consulta del widget.
+Algunos widgets pueden tener hasta cinco consultas.  Cada consulta trazará su propio conjunto de líneas o gráficos en el widget.  La configuración de resumen, agrupación, resultados superiores/inferiores, etc. en una consulta no afecta a ninguna otra consulta del widget.
 
-Puede hacer clic en el icono de ojo para ocultar temporalmente una consulta. El widget se actualiza automáticamente al ocultar o mostrar una consulta. Esto le permite comprobar los datos mostrados para consultas individuales al crear el widget.
+Puede hacer clic en el icono del ojo para ocultar temporalmente una consulta.  La pantalla del widget se actualiza automáticamente cuando ocultas o muestras una consulta.  Esto le permite verificar los datos mostrados para consultas individuales a medida que crea su widget.
 
-Los siguientes tipos de widgets pueden tener varias consultas:
+Los siguientes tipos de widgets pueden tener múltiples consultas:
 
-* Gráfico de área
-* Gráfico de área apilada
+* Gráfico de áreas
+* Gráfico de áreas apiladas
 * Gráfico de líneas
-* Gráfico de spline
-* Widget de un único valor
+* Gráfico de splines
+* Widget de valor único
 
 
-Los demás tipos de widgets sólo pueden tener una única consulta:
+Los tipos de widgets restantes solo pueden tener una única consulta:
 
 * Tabla
 * Gráfico de barras
-* Trazado de cuadros
-* Gráfico de dispersión
+* Diagrama de caja
+* Diagrama de dispersión
 
 
 
 
-=== Filtrado en consultas de widgets de panel
+=== Filtrado en consultas de widgets del panel
 
-Estas son algunas cosas que puede hacer para sacar el máximo partido de sus filtros.
+Aquí hay algunas cosas que puedes hacer para aprovechar al máximo tus filtros.
 
 
 
 ==== Filtrado de coincidencia exacta
 
-Si una cadena de filtro se debe escribir entre comillas dobles, Insight trata todo entre el primer y el último presupuesto como una coincidencia exacta. Todos los caracteres especiales o operadores incluidos en las comillas se tratarán como literales. Por ejemplo, el filtrado para "*" devolverá resultados que sean un asterisco literal; en este caso, el asterisco no será tratado como comodín. Los operadores Y, O, y NO, también se tratarán como cadenas literales cuando se encierran entre comillas dobles.
+Si encierra una cadena de filtro entre comillas dobles, Insight trata todo lo que esté entre la primera y la última comilla como una coincidencia exacta.  Cualquier carácter especial u operador dentro de las comillas se tratará como literal.  Por ejemplo, filtrar por "*" devolverá resultados que son un asterisco literal; el asterisco no se tratará como un comodín en este caso.  Los operadores AND, OR y NOT también se tratarán como cadenas literales cuando estén entre comillas dobles.
 
-Puede usar filtros de coincidencia exactos para buscar recursos específicos, por ejemplo, el nombre de host. Si sólo quieres encontrar el nombre de host 'marketing', pero excluye 'marketing01', 'marketing-boston', etc., simplemente escriba el nombre de "marketing" entre comillas dobles.
+Puede utilizar filtros de coincidencia exacta para encontrar recursos específicos, por ejemplo, nombre de host.  Si desea encontrar solo el nombre de host 'marketing' pero excluir 'marketing01', 'marketing-boston', etc., simplemente encierre el nombre "marketing" entre comillas dobles.
 
 
 
-==== Caracteres comodín y expresiones
+==== Comodines y expresiones
 
-Cuando esté filtrando valores de texto o lista en consultas o widgets de panel, cuando comience a escribir, se le mostrará la opción de crear un filtro * comodín* basado en el texto actual. Si selecciona esta opción, se devolverán todos los resultados que coincidan con la expresión comodín. También puedes crear *Expresiones* usando NOT o OR, o puedes seleccionar la opción “Ninguno” para filtrar los valores nulos en el campo.
+Cuando filtra texto o valores de lista en consultas o widgets del panel, a medida que comienza a escribir se le presenta la opción de crear un *filtro comodín* basado en el texto actual.  Al seleccionar esta opción se devolverán todos los resultados que coincidan con la expresión comodín.  También puede crear *expresiones* usando NOT u OR, o puede seleccionar la opción "Ninguno" para filtrar valores nulos en el campo.
 
 image:Type-Ahead-Example-ingest.png["Filtro comodín"]
 
-Los filtros basados en comodines o expresiones (por ejemplo, NOT, O “Ninguno”, etc.) se muestran en azul oscuro en el campo de filtro. Los elementos seleccionados directamente de la lista se muestran en azul claro.
+Los filtros basados en comodines o expresiones (por ejemplo, NO, O, "Ninguno", etc.) se muestran en azul oscuro en el campo de filtro.  Los elementos que seleccione directamente de la lista se muestran en azul claro.
 
 image:Type-Ahead-Example-Wildcard-DirectSelect.png["Resultados del filtro comodín"]
 
-Tenga en cuenta que el filtrado de comodines y expresiones funciona con texto o listas, pero no con valores numéricos, fechas o valores.
+Tenga en cuenta que el filtrado de comodines y expresiones funciona con texto o listas, pero no con números, fechas o valores booleanos.
 
 
 
-==== Filtrado avanzado de texto con sugerencias contextuales de tipo anticipado
+==== Filtrado de texto avanzado con sugerencias contextuales de escritura anticipada
 
-El filtrado en consultas de widgets es _contextual_; cuando se selecciona un valor de filtro o valores para un campo, los otros filtros de esa consulta mostrarán los valores relevantes para ese filtro. Por ejemplo, al establecer un filtro para un objeto específico _Name_, el campo para filtrar para _Model_ sólo mostrará los valores relevantes para ese objeto Name.
+El filtrado en las consultas de widgets es _contextual_; cuando selecciona uno o más valores de filtro para un campo, los demás filtros para esa consulta mostrarán valores relevantes para ese filtro.  Por ejemplo, al configurar un filtro para un objeto específico _Nombre_, el campo para filtrar _Modelo_ solo mostrará valores relevantes para ese objeto Nombre.
 
-El filtrado contextual también se aplica a las variables de página del panel de control (sólo atributos de tipo de texto o anotaciones). Cuando se selecciona un valor de filer para una variable, cualquier otra variable que utilice objetos relacionados sólo mostrará los posibles valores de filtro basados en el contexto de esas variables relacionadas.
+El filtrado contextual también se aplica a las variables de la página del panel (solo atributos de tipo texto o anotaciones).  Cuando selecciona un valor de filtro para una variable, cualquier otra variable que utilice objetos relacionados solo mostrará valores de filtro posibles según el contexto de esas variables relacionadas.
 
-Tenga en cuenta que sólo los filtros de texto mostrarán sugerencias de tipo contextual. Fecha, Enum (lista), etc. no mostrará sugerencias de tipo. Dicho esto, _CAN_ establece un filtro en un campo Enum (por ejemplo, lista) y permite filtrar otros campos de texto en contexto. Por ejemplo, al seleccionar un valor en un campo Enum como Centro de datos, otros filtros sólo mostrarán los modelos y nombres de ese centro de datos), pero no viceversa.
+Tenga en cuenta que solo los filtros de texto mostrarán sugerencias de escritura anticipada contextual.  Las fechas, enumeraciones (listas), etc. no mostrarán sugerencias de escritura anticipada.  Dicho esto, _puede_ establecer un filtro en un campo Enum (es decir, lista) y hacer que otros campos de texto se filtren en contexto.  Por ejemplo, al seleccionar un valor en un campo de enumeración como Centro de datos, los demás filtros mostrarán solo los modelos/nombres en ese centro de datos, pero no al revés.
 
-El intervalo de tiempo seleccionado también proporcionará contexto para los datos que se muestran en los filtros.
-
-
-
-==== Selección de las unidades de filtro
-
-A medida que escribe un valor en un campo de filtro, puede seleccionar las unidades en las que desea mostrar los valores en el gráfico. Por ejemplo, puede filtrar por capacidad sin configurar y elegir mostrar en los GIB por pérdida, o bien seleccionar otro formato, como TIB. Esto resulta útil si tiene una serie de gráficos en el panel que muestran valores en TIB y desea que todos los gráficos muestren valores coherentes.
-
-image:Filter_Unit_Format.png["selección de unidades en un filtro"]
+El rango de tiempo seleccionado también proporcionará contexto para los datos que se muestran en los filtros.
 
 
 
-==== Mejoras de filtrado adicionales
+==== Elección de las unidades de filtrado
 
-Se pueden utilizar los siguientes elementos para afinar más los filtros.
+A medida que escribe un valor en un campo de filtro, puede seleccionar las unidades en las que desea mostrar los valores en el gráfico.  Por ejemplo, puede filtrar por capacidad bruta y elegir mostrar en GiB predeterminado, o seleccionar otro formato como TiB.  Esto es útil si tiene varios gráficos en su tablero que muestran valores en TiB y desea que todos sus gráficos muestren valores consistentes.
 
-* Un asterisco le permite buscar todo. Por ejemplo:
+image:Filter_Unit_Format.png["seleccionar unidades en un filtro"]
+
+
+
+==== Refinamientos de filtrado adicionales
+
+Lo siguiente se puede utilizar para refinar aún más sus filtros.
+
+* Un asterisco te permite buscar cualquier cosa. Por ejemplo,
 +
 [listing]
 ----
 vol*rhel
 ----
 +
-muestra todos los recursos que empiezan con "vol" y terminan con "rhel".
+muestra todos los recursos que comienzan con "vol" y terminan con "rhel".
 
-* El signo de interrogación le permite buscar un número específico de caracteres. Por ejemplo:
+* El signo de interrogación le permite buscar un número específico de caracteres. Por ejemplo,
 +
 [listing]
 ----
 BOS-PRD??-S12
 ----
 +
-Muestra _BOS-PRD12-S12_, _BOS-PRD13-S12_, etc.
+muestra _BOS-PRD12-S12_, _BOS-PRD13-S12_, y así sucesivamente.
 
-* El operador OR permite especificar varias entidades. Por ejemplo:
+* El operador OR le permite especificar múltiples entidades. Por ejemplo,
 +
 [listing]
 ----
 FAS2240 OR CX600 OR FAS3270
 ----
 +
-busca varios modelos de almacenamiento.
+Encuentra múltiples modelos de almacenamiento.
 
-* El operador NOT permite excluir el texto de los resultados de búsqueda. Por ejemplo:
+* El operador NOT le permite excluir texto de los resultados de búsqueda. Por ejemplo,
 +
 [listing]
 ----
 NOT EMC*
 ----
 +
-Encuentra todo lo que no empieza con "EMC". Puede utilizar
+Encuentra todo lo que no comience con "EMC".  Puedes utilizar
 
 +
 [listing]
@@ -210,7 +210,7 @@ para mostrar campos que no contienen ningún valor.
 
 === Identificación de objetos devueltos por consultas y filtros
 
-Los objetos devueltos por las consultas y los filtros tienen un aspecto similar al mostrado en la siguiente ilustración. Los objetos con 'etiquetas' asignados son anotaciones mientras que los objetos sin etiquetas son contadores de rendimiento o atributos de objeto.
+Los objetos devueltos por consultas y filtros se ven similares a los que se muestran en la siguiente ilustración.  Los objetos con 'etiquetas' asignadas son anotaciones, mientras que los objetos sin etiquetas son contadores de rendimiento o atributos de objeto.
 
 image:ObjectsReturnedByFilters.png["Objetos devueltos por filtros"]
 
@@ -220,127 +220,127 @@ image:ObjectsReturnedByFilters.png["Objetos devueltos por filtros"]
 
 
 
-=== Agrupación (Rolling Up)
+=== Agrupación (Acumulación)
 
-Los datos que se muestran en un widget se agrupan (a veces denominados "rolled up") de los puntos de datos subyacentes recopilados durante la adquisición. Por ejemplo, si tiene un widget de gráfico de líneas que muestra Storage IOPS a lo largo del tiempo, puede que desee ver una línea independiente para cada uno de sus centros de datos, para una rápida comparación. Puede optar por agrupar estos datos de una de estas formas:
+Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición.  Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida.  Puede elegir agrupar estos datos de varias maneras:
 
-* *Promedio*: Muestra cada línea como el _promedio_ de los datos subyacentes.
-* *Maximum*: Muestra cada línea como el _Maximum_ de los datos subyacentes.
-* *Mínimo*: Muestra cada línea como el _mínimo_ de los datos subyacentes.
-* *Suma*: Muestra cada línea como la _suma_ de los datos subyacentes.
-* * Count*: Muestra un _count_ de objetos que han informado datos dentro del intervalo de tiempo especificado. Puede seleccionar _Toda la ventana de tiempo_ según lo determinado por el rango de tiempo del panel de control.
+* *Promedio*: muestra cada línea como el _promedio_ de los datos subyacentes.
+* *Máximo*: muestra cada línea como el _máximo_ de los datos subyacentes.
+* *Mínimo*: muestra cada línea como el _mínimo_ de los datos subyacentes.
+* *Suma*: muestra cada línea como la _suma_ de los datos subyacentes.
+* *Count*: muestra un _count_ de objetos que han informado datos dentro del período de tiempo especificado.  Puede elegir la _Ventana de tiempo completa_ según lo determine el rango de tiempo del tablero.
 
 
 .Pasos
-Para establecer el método de agrupación, haga lo siguiente.
+Para configurar el método de agrupación, haga lo siguiente.
 
-. En la consulta del widget, elija un tipo de activo y una métrica (por ejemplo, _Storage_) y una métrica (por ejemplo, _Performance IOPS total_).
-. En *Grupo*, elija un método de recuperación (como _Average_) y seleccione los atributos o métricas por los que desea recuperar los datos (por ejemplo, _Data Center_).
+. En la consulta de su widget, elija un tipo de activo y una métrica (por ejemplo, _Almacenamiento_) y una métrica (como _Total de IOPS de rendimiento_).
+. Para *Grupo*, elija un método de acumulación (como _Promedio_) y seleccione los atributos o las métricas mediante los cuales acumular los datos (por ejemplo, _Centro de datos_).
 +
-El widget se actualiza automáticamente y muestra los datos de cada uno de los centros de datos.
+El widget se actualiza automáticamente y muestra datos de cada uno de sus centros de datos.
 
 
 
-También puede elegir agrupar _All_ de los datos subyacentes en el gráfico o la tabla. En este caso, obtendrá una única línea para cada consulta del widget, que mostrará la media, mínima, máxima, suma o recuento de la métrica o métricas elegidas para todos los activos subyacentes.
+También puede optar por agrupar _todos_ los datos subyacentes en el gráfico o la tabla.  En este caso, obtendrá una sola línea para cada consulta en el widget, que mostrará el promedio, mínimo, máximo, suma o recuento de la métrica o métricas elegidas para todos los activos subyacentes.
 
-Al hacer clic en la leyenda de cualquier widget cuyos datos están agrupados por "todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.
+Al hacer clic en la leyenda de cualquier widget cuyos datos estén agrupados por "Todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.
 
-Si ha establecido un filtro para la consulta, los datos se agrupan en función de los datos filtrados.
+Si ha establecido un filtro para la consulta, los datos se agrupan según los datos filtrados.
 
-Tenga en cuenta que cuando elija agrupar un widget por cualquier campo (por ejemplo, _Model_), deberá filtrar por ese campo para mostrar correctamente los datos de ese campo en el gráfico o en la tabla.
+Tenga en cuenta que cuando elige agrupar un widget por cualquier campo (por ejemplo, _Modelo_), aún necesitará filtrar por ese campo para mostrar correctamente los datos de ese campo en el gráfico o la tabla.
 
 
 
 === Agregación de datos
 
-Puede alinear aún más sus gráficos de series temporales (línea, área, etc.) agregando puntos de datos en cubos de minutos, horas o días antes de que esos datos se enrolen posteriormente por atributos (si se han elegido). Puede elegir agregar puntos de datos según su _Average, Maximum, Minimum, Sum_ o _Count_.
+Puede alinear aún más sus gráficos de series de tiempo (líneas, áreas, etc.) agregando puntos de datos en segmentos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige).  Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.
 
-Un intervalo pequeño combinado con un intervalo de tiempo largo puede dar como resultado un "intervalo de agregación dio lugar a demasiados puntos de datos". advertencia. Es posible que vea esto si tiene un intervalo pequeño y aumente el lapso de tiempo del panel de control a 7 días. En este caso, Insight aumentará temporalmente el intervalo de agregación hasta que seleccione un intervalo de tiempo menor.
+Un intervalo pequeño combinado con un rango de tiempo largo puede generar una advertencia del tipo "El intervalo de agregación resultó en demasiados puntos de datos".  Es posible que veas esto si tienes un intervalo pequeño y aumentas el período de tiempo del panel a 7 días.  En este caso, Insight aumentará temporalmente el intervalo de agregación hasta que seleccione un período de tiempo más pequeño.
 
 También puede agregar datos en el widget de gráfico de barras y en el widget de valor único.
 
-La mayoría de los contadores de activos se agregan a _Average_ de forma predeterminada. Algunos contadores agregan a _Max, Min_ o _suma_ de forma predeterminada. Por ejemplo, los errores de puerto se agregan a _Sum_ de forma predeterminada, donde el agregado de IOPS de almacenamiento se agrega a _Average_.
+La mayoría de los contadores de activos se agregan a _Promedio_ de manera predeterminada.  Algunos contadores se agregan a _Max, Min_ o _Sum_ de forma predeterminada.  Por ejemplo, los errores de puerto se agregan a _Suma_ de manera predeterminada, mientras que las IOPS de almacenamiento se agregan a _Promedio_.
 
 
 
-== Mostrando resultados principales/inferiores
+== Mostrar resultados superiores e inferiores
 
-En un widget de gráfico, puede mostrar los resultados * Top* o *Bottom* de los datos acumulados y elegir el número de resultados mostrados en la lista desplegable proporcionada. En un widget de tabla, puede ordenar por cualquier columna.
-
-
-
-=== Widget de gráfico arriba/abajo
-
-En un widget de gráfico, cuando decide realizar un resumen de datos por un atributo específico, tiene la opción de ver los resultados N superior o N inferior. Tenga en cuenta que no puede elegir los resultados superior o inferior al elegir los atributos _All_ ROLLUP.
-
-Puede elegir los resultados que desea mostrar eligiendo *Superior* o *inferior* en el campo *Mostrar* de la consulta y seleccionando un valor de la lista proporcionada.
+En un widget de gráfico, puede mostrar los resultados *Superiores* o *Inferiores* para los datos acumulados y elegir la cantidad de resultados que se muestran en la lista desplegable proporcionada.  En un widget de tabla, puedes ordenar por cualquier columna.
 
 
 
-=== El widget de tabla muestra las entradas
+=== Widget de gráfico superior/inferior
 
-En un widget de tabla, puede seleccionar el número de resultados que se muestran en los resultados de la tabla. No se le da la opción de elegir los resultados superiores o inferiores porque la tabla permite ordenar el sentido ascendente o descendente por cualquier columna bajo demanda.
+En un widget de gráfico, cuando elige agrupar datos por un atributo específico, tiene la opción de ver los N resultados superiores o los N resultados inferiores.  Tenga en cuenta que no puede elegir los resultados superiores o inferiores cuando elige agrupar por _todos_ los atributos.
 
-Puede elegir el número de resultados que se mostrarán en la tabla del panel seleccionando un valor en el campo *Mostrar entradas* de la consulta.
-
-
-
-== Agrupación en widget de tabla
-
-Los datos de un widget de tabla se pueden agrupar por cualquier atributo disponible, lo que permite ver una descripción general de los datos y profundizar en ellos para obtener más detalles. Las métricas de la tabla se reforman para facilitar la visualización en cada fila contraída.
-
-Los widgets de tabla permiten agrupar los datos en función de los atributos establecidos. Por ejemplo, puede que desee que la tabla muestre el número total de IOPS de almacenamiento agrupadas por los centros de datos en los que residen esos almacenamientos. También puede ser conveniente mostrar una tabla de máquinas virtuales agrupadas según el hipervisor que les aloja. En la lista, puede expandir cada grupo para ver los activos de ese grupo.
-
-La agrupación sólo está disponible en el tipo de widget Tabla.
+Puede elegir qué resultados desea mostrar eligiendo *Superior* o *Inferior* en el campo *Mostrar* de la consulta y seleccionando un valor de la lista proporcionada.
 
 
 
-=== Ejemplo de agrupación (con resumen explicado)
+=== El widget de tabla muestra entradas
 
-Los widgets de tabla permiten agrupar los datos para facilitar la visualización.
+En un widget de tabla, puede seleccionar la cantidad de resultados que se muestran en la tabla.  No se le da la opción de elegir resultados superiores o inferiores porque la tabla le permite ordenar de manera ascendente o descendente por cualquier columna a pedido.
 
-En este ejemplo, crearemos un widget de tabla en el que se muestren todas las máquinas virtuales agrupadas por centro de datos.
+Puede elegir la cantidad de resultados que desea mostrar en la tabla del panel seleccionando un valor en el campo *Mostrar entradas* de la consulta.
+
+
+
+== Agrupación en el widget de tabla
+
+Los datos en un widget de tabla se pueden agrupar por cualquier atributo disponible, lo que le permite ver una descripción general de sus datos y explorarlos en profundidad para obtener más detalles.  Las métricas de la tabla se agrupan para facilitar su visualización en cada fila contraída.
+
+Los widgets de tabla le permiten agrupar sus datos según los atributos que configure.  Por ejemplo, es posible que desee que su tabla muestre las IOPS de almacenamiento totales agrupadas por los centros de datos en los que se encuentran esos almacenamientos.  O quizás desee mostrar una tabla de máquinas virtuales agrupadas según el hipervisor que las aloja.  Desde la lista, puede expandir cada grupo para ver los activos en ese grupo.
+
+La agrupación solo está disponible en el tipo de widget Tabla.
+
+
+
+=== Ejemplo de agrupación (con explicación del rollup)
+
+Los widgets de tabla le permiten agrupar datos para facilitar su visualización.
+
+En este ejemplo, crearemos un widget de tabla que mostrará todas las máquinas virtuales agrupadas por centro de datos.
 
 .Pasos
-. Cree o abra un panel y añada un widget *Tabla*.
-. Seleccione _Virtual Machine_ como tipo de activo para este widget.
-. Haga clic en el selector de columnas y elija _Hypervisor name_ y _IOPS - total_.
+. Cree o abra un panel y agregue un widget *Tabla*.
+. Seleccione _Máquina virtual_ como el tipo de activo para este widget.
+. Haga clic en el Selector de columnas y elija _Nombre del hipervisor_ y _IOPS - Total_.
 +
-Esas columnas se muestran ahora en la tabla.
+Esas columnas ahora se muestran en la tabla.
 
-. Ignoremos cualquier máquina virtual sin IOPS, e incluya solo máquinas virtuales que tengan un IOPS total superior a 1. Haga clic en el botón *filtro por* *[+]* y seleccione _IOPS - total_. Haga clic en _any_ y, en el campo *de*, escriba *1*. Deje el campo *a* vacío. Pulse Intro o haga clic en el campo de filtro para aplicar el filtro.
+. Ignoremos todas las máquinas virtuales sin IOPS e incluyamos solo las máquinas virtuales que tengan un total de IOPS mayor a 1.  Haga clic en el botón *Filtrar por* *[+]* y seleccione _IOPS - Total_.  Haga clic en _Cualquiera_ y, en el campo *desde*, escriba *1*.  Deje el campo *para* vacío.  Presione Enter o haga clic fuera del campo de filtro para aplicar el filtro.
 +
-En la tabla ahora se muestran todas las máquinas virtuales con un IOPS total mayor o igual que 1. Observe que no hay agrupación en la tabla. Se muestran todas las máquinas virtuales.
+La tabla ahora muestra todas las máquinas virtuales con IOPS totales mayores o iguales a 1.  Tenga en cuenta que no hay agrupación en la tabla.  Se muestran todas las máquinas virtuales.
 
 . Haga clic en el botón *Agrupar por [+]*.
 +
-Puede agrupar por cualquier atributo o anotación que se muestre. Elija _All_ para mostrar todas las VM de un solo grupo.
+Puede agrupar por cualquier atributo o anotación que se muestre.  Seleccione _Todos_ para mostrar todas las máquinas virtuales en un solo grupo.
 
 +
-Cualquier encabezado de columna para una métrica de rendimiento muestra un menú de "tres puntos" que contiene una opción * Roll up*. El método de recuperación predeterminado es _Average_. Esto significa que el número mostrado para el grupo es la media de todas las IOPS totales notificadas para cada máquina virtual dentro del grupo. Puede optar por desplegar esta columna por _Promedio, suma, mínimo_ o _máximo_. Cualquier columna que muestre que contenga métricas de rendimiento se puede implementar de forma individual.
+Cualquier encabezado de columna de una métrica de rendimiento muestra un menú de "tres puntos" que contiene una opción *Abrir*.  El método de acumulación predeterminado es _Promedio_.  Esto significa que el número que se muestra para el grupo es el promedio de todas las IOPS totales informadas para cada VM dentro del grupo.  Puede elegir agrupar esta columna por _Promedio_, _Suma_, _Mínimo_ o _Máximo_.  Cualquier columna que muestre y que contenga métricas de rendimiento se puede agrupar individualmente.
 
 +
-image:TableRollUp.png["Roll Up"]
+image:TableRollUp.png["Arremangar"]
 
-. Haga clic en _All_ y seleccione _Hypervisor name_.
+. Haga clic en _Todo_ y seleccione _Nombre del hipervisor_.
 +
-La lista de máquinas virtuales ahora se agrupa por hipervisor. Puede expandir cada hipervisor para ver las máquinas virtuales alojadas en él.
+La lista de VM ahora está agrupada por hipervisor.  Puede expandir cada hipervisor para ver las máquinas virtuales alojadas en él.
 
-. Haga clic en *Guardar* para guardar la tabla en el panel de control. Puede cambiar el tamaño del widget o moverlo según lo desee.
+. Haga clic en *Guardar* para guardar la tabla en el panel.  Puede cambiar el tamaño o mover el widget como desee.
 . Haga clic en *Guardar* para guardar el panel.
 
 
 
 
-=== Despliegue de datos de rendimiento
+=== Resumen de datos de rendimiento
 
-Si incluye una columna para los datos de rendimiento (por ejemplo, _IOPS - total_) en un widget de tabla, cuando elija agrupar los datos, podrá elegir un método de despliegue para esa columna. El método de despliegue predeterminado es mostrar el promedio (_avg_) de los datos subyacentes en la fila de grupo. También puede elegir mostrar la suma, el mínimo o el máximo de los datos.
+Si incluye una columna para datos de rendimiento (por ejemplo, _IOPS - Total_) en un widget de tabla, cuando elige agrupar los datos, puede elegir un método de acumulación para esa columna.  El método de acumulación predeterminado es mostrar el promedio (_avg_) de los datos subyacentes en la fila del grupo.  También puede optar por mostrar la suma, el mínimo o el máximo de los datos.
 
 
 
-== Selector de rango de tiempo del panel de control
+== Selector de rango de tiempo del tablero
 
-Puede seleccionar el intervalo de tiempo de los datos del panel. En los widgets del panel sólo se mostrarán los datos relevantes para el intervalo de tiempo seleccionado. Puede seleccionar entre los siguientes intervalos de tiempo:
+Puede seleccionar el rango de tiempo para los datos de su panel.  En los widgets del panel solo se mostrarán los datos relevantes para el rango de tiempo seleccionado.  Puede seleccionar entre los siguientes rangos de tiempo:
 
 * Últimos 15 minutos
 * Últimos 30 minutos
@@ -354,55 +354,55 @@ Puede seleccionar el intervalo de tiempo de los datos del panel. En los widgets 
 * Últimos 3 días
 * Últimos 7 días
 * Últimos 30 días
-* Intervalo de tiempo personalizado
+* Rango de tiempo personalizado
 +
-El intervalo de tiempo personalizado le permite seleccionar hasta 31 días consecutivos. También puede establecer la hora de inicio y la hora de finalización del día para este intervalo. La hora de inicio predeterminada es 12:00 AM en el primer día seleccionado y la hora de finalización predeterminada es 11:59 PM en el último día seleccionado. Al hacer clic en *aplicar* se aplicará el intervalo de tiempo personalizado al panel de control.
+El rango de tiempo personalizado le permite seleccionar hasta 31 días consecutivos.  También puede establecer la hora de inicio y la hora de finalización del día para este rango.  La hora de inicio predeterminada es las 12:00 a. m. del primer día seleccionado y la hora de finalización predeterminada es las 11:59 p. m. del último día seleccionado.  Al hacer clic en *Aplicar* se aplicará el rango de tiempo personalizado al panel.
 
 
 
 
 
-=== Ampliación de un intervalo de tiempo
+=== Ampliar un rango de tiempo
 
-Mientras ve un widget de serie temporal (Línea, Spline, Área, Área apilada), o un gráfico en una página de destino, puede arrastrar el ratón sobre el gráfico para ampliar. En la parte superior derecha de la pantalla, puede bloquear ese intervalo de tiempo para que los gráficos en otras páginas reflejen datos de ese intervalo de tiempo bloqueado. Para desbloquear, seleccione un intervalo de tiempo diferente de la lista.
+Mientras visualiza un widget de serie temporal (línea, spline, área, área apilada) o un gráfico en una página de destino, puede arrastrar el mouse sobre el gráfico para acercarlo. En la parte superior derecha de la pantalla, puede bloquear ese rango de tiempo para que los gráficos en otras páginas reflejen los datos de ese rango de tiempo bloqueado.  Para desbloquear, seleccione un rango de tiempo diferente de la lista.
 
 
 
-== Anulación de la hora del panel en widgets individuales
+== Anulación del tiempo del panel en widgets individuales
 
-Puede anular el ajuste del intervalo de tiempo del panel principal en widgets individuales. Estos widgets mostrarán los datos en función del marco de tiempo establecido, no del marco de tiempo del panel de control.
+Puede anular la configuración del rango de tiempo del panel principal en widgets individuales.  Estos widgets mostrarán datos basados en el período de tiempo establecido, no en el período de tiempo del tablero.
 
-Para anular la hora del panel de control y forzar que un widget utilice su propio marco de tiempo, en el modo de edición del widget, elija el intervalo de tiempo definido y Guardar el widget en el panel de control.
+Para anular el tiempo del tablero y forzar a un widget a usar su propio marco de tiempo, en el modo de edición del widget elija el rango de tiempo deseado y guarde el widget en el tablero.
 
-El widget mostrará sus datos en función del intervalo de tiempo establecido, independientemente del periodo de tiempo seleccionado en el propio panel.
+El widget mostrará sus datos según el período de tiempo establecido para él, independientemente del período de tiempo que seleccione en el panel de control.
 
-El intervalo de tiempo establecido para un widget no afectará a ningún otro widget del panel.
+El período de tiempo que configure para un widget no afectará a ningún otro widget en el panel.
 
-image:OverrideTimeOnWidget.png["sustitución del rango de tiempo del panel de control para un widget"]
+image:OverrideTimeOnWidget.png["anular el rango de tiempo del panel para un widget"]
 
 
 
 == Eje primario y secundario
 
-Las diferentes métricas utilizan diferentes unidades de medida para los datos que informan en un gráfico. Por ejemplo, al observar las IOPS, la unidad de medida es el número de operaciones de I/o por segundo de tiempo (IO/s), mientras que la latencia es únicamente una medida de tiempo (milisegundos, microsegundos, segundos, etc.). Al introducir ambas métricas en un único gráfico de línea mediante un único conjunto de valores para el eje y, los números de latencia (normalmente, unos pocos milisegundos) se registran en la misma escala con las IOPS (normalmente, la numeración es de miles) y la línea de latencia se pierde a esa escala.
+Las distintas métricas utilizan distintas unidades de medida para los datos que informan en un gráfico.  Por ejemplo, al observar IOPS, la unidad de medida es el número de operaciones de E/S por segundo de tiempo (IO/s), mientras que la latencia es puramente una medida de tiempo (milisegundos, microsegundos, segundos, etc.).  Al graficar ambas métricas en un gráfico de una sola línea usando un único conjunto de valores para el eje Y, los números de latencia (normalmente un puñado de milisegundos) se grafican en la misma escala que las IOPS (normalmente numeradas en miles), y la línea de latencia se pierde en esa escala.
 
-Pero es posible trazar ambos conjuntos de datos en un único gráfico significativo, estableciendo una unidad de medida en el eje y primario (lado izquierdo) y la otra unidad de medida en el eje y secundario (lado derecho). Cada métrica se registra a su propia escala.
+Pero es posible representar gráficamente ambos conjuntos de datos en un único gráfico significativo, estableciendo una unidad de medida en el eje Y principal (lado izquierdo) y la otra unidad de medida en el eje Y secundario (lado derecho).  Cada métrica se representa gráficamente en su propia escala.
 
 .Pasos
-En este ejemplo se ilustra el concepto de ejes primario y secundario en un widget de gráfico.
+Este ejemplo ilustra el concepto de ejes primario y secundario en un widget de gráfico.
 
-. Cree o abra un panel. Agregue al panel un gráfico de líneas, un gráfico de spline, un gráfico de área o un widget de gráfico de área apilado.
-. Seleccione un tipo de activo (por ejemplo, _Storage_) y elija _IOPS - total_ para su primera métrica. Configure los filtros que desee y elija un método de despliegue si lo desea.
+. Crear o abrir un panel de control.  Agregue un widget de gráfico de líneas, gráfico de splines, gráfico de áreas o gráfico de áreas apiladas al tablero.
+. Seleccione un tipo de activo (por ejemplo, _Almacenamiento_) y elija _IOPS - Total_ para su primera métrica.  Establezca los filtros que desee y elija un método de acumulación si lo desea.
 +
-La línea IOPS se muestra en el gráfico, con su escala mostrada a la izquierda.
+La línea IOPS se muestra en el gráfico, con su escala indicada a la izquierda.
 
-. Haga clic en *[+Query]* para agregar una segunda línea al gráfico. En esta línea, elija _Latency - total_ para la métrica.
+. Haga clic en *[+Consulta]* para agregar una segunda línea al gráfico.  Para esta línea, elija _Latencia - Total_ como métrica.
 +
-Observe que la línea se muestra plana en la parte inferior del gráfico. Esto se debe a que se está dibujando _a la misma escala_ que la línea IOPS.
+Observe que la línea se muestra plana en la parte inferior del gráfico.  Esto se debe a que se dibuja _a la misma escala_ que la línea IOPS.
 
-. En la consulta latencia, seleccione *eje y: Secundario*.
+. En la consulta de Latencia, seleccione *Eje Y: Secundario*.
 +
-La línea latencia se dibuja ahora a su propia escala, que se muestra en el lado derecho del gráfico.
+La línea de latencia ahora se dibuja en su propia escala, que se muestra en el lado derecho del gráfico.
 
 
 
@@ -412,101 +412,101 @@ image:SecondaryAxisExplained.png["Ejemplo de eje secundario"]
 
 == Expresiones en widgets
 
-En un panel de control, cualquier widget de serie temporal (línea, spline, área, área apilada) gráfico de barras, gráfico de columnas, gráfico circular o widget de tabla le permite crear expresiones a partir de las métricas que elija y mostrar el resultado de esas expresiones en un único gráfico (o columna en el caso de <<expressions-in-a-table-widget,widget de tabla>>). Los ejemplos siguientes utilizan expresiones para resolver problemas específicos. En el primer ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de IOPS totales para todos los activos de almacenamiento de su cliente. El segundo ejemplo proporciona visibilidad de las IOPS de «sistema» o «sobrecarga» que se producen en su inquilino, aquellas IOPS que no proceden directamente de la lectura o la escritura de datos.
+En un panel, cualquier widget de serie temporal (línea, spline, área, área apilada), gráfico de barras, gráfico de columnas, gráfico circular o widget de tabla le permite crear expresiones a partir de las métricas que elija y mostrar el resultado de esas expresiones en un solo gráfico (o columna en el caso del widget).<<expressions-in-a-table-widget,widget de tabla>> ).  Los siguientes ejemplos utilizan expresiones para resolver problemas específicos.  En el primer ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de las IOPS totales para todos los activos de almacenamiento en su inquilino.  El segundo ejemplo brinda visibilidad de las IOPS de "sistema" o "generales" que se producen en su inquilino (es decir, aquellas IOPS que no provienen directamente de la lectura o escritura de datos).
 
 Puede utilizar variables en expresiones (por ejemplo, _$Var1 * 100_)
 
 
 
-=== Ejemplo de expresiones: Porcentaje de IOPS de lectura
+=== Ejemplo de expresiones: porcentaje de IOPS de lectura
 
-En este ejemplo, queremos mostrar IOPS de lectura como un porcentaje de IOPS total. Puede pensar en esto como la siguiente fórmula:
+En este ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de las IOPS totales.  Puedes pensar en esto como la siguiente fórmula:
 
  Read Percentage = (Read IOPS / Total IOPS) x 100
-Estos datos se pueden mostrar en un gráfico de líneas del panel. Para ello, siga estos pasos:
+Estos datos se pueden mostrar en un gráfico de líneas en su tablero.  Para ello siga estos pasos:
 
 .Pasos
 . Cree un nuevo panel o abra un panel existente en modo de edición.
-. Añada un widget a la consola. Seleccione *Área gráfica*.
+. Añade un widget al panel de control.  Seleccione *Gráfico de áreas*.
 +
-El widget se abre en el modo de edición. De forma predeterminada, se muestra una consulta que muestra _IOPS - total_ para activos _Storage_. Si lo desea, seleccione un tipo de activo diferente.
+El widget se abre en modo de edición.  De forma predeterminada, se muestra una consulta que muestra _IOPS - Total_ para los activos de _Almacenamiento_.  Si lo desea, seleccione un tipo de activo diferente.
 
-. Haga clic en el enlace *convertir en expresión* de la derecha.
+. Haga clic en el enlace *Convertir a expresión* a la derecha.
 +
-La consulta actual se convierte al modo expresión. Observe que no puede cambiar el tipo de activo mientras está en modo expresión. Mientras se encuentra en el modo expresión, el vínculo cambia a *revertir a Consulta*. Haga clic en esta opción si desea volver al modo de consulta en cualquier momento. Tenga en cuenta que el cambio entre modos restablecerá los campos a sus valores predeterminados.
+La consulta actual se convierte al modo Expresión.  Tenga en cuenta que no puede cambiar el tipo de activo mientras está en el modo Expresión.  Mientras está en el modo Expresión, el enlace cambia a *Revertir a consulta*.  Haga clic aquí si desea volver al modo de consulta en cualquier momento.  Tenga en cuenta que al cambiar entre modos se restablecerán los campos a sus valores predeterminados.
 
 +
-Por ahora, permanezca en modo expresión.
+Por ahora, permanezca en el modo Expresión.
 
-. La métrica *IOPS - total* se encuentra ahora en el campo de variable alfabética "*a*". En el campo de la variable "*b*", haga clic en *Seleccionar* y elija *IOPS - Leer*.
+. La métrica *IOPS - Total* ahora está en el campo de variable alfabética "*a*".  En el campo de la variable "*b*", haga clic en *Seleccionar* y elija *IOPS - Lectura*.
 +
-Puede agregar hasta un total de cinco variables alfabéticas para la expresión haciendo clic en el botón + que sigue a los campos de la variable. Para nuestro ejemplo de porcentaje de lectura, sólo necesitamos el total de IOPS ("*a*") y el Read IOPS ("*b*").
+Puede agregar hasta un total de cinco variables alfabéticas para su expresión haciendo clic en el botón + después de los campos de variable.  Para nuestro ejemplo de porcentaje de lectura, solo necesitamos IOPS totales ("*a*") e IOPS de lectura ("*b*").
 
-. En el campo *expresión*, utilice las letras correspondientes a cada variable para crear la expresión. Sabemos que Read Percentage = (Read IOPS / total IOPS) x 100, por lo que escribimos esta expresión como:
+. En el campo *Expresión*, utiliza las letras correspondientes a cada variable para construir tu expresión.  Sabemos que el porcentaje de lectura = (IOPS de lectura / IOPS totales) x 100, por lo que escribiríamos esta expresión como:
 +
  (b / a) * 100
-. El campo *etiqueta* identifica la expresión. Cambie la etiqueta a "Porcentaje de lectura", o algo igualmente significativo para usted.
-. Cambie el campo *unidades* a "%" o "Porcentaje".
+. El campo *Etiqueta* identifica la expresión.  Cambie la etiqueta a "Porcentaje de lectura" o algo igualmente significativo para usted.
+. Cambie el campo *Unidades* a "%" o "Porcentaje".
 +
-El gráfico muestra el porcentaje de lectura de IOPS con el tiempo para los dispositivos de almacenamiento seleccionados. Si lo desea, puede establecer un filtro o elegir un método de acumulación diferente. Tenga en cuenta que si selecciona suma como método ROLLUP, todos los valores porcentuales se agregan juntos, lo que puede llegar a ser superior al 100%.
+El gráfico muestra el porcentaje de lectura de IOPS a lo largo del tiempo para los dispositivos de almacenamiento seleccionados.  Si lo desea, puede establecer un filtro o elegir un método de acumulación diferente.  Tenga en cuenta que si selecciona Suma como método de acumulación, se suman todos los valores porcentuales, que potencialmente pueden superar el 100 %.
 
-. Haga clic en *Guardar* para guardar el gráfico en el panel de control.
-
-
+. Haga clic en *Guardar* para guardar el gráfico en su panel de control.
 
 
-=== Ejemplo de expresiones: I/o "System"
 
-Ejemplo 2: Entre las métricas recogidas de orígenes de datos se leen, escriben y totales IOPS. Sin embargo, el número total de IOPS que informa un origen de datos a veces incluye IOPS "sistema", que son aquellas operaciones de I/o que no son parte directa de la lectura o escritura de datos. Este E/S del sistema también puede considerarse como "sobrecarga" de I/o, necesaria para un funcionamiento correcto del sistema pero no está directamente relacionado con las operaciones de datos.
 
-Para mostrar estas operaciones de I/o del sistema, puede restar IOPS de lectura y escritura a las IOPS totales de la adquisición informada. La fórmula podría tener el siguiente aspecto:
+=== Ejemplo de expresiones: E/S "Sistema"
+
+Ejemplo 2: Entre las métricas recopiladas de las fuentes de datos se encuentran las IOPS de lectura, escritura y total.  Sin embargo, el número total de IOPS informado por una fuente de datos a veces incluye IOPS "del sistema", que son aquellas operaciones de E/S que no son parte directa de la lectura o escritura de datos.  Este sistema de E/S también puede considerarse como una E/S "general", necesaria para el correcto funcionamiento del sistema pero no relacionada directamente con las operaciones de datos.
+
+Para mostrar estas E/S del sistema, puede restar las IOPS de lectura y escritura de las IOPS totales informadas de la adquisición.  La fórmula podría verse así:
 
  System IOPS = Total IOPS - (Read IOPS + Write IOPS)
-Estos datos se pueden mostrar entonces en un gráfico de línea del panel de control. Para ello, siga estos pasos:
+Estos datos pueden luego mostrarse en un gráfico de líneas en su tablero.  Para ello siga estos pasos:
 
 .Pasos
 . Cree un nuevo panel o abra un panel existente en modo de edición.
-. Añada un widget a la consola. Seleccione *Diagrama de línea*.
+. Añade un widget al panel de control.  Seleccione *Gráfico de líneas*.
 +
-El widget se abre en el modo de edición. De forma predeterminada, se muestra una consulta que muestra _IOPS - total_ para activos _Storage_. Si lo desea, seleccione un tipo de activo diferente.
+El widget se abre en modo de edición.  De forma predeterminada, se muestra una consulta que muestra _IOPS - Total_ para los activos de _Almacenamiento_.  Si lo desea, seleccione un tipo de activo diferente.
 
-. En el campo *Roll Up*, elija _suma_ por _All_.
+. En el campo *Acumular*, seleccione _Suma_ por _Todo_.
 +
-El gráfico muestra una línea que muestra la suma del total de IOPS.
+El gráfico muestra una línea que indica la suma de IOPS totales.
 
-. Haga clic en el icono _Duplicar esta Consulta_ para crear una copia de la consulta.
+. Haga clic en el icono _Duplicar esta consulta_ para crear una copia de la consulta.
 +
 Se agrega un duplicado de la consulta debajo del original.
 
-. En la segunda consulta, haga clic en el botón *convertir a expresión*.
+. En la segunda consulta, haga clic en el botón *Convertir en expresión*.
 +
-La consulta actual se convierte al modo expresión. Haga clic en *revertir a consulta* si desea volver al modo de consulta en cualquier momento. Tenga en cuenta que el cambio entre modos restablecerá los campos a sus valores predeterminados.
+La consulta actual se convierte al modo Expresión.  Haga clic en *Volver a consulta* si desea volver al modo de consulta en cualquier momento.  Tenga en cuenta que al cambiar entre modos se restablecerán los campos a sus valores predeterminados.
 
 +
-Por ahora, permanezca en modo expresión.
+Por ahora, permanezca en el modo Expresión.
 
-. La métrica _IOPS - total_ se encuentra ahora en el campo de variable alfabética "*a*". Haga clic en _IOPS - total_ y cámbielo a _IOPS - Read_.
-. En el campo de la variable "*b*", haga clic en *Seleccionar* y elija _IOPS - escribir_.
-. En el campo *expresión*, utilice las letras correspondientes a cada variable para crear la expresión. Escribimos nuestra expresión simplemente como:
+. La métrica _IOPS - Total_ ahora está en el campo de variable alfabética "*a*".  Haga clic en _IOPS - Total_ y cámbielo a _IOPS - Lectura_.
+. En el campo de la variable "*b*", haga clic en *Seleccionar* y elija _IOPS - Escritura_.
+. En el campo *Expresión*, utiliza las letras correspondientes a cada variable para construir tu expresión.  Escribiríamos nuestra expresión simplemente como:
 +
  a + b
 +
-En la sección pantalla, elija *Área de gráfico* para esta expresión.
+En la sección Visualización, elija *Gráfico de áreas* para esta expresión.
 
-. El campo *etiqueta* identifica la expresión. Cambie la etiqueta a "System IOPS" o algo igualmente significativo para usted.
+. El campo *Etiqueta* identifica la expresión.  Cambie la etiqueta a "IOPS del sistema" o algo igualmente significativo para usted.
 +
-El gráfico muestra el número total de IOPS como un gráfico de líneas, con un gráfico de área donde se muestra la combinación de IOPS de lectura y escritura a continuación. La brecha entre los dos muestra las IOPS que no están relacionadas directamente con las operaciones de lectura o escritura de datos. Estos son los IOPS de "sistema".
+El gráfico muestra el total de IOPS como un gráfico de líneas, con un gráfico de áreas que muestra la combinación de IOPS de lectura y escritura debajo.  La brecha entre ambos muestra las IOPS que no están directamente relacionadas con las operaciones de lectura o escritura de datos.  Éstas son las IOPS de su "sistema".
 
-. Haga clic en *Guardar* para guardar el gráfico en el panel de control.
+. Haga clic en *Guardar* para guardar el gráfico en su panel de control.
 
 
-Para utilizar una variable en una expresión, simplemente escriba el nombre de la variable, por ejemplo, _$var1 * 100_. Sólo se pueden utilizar variables numéricas en expresiones.
+Para utilizar una variable en una expresión, simplemente escriba el nombre de la variable, por ejemplo, _$var1 * 100_.  Sólo se pueden utilizar variables numéricas en las expresiones.
 
 
 
 === Expresiones en un widget de tabla
 
-Los widgets de tabla manejan las expresiones de manera un poco diferente. Puede tener hasta cinco expresiones en un solo widget de tabla, cada una de las cuales se agrega como una nueva columna a la tabla. Cada expresión puede incluir hasta cinco valores sobre los que realizar su cálculo. Puede fácilmente nombrar a la columna algo significativo.
+Los widgets de tabla manejan las expresiones de forma un poco diferente.  Puede tener hasta cinco expresiones en un solo widget de tabla, cada una de las cuales se agrega como una nueva columna a la tabla.  Cada expresión puede incluir hasta cinco valores sobre los que realizar su cálculo.  Puedes nombrar fácilmente la columna con un nombre significativo.
 
 image:ExpressionExample.png["Expresión en un widget de tabla"]
 
@@ -514,20 +514,20 @@ image:ExpressionExample.png["Expresión en un widget de tabla"]
 
 == Variables
 
-Las variables permiten cambiar los datos que aparecen en algunos o todos los widgets de un panel de control a la vez. Al establecer uno o varios widgets para usar una variable común, los cambios realizados en un lugar provocan que los datos que aparecen en cada widget se actualicen automáticamente.
+Las variables le permiten cambiar los datos que se muestran en algunos o todos los widgets de un tablero a la vez.  Al configurar uno o más widgets para usar una variable común, los cambios realizados en un lugar hacen que los datos mostrados en cada widget se actualicen automáticamente.
 
 
 
 === Tipos de variables
 
-Una variable puede ser uno de los siguientes tipos:
+Una variable puede ser de uno de los siguientes tipos:
 
-* *Atributo*: Utilice los atributos o métricas de un objeto para filtrar
-* *Anotación*: Usa un widget predefinido link:task_defining_annotations.html["Anotación"]para filtrar los datos.
-* *Texto*: Cadena alfanumérica.
-* *Numérico*: Un valor numérico. Lo puede utilizar por sí mismo, o como un valor "desde" o "hasta", en función del campo del widget.
-* *Boolean*: Se usa para campos con valores de True/False, Yes/no, etc. Para la variable booleana, las opciones son Sí, no, ninguna, ninguna.
-* *Fecha*: Valor de fecha. Utilícelo como valor "desde" o "hasta", en función de la configuración del widget.
+* *Atributo*: utiliza los atributos o métricas de un objeto para filtrar
+* *Anotación*: Utilice un predefinidolink:task_defining_annotations.html["Anotación"] para filtrar los datos del widget.
+* *Texto*: Una cadena alfanumérica.
+* *Numérico*: Un valor numérico.  Úselo solo o como un valor "desde" o "hasta", según el campo de su widget.
+* *Booleano*: se utiliza para campos con valores Verdadero/Falso, Sí/No, etc. Para la variable booleana, las opciones son Sí, No, Ninguno, Cualquiera.
+* *Fecha*: Un valor de fecha.  Úselo como valor "desde" o "hasta", según la configuración de su widget.
 
 
 image:Variables_Drop_Down_Showing_Annotations.png["Tipos de variables"]
@@ -536,25 +536,25 @@ image:Variables_Drop_Down_Showing_Annotations.png["Tipos de variables"]
 
 ==== Variables de atributo
 
-La selección de una variable de tipo de atributo permite filtrar los datos del widget que contienen el valor o valores de atributo especificados. El ejemplo siguiente muestra un widget de línea que muestra tendencias de memoria libre para los nodos del agente. Hemos creado una variable para las IP de nodo de agente, que actualmente está establecida para mostrar todas las IP:
+Al seleccionar una variable de tipo Atributo, podrá filtrar los datos del widget que contienen el valor o los valores de atributo especificados.  El siguiente ejemplo muestra un widget de línea que muestra las tendencias de memoria libre para los nodos del Agente.  Hemos creado una variable para las IP del nodo del agente, actualmente configurada para mostrar todas las IP:
 
-image:Variables_Node_Example_Before_Variable_Applied.png["Nodos de agente antes del filtro de variable"]
+image:Variables_Node_Example_Before_Variable_Applied.png["Nodos de agente antes del filtro de variables"]
 
-Pero si temporalmente desea ver solo nodos en subredes individuales de su arrendatario, puede establecer o cambiar la variable a una IP o IP de nodo de agente específicos. Aquí sólo estamos viendo los nodos de la subred "123":
+Pero si temporalmente desea ver solo los nodos en subredes individuales en su inquilino, puede configurar o cambiar la variable a una o más IP de nodo de agente específicas.  Aquí solo vemos los nodos en la subred "123":
 
-image:Variables_Node_Example_After_Variable_Applied.png["Nodos de agente tras filtro variable"]
+image:Variables_Node_Example_After_Variable_Applied.png["Nodos de agente después del filtro de variables"]
 
-También puede establecer una variable para filtrar objetos _all_ con un atributo determinado independientemente del tipo de objeto, por ejemplo, objetos con un atributo de "proveedor", especificando _*.Vendor_ en el campo variable. No es necesario que escriba el signo «*»; si selecciona la opción de comodín, la información de la infraestructura de datos se proporcionará.
+También puede configurar una variable para filtrar _todos_ los objetos con un atributo particular independientemente del tipo de objeto, por ejemplo, objetos con un atributo de "vendor", especificando _*.vendor_ en el campo de variable.  No es necesario que escriba "*."; Data Infrastructure Insights lo proporcionará si selecciona la opción de comodín.
 
-image:Variables_Attribute_Vendor_Example.png["Variable de atributo para el proveedor"]
+image:Variables_Attribute_Vendor_Example.png["Variable de atributo para proveedor"]
 
-Cuando lista desplegable de opciones para el valor de variable, los resultados se filtran de modo que solo aparezcan los proveedores disponibles en función de los objetos de la consola.
+Cuando despliega la lista de opciones para el valor de la variable, los resultados se filtran para mostrar solo los proveedores disponibles según los objetos en su panel.
 
-image:Variables_Attribute_Vendor_Filtered_List.png["Variable de atributo que muestra sólo los proveedores disponibles"]
+image:Variables_Attribute_Vendor_Filtered_List.png["Variable de atributo que muestra solo los proveedores disponibles"]
 
-Si edita un widget en el panel donde el filtro de atributos es relevante (es decir, los objetos del widget contienen cualquier atributo _*.Vendor_), le indica que el filtro de atributos se aplica automáticamente.
+Si edita un widget en su panel donde el filtro de atributos es relevante (es decir, los objetos del widget contienen cualquier atributo _*.vendor_), se le muestra que el filtro de atributos se aplica automáticamente.
 
-image:Variables_Attribute_inWidgetQuery.png["La variable de atributo se aplica automáticamente"]
+image:Variables_Attribute_inWidgetQuery.png["Variable de atributo aplicada automáticamente"]
 
 Aplicar variables es tan fácil como cambiar los datos de atributos de su elección.
 
@@ -562,136 +562,136 @@ Aplicar variables es tan fácil como cambiar los datos de atributos de su elecci
 
 ==== Variables de anotación
 
-Al seleccionar una variable de anotación, se pueden filtrar los objetos asociados con esa anotación, por ejemplo, los que pertenecen al mismo centro de datos.
+Al elegir una variable de anotación, podrá filtrar los objetos asociados con esa anotación, por ejemplo, aquellos que pertenecen al mismo centro de datos.
 
-image:Variables_Annotation_Filtering.png["Filtrado de anotaciones con variable"]
-
-
-
-==== Texto, número, Fecha o variable booleana
-
-Puede crear variables genéricas que no estén asociadas con un atributo determinado seleccionando un tipo de variable de _Text_, _Number_, _Boolean_ o _Date_. Una vez creada la variable, puede seleccionarla en un campo de filtro de widget. Al configurar un filtro en un widget, además de valores específicos que puede seleccionar para el filtro, las variables que se hayan creado para el panel se muestran en la lista, que se agrupan en la sección "variables" del menú desplegable y tienen nombres que comienzan por "$". La elección de una variable en este filtro le permitirá buscar los valores que introduzca en el campo de variable del propio panel. Cualquier widget que utilice esa variable en un filtro se actualizará dinámicamente.
-
-image:Variables_in_a_Widget_Filter.png["Selección de una variable en un widget"]
+image:Variables_Annotation_Filtering.png["Filtrado de anotaciones con variables"]
 
 
 
-==== Ámbito de filtro variable
+==== Texto, número, fecha o variable booleana
 
-Al agregar una variable de anotación o atributo al panel, la variable se puede aplicar a los widgets _All_ del panel, lo que significa que todos los widgets del panel mostrarán los resultados filtrados según el valor establecido en la variable.
+Puede crear variables genéricas que no estén asociadas con un atributo particular seleccionando un tipo de variable de _Texto_, _Número_, _Booleano_ o _Fecha_.  Una vez creada la variable, puedes seleccionarla en un campo de filtro del widget.  Al configurar un filtro en un widget, además de los valores específicos que puede seleccionar para el filtro, se muestran en la lista todas las variables que se hayan creado para el panel; estas se agrupan en la sección "Variables" en el menú desplegable y tienen nombres que comienzan con "$".  Al elegir una variable en este filtro podrá buscar valores que ingrese en el campo de variable en el tablero mismo.  Cualquier widget que utilice esa variable en un filtro se actualizará dinámicamente.
+
+image:Variables_in_a_Widget_Filter.png["Seleccionar una variable en un widget"]
+
+
+
+==== Alcance del filtro variable
+
+Cuando agrega una variable de anotación o atributo a su panel, la variable se puede aplicar a _todos_ los widgets del panel, lo que significa que todos los widgets de su panel mostrarán resultados filtrados según el valor que configure en la variable.
 
 image:Variables_Automatic_Filter_Button.png["Filtro automático"]
 
-Tenga en cuenta que sólo las variables de atributo y anotación se pueden filtrar automáticamente de este modo. Las variables sin anotación o atributo no se pueden filtrar automáticamente. Cada uno de los widgets debe configurarse para utilizar variables de estos tipos.
+Tenga en cuenta que solo las variables de atributo y anotación se pueden filtrar automáticamente de esta manera.  Las variables que no son de anotación o de atributo no se pueden filtrar automáticamente.  Cada widget individual debe configurarse para utilizar variables de estos tipos.
 
-Para desactivar el filtrado automático de forma que la variable sólo se aplique a los widgets en los que haya definido específicamente, haga clic en el control deslizante "Filtrar automáticamente" para deshabilitarla.
+Para deshabilitar el filtrado automático de modo que la variable solo se aplique a los widgets donde la haya configurado específicamente, haga clic en el control deslizante "Filtrar automáticamente" para deshabilitarlo.
 
-Para establecer una variable en un widget individual, abra el widget en modo de edición y seleccione la anotación o atributo específico en el campo _Filter by_. Con una variable de anotación, puede seleccionar uno o varios valores específicos, o seleccionar el nombre de variable (indicado por el "$" inicial) para permitir escribir en la variable en el nivel del panel. Lo mismo se aplica a las variables de atributo. Sólo los widgets para los que establezca la variable mostrarán los resultados filtrados.
+Para establecer una variable en un widget individual, abra el widget en modo de edición y seleccione la anotación o atributo específico en el campo _Filtrar por_.  Con una variable de anotación, puede seleccionar uno o más valores específicos, o seleccionar el nombre de la variable (indicado por el símbolo "$" inicial) para permitir escribir la variable en el nivel del panel.  Lo mismo se aplica a las variables de atributo.  Sólo aquellos widgets para los que configure la variable mostrarán los resultados filtrados.
 
-El filtrado en variables es _contextual_; cuando se selecciona un valor de filtro o valores para una variable, las demás variables de la página sólo mostrarán valores relevantes para ese filtro. Por ejemplo, cuando se establece un filtro de variable en un almacenamiento específico _Model_, cualquier variable establecida para filtrar para el almacenamiento _Name_ sólo mostrará los valores relevantes para ese modelo.
+El filtrado de variables es _contextual_; cuando selecciona uno o más valores de filtro para una variable, las demás variables de su página mostrarán solo los valores relevantes para ese filtro.  Por ejemplo, al configurar un filtro de variable para un _Modelo_ de almacenamiento específico, cualquier variable configurada para filtrar por _Nombre_ de almacenamiento solo mostrará valores relevantes para ese Modelo.
 
-Para utilizar una variable en una expresión, simplemente escriba el nombre de la variable como parte de la expresión, por ejemplo, _$var1 * 100_. Sólo se pueden utilizar variables numéricos en expresiones. No puede utilizar anotaciones numéricas o variables de atributos en expresiones.
+Para utilizar una variable en una expresión, simplemente escriba el nombre de la variable como parte de la expresión, por ejemplo, _$var1 * 100_.  Sólo se pueden utilizar variables numéricas en expresiones.  No se pueden utilizar variables de anotación o atributo numéricas en expresiones.
 
-El filtrado en variables es _contextual_; cuando se selecciona un valor de filtro o valores para una variable, las demás variables de la página sólo mostrarán valores relevantes para ese filtro. Por ejemplo, cuando se establece un filtro de variable en un almacenamiento específico _Model_, cualquier variable establecida para filtrar para el almacenamiento _Name_ sólo mostrará los valores relevantes para ese modelo.
+El filtrado de variables es _contextual_; cuando selecciona uno o más valores de filtro para una variable, las demás variables de su página mostrarán solo los valores relevantes para ese filtro.  Por ejemplo, al configurar un filtro de variable para un _Modelo_ de almacenamiento específico, cualquier variable configurada para filtrar por _Nombre_ de almacenamiento solo mostrará valores relevantes para ese Modelo.
 
 
 
-==== Nomenclatura de variables
+==== Nombre de variables
 
 Nombres de variables:
 
-* Debe incluir sólo las letras a-z, los dígitos 0-9, punto (.), subrayado (_) y espacio ( ).
+* Debe incluir sólo las letras az, los dígitos 0-9, punto (.), guión bajo (_) y espacio ( ).
 * No puede tener más de 20 caracteres.
-* Son sensibles a mayúsculas y minúsculas: $CityName y $cityname son variables diferentes.
-* No puede ser el mismo que un nombre de variable existente.
+* Distinguen entre mayúsculas y minúsculas: $CityName y $cityname son variables diferentes.
+* No puede ser el mismo que el nombre de una variable existente.
 * No puede estar vacío.
 
 
 
 
-== Formatear widgets de trocha
+== Formato de widgets de indicador
 
-Los widgets de indicador sólido y viñeta permiten establecer umbrales para los niveles _Warning_ y/o _Critical_, proporcionando una representación clara de los datos que especifique.
+Los widgets Indicador sólido y de bala le permiten establecer umbrales para niveles _Advertencia_ y/o _Crítico_, lo que proporciona una representación clara de los datos que especifique.
 
-image:GaugeWidgetFormatting.png["Ajustes de formato para el widget de indicador"]
+image:GaugeWidgetFormatting.png["Configuración de formato para el widget de indicador"]
 
 Para establecer el formato de estos widgets, siga estos pasos:
 
-. Elija si desea resaltar valores superiores a (>) o inferiores a (<) los umbrales. En este ejemplo, destacaremos valores superiores a (>) los niveles de umbral.
-. Elija un valor para el umbral "Advertencia". Cuando el widget muestra valores superiores a este nivel, muestra el indicador en naranja.
-. Elija un valor para el umbral "crítico". Los valores superiores a este nivel harán que el indicador se muestre en rojo.
+. Elija si desea resaltar los valores mayores que (>) o menores que (<) sus umbrales.  En este ejemplo, resaltaremos los valores mayores que (>) los niveles de umbral.
+. Elija un valor para el umbral de "Advertencia".  Cuando el widget muestra valores mayores que este nivel, muestra el indicador en naranja.
+. Elija un valor para el umbral "Crítico".  Los valores superiores a este nivel harán que el indicador se muestre en rojo.
 
 
-Opcionalmente, puede elegir un valor mínimo y máximo para el indicador. Los valores por debajo del mínimo no mostrarán el indicador. Los valores por encima del máximo mostrarán un indicador completo. Si no elige valores mínimos o máximos, el widget selecciona min y max óptimos según el valor del widget.
+Opcionalmente, puede elegir un valor mínimo y máximo para el indicador.  Los valores por debajo del mínimo no se mostrarán en el indicador.  Los valores superiores al máximo mostrarán un indicador lleno.  Si no elige valores mínimos o máximos, el widget seleccionará el mínimo y el máximo óptimos según el valor del widget.
 
-image:Gauge-Solid.png["Galga sólida/tradicional, anchura=374"] image:Gauge-Bullet.png["Calibre de viñeta, ancho=374"]
+image:Gauge-Solid.png["Calibre sólido/tradicional, ancho=374"] image:Gauge-Bullet.png["Calibre de bala, ancho=374"]
 
 
 
-== Formateo del widget de un único valor
+== Formato de widget de valor único
 
-En el widget valor único, además de establecer los umbrales de advertencia (naranja) y crítico (rojo), puede elegir que los valores "en rango" (por debajo del nivel de advertencia) se muestren con fondo verde o blanco.
+en el widget Valor único, además de configurar los umbrales de Advertencia (naranja) y Crítico (rojo), puede elegir que los valores "En rango" (aquellos por debajo del nivel de Advertencia) se muestren con fondo verde o blanco.
 
-image:Single-ValueWidgets.png["Widget de un solo valor con y sin formato"]
+image:Single-ValueWidgets.png["Widget de valor único con y sin formato"]
 
-Al hacer clic en el vínculo de un widget de un único valor o de un widget de indicador, se mostrará una página de consulta correspondiente a la primera consulta del widget.
+Al hacer clic en el enlace en un widget de valor único o en un widget de indicador, se mostrará una página de consulta correspondiente a la primera consulta en el widget.
 
 
 
 == Formato de widgets de tabla
 
-Al igual que los widgets de un solo valor y de calibre, puede establecer el formato condicional en los widgets de tabla, lo que le permite resaltar datos con colores y/o iconos especiales.
+Al igual que los widgets de valor único y de indicador, puede establecer un formato condicional en los widgets de tabla, lo que le permitirá resaltar datos con colores y/o íconos especiales.
 
-El formato condicional permite establecer y resaltar umbrales de nivel de advertencia y de nivel crítico en los widgets de tabla, lo que proporciona visibilidad instantánea a los valores atípicos y puntos de datos excepcionales.
+El formato condicional le permite establecer y resaltar umbrales de nivel de advertencia y nivel crítico en los widgets de tabla, lo que brinda visibilidad instantánea a valores atípicos y puntos de datos excepcionales.
 
 image:ConditionalFormattingExample.png["Ejemplo de formato condicional"]
 
-El formato condicional se define por separado para cada columna de una tabla. Por ejemplo, puede elegir un conjunto de umbrales para una columna Capacidad y otro conjunto para una columna Rendimiento.
+El formato condicional se establece por separado para cada columna de una tabla.  Por ejemplo, puede elegir un conjunto de umbrales para una columna de capacidad y otro conjunto para una columna de rendimiento.
 
-Si cambia la visualización de unidades para una columna, el formato condicional permanece y refleja el cambio en los valores. Las imágenes siguientes muestran el mismo formato condicional aunque la unidad de visualización sea diferente.
+Si cambia la visualización de la unidad de una columna, el formato condicional permanece y refleja el cambio en los valores.  Las imágenes a continuación muestran el mismo formato condicional aunque la unidad de visualización es diferente.
 
-image:ConditionalFormatting_GiB.png["Formato condicional: GIB"] image:ConditionalFormatting_TiB.png["Formato condicional: TIB"]
+image:ConditionalFormatting_GiB.png["Formato condicional - GiB"] image:ConditionalFormatting_TiB.png["Formato condicional - TiB"]
 
-Puede elegir si desea mostrar el formato de condición como color, iconos o ambos.
+Puede elegir si desea mostrar el formato de la condición como color, íconos o ambos.
 
 
 
-== Selección de la Unidad para mostrar datos
+== Selección de la unidad para visualizar datos
 
-La mayoría de los widgets de un panel de control le permiten especificar las Unidades en las que mostrar valores, por ejemplo _megabytes_, _miles_, _porcentaje_, _milisegundos (ms)_, etc. En muchos casos, Data Infrastructure Insights conoce el mejor formato para los datos que se adquieren. En los casos en los que no se conoce el mejor formato, puede definir el formato que desee.
+La mayoría de los widgets en un panel le permiten especificar las unidades en las que se mostrarán los valores, por ejemplo, _Megabytes_, _Miles_, _Porcentaje_, _Milisegundos (ms)_, etc. En muchos casos, Data Infrastructure Insights conoce el mejor formato para los datos que se adquieren.  En los casos donde no se conoce el mejor formato, puedes configurar el formato que desees.
 
-En el siguiente ejemplo del gráfico de líneas, se sabe que los datos seleccionados para el widget están en _bytes_ (la unidad de datos IEC básica: Consulte la tabla siguiente), de modo que la unidad base se selecciona automáticamente como 'byte (B)'. Sin embargo, los valores de datos son lo suficientemente grandes para presentarse como gibibytes (GiB), por lo que Data Infrastructure Insights de forma predeterminada formatea automáticamente los valores como GiB. El eje y del gráfico muestra "GIB" como unidad de visualización y todos los valores se muestran en términos de dicha unidad.
+En el ejemplo de gráfico de líneas a continuación, se sabe que los datos seleccionados para el widget están en _bytes_ (la unidad de datos IEC base: consulte la tabla a continuación), por lo que la unidad base se selecciona automáticamente como 'byte (B)'.  Sin embargo, los valores de los datos son lo suficientemente grandes como para presentarse como gibibytes (GiB), por lo que Data Infrastructure Insights formatea automáticamente los valores como GiB de forma predeterminada.  El eje Y del gráfico muestra 'GiB' como unidad de visualización, y todos los valores se muestran en términos de esa unidad.
 
-image:used_memory_in_bytes.png["Byte de la unidad base mostrado en Gigabytes,width=640"]
+image:used_memory_in_bytes.png["Unidad base Byte mostrado en Gigabytes, ancho=640"]
 
-Si desea mostrar el gráfico en una unidad diferente, puede elegir otro formato en el que mostrar los valores. Dado que la unidad base de este ejemplo es _byte_, puede elegir entre los formatos "basados en bytes" compatibles: Bit (b), byte (B), kibibyte (KiB), mebibyte (MIB), gibibyte (GIB). La etiqueta y los valores del eje y cambian según el formato que elija.
+Si desea mostrar el gráfico en una unidad diferente, puede elegir otro formato en el que mostrar los valores.  Dado que la unidad base en este ejemplo es _byte_, puede elegir entre los formatos "basados en bytes" admitidos: bit (b), byte (B), kibibyte (KiB), mebibyte (MiB), gibibyte (GiB).  La etiqueta y los valores del eje Y cambian según el formato que elija.
 
-image:used_memory_in_bytes_gb.png["Selección de una unidad de visualización,width=640"]
+image:used_memory_in_bytes_gb.png["Elegir una unidad de visualización, ancho=640"]
 
-En los casos en los que no se conoce la unidad base, puede asignar una unidad de entre los link:#available-units["unidades disponibles"], o escribir en su propia unidad. Una vez que asigne una unidad base, podrá seleccionar esta opción para mostrar los datos en uno de los formatos compatibles adecuados.
+En los casos en que no se conoce la unidad base, se puede asignar una unidad de entre laslink:#available-units["unidades disponibles"] , o escribe el tuyo propio.  Una vez que asigne una unidad base, podrá seleccionar mostrar los datos en uno de los formatos admitidos adecuados.
 
-image:bits_per_second.png["Seleccione su propia unidad base,width=320"]
+image:bits_per_second.png["Elige tu propia unidad base, ancho=320"]
 
-Para borrar la configuración y volver a iniciar, haga clic en *Restablecer valores predeterminados*.
+Para borrar la configuración y comenzar de nuevo, haga clic en *Restablecer valores predeterminados*.
 
 
 
 === Una palabra sobre el formato automático
 
-La mayoría de las métricas son notificadas por los recopiladores de datos de la unidad más pequeña, por ejemplo, como un número entero, como 1,234,567,890 bytes. De forma predeterminada, Data Infrastructure Insights formateará automáticamente el valor para la visualización más legible. Por ejemplo, un valor de datos de 1,234,567,890 bytes se formatearía automáticamente a 1.23 _gibibytes_. Puede elegir mostrarla en otro formato, como _mebibytes_. El valor se mostrará en consecuencia.
+Los recopiladores de datos informan la mayoría de las métricas en la unidad más pequeña, por ejemplo, un número entero como 1.234.567.890 bytes.  De forma predeterminada, Data Infrastructure Insights formateará automáticamente el valor para que se muestre de forma más legible.  Por ejemplo, un valor de datos de 1.234.567.890 bytes se formatearía automáticamente a 1,23 _Gibibytes_.  Puedes elegir mostrarlo en otro formato, como _Mebibytes_.  El valor se mostrará correspondientemente.
 
 
-NOTE: Data Infrastructure Insights utiliza estándares de nomenclatura de números en inglés estadounidense. Los "mil millones" americanos equivalen a "mil millones".
+NOTE: Data Infrastructure Insights utiliza estándares de nombres de números en inglés estadounidense.  El "mil millones" americano equivale a "mil millones".
 
 
 
-=== Widgets con varias consultas
+=== Widgets con múltiples consultas
 
-Si tiene un widget de serie temporal (es decir, línea, spline, área, área apilada) que tiene dos consultas en las que se traza el eje y primario, la unidad base no se muestra en la parte superior del eje Y. Sin embargo, si el widget tiene una consulta en el eje y primario y una consulta en el eje y secundario, se muestran las unidades base de cada una de ellas.
+Si tiene un widget de series de tiempo (es decir, línea, spline, área, área apilada) que tiene dos consultas donde ambas se trazan en el eje Y principal, la unidad base no se muestra en la parte superior del eje Y.  Sin embargo, si su widget tiene una consulta en el eje Y principal y una consulta en el eje Y secundario, se muestran las unidades base de cada uno.
 
-image:UnitsOnPrimaryAndSecondaryYAxis.png["Unidades en ambos ejes Y."]
+image:UnitsOnPrimaryAndSecondaryYAxis.png["Unidades en ambos ejes Y"]
 
-Si el widget tiene tres o más consultas, las unidades base no se muestran en el eje Y.
+Si su widget tiene tres o más consultas, las unidades base no se muestran en el eje Y.
 
 
 
@@ -705,54 +705,54 @@ La siguiente tabla muestra todas las unidades disponibles por categoría.
 | *Categoría* | *Unidades* 
 
 
-| Moneda | centavo dólar 
+| Divisa | centavo de dólar 
 
 
-| Datos (IEC) | byte de bit kibibyte mebibyte de gibibyte tebibyte de pebibyte exbibyte 
+| Datos (IEC) | bit byte kibibyte mebibyte gibibyte tebibyte pebibyte exbibyte 
 
 
-| Fecha de referencia (IEC) | bit/s byte/s kibibyte/s mebibyte/s gibibyte/s tebibyte/s pebibyte/s. 
+| Velocidad de datos (IEC) | bit/seg byte/seg kibibyte/seg mebibyte/seg gibibyte/seg tebibyte/seg pebibyte/seg 
 
 
-| Datos (métrico) | kilobytes megabyte terabyte de terabyte de petabyte 
+| Datos (métricos) | kilobyte megabyte gigabyte terabyte petabyte exabyte 
 
 
-| Fecha de referencia (métrico) | kilobit/s megabyte/s gigabyte/s terabyte/s, petabyte/s, exabyte/s. 
+| Velocidad de datos (métrica) | kilobyte/seg megabyte/seg gigabyte/seg terabyte/seg petabyte/seg exabyte/seg 
 
 
-| IEC | el kibi mebi gibi tebi pebi exbi 
+| CEI | kibi mebi gibi tebi pebi exbi 
 
 
-| Decimal | miles de millones de millones de billion trillón 
+| Decimal | número entero mil millones mil millones billones billones 
 
 
 | Porcentaje | porcentaje 
 
 
-| Tiempo | nanosegundo microsegundo milisegundos segundo minuto hora 
+| Tiempo | nanosegundo microsegundo milisegundo segundo minuto hora 
 
 
-| Temperatura | celsius fahrenheit 
+| Temperatura | grados Celsius y Fahrenheit 
 
 
-| Frecuencia | hertz kilohertz megahertz gigahercios 
+| Frecuencia | hercios kilohercios megahercios gigahercios 
 
 
-| CPU | micronúcleos nanocores núcleos milimetros kilonúcleos megacoros gigaflores teracores petacoros exacores 
+| UPC | nanonúcleos micronúcleos milicores núcleos kilonúcleos meganúcleos giganúcleos teracores petacores exacores 
 
 
-| Rendimiento | Operaciones de I/o por segundo operaciones/s solicitudes/s lecturas/s escrituras/s operaciones/s mín. De lecturas/escrituras mín./min 
+| Rendimiento | E/S operaciones/seg operaciones/seg solicitudes/seg lecturas/seg escrituras/seg operaciones/min lecturas/min escrituras/min 
 |===
 
 
-== Modo TV y auto-refrescamiento
+== Modo TV y actualización automática
 
-Los datos de los widgets de los paneles de control y las páginas de destino de activos se refrescan automáticamente según el intervalo de actualización que determine el intervalo de tiempo del panel de control seleccionado. El intervalo de actualización se basa en si el widget es una serie de tiempo (línea, spline, área, gráfico de área apilado) o no una serie de tiempo (todos los demás gráficos).
+Los datos en los widgets de los paneles y las páginas de destino de activos se actualizan automáticamente según un intervalo de actualización determinado por el rango de tiempo del panel seleccionado.  El intervalo de actualización se basa en si el widget es de serie temporal (gráfico de líneas, spline, área, área apilada) o no es de serie temporal (todos los demás gráficos).
 
 |===
 
 
-| Intervalo de tiempo del panel de control | Intervalo de actualización de serie temporal | Intervalo de actualización sin serie temporal 
+| Intervalo de tiempo del tablero de instrumentos | Intervalo de actualización de series temporales | Intervalo de actualización de series no temporales 
 
 
 | Últimos 15 minutos | 10 segundos | 1 minuto 
@@ -792,126 +792,126 @@ Los datos de los widgets de los paneles de control y las páginas de destino de 
 |===
 Cada widget muestra su intervalo de actualización automática en la esquina superior derecha del widget.
 
-La actualización automática no está disponible para el intervalo de tiempo personalizado del panel.
+La actualización automática no está disponible para el rango de tiempo del panel personalizado.
 
-Cuando se combina con *modo TV*, la actualización automática permite la visualización casi en tiempo real de los datos en un panel o página de activos. El modo TV proporciona una visualización desembragada; el menú de navegación está oculto, proporcionando más propiedades de pantalla para la visualización de datos, al igual que el botón Editar. El modo TV ignora los tiempos de espera típicos de Data Infrastructure Insights, dejando la pantalla activa hasta que se cierra la sesión manual o automáticamente mediante protocolos de seguridad de autorización.
+Cuando se combina con el *Modo TV*, la actualización automática permite la visualización de datos casi en tiempo real en un panel o una página de activos.  El modo TV proporciona una pantalla despejada; el menú de navegación está oculto, lo que proporciona más espacio en pantalla para la visualización de sus datos, al igual que el botón Editar.  El modo TV ignora los tiempos de espera típicos de Data Infrastructure Insights y deja la pantalla activa hasta que se cierre la sesión de forma manual o automática mediante protocolos de seguridad de autorización.
 
 
 NOTE: Debido a que NetApp Console tiene su propio tiempo de espera de inicio de sesión de usuario de 7 días, Data Infrastructure Insights también debe cerrar la sesión con ese evento.  Simplemente puedes iniciar sesión nuevamente y tu panel de control seguirá mostrándose.
 
 * Para activar el modo TV, haga clic en el botón Modo TV.
-* Para desactivar el modo TV, haga clic en el botón *salir* de la parte superior izquierda de la pantalla.
+* Para desactivar el modo TV, haga clic en el botón *Salir* en la parte superior izquierda de la pantalla.
 
 
-Puede suspender temporalmente la actualización automática haciendo clic en el botón Pausa en la esquina superior derecha. Durante la pausa, el campo intervalo de tiempo del panel mostrará el intervalo de tiempo activo de los datos en pausa. Los datos aún se adquieren y se actualizan mientras la actualización automática está en pausa. Haga clic en el botón Reanudar para continuar con la actualización automática de los datos.
+Puede suspender temporalmente la actualización automática haciendo clic en el botón Pausa en la esquina superior derecha.  Mientras esté en pausa, el campo de rango de tiempo del tablero mostrará el rango de tiempo activo de los datos en pausa.  Sus datos aún se están adquiriendo y actualizando mientras la actualización automática está en pausa.  Haga clic en el botón Reanudar para continuar con la actualización automática de datos.
 
-image:AutoRefreshPaused.png["Actualización automática pausada"]
-
-
-
-== Grupos de consolas
-
-La agrupación permite ver y gestionar paneles relacionados. Por ejemplo, puede tener un grupo de consola dedicado al almacenamiento en su inquilino. Los grupos de paneles se gestionan en la página *Paneles > Mostrar todos los paneles*.
-
-image:DashboardGroupNoPin.png["Agrupación de tablero de a bordo"]
-
-De forma predeterminada, se muestran dos grupos:
-
-* *Todos los paneles* muestran todos los paneles que se han creado, independientemente del propietario.
-* *Mis paneles* sólo muestra los paneles creados por el usuario actual.
-
-
-El número de paneles incluidos en cada grupo se muestra junto al nombre del grupo.
-
-Para crear un grupo nuevo, haga clic en el botón *"+" Crear nuevo grupo de paneles*. Introduzca un nombre para el grupo y haga clic en *Crear grupo*. Se crea un grupo vacío con ese nombre.
-
-Para agregar paneles de control al grupo, haga clic en el grupo _All Dashboards_ para mostrar todos los paneles de control del inquilino, haga clic en _My Dashboards_ si solo desea ver los paneles de control de su propiedad y realice una de las siguientes acciones:
-
-* Para agregar un único panel, haga clic en el menú situado a la derecha del panel y seleccione _Add to Group_.
-* Para agregar varios paneles a un grupo, selecciónelos haciendo clic en la casilla de verificación situada junto a cada panel y, a continuación, haga clic en el botón *acciones masivas* y seleccione _Add to Group_.
-
-
-Elimine los paneles del grupo actual de la misma manera seleccionando _Remove from Group_. No puede quitar paneles del grupo _All Dashboards_ ni _My Dashboards_ .
-
-
-NOTE: Al eliminar una consola de un grupo, no se elimina la consola de Data Infrastructure Insights. Para eliminar completamente un panel, seleccione el panel y haga clic en _Delete_. Esto lo elimina de cualquier grupo al que pertenecía y ya no está disponible para ningún usuario.
+image:AutoRefreshPaused.png["Actualización automática en pausa"]
 
 
 
-== Cree un pin en los paneles favoritos
+== Grupos de paneles
 
-Puede gestionar aún más los paneles mediante la fijación de sus favoritos en la parte superior de la lista del panel de control. Para fijar un panel, simplemente haga clic en el botón de huella digital que aparece al pasar el ratón sobre un panel de cualquier lista.
+La agrupación le permite ver y administrar paneles relacionados.  Por ejemplo, puede tener un grupo de paneles dedicado al almacenamiento en su inquilino.  Los grupos de paneles se administran en la página *Paneles > Mostrar todos los paneles*.
 
-El pin/unpin del panel es una preferencia de usuario individual e independiente del grupo (o grupos) al que pertenece el panel.
+image:DashboardGroupNoPin.png["Agrupación del panel de control"]
 
-image:DashboardPin.png["Paneles fijados"]
+Se muestran dos grupos por defecto:
+
+* *Todos los paneles* enumera todos los paneles que se han creado, independientemente del propietario.
+* *Mis paneles* enumera solo aquellos paneles creados por el usuario actual.
+
+
+La cantidad de paneles contenidos en cada grupo se muestra junto al nombre del grupo.
+
+Para crear un nuevo grupo, haga clic en el botón *"+" Crear nuevo grupo de panel*.  Ingrese un nombre para el grupo y haga clic en *Crear grupo*.  Se crea un grupo vacío con ese nombre.
+
+Para agregar paneles al grupo, haga clic en el grupo _Todos los paneles_ para mostrar todos los paneles de su inquilino o haga clic en _Mis paneles_ si solo desea ver los paneles que posee y realice una de las siguientes acciones:
+
+* Para agregar un solo panel, haga clic en el menú a la derecha del panel y seleccione _Agregar al grupo_.
+* Para agregar varios paneles a un grupo, selecciónelos haciendo clic en la casilla de verificación junto a cada panel, luego haga clic en el botón *Acciones masivas* y seleccione _Agregar al grupo_.
+
+
+Elimine los paneles del grupo actual de la misma manera seleccionando _Eliminar del grupo_.  No se pueden eliminar paneles del grupo _Todos los paneles_ o _Mis paneles_.
+
+
+NOTE: Eliminar un panel de un grupo no elimina el panel de Data Infrastructure Insights.  Para eliminar por completo un panel, selecciónelo y haga clic en _Eliminar_.  Esto lo elimina de cualquier grupo al que pertenecía y ya no está disponible para ningún usuario.
+
+
+
+== Fija tus paneles favoritos
+
+Puede administrar aún más sus paneles fijando sus favoritos en la parte superior de su lista de paneles.  Para fijar un panel, simplemente haga clic en el botón de chincheta que aparece cuando pasa el cursor sobre un panel en cualquier lista.
+
+Anclar o desanclar el tablero es una preferencia individual del usuario e independiente del grupo (o grupos) al que pertenece el tablero.
+
+image:DashboardPin.png["Paneles anclados"]
 
 
 
 == Tema oscuro
 
-Puede optar por mostrar la información de la infraestructura de datos utilizando un tema claro (el predeterminado), que muestra la mayoría de las pantallas con un fondo claro con texto oscuro, o un tema oscuro que muestra la mayoría de las pantallas con un fondo oscuro con texto claro.
+Puede elegir mostrar Data Infrastructure Insights utilizando un tema claro (predeterminado), que muestra la mayoría de las pantallas con un fondo claro y texto oscuro, o un tema oscuro, que muestra la mayoría de las pantallas con un fondo oscuro y texto claro.
 
-Para cambiar entre temas claros y oscuros, haga clic en el botón de nombre de usuario de la esquina superior derecha de la pantalla y elija el tema que desee.
+Para cambiar entre temas claros y oscuros, haga clic en el botón de nombre de usuario en la esquina superior derecha de la pantalla y elija el tema deseado.
 
 image:DarkThemeSwitch.png["Cambiar entre temas claros y oscuros"]
 
-Vista de panel de tema oscuro: image:DarkThemeDashboardExample.png["Ejemplo de panel de temas oscuros"]
+Vista del panel de control del tema oscuro:image:DarkThemeDashboardExample.png["Ejemplo de panel de control con tema oscuro"]
 
-Vista de panel de tema ligero: image:LightThemeDashboardExample.png["Ejemplo de panel de temas de luz"]
-
-
-NOTE: Algunas áreas de la pantalla, como ciertos gráficos del widget, todavía muestran fondos claros incluso mientras se visualizan en temas oscuros.
+Vista del panel de control del tema claro:image:LightThemeDashboardExample.png["Ejemplo de panel de control con tema claro"]
 
 
+NOTE: Algunas áreas de la pantalla, como ciertos gráficos de widgets, aún muestran fondos claros incluso cuando se visualizan en el tema oscuro.
 
-== Interpolación de gráfico de líneas
 
-Los diferentes recopiladores de datos a menudo sondean sus datos a intervalos diferentes. Por ejemplo, el recopilador de datos A puede sondear cada 15 minutos mientras que el recopilador de datos B sondea cada cinco minutos. Cuando un widget de gráfico de líneas (también gráficos de spline, área y área apilada) está agregando estos datos de varios recopiladores de datos en una sola línea (por ejemplo, cuando el widget se agrupa por "todos"), Y actualizando la línea cada cinco minutos, los datos del colector B se pueden mostrar con precisión mientras que los datos del colector A pueden tener huecos, afectando así al agregado hasta que el colector vuelva a sondear.
 
-Para paliar esto, Data Infrastructure Insights interpola los datos al agregarlos, utilizando los puntos de datos circundantes para realizar una «mejor conjetura» con respecto a los datos hasta que los recopiladores de datos vuelvan a sondear. Siempre puede ver los datos de objetos de cada recopilador de datos individualmente ajustando la agrupación del widget.
+== Interpolación de gráficos de líneas
+
+Los distintos recopiladores de datos suelen consultar sus datos en intervalos diferentes.  Por ejemplo, el recopilador de datos A puede realizar un sondeo cada 15 minutos, mientras que el recopilador de datos B realiza un sondeo cada cinco minutos.  Cuando un widget de gráfico de líneas (también gráficos de splines, de áreas y de áreas apiladas) agrega estos datos de múltiples recopiladores de datos en una sola línea (por ejemplo, cuando el widget agrupa por "todos") y actualiza la línea cada cinco minutos, los datos del recopilador B pueden mostrarse con precisión mientras que los datos del recopilador A pueden tener espacios, lo que afecta la agregación hasta que el recopilador A vuelva a sondear.
+
+Para aliviar esto, Data Infrastructure Insights interpola los datos al agregarlos y utiliza los puntos de datos circundantes para realizar una "mejor estimación" de los datos hasta que los recopiladores realicen una nueva consulta.  Siempre puedes ver los datos de los objetos de cada recopilador de datos individualmente ajustando la agrupación del widget.
 
 
 
 === Métodos de interpolación
 
-Al crear o modificar un gráfico de líneas (o un gráfico de spline, área o área apilada), puede establecer el método de interpolación en uno de tres tipos. En la sección "Agrupar por", elija la interpolación deseada.
+Al crear o modificar un gráfico de líneas (o de splines, de áreas o de áreas apiladas), puede establecer el método de interpolación en uno de tres tipos.  En la sección “Agrupar por”, elija la Interpolación deseada.
 
 image:Interpolation_Methods.png["Sección de agrupación del editor de widgets que muestra los tres métodos de interpolación"]
 
-* *Ninguno*: No hacer nada, es decir, no generar puntos entre ambos.
+* *Ninguno*: No hacer nada, es decir, no generar puntos intermedios.
 
 
-image:Interpolation_None.png["Línea de ángulo recto simple que no muestra interpolación entre puntos de datos"]
+image:Interpolation_None.png["Línea recta simple en ángulo que no muestra interpolación entre puntos de datos"]
 
-* *Strote*: Se genera un punto a partir del valor del punto anterior. En línea recta, esto se mostraría como una disposición típica de "escalera".
-
-
-image:Interpolation_Stair.png["Línea recta simple que muestra la interpolación de estair"]
-
-* *Lineal*: Se genera un punto como el valor entre la conexión de los dos puntos. Genera una línea que parece la línea que conecta los dos puntos, pero con puntos de datos adicionales (interpolados).
+* *Escalera*: Se genera un punto a partir del valor del punto anterior.  En línea recta, esto se mostraría como un diseño típico de "escalera".
 
 
-image:Interpolation_Linear.png["Línea recta simple que muestra la interpolación lineal con puntos de datos adicionales entre cada punto original"]
+image:Interpolation_Stair.png["Línea recta simple que muestra la interpolación de escaleras"]
+
+* *Lineal*: se genera un punto como el valor intermedio que conecta los dos puntos.  Genera una línea que se parece a la línea que conecta los dos puntos, pero con puntos de datos adicionales (interpolados).
+
+
+image:Interpolation_Linear.png["Línea recta simple que muestra una interpolación lineal con puntos de datos adicionales entre cada punto original"]
 
 
 
 === Límites de anomalía en widgets de línea
 
-Al incluir un widget de gráfico Línea o Spline en un panel de control o página de destino, puede elegir ver el gráfico en el contexto de los *límites esperados* para los datos. Puedes pensar en esto como buscar anomalías en los patrones de tus datos.
+Al incluir un widget de gráfico de líneas o splines en un panel o página de destino, puede elegir ver el gráfico en el contexto de los *límites esperados* para los datos.  Puedes pensar en esto como buscar anomalías en los patrones de tus datos.
 
-DII utiliza datos estacionales (por hora o diariamente) para establecer límites superiores e inferiores en los que _espera_ que los datos caigan en un momento dado. Si los datos se disparan por encima o por debajo de los límites esperados, el gráfico lo resaltará como una anomalía.
+DII utiliza datos estacionales (por hora o por día) para establecer límites superiores e inferiores sobre dónde _espera_ que se encuentren los datos en un momento determinado.  Si los datos superan o caen por debajo de los límites esperados, el gráfico lo resaltará como una anomalía.
 
-image:expected_bounds_example_showing_spike.png["ejemplo de límites de anomalía: muestra un pico en el que los datos reales se disparan por encima del límite esperado, width=600"]
+image:expected_bounds_example_showing_spike.png["Ejemplo de límites de anomalía: muestra un pico donde los datos reales superan el límite esperado, ancho=600"]
 
-Para ver los límites de anomalías, edite el widget y elija _Mostrar límites de anomalías_. Puede elegir entre dos algoritmos de detección:
+Para ver los límites de anomalía, edite el widget y elija _Mostrar límites de anomalía_.  Puede elegir entre dos algoritmos de detección:
 
-* *Detector adaptativo* se adapta a los cambios rápidamente, lo que lo hace útil para investigaciones detalladas.
-* *Smooth Detector* minimiza el ruido y los falsos positivos, filtrando las fluctuaciones a corto plazo mientras detecta cambios significativos.
+* *Detector adaptativo* se adapta rápidamente a los cambios, lo que lo hace útil para investigaciones detalladas.
+* *Smooth Detector* minimiza el ruido y los falsos positivos, filtrando fluctuaciones a corto plazo y al mismo tiempo detectando cambios significativos.
 
 
-Además, puede elegir mostrar la estacionalidad _Hourly_ o _Daily_, así como establecer la sensibilidad de la detección. La sensibilidad _High_ detecta más cruce de límites, la sensibilidad _Low_ detecta menos.
+Además, puede elegir mostrar la estacionalidad _Por hora_ o _Por día_, así como establecer la sensibilidad de detección.  La sensibilidad _alta_ detecta más cruces de límites, la sensibilidad _baja_ detecta menos.
 
-image:expected_bounds_settings.png["Ajustes para límites de anomalías, incluido el algoritmo de detección, la estacionalidad y la sensibilidad"]
+image:expected_bounds_settings.png["Configuración de los límites de anomalía, incluido el algoritmo de detección, la estacionalidad y la sensibilidad."]
 
-Tenga en cuenta que sólo puede ver los límites esperados cuando el gráfico esté configurado para mostrar una sola línea. Si la configuración o los filtros de Grupo por muestran varias líneas, o si ha establecido varias consultas para el widget, la opción para mostrar los límites esperados se desactivará.
+Tenga en cuenta que solo podrá ver los límites esperados cuando el gráfico esté configurado para mostrar una sola línea.  Si la configuración o los filtros de Agrupar por muestran varias líneas, o si ha configurado varias consultas para el widget, la opción para mostrar los límites esperados se deshabilitará.

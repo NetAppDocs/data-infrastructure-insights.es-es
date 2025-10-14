@@ -2,48 +2,48 @@
 sidebar: sidebar 
 permalink: task_dc_rubrik_cdm.html 
 keywords: data collector, Rubrik, 
-summary: Configurar el recopilador de datos de Rubrik CDM. 
+summary: Configuración del recopilador de datos CDM de Rubrik. 
 ---
-= Rubrik CDM Data Collector
+= Recopilador de datos CDM de Rubrik
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights usa el recopilador de datos de Rubrik para adquirir datos de inventario y rendimiento de dispositivos de almacenamiento Rubrik.
+Data Infrastructure Insights utiliza el recopilador de datos de Rubrik para adquirir datos de inventario y rendimiento de los dispositivos de almacenamiento de Rubrik.
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Rubrik. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Rubrik.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Clúster | Pool de almacenamiento 
+| Grupo | Almacenamiento, Pool de Almacenamiento 
 
 
-| Nodo | Nodo de almacenamiento 
+| Node | Nodo de almacenamiento 
 
 
 | Disco | Disco 
 |===
-Nota: Sólo se trata de asignaciones terminológicas comunes y es posible que no representen todos los casos de este origen de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de esta fuente de datos.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos, es necesario lo siguiente:
+Para configurar este recopilador de datos se requiere lo siguiente:
 
-* La unidad de adquisición de información de la infraestructura de datos iniciará conexiones al puerto TCP 443 al clúster Rubrik. Un recopilador por clúster.
+* La Unidad de Adquisición de Data Infrastructure Insights iniciará conexiones al puerto TCP 443 al clúster Rubrik.  Un coleccionista por grupo.
 * Dirección IP del clúster de Rubrik.
-* El nombre de usuario y la contraseña para el clúster de.
-* Nombre de host o dirección IP del clúster de Rubrik.
-* Para la autenticación básica, un nombre de usuario y una contraseña del clúster. Si prefiere utilizar la autenticación basada en cuentas de servicio, necesita una cuenta de servicio, un secreto y un identificador de organización
+* Nombre de usuario y contraseña del cluster.
+* Dirección IP o nombre de host del clúster de Rubrik.
+* Para la autenticación básica, un nombre de usuario y una contraseña para el clúster.  Si prefiere utilizar la autenticación basada en cuenta de servicio, necesita una cuenta de servicio, un secreto y un ID de organización.
 * Requisito de puerto: HTTPS 443
 
 
@@ -56,13 +56,13 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Campo | Descripción 
 
 
-| IP | Dirección IP del clúster Rubrik 
+| Propiedad intelectual | Dirección IP del clúster Rubrik 
 
 
-| Nombre de usuario / Cuenta de servicio | El nombre de usuario del clúster 
+| Nombre de usuario / Cuenta de servicio | Nombre de usuario para el clúster 
 
 
-| Contraseña / Secreto | Contraseña del clúster 
+| Contraseña / Secreto | Contraseña para el cluster 
 
 
 | ID de la organización para la cuenta de servicio | Esta debe ser la cadena completa como "Organization:::nnnnnn-nnnn....." 
@@ -76,13 +76,13 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 300 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 300 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -90,12 +90,12 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| He recibido un mensaje que indica que se ha creado más de un almacenamiento. | Compruebe que el clúster esté configurado correctamente y que el recopilador apunte a un único clúster. 
+| Recibí un mensaje que dice que se creó más de un almacenamiento. | Verifique que el clúster esté configurado correctamente y que el recopilador apunte a un solo clúster. 
 
 
 | La encuesta falla con 400 [Solicitud incorrecta]....Id. administrado no válido.... | Ha completado el campo ID de organización con un valor, pero el clúster de Rubrik NO cree que sea un ID de organización válido, a pesar del mensaje de error de Rubrik que se refiere a él como "ManagedId". 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

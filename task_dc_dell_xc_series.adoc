@@ -2,15 +2,15 @@
 sidebar: sidebar 
 permalink: task_dc_dell_xc_series.html 
 keywords: data collector, Dell, EMC, xc 
-summary: Configuración del recopilador de datos Dell EMC XC Series. 
+summary: Configuración del recopilador de datos de la serie XC de Dell EMC. 
 ---
-= Recopilador de datos de la serie EMC XC de Dell
+= Recopilador de datos de la serie XC de Dell EMC
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza este recopilador de datos para descubrir información de inventario y rendimiento de las matrices de almacenamiento Dell EMC XC Series.
+Data Infrastructure Insights utiliza este recopilador de datos para descubrir información de inventario y rendimiento de las matrices de almacenamiento de la serie Dell EMC XC.
 
 
 
@@ -21,13 +21,13 @@ Data Infrastructure Insights utiliza este recopilador de datos para descubrir in
 | Campo | Descripción 
 
 
-| Dirección IP externa del prisma | Dirección IP del servidor XC 
+| Dirección IP externa de Prism | Dirección IP del servidor XC 
 
 
-| Nombre de usuario | Nombre de usuario del servidor XC 
+| Nombre de usuario | Nombre de usuario para el servidor XC 
 
 
-| Contraseña | Contraseña utilizada para el servidor XC 
+| Password | Contraseña utilizada para el servidor XC 
 |===
 
 
@@ -41,13 +41,13 @@ Data Infrastructure Insights utiliza este recopilador de datos para descubrir in
 | Puerto TCP | Puerto utilizado para la comunicación TCP con el servidor XC 
 
 
-| Intervalo de sondeo de inventario (mín.) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (mín.) | Intervalo entre sondeos de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de encuesta de rendimiento (min) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

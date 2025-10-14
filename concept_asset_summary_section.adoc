@@ -1,29 +1,29 @@
 ---
 sidebar: sidebar 
 permalink: concept_asset_summary_section.html 
-summary: Descripción general de la sección Resumen de la página de activos de Data Infrastructure Insights. 
+summary: Descripción general de la sección Resumen de la página de activos en Data Infrastructure Insights. 
 keywords: asset, summary, landing page, topology, auto, refresh 
 ---
-= Sección Resumen de páginas de activos
+= Sección Resumen de la página de activos
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-La sección Resumen de una página de activos muestra información general sobre un activo, incluido si hay alguna métrica o política de rendimiento que le preocupen. Las áreas con problemas potenciales se indican mediante un círculo rojo.
+La sección Resumen de una página de activo muestra información general sobre un activo, incluso si alguna métrica o política de rendimiento es motivo de preocupación.  Las áreas potencialmente problemáticas se indican con un círculo rojo.
 
-La información de la sección de resumen, así como en cualquier tabla o widgets personalizados de la página de activos, se actualiza automáticamente en función del intervalo de tiempo seleccionado. Puede ver la tasa de actualización actual en la esquina superior derecha de la sección Resumen, las tablas y cualquier widget personalizado.
+La información en la sección de resumen, así como en cualquier tabla o widget personalizado en la página de activos, se actualiza automáticamente según el rango de tiempo seleccionado.  Puede ver la frecuencia de actualización actual en la esquina superior derecha de la sección Resumen, las tablas y cualquier widget personalizado.
 
-image:Summary_Section_Example.png["Ejemplo de una sección de resumen de página de destino"]
+image:Summary_Section_Example.png["Ejemplo de una sección de resumen de una página de destino"]
 
-Nota: La información que se muestra en la sección Resumen varía en función del tipo de activo que esté viendo.
+Nota: La información que se muestra en la sección Resumen varía según el tipo de activo que esté viendo.
 
-Puede hacer clic en cualquiera de los vínculos de activos para ver sus páginas de activos. Por ejemplo, si está viendo un nodo de almacenamiento, puede hacer clic en un enlace para ver la página de activos del almacenamiento con el que está asociado.
+Puede hacer clic en cualquiera de los enlaces de activos para ver sus páginas de activos.  Por ejemplo, si está viendo un nodo de almacenamiento, puede hacer clic en un enlace para ver la página de activos del almacenamiento con el que está asociado.
 
-Puede ver las métricas asociadas al activo. Un círculo rojo junto a una métrica indica que podría necesitar diagnosticar y resolver problemas potenciales.
+Puede ver las métricas asociadas con el activo.  Un círculo rojo junto a una métrica indica que es posible que deba diagnosticar y resolver problemas potenciales.
 
 
-NOTE: Puede observar que la capacidad del volumen puede mostrar más del 100 % en algunos activos de almacenamiento. Esto se debe a que los metadatos relacionados con la capacidad del volumen que forma parte de los datos de capacidad consumida que notifica el activo.
+NOTE: Es posible que notes que la capacidad de volumen puede ser superior al 100 % en algunos activos de almacenamiento.  Esto se debe a que los metadatos relacionados con la capacidad del volumen son parte de los datos de capacidad consumida informados por el activo.
 
 Si corresponde, puede hacer clic en un enlace de alerta para ver la alerta y el monitor asociados con el activo.
 
@@ -31,20 +31,20 @@ Si corresponde, puede hacer clic en un enlace de alerta para ver la alerta y el 
 
 == Topología
 
-En determinadas páginas de activos, la sección de resumen contiene un vínculo para ver la topología del activo y sus conexiones.
+En ciertas páginas de activos, la sección de resumen contiene un enlace para ver la topología del activo y sus conexiones.
 
 La topología está disponible para los siguientes tipos de activos:
 
-* Cliente más
+* Aplicación
 * Disco
-* Estructura
+* Tela
 * Host
 * Volumen interno
 * Puerto
-* Conmutador
+* Cambiar
 * Máquina virtual
-* VMDK
+* Kit de herramientas de gestión de vehículos
 * Volumen
 
 
-image:TopologyExample.png["Ejemplo de una sección Topología de Página de Destino"]
+image:TopologyExample.png["Ejemplo de una sección de topología de página de destino"]

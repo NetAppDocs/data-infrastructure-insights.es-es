@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reporting_querying_database.html 
-summary: Utilice las API de Data Infrastructure Insights para consultar directamente la base de datos de informes. 
+summary: Utilice las API de Data Infrastructure Insights para consultar la base de datos de informes directamente. 
 keywords: reporting, cognos, data warehouse, dwh, API 
 ---
 = Acceda a la base de datos de informes a través de API
@@ -10,63 +10,63 @@ keywords: reporting, cognos, data warehouse, dwh, API
 
 
 [role="lead"]
-La potente API de Data Infrastructure Insights permite a los usuarios consultar directamente la base de datos de informes de Data Infrastructure Insights, sin pasar por el entorno de informes de Cognos.
+La potente API de Data Infrastructure Insights permite a los usuarios consultar la base de datos de informes de Data Infrastructure Insights directamente, sin pasar por el entorno de informes de Cognos.
 
 
-NOTE: Esta documentación hace referencia a la función de generación de informes de Data Infrastructure Insights, que está disponible en Data Infrastructure Insights Premium Edition.
-
-
-
-== OData
-
-La API de informes de información de infraestructura de datos sigue el link:https://www.odata.org/["OData v4"]estándar (Open Data Protocol) para realizar consultas en la base de datos de informes. Para obtener más información o para obtener más información, consulte link:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"]OData.
-
-Todas las solicitudes comenzarán con la url _URL de Información de Infraestructura de \https://<Data>/rest/v1/dwh-management/odata_
+NOTE: Esta documentación hace referencia a la función de informes de Data Infrastructure Insights , que está disponible en Data Infrastructure Insights Premium Edition.
 
 
 
-== Generar una APIKey
+== Odata
 
-Leer más sobre link:API_Overview.html["API de información de infraestructuras de datos"].
+La API de informes de Data Infrastructure Insights sigue laslink:https://www.odata.org/["OData versión 4"] (Open Data Protocol) estándar para su consulta a la base de datos de Reportes.  Para obtener más información o aprender más, consultelink:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] en OData.
 
-Para generar una clave de API, haga lo siguiente:
+Todas las solicitudes comenzarán con la URL _\https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata_
 
-* Inicie sesión en su entorno Data Infrastructure Insights y seleccione *Admin > API Access*.
-* Haga clic en “+ API Access Token”.
+
+
+== Generar una clave API
+
+Leer más sobrelink:API_Overview.html["API de Data Infrastructure Insights"] .
+
+Para generar una clave API, haga lo siguiente:
+
+* Inicie sesión en su entorno de Data Infrastructure Insights y seleccione *Admin > Acceso API*.
+* Haga clic en “+ Token de acceso API”.
 * Introduzca un nombre y una descripción.
-* Para el tipo, elija _Data Warehouse_.
-* Establezca permisos como lectura/escritura.
-* Defina una fecha de caducidad de deseos.
-* Haga clic en “Guardar” y, a continuación, *copie la clave y guárdela* en un lugar seguro. No podrá acceder más tarde a la clave completa.
+* Para el tipo, seleccione _Data Warehouse_.
+* Establecer permisos como lectura/escritura.
+* Establecer una fecha de vencimiento para los deseos.
+* Haga clic en “Guardar”, luego *copie la clave y guárdela* en un lugar seguro.  No podrás acceder a la clave completa más tarde.
 
 
-APIkeys son buenos para<<synchronous-or-asynchronous,_Sync_ o _Async_>>.
+Las claves API son útiles para<<synchronous-or-asynchronous,_Sincronización_ o _Asincrónica_>> .
 
 
 
 == Consulta directa de tablas
 
-Con la clave de API en vigor, ahora es posible realizar consultas directas de la base de datos de informes. Las URL largas pueden simplificarse a \https://.../odata/ con fines de visualización en lugar de la URL completa de Información de Infraestructura de \https://<Data>/rest/v1/dwh-management/odata/
+Con la clave API instalada, ahora es posible realizar consultas directas a la base de datos de informes.  Las URL largas se pueden simplificar a \https://.../odata/ para fines de visualización en lugar del formato completo \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/
 
 Pruebe consultas sencillas como
 
-* URL de información de la infraestructura de \https://<Data>/rest/v1/dwh-management/odata/dwh_custom
-* URL de información de la infraestructura de \https://<Data>/rest/v1/dwh-management/odata/dwh_INVENTORY
-* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/storage
-* \https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_inventory/disk
-* \https://.../odata/dwh_custom/custom_queries
+* \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/dwh_custom
+* \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/dwh_inventory
+* \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/dwh_inventory/storage
+* \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/dwh_inventory/disk
+* \https://.../odata/dwh_custom/consultas_personalizadas
 
 
 
 
-== Ejemplos de API de REST
+== Ejemplos de API REST
 
-La URL para todas las llamadas es _URL de información de infraestructura de \https://<Data>/REST/v1/dwh-management/odata_.
+La URL para todas las llamadas es _\https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata_.
 
-* GET /{schema}/**: Recupera datos de la base de datos de informes.
+* GET /{schema}/** - Recupera datos de la base de datos de informes.
 
 
-Formato: _\https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/<schema_name>/<query>_
+Formato: _\https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/<nombre_del_esquema>/<consulta>_
 
 Ejemplo:
 
@@ -103,16 +103,16 @@ Resultado:
 ....
 
 
-== Sugerencias útiles
+== Consejos útiles
 
-Tenga en cuenta lo siguiente al trabajar con consultas de la API de Reporting.
+Tenga en cuenta lo siguiente al trabajar con consultas de API de informes.
 
-* La carga útil de consulta debe ser una cadena JSON válida
+* La carga útil de la consulta debe ser una cadena JSON válida
 * La carga útil de la consulta debe estar contenida en una sola línea
-* Se deben escapar las comillas dobles, es decir, \"
-* Las fichas son compatibles como \t
-* Evite comentarios
-* Se admiten los nombres de tablas en minúsculas
+* Las comillas dobles deben escaparse, es decir, \"
+* Las pestañas se admiten como \t
+* Evitar comentarios
+* Se admiten nombres de tabla en minúsculas
 
 
 Además:
@@ -120,27 +120,27 @@ Además:
 * Se requieren 2 encabezados:
 +
 ** Nombre “X-CloudInsights-ApiKey”
-** Valor de atributo "<apikey>"
+** Valor del atributo “<apikey>”
 
 
 
 
-Tu clave de API será específica de tu entorno de Data Infrastructure Insights.
+Su clave API será específica para su entorno de Data Infrastructure Insights .
 
 
 
-== ¿Síncrono o asíncrono?
+== ¿Sincrónico o asincrónico?
 
-Por defecto, un comando API funcionará en modo _synchronous_, lo que significa que usted envía la solicitud y la respuesta se devuelve inmediatamente. Sin embargo, a veces una consulta puede tardar mucho tiempo en ejecutarse, lo que podría provocar que se agote el tiempo de espera de la solicitud. Para evitar esto, puede ejecutar una solicitud _Asynchronous_. En modo asíncrono, la solicitud devolverá una URL a través de la cual se puede supervisar la ejecución. La URL devolverá el resultado cuando esté lista.
+De forma predeterminada, un comando API funcionará en modo _sincrónico_, lo que significa que usted envía la solicitud y la respuesta se devuelve inmediatamente.  Sin embargo, a veces una consulta puede tardar mucho tiempo en ejecutarse, lo que podría provocar que se agote el tiempo de espera de la solicitud.  Para evitar esto, puedes ejecutar una solicitud de forma _asincrónica_.  En el modo asincrónico, la solicitud devolverá una URL a través de la cual se podrá monitorear la ejecución.  La URL devolverá el resultado cuando esté listo.
 
-Para ejecutar una consulta en modo asíncrono, agregue la cabecera `*Prefer: respond-async*` a la solicitud. Una vez que se ejecute correctamente, la respuesta contendrá los siguientes encabezados:
+Para ejecutar una consulta en modo asíncrono, agregue el encabezado `*Prefer: respond-async*` a la solicitud.  Tras una ejecución exitosa, la respuesta contendrá los siguientes encabezados:
 
 ....
 Status Code: 202 (which means ACCEPTED)
 preference-applied: respond-async
 location: https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncStatus/<token>
 ....
-Si consulta la URL de ubicación, se devolverán los mismos encabezados si la respuesta aún no está lista o se devolverán con el estado 200 si la respuesta está lista. El contenido de la respuesta será de tipo texto y contiene el estado http de la consulta original y algunos metadatos, seguido de los resultados de la consulta original.
+Al consultar la URL de ubicación, se devolverán los mismos encabezados si la respuesta aún no está lista, o se devolverá con el estado 200 si la respuesta está lista.  El contenido de la respuesta será de tipo texto y contendrá el estado http de la consulta original y algunos metadatos, seguido de los resultados de la consulta original.
 
 ....
 HTTP/1.1 200 OK
@@ -150,7 +150,7 @@ HTTP/1.1 200 OK
 
  { <JSON_RESPONSE> }
 ....
-Para ver una lista de todas las consultas asíncronas y cuáles de ellas están listas, utilice el siguiente comando:
+Para ver una lista de todas las consultas asincrónicas y cuáles están listas, use el siguiente comando:
 
  GET https://<Data Infrastructure Insights URL>/rest/v1/dwh-management/odata/dwh_custom/asyncList
 La respuesta tiene el siguiente formato:

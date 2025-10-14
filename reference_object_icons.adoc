@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_object_icons.html 
-summary: Referencia de iconos de objeto de Data Infrastructure Insights. 
+summary: Referencia de iconos de objetos de Data Infrastructure Insights . 
 keywords: icons, assets, objects, reference, map 
 ---
-= Referencia de iconos de objeto
+= Referencia de iconos de objetos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ keywords: icons, assets, objects, reference, map
 
 
 [role="lead"]
-Iconos de objetos utilizados en Data Infrastructure Insights.
+Íconos de objetos utilizados en Data Infrastructure Insights.
 
 
 
@@ -26,10 +26,10 @@ image:Icon_Glossary.png["Referencia de iconos de infraestructura"]
 
 == Iconos de Kubernetes:
 
-image:K8sIconsWithLabels.png["Referencia de iconos de Kubernetes, width=180"]
+image:K8sIconsWithLabels.png["Referencia de iconos de Kubernetes, ancho=180"]
 
 
 
-== Iconos de mapas y supervisión del rendimiento de la red de Kubernetes:
+== Iconos de mapas y monitoreo del rendimiento de la red de Kubernetes:
 
-image:ServiceMap_Icons.png["Supervisión y mapa del rendimiento de la red de Kubernetes, width=640"]
+image:ServiceMap_Icons.png["Monitoreo y mapa del rendimiento de la red de Kubernetes, ancho=640"]

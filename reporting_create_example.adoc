@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reporting_create_example.html 
-summary: Utilice este procedimiento para crear un informe utilizando los informes predefinidos de Data Infrastructure Insights. 
+summary: Utilice este procedimiento para crear un informe utilizando los informes predefinidos de Data Infrastructure Insights . 
 keywords: reporting, cognos, data warehouse, dwh, create, report 
 ---
 = Creación de un informe (ejemplo)
@@ -10,43 +10,43 @@ keywords: reporting, cognos, data warehouse, dwh, create, report
 
 
 [role="lead"]
-Utilice los pasos de este ejemplo para generar un informe sencillo sobre la capacidad física del almacenamiento y los pools de almacenamiento en varios centros de datos.
+Utilice los pasos de este ejemplo para generar un informe simple sobre la capacidad física del almacenamiento y los grupos de almacenamiento en varios centros de datos.
 
 .Pasos
 . Vaya a *Menú > Contenido > Contenido del equipo > Informes*
 . En la parte superior derecha de la pantalla, seleccione *[Nuevo +]*
-. Selecciona *Informe*
+. Seleccionar *Reportar*
 +
-image:Reporting_New_Report.png["Creación de un nuevo informe"]
+image:Reporting_New_Report.png["Crear un nuevo informe"]
 
-. En la pestaña *Templates*, selecciona _Blank_
+. En la pestaña *Plantillas*, seleccione _En blanco_
 +
-Se muestran las fichas origen y datos
+Se muestran las pestañas Fuente y Datos
 
-. Abrir *Selecciona una fuente +*
-. En *Contenido del equipo*, abre *Paquetes*
+. Abrir *Seleccionar una fuente +*
+. En *Contenido del equipo*, abra *Paquetes*
 +
 Se muestra una lista de paquetes disponibles.
 
-. Elija * Capacidad de almacenamiento y almacenamiento * image:Reporting_Select_Source_For_Report.png["Selección de un origen para el informe"]
-. Selecciona *Abrir*
+. Elija *Capacidad de almacenamiento y pool de almacenamiento*image:Reporting_Select_Source_For_Report.png["Seleccionar una fuente para el informe"]
+. Seleccione *Abrir*
 +
-Se muestran los estilos disponibles para el informe.
+Se muestran los estilos disponibles para su informe.
 
-. Selecciona *Lista*
+. Seleccionar *Lista*
 +
-Agregue los nombres adecuados para Lista y Consulta
+Agregue nombres apropiados para Lista y Consulta
 
-. Selecciona *OK*
-. Expanda _capacidad física_
-. Expanda al nivel más bajo de _Data Center_
-. Arrastre _Data Center_ al paladar del informe.
-. Expanda _Capacity (MB)_
-. Arrastre _Capacity (MB)_ al paladar de informes.
-. Arrastre _capacidad usada (MB)_ al paladar de informes.
+. Seleccione *OK*
+. Ampliar _Capacidad Física_
+. Expandirse al nivel más bajo del _Centro de Datos_
+. Arrastre _Centro de datos_ a la paleta Informes.
+. Expandir _Capacidad (MB)_
+. Arrastre _Capacidad (MB)_ a la paleta de Informes.
+. Arrastre _Capacidad utilizada (MB)_ a la paleta de Informes.
 . Ejecute el informe seleccionando un tipo de salida en el menú *Ejecutar*.
 +
-image:Reporting_Running_A_Report.png["Selección de una salida de informe"]
+image:Reporting_Running_A_Report.png["Seleccionar una salida de informe"]
 
 
 

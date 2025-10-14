@@ -2,59 +2,59 @@
 sidebar: sidebar 
 permalink: task_dc_aws_s3.html 
 keywords: data collector, S3, Storage 
-summary: Configurar AWS S3 como recopilador de datos de almacenamiento. 
+summary: Configuración de AWS S3 como recopilador de datos de almacenamiento. 
 ---
-= Configurar AWS S3 como recopilador de datos de almacenamiento
+= Configuración de AWS S3 como recopilador de datos de almacenamiento
 :hardbreaks:
 :allow-uri-read: 
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza AWS S3 como recopilador de datos de almacenamiento para adquirir datos de inventario y rendimiento de instancias de AWS S3.
+Data Infrastructure Insights utiliza AWS S3 como recopilador de datos de almacenamiento para adquirir datos de inventario y rendimiento de las instancias de AWS S3.
 
 
 
 == Requisitos
 
-Para recoger datos de AWS S3 como dispositivos de almacenamiento, debe disponer de la siguiente información:
+Para recopilar datos de AWS S3 como dispositivos de almacenamiento, debe tener la siguiente información:
 
-* Debe tener una de las siguientes opciones:
+* Debes tener uno de los siguientes:
 +
-** El rol *IAM* de su cuenta en la nube de AWS, si se utiliza la autenticación de la función IAM. El rol IAM solo se aplica si la unidad de adquisición está instalada en una instancia de AWS.
-** El ID de *clave de acceso IAM* y la clave de acceso secreta de su cuenta en la nube de AWS, si se utiliza la autenticación de la clave de acceso IAM.
+** El *rol de IAM* para su cuenta en la nube de AWS, si utiliza la autenticación de rol de IAM.  La función IAM solo se aplica si su unidad de adquisición está instalada en una instancia de AWS.
+** El ID de *clave de acceso IAM* y la clave de acceso secreta para su cuenta en la nube de AWS, si utiliza la autenticación de clave de acceso IAM.
 
 
-* Debe tener el privilegio "list organization"
+* Debes tener el privilegio de "organización de lista"
 * Puerto 443 HTTPS
-* Las instancias de AWS S3 se pueden notificar como una máquina virtual o (menos naturalmente) como un host. Los volúmenes de EBS se pueden notificar como un disco virtual usado por el equipo virtual, así como un almacén de datos que proporciona la capacidad para el disco virtual.
+* Las instancias de AWS S3 se pueden informar como una máquina virtual o (de forma menos natural) un host.  Los volúmenes EBS se pueden informar como un disco virtual utilizado por la máquina virtual, así como también como un almacén de datos que proporciona la capacidad para el disco virtual.
 
 
-Las claves de acceso consisten en un ID de clave de acceso (por ejemplo, AKIAIOSFONDNN7EXAMPLE) y una clave de acceso secreta (por ejemplo, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY). Se utilizan claves de acceso para firmar solicitudes mediante programación que se realizan a AWS si se utilizan las operaciones de la API de SDK, REST o Query de AWS. Estas claves se proporcionan con su contrato de Amazon.
+Las claves de acceso constan de un ID de clave de acceso (por ejemplo, AKIAIOSFODNN7EXAMPLE) y una clave de acceso secreta (por ejemplo, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY).  Utilice claves de acceso para firmar solicitudes programáticas que realice a AWS si utiliza los SDK de AWS, REST o operaciones de API de consulta.  Estas claves se proporcionan con su contrato de Amazon.
 
 
 
 == Configuración
 
-Introduzca los datos en los campos del recopilador de datos de acuerdo con la tabla siguiente:
+Introduzca datos en los campos del recopilador de datos de acuerdo con la siguiente tabla:
 
 [cols="2*"]
 |===
 | Campo | Descripción 
 
 
-| Región de AWS | Seleccione la región de AWS 
+| Región de AWS | Elija la región de AWS 
 
 
-| Rol de IAM | Para su uso solo cuando se adquiere en una unidad de almacenamiento AU en AWS. Consulte a continuación para obtener más información sobre <<iam-role,Rol de IAM>>. 
+| Rol de IAM | Solo para uso cuando se adquiere en una AU en AWS.  Vea a continuación para obtener más información sobre<<iam-role,Rol de IAM>> . 
 
 
-| ID de clave de acceso IAM de AWS | Introduzca el ID de clave de acceso IAM de AWS. Se requiere si no utiliza el rol IAM. 
+| ID de clave de acceso de AWS IAM | Ingrese el ID de clave de acceso de AWS IAM.  Obligatorio si no utiliza el rol IAM. 
 
 
-| Clave de acceso secreta de AWS IAM | Introduzca la clave de acceso secreta del IAM de AWS. Se requiere si no utiliza el rol IAM. 
+| Clave de acceso secreta de AWS IAM | Ingrese la clave de acceso secreta de AWS IAM.  Obligatorio si no utiliza el rol IAM. 
 
 
-| Entiendo que AWS me facturas por solicitudes de API | Marque esto para verificar que AWS le factura las solicitudes de API realizadas por el sondeo de Data Infrastructure Insights. 
+| Entiendo que AWS me factura las solicitudes de API. | Marque esto para verificar su comprensión de que AWS le factura las solicitudes de API realizadas mediante el sondeo de Data Infrastructure Insights . 
 |===
 
 
@@ -65,73 +65,73 @@ Introduzca los datos en los campos del recopilador de datos de acuerdo con la ta
 | Campo | Descripción 
 
 
-| Función de cuenta cruzada | Función para acceder a los recursos de diferentes cuentas de AWS. 
+| Rol de cuenta cruzada | Rol para acceder a recursos en diferentes cuentas de AWS. 
 
 
-| Intervalo de sondeo de inventario (mín.) | El valor predeterminado es 60 
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 60 
 
 
-| Elija "excluir" o "incluir" para aplicar al filtro de VM por etiquetas | Especifique si desea incluir o excluir las VM por etiquetas al recopilar datos. Si se selecciona ‘incluir’, el campo clave de etiqueta no puede estar vacío. 
+| Seleccione “Excluir” o “Incluir” para aplicar el filtro de máquinas virtuales por etiquetas | Especifique si desea incluir o excluir máquinas virtuales por etiquetas al recopilar datos.  Si se selecciona “Incluir”, el campo Clave de etiqueta no puede estar vacío. 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 1800 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 1800 
 |===
 
 
 == Clave de acceso de IAM
 
-Las claves de acceso son credenciales a largo plazo para un usuario IAM o el usuario raíz de la cuenta de AWS. Las claves de acceso se utilizan para firmar solicitudes mediante programación a la CLI de AWS o la API de AWS (directamente o mediante el SDK de AWS).
+Las claves de acceso son credenciales a largo plazo para un usuario de IAM o el usuario raíz de la cuenta de AWS.  Las claves de acceso se utilizan para firmar solicitudes programáticas a la AWS CLI o la API de AWS (directamente o mediante el AWS SDK).
 
-Las claves de acceso constan de dos partes: Un ID de clave de acceso y una clave de acceso secreta. Cuando se utiliza la autenticación _IAM Access Key_ (a diferencia de la autenticación _IAM role_), debe utilizar el identificador de la clave de acceso y la clave de acceso secreta conjuntamente para la autenticación de las solicitudes. Para obtener más información, consulte la documentación de Amazon en link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html["Teclas de acceso"].
+Las claves de acceso constan de dos partes: un ID de clave de acceso y una clave de acceso secreta.  Cuando utiliza la autenticación _Clave de acceso IAM_ (a diferencia de la autenticación _Rol IAM_), debe usar tanto el ID de la clave de acceso como la clave de acceso secreta juntas para la autenticación de las solicitudes.  Para obtener más información, consulte la documentación de Amazon enlink:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html["Teclas de acceso"] .
 
 
 
 == Rol de IAM
 
-Cuando se utiliza la autenticación _IAM Role_ (a diferencia de la autenticación de la clave de acceso IAM), debe asegurarse de que el rol que cree o especifique tenga los permisos necesarios para acceder a los recursos.
+Al utilizar la autenticación _IAM Role_ (a diferencia de la autenticación de clave de acceso IAM), debe asegurarse de que el rol que crea o especifica tenga los permisos adecuados necesarios para acceder a sus recursos.
 
-Por ejemplo, si crea un rol de IAM denominado _InstanceS3ReadOnly_, debe configurar la política para conceder permiso de acceso a listas de solo lectura de S3 a todos los recursos de S3 para este rol de IAM. Además, debe otorgar acceso STS (Security Token Service) para que esta función pueda asumir funciones en cuentas cruzadas.
+Por ejemplo, si crea un rol de IAM llamado _InstanceS3ReadOnly_, debe configurar la política para otorgar permiso de acceso a la lista de solo lectura de S3 a todos los recursos de S3 para este rol de IAM.  Además, debe otorgar acceso a STS (Servicio de token de seguridad) para que este rol pueda asumir roles en varias cuentas.
 
-Después de crear un rol IAM, puede adjuntarlo cuando crea una instancia nueva de S3 o cualquier instancia existente de S3.
+Después de crear una función de IAM, puede adjuntarla cuando cree una nueva instancia de S3 o cualquier instancia de S3 existente.
 
-Después de asociar el rol IAM _InstanceS3ReadOnly_ a una instancia de S3, podrá recuperar la credencial temporal mediante los metadatos de instancia mediante el nombre del rol IAM y utilizarla para acceder a los recursos de AWS mediante cualquier aplicación que se ejecute en esta instancia de S3.
+Después de adjuntar la función IAM _InstanceS3ReadOnly_ a una instancia S3, podrá recuperar la credencial temporal a través de los metadatos de la instancia por nombre de función IAM y usarla para acceder a los recursos de AWS mediante cualquier aplicación que se ejecute en esta instancia S3.
 
-Para obtener más información, consulte la documentación de Amazon en link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html["Roles IAM"].
+Para obtener más información, consulte la documentación de Amazon enlink:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html["Roles de IAM"] .
 
-Nota: El rol IAM sólo se puede utilizar cuando la unidad de adquisición se está ejecutando en una instancia de AWS.
+Nota: La función IAM solo se puede usar cuando la unidad de adquisición se ejecuta en una instancia de AWS.
 
 
 
-== Asignar etiquetas de Amazon a anotaciones de Data Infrastructure Insights
+== Asignación de etiquetas de Amazon a anotaciones de Data Infrastructure Insights
 
-El recopilador de datos de AWS S3 como almacenamiento incluye una opción que le permite completar anotaciones de Data Infrastructure Insights con etiquetas configuradas en S3. Las anotaciones deben denominarse exactamente como etiquetas de AWS. Data Infrastructure Insights siempre rellenará anotaciones de tipo texto con el mismo nombre y hará el «mejor intento» de completar anotaciones de otro tipo (número, booleano, etc.). Si la anotación es de un tipo diferente y el recopilador de datos no la rellena, puede que sea necesario eliminar la anotación y volver a crearla como un tipo de texto.
+El recopilador de datos de AWS S3 como almacenamiento incluye una opción que le permite completar las anotaciones de Data Infrastructure Insights con etiquetas configuradas en S3.  Las anotaciones deben tener exactamente el mismo nombre que las etiquetas de AWS.  Data Infrastructure Insights siempre completará las anotaciones de tipo texto con el mismo nombre y hará el "mejor intento" por completar las anotaciones de otros tipos (numéricos, booleanos, etc.).  Si su anotación es de un tipo diferente y el recopilador de datos no logra completarla, puede ser necesario eliminar la anotación y volver a crearla como un tipo de texto.
 
-Tenga en cuenta que AWS distingue entre mayúsculas y minúsculas, mientras que Data Infrastructure Insights no distingue entre mayúsculas y minúsculas. De modo que si crea una anotación llamada «PROPIETARIO» en Data Infrastructure Insights y etiquetas llamadas «PROPIETARIO», «propietario» y «propietario» en S3, todas las S3 variaciones de «propietario» se asignarán a la anotación de «propietario» de Cloud Insight.
+Tenga en cuenta que AWS distingue entre mayúsculas y minúsculas, mientras que Data Infrastructure Insights no lo hace.  Entonces, si crea una anotación llamada "PROPIETARIO" en Data Infrastructure Insights y etiquetas llamadas "PROPIETARIO", "Propietario" y "propietario" en S3, todas las variaciones de "propietario" de S3 se asignarán a la anotación "PROPIETARIO" de Cloud Insight.
 
 
 
 == Recopilación de cuentas secundarias de AWS
 
-Data Infrastructure Insights admite la recopilación de cuentas secundarias de AWS en un único recopilador de datos de AWS. La configuración de esta colección se realiza en el entorno AWS:
+Data Infrastructure Insights admite la recopilación de cuentas secundarias para AWS dentro de un único recopilador de datos de AWS.  La configuración de esta colección se realiza en el entorno de AWS:
 
-* Debe configurar cada cuenta secundaria para que tenga un rol de AWS que permita que el ID de cuenta principal acceda a los detalles de S3 desde la cuenta secundaria.
-* Cada cuenta secundaria debe tener el nombre de función configurado como la misma cadena.
-* Introduzca esta cadena de nombre de rol en la sección Data Infrastructure Insights AWS Data Collector *Advanced Configuration*, en el campo *Cross account role*.
-* La cuenta en la que se instala el recopilador debe tener _DELEGATE ACCESS ADMINISTRATOR_ Privileges. Consulte la link:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html["Documentación de AWS"] para obtener más información.
-
-
-Práctica recomendada: Es muy recomendable asignar la directiva predefinida _AmazonS3ReadOnlyAccess_ de AWS a la cuenta principal de S3. Además, el usuario configurado en el origen de datos debe tener asignada al menos la directiva _AWSOrganizationsReadOnlyAccess_ predefinida para consultar a AWS.
-
-Consulte lo siguiente para obtener información sobre cómo configurar su entorno para permitir que Data Infrastructure Insights recopile de cuentas secundarias de AWS:
-
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html["Tutorial: Delegue el acceso en las cuentas de AWS mediante roles IAM"]
-
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html["Configuración de AWS: Proporcionando acceso a un usuario IAM en otra cuenta de AWS que posee"]
-
-link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["Creación de un rol para delegar permisos en un usuario de IAM"]
+* Debe configurar cada cuenta secundaria para que tenga un rol de AWS que permita que el ID de la cuenta principal acceda a los detalles de S3 desde la cuenta secundaria.
+* Cada cuenta secundaria debe tener el nombre del rol configurado como la misma cadena.
+* Ingrese esta cadena de nombre de rol en la sección *Configuración avanzada* de AWS Data Collector de Data Infrastructure Insights , en el campo *Rol entre cuentas*.
+* La cuenta donde está instalado el recopilador debe tener privilegios de _administrador de acceso delegado_.  Ver ellink:https://docs.aws.amazon.com/accounts/latest/reference/using-orgs-delegated-admin.html["Documentación de AWS"] Para más información.
 
 
+Práctica recomendada: se recomienda encarecidamente asignar la política _AmazonS3ReadOnlyAccess_ predefinida de AWS a la cuenta principal de S3.  Además, el usuario configurado en la fuente de datos debe tener al menos la política predefinida _AWSOrganizationsReadOnlyAccess_ asignada, para poder realizar consultas en AWS.
 
-== Resolución de problemas
+Consulte lo siguiente para obtener información sobre cómo configurar su entorno para permitir que Data Infrastructure Insights recopile información de las cuentas secundarias de AWS:
 
-Puede encontrar información adicional sobre este recopilador de datos en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html["Tutorial: Delegar acceso entre cuentas de AWS mediante roles de IAM"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_aws-accounts.html["Configuración de AWS: proporcionar acceso a un usuario de IAM en otra cuenta de AWS de su propiedad"]
+
+link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["Creación de un rol para delegar permisos a un usuario de IAM"]
+
+
+
+== Solución de problemas
+
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

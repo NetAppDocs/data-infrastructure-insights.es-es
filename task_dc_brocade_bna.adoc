@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_dc_brocade_bna.html 
 keywords: data collector, Brocade, BNA 
-summary: Configurar el recolector Brocade BNA. 
+summary: Configuración del recopilador Brocade BNA. 
 ---
 = Recopilador de datos de Brocade Network Advisor
 :hardbreaks:
@@ -10,40 +10,40 @@ summary: Configurar el recolector Brocade BNA.
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos del asesor de red de Brocade para obtener datos de inventario y rendimiento de los switches de Brocade.
+Data Infrastructure Insights utiliza el recopilador de datos Brocade Network Advisor para adquirir datos de inventario y rendimiento de los conmutadores Brocade .
 
 
 
 == Terminología
 
-Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos del asesor de red de Brocade. Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más habitual utilizada para este activo. Al ver o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Brocade Network Advisor.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===
-| Plazo del proveedor/modelo | Término de información sobre la infraestructura de datos 
+| Término de proveedor/modelo | Data Infrastructure Insights 
 
 
-| Conmutador | Conmutador 
+| Cambiar | Cambiar 
 
 
 | Puerto | Puerto 
 
 
-| Estructura virtual, estructura física | Estructura 
+| Tejido virtual, tejido físico | Tela 
 
 
-| Cambio lógico | Cambio lógico 
+| Interruptor lógico | Interruptor lógico 
 |===
-Nota: Sólo son asignaciones de terminología comunes y es posible que no representen todos los casos de este recopilador de datos.
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
 
 
 == Requisitos
 
-Para configurar este recopilador de datos, es necesario lo siguiente:
+Para configurar este recopilador de datos se requiere lo siguiente:
 
-* La Unidad de adquisición de información de la infraestructura de datos iniciará las conexiones al puerto TCP 443 en el servidor BNA. El servidor BNA debe ejecutar la versión 14.2.1 o superior.
-* Dirección IP del servidor de Brocade Network Advisor
+* La Unidad de Adquisición de Data Infrastructure Insights iniciará conexiones al puerto TCP 443 en el servidor BNA.  El servidor BNA debe ejecutar la versión 14.2.1 o superior.
+* Dirección IP del servidor Brocade Network Advisor
 * Nombre de usuario y contraseña para una cuenta de administrador
 * Requisito de puerto: HTTP/HTTPS 443
 
@@ -57,16 +57,16 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Campo | Descripción 
 
 
-| Brocade Network Advisor IP del servidor | Dirección IP del servidor de Network Advisor 
+| IP del servidor Brocade Network Advisor | Dirección IP del servidor Network Advisor 
 
 
-| Nombre de usuario | Nombre de usuario del conmutador 
+| Nombre de usuario | Nombre de usuario para el conmutador 
 
 
-| Nombre de usuario | Nombre de usuario del administrador 
+| Nombre de usuario | Nombre de usuario administrador 
 
 
-| Contraseña | Contraseña de administrador 
+| Password | Contraseña de administrador 
 |===
 
 
@@ -80,25 +80,25 @@ Para configurar este recopilador de datos, es necesario lo siguiente:
 | Tipo de conexión | HTTPS (puerto predeterminado 443) o HTTP (puerto predeterminado 80) 
 
 
-| Anular puerto de conexión | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, introduzca el puerto de conexión que desea utilizar 
+| Anular puerto de conexión | Si está en blanco, utilice el puerto predeterminado en el campo Tipo de conexión; de lo contrario, ingrese el puerto de conexión a utilizar. 
 
 
-| Contraseña | Contraseña para el conmutador 
+| Password | Contraseña para el conmutador 
 
 
 | Intervalo de sondeo de inventario (min) | El valor predeterminado es 40 
 
 
-| Puerta de enlace de acceso de informes | Active esta opción para incluir dispositivos en el modo de acceso a puerta de enlace 
+| Puerta de enlace de acceso a informes | Marque para incluir dispositivos en el modo Access Gateway 
 
 
-| Intervalo de sondeo de rendimiento (s) | El valor predeterminado es 1800 
+| Intervalo de encuesta de rendimiento (seg.) | El valor predeterminado es 1800 
 |===
 
 
-== Resolución de problemas
+== Solución de problemas
 
-Algunas cosas para intentar si tiene problemas con este recopilador de datos:
+Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
@@ -106,9 +106,9 @@ Algunas cosas para intentar si tiene problemas con este recopilador de datos:
 
 [cols="2*"]
 |===
-| Problema: | Pruebe lo siguiente: 
+| Problema: | Prueba esto: 
 
 
-| Reciba un mensaje que indica que más de 1 nodo está conectado al puerto Access Gateway o que el recopilador de datos no puede detectar el dispositivo Access Gateway. | Compruebe que el dispositivo NPV funciona correctamente y que se esperan todos los WWN conectados. No adquiera directamente el dispositivo NPV. En lugar de ello, la adquisición del switch de estructura principal recopilará los datos del dispositivo NPV. 
+| Reciba un mensaje que indica que más de un nodo está conectado al puerto de Access Gateway o que el recopilador de datos no puede descubrir el dispositivo de Access Gateway. | Verifique que el dispositivo NPV esté funcionando correctamente y que todos los WWN conectados sean los esperados.  No adquiera directamente el dispositivo VPN.  En cambio, la adquisición del conmutador de estructura central recopilará los datos del dispositivo VAN. 
 |===
-Puede encontrar información adicional en la link:concept_requesting_support.html["Soporte técnico"] página o en el link:reference_data_collector_support_matrix.html["Matriz de compatibilidad de recopilador de datos"].
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

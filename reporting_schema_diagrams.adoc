@@ -4,7 +4,7 @@ permalink: reporting_schema_diagrams.html
 keywords: Schema, DB Schema, premium, dwh, data warehouse 
 summary: Diagramas de esquema de informes 
 ---
-= Diagramas de Esquema de Informes de Información de Infraestructura de Datos
+= Diagramas de esquema de informes de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,13 +17,13 @@ summary: Diagramas de esquema de informes
 Este documento proporciona diagramas de esquema para la base de datos de informes.
 
 
-NOTE: La función Informes está disponible en Data Infrastructure Insights link:concept_subscribing_to_cloud_insights.html["Edición Premium"].
+NOTE: La función de informes está disponible en Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edición Premium"] .
 
 
 
-== Datos de inventario
+== Datamart de inventario
 
-Las siguientes imágenes describen el datamart de inventario.
+Las siguientes imágenes describen el datamart del inventario.
 
 
 
@@ -33,9 +33,9 @@ image:annotations.png["anotaciones"]
 
 
 
-=== Más grandes
+=== Aplicaciones
 
-image:apps_annot.jpg["más grandes"]
+image:apps_annot.jpg["aplicaciones"]
 
 
 
@@ -45,33 +45,33 @@ image:k8s.jpg["Kubernetes"]
 
 
 
-==== Hecho de métricas de clústeres de Kubernetes
+==== Dato sobre las métricas del clúster de Kubernetes
 
-image:k8s_cluster_metrics_fact.jpg["Hecho de métricas de clústeres de Kubernetes"]
-
-
-
-==== Métrica de espacio de nombres de Kubernetes
-
-image:k8s_namespace_metrics_fact.jpg["Métrica de espacio de nombres de Kubernetes"]
+image:k8s_cluster_metrics_fact.jpg["Dato sobre las métricas del clúster de Kubernetes"]
 
 
 
-==== Hecho de métricas de nodos de Kubernetes
+==== Dato sobre las métricas del espacio de nombres de Kubernetes
 
-image:k8s_node_metrics_fact.jpg["Hecho de métricas de nodos de Kubernetes"]
-
-
-
-==== Hecho de métricas de PVC de Kubernetes
-
-image:k8s_pvc_metrics_fact.jpg["Hecho de métricas de PVC de Kubernetes"]
+image:k8s_namespace_metrics_fact.jpg["Dato sobre las métricas del espacio de nombres de Kubernetes"]
 
 
 
-==== Hecho de las métricas de carga de trabajo de Kubernetes
+==== Dato sobre las métricas de nodo de Kubernetes
 
-image:k8s_workload_metrics_fact.jpg["Hecho de las métricas de carga de trabajo de Kubernetes"]
+image:k8s_node_metrics_fact.jpg["Dato sobre las métricas de nodo de Kubernetes"]
+
+
+
+==== Dato sobre las métricas de PVC de Kubernetes
+
+image:k8s_pvc_metrics_fact.jpg["Dato sobre las métricas de PVC de Kubernetes"]
+
+
+
+==== Dato sobre las métricas de carga de trabajo de Kubernetes
+
+image:k8s_workload_metrics_fact.jpg["Dato sobre las métricas de carga de trabajo de Kubernetes"]
 
 
 
@@ -81,27 +81,27 @@ image:nas.jpg["nas"]
 
 
 
-=== Rutas e infracciones
+=== Caminos y violaciones
 
-image:logical.jpg["rutas e infracciones"]
-
-
-
-=== Conectividad de puertos
-
-image:connectivity.jpg["conectividad de puerto"]
+image:logical.jpg["caminos y violaciones"]
 
 
 
-=== Estructura SAN
+=== Conectividad portuaria
 
-image:fabric.jpg["Estructura SAN"]
+image:connectivity.jpg["conectividad del puerto"]
 
 
 
-=== Reducida
+=== Tejido SAN
 
-image:storage.jpg["reducida"]
+image:fabric.jpg["Tejido SAN"]
+
+
+
+=== Almacenamiento
+
+image:storage.jpg["almacenamiento"]
 
 
 
@@ -111,46 +111,46 @@ image:storage_node.jpg["nodo de almacenamiento"]
 
 
 
-=== MÁQUINA VIRTUAL
+=== Máquina virtual
 
 image:vm.jpg["máquina virtual"]
 
 '''
 
 
-== Capacidad Datamart
+== Capacidad de Datamart
 
-Las siguientes imágenes describen la capacidad datamart.
-
-
-
-=== Pago por uso
-
-image:Chargeback_Fact.jpg["pago por uso"]
+Las siguientes imágenes describen la capacidad del datamart.
 
 
 
-=== Capacidad de grupos de discos
+=== Contracargo
 
-image:Disk_Group_Capacity.jpg["Capacidad de grupos de discos"]
-
-
-
-=== Utilización del sistema de ficheros
-
-image:fs_util.jpg["Utilización del sistema de ficheros"]
+image:Chargeback_Fact.jpg["devolución de cargo"]
 
 
 
-=== Capacidad del volumen interno
+=== Capacidad del grupo de discos
 
-image:Internal_Volume_Capacity_Fact.jpg["Capacidad del volumen interno"]
+image:Disk_Group_Capacity.jpg["Capacidad del grupo de discos"]
 
 
 
-=== Capacidad del VP de Kubernetes
+=== Utilización del sistema de archivos
 
-image:k8s_pvc_capacity_fact.jpg["Capacidad del VP de Kubernetes"]
+image:fs_util.jpg["Utilización del sistema de archivos"]
+
+
+
+=== Capacidad de volumen interno
+
+image:Internal_Volume_Capacity_Fact.jpg["Capacidad de volumen interno"]
+
+
+
+=== Capacidad fotovoltaica de Kubernetes
+
+image:k8s_pvc_capacity_fact.jpg["Capacidad fotovoltaica de Kubernetes"]
 
 
 
@@ -160,9 +160,9 @@ image:ports.png["Capacidad del puerto"]
 
 
 
-=== Capacidad Qtree
+=== Capacidad de Qtree
 
-image:Qtree_Capacity_Fact.jpg["Capacidad Qtree"]
+image:Qtree_Capacity_Fact.jpg["Capacidad de Qtree"]
 
 
 
@@ -184,22 +184,22 @@ image:Storage_Node_Capacity_Fact.jpg["Capacidad del nodo de almacenamiento"]
 
 
 
-=== Capacidad de los equipos virtuales
+=== Capacidad de la máquina virtual
 
-image:VM_Capacity_Fact.jpg["Capacidad de los equipos virtuales"]
+image:VM_Capacity_Fact.jpg["Capacidad de la máquina virtual"]
 
 
 
-=== Capacidad de un volumen
+=== Capacidad de volumen
 
-image:Volume_Capacity.jpg["Capacidad de un volumen"]
+image:Volume_Capacity.jpg["Capacidad de volumen"]
 
 '''
 
 
-== Datos de rendimiento
+== Datamart de rendimiento
 
-Las siguientes imágenes describen el rendimiento datamart.
+Las siguientes imágenes describen el rendimiento del datamart.
 
 
 
@@ -209,9 +209,9 @@ image:application_performance_fact.jpg["Rendimiento por hora del volumen de la a
 
 
 
-=== Rendimiento del switch de clúster
+=== Rendimiento del conmutador de clúster
 
-image:cluster_switch_performance_fact.jpg["rendimiento del switch del clúster"]
+image:cluster_switch_performance_fact.jpg["rendimiento del conmutador de clúster"]
 
 
 
@@ -227,33 +227,33 @@ image:disk_hourly_performance_fact.jpg["Rendimiento por hora del disco"]
 
 
 
-=== Rendimiento por hora del host
+=== Presentador de rendimiento por hora
 
-image:host_performance_fact.jpg["Rendimiento por hora del host"]
-
-
-
-=== Rendimiento diario de VM de host
-
-image:host_vm_daily_performance_fact.jpg["Rendimiento diario de VM de host"]
+image:host_performance_fact.jpg["Presentador de rendimiento por hora"]
 
 
 
-=== Rendimiento por hora del equipo virtual de host
+=== Rendimiento diario de la máquina virtual host
 
-image:host_vm_hourly_performance_fact.jpg["Rendimiento por hora del equipo virtual de host"]
-
-
-
-=== Rendimiento por hora del volumen interno
-
-image:internal_volume_performance_fact.jpg["Rendimiento por hora del volumen interno"]
+image:host_vm_daily_performance_fact.jpg["Rendimiento diario de la máquina virtual host"]
 
 
 
-=== Rendimiento diario de volumen interno
+=== Rendimiento por hora de la máquina virtual host
 
-image:internal_volume_daily_performance_fact.jpg["Rendimiento diario de volumen interno"]
+image:host_vm_hourly_performance_fact.jpg["Rendimiento por hora de la máquina virtual host"]
+
+
+
+=== Rendimiento horario del volumen interno
+
+image:internal_volume_performance_fact.jpg["Rendimiento horario del volumen interno"]
+
+
+
+=== Rendimiento diario del volumen interno
+
+image:internal_volume_daily_performance_fact.jpg["Rendimiento diario del volumen interno"]
 
 
 
@@ -263,9 +263,9 @@ image:QtreeDailyPerformanceFact.jpg["Rendimiento diario de Qtree"]
 
 
 
-=== Rendimiento por hora qtree
+=== Rendimiento por hora de Qtree
 
-image:QtreeHourlyPerformanceFact.jpg["Rendimiento por hora del qtree"]
+image:QtreeHourlyPerformanceFact.jpg["Rendimiento por hora de Qtree"]
 
 
 
@@ -281,27 +281,27 @@ image:storage_node_hourly_performance_fact.jpg["Rendimiento por hora del nodo de
 
 
 
-=== Cambie el rendimiento por hora del host
+=== Cambiar el rendimiento por hora del host
 
-image:switch_performance_for_host_hourly_fact.jpg["Cambie el rendimiento por hora del host"]
-
-
-
-=== Cambie el rendimiento por hora del puerto
-
-image:switch_performance_for_port_hourly_fact.jpg["Cambie el rendimiento por hora del puerto"]
+image:switch_performance_for_host_hourly_fact.jpg["Cambiar el rendimiento por hora del host"]
 
 
 
-=== Cambie el rendimiento por hora para el almacenamiento
+=== Rendimiento por hora del conmutador para el puerto
 
-image:switch_performance_for_storage_hourly_fact.jpg["Cambie el rendimiento por hora para el almacenamiento"]
+image:switch_performance_for_port_hourly_fact.jpg["Rendimiento por hora del conmutador para el puerto"]
 
 
 
-=== Cambie el rendimiento por hora para la cinta
+=== Cambiar el rendimiento por hora para el almacenamiento
 
-image:switch_performance_for_tape_hourly_fact.jpg["Cambie el rendimiento por hora para la cinta"]
+image:switch_performance_for_storage_hourly_fact.jpg["Cambiar el rendimiento por hora para el almacenamiento"]
+
+
+
+=== Cambiar el rendimiento por hora para la cinta
+
+image:switch_performance_for_tape_hourly_fact.jpg["Cambiar el rendimiento por hora para la cinta"]
 
 
 
@@ -311,27 +311,27 @@ image:vm_hourly_performance_fact.png["Rendimiento de la máquina virtual"]
 
 
 
-=== VM rendimiento diario para host
+=== Rendimiento diario de la máquina virtual para el host
 
-image:vm_daily_performance_fact.png["VM rendimiento diario para host"]
-
-
-
-=== Rendimiento de VM por hora para el host
-
-image:vmware_host_performance_fact.jpg["Rendimiento de host por hora de equipos virtuales"]
+image:vm_daily_performance_fact.png["Rendimiento diario de la máquina virtual para el host"]
 
 
 
-=== VM rendimiento diario para host
+=== Rendimiento por hora de la máquina virtual para el host
 
-image:vm_daily_performance_fact.png["VM rendimiento diario para host"]
+image:vmware_host_performance_fact.jpg["Rendimiento del host de la máquina virtual por hora"]
 
 
 
-=== Rendimiento de VM por hora para el host
+=== Rendimiento diario de la máquina virtual para el host
 
-image:vm_hourly_performance_fact.png["Rendimiento de VM por hora para el host"]
+image:vm_daily_performance_fact.png["Rendimiento diario de la máquina virtual para el host"]
+
+
+
+=== Rendimiento por hora de la máquina virtual para el host
+
+image:vm_hourly_performance_fact.png["Rendimiento por hora de la máquina virtual para el host"]
 
 
 
@@ -347,12 +347,12 @@ image:vmdk_hourly_performance_fact.jpg["Rendimiento por hora de VMDK"]
 
 
 
-=== Rendimiento por hora del volumen
+=== Rendimiento horario del volumen
 
-image:volume_performance_fact.jpg["Rendimiento por hora del volumen"]
+image:volume_performance_fact.jpg["Rendimiento horario del volumen"]
 
 
 
-=== Rendimiento diario de volumen
+=== Rendimiento diario del volumen
 
-image:volume_daily_performance_fact.jpg["Rendimiento diario de volumen"]
+image:volume_daily_performance_fact.jpg["Rendimiento diario del volumen"]
