@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_create_monitor.html 
 keywords: monitors, alerts, log, metric, system-defined, system, metric, 
-summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventario, así como sobre las condiciones de métricas o registros. 
+summary: Cree monitores de métricas y registros personalizados para rastrear de forma proactiva el rendimiento de la infraestructura, los umbrales de capacidad y los eventos críticos con alertas y notificaciones automatizadas. 
 ---
 = Alertas con monitores
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cree monitores para alertar sobre los umbrales de rendimiento o inventa
 
 
 [role="lead"]
-Configure monitores para rastrear umbrales de rendimiento, registrar eventos y anomalías en todos los recursos de su infraestructura. Cree alertas personalizadas para métricas como latencia de escritura de nodos, capacidad de almacenamiento o rendimiento de la aplicación y reciba notificaciones cuando se cumplan dichas condiciones.
+Configure monitores para rastrear umbrales de rendimiento, registrar eventos y anomalías en todos los recursos de su infraestructura. Cree alertas personalizadas para métricas como latencia de escritura de nodos, capacidad de almacenamiento o rendimiento de la aplicación y reciba notificaciones cuando se cumplan estas condiciones.
 
 Los monitores le permiten establecer umbrales en las métricas generadas por objetos de "infraestructura", como almacenamiento, VM, EC2 y puertos, así como para datos de "integración", como los recopilados para Kubernetes, métricas avanzadas de ONTAP y complementos de Telegraf.  Estos monitores _métricos_ le alertan cuando se superan los umbrales de nivel de advertencia o nivel crítico.
 
@@ -67,8 +67,19 @@ image:MonitorMetricFilter.png["Filtrado de métricas"]
 
 Al trabajar con datos de integración (Kubernetes, ONTAP Advanced Data, etc.), el filtrado de métricas elimina los puntos de datos individuales o no coincidentes de la serie de datos graficados, a diferencia de los datos de infraestructura (almacenamiento, VM, puertos, etc.) donde los filtros funcionan en el valor agregado de la serie de datos y potencialmente eliminan todo el objeto del gráfico.
 
+Los monitores de métricas se aplican a objetos de inventario como almacenamiento, conmutador, host, máquina virtual, etc., así como a métricas de integración como datos de ONTAP Advanced o Kubernetes. Al supervisar objetos de inventario, tenga en cuenta que no puede seleccionar el método "Agrupar por". Sin embargo, la agrupación está permitida cuando se monitorean datos de integración.
 
-TIP: Para crear un monitor de múltiples condiciones (por ejemplo, IOPS > X y latencia > Y), defina la primera condición como un umbral y la segunda condición como un filtro.
+
+
+==== Monitores multicondición
+
+Puede optar por refinar aún más su monitor de métricas agregando una segunda condición. Simplemente expanda la solicitud "+Agregar condición métrica secundaria" y configure la condición adicional.
+
+image:multi-condition_monitor_second_condition.png["establecer la segunda condición"]
+
+El monitor avisará si se cumplen ambas condiciones.
+
+Tenga en cuenta que solo puede "AND" una segunda condición; no puede elegir alertar sobre una condición O la otra.
 
 
 

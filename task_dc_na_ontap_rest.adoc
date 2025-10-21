@@ -32,6 +32,7 @@ Los siguientes son los requisitos para configurar y utilizar este recopilador de
 
 * ONTAP versión 9.14.1 o superior.
 * Requisitos del puerto: 443
+* Tenga en cuenta que las métricas de Fpolicy no son compatibles con el recopilador REST de ONTAP (los recopiladores de datos de seguridad de carga de trabajo utilizan servidores FPolicy, y las métricas de FPolicy le permiten supervisar la actividad de recopilación de datos de seguridad de carga de trabajo). Para respaldar las métricas de Fpolicy, utilice el link:task_dc_na_cdot.html["Gestión de datos de ONTAP"] coleccionista.
 
 
 
