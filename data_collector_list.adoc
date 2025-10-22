@@ -247,6 +247,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_na_ontap_rest.html["Recopilador REST de NetApp ONTAP"] | Infraestructura 
 
 
+| link:task_dc_na_ontap_afx.html["NetApp ONTAP AFX"] | Infraestructura 
+
+
 | link:task_dc_na_ontap_all_san_array.html["Colector NetApp ONTAP ASA r2 (matriz All-SAN)"] | Infraestructura 
 
 

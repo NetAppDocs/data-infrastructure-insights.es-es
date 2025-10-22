@@ -12776,7 +12776,6 @@
   <block id="83e49813b50f1fc5e03ffde57c985102" category="paragraph">Tenga en cuenta que las alertas que permanecen activas durante más de 24 horas serán visibles en la lista de Alertas y cambios una vez cada 24 horas, por lo que es posible que observe la misma alerta en la lista varias veces. Cada una de estas alertas tendrá el mismo ID de alerta, la misma hora de inicio, etc., y tendrá un estado de "Alerta" hasta que se resuelva la alerta.</block>
   <block id="079090a1dc96bbd4e45426ceeedd592f" category="summary">Cree monitores de métricas y registros personalizados para rastrear de forma proactiva el rendimiento de la infraestructura, los umbrales de capacidad y los eventos críticos con alertas y notificaciones automatizadas.</block>
   <block id="883d09869adb0b8fae6c4387af23b6d4" category="paragraph">Configure monitores para rastrear umbrales de rendimiento, registrar eventos y anomalías en todos los recursos de su infraestructura. Cree alertas personalizadas para métricas como latencia de escritura de nodos, capacidad de almacenamiento o rendimiento de la aplicación y reciba notificaciones cuando se cumplan estas condiciones.</block>
-  <block id="a7cd6a99f9ca0fccc58590218d395239" category="paragraph">Los monitores de métricas se aplican a objetos de inventario como almacenamiento, conmutador, host, máquina virtual, etc., así como a métricas de integración como datos de ONTAP Advanced o Kubernetes. Al supervisar objetos de inventario, tenga en cuenta que no puede seleccionar el método "Agrupar por". Sin embargo, la agrupación está permitida cuando se monitorean datos de integración.</block>
   <block id="70b37ea4cf45e401178bb71faa1e50fe" category="section-title">Monitores multicondición</block>
   <block id="6e8d7620a4a0bc7614ae9936242cc79e" category="paragraph">Puede optar por refinar aún más su monitor de métricas agregando una segunda condición. Simplemente expanda la solicitud "+Agregar condición métrica secundaria" y configure la condición adicional.</block>
   <block id="c7c9e436435c4770e86c98098336f9a2" category="inline-image-macro">establecer la segunda condición</block>
@@ -12786,4 +12785,16 @@
   <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">Para el intervalo de ocurrencia, elija _Continuamente_ durante un período de _15 minutos_.</block>
   <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">Gestión de datos de ONTAP</block>
   <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">Tenga en cuenta que las métricas de Fpolicy no son compatibles con el recopilador REST de ONTAP (los recopiladores de datos de seguridad de carga de trabajo utilizan servidores FPolicy, y las métricas de FPolicy le permiten supervisar la actividad de recopilación de datos de seguridad de carga de trabajo). Para respaldar las métricas de Fpolicy, utilice el <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> coleccionista.</block>
+  <block id="b2422fa602be830d9f1a2469dd70ca20" category="inline-link-macro">NetApp ONTAP AFX</block>
+  <block id="83cd27100a931554f0e05219011edf39" category="cell"><block ref="83cd27100a931554f0e05219011edf39" category="inline-link-macro-rx"></block></block>
+  <block id="14ec544dd26342f2315dc51923b34e66" category="summary">Coleccionista ONTAP AFX</block>
+  <block id="aaab7580be4232835e9f12e5691f118f" category="doc">Recopilador de datos AFX de NetApp ONTAP</block>
+  <block id="e395c9addcba424f5bda562994dfecbe" category="cell">Volumen/ FlexVol/ FlexGroup</block>
+  <block id="1574b47ca9477a3fc7635017b8f4ca0b" category="cell">Árbol Q/Árbol Flexible</block>
+  <block id="16aac8a4d65f63c39da98362e32e250d" category="cell">Qtree (tipo: Explixit/Predeterminado)</block>
+  <block id="84ace9fb8e132c96d1dfcd31447efedc" category="cell">Cubo S3</block>
+  <block id="1143dbaa613581e6f7e9245d88a5a30d" category="cell">Qtree (tipo: Cubo)</block>
+  <block id="26beb8e28a6498b161cc513e4d05c9f5" category="cell">StoragePod/Zona de disponibilidad de almacenamiento</block>
+  <block id="474d2ef9225b003245e9f5a40297e1e8" category="cell">SVM (Máquina virtual de almacenamiento)</block>
+  <block id="07ab2cfb4a15dea7a3c4679e886966f3" category="sidebar">ONTAP AFX</block>
 </blocks>
