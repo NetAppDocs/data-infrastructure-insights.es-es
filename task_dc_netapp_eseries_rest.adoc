@@ -10,13 +10,13 @@ summary: Configuración del recopilador de datos REST de NetApp E-Series.
 
 
 [role="lead"]
-El recopilador de datos REST de la serie E de NetApp recopila datos de inventario y rendimiento.  El recopilador admite el firmware 7.x+ y utiliza las mismas configuraciones e informa los mismos datos.  El recopilador REST supervisa el estado de cifrado de los grupos de almacenamiento, así como el estado de cifrado de los discos y volúmenes relacionados, y proporciona la utilización de la CPU del nodo de almacenamiento como contadores de rendimiento (una funcionalidad no proporcionada en el recopilador SANtricity E-Series heredado).
+El recopilador de datos REST de la serie E de NetApp recopila datos de inventario, registros y rendimiento. El recopilador admite el firmware 7.x+ y utiliza las mismas configuraciones e informa los mismos datos.  El recopilador REST supervisa el estado de cifrado de los grupos de almacenamiento, discos y volúmenes, la utilización de la CPU del nodo de almacenamiento, así como la funcionalidad de registros que no se proporcionaba en el recopilador SANtricity E-Series heredado.
 
 
 
 == Terminología
 
-Cloud Insight adquiere la siguiente información de inventario de NetApp E-Series, mediante REST.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+Data Infrastructure Insights adquiere la siguiente información de inventario de NetApp E-Series, mediante REST. Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo. Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
 [cols="2*"]
 |===

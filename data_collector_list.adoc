@@ -1,12 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: data_collector_list.html 
-summary: Lista de recopiladores de datos compatibles. 
+summary: Lista de referencia alfabética de todos los recopiladores de datos compatibles con Data Infrastructure Insights, organizados por tipos de infraestructura y servicio. 
 keywords: data collector, vendor, infrastructure, integration, service 
 ---
-= Lista de recopiladores de datos de Data Infrastructure Insights
+= Lista de referencia de recopiladores de datos de Data Infrastructure Insights
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -218,9 +222,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 
 
 | link:task_dc_na_cloud_volumes_ontap.html["Volúmenes en la nube de NetApp Cloud Volumes ONTAP"] | Infraestructura 
-
-
-| link:task_dc_na_cloud_volumes.html["Servicios de volúmenes en la nube de NetApp para AWS"] | Infraestructura 
 
 
 | link:task_dc_na_cloud_connection.html["Conexión a la nube de NetApp para ONTAP 9.9+"] | Infraestructura 

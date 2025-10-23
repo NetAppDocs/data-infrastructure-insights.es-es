@@ -67,6 +67,8 @@ image:MonitorMetricFilter.png["Filtrado de métricas"]
 
 Al trabajar con datos de integración (Kubernetes, ONTAP Advanced Data, etc.), el filtrado de métricas elimina los puntos de datos individuales o no coincidentes de la serie de datos graficados, a diferencia de los datos de infraestructura (almacenamiento, VM, puertos, etc.) donde los filtros funcionan en el valor agregado de la serie de datos y potencialmente eliminan todo el objeto del gráfico.
 
+Los monitores de métricas se aplican a objetos de inventario como almacenamiento, conmutador, host, máquina virtual, etc., así como a métricas de integración como datos de ONTAP Advanced o Kubernetes. Al supervisar objetos de inventario, tenga en cuenta que no puede seleccionar el método "Agrupar por". Sin embargo, la agrupación está permitida cuando se monitorean datos de integración.
+
 
 
 ==== Monitores multicondición
