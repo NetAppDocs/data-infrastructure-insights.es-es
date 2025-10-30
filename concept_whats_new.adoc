@@ -18,6 +18,27 @@ NetApp mejora y optimiza continuamente sus productos y servicios.  A continuaci�
 
 
 
+== noviembre de 2025
+
+
+
+=== Configura tu página de inicio personalizada
+
+Optimiza tu flujo de trabajo de monitoreo diario configurando cualquier página de Data Infrastructure Insights como tu página de inicio personalizada. Cada usuario puede seleccionar una página de inicio diferente para centrarse en lo que le importa: un panel de control crítico, alertas, estado de la infraestructura, seguridad de la carga de trabajo, etc.
+
+image:home_page_set.png["Configurando una página de inicio, ancho=300"]
+
+
+
+=== Manténgase organizado con la agrupación automática de paneles.
+
+Transforma tu experiencia de panel de control con una agrupación inteligente que organiza automáticamente los paneles de control importados de la Galería en categorías lógicas. La nueva función de agrupación facilita la importación de paneles de control y coloca cada panel en el grupo apropiado según su función y relevancia para su entorno.
+
+image:dashboard_gallery_groups.png["Grupos de galería durante la importación, ancho=500"]
+
+'''
+
+
 == octubre de 2025
 
 
