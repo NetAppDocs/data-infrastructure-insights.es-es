@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_cs_getting_started.html 
-keywords: collectors, data collectors, configure, introduction, browsers , Cloud Secure 
-summary: Unos pocos pasos sencillos le permitirán comenzar a utilizar Workload Security 
+keywords: collectors, data collectors, configure, introduction, browsers, Cloud Secure 
+summary: Implemente agentes de seguridad de carga de trabajo y recopiladores de datos para monitorear la actividad del usuario y detectar amenazas de seguridad. 
 ---
 = Introducción a la seguridad de la carga de trabajo
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Hay tareas de configuración que deben completarse antes de poder comenzar a usar Workload Security para monitorear la actividad del usuario.
+Workload Security le ayuda a supervisar la actividad del usuario y a detectar posibles amenazas de seguridad en su entorno de almacenamiento.  Antes de poder comenzar la monitorización, es necesario configurar los agentes, los recopiladores de datos y los servicios de directorio para establecer las bases de una monitorización de seguridad integral.
 
 El sistema de seguridad de carga de trabajo utiliza un agente para recopilar datos de acceso de los sistemas de almacenamiento e información de usuario de los servidores de servicios de directorio.
 
@@ -28,19 +32,14 @@ link:concept_cs_agent_requirements.html["Requisitos del agente"]
 
 link:task_cs_add_agent.html["Agregar agente"]
 
-link:https://netapp.hubs.vidyard.com/watch/Lce7EaGg7NZfvCUw4Jwy5P?["*Video*: Implementación del agente"]
 
 
+| Configurar un conector de directorio de usuarios | link:task_config_user_dir_connect.html["Agregar conector de directorio de usuarios"] 
 
-| Configurar un conector de directorio de usuarios | link:task_config_user_dir_connect.html["Agregar conector de directorio de usuarios"] link:https://netapp.hubs.vidyard.com/watch/NEmbmYrFjCHvPps7QMy8me?["*Video*: Conexión a Active Directory"] 
 
-
-| Configurar recopiladores de datos | Haga clic en *Seguridad de carga de trabajo > Recopiladores* Haga clic en el recopilador de datos que desea configurar.  Consulte la sección Referencia del proveedor del recopilador de datos de la documentación.link:https://netapp.hubs.vidyard.com/watch/YSQrcYA7DKXbj1UGeLYnSF?["*Video*: Conexión SVM de ONTAP"] 
+| Configurar recopiladores de datos | Haga clic en *Seguridad de carga de trabajo > Recopiladores* Haga clic en el recopilador de datos que desea configurar. Consulte la sección de referencia del proveedor del recopilador de datos de la documentación para obtener información sobre el recopilador. 
 
 
 | Crear cuentas de usuario | link:concept_user_roles.html["Administrar cuentas de usuario"] 
-
-
-| Solución de problemas | link:https://netapp.hubs.vidyard.com/watch/Fs8N2w9wBtsFGrhRH9X85U?["*Video*: Solución de problemas"] 
 |===
 Workload Security también puede integrarse con otras herramientas.  Por ejemplo,link:http://docs.netapp.com/us-en/cloudinsights/CloudInsights_CloudSecure_Splunk_integration_guide.pdf["ver esta guía"] sobre la integración con Splunk.

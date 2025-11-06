@@ -188,13 +188,7 @@
   <block id="ad99b83e7b10ea825777161cb8f5594b" category="cell">* Verificar credenciales y dirección IP ingresadas.  * Intente comunicarse con la matriz a través de la consola de administración web \https://&lt;ip&gt;:8452/DS8000/Console.  Reemplace &lt;ip&gt; con la IP configurada del recopilador de datos.</block>
   <block id="b18a21f855b9b4e7ca0fae5355812eb5" category="cell">Error: * No se puede ejecutar el programa * Error al ejecutar el comando</block>
   <block id="79766e839f35eb1cc1188445059bba75" category="cell">* Desde la unidad de adquisición de Data Infrastructure Insights, abra un CMD * Abra el archivo CLI.CFG en el directorio de inicio/lib de CLI y verifique la propiedad JAVA_INSTALL, edite el valor para que coincida con su entorno * Muestre la versión de Java instalada en esta máquina, escribiendo: "java -version" * Haga ping a la dirección IP del dispositivo de almacenamiento de IBM especificado en el comando CLI emitido.  * Si todo lo anterior funcionó bien, ejecute manualmente un comando CLI</block>
-  <block id="c5c601f0f7513cb66c54f7740aebd769" category="summary">Recopilador de datos IBM TotalStorage DS4000</block>
-  <block id="bb368e45192fd41360b40a61c441bbf7" category="paragraph">Este recopilador de datos adquiere información de inventario y rendimiento del sistema de almacenamiento IBM DS4000.  Hay dos configuraciones posibles (firmware 6.x y firmware 7.x+), y ambas tienen los mismos valores.</block>
-  <block id="f8defa21a7abf462d74f023cc11be1db" category="paragraph">Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos IBM DS4000.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:</block>
   <block id="0951a6690e5dc87411346792c9f941c7" category="cell">Grupo de volúmenes</block>
-  <block id="d9dc66c5dd0daf41b61af8de89a60066" category="list-text">Dirección IP de cada matriz DS5 o FAStT</block>
-  <block id="90708586f8afae2670c5e389c5b3df37" category="list-text">Validación de acceso haciendo ping a la dirección IP de ambos controladores en la matriz</block>
-  <block id="d0ad61d8d4e1d5d38bb6b0cb90a5d934" category="list-text">Requisitos del puerto: 2463</block>
   <block id="86c00393c5a1dba7b670a90d957d105e" category="cell">Lista separada por comas de direcciones IP del controlador SANtricity de la matriz</block>
   <block id="f9cba995b86ac6c96d9d30c9ced7c828" category="cell">Direcciones IP y/o nombres de dominio completos para los controladores de matriz</block>
   <block id="123823c1c5909eba4c00c4d8585c250f" category="cell">El valor predeterminado es 30 minutos.</block>
@@ -4108,26 +4102,14 @@
   <block id="33b013de46ebfe3f233e12e26bb762a4" category="paragraph">Los objetos devueltos por consultas y filtros se ven similares a los que se muestran en la siguiente ilustración.  Los objetos con 'etiquetas' asignadas son anotaciones, mientras que los objetos sin etiquetas son contadores de rendimiento o atributos de objeto.</block>
   <block id="3424b9554ebd571fa4ee62bd540c81dd" category="inline-image-macro">Objetos devueltos por filtros</block>
   <block id="5ffcd444715146c4b8ef3c2e14e25859" category="paragraph"><block ref="5ffcd444715146c4b8ef3c2e14e25859" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d7eb8ab1e688454eec9d83c8277b00fe" category="section-title">Agrupación y agregación</block>
   <block id="3d0486264987eff198cb8489a591c919" category="section-title">Agrupación (Acumulación)</block>
-  <block id="e251f9ae37a0914ac3ed0861aee9d003" category="paragraph">Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición.  Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida.  Puede elegir agrupar estos datos de varias maneras:</block>
   <block id="fec05a93bc2859fa296e20fb09a6d339" category="list-text">*Promedio*: muestra cada línea como el _promedio_ de los datos subyacentes.</block>
   <block id="c4006c924bdf8bc80ddcd09bd46d0666" category="list-text">*Máximo*: muestra cada línea como el _máximo_ de los datos subyacentes.</block>
   <block id="fdf509d52d13201cead39e938712c689" category="list-text">*Mínimo*: muestra cada línea como el _mínimo_ de los datos subyacentes.</block>
   <block id="1a284984e082a2cc2ceecd12b5c25e50" category="list-text">*Suma*: muestra cada línea como la _suma_ de los datos subyacentes.</block>
-  <block id="fada1c7705d134b1361677f79eef7e6a" category="list-text">*Count*: muestra un _count_ de objetos que han informado datos dentro del período de tiempo especificado.  Puede elegir la _Ventana de tiempo completa_ según lo determine el rango de tiempo del tablero.</block>
-  <block id="d186cba97a995601fc12d97defd879c7" category="paragraph">Para configurar el método de agrupación, haga lo siguiente.</block>
-  <block id="0886591e8bd637066947802b2c681da8" category="list-text">En la consulta de su widget, elija un tipo de activo y una métrica (por ejemplo, _Almacenamiento_) y una métrica (como _Total de IOPS de rendimiento_).</block>
-  <block id="843784684ad8439aa0ddfe813cac8e16" category="list-text">Para *Grupo*, elija un método de acumulación (como _Promedio_) y seleccione los atributos o las métricas mediante los cuales acumular los datos (por ejemplo, _Centro de datos_).</block>
-  <block id="5545e86f2a092d7eeeeae79320003a7a" category="paragraph">El widget se actualiza automáticamente y muestra datos de cada uno de sus centros de datos.</block>
-  <block id="9b3328ae96bacd8c344b3f781d9113c0" category="paragraph">También puede optar por agrupar _todos_ los datos subyacentes en el gráfico o la tabla.  En este caso, obtendrá una sola línea para cada consulta en el widget, que mostrará el promedio, mínimo, máximo, suma o recuento de la métrica o métricas elegidas para todos los activos subyacentes.</block>
-  <block id="28c428ed363d0e9575a830fcfb080fe3" category="paragraph">Al hacer clic en la leyenda de cualquier widget cuyos datos estén agrupados por "Todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.</block>
   <block id="12d9c21e855587068144e1be92c3bc96" category="paragraph">Si ha establecido un filtro para la consulta, los datos se agrupan según los datos filtrados.</block>
-  <block id="4bb74590cbf2f4d72c628f06e53c55b9" category="paragraph">Tenga en cuenta que cuando elige agrupar un widget por cualquier campo (por ejemplo, _Modelo_), aún necesitará filtrar por ese campo para mostrar correctamente los datos de ese campo en el gráfico o la tabla.</block>
   <block id="d86c1c1f96efbca023a6312f2655cdd2" category="section-title">Agregación de datos</block>
-  <block id="757a30a76f00d417fdea69085d4444a4" category="paragraph">Puede alinear aún más sus gráficos de series de tiempo (líneas, áreas, etc.) agregando puntos de datos en segmentos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige).  Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.</block>
   <block id="a10dce4cf3b20fcc81ffdd73fff68459" category="paragraph">Un intervalo pequeño combinado con un rango de tiempo largo puede generar una advertencia del tipo "El intervalo de agregación resultó en demasiados puntos de datos".  Es posible que veas esto si tienes un intervalo pequeño y aumentas el período de tiempo del panel a 7 días.  En este caso, Insight aumentará temporalmente el intervalo de agregación hasta que seleccione un período de tiempo más pequeño.</block>
-  <block id="6d984d3ac5f53bc70c9ce3bedb56f658" category="paragraph">También puede agregar datos en el widget de gráfico de barras y en el widget de valor único.</block>
   <block id="abbc6ae3194254cb0a6cd47c50a20631" category="paragraph">La mayoría de los contadores de activos se agregan a _Promedio_ de manera predeterminada.  Algunos contadores se agregan a _Max, Min_ o _Sum_ de forma predeterminada.  Por ejemplo, los errores de puerto se agregan a _Suma_ de manera predeterminada, mientras que las IOPS de almacenamiento se agregan a _Promedio_.</block>
   <block id="806da624ec9d79eaa05cce82c4860377" category="section-title">Mostrar resultados superiores e inferiores</block>
   <block id="30481770dde0dcefc7b5810b7184ac11" category="paragraph">En un widget de gráfico, puede mostrar los resultados *Superiores* o *Inferiores* para los datos acumulados y elegir la cantidad de resultados que se muestran en la lista desplegable proporcionada.  En un widget de tabla, puedes ordenar por cualquier columna.</block>
@@ -4680,9 +4662,7 @@
   <block id="d7ea4828749f5ad072aad31fed4a03a1" category="paragraph">*Nombre de host:* US-BV-M11</block>
   <block id="6d7440617347d4c460f065f3f403cc7e" category="paragraph">*Expresión regular:* SRV_USBV([A-Za-z0-9]+)_F[12]</block>
   <block id="bf3f7ef872246f009e37d0a4c0951049" category="paragraph">*Formato:* US-BV-\1</block>
-  <block id="08b3c5691f5c3cb584dc1a3ec5321962" category="summary">Data Infrastructure Insights tiene tutoriales que le mostrarán cómo realizar muchas tareas.</block>
   <block id="5b425cd08035f29c3dad5d45f1d2ea6e" category="doc">Tutoriales de funciones</block>
-  <block id="f96c0cb8e557b8c2286592a385c5fd6e" category="paragraph">Data Infrastructure Insights está repleto de funciones útiles que le permiten solucionar problemas de manera rápida y sencilla, y le brindan información sobre su entorno corporativo.  Encuentre datos fácilmente con consultas potentes, visualice datos en paneles y envíe alertas por correo electrónico para los umbrales de datos que establezca.</block>
   <block id="7dc1d63676b307452b778906ec63a727" category="section-title">Lista de verificación y tutoriales en vídeo</block>
   <block id="9a3ddb6d99b9ffb5f7473690abc9fb52" category="paragraph">La *Lista de verificación de inicio* que se muestra en su inquilino de Data Infrastructure Insights contiene una lista de varias tareas y conceptos útiles.  Al seleccionar un elemento de la lista de verificación, accederá a la página de Data Infrastructure Insights adecuada para ese concepto.  Por ejemplo, al hacer clic en el elemento _Crear un panel_ se abre la página *Paneles* de Data Infrastructure Insights .</block>
   <block id="06bc4be9452f8162d26f7cb4b4d2e0b2" category="inline-image-macro">Lista de verificación del tutorial Progreso</block>
@@ -11695,9 +11675,7 @@
   <block id="874db297b2254479eeb702a2d7fa8dab" category="list-text">Haga clic en *Eliminar*.</block>
   <block id="e08b25c0c2d46e96d0ac5d6faca80bbf" category="paragraph">El sistema muestra la página *Eliminar agente*.</block>
   <block id="bd69c8c7685e8cb8cbe42da9c5c9d5e0" category="list-text">Haga clic en *Eliminar* para confirmar la eliminación.</block>
-  <block id="3e68378ba1d3b7f2245578e342bed0be" category="summary">Unos pocos pasos sencillos le permitirán comenzar a utilizar Workload Security</block>
   <block id="bba50a707846a3806736dc01f6354532" category="doc">Introducción a la seguridad de la carga de trabajo</block>
-  <block id="0506b86e6f0cdfab05c9570568f031d8" category="paragraph">Hay tareas de configuración que deben completarse antes de poder comenzar a usar Workload Security para monitorear la actividad del usuario.</block>
   <block id="f827ca5aa861a4bddcbc872872858f88" category="paragraph">El sistema de seguridad de carga de trabajo utiliza un agente para recopilar datos de acceso de los sistemas de almacenamiento e información de usuario de los servidores de servicios de directorio.</block>
   <block id="b69df43565e372517a8522587f62a492" category="paragraph">Debe configurar lo siguiente antes de poder comenzar a recopilar datos:</block>
   <block id="eaeb30f9f18e0c50b178676f3eaef45f" category="cell">Tarea</block>
@@ -11706,20 +11684,12 @@
   <block id="7db04bd496cdb9ab394c662c3f00f7ed" category="paragraph"><block ref="7db04bd496cdb9ab394c662c3f00f7ed" category="inline-link-macro-rx"></block></block>
   <block id="0e46a6bad3878362e846c7b92d82bf81" category="inline-link-macro">Agregar agente</block>
   <block id="8a48ba26234a2f9778b42b78c443e637" category="paragraph"><block ref="8a48ba26234a2f9778b42b78c443e637" category="inline-link-macro-rx"></block></block>
-  <block id="5b9de2c90171387a124d93a9f2da96f0" category="inline-link-macro">*Video*: Implementación del agente</block>
-  <block id="4e7bc63fc55f6e0ea38b5aaf46f782fa" category="paragraph"><block ref="4e7bc63fc55f6e0ea38b5aaf46f782fa" category="inline-link-macro-rx"></block></block>
   <block id="ea7a70b573d06d2b749ceca1ebd27807" category="cell">Configurar un conector de directorio de usuarios</block>
   <block id="3989712b3613cd2576d0059b20b345ce" category="inline-link-macro">Agregar conector de directorio de usuarios</block>
-  <block id="938c31c8b36e8eb1b4defe3caa95717e" category="inline-link-macro">*Video*: Conexión a Active Directory</block>
-  <block id="8946e54a232a494e5ad35eb956c130ee" category="cell"><block ref="d49a8da0de1eee7dc793284699bb0bab" category="inline-link-macro-rx"></block> <block ref="e2ee1872ae14f9b079a5e15b45b85992" category="inline-link-macro-rx"></block></block>
   <block id="6e043661fa5856f26501d44b41838596" category="cell">Configurar recopiladores de datos</block>
-  <block id="9a588e9b6b88f5c90c86bde96fc3f0c1" category="inline-link-macro">*Video*: Conexión SVM de ONTAP</block>
-  <block id="b0bdf1289c168696fcf69f90ddc82ab2" category="cell">Haga clic en *Seguridad de carga de trabajo &gt; Recopiladores* Haga clic en el recopilador de datos que desea configurar.  Consulte la sección Referencia del proveedor del recopilador de datos de la documentación.<block ref="49902fc743c67e64ddcf4901ef2c69bf" category="inline-link-macro-rx"></block></block>
   <block id="a1d0a98f6922d21edbc391782fbb69e3" category="cell">Crear cuentas de usuario</block>
   <block id="8e9fceaaf84bd1591dc11726965a5b35" category="inline-link-macro">Administrar cuentas de usuario</block>
   <block id="a6fe30cef6ad189dc3685c855c858b10" category="cell"><block ref="a6fe30cef6ad189dc3685c855c858b10" category="inline-link-macro-rx"></block></block>
-  <block id="82cb9bc9a2d4a2705c91af9df596adb3" category="inline-link-macro">*Video*: Solución de problemas</block>
-  <block id="23911ec6737c5f573a24c330a412e271" category="cell"><block ref="23911ec6737c5f573a24c330a412e271" category="inline-link-macro-rx"></block></block>
   <block id="100c37ccf9bdbedac2e35d90d41d3be9" category="inline-link-macro">ver esta guía</block>
   <block id="2e51f9cf2f419fb083d896473cf49193" category="paragraph">Workload Security también puede integrarse con otras herramientas.  Por ejemplo,<block ref="4ccd3ce9fc5ce8804b14aeb0860cf515" category="inline-link-macro-rx"></block> sobre la integración con Splunk.</block>
   <block id="90fbffa9ff3e21a719cc9451531fc673" category="summary">Seguridad de la carga de trabajo Las cuentas de usuario se administran a través de la gestión de usuarios de Data Infrastructure Insights</block>
@@ -12793,4 +12763,33 @@
   <block id="344e2ec56c6114e245d66d3978073950" category="paragraph">Transforma tu experiencia de panel de control con una agrupación inteligente que organiza automáticamente los paneles de control importados de la Galería en categorías lógicas. La nueva función de agrupación facilita la importación de paneles de control y coloca cada panel en el grupo apropiado según su función y relevancia para su entorno.</block>
   <block id="251972b93cab79073298e6ad6678a0be" category="inline-image-macro">Grupos de galería durante la importación, ancho=500</block>
   <block id="99d6cc3c987c34af31c72d3213e5e764" category="paragraph"><block ref="99d6cc3c987c34af31c72d3213e5e764" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5ec1b38643878459e136106056fc3081" category="section-title">Agrupación, identificación y agregación</block>
+  <block id="dc185a282a5cd3225e8cc57b4b6b6aa1" category="paragraph">Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición. Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida. En el campo "Agrupar por", seleccione el tipo de objeto para ver líneas, áreas, barras, columnas, etc. individuales (dependiendo del tipo de widget) para cada objeto.  Puedes optar por agrupar por cualquier atributo disponible en la lista para ese objeto.  Por ejemplo, al visualizar los datos de un volumen interno, es posible que desee agrupar los datos por el nombre de almacenamiento.</block>
+  <block id="fa0e168aa1b39e8090932eea11026412" category="paragraph">Para ver los datos consolidados, elimine cualquier atributo de Agrupar por, que por defecto agrupará por "Todos".</block>
+  <block id="fbcd269f31c4ab263533f3645a1a728a" category="paragraph">Puedes optar por agregar estos datos de varias maneras:</block>
+  <block id="06156308540648c4641a0a9cb567eaed" category="paragraph">Al visualizar el panel de control, al seleccionar la leyenda de cualquier widget cuyos datos estén agrupados por "Todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.</block>
+  <block id="6882d2460edb6d055bfb008888648c98" category="section-title">Identificación de datos personalizados</block>
+  <block id="66cbbbe1e48b5652dacf30cdc0a8c109" category="paragraph">Cuando crea o modifica un widget que se basa en sus propios datos personalizados, es posible que sus datos no se representen correctamente en el widget sin un atributo identificativo.  Si DII no puede identificar el objeto que ha seleccionado para su widget, le presentará un enlace de _Configuración avanzada_ en el área "Agrupar por".  Amplíe esta sección para seleccionar el atributo con el que desea identificar sus datos.</block>
+  <block id="d489c8cc0112182e1e9478e7c22dd3f8" category="inline-image-macro">Identificar mediante menú desplegable para datos desconocidos</block>
+  <block id="355bd56539964e29708b9c4df7942fc1" category="paragraph"><block ref="355bd56539964e29708b9c4df7942fc1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6aa8e407f2a6d45ee7e0e895bfb9b4c6" category="paragraph">Puede alinear aún más sus gráficos agregando puntos de datos en intervalos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige). Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.</block>
+  <block id="64e6afd71183834ff1036fd74f3e716e" category="summary">Los videotutoriales paso a paso te ayudarán a dominar las funciones de Data Infrastructure Insights , como paneles de control, consultas, monitorización y solución de problemas.</block>
+  <block id="2ad37fcdfb757474e55b13972a8ba843" category="doc">Primeros pasos con los videotutoriales</block>
+  <block id="606714bccc97b2ecd8ce8598c5298ddd" category="paragraph">Aprenda de forma eficiente Data Infrastructure Insights con nuestros tutoriales que incluyen guías de vídeo paso a paso y una lista de verificación del progreso.  Domina habilidades esenciales como la creación de paneles de control, la elaboración de consultas, la configuración de la monitorización y la resolución de problemas a través de tutoriales prácticos diseñados para que seas productivo rápidamente.</block>
+  <block id="1ca1d3208fe70423d28d5346749bf725" category="section-title">Videotutoriales</block>
+  <block id="f21521c513fcb8f1320750785f983ea4" category="paragraph">Mira los siguientes vídeos para obtener más información.</block>
+  <block id="efaefb91e104bcd35299c23da0236416" category="inline-link-macro">Transforma datos brutos en información práctica</block>
+  <block id="ae64c1ecf9b0637af4d421aec17b6b0f" category="paragraph"><block ref="ae64c1ecf9b0637af4d421aec17b6b0f" category="inline-link-macro-rx"></block></block>
+  <block id="260eb4e78ceb606b62c775c5fb398a50" category="inline-link-macro">Cree paneles de control potentes con NetApp</block>
+  <block id="765364e45c00e9c6747f8f72be907378" category="paragraph"><block ref="765364e45c00e9c6747f8f72be907378" category="inline-link-macro-rx"></block></block>
+  <block id="da2548febb74b05443083a5c4cb3bb98" category="inline-link-macro">Solución de problemas simplificada con VM Analyzer</block>
+  <block id="15235b29b13942ecccd882101e412b45" category="paragraph"><block ref="15235b29b13942ecccd882101e412b45" category="inline-link-macro-rx"></block></block>
+  <block id="b8563bbbe56bf52b001d27bc746ae8f7" category="inline-link-macro">Explora y analiza con consultas en Data Infrastructure Insights.</block>
+  <block id="cd85347613a114ab9748f0f1a561065c" category="paragraph"><block ref="cd85347613a114ab9748f0f1a561065c" category="inline-link-macro-rx"></block></block>
+  <block id="77354ced7e95147c4c951948901aa87b" category="inline-link-macro">Monitoreo proactivo de la infraestructura con alertas y monitores</block>
+  <block id="08e9d4de145fab52e35be03578b2cb95" category="paragraph"><block ref="08e9d4de145fab52e35be03578b2cb95" category="inline-link-macro-rx"></block></block>
+  <block id="bc0e5d8878e85d65aed637113d5bef42" category="summary">Implemente agentes de seguridad de carga de trabajo y recopiladores de datos para monitorear la actividad del usuario y detectar amenazas de seguridad.</block>
+  <block id="f6bd61a684c7e1301e78da3db50d1837" category="paragraph">Workload Security le ayuda a supervisar la actividad del usuario y a detectar posibles amenazas de seguridad en su entorno de almacenamiento.  Antes de poder comenzar la monitorización, es necesario configurar los agentes, los recopiladores de datos y los servicios de directorio para establecer las bases de una monitorización de seguridad integral.</block>
+  <block id="d49a8da0de1eee7dc793284699bb0bab" category="cell"><block ref="d49a8da0de1eee7dc793284699bb0bab" category="inline-link-macro-rx"></block></block>
+  <block id="adf5d1319b5bafa4d304b195ab11a3ac" category="cell">Haga clic en *Seguridad de carga de trabajo &gt; Recopiladores* Haga clic en el recopilador de datos que desea configurar. Consulte la sección de referencia del proveedor del recopilador de datos de la documentación para obtener información sobre el recopilador.</block>
 </blocks>

@@ -216,48 +216,43 @@ image:ObjectsReturnedByFilters.png["Objetos devueltos por filtros"]
 
 
 
-== Agrupación y agregación
+== Agrupación, identificación y agregación
 
 
 
 === Agrupación (Acumulación)
 
-Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición.  Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida.  Puede elegir agrupar estos datos de varias maneras:
+Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición. Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida. En el campo "Agrupar por", seleccione el tipo de objeto para ver líneas, áreas, barras, columnas, etc. individuales (dependiendo del tipo de widget) para cada objeto.  Puedes optar por agrupar por cualquier atributo disponible en la lista para ese objeto.  Por ejemplo, al visualizar los datos de un volumen interno, es posible que desee agrupar los datos por el nombre de almacenamiento.
+
+Para ver los datos consolidados, elimine cualquier atributo de Agrupar por, que por defecto agrupará por "Todos".
+
+Puedes optar por agregar estos datos de varias maneras:
 
 * *Promedio*: muestra cada línea como el _promedio_ de los datos subyacentes.
 * *Máximo*: muestra cada línea como el _máximo_ de los datos subyacentes.
 * *Mínimo*: muestra cada línea como el _mínimo_ de los datos subyacentes.
 * *Suma*: muestra cada línea como la _suma_ de los datos subyacentes.
-* *Count*: muestra un _count_ de objetos que han informado datos dentro del período de tiempo especificado.  Puede elegir la _Ventana de tiempo completa_ según lo determine el rango de tiempo del tablero.
 
 
-.Pasos
-Para configurar el método de agrupación, haga lo siguiente.
-
-. En la consulta de su widget, elija un tipo de activo y una métrica (por ejemplo, _Almacenamiento_) y una métrica (como _Total de IOPS de rendimiento_).
-. Para *Grupo*, elija un método de acumulación (como _Promedio_) y seleccione los atributos o las métricas mediante los cuales acumular los datos (por ejemplo, _Centro de datos_).
-+
-El widget se actualiza automáticamente y muestra datos de cada uno de sus centros de datos.
-
-
-
-También puede optar por agrupar _todos_ los datos subyacentes en el gráfico o la tabla.  En este caso, obtendrá una sola línea para cada consulta en el widget, que mostrará el promedio, mínimo, máximo, suma o recuento de la métrica o métricas elegidas para todos los activos subyacentes.
-
-Al hacer clic en la leyenda de cualquier widget cuyos datos estén agrupados por "Todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.
+Al visualizar el panel de control, al seleccionar la leyenda de cualquier widget cuyos datos estén agrupados por "Todos", se abre una página de consulta que muestra los resultados de la primera consulta utilizada en el widget.
 
 Si ha establecido un filtro para la consulta, los datos se agrupan según los datos filtrados.
 
-Tenga en cuenta que cuando elige agrupar un widget por cualquier campo (por ejemplo, _Modelo_), aún necesitará filtrar por ese campo para mostrar correctamente los datos de ese campo en el gráfico o la tabla.
+
+
+=== Identificación de datos personalizados
+
+Cuando crea o modifica un widget que se basa en sus propios datos personalizados, es posible que sus datos no se representen correctamente en el widget sin un atributo identificativo.  Si DII no puede identificar el objeto que ha seleccionado para su widget, le presentará un enlace de _Configuración avanzada_ en el área "Agrupar por".  Amplíe esta sección para seleccionar el atributo con el que desea identificar sus datos.
+
+image:unmodeled_data_identify_by.png["Identificar mediante menú desplegable para datos desconocidos"]
 
 
 
 === Agregación de datos
 
-Puede alinear aún más sus gráficos de series de tiempo (líneas, áreas, etc.) agregando puntos de datos en segmentos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige).  Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.
+Puede alinear aún más sus gráficos agregando puntos de datos en intervalos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige). Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.
 
 Un intervalo pequeño combinado con un rango de tiempo largo puede generar una advertencia del tipo "El intervalo de agregación resultó en demasiados puntos de datos".  Es posible que veas esto si tienes un intervalo pequeño y aumentas el período de tiempo del panel a 7 días.  En este caso, Insight aumentará temporalmente el intervalo de agregación hasta que seleccione un período de tiempo más pequeño.
-
-También puede agregar datos en el widget de gráfico de barras y en el widget de valor único.
 
 La mayoría de los contadores de activos se agregan a _Promedio_ de manera predeterminada.  Algunos contadores se agregan a _Max, Min_ o _Sum_ de forma predeterminada.  Por ejemplo, los errores de puerto se agregan a _Suma_ de manera predeterminada, mientras que las IOPS de almacenamiento se agregan a _Promedio_.
 
