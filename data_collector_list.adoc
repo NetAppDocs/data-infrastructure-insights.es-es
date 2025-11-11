@@ -173,9 +173,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_ibm_cs.html["Serie CS de IBM"] | Infraestructura 
 
 
-| link:task_dc_ibm_powervm.html["IBM PowerVM"] | Infraestructura 
-
-
 | link:task_dc_ibm_svc.html["Controlador de volumen SAN de IBM (SVC)"] | Infraestructura 
 
 
