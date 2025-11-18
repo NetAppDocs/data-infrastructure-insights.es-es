@@ -2,15 +2,19 @@
 sidebar: sidebar 
 permalink: task_cs_add_agent.html 
 keywords: agent, Workload Security, installation, Cloud Secure 
-summary: Agregar agentes de seguridad de carga de trabajo 
+summary: Los agentes de seguridad de carga de trabajo supervisan la actividad del usuario y detectan amenazas de seguridad en su entorno de almacenamiento. 
 ---
-= Instalación del agente de seguridad de carga de trabajo
+= Implementar agentes de seguridad de carga de trabajo
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Workload Security (anteriormente Cloud Secure) recopila datos de actividad del usuario utilizando uno o más agentes.  Los agentes se conectan a los dispositivos de su inquilino y recopilan datos que se envían a la capa SaaS de seguridad de carga de trabajo para su análisis.  Verlink:concept_cs_agent_requirements.html["Requisitos del agente"] para configurar una máquina virtual agente.
+Los agentes de seguridad de carga de trabajo son esenciales para supervisar la actividad del usuario y detectar posibles amenazas de seguridad en toda su infraestructura de almacenamiento. Esta guía proporciona instrucciones paso a paso para implementar agentes en su entorno. Antes de comenzar, asegúrese de que su servidor agente cumpla con los requisitos. link:concept_cs_agent_requirements.html["Requisitos del sistema"].
 
 
 
@@ -22,8 +26,23 @@ Workload Security (anteriormente Cloud Secure) recopila datos de actividad del u
 
 
 
-NOTE: Los cambios globales pueden tener un impacto potencial en sus sistemas ONTAP . Se recomienda encarecidamente realizar cambios que afecten a una gran cantidad de recopiladores de datos durante horas de menor actividad.
 
+== Mejores prácticas
+
+Tenga en cuenta lo siguiente antes de configurar su agente de seguridad de carga de trabajo.
+
+[cols="1,3"]
+|===
+
+
+| Pausa y reanudar | Pausa: Elimina fpolicies de ONTAP. Se suele utilizar cuando los clientes realizan actividades de mantenimiento prolongadas que pueden llevar mucho tiempo, como reinicios de máquinas virtuales de agentes o reemplazos de almacenamiento. Resumen: Se vuelven a agregar las políticas fpolicies a ONTAP. 
+
+
+| Anclar y desanclar | Unpin descarga inmediatamente la última versión (si está disponible) y actualiza el agente y el recopilador. Durante esta actualización, fpolicies se desconectará y volverá a conectarse. Esta función está diseñada para clientes que desean controlar el momento de las actualizaciones automáticas. 
+
+
+| Enfoque recomendado | Para configuraciones grandes, es recomendable usar Pin y Unpin en lugar de pausar los colectores. No es necesario pausar y reanudar mientras se utilizan unpin y unpin. Los clientes pueden mantener sus agentes y recopiladores vinculados y, al recibir una notificación por correo electrónico sobre una nueva versión, disponen de un plazo de 30 días para actualizar selectivamente los agentes uno por uno. Este enfoque minimiza el impacto de la latencia en las políticas de fpolicies y proporciona un mayor control sobre el proceso de actualización. 
+|===
 
 
 == Pasos para instalar el agente
@@ -34,7 +53,7 @@ NOTE: Los cambios globales pueden tener un impacto potencial en sus sistemas ONT
 El sistema muestra la página Agregar un agente:
 
 +
-image:Add-agent-1.png["Agregar un agente de seguridad de carga de trabajo"]
+image::Add-agent-1.png[Agregar un agente de seguridad de carga de trabajo]
 
 . Verifique que el servidor del agente cumpla con los requisitos mínimos del sistema.
 . Para verificar que el servidor del agente esté ejecutando una versión compatible de Linux, haga clic en _Versiones compatibles (i)_.
@@ -46,7 +65,7 @@ image:CloudSecureAgentWithProxy_Instructions.png["Nota sobre la instalación del
 . Ejecute el comando de instalación en una ventana de terminal.
 . El sistema muestra el siguiente mensaje cuando la instalación se completa correctamente:
 +
-image:new-agent-detect.png["Mensaje de instalación exitosa del agente"]
+image::new-agent-detect.png[Mensaje de instalación exitosa del agente]
 
 
 
