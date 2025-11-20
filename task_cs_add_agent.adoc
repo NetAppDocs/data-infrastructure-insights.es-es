@@ -38,10 +38,10 @@ Tenga en cuenta lo siguiente antes de configurar su agente de seguridad de carga
 | Pausa y reanudar | Pausa: Elimina fpolicies de ONTAP. Se suele utilizar cuando los clientes realizan actividades de mantenimiento prolongadas que pueden llevar mucho tiempo, como reinicios de máquinas virtuales de agentes o reemplazos de almacenamiento. Resumen: Se vuelven a agregar las políticas fpolicies a ONTAP. 
 
 
-| Anclar y desanclar | Unpin descarga inmediatamente la última versión (si está disponible) y actualiza el agente y el recopilador. Durante esta actualización, fpolicies se desconectará y volverá a conectarse. Esta función está diseñada para clientes que desean controlar el momento de las actualizaciones automáticas. 
+| Anclar y desanclar | Unpin descarga inmediatamente la última versión (si está disponible) y actualiza el agente y el recopilador. Durante esta actualización, fpolicies se desconectará y volverá a conectarse. Esta función está diseñada para clientes que desean controlar el momento de las actualizaciones automáticas. Véase más abajo para<<pinning-an-agent-at-the-current-version,Instrucciones para fijar/desfijar>> . 
 
 
-| Enfoque recomendado | Para configuraciones grandes, es recomendable usar Pin y Unpin en lugar de pausar los colectores. No es necesario pausar y reanudar mientras se utilizan unpin y unpin. Los clientes pueden mantener sus agentes y recopiladores vinculados y, al recibir una notificación por correo electrónico sobre una nueva versión, disponen de un plazo de 30 días para actualizar selectivamente los agentes uno por uno. Este enfoque minimiza el impacto de la latencia en las políticas de fpolicies y proporciona un mayor control sobre el proceso de actualización. 
+| Enfoque recomendado | Para configuraciones grandes, es recomendable usar Pin y Unpin en lugar de pausar los colectores. No es necesario pausar ni reanudar la actividad al usar las funciones de fijar y desfijar. Los clientes pueden mantener sus agentes y recopiladores vinculados y, al recibir una notificación por correo electrónico sobre una nueva versión, disponen de un plazo de 30 días para actualizar selectivamente los agentes uno por uno. Este enfoque minimiza el impacto de la latencia en las políticas de fpolicies y proporciona un mayor control sobre el proceso de actualización. 
 |===
 
 
