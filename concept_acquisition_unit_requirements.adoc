@@ -5,8 +5,17 @@ summary: El servidor o máquina virtual que utilice como unidad de adquisición 
 keywords: AU, acquisition unit, requirements, sizing 
 ---
 = Requisitos de la unidad de adquisición
+:toc: macro
 :hardbreaks:
+:toclevels: 1
 :allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
 
 
 [role="lead"]
@@ -22,7 +31,7 @@ Debe instalar una Unidad de Adquisición (AU) para adquirir información de los 
 | Componente | Requisitos de Linux | Requisitos de Windows 
 
 
-| Sistema operativo | Un equipo que ejecuta una versión con licencia de uno de los siguientes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux en las plataformas mencionadas anteriormente. Esta computadora no debería estar ejecutando ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado.  Si está ejecutando SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Una computadora que ejecute una versión con licencia de uno de los siguientes: * Microsoft Windows 10 de 64 bits * Microsoft Windows 11 * Microsoft Windows Server 2012 * Microsoft Windows Server 2012 R2 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Esta computadora no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado. 
+| Sistema operativo | Un equipo que ejecuta una versión con licencia de uno de los siguientes: * AlmaLinux 9.3 a 9.5 * Centos (64 bits): 7.2 a 7.9, 8.1 a 8.4, Stream 8, Stream 9 * Debian (64 bits): 9 a 12 * OpenSUSE Leap 15.1 a 15.6 * Oracle Enterprise Linux (64 bits): 7.5 a 7.9, 8.1 a 8.10, 9.3 a 9.6 * Red Hat (64 bits): 7.2 a 7.9, 8.1 a 8.10, 9.1 a 9.6 * Rocky 9.0 a 9.5 * SUSE Linux Enterprise Server 15, 15 SP2 a 15 SP6 * Ubuntu Server: 18.04, 20.04, 22.04, 24.04 LTS * SELinux en las plataformas mencionadas anteriormente. Esta computadora no debería estar ejecutando ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado.  Si está ejecutando SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights | Una computadora que ejecute una versión con licencia de uno de los siguientes: * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Esta computadora no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado. 
 
 
 | UPC | 2 núcleos de CPU | Mismo 
@@ -34,7 +43,7 @@ Debe instalar una Unidad de Adquisición (AU) para adquirir información de los 
 | Espacio disponible en disco | 50 GB (se recomiendan 100 GB) Para Linux, el espacio en disco se debe asignar de esta manera: /opt/netapp 10 GB (20 GB para entornos grandes) /var/log/netapp 40 GB (80 GB para entornos grandes) /tmp al menos 1 GB disponible durante la instalación | 50 GB 
 
 
-| Red | Se requiere una conexión Ethernet de 100 Mbps/1 Gbps, una dirección IP estática y conectividad de puerto 80 o 443 (saliente) desde la unidad de adquisición a *.cloudinsights.netapp.com o su inquilino de Data Infrastructure Insights (es decir, \https://<tenant_id>.c01.cloudinsights.netapp.com).  Para conocer los requisitos entre la Unidad de Adquisición y cada Recolector de Datos, consulte las instrucciones para lalink:data_collector_list.html["Recopilador de datos"] .  Si su organización requiere el uso de proxy para acceder a Internet, es posible que deba comprender el comportamiento del proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione.  Por ejemplo, ¿su organización bloquea el acceso de forma predeterminada y solo permite el acceso a sitios web o dominios específicos por excepción?  Si es así, deberá agregar el siguiente dominio a la lista de excepciones: *.cloudinsights.netapp.com Para obtener más información, lea sobre Proxies.link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Linux)"] olink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Windows)"] .  Tenga en cuenta que el puerto 443 debe estar abierto como "saliente" desde la AU a Data Infrastructure Insights. | Mismo 
+| Red | Se requiere una conexión Ethernet de 100 Mbps/1 Gbps, una dirección IP estática y conectividad de puerto 80 o 443 (saliente) desde la unidad de adquisición a *.cloudinsights.netapp.com o su inquilino de Data Infrastructure Insights (es decir, \https://<tenant_id>.c01.cloudinsights.netapp.com).  Para conocer los requisitos entre la Unidad de Adquisición y cada Recolector de Datos, consulte las instrucciones para lalink:data_collector_list.html["Recopilador de datos"] . Si su organización requiere el uso de proxy para acceder a Internet, es posible que deba comprender el comportamiento del proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione. Por ejemplo, ¿su organización bloquea el acceso de forma predeterminada y solo permite el acceso a sitios web o dominios específicos por excepción?  Si es así, deberá agregar el siguiente dominio a la lista de excepciones: *.cloudinsights.netapp.com Para obtener más información, lea sobre Proxies.link:task_troubleshooting_linux_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Linux)"] olink:task_troubleshooting_windows_acquisition_unit_problems.html#considerations-about-proxies-and-firewalls["aquí (Windows)"] . | Mismo 
 
 
 | Permisos | Permisos de Sudo en el servidor de la Unidad de Adquisición.  /tmp debe montarse con capacidades de ejecución. | Permisos de administrador en el servidor de la Unidad de Adquisición 
