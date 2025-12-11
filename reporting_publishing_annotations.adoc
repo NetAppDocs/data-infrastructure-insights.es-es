@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: reporting_publishing_annotations.html 
+summary: Aprenda a publicar y anular la publicación de anotaciones para usarlas en informes. 
+keywords: reporting, annotations, publish, unpublish, data warehouse, dwh 
+---
+= Publicación y anulación de publicaciones de anotaciones para informes
+:allow-uri-read: 
+
+
+
+
+== Publicación y anulación de publicaciones de anotaciones para informes
+
+[role="lead"]
+Aprenda a publicar anotaciones para usarlas en informes y en el almacén de datos, y a cancelar la publicación de anotaciones correctamente cuando ya no sean necesarias.
+
+
+
+== Publicación de anotaciones para informes
+
+Después de haber creado anotaciones en Data Infrastructure Insights, puede publicarlas para usarlas en informes.
+
+
+
+=== Pasos para publicar anotaciones
+
+. Vaya a la página *Observabilidad > Enriquecer > Anotaciones y seleccione la pestaña _Anotaciones para informes_.
+. Localiza la anotación que deseas publicar.
+. Seleccione la anotación y seleccione _Publicar en informes_.  También puede optar por Aplicarlo a datos históricos, lo que permite utilizar la anotación al ejecutar informes de historial.
+. Una vez publicada, la anotación estará disponible para su uso en informes.
+. Las anotaciones se publican para su uso en informes después de la siguiente ejecución de ETL.
+
+
+[NOTE]
+====
+Cualquier informe que haga referencia a la anotación utilizará los valores publicados.  Si modifica una anotación después de publicarla, es posible que deba volver a publicarla para que los cambios surtan efecto en los informes.
+
+====
+
+
+== Cancelar la publicación de anotaciones para informes
+
+Puede haber ocasiones en las que necesite eliminar o anular la publicación de anotaciones para que ya no se utilicen en los informes.  Por ejemplo, es posible que una anotación ya no sea necesaria o que contenga información obsoleta que no debería aparecer en los informes.
+
+
+
+=== Pasos para anular la publicación de anotaciones
+
+Antes de cancelar la publicación de una anotación, tenga en cuenta que esta acción afectará a cualquier informe existente que utilice la anotación.  Es posible que los informes requieran edición o asistencia de servicios profesionales para eliminar las referencias de anotaciones.
+
+. En la interfaz de usuario de Data Infrastructure Insights , navegue hasta la pestaña _Anotaciones para informes_.
+. Localice la anotación que desea anular su publicación.
+. Para cada objeto donde se publique la anotación, anule la selección de la anotación y seleccione _Guardar_.
+. Elimine cualquier consulta o regla que aún haga referencia a la anotación para asegurarse de que no esté marcada como "en uso".
+. Las anotaciones no se publican después de la siguiente ejecución de ETL.
+. Una vez finalizado el ETL, la anotación se puede eliminar de la lista de anotaciones, si ya no es necesaria en el lado del inquilino.
+
+
+[IMPORTANT]
+====
+Las anotaciones seguirán apareciendo en el almacén de datos hasta que se despublicen correctamente.  Simplemente eliminar una anotación de la página Anotaciones sin anular su publicación primero dejará datos obsoletos que pueden aparecer en informes existentes.  Siga los pasos de cancelación de publicación anteriores para garantizar la eliminación completa.
+
+====
+
+
+== Impacto en los informes existentes
+
+La eliminación o cancelación de la publicación de anotaciones puede requerir modificaciones en los informes existentes que hacen referencia a dichas anotaciones. Considere lo siguiente:
+
+* Los informes que utilizan la anotación como filtro o dimensión deberán actualizarse.
+* Si se elimina una anotación sin actualizar los informes dependientes, esos informes pueden devolver errores o resultados inesperados.
+* Es posible que se necesiten servicios profesionales para ayudar con la remediación de informes en escenarios complejos.
+
+
+Se recomienda revisar todos los informes que dependen de una anotación antes de cancelar su publicación.
