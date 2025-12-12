@@ -43,9 +43,9 @@ Vaya a *Análisis y control > Observabilidad* para obtener más información sob
 
 == Comience su prueba gratuita de Data Infrastructure Insights
 
-Si es la primera vez que inicia sesión en Data Infrastructure Insights, en la oferta de Data Infrastructure Insights , haga clic en *Iniciar prueba gratuita*.  Data Infrastructure Insights lo guiará en el proceso de creación del inquilino de su empresa, incluida la selección de la región donde desea que resida su inquilino.
+Si es la primera vez que inicia sesión en Data Infrastructure Insights, lea sobre todo lo que Data Infrastructure Insights tiene para ofrecer y, cuando esté _Listo para comenzar_, haga clic en *Solicitar prueba* y complete su información.
 
-image:trial_region_selector.png["Seleccionar la región en la que alojar su inquilino de Data Infrastructure Insights"]
+Como parte de la configuración de su inquilino de prueba, elegirá la región en la que alojará a su inquilino y si desea que esté en AWS o Azure.
 
 Una vez completada la creación de su inquilino, use sus credenciales de consola para iniciar sesión y comenzar su prueba gratuita de 30 días de Data Infrastructure Insights.  Durante esta prueba, podrá explorar las características que Data Infrastructure Insights tiene para ofrecer.
 
