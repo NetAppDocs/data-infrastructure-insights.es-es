@@ -47,7 +47,7 @@ Si es la primera vez que inicia sesión en Data Infrastructure Insights, lea sob
 
 Como parte de la configuración de su inquilino de prueba, elegirá la región en la que alojará a su inquilino y si desea que esté en AWS o Azure.
 
-Una vez completada la creación de su inquilino, use sus credenciales de consola para iniciar sesión y comenzar su prueba gratuita de 30 días de Data Infrastructure Insights.  Durante esta prueba, podrá explorar las características que Data Infrastructure Insights tiene para ofrecer.
+Una vez completada la creación de su inquilino, use sus credenciales de consola para iniciar sesión y comenzar su prueba gratuita de 30 días de Data Infrastructure Insights. Durante esta prueba, podrá explorar las características que Data Infrastructure Insights tiene para ofrecer.
 
 Durante la prueba gratuita, puedeslink:concept_subscribing_to_cloud_insights.html["Comienza tu suscripción"] a Data Infrastructure Insights en cualquier momento.  Cuando esté suscrito, podrá utilizar las funciones de Data Infrastructure Insights según su suscripción actual.
 
@@ -55,7 +55,7 @@ Durante la prueba gratuita, puedeslink:concept_subscribing_to_cloud_insights.htm
 
 == Sign in y ve
 
-Una vez que se haya creado su inquilino, en cualquier momento puede simplemente iniciar sesión en el Portal de la NetApp Console y navegar hasta ellink:https://services.cloud.netapp.com["Servicios en la nube"] página y seleccione *Ir a Data Infrastructure Insights*.
+Una vez que se haya creado su inquilino, en cualquier momento puede simplemente iniciar sesión en el portal NetApp BlueXP y navegar hasta el link:https://services.cloud.netapp.com["Servicios en la nube"] página y seleccione *Ir a Data Infrastructure Insights*.
 
 También puede abrir un navegador directamente en la URL de su inquilino de Data Infrastructure Insights , por ejemplo:
 

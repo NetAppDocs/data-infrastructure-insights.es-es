@@ -193,6 +193,8 @@ sidebar:
         url: "/reporting_creating_custom_reports.html#reporting-data-models"
       - title: API de base de datos de informes
         url: "/reporting_querying_database.html"
+      - title: Publicación de anotaciones en informes
+        url: "/reporting_publishing_annotations.html"
       - title: Retención de datos
         url: "/reporting_data_retention.html"
       - title: Diagramas de esquema
