@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: cs_automated_response_policies.html 
-keywords: alert, snapshot, ransomware, attack 
-summary: 'Puede establecer políticas de respuesta automatizadas para posibles ataques (como ransomware) y/o advertencias de actividad.' 
+keywords: alert, snapshot, ransomware, attack, tampering 
+summary: Configure políticas de respuesta automatizadas para tomar medidas inmediatas durante incidentes de seguridad, incluidas instantáneas, restricción de acceso de usuarios y notificaciones de webhook para amenazas y comportamiento sospechoso. 
 ---
 = Políticas de respuesta automatizada
 :hardbreaks:

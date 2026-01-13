@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task_cs_add_agent.html 
 keywords: agent, Workload Security, installation, Cloud Secure 
-summary: Los agentes de seguridad de carga de trabajo supervisan la actividad del usuario y detectan amenazas de seguridad en su entorno de almacenamiento. 
+summary: Implemente agentes de seguridad de carga de trabajo para monitorear la actividad del usuario, detectar amenazas de seguridad y proteger su infraestructura de almacenamiento. 
 ---
 = Implementar agentes de seguridad de carga de trabajo
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Los agentes de seguridad de carga de trabajo supervisan la actividad de
 
 
 [role="lead"]
-Los agentes de seguridad de carga de trabajo son esenciales para supervisar la actividad del usuario y detectar posibles amenazas de seguridad en toda su infraestructura de almacenamiento. Esta guía proporciona instrucciones paso a paso para implementar agentes en su entorno. Antes de comenzar, asegúrese de que su servidor agente cumpla con los requisitos. link:concept_cs_agent_requirements.html["Requisitos del sistema"].
+Los agentes de seguridad de carga de trabajo son esenciales para monitorear la actividad del usuario y detectar posibles amenazas a la seguridad en su infraestructura de almacenamiento. Esta guía proporciona instrucciones de instalación paso a paso, mejores prácticas para la gestión de agentes (incluidas capacidades de pausa/reanudación y fijación/desfijación) y requisitos de configuración posteriores a la implementación. Antes de comenzar, asegúrese de que su servidor de agente cumpla con los link:concept_cs_agent_requirements.html["Requisitos del sistema"].
 
 
 

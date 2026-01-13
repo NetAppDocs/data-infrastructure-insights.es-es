@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: cs_restrict_user_access.html 
 keywords: alert, snapshot,  attack 
-summary: Con Workload Security, puede restringir el acceso de los usuarios en caso de sospecha de sabotaje 
+summary: Detenga inmediatamente los ataques detectados restringiendo el acceso de los usuarios comprometidos de forma automática o manual, evitando así mayores daños a los sistemas de archivos en múltiples volúmenes de almacenamiento. 
 ---
-= Bloqueo de acceso de usuarios
+= Bloquear el acceso de usuarios para detener ataques
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,7 @@ summary: Con Workload Security, puede restringir el acceso de los usuarios en ca
 
 
 [role="lead"]
-Una vez que se detecta un ataque, Workload Security puede detenerlo bloqueando el acceso del usuario al sistema de archivos.  El acceso se puede bloquear automáticamente, mediante políticas de respuesta automatizadas o manualmente desde las páginas de alerta o detalles del usuario.
-
-Al bloquear el acceso de usuarios, debe definir un período de tiempo de bloqueo.  Una vez finalizado el período de tiempo seleccionado, el acceso del usuario se restablece automáticamente.  El bloqueo de acceso es compatible con los protocolos SMB y NFS.
+Detenga inmediatamente los ataques detectados bloqueando el acceso de los usuarios comprometidos para evitar más daños o exfiltración de datos. Workload Security permite tanto el bloqueo automático a través de políticas de respuesta automatizadas como la intervención manual desde páginas de alertas o detalles del usuario, lo que le brinda un control flexible sobre su respuesta de seguridad. Las restricciones de acceso se aplican automáticamente en todos los volúmenes de almacenamiento monitoreados y tienen un límite de tiempo para la restauración automática.
 
 El usuario está bloqueado directamente para SMB y la dirección IP de las máquinas host que provocan el ataque se bloqueará para NFS.  A esas direcciones IP de máquinas se les bloqueará el acceso a cualquiera de las máquinas virtuales de almacenamiento (SVM) monitoreadas por Workload Security.
 

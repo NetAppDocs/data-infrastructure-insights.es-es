@@ -2,15 +2,19 @@
 sidebar: sidebar 
 permalink: task_config_cs_incloud.html 
 keywords: Cloud, Storage, AWS, Cloud Volumes, Cloud ONTAP, firewall, VPC, Subnet,  cloud secure 
-summary: Workload Security utiliza recopiladores de datos para recopilar datos de acceso a archivos y usuarios de los dispositivos. 
+summary: Configure los recopiladores de datos de seguridad de carga de trabajo para Cloud Volumes ONTAP y Amazon FSx for NetApp ONTAP para monitorear el acceso a archivos, la actividad del usuario y detectar amenazas en su infraestructura de almacenamiento en la nube. 
 ---
 = Configuración del recopilador Cloud Volumes ONTAP y Amazon FSx for NetApp ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Workload Security utiliza recopiladores de datos para recopilar datos de acceso a archivos y usuarios de los dispositivos.
+Supervise el acceso de usuarios y archivos en su infraestructura de almacenamiento en la nube configurando los recopiladores de datos de Workload Security para Cloud Volumes ONTAP y Amazon FSx for NetApp ONTAP. Esta guía proporciona instrucciones paso a paso para implementar agentes en AWS y conectarlos a sus instancias de almacenamiento en la nube.
 
 
 

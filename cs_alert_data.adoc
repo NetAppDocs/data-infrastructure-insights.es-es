@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: cs_alert_data.html 
-keywords: alert, attack, ransomware, activity, security, abnormal 
+keywords: alert, attack, ransomware, activity, security, abnormal, tampering 
 summary: Workload Security crea alertas en caso de actividad anormal del usuario o posible ataque.  La página Alertas enumera estas actividades para una investigación rápida y sencilla. 
 ---
 = Alertas
@@ -14,7 +14,7 @@ summary: Workload Security crea alertas en caso de actividad anormal del usuario
 
 
 [role="lead"]
-La página Alertas de seguridad de carga de trabajo muestra una línea de tiempo de ataques y/o advertencias recientes y le permite ver detalles de cada problema.
+La página Alertas de seguridad de carga de trabajo proporciona una cronología completa de las amenazas y advertencias detectadas con herramientas de investigación detalladas. Vea detalles de alertas, administre actualizaciones de estado, filtre por criterios y realice un seguimiento de las actividades de los usuarios para investigar y responder de manera eficiente a los incidentes de seguridad.
 
 image:CloudSecureAlertsListPage.png["Lista de alertas"]
 
@@ -102,9 +102,9 @@ Puede hacer clic en un enlace de alerta en la página de lista de alertas para a
 
 Esta sección muestra detalles sobre el usuario involucrado en el ataque potencial, incluido un gráfico de la actividad principal del usuario.
 
-Página de alertas (este ejemplo muestra un posible ataque de ransomware):image:RansomwareAlertExample.png["Ejemplo de alerta de ransomware"]
+Página de alertas (este ejemplo muestra un posible ataque de manipulación de archivos): image:RansomwareAlertExample.png["Ejemplo de alerta de manipulación de archivos"]
 
-Página de detalles (este ejemplo muestra un posible ataque de ransomware):image:RansomwareDetailPageExample.png["Ejemplo de página de detalles de ransomware"]
+Página de detalles (este ejemplo muestra un posible ataque de manipulación de archivos): image:RansomwareDetailPageExample.png["Ejemplo de página de detalles de manipulación de archivos"]
 
 
 
@@ -112,7 +112,7 @@ Página de detalles (este ejemplo muestra un posible ataque de ransomware):image
 
 Workload Security protege sus datos tomando automáticamente una instantánea cuando se detecta actividad maliciosa, lo que garantiza que sus datos estén respaldados de forma segura.
 
-Puedes definirlink:cs_automated_response_policies.html["políticas de respuesta automatizada"] que toman una instantánea cuando se detecta un ataque de ransomware u otra actividad anormal del usuario.  También puede tomar una instantánea manualmente desde la página de alerta.
+Puedes definir link:cs_automated_response_policies.html["políticas de respuesta automatizada"] que toman una instantánea cuando se detecta un ataque de manipulación de archivos u otra actividad anormal del usuario. También puede tomar una instantánea manualmente desde la página de alerta.
 
 Instantánea automática tomada:image:AlertActionsAutomaticExample.png["Pantalla de acción de alerta, 1000"]
 

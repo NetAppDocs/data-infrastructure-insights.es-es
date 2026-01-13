@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_cs_integration_with_ontap_arp.html 
-summary: Workload Security se integra con ONTAP Autonomous Ransomware Protection para mejorar la detección de ransomware. 
+summary: Mejore la detección de ataques integrando Workload Security con ONTAP Autonomous Protection para obtener análisis correlacionados, respuestas automatizadas y capacidades de investigación forense. 
 keywords: ransomware, ARP, Protection, Security 
 ---
 = Integración con ONTAP Autonomous Ransomware Protection
@@ -10,7 +10,7 @@ keywords: ransomware, ARP, Protection, Security
 
 
 [role="lead"]
-La función de protección autónoma contra ransomware (ARP) de ONTAP utiliza análisis de carga de trabajo en entornos NAS (NFS y SMB) para detectar y advertir de forma proactiva sobre actividad anormal en archivos que podría indicar un ataque de ransomware.
+La función de protección autónoma de ONTAP utiliza el análisis de la carga de trabajo en entornos NAS (NFS y SMB) para detectar y advertir de forma proactiva sobre actividad anormal en los archivos que podría indicar ataques maliciosos o modificaciones de datos no autorizadas.
 
 Se pueden encontrar detalles adicionales y requisitos de licencia sobre ARPlink:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["aquí"] .
 
@@ -62,7 +62,7 @@ A continuación se muestra un ejemplo de alerta generada debido a un evento ARP:
 
 image:CS_Ransomware_Example_1.png["Sección superior de alerta de ransomware"] image:CS_Ransomware_Example_2.png["Sección superior de alerta de ransomware"] image:CS_Ransomware_Example_3.png["Sección superior de alerta de ransomware"]
 
-Un banner de alta confianza indica que el ataque ha mostrado un comportamiento de ransomware junto con actividades de cifrado de archivos.  El gráfico de archivos cifrados indica la marca de tiempo en la que la solución ARP detectó la actividad de cifrado de volumen.
+Un banner de alta confianza indica que el ataque ha mostrado un comportamiento de manipulación de archivos junto con actividades de cifrado de archivos. El gráfico de archivos cifrados indica la marca de tiempo en la que la solución ARP detectó la actividad de cifrado de volumen.
 
 
 

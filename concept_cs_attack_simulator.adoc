@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept_cs_attack_simulator.html 
 keywords: ransomware, simulation, simulator, restrict, attack 
-summary: Usando un script, puede simular un ataque de ransomware para probar o demostrar la seguridad de la carga de trabajo 
+summary: Pruebe y valide las capacidades de detección de seguridad de la carga de trabajo simulando ataques utilizando el script de simulación incluido para verificar la generación de alertas y las políticas de respuesta. 
 ---
-= Seguridad de la carga de trabajo: simulación de un ataque
+= Seguridad de la carga de trabajo: Simulación de manipulación anormal de archivos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: Usando un script, puede simular un ataque de ransomware para probar o d
 
 
 [role="lead"]
-Puede utilizar las instrucciones de esta página para simular un ataque para probar o demostrar la seguridad de la carga de trabajo utilizando el script de simulación de ransomware incluido.
+Puede utilizar las instrucciones de esta página para simular la manipulación de archivos para probar o demostrar la seguridad de la carga de trabajo utilizando el script de simulación de manipulación de archivos incluido.
 
 
 
 == Cosas a tener en cuenta antes de empezar
 
-* El script de simulación de ransomware solo funciona en Linux.  El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.
+* El script de simulación de manipulación de archivos solo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.
 * Workload Security detectará eventos y alertas generados con NFS 4.1 solo si la versión de ONTAP es 9.15 o superior.
 * El script se proporciona con los archivos de instalación del agente de Workload Security.  Está disponible en cualquier máquina que tenga instalado un agente de Workload Security.
 * Puede ejecutar el script en la propia máquina del agente de Workload Security; no es necesario preparar otra máquina Linux.  Sin embargo, si prefiere ejecutar el script en otro sistema, simplemente copie el script y ejecútelo allí.
@@ -158,7 +158,7 @@ Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo u
 
 Antes de crear los archivos, primero debe detener olink:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
 
-Para generar una alerta de ransomware, puede ejecutar el script incluido que simulará una alerta de ransomware en Workload Security.
+Para generar una alerta de manipulación de archivos, puede ejecutar el script incluido que simulará una alerta de manipulación de archivos en Workload Security.
 
 
 
@@ -196,7 +196,7 @@ Nota: En el caso de que se cumplan todas las condiciones siguientes, se generar�
 . Se agrega el recopilador de datos de seguridad de carga de trabajo en el modo de clúster.
 
 
-Workload Security detecta patrones de ransomware según el comportamiento del usuario, mientras que ONTAP ARP detecta la actividad de ransomware según las actividades de cifrado en los archivos.
+Workload Security detecta patrones de manipulación de archivos según el comportamiento del usuario, mientras que ONTAP ARP detecta la actividad de manipulación de archivos según las actividades de cifrado en los archivos.
 
 Si se cumplen las condiciones, Workload Security marca las alertas como alerta de alta confianza.
 
@@ -212,6 +212,6 @@ image:ws_high_confidence_alert_detail.png["Ejemplo de alerta de alta confianza, 
 
 == Activar alerta varias veces
 
-Workload Security aprende el comportamiento del usuario y no generará alertas sobre ataques de ransomware repetidos dentro de las 24 horas para el mismo usuario.
+Workload Security aprende el comportamiento del usuario y no generará alertas sobre ataques repetidos de manipulación de archivos dentro de las 24 horas para el mismo usuario.
 
 Para generar una nueva alerta con un usuario diferente, siga los mismos pasos nuevamente (crear datos de prueba y luego cifrarlos).

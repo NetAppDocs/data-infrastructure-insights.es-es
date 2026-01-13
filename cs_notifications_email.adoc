@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: cs_notifications_email.html 
-summary: Agregar direcciones de correo electrónico para notificaciones de alertas de seguridad de carga de trabajo. 
+summary: Configure notificaciones por correo electrónico para recibir alertas sobre posibles ataques, advertencias de seguridad y el estado del agente/recopilador de datos en tiempo real. 
 keywords: email, notifications, alerts, warnings, attacks 
 ---
 = Configuración de notificaciones por correo electrónico para alertas, advertencias y el estado del recopilador de origen de datos/agente
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Para configurar los destinatarios de las alertas de seguridad de carga de trabajo, haga clic en *Administrador > Notificaciones* e ingrese una dirección de correo electrónico en las secciones correspondientes para cada destinatario.
+Las notificaciones por correo electrónico le permiten mantenerse informado sobre posibles ataques, advertencias de seguridad y problemas de estado de la infraestructura a medida que ocurren. Configure las direcciones de correo electrónico de los destinatarios en la configuración de Administración > Notificaciones para recibir alertas en tiempo real adaptadas a las responsabilidades de cada destinatario.
 
 
 
@@ -33,7 +37,7 @@ Tenga en cuenta lo siguiente:
 * Las alertas de salud se enviarán solo después de que el agente/recaudador deje de informar durante al menos una hora.
 * Solo se envía una notificación por correo electrónico a los destinatarios previstos en un período determinado de 24 horas, incluso si el agente o el recopilador de datos está desconectado durante un período más prolongado.
 * En caso de falla del Agente, se enviará una alerta (no una por recolector).  El correo electrónico incluirá una lista de todos los SVM afectados.
-* La falla de recopilación de Active Directory se informa como una advertencia; no afecta la detección de ransomware.
+* La falla de recopilación de Active Directory se informa como una advertencia; no afecta la detección de amenazas.
 * La lista de configuración de Primeros pasos ahora incluye una nueva fase _Configurar notificaciones por correo electrónico_.
 
 

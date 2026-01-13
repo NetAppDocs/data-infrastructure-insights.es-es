@@ -7,6 +7,10 @@ summary: Agregar recopiladores de datos
 = Configuración del recopilador de datos NetApp ONTAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -1,13 +1,12 @@
----
-sidebar: sidebar 
-permalink: concept_cs_event_rate_checker.html 
-summary: Este script se puede ejecutar para verificar la tasa de eventos en el SVM antes de instalar un DSC ONTAP SVM 
-keywords: event, checker, rate, sizing, cloud secure 
----
 = Comprobador de tasa de eventos de SVM (Guía de dimensionamiento de agentes)
-:hardbreaks:
 :allow-uri-read: 
 
+
+r--- barra lateral: enlace permanente de la barra lateral: concept_cs_event_rate_checker.html resumen: Utilice el Comprobador de tasa de eventos de SVM para medir las tasas de eventos de NFS/SMB y determinar el tamaño óptimo del agente antes de implementar los recopiladores de datos de Workload Security. palabras clave: evento, comprobador, tasa, tamaño, seguridad en la nube ---
+
+
+
+= Comprobador de tasa de eventos de SVM (Guía de dimensionamiento de agentes)
 
 [role="lead"]
 El verificador de tasa de eventos se utiliza para verificar la tasa de eventos combinados NFS/SMB en el SVM antes de instalar un recopilador de datos SVM de ONTAP , para ver cuántos SVM podrá monitorear una máquina agente.  Utilice el Comprobador de tasa de eventos como guía de tamaño para ayudar a planificar su entorno de seguridad.
