@@ -4,7 +4,7 @@ permalink: concept_cs_attack_simulator.html
 keywords: ransomware, simulation, simulator, restrict, attack 
 summary: Pruebe y valide las capacidades de detección de seguridad de la carga de trabajo simulando ataques utilizando el script de simulación incluido para verificar la generación de alertas y las políticas de respuesta. 
 ---
-= Seguridad de la carga de trabajo: Simulación de manipulación anormal de archivos
+= Seguridad de la carga de trabajo: simulación de manipulación de archivos
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
