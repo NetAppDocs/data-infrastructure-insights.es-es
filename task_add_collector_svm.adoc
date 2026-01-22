@@ -112,6 +112,23 @@ image:ws_test_connection_success_example.png["Mensaje de éxito de 'Conexión de
 
 
 
+== Cosas a tener en cuenta para ONTAP Multi Admin Verify (MAV)
+
+Es posible que algunas funciones, como la creación y eliminación de instantáneas o el bloqueo de usuarios (SMB), no funcionen según los comandos MAV añadidos en tu versión de ONTAP.
+
+Sigue los pasos a continuación para añadir exclusiones a tus comandos MAV que permiten a Workload Security crear o eliminar instantáneas y bloquear usuarios.
+
+Comandos para permitir crear y eliminar instantáneas:
+
+....
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
+....
+Comando para permitir el bloqueo de usuarios:
+
+ multi-admin-verify rule delete -operation set
+
+
 == Requisitos previos para el bloqueo del acceso de usuarios
 
 Tenga en cuenta lo siguiente paralink:cs_restrict_user_access.html["Bloqueo de acceso de usuarios"] :
@@ -318,7 +335,7 @@ NOTE: No se puede pausar un recopilador si tiene usuarios restringidos.  Restaur
 Tenga en cuenta lo siguiente:
 
 * La purga de instantáneas no se realizará según la configuración configurada en un recopilador en pausa.
-* Los eventos EMS (como ONTAP ARP) no se procesarán en un recopilador en pausa.  Esto significa que si ONTAP identifica un ataque de ransomware, Data Infrastructure Insights Workload Security no podrá adquirir ese evento.
+* Los eventos EMS (como ONTAP ARP) no se procesarán en un recopilador en pausa. Esto significa que si ONTAP identifica un ataque de manipulación de archivos, Data Infrastructure Insights Workload Security no podrá adquirir ese evento.
 * NO se enviarán correos electrónicos de notificaciones de salud para un recolector en pausa.
 * No se admitirán acciones manuales o automáticas (como instantáneas o bloqueo de usuarios) en un recopilador en pausa.
 * En las actualizaciones del agente o del recopilador, en los reinicios de la máquina virtual del agente o en el reinicio del servicio del agente, un recopilador en pausa permanecerá en estado _Pausado_.
