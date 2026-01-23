@@ -14,7 +14,7 @@ summary: Acceda a los datos de seguridad de la carga de trabajo a través de una
 
 
 [role="lead"]
-La API de seguridad de carga de trabajo permite a los clientes de NetApp y a los proveedores de software independientes (ISV) integrar la seguridad de carga de trabajo con otras aplicaciones, como CMDB u otros sistemas de tickets.
+Integra Workload Security con tu ecosistema empresarial usando una API de REST protegida por autenticación segura basada en tokens. Recupera datos de actividad forense, gestiona tokens de acceso a la API y desarrolla integraciones personalizadas con CMDBs, sistemas de tickets y otras aplicaciones. La documentación interactiva de Swagger proporciona especificaciones completas de la API y te permite probar los endpoints directamente.
 
 Requisitos para el acceso a la API:
 

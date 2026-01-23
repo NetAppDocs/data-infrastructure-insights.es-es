@@ -1,18 +1,22 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: Descripción general de consultas 
+summary: Consulta los activos de inventario y las métricas de integración para supervisar, solucionar problemas y analizar el rendimiento en toda tu infraestructura, incluidos el almacenamiento, el cómputo y los recursos de red. 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
-= Activos utilizados en consultas
+= Consulta de assets y métricas
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Las consultas le permiten monitorear y solucionar problemas de su red buscando activos y métricas en su inquilino a un nivel granular según criterios seleccionados por el usuario (por ejemplo, anotaciones).
+Consulta los activos físicos y virtuales de tu infraestructura para monitorear el rendimiento, solucionar problemas y realizar búsquedas granulares basadas en criterios personalizados como anotaciones. Data Infrastructure Insights permite consultas en diversos tipos de activos, desde matrices de almacenamiento y hosts hasta aplicaciones y máquinas virtuales, junto con métricas de integración de Kubernetes, Docker y ONTAP Advanced Data para una visibilidad completa.
 
-Tenga en cuenta que las reglas de anotación, que asignan automáticamente anotaciones a los activos, _requieren_ una consulta.
+Ten en cuenta que las reglas de anotación, que asignan automáticamente anotaciones a los assets, requieren una consulta que se haya compartido con todos. Mira abajo para más información sobre cómo compartir consultas.
 
 Puede consultar los activos de inventario físicos o virtuales (y sus métricas asociadas) en su inquilino, o las métricas proporcionadas con la integración, como Kubernetes u ONTAP Advanced Data.
 
@@ -20,34 +24,7 @@ Puede consultar los activos de inventario físicos o virtuales (y sus métricas 
 
 == Activos de inventario
 
-Los siguientes tipos de activos se pueden usar en consultas, widgets de panel y páginas de destino de activos personalizados.  Los campos y contadores disponibles para filtros, expresiones y visualización variarán según el tipo de activo.  No todos los activos se pueden utilizar en todos los tipos de widgets.
-
-* Aplicación
-* Almacén de datos
-* Disco
-* Tela
-* Dispositivo genérico
-* Host
-* Volumen interno
-* Sesión iSCSI
-* Portal de red iSCSI
-* Camino
-* Puerto
-* Árbol Q
-* Cuota
-* Compartir
-* Almacenamiento
-* Nodo de almacenamiento
-* Pool de almacenamiento
-* Máquina virtual de almacenamiento (SVM)
-* Cambiar
-* Cinta
-* Kit de herramientas de gestión de vehículos
-* Máquina virtual
-* Volumen
-* Zona
-* Miembro de la zona
-
+Todos los tipos de activos de inventario (también llamados de infraestructura) (almacenamiento, switch, VM, Application, etc.) pueden usarse en consultas, widgets de panel y páginas de destino de activos personalizadas. Los campos y contadores disponibles para filtros, expresiones y visualización variarán entre los tipos de activos.
 
 
 
@@ -56,3 +33,14 @@ Los siguientes tipos de activos se pueden usar en consultas, widgets de panel y 
 Además de consultar activos de inventario y sus métricas de rendimiento asociadas, también puede consultar métricas de *datos de integración*, como las generadas por Kubernetes o Docker, o proporcionadas con ONTAP Advanced Metrics.
 
 image:QueryPageFilter.png["Ejemplo de filtro de consulta de integración"]
+
+
+
+== Compartir consultas
+
+Controla el acceso a tus consultas eligiendo quién puede verlas y editarlas. Por defecto, las nuevas consultas son privadas y visibles solo para ti, y puedes elegir compartirlas con usuarios específicos o con toda tu organización con niveles de permiso flexibles (solo lectura o edición).
+
+Puedes elegir compartir la consulta con Todos o con usuarios seleccionados, con permisos de edición o solo lectura.
+
+
+NOTE: Los usuarios con permiso de Account Owner pueden ver todas las consultas, independientemente de la configuración de privacidad.

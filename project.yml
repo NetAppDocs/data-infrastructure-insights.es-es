@@ -63,12 +63,14 @@ sidebar:
         url: "/concept_dashboards_overview.html"
       - title: Características de los Dashboards
         url: "/concept_dashboard_features.html"
+      - title: Administrar el acceso al panel de control
+        url: "/dashboard_access_management.html"
+      - title: Mejores prácticas para el panel de control
+        url: "/concept_dashboard_best_practices.html"
       - title: Paneles de muestra
         entries:
         - title: Rendimiento de la máquina virtual
           url: "/task_dashboard_example_VM_performance.html"
-      - title: Mejores prácticas para el panel de control
-        url: "/concept_dashboard_best_practices.html"
     - title: Trabajar con consultas
       entries:
       - title: Consulta de activos
@@ -111,8 +113,6 @@ sidebar:
         url: "/concept_anomaly_detection.html"
       - title: Monitores definidos por el sistema
         url: "/task_system_monitors.html"
-      - title: Configuración de destinatarios de notificaciones
-        url: "/concept_notifications_email.html"
       - title: Notificaciones de webhook
         entries:
         - title: Configuración de webhooks

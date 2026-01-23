@@ -25,7 +25,7 @@ Data Infrastructure Insights proporciona monitoreo multicloud híbrido, lo que l
 * Optimizar la utilización de recursos
 * Paneles de control integrados o personalizables con filtros avanzados para minimizar el ruido de la pantalla y responder preguntas
 * Descubra la salud de sus operaciones de almacenamiento de ONTAP 
-* Proteja su activo empresarial más valioso, los datos, del ransomware o ataques de destrucción de datos.
+* Protege tu activo empresarial más valioso, los datos, de la manipulación de archivos o ataques de destrucción de datos
 
 
 '''
