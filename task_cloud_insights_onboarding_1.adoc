@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: task_cloud_insights_onboarding_1.html 
+summary: Registrarse en Data Infrastructure Insights y crear su inquilino. 
+keywords: onboarding, new user 
+---
+= Data Infrastructure Insights
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Antes de poder comenzar a trabajar con Data Infrastructure Insights, debe registrarse en el portal * NetApp Console*.  Si ya tiene un inicio de sesión en la NetApp Console , puede comenzar una prueba gratuita de Data Infrastructure Insights con unos pocos pasos rápidos.
+
+Estas instrucciones están siendo actualizadas. Por favor, vuelve más tarde.
