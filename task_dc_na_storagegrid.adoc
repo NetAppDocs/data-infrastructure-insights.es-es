@@ -7,6 +7,10 @@ keywords: data collector, queries, create, storagegrid
 = Recopilador de datos NetApp StorageGRID
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -51,7 +55,7 @@ Los siguientes son los requisitos para configurar esta fuente de datos:
 
 * Dirección IP del host de StorageGRID
 * Un nombre de usuario y una contraseña para un usuario al que se le han asignado los roles de Consulta de métricas y Acceso de inquilino
-* Puerto 443
+* Puerto 443 (o 8443 si está configurado)
 
 
 
