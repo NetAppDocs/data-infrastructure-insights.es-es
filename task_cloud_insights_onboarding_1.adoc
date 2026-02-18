@@ -37,6 +37,9 @@ Una vez que tengas una cuenta de NetApp Console, simplemente elige *Iniciar sesi
 
 Selecciona tu organización en el menú desplegable en la parte superior de la pantalla.
 
+
+NOTE: El sitio DII se asociará a la Organización de Consola seleccionada. Si tienes varias Organizaciones, asegúrate de seleccionar la adecuada para asociarla con el tenant DII.
+
 En el menú principal en la parte superior izquierda, selecciona *Governance > Data Infrastructure Insights*.
 
 
