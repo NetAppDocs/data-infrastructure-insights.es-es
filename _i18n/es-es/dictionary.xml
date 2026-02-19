@@ -13879,4 +13879,72 @@
   <block id="0eb50b790bd551aaef2bbefbd077cd1b" category="cell">Nombre usado para iniciar sesión en StorageGRID (Grid Manager)</block>
   <block id="9730a2702facd53c375d1f62e4d662a2" category="cell">Contraseña utilizada para iniciar sesión en StorageGRID (Grid Manager)</block>
   <block id="749045de0e520f5ad8cff4d4635dd0d8" category="admonition">El sitio DII se asociará a la Organización de Consola seleccionada. Si tienes varias Organizaciones, asegúrate de seleccionar la adecuada para asociarla con el tenant DII.</block>
+  <block id="d55e67726729808ea6f67b165600c105" category="summary">Puedes usar el asistente de IA de DII para resumir tus datos, explorar insights, solucionar problemas y planificar tus recursos.</block>
+  <block id="accab30482cee85eb4e017db64428cad" category="doc">Asistente de IA de Data Infrastructure Insights</block>
+  <block id="6804300f32b2dfd7358cbef13acc4c27" category="paragraph">El *Data Infrastructure Insights AI Assistant* está diseñado para ayudarte a trabajar de forma más eficiente con tus datos de infraestructura. Puede ayudarte a analizar información, descubrir insights, resolver desafíos operativos y tomar decisiones informadas sobre tus recursos.</block>
+  <block id="e7cc6c745169e0af46fdfb09b867c22c" category="paragraph">El Asistente de IA de DII está disponible como Vista Previa Limitada. <block ref="ee58f03d7eaea0665aa8a572992ca1b8" category="inline-link-macro-rx"></block> sobre las funciones de la Vista Previa de Data Infrastructure Insights.</block>
+  <block id="b6ed013ce4b16673bae45126733837ff" category="paragraph">El asistente de IA está disponible solo para los inquilinos de DII implementados en AWS.</block>
+  <block id="01a593a05ec8086d16c6d465263a2f9f" category="inline-image-macro">Pregunta de ejemplo de AI Assistant</block>
+  <block id="18aabc8cd51ce3494b256e8195526a85" category="paragraph"><block ref="18aabc8cd51ce3494b256e8195526a85" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f58b0ee974430595788a16d0bcde2c33" category="section-title">Conoce al nuevo socio inteligente de tu infraestructura</block>
+  <block id="ac512591ec703428212f282a69b68d6b" category="paragraph">El Asistente de IA transforma la forma en que interactúas con tus datos, convirtiendo consultas complejas en conversaciones sencillas. Descubre al instante patrones ocultos, acelera la resolución de problemas y toma decisiones condicionadas por los datos con confianza. Obtén respuestas instantáneas a preguntas como:</block>
+  <block id="87c323a02eb373f2f5154a593236b49a" category="list-text">¿Cómo puedo configurar un monitor para alertar por latencia persistente inaceptable?</block>
+  <block id="d7bd01231d44983bd6370a499a124481" category="list-text">¿Cuáles son los pools de almacenamiento con mayor utilización en el entorno?</block>
+  <block id="6901ef6009bc5d9c00833c9090aa30cf" category="list-text">¿Cuántas alertas se generaron en la última hora?</block>
+  <block id="48cc458fd1657654f64c60bae2b12c3e" category="list-text">¿Cuáles son los tipos más comunes de logs que se recopilan?</block>
+  <block id="88058d05eae2bfa31ce1daf9f1af8607" category="list-text">¿Qué hosts están experimentando la mayor utilización de CPU?</block>
+  <block id="d4b43c6c4b6712eb880da1176352d222" category="list-text">¿Qué tipos de activos están disponibles para supervisar en el entorno?</block>
+  <block id="05ce505287e46580b1958ceda1a48f14" category="list-text">¿Hay alguna alerta crítica activa actualmente?</block>
+  <block id="f8575cf3234d3a71bfcac8fe3ec655d0" category="list-text">¿Cuál es el estado de salud general de los sistemas de almacenamiento?</block>
+  <block id="56fdc89bcfb8177ae27782f7803cbcdb" category="list-text">¿Qué máquinas virtuales están consumiendo más memoria?</block>
+  <block id="0b8904f678a37d1153da26510caeac05" category="list-text">¿Cuántos monitores están configurados en el sistema?</block>
+  <block id="7acf2c0112bebac877a33b61ec96b56a" category="section-title">Antes de usar el Asistente AI</block>
+  <block id="01ea9d4395c142fe0a85fffdc8bdcd12" category="list-text">El Asistente AI está diseñado para ayudarte. Aunque se esfuerza por ser preciso, se recomienda encarecidamente verificar sus resultados con supervisión humana para obtener los mejores resultados.</block>
+  <block id="efff4d34a730a1682b1f44faa2d952cb" category="list-text">Por tu seguridad y privacidad y la de tus colegas, por favor no introduzcas información personal identificable (PII).</block>
+  <block id="3e776ea9184366df6cf82ba01ee389e8" category="list-text">Para ayudar a mantener tus datos seguros, no introduzcas información sensible o confidencial.</block>
+  <block id="25568be837cb00c81f49c6c7f14323d4" category="inline-link-macro">NetApp Apéndice de procesamiento de datos</block>
+  <block id="20b24ff87bebf48817d3f0121617e88d" category="inline-link-macro">NetApp Política de privacidad</block>
+  <block id="12e699559691bd3a438e052cd6bf3f5f" category="list-text">Lee el <block ref="fd543e73e84ebd55cfd7b33f3155d2e7" category="inline-link-macro-rx"></block> y el <block ref="e0be5a78043215130ed137b894ec3c29" category="inline-link-macro-rx"></block>.</block>
+  <block id="26a90de31f36fc014c8ad8737de2d220" category="section-title">El Asistente AI trabaja contigo</block>
+  <block id="3f0c43a14bf5fb33649094a9127d5db0" category="paragraph">El Asistente de IA de DII puede ayudarte a responder preguntas sobre los datos de tu infraestructura de TI. Para hacerlo de manera eficaz, necesita entender tu solicitud y también qué datos específicos se requieren para responder a tu solicitud.</block>
+  <block id="20f949a09d10cfcaeafc3c460bd995f9" category="paragraph">El sistema DII contiene varios tipos de datos, incluyendo:</block>
+  <block id="8ad781265b3547e99c943175d79a179f" category="list-text">Telemetría de activos (hosts, almacenamiento, VMs, etc.)</block>
+  <block id="b5af341d46ef69cb0af57ccb7bd5720c" category="list-text">Métricas de datalake (Kubernetes, NetApp Storage, VMware)</block>
+  <block id="cce75571d6535c6e46ca8316dc56b78a" category="list-text">Registros de diferentes sistemas</block>
+  <block id="491b6830a2d7e3da393bd35fe1d674bd" category="list-text">Alertas que pueden indicar anomalías</block>
+  <block id="8b535ff38c9b852fd885033ac8638d2a" category="paragraph">Para obtener la mejor experiencia, proporciona al Assistant información específica sobre:</block>
+  <block id="6249360bea48aa600de4eaaceaecabb1" category="list-text">El tipo de datos que quieres analizar (por ejemplo, activos, métricas o sistemas específicos),</block>
+  <block id="81bba36ecc862e80fc8fba5830993041" category="list-text">El periodo de tiempo que te interesa y</block>
+  <block id="747f32611560f7ea60cbda274f04ef16" category="list-text">Cualquier tipo de problema específico que te preocupe (problemas de rendimiento, problemas de capacidad, errores, etc.)</block>
+  <block id="45610fa97924ab075b8ebed42722b019" category="section-title">Acceder al Assistant</block>
+  <block id="629c55deaa1b75250df975fe5485d218" category="paragraph">Para llamar al Asistente AI de DII, simplemente selecciona el icono del búho en la esquina inferior de la pantalla. Un usuario con rol de “Owner” debe aceptar los términos y condiciones antes de que cualquier usuario pueda utilizar el Asistente AI en tu tenant.</block>
+  <block id="f67a424fefeb5e523fcbb4c9247bc6d9" category="inline-image-macro">dii_ai_assistant_icon</block>
+  <block id="a48b93c62e0c2ec4c09405cadd96b7da" category="paragraph"><block ref="a48b93c62e0c2ec4c09405cadd96b7da" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="be90349da04be71a620e68314d810f7f" category="section-title">febrero de 2026</block>
+  <block id="ad3362691040d433cbf22ab397dc84aa" category="section-title">Respuestas inteligentes instantáneas sobre tu infraestructura</block>
+  <block id="28cae4dd9c57dbe8a35cbe00a743a292" category="paragraph">Conoce al nuevo socio inteligente de tu infraestructura: el *Data Infrastructure Insights AI Assistant* transforma cómo interactúas con tus datos, convirtiendo consultas complejas en conversaciones sencillas. Descubre al instante patrones ocultos, acelera la resolución de problemas y toma decisiones condicionadas por los datos con confianza. Obtén respuestas instantáneas a preguntas como:</block>
+  <block id="7e83213ae37d2231b72b1f96b096ddeb" category="inline-image-macro">Icono de AI Assistant</block>
+  <block id="14f7de7f8564e731023379f8117cae1b" category="paragraph">La vista previa del asistente de IA de DII está disponible ahora para la mayoría de los clientes con servicio alojado en regiones de AWS; la región de Azure estará disponible pronto. <block ref="b77b95325de7e3e625a811db4f47869c" category="inline-link-macro-rx"></block> sobre las funciones de vista previa de Data Infrastructure Insights. <block ref="ef81c0041379574a84edd0f82a7689e7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0fd9a21defe0a1ec8e4b10c890230f25" category="section-title">Mejoras en el monitor</block>
+  <block id="a94b18666f4037c59ea76567b7b3779c" category="section-title">Personaliza los monitores del sistema más rápido, sin duplicar</block>
+  <block id="b4092a4b68e89ab9df5e0a783d45fda3" category="paragraph">Modifica directamente los monitores predeterminados del sistema para adaptarlos a tus necesidades: cambia nombres, filtros y agrupación en un solo lugar. No necesitas crear monitores duplicados para ajustes sencillos. Un banner útil te recuerda qué monitores han sido personalizados, manteniendo total visibilidad de tu configuración de monitorización.</block>
+  <block id="1249738b40c3ebf7497218f6b63980ac" category="section-title">Simplifica la gestión de monitores con acciones masivas</block>
+  <block id="6f7d5936fb01283fdfc635ef0c2b2b11" category="paragraph">Administra varios monitores a la vez mediante Bulk Actions. Ajusta rápidamente la configuración de Health Monitoring para grupos de monitores, ahorrando tiempo y reduciendo la complejidad. Actualiza tu estrategia de monitorización en todos los monitores en segundos, no en minutos.</block>
+  <block id="7c9a169da8415e07b317a279fd557d57" category="section-title">Enfoca las puntuaciones de salud de tu infraestructura en lo que más importa</block>
+  <block id="2d749cca30ef1dad32e18ba4441c474d" category="paragraph">Excluye objetos específicos de tus puntuaciones de estado de la infraestructura para mantener la precisión y la relevancia. Cuando veas tu panel de estado de la infraestructura, elimina al instante los objetos a los que quieras quitar prioridad sin modificar la configuración del monitor. Esto centra tus alertas en los elementos de la infraestructura que impulsan tus prioridades empresariales.</block>
+  <block id="aa4ad094ae1edb87ffb733fcc22144c0" category="inline-image-macro">excluir objeto de la supervisión del estado</block>
+  <block id="ebf03326dfbf7b48fe4575709f8c1a51" category="paragraph"><block ref="ebf03326dfbf7b48fe4575709f8c1a51" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="838a5b6e1cef2988995345837447f129" category="inline-link-macro">Unidades de adquisición</block>
+  <block id="d9131ac4f67c5c616f8658f3be927811" category="paragraph">Los siguientes sistemas operativos Linux son compatibles actualmente con Data Infrastructure Insights <block ref="9d197753af39cfa8d0f06175517b0833" category="inline-link-macro-rx"></block>:</block>
+  <block id="bf1f59b62cdf29b442b8079907309a26" category="list-text">AlmaLinux 9.5 y 10</block>
+  <block id="73d72c578d3f5b335b55d421ee4be972" category="list-text">Centos (64-bit): Stream 9</block>
+  <block id="78f4d8f51d34ee0c324e6a5277f9b2b3" category="list-text">Debian (64-bit): 11 a 13</block>
+  <block id="f8d1a8371bb39357a8e0e8d82da3efcc" category="list-text">OpenSUSE Leap 15.2 a 15.6, 16</block>
+  <block id="2ce49b2756d6dcfc59bbf06cc1611bd8" category="list-text">Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10</block>
+  <block id="3aad8ee25a3f60436baf6335487f32f6" category="list-text">Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10</block>
+  <block id="421505a482a3fad0342e2d00218e3a10" category="list-text">Rocky 9.2 a 9.6</block>
+  <block id="93cdc222b02604a207a8fe61cdd802b0" category="list-text">SUSE Linux Enterprise Server 15 SP4 hasta 15 SP7, 16</block>
+  <block id="254437ac6c40fc16c31d2f215400e44f" category="list-text">Ubuntu Server: 20.04, 22.04, 24.04 LTS</block>
+  <block id="ecf8fabbb23da2c68f49fe920a05137b" category="list-text">SELinux en las plataformas anteriores</block>
+  <block id="3542743c69e8fceb06c77e5e17299c89" category="sidebar">Asistente de IA</block>
 </blocks>

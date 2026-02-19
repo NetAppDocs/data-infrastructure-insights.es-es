@@ -18,6 +18,66 @@ NetApp mejora y optimiza continuamente sus productos y servicios.  A continuaci�
 
 
 
+== febrero de 2026
+
+
+
+=== Respuestas inteligentes instantáneas sobre tu infraestructura
+
+Conoce al nuevo socio inteligente de tu infraestructura: el *Data Infrastructure Insights AI Assistant* transforma cómo interactúas con tus datos, convirtiendo consultas complejas en conversaciones sencillas. Descubre al instante patrones ocultos, acelera la resolución de problemas y toma decisiones condicionadas por los datos con confianza. Obtén respuestas instantáneas a preguntas como:
+
+* ¿Cómo puedo configurar un monitor para alertar por latencia persistente inaceptable?
+* ¿Cuáles son los pools de almacenamiento con mayor utilización en el entorno?
+* ¿Cuántas alertas se generaron en la última hora?
+
+
+La vista previa del asistente de IA de DII está disponible ahora para la mayoría de los clientes con servicio alojado en regiones de AWS; la región de Azure estará disponible pronto. link:concept_preview_features.html["Más información"] sobre las funciones de vista previa de Data Infrastructure Insights. image:ai_assistant_icon.png["Icono de AI Assistant"]
+
+
+
+=== Mejoras en el monitor
+
+
+
+==== Personaliza los monitores del sistema más rápido, sin duplicar
+
+Modifica directamente los monitores predeterminados del sistema para adaptarlos a tus necesidades: cambia nombres, filtros y agrupación en un solo lugar. No necesitas crear monitores duplicados para ajustes sencillos. Un banner útil te recuerda qué monitores han sido personalizados, manteniendo total visibilidad de tu configuración de monitorización.
+
+
+
+==== Simplifica la gestión de monitores con acciones masivas
+
+Administra varios monitores a la vez mediante Bulk Actions. Ajusta rápidamente la configuración de Health Monitoring para grupos de monitores, ahorrando tiempo y reduciendo la complejidad. Actualiza tu estrategia de monitorización en todos los monitores en segundos, no en minutos.
+
+
+
+==== Enfoca las puntuaciones de salud de tu infraestructura en lo que más importa
+
+Excluye objetos específicos de tus puntuaciones de estado de la infraestructura para mantener la precisión y la relevancia. Cuando veas tu panel de estado de la infraestructura, elimina al instante los objetos a los que quieras quitar prioridad sin modificar la configuración del monitor. Esto centra tus alertas en los elementos de la infraestructura que impulsan tus prioridades empresariales.
+
+image:health_monitoring_exclude_object.png["excluir objeto de la supervisión del estado"]
+
+
+
+=== Compatibilidad con sistemas operativos
+
+Los siguientes sistemas operativos Linux son compatibles actualmente con Data Infrastructure Insights link:concept_acquisition_unit_requirements.html["Unidades de adquisición"]:
+
+* AlmaLinux 9.5 y 10
+* Centos (64-bit): Stream 9
+* Debian (64-bit): 11 a 13
+* OpenSUSE Leap 15.2 a 15.6, 16
+* Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10
+* Rocky 9.2 a 9.6
+* SUSE Linux Enterprise Server 15 SP4 hasta 15 SP7, 16
+* Ubuntu Server: 20.04, 22.04, 24.04 LTS
+* SELinux en las plataformas anteriores
+
+
+'''
+
+
 == diciembre de 2025
 
 

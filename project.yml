@@ -15,16 +15,6 @@ sidebar:
     url: "/index.html"
   - title: Qué hay de nuevo
     url: "/concept_whats_new.html"
-  - title: Registrarse en Data Infrastructure Insights
-    url: "/task_cloud_insights_onboarding_1.html"
-  - title: Seguridad
-    entries:
-    - title: Prácticas de seguridad
-      url: "/security_overview.html"
-    - title: Qué almacenamos y dónde
-      url: "/security_information_and_region.html"
-    - title: Herramienta SecurityAdmin
-      url: "/security_admin_tool.html"
   - title: Empezando
     entries:
     - title: Tutoriales de funciones
@@ -51,6 +41,18 @@ sidebar:
       url: "/concept_import_from_dashboard_gallery.html"
     - title: Cuentas de usuario y roles
       url: "/concept_user_roles.html"
+  - title: Registrarse en Data Infrastructure Insights
+    url: "/task_cloud_insights_onboarding_1.html"
+  - title: Seguridad
+    entries:
+    - title: Prácticas de seguridad
+      url: "/security_overview.html"
+    - title: Qué almacenamos y dónde
+      url: "/security_information_and_region.html"
+    - title: Herramienta SecurityAdmin
+      url: "/security_admin_tool.html"
+  - title: Asistente de IA
+    url: "/ai_for_dii_overview.html"
   - title: Lista de recopiladores de datos
     url: "/data_collector_list.html"
   - title: Suscribirse a Data Infrastructure Insights

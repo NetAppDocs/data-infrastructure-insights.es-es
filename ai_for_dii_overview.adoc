@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: ai_for_dii_overview.html 
+keywords: ai, 
+summary: Puedes usar el asistente de IA de DII para resumir tus datos, explorar insights, solucionar problemas y planificar tus recursos. 
+---
+= Asistente de IA de Data Infrastructure Insights
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+El *Data Infrastructure Insights AI Assistant* está diseñado para ayudarte a trabajar de forma más eficiente con tus datos de infraestructura. Puede ayudarte a analizar información, descubrir insights, resolver desafíos operativos y tomar decisiones informadas sobre tus recursos.
+
+[NOTE]
+====
+El Asistente de IA de DII está disponible como Vista Previa Limitada. link:/concept_preview_features.html["Más información"] sobre las funciones de la Vista Previa de Data Infrastructure Insights.
+
+El asistente de IA está disponible solo para los inquilinos de DII implementados en AWS.
+
+====
+image:ai_assistant_sample_question.png["Pregunta de ejemplo de AI Assistant"]
+
+
+
+== Conoce al nuevo socio inteligente de tu infraestructura
+
+El Asistente de IA transforma la forma en que interactúas con tus datos, convirtiendo consultas complejas en conversaciones sencillas. Descubre al instante patrones ocultos, acelera la resolución de problemas y toma decisiones condicionadas por los datos con confianza. Obtén respuestas instantáneas a preguntas como:
+
+* ¿Cómo puedo configurar un monitor para alertar por latencia persistente inaceptable?
+* ¿Cuáles son los pools de almacenamiento con mayor utilización en el entorno?
+* ¿Cuántas alertas se generaron en la última hora?
+* ¿Cuáles son los tipos más comunes de logs que se recopilan?
+* ¿Qué hosts están experimentando la mayor utilización de CPU?
+* ¿Qué tipos de activos están disponibles para supervisar en el entorno?
+* ¿Hay alguna alerta crítica activa actualmente?
+* ¿Cuál es el estado de salud general de los sistemas de almacenamiento?
+* ¿Qué máquinas virtuales están consumiendo más memoria?
+* ¿Cuántos monitores están configurados en el sistema?
+
+
+
+
+== Antes de usar el Asistente AI
+
+* El Asistente AI está diseñado para ayudarte. Aunque se esfuerza por ser preciso, se recomienda encarecidamente verificar sus resultados con supervisión humana para obtener los mejores resultados.
+* Por tu seguridad y privacidad y la de tus colegas, por favor no introduzcas información personal identificable (PII).
+* Para ayudar a mantener tus datos seguros, no introduzcas información sensible o confidencial.
+* Lee el link:https://www.netapp.com/pdf.html?item=/media/71584-netapp-data-processing-addendum.pdf["NetApp Apéndice de procesamiento de datos"] y el link:https://www.netapp.com/company/legal/privacy-policy/["NetApp Política de privacidad"].
+
+
+
+
+== El Asistente AI trabaja contigo
+
+El Asistente de IA de DII puede ayudarte a responder preguntas sobre los datos de tu infraestructura de TI. Para hacerlo de manera eficaz, necesita entender tu solicitud y también qué datos específicos se requieren para responder a tu solicitud.
+
+El sistema DII contiene varios tipos de datos, incluyendo:
+
+* Telemetría de activos (hosts, almacenamiento, VMs, etc.)
+* Métricas de datalake (Kubernetes, NetApp Storage, VMware)
+* Registros de diferentes sistemas
+* Alertas que pueden indicar anomalías
+
+
+Para obtener la mejor experiencia, proporciona al Assistant información específica sobre:
+
+* El tipo de datos que quieres analizar (por ejemplo, activos, métricas o sistemas específicos),
+* El periodo de tiempo que te interesa y
+* Cualquier tipo de problema específico que te preocupe (problemas de rendimiento, problemas de capacidad, errores, etc.)
+
+
+
+
+== Acceder al Assistant
+
+Para llamar al Asistente AI de DII, simplemente selecciona el icono del búho en la esquina inferior de la pantalla. Un usuario con rol de “Owner” debe aceptar los términos y condiciones antes de que cualquier usuario pueda utilizar el Asistente AI en tu tenant.
+
+image:ai_assistant_icon.png["dii_ai_assistant_icon"]
