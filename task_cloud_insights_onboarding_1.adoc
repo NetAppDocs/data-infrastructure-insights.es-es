@@ -14,7 +14,7 @@ keywords: onboarding, new user
 
 
 [role="lead"]
-Antes de que puedas empezar a trabajar con Data Infrastructure Insights, primero debes registrarte en el portal NetApp Console. Si ya tienes un inicio de sesión en NetApp Console, puedes comenzar una prueba gratuita de Data Infrastructure Insights con unos pocos pasos rápidos.
+Antes de que puedas empezar a trabajar con Data Infrastructure Insights, tienes que registrarte en el portal *NetApp Console*. Si ya tienes un inicio de sesión en NetApp Console, puedes comenzar una prueba gratuita de Data Infrastructure Insights con unos pocos pasos rápidos.
 
 
 

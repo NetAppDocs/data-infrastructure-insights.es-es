@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_tables_overview.html 
+summary: Diagramas y tablas de esquemas de almacén de datos para usar con informes 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= Esquemas de Data Infrastructure Insights para informes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Este documento proporciona tablas de esquema para la Reporting Database.
+
+
+NOTE: La función de informes está disponible en Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edición Premium"] .
+
+link:capacity_schema_documentation.html["Esquema de capacidad"]

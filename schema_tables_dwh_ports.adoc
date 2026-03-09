@@ -1,0 +1,351 @@
+---
+sidebar: sidebar 
+permalink: schema_tables_dwh_ports.html 
+summary: Tablas de esquema y relaciones para la base de datos dwh_ports 
+keywords: dwh, data warehouse, schema, reporting 
+---
+= Referencia del esquema de base de datos para dwh_ports
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Esta referencia proporciona información detallada del esquema para la base de datos dwh_ports, incluyendo estructuras de tablas, definiciones de campos, tipos de datos y relaciones.
+
+
+
+== Tablas y vistas
+
+
+
+=== cardenales
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| dígito | Entero | Un número entre 0 y 99 
+|===
+'''
+
+
+=== dimensión_dispositivo_conectado
+
+*Clave primaria:* tk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| nombre | Cadena | Nombre del dispositivo 
+
+
+| fabricante | Cadena | Fabricante del dispositivo 
+
+
+| modelo | Cadena | Modelo del dispositivo 
+
+
+| tipo | Cadena | Tipo del dispositivo 
+
+
+| firmware | Cadena | Versión de firmware en ejecución en el dispositivo 
+
+
+| id | Largo | El ID del dispositivo 
+
+
+| más reciente | Cadena | Última flag 
+|===
+*Relaciones:*
+
+* ports_fact (uno a muchos)
+
+
+'''
+
+
+=== date_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| fullDate | DateTimeOffset | Fecha completa 
+
+
+| dayInMonth | Byte | Día en el mes 
+
+
+| dayInYear | Entero | Día en el año 
+
+
+| dateYear | Entero | Año 
+
+
+| yearLabel | Cadena | Etiqueta del año 
+
+
+| monthNum | Byte | Número de mes 
+
+
+| monthLabel | Cadena | Etiqueta del mes 
+
+
+| dayInWeekNum | Byte | Número del día de la semana 
+
+
+| trimestre | Byte | Trimestre 
+
+
+| quarterLabel | Cadena | Etiqueta de trimestre 
+
+
+| dayInQuarter | Entero | Día en el trimestre 
+
+
+| repQuarter | Byte | Trimestre representativo 
+
+
+| repMonth | Byte | Mes representativo 
+
+
+| repWeek | Byte | Semana representativa 
+
+
+| repDay | Byte | Día representativo 
+
+
+| repMonthOrLatest | Byte | Mes representativo o el más reciente 
+
+
+| sspFlag | Byte | Bandera SSP 
+
+
+| más reciente | Cadena | Última flag 
+
+
+| futuro | Cadena | Bandera del futuro 
+|===
+*Relaciones:*
+
+* ports_fact (uno a muchos)
+
+
+'''
+
+
+=== dimensión_puerto
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| wwn | Cadena | World Wide Name 
+
+
+| nombre | Cadena | Nombre del puerto 
+
+
+| gbicType | Cadena | Tipo de GBIC 
+
+
+| tipo | Cadena | Tipo de puerto 
+
+
+| velocidad | Cadena | Velocidad del puerto 
+
+
+| isGenerated | Cadena | Bandera generada 
+
+
+| url | Cadena | URL de referencia 
+
+
+| id | Largo | Identificador único 
+
+
+| más reciente | Cadena | Última flag 
+
+
+| dateTk | Entero | Fecha clave técnica 
+|===
+*Relaciones:*
+
+* ports_fact (uno a muchos)
+
+
+'''
+
+
+=== ports_fact
+
+*Clave primaria:* tk
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| dateTk | Entero | Fecha clave técnica 
+
+
+| switchTk | Entero | Cambiar clave técnica 
+
+
+| connectedDeviceTk | Entero | Clave técnica del dispositivo conectado 
+
+
+| portTk | Entero | Clave técnica del puerto 
+
+
+| fabric | Cadena | Nombre del fabric o WWN 
+
+
+| velocidad | Cadena | Velocidad del puerto 
+
+
+| connectivityType | Cadena | Tipo de conectividad 
+
+
+| tipo | Cadena | Tipo de puerto 
+
+
+| estado | Cadena | Estado del puerto 
+|===
+*Relaciones:*
+
+* dimensión_dispositivo_conectado (many-to-one)
+* port_dimension (muchos-a-uno)
+* date_dimension (muchos-a-uno)
+* switch_dimension (muchos-a-uno)
+
+
+'''
+
+
+=== ports_fact_current
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| dateTk | Entero | Fecha clave técnica 
+
+
+| switchTk | Entero | Cambiar clave técnica 
+
+
+| connectedDeviceTk | Entero | Clave técnica del dispositivo conectado 
+
+
+| portTk | Entero | Clave técnica del puerto 
+
+
+| fabric | Cadena | Nombre del fabric o WWN 
+
+
+| velocidad | Cadena | Velocidad del puerto 
+
+
+| connectivityType | Cadena | Tipo de conectividad 
+
+
+| tipo | Cadena | Tipo de puerto 
+
+
+| estado | Cadena | Estado del puerto 
+|===
+'''
+
+
+=== switch_dimension
+
+[cols="1,1,2"]
+|===
+| Campo | Tipo | Descripción 
+
+
+| tk | Entero | Clave técnica 
+
+
+| wwn | Cadena | World Wide Name 
+
+
+| nombre | Cadena | Nombre del switch 
+
+
+| identificador | Cadena | Identificador del switch 
+
+
+| ip | Cadena | Dirección IP 
+
+
+| modelo | Cadena | Modelo de switch 
+
+
+| fabricante | Cadena | Fabricante 
+
+
+| firmware | Cadena | Versión de firmware 
+
+
+| serialNumber | Cadena | Número de serie 
+
+
+| npv | Cadena | Indicador de modo NPV 
+
+
+| isGenerated | Cadena | Bandera generada 
+
+
+| tipo | Cadena | Tipo de interruptor 
+
+
+| url | Cadena | URL de referencia 
+
+
+| id | Largo | Identificador único 
+
+
+| más reciente | Cadena | Última flag 
+
+
+| dateTk | Entero | Fecha clave técnica 
+
+
+| dataCenter | Cadena | Ubicación del centro de datos 
+
+
+| switchLevel | Cadena | Nivel de switch 
+|===
+*Relaciones:*
+
+* ports_fact (uno a muchos)
+
+
+'''

@@ -17,3 +17,10 @@ keywords: coming soon, preview,
 Data Infrastructure Insights destaca nuevas características y funcionalidades en modo _vista previa_.  Las funciones de vista previa están disponibles en entornos limitados o con capacidad limitada.
 
 Si está interesado en obtener una vista previa de una o más de estas funciones, comuníquese con su equipo de ventas de NetApp para obtener más información.
+
+
+
+== Avances actuales:
+
+* link:ai_for_dii_overview.html["Asistente de IA de Data Infrastructure Insights"] vista previa.
+
