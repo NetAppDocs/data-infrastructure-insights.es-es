@@ -284,6 +284,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_config_telegraf_redis.html["Redis"] | Servicio 
 
 
+| link:task_dc_redhat_openshift virtualization.html[Red Hat OpenShift Virtualization ] | Infraestructura 
+
+
 | link:task_config_telegraf_rethinkdb.html["Repensar DB"] | Servicio 
 
 

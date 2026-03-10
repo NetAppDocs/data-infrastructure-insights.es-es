@@ -1,0 +1,109 @@
+---
+sidebar: sidebar 
+permalink: task_dc_redhat_openshift_virtualization.html 
+keywords: data collector, Red Hat OpenShift Virtualization 
+summary: Configurando el colector de datos de Red Hat OpenShift Virtualization. 
+---
+= Red Hat OpenShift Virtualization recopilador de datos
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+El recolector DII Red Hat OpenShift Virtualization intentará descubrir las cargas de trabajo de cómputo OSV que se ejecutan en un entorno OpenShift Virtualization; este recolector no descubrirá todos los pods de OpenShift. Este es un recolector basado en API de REST HTTPS. Se recomienda crear un recolector por clúster OSV.
+
+El método de autenticación para este recopilador es un token de autenticación vinculado a una cuenta de servicio. Para crear tanto la cuenta de usuario como el token:
+
+....
+oc create sa acq-readonly-cluster-user -n default
+oc adm policy add-cluster-role-to-user cluster-reader -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-user-binding
+oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-cluster-user --rolebinding-name acq-readonly-cluster-monitor-user-binding
+....
+Ejecuta esos 3 comandos y fíjate si aparece algún error.
+
+Cuando los comandos se completen:
+
+ oc sa new-token acq-readonly-cluster-user
+Esto creará un token vinculado a tu usuario.
+
+Por último, también puedes querer que tu administrador de OSV ejecute:
+
+ oc cluster-info
+Esto devolverá el nombre de host/dirección IP para la administración. Cada colector DII OSV debe apuntar a la dirección IP/nombre de host para la administración de OSV.
+
+
+
+== Terminología
+
+Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Término de proveedor/modelo | Data Infrastructure Insights 
+
+
+| Disco | Disco virtual 
+
+
+| Host | Host 
+
+
+| Máquina virtual | Máquina virtual 
+
+
+| Dominio de almacenamiento | Almacén de datos 
+
+
+| Unidad lógica | LUN 
+|===
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+* Dirección IP del servidor Red Hat OpenShift Virtualization sobre el puerto 443 vía API de REST
+* Nombre de usuario y contraseña de solo lectura
+* RHEV Versión 3.0+
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP del servidor RHEV | Dirección IP del sistema de almacenamiento 
+
+
+| Nombre de usuario | Nombre de usuario con privilegios de administrador 
+
+
+| Contraseña para la cuenta privilegiada de administrador | Password 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puerto de comunicación HTTPS | Puerto utilizado para la comunicación HTTPS con RHOV 
+
+
+| Intervalo de sondeo de inventario (min) | El valor predeterminado es 20 minutos. 
+|===
+
+
+== Solución de problemas
+
+Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .
