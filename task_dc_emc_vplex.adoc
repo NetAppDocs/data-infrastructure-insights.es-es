@@ -1,19 +1,23 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_emc_vplex.html 
-keywords: data collector, VPLEX, EMC 
+keywords: data collector, VPLEX, EMC, vplex, 
 summary: Configuración del recopilador de datos VPLEX. 
 ---
 = Configuración del recopilador de datos EMC VPLEX
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Este recopilador de datos adquiere datos de inventario y rendimiento de los sistemas de almacenamiento EMC VPLEX.  Para la configuración, el recopilador de datos requiere una dirección IP del servidor VPLEX y una cuenta de dominio de nivel administrativo.
 
 
-NOTE: La recopilación de rendimiento de Data Infrastructure Insights de los clústeres Vplex requiere que el servicio de archivo de rendimiento esté operativo para completar los archivos .CSV y los registros que Data Infrastructure Insights recupera a través de copias de archivos basadas en SCP.  NetApp ha observado que muchas actualizaciones de firmware/estaciones de administración de Vplex dejarán esta funcionalidad sin funcionar.  Los clientes que planeen dichas actualizaciones deberían preguntar de manera proactiva a Dell/EMC si la actualización planificada dejará esta funcionalidad inoperable y, de ser así, cómo pueden volver a habilitarla para minimizar las brechas en la visibilidad del rendimiento.  El código de rendimiento Vplex de Cloud Insight evaluará en cada sondeo si existen todos los archivos esperados y si se están actualizando correctamente; si faltan o están obsoletos, Data Infrastructure Insights registrará fallas en la recopilación de rendimiento.
+NOTE: La recopilación de rendimiento de Data Infrastructure Insights de los clústeres VPLEX requiere que el servicio de archivo de rendimiento esté operativo para poder llenar los archivos .CSV y los registros que Data Infrastructure Insights recupera mediante copias de archivos basadas en SCP. NetApp ha observado que muchas actualizaciones de firmware/estación de gestión de VPLEX dejan esta funcionalidad fuera de servicio. Los clientes que planean este tipo de actualizaciones pueden querer preguntar proactivamente a Dell/EMC si la actualización que tienen planeada dejará esta funcionalidad inoperativa y, si es así, cómo pueden volver a habilitarla para minimizar los huecos en la visibilidad del rendimiento. El código de rendimiento VPLEX de Cloud Insights evaluará en cada sondeo si existen todos los archivos esperados y si se están actualizando correctamente; si faltan o están desactualizados, Data Infrastructure Insights registrará fallos en la recopilación de rendimiento.
 
 
 

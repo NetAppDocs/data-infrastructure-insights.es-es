@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_pure_flashblade.html 
-keywords: data collector, Pure Storage, pure, FlashBlade 
-summary: Configuración del recopilador de datos de Pure Storage. 
+keywords: data collector, Pure Storage, pure, FlashBlade, flashblade 
+summary: Configurar el recopilador de datos Pure FlashBlade Storage 
 ---
 = Recopilador de datos FlashBlade de Pure Storage
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Data Infrastructure Insights utiliza el recopilador de datos FlashBlade de Pure Storage para recopilar datos de inventario y rendimiento de los clústeres FlashBlade que exponen la versión 2 de su API REST.
+Data Infrastructure Insights utiliza el recopilador de datos Pure Storage FlashBlade para recopilar datos de inventario y rendimiento de los clústeres FlashBlade que exponen la versión 2 de su API de REST.
 
 
 
@@ -18,7 +22,7 @@ Data Infrastructure Insights utiliza el recopilador de datos FlashBlade de Pure 
 
 Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -55,7 +59,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -72,7 +76,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -98,7 +102,7 @@ Algunas cosas que puedes probar si encuentras problemas con este recopilador de 
 
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

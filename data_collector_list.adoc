@@ -47,9 +47,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_ms_azure.html["Máquinas virtuales y discos duros virtuales de Azure"] | Infraestructura 
 
 
-| link:task_dc_brocade_bna.html["Asesor de red de Brocade (BNA)"] | Infraestructura 
-
-
 | link:task_dc_brocade_fc_switch.html["Conmutadores de canal de fibra Brocade"] | Infraestructura 
 
 
@@ -126,9 +123,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 
 
 | link:task_config_telegraf_flink.html["Flink"] | Servicio 
-
-
-| link:task_dc_fujitsu_eternus.html["Fujitsu ETERNUS DX"] | Infraestructura 
 
 
 | link:task_dc_google_cloud.html["Computación y almacenamiento de Google"] | Infraestructura 
@@ -221,12 +215,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_na_cloud_volumes_ontap.html["Volúmenes en la nube de NetApp Cloud Volumes ONTAP"] | Infraestructura 
 
 
-| link:task_dc_na_cloud_connection.html["Conexión a la nube de NetApp para ONTAP 9.9+"] | Infraestructura 
-
-
-| link:task_dc_na_7mode.html["NetApp Data ONTAP 7-Mode"] | Infraestructura 
-
-
 | link:task_dc_na_eseries.html["Serie E de NetApp"] | Infraestructura 
 
 
@@ -282,6 +270,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 
 
 | link:task_config_telegraf_puppetagent.html["Agente títere"] | Servicio 
+
+
+| link:task_dc_pure_flashblade.html["Pure FlashBlade"] | Infraestructura 
 
 
 | link:task_dc_pure_flasharray.html["FlashArray de almacenamiento puro"] | Infraestructura 

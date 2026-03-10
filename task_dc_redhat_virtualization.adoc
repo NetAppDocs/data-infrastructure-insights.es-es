@@ -7,6 +7,10 @@ summary: Configuración del recopilador de datos de Red Hat Virtualization.
 = Recopilador de datos de virtualización de Red Hat
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
