@@ -7,10 +7,17 @@ summary: Configuración del recopilador de datos de Hadoop
 = Recopilador de datos de Hadoop
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de Hadoop.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 
 

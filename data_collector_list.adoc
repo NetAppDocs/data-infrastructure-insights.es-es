@@ -233,9 +233,6 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_na_ontap_rest.html["Recopilador REST de NetApp ONTAP"] | Infraestructura 
 
 
-| link:task_dc_na_ontap_afx.html["NetApp ONTAP AFX"] | Infraestructura 
-
-
 | link:task_dc_na_ontap_all_san_array.html["Colector NetApp ONTAP ASA r2 (matriz All-SAN)"] | Infraestructura 
 
 
@@ -272,19 +269,19 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_config_telegraf_puppetagent.html["Agente títere"] | Servicio 
 
 
-| link:task_dc_pure_flashblade.html["Pure FlashBlade"] | Infraestructura 
-
-
 | link:task_dc_pure_flasharray.html["FlashArray de almacenamiento puro"] | Infraestructura 
+
+
+| link:task_dc_pure_flashblade.html["Pure Storage FlashBlade"] | Infraestructura 
 
 
 | link:task_dc_redhat_virtualization.html["Virtualización de Red Hat"] | Infraestructura 
 
 
+| link:task_dc_redhat_openshift_virtualization.html["Red Hat OpenShift Virtualization"] | Infraestructura 
+
+
 | link:task_config_telegraf_redis.html["Redis"] | Servicio 
-
-
-| link:task_dc_redhat_openshift virtualization.html[Red Hat OpenShift Virtualization ] | Infraestructura 
 
 
 | link:task_config_telegraf_rethinkdb.html["Repensar DB"] | Servicio 

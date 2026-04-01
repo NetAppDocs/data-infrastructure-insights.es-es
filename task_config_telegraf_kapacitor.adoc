@@ -7,10 +7,17 @@ summary: configuración del capacitor
 = Recopilador de datos Kapacitor
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de Influxdata Kapacitor.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 
 

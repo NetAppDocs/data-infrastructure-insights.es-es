@@ -7,6 +7,10 @@ summary: Configuración del recopilador de datos de VMware.
 = Configuración del recopilador de datos de VMware VSphere
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -7,10 +7,14 @@ summary: Configuración del recopilador de datos de DELL EMC Data Domain.
 = Recopilador de datos de DELL EMC Data Domain
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Este recopilador de datos reúne información de inventario y rendimiento de los sistemas de almacenamiento con deduplicación DELL EMC Data Domain.  Para configurar este recopilador de datos, existen instrucciones de configuración específicas y recomendaciones de uso que debe seguir.
+Este recopilador de datos reúne información de inventario de los sistemas de almacenamiento con deduplicación DELL EMC Data Domain. Para configurar este recopilador de datos, existen instrucciones de configuración y recomendaciones de uso específicas que debes seguir.
 
 
 

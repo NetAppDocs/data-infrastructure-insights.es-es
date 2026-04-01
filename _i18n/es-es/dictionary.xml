@@ -821,10 +821,8 @@
   <block id="51408f1c75ab7bcc90f67b3ab1801733" category="cell">Token de API</block>
   <block id="0507fa02ffd6a1be1f4496a833b194eb" category="summary">Configuración del recopilador de datos de Red Hat Virtualization.</block>
   <block id="6609776175436f74c8fb3530cfff6f27" category="doc">Recopilador de datos de virtualización de Red Hat</block>
-  <block id="5f46815146ffa354dc2f5c63d9854bcc" category="paragraph">Data Infrastructure Insights utiliza el recopilador de datos de Red Hat Virtualization para reunir datos de inventario de cargas de trabajo virtualizadas de Linux y Microsoft Windows.</block>
   <block id="8b60c89058c8a36aacae9d3ecd007639" category="cell">Dominio de almacenamiento</block>
   <block id="524c6421ae67a40ab9a2d81082989e67" category="cell">Unidad lógica</block>
-  <block id="1252e68ee9820a25a4fa53cba5316613" category="list-text">Dirección IP del servidor RHEV a través del puerto 443 mediante API REST</block>
   <block id="1755c36c6d233fd7d643efcf91b29322" category="list-text">Nombre de usuario y contraseña de solo lectura</block>
   <block id="1f6ab089a965189e0e2e5d53aba2bc6a" category="list-text">RHEV Versión 3.0+</block>
   <block id="6ddc0c44488bfc939598a18e8646face" category="cell">Dirección IP del servidor RHEV</block>
@@ -3151,7 +3149,6 @@
   <block id="4789f23283b3a61f858b641a1bef19a3" category="cell">Memoria</block>
   <block id="83626eda7582435cdf0eb139d5cc8972" category="cell">8 GB de RAM</block>
   <block id="da65b8cea76748b286bd905feef4a5fa" category="cell">Espacio disponible en disco</block>
-  <block id="e51abfd3fc3e12a9fe8f5f800312a852" category="cell">50 GB (se recomiendan 100 GB) Para Linux, el espacio en disco se debe asignar de esta manera: /opt/netapp 10 GB (20 GB para entornos grandes) /var/log/netapp 40 GB (80 GB para entornos grandes) /tmp al menos 1 GB disponible durante la instalación</block>
   <block id="6aaa2ffc817cac34a806a149bee36350" category="cell">50 GB</block>
   <block id="eec89088ee408b80387155272b113256" category="cell">Red</block>
   <block id="2f704538f6c9d6459a97314be98124e2" category="inline-link-macro">Recopilador de datos</block>
@@ -7352,82 +7349,7 @@
   <block id="5881a1f9bf083ef4c9a0abd664075f34" category="paragraph">“Análisis de cambios” rastrea alertas para los siguientes casos:</block>
   <block id="367c81232bd8558294db17c024d0946c" category="list-text">Alertas de los monitores de registro sobre los tipos de registro _logs.vmware.events_ y _logs.netapp.ems_.</block>
   <block id="872f5111182c06c0a1eab9dfbad521ad" category="list-text">Alertas de los monitores de métricas sobre los tipos de objetos anteriores; estos deben seleccionarse en el campo _Agrupar por_ para que Change Analysis pueda rastrearlos.</block>
-  <block id="851540d32e033a0c14b63879881da871" category="summary">Los conocimientos pueden ayudarle a predecir cuándo es probable que los espacios de Kubernetes se llenen.</block>
-  <block id="4fef891481b95674ba195bcf5ebf7efb" category="doc">Perspectivas: Los espacios de nombres de Kubernetes se están quedando sin espacio</block>
-  <block id="b9e3092d2cb5cd78b84419a18b48afcf" category="paragraph">Quedarse sin espacio con su inquilino nunca es una buena situación.  Data Infrastructure Insights le ayuda a predecir el tiempo que tendrá antes de que los volúmenes persistentes de Kubernetes se llenen.</block>
-  <block id="8dc9b2ee1508011b53e7f0f04a3b46a8" category="paragraph">La información _Los espacios de nombres de Kubernetes se están quedando sin espacio_ le brinda una visión de las cargas de trabajo en sus espacios de nombres de Kubernetes que corren el riesgo de quedarse sin espacio, con una estimación de la cantidad de días restantes antes de que cada volumen persistente se llene.</block>
-  <block id="f2c0221f294a823d827a375c35966fc9" category="paragraph">Puede ver esta información navegando a *Paneles &gt; Información*.</block>
-  <block id="6f6740f128ff4e7b81b3e550f00f9705" category="inline-image-macro">Lista de cargas de trabajo en espacios de nombres de K8 que corren el riesgo de quedarse sin espacio</block>
-  <block id="9cd0fe5cef5af60f762c34beb874081a" category="paragraph"><block ref="9cd0fe5cef5af60f762c34beb874081a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b5d4ddc25dbf8207f2bee2e686857aa1" category="paragraph">Haga clic en una carga de trabajo para abrir una página de detalles de Insight.  En esta página verá un gráfico que muestra las tendencias de capacidad de carga de trabajo, así como una tabla que muestra lo siguiente:</block>
-  <block id="531d617d072da086d2a88b4381d112d7" category="list-text">Nombre de la carga de trabajo</block>
-  <block id="5594ad451661776d3680f239ed48baa0" category="list-text">Volumen persistente afectado</block>
-  <block id="60883d911c538f3168c126825cfa1804" category="list-text">Tiempo previsto para completarse en días</block>
-  <block id="0e1f0238958c9e1538d02888144645f7" category="list-text">Capacidad de volumen persistente</block>
-  <block id="95458ffe03f081fb38d0e5630d7836c6" category="list-text">Recurso de almacenamiento de backend afectado, con capacidad actual utilizada fuera de la capacidad total.  Al hacer clic en este enlace se abrirá la página de destino detallada del volumen de backend.</block>
-  <block id="9b6de7d57253456e4f416bcef90b76e5" category="inline-image-macro">Tabla de carga de trabajo que muestra detalles</block>
-  <block id="e589c155ffae6696761533f45ef69b7c" category="paragraph"><block ref="e589c155ffae6696761533f45ef69b7c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="cc327506f222e6ab4e0ec6a024dcbe7b" category="section-title">¿Qué puedo hacer si me estoy quedando sin espacio?</block>
-  <block id="35e8ae7798ae468988eef02594bca5d5" category="paragraph">En la página Insight, haga clic en *+Mostrar recomendaciones* para ver posibles soluciones.  La opción más fácil cuando uno se queda sin espacio es siempre agregar más capacidad, y Data Infrastructure Insights le muestra la capacidad óptima que debe agregar para aumentar el tiempo hasta alcanzar una predicción objetivo de 60 días.  También se muestran otras recomendaciones.</block>
-  <block id="501f2f9df98b83cc872cd59f0493d08d" category="inline-image-macro">Capacidad de agregar para regresar al TTF de 60 días</block>
-  <block id="1349caff32af26b4b92540943cbbecc2" category="paragraph"><block ref="1349caff32af26b4b92540943cbbecc2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="103ede5225263a5f8e396b6adb9b4898" category="paragraph">Es aquí también donde puedes copiar un enlace conveniente a este Insight, para marcar la página como favorita o compartirla fácilmente con tu equipo.</block>
-  <block id="6d35f83ec0df4672769520e5d6df1cd5" category="summary">Insights le brinda una visión del uso y las tendencias de los recursos.</block>
-  <block id="f1c9e9af80bb533618f5bdefe333747d" category="doc">Perspectivas</block>
-  <block id="4e97535a9ad440d2d327ab364bb7a0ec" category="paragraph">Los conocimientos le permiten analizar aspectos como el uso de recursos y cómo afecta a otros recursos, o bien, realizar análisis de tiempo hasta completar el trabajo.</block>
-  <block id="93b6b2ecbe8e38118f0e38a7f128eb90" category="paragraph">Hay una serie de información disponible.  Vaya a *Paneles &gt; Insights* para comenzar a explorar. Puede ver los Insights activos (Insights que se están produciendo actualmente) en la pestaña principal, o los Insights inactivos en la pestaña _Insights inactivos_.  Las perspectivas inactivas son aquellas que anteriormente estaban activas pero que ya no ocurren.</block>
-  <block id="fe9a216d65384f5afb0047e612bf386e" category="section-title">Tipos de información</block>
-  <block id="9e9013279f80acdb151d7cad5bc3f7d8" category="section-title">Recursos compartidos bajo presión</block>
-  <block id="3c4504abf11b507f4b8e1fa6354331ea" category="paragraph">Las cargas de trabajo de alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido.  Esto pone bajo presión el recurso compartido.  Data Infrastructure Insights proporciona herramientas para ayudarlo a investigar la saturación de recursos y el impacto en su inquilino.<block ref="de4400096db30b5f709799778e050e2c" category="inline-link-macro-rx"></block></block>
-  <block id="c1c7efc58c7b64cc21f3ae15934e8271" category="section-title">Los espacios de nombres de Kubernetes se están quedando sin espacio</block>
-  <block id="806f6dbcc954f0a88489885f517d1d1d" category="paragraph">La información sobre espacios de nombres de Kubernetes que se quedan sin espacio le brinda una visión de las cargas de trabajo en sus espacios de nombres de Kubernetes que corren el riesgo de quedarse sin espacio, con una estimación de la cantidad de días restantes antes de que cada espacio se llene.<block ref="604196d3b206e62dba15152db76beddc" category="inline-link-macro-rx"></block></block>
-  <block id="db08e6b1d619064fa3fd2035f5926d18" category="paragraph">La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre la capacidad de frío, los posibles ahorros de costos y energía y las acciones recomendadas para los volúmenes en los sistemas ONTAP .<block ref="82cab8f639b07ead699dc071830d992e" category="inline-link-macro-rx"></block></block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Más información</block>
-  <block id="102e3d38f56cb877356cf974fdeb3270" category="admonition">Esta es una función de _vista previa_ y puede cambiar con el tiempo a medida que se realicen mejoras. <block ref="ee58f03d7eaea0665aa8a572992ca1b8" category="inline-link-macro-rx"></block> Acerca de las funciones de vista previa de Data Infrastructure Insights .</block>
-  <block id="9d6898c9d6fff2bd62d85b66643bb3d1" category="doc">Perspectivas: Recupere el almacenamiento en frío de ONTAP</block>
-  <block id="0d76fbb36f181c92649274af9d5b537e" category="paragraph">La información _Reclaim ONTAP Cold Storage_ proporciona datos sobre la capacidad de frío, los posibles ahorros de costos y energía y las acciones recomendadas para los volúmenes en los sistemas ONTAP .</block>
-  <block id="385dd98ce9aff23db04e71230c28efd7" category="paragraph">Para ver esta información, vaya a *Paneles &gt; Información* y eche un vistazo a la información _Reclaim ONTAP Cold Storage_.  Tenga en cuenta que este Insight solo enumerará los almacenamientos afectados si Data Infrastructure Insights ha detectado almacenamiento en frío; de lo contrario, verá un mensaje de "todo despejado".</block>
-  <block id="d752ee7de9162d5e0fa475e8a383ea29" category="paragraph">Tenga en cuenta que no se muestran los datos fríos con menos de 30 días de antigüedad.</block>
-  <block id="da69b960f5bb93c02fdd4886868836f6" category="inline-image-macro">Lista de información que muestra 3 almacenamientos con datos fríos</block>
-  <block id="7718245a70dcc6279bf8af86a72c2e35" category="paragraph"><block ref="7718245a70dcc6279bf8af86a72c2e35" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="930fd15ae62cafe82d62d6912f307087" category="paragraph">La descripción de Insight proporciona una indicación rápida de la cantidad de datos detectados como "fríos" y en qué almacenamiento residen esos datos.  La tabla también proporciona un recuento de cargas de trabajo con datos fríos.</block>
-  <block id="7cc631429c391f70b58e64999f7fbe48" category="inline-link-macro">Calculadora de TCO de NetApp</block>
-  <block id="cdb12d4961181c6c0d6f14a1a17cfd87" category="paragraph">Al seleccionar una Insight de la lista, se abre una página que muestra más detalles, incluidas recomendaciones para mover datos a la nube o dejar de usar discos unificados, así como un estimado de costos y ahorros de energía que podría obtener al implementar esas recomendaciones.  La página incluso proporciona un enlace útil a<block ref="928b307e42240e05f4c78ed4745d6f3a" category="inline-link-macro-rx"></block> para que puedas experimentar con los números.</block>
-  <block id="c2022a18b75555c824458ee568cfdfca" category="inline-image-macro">Información sobre el poder de los datos fríos</block>
-  <block id="6a79fd430dc36a8f17aaf2f28988d6e6" category="paragraph"><block ref="6a79fd430dc36a8f17aaf2f28988d6e6" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5259ae4afb5996ff48788b2fa720114c" category="section-title">Recomendaciones</block>
-  <block id="a5048bf2003cf033b80e3fa2e33502f8" category="paragraph">En la página Insight, expanda las *Recomendaciones* para explorar las siguientes opciones:</block>
-  <block id="f77e48bcc98143a3f6bd8bcc492be286" category="list-text">Mueva las cargas de trabajo no utilizadas (zombies) a un nivel de almacenamiento de menor costo (HDD)</block>
-  <block id="987152d50a80bdf0820a4f1fd1771f81" category="paragraph">Utilizando la bandera zombie, el almacenamiento en frío y la cantidad de días, encuentre la cantidad de datos más grande y más fría y mueva la carga de trabajo a un nivel de almacenamiento de menor costo (como un grupo de almacenamiento que utiliza almacenamiento en disco duro).  Una carga de trabajo se considera "zombie" cuando no ha recibido ninguna solicitud de E/S significativa durante 30 días o más.</block>
-  <block id="c8abb3322f2d9026ffca3cbd29c6e9ba" category="list-text">Eliminar cargas de trabajo no utilizadas</block>
-  <block id="42bb4c2dadbccfef009beef19eb60c44" category="paragraph">Verifique qué cargas de trabajo no están en uso y considere archivarlas o eliminarlas del sistema de almacenamiento.</block>
-  <block id="30dc3fa30dc934a0d0aa98e3789e46c2" category="list-text">Considere la solución Fabric Pool de NetApp</block>
-  <block id="27130393c9a69c9ac4259ad677b7e09b" category="inline-link-macro">Solución para piscinas de tela</block>
-  <block id="a7c5cd98f24711202e2a8089e206922c" category="paragraph">De NetApp<block ref="6dfc63a251a9b042b77c667e40f20df9" category="inline-link-macro-rx"></block> clasifica automáticamente los datos fríos en un almacenamiento en la nube de bajo costo, lo que aumenta la eficiencia de su nivel de rendimiento y proporciona protección de datos remota.</block>
-  <block id="b0bad3786567c06c6ba5f9c05f89f0fb" category="section-title">Visualizar y explorar</block>
-  <block id="f9a5f3e9d6c824797a0884341490f583" category="paragraph">Los gráficos y la tabla proporcionan información de tendencias adicional y también le permiten analizar en profundidad las cargas de trabajo individuales.</block>
-  <block id="046d0c83fcc2f8749fd500daded4836a" category="inline-image-macro">Gráficos de resumen de datos fríos</block>
-  <block id="907a69f25ca7c9e8619e2c59a67ab607" category="inline-image-macro">Tabla de carga de trabajo de datos fríos</block>
-  <block id="e185f5cf502ca7079fb5eb3b60a77e41" category="paragraph"><block ref="e9ec82200521512971fafc4c0e21c2af" category="inline-image-macro-rx" type="image"></block> <block ref="d2dfbff86c21669b3c15073a169ec8ac" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2d78443087bc495d923e93521efb0c1d" category="doc">Perspectivas: Recursos compartidos bajo presión</block>
-  <block id="d408de43e7eda32b1b6e501c05dc38ce" category="paragraph">Las cargas de trabajo de alto impacto pueden reducir el rendimiento de otras cargas de trabajo en un recurso compartido.  Esto pone bajo presión el recurso compartido.  Data Infrastructure Insights proporciona herramientas para ayudarlo a investigar la saturación de recursos y el impacto en su inquilino.</block>
-  <block id="aea124b45b62324984b67a059ea0da7f" category="paragraph">Una *carga de trabajo exigente* es una carga de trabajo que actualmente se identifica como que afecta a otros recursos en el grupo de almacenamiento compartido.  Estas cargas de trabajo generan mayores IOPS (por ejemplo), lo que reduce las IOPS en las cargas de trabajo afectadas.  Las cargas de trabajo exigentes a veces se denominan _cargas de trabajo de alto consumo_.</block>
-  <block id="7bddab02c6c096040f0edf52e1623868" category="paragraph">Una *Carga de trabajo impactada* es una carga de trabajo que se ve afectada por una carga de trabajo de alto consumo en el grupo de almacenamiento compartido.  Estas cargas de trabajo experimentan IOPS reducidas y/o mayor latencia, causadas por las cargas de trabajo exigentes.</block>
-  <block id="f4addcedcbf7b58a235a6de1cfeb96b7" category="paragraph">Tenga en cuenta que si Data Infrastructure Insights no ha descubierto la carga de trabajo computacional principal, el volumen o el volumen interno en sí se reconocerá como la carga de trabajo.  Esto se aplica tanto a cargas de trabajo exigentes como a cargas de trabajo impactadas.</block>
-  <block id="bf306d07c3ed41852c5f9cb551a07b59" category="paragraph">Una *Contención* o *Saturación* ocurre cuando se determina que las IOPS afectan otros recursos o cargas de trabajo en el grupo de almacenamiento compartido.</block>
-  <block id="0b34f00d1d4a3885b35a431a55efeb18" category="section-title">Cargas de trabajo exigentes</block>
-  <block id="ae8f504ff2e83723f08fc4f873fcdca5" category="paragraph">Para comenzar a analizar las cargas de trabajo exigentes e impactadas en sus recursos compartidos, haga clic en *Paneles &gt; Información* y seleccione la información *Recursos compartidos bajo estrés*.</block>
-  <block id="923231dd5cc497f857ab7bc31259567c" category="inline-image-macro">Menú de información</block>
-  <block id="4ad858c99ade794af9d0e0a1491e01bc" category="paragraph"><block ref="4ad858c99ade794af9d0e0a1491e01bc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="decacd0d9c5727c8132dacde092c0382" category="paragraph">Data Infrastructure Insights muestra una lista de todas las cargas de trabajo donde se ha detectado una saturación.  Tenga en cuenta que Data Infrastructure Insights mostrará cargas de trabajo en las que se haya detectado al menos un _recurso exigente_ *o* _recurso impactado_.</block>
-  <block id="d7c664bf82d9e14603a845f0ffe47993" category="paragraph">Haga clic en una carga de trabajo para ver la página de detalles correspondiente.  El gráfico superior muestra la actividad en el recurso compartido (por ejemplo, un grupo de almacenamiento) en el que se produce la contención/saturación.</block>
-  <block id="2ca1e64d0a4fdfcf135961f6931ac68b" category="inline-image-macro">Recurso compartido que muestra contención</block>
-  <block id="6345c18147755da14a72a1bcc448c878" category="paragraph"><block ref="6345c18147755da14a72a1bcc448c878" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7e4a0aeb0ee372dc4742c55ad85d4088" category="paragraph">Debajo hay dos gráficos que muestran las cargas de trabajo _exigente_ y las cargas de trabajo que se ven _afectadas_ por esas cargas de trabajo exigentes.</block>
-  <block id="bea93c5448a53dbeae5f078ae207efa5" category="paragraph"><block ref="416a8d7353098379fdb36ba6e8aa6da8" category="inline-image-macro-rx" type="image"></block> <block ref="abda75af4f4de4a9d5c96cfad5c94c77" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9eb156b99e347ad63f9400c9ff3d5387" category="paragraph">Debajo de cada tabla hay una lista de cargas de trabajo y/o recursos que afectan o se ven afectados por la contención.  Al hacer clic en un recurso (por ejemplo, una máquina virtual) se abre una página de detalles de ese recurso.  Al hacer clic en una carga de trabajo, se abre una página de consulta que muestra los pods involucrados.  Tenga en cuenta que si el enlace abre una consulta vacía, puede deberse a que el pod afectado ya no es parte de la contención activa.  Puede modificar el rango de tiempo de la consulta para ver la lista de pods en un rango de tiempo mayor o más enfocado.</block>
-  <block id="53baeaedbb25410f6c630cdbea1ddb6b" category="paragraph">Hay una serie de medidas que puede tomar para reducir o eliminar la posibilidad de saturación en su inquilino.  Estos se muestran expandiendo el enlace *+Mostrar recomendaciones* en la página.  Aquí hay algunas cosas que puedes probar.</block>
-  <block id="ac62625b23d0635d3eaed0e05c830d36" category="paragraph">Por último, puede hacer clic en *Copiar enlace de Insight* para copiar la URL de la página al portapapeles y compartirla más fácilmente con sus colegas.</block>
   <block id="5142ab8747c5da1b5115ffa35bacd522" category="summary">Realizar un seguimiento de los cambios en Kubernetes es más fácil que nunca.</block>
   <block id="d75550072217b58f67a7216961c2bb8c" category="doc">Análisis de cambios de Kubernetes</block>
   <block id="9ec645581caafa9fbb6d571ba008b9cc" category="paragraph">Kubernetes Change Analytics le proporciona una vista todo en uno de los cambios recientes en su entorno K8s.  Las alertas y el estado de la implementación están a tu alcance.  Con Change Analytics, puede realizar un seguimiento de cada cambio de implementación y configuración, y correlacionarlo con el estado y el rendimiento de los servicios, la infraestructura y los clústeres de K8.</block>
@@ -11744,14 +11666,12 @@
   <block id="ef7830d32fe70ad0f843821a2a4f10e4" category="cell">Puerto utilizado para la comunicación TCP con el servidor XC</block>
   <block id="36188b71a27eabbba08e545a83d62055" category="summary">Configuración del recopilador de datos de DELL EMC Data Domain.</block>
   <block id="ffcfe5fed071732290c9355893581d7d" category="doc">Recopilador de datos de DELL EMC Data Domain</block>
-  <block id="bdc3274e97745e1635f0d41c124ddb66" category="paragraph">Este recopilador de datos reúne información de inventario y rendimiento de los sistemas de almacenamiento con deduplicación DELL EMC Data Domain.  Para configurar este recopilador de datos, existen instrucciones de configuración específicas y recomendaciones de uso que debe seguir.</block>
   <block id="70d1bd7bbccf2d53c6864e712d14cf29" category="paragraph">Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Data Domain.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:</block>
   <block id="4410ec34d9e6c1a68100ca0ce033fb17" category="cell">Formación</block>
   <block id="b80d18b0b26e4cbb83a956dc537e214f" category="cell">Puerto FC</block>
   <block id="6c202452e44c42e323204da2a3a3c24a" category="cell">Sistema de archivos</block>
   <block id="5c50d3c1da7fd2f47df616d0d012d1d4" category="cell">Compartir NFS y CIFS</block>
   <block id="dc496e57d71615841c66e4c990c6f335" category="cell">Compartir archivos</block>
-  <block id="6bc725cd9439cdaa75d76ca867d8a678" category="paragraph">Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.</block>
   <block id="4e086ec2792b9a6a42607af390d811f3" category="list-text">Dirección IP del dispositivo Data Domain</block>
   <block id="461c620bef9b3a3b77c6117d659fd3e0" category="list-text">Nombre de usuario y contraseña de solo lectura para el almacenamiento de Data Domain</block>
   <block id="85a4f04076ca6c3570fadcf452957688" category="list-text">Puerto SSH 22</block>
@@ -12393,8 +12313,6 @@
   <block id="f5efcf93de96054f67b29d58662ad5c6" category="list-text">Para el intervalo de ocurrencia, elija _Continuamente_ durante un período de _15 minutos_.</block>
   <block id="95e94216ef8b85a76727809c3dfcbcc0" category="inline-link-macro">Gestión de datos de ONTAP</block>
   <block id="2520cfbb37bc8bbd2fc91278c73eb838" category="list-text">Tenga en cuenta que las métricas de Fpolicy no son compatibles con el recopilador REST de ONTAP (los recopiladores de datos de seguridad de carga de trabajo utilizan servidores FPolicy, y las métricas de FPolicy le permiten supervisar la actividad de recopilación de datos de seguridad de carga de trabajo). Para respaldar las métricas de Fpolicy, utilice el <block ref="5887f651a571af9233df120cb7d32347" category="inline-link-macro-rx"></block> coleccionista.</block>
-  <block id="b2422fa602be830d9f1a2469dd70ca20" category="inline-link-macro">NetApp ONTAP AFX</block>
-  <block id="83cd27100a931554f0e05219011edf39" category="cell"><block ref="83cd27100a931554f0e05219011edf39" category="inline-link-macro-rx"></block></block>
   <block id="14ec544dd26342f2315dc51923b34e66" category="summary">Coleccionista ONTAP AFX</block>
   <block id="aaab7580be4232835e9f12e5691f118f" category="doc">Recopilador de datos AFX de NetApp ONTAP</block>
   <block id="e395c9addcba424f5bda562994dfecbe" category="cell">Volumen/ FlexVol/ FlexGroup</block>
@@ -12459,7 +12377,6 @@
   <block id="751c3e0cbbd3c7bba533140abe0f0dde" category="inline-xref">Instrucciones para fijar/desfijar</block>
   <block id="55f4b0c8991710156e1d9a114af60fe1" category="cell">Unpin descarga inmediatamente la última versión (si está disponible) y actualiza el agente y el recopilador. Durante esta actualización, fpolicies se desconectará y volverá a conectarse. Esta función está diseñada para clientes que desean controlar el momento de las actualizaciones automáticas. Véase más abajo para<block ref="2271de46efd5da417e9db9f2ab23550b" category="inline-xref-macro-rx"></block> .</block>
   <block id="2a0a2208c984d848c76e3dc480d25f5a" category="cell">Para configuraciones grandes, es recomendable usar Pin y Unpin en lugar de pausar los colectores. No es necesario pausar ni reanudar la actividad al usar las funciones de fijar y desfijar. Los clientes pueden mantener sus agentes y recopiladores vinculados y, al recibir una notificación por correo electrónico sobre una nueva versión, disponen de un plazo de 30 días para actualizar selectivamente los agentes uno por uno. Este enfoque minimiza el impacto de la latencia en las políticas de fpolicies y proporciona un mayor control sobre el proceso de actualización.</block>
-  <block id="4c4482e1695529fa7b313efe35876587" category="cell">Una computadora que ejecute una versión con licencia de uno de los siguientes: * Microsoft Windows 11 * Microsoft Windows Server 2016 * Microsoft Windows Server 2019 * Microsoft Windows Server 2022 * Microsoft Windows Server 2025 Esta computadora no debe ejecutar ningún otro software de nivel de aplicación. Se recomienda un servidor dedicado.</block>
   <block id="96e0bc41f601636412c93ccf60fffb89" category="cell">Se requiere una conexión Ethernet de 100 Mbps/1 Gbps, una dirección IP estática y conectividad de puerto 80 o 443 (saliente) desde la unidad de adquisición a *.cloudinsights.netapp.com o su inquilino de Data Infrastructure Insights (es decir, \https://&lt;tenant_id&gt;.c01.cloudinsights.netapp.com).  Para conocer los requisitos entre la Unidad de Adquisición y cada Recolector de Datos, consulte las instrucciones para la<block ref="be56515064596049a4b61d9d1a149cf9" category="inline-link-macro-rx"></block> . Si su organización requiere el uso de proxy para acceder a Internet, es posible que deba comprender el comportamiento del proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione. Por ejemplo, ¿su organización bloquea el acceso de forma predeterminada y solo permite el acceso a sitios web o dominios específicos por excepción?  Si es así, deberá agregar el siguiente dominio a la lista de excepciones: *.cloudinsights.netapp.com Para obtener más información, lea sobre Proxies.<block ref="05c875968683001fc59f206218314b72" category="inline-link-macro-rx"></block> o<block ref="554efdd06704a764ab0a7e3947e279ff" category="inline-link-macro-rx"></block> .</block>
   <block id="f17c7e32a4fcdb4c787f412cf3181bea" category="cell">Igual que el Administrador, además de administrar la autenticación SSO y la configuración de la federación de identidad. También puede asignar propietarios adicionales, así como agregar clientes al inquilino principal del proveedor de servicios administrados (MSP).</block>
   <block id="6794662d08bc33fcbd95c93345331eb3" category="list-text">ONTAP Persistent Store es compatible desde la versión 9.14.1.</block>
@@ -12606,7 +12523,6 @@
   <block id="3771b23dadd43c39046622dbcb4c17e4" category="list-text">Haz clic en "Probar Webhook" para asegurarte de que no hay errores.</block>
   <block id="c20e86538672d1ab3ab8e3a5c2961e28" category="list-text">Guarda el webhook.</block>
   <block id="beda12a678062ce581606c88344f4e06" category="sidebar">Ejemplo de Teams Webhook</block>
-  <block id="e18f38a263784d686e9a0d45d5416285" category="cell">Un ordenador que ejecute una versión con licencia de uno de los siguientes: * AlmaLinux 9.5, 10 * Centos (64-bit): Stream 9 * Debian (64-bit): 11 a 13 * OpenSUSE Leap 15.2 a 15.6, 16 * Oracle Enterprise Linux (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Red Hat (64-bit): 8.10, 9.2, 9.4, 9.6, 10 * Rocky 9.2 a 9.6 * SUSE Linux Enterprise Server 15 SP4 a 15 SP7, 16 * Ubuntu Server: 20.04, 22.04, 24.04 LTS * SELinux en las plataformas anteriores Este ordenador no debe estar ejecutando ningún otro software a nivel de aplicación. Se recomienda un servidor dedicado. Si estás ejecutando con SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición: sudo semanage fcontext -a -t usr_t "/opt/netapp/cloudinsights(/.*)?" sudo restorecon -R /opt/netapp/cloudinsights</block>
   <block id="ddb78a0715fab46562d8ee8102cea78c" category="list-text">Puerto 443 (o 8443 si está configurado)</block>
   <block id="6e7162cfd0e31a7db490a51939253ab9" category="list-text">HPE Alletra 9080</block>
   <block id="193eabb9a17fd246abfc9b708de0fb7f" category="list-text">HPE_3PAR 20450</block>
@@ -14427,7 +14343,6 @@
   <block id="1297bab76f52eaf87c4bead6d91c5747" category="paragraph">*Clave primaria:* volumeName, storageIdentifier</block>
   <block id="a19ba3643626c0da85c3de321b7fb564" category="cell">lastAccessed</block>
   <block id="5215d51f00cbd59bd4f5379564dd2607" category="cell">Última marca de tiempo de acceso</block>
-  <block id="7786ae506eee52b626dcc8402f829f17" category="paragraph"><block ref="7786ae506eee52b626dcc8402f829f17" category="inline-link-macro-rx"></block></block>
   <block id="649d30b7cac0604fb3207f769101f157" category="list-text">factor_capacidad_volumen_interno (one-to-many)</block>
   <block id="22c529c0f957ddcd1f77511e82dfbfc4" category="list-text">chargeback_fact (uno a muchos)</block>
   <block id="5dd9e2d63020dda622b0aab04bb64243" category="list-text">vm_capacity_fact (uno a muchos)</block>
@@ -14520,13 +14435,10 @@
   <block id="e30ec09a4c79b55e1ccfc1955c76c379" category="cell">switchLevel</block>
   <block id="e10c8c70fc9c70d82df6e3c2ea10ceed" category="cell">Nivel de switch</block>
   <block id="549ae8b6dea4926a2af206c5d7300fc5" category="paragraph">Antes de que puedas empezar a trabajar con Data Infrastructure Insights, tienes que registrarte en el portal *NetApp Console*. Si ya tienes un inicio de sesión en NetApp Console, puedes comenzar una prueba gratuita de Data Infrastructure Insights con unos pocos pasos rápidos.</block>
-  <block id="93e49907cf8d9ecec89d856c3d49fb2f" category="inline-link-macro">Pure FlashBlade</block>
-  <block id="f92f77015be3ec66c79ba43a2aec5f69" category="cell"><block ref="f92f77015be3ec66c79ba43a2aec5f69" category="inline-link-macro-rx"></block></block>
   <block id="52e4ed377cdb874dec547eb79615f673" category="admonition">La recopilación de rendimiento de Data Infrastructure Insights de los clústeres VPLEX requiere que el servicio de archivo de rendimiento esté operativo para poder llenar los archivos .CSV y los registros que Data Infrastructure Insights recupera mediante copias de archivos basadas en SCP. NetApp ha observado que muchas actualizaciones de firmware/estación de gestión de VPLEX dejan esta funcionalidad fuera de servicio. Los clientes que planean este tipo de actualizaciones pueden querer preguntar proactivamente a Dell/EMC si la actualización que tienen planeada dejará esta funcionalidad inoperativa y, si es así, cómo pueden volver a habilitarla para minimizar los huecos en la visibilidad del rendimiento. El código de rendimiento VPLEX de Cloud Insights evaluará en cada sondeo si existen todos los archivos esperados y si se están actualizando correctamente; si faltan o están desactualizados, Data Infrastructure Insights registrará fallos en la recopilación de rendimiento.</block>
   <block id="de9fcff157c3fd05f707a7b227a45275" category="summary">Configurar el recopilador de datos Pure FlashBlade Storage</block>
   <block id="c0c126a33a6cd3661eae0fb5eca89c2d" category="paragraph">Data Infrastructure Insights utiliza el recopilador de datos Pure Storage FlashBlade para recopilar datos de inventario y rendimiento de los clústeres FlashBlade que exponen la versión 2 de su API de REST.</block>
   <block id="80e910f35b12e9c61335fa88de36edd0" category="sidebar">Red Hat Virtualization</block>
-  <block id="96d302563986f9d75dc51085e4c183d6" category="cell">link:task_dc_redhat_openshift virtualization.html[Red Hat OpenShift Virtualization ]</block>
   <block id="8dfbd1afa40d818910ea903f9d52f6ec" category="summary">Configurando el colector de datos de Red Hat OpenShift Virtualization.</block>
   <block id="50993793783c5f33ae8f736a95dca1b9" category="doc">Red Hat OpenShift Virtualization recopilador de datos</block>
   <block id="6fd44ae5a42d6b33248d329cbbddaa88" category="paragraph">El recolector DII Red Hat OpenShift Virtualization intentará descubrir las cargas de trabajo de cómputo OSV que se ejecutan en un entorno OpenShift Virtualization; este recolector no descubrirá todos los pods de OpenShift. Este es un recolector basado en API de REST HTTPS. Se recomienda crear un recolector por clúster OSV.</block>
@@ -14540,11 +14452,43 @@
   <block id="07bc27033bbe069dd4fcfa7e7287df66" category="cell">Puerto utilizado para la comunicación HTTPS con RHOV</block>
   <block id="db2f9342403e0e147464a85b899ec12c" category="sidebar">Red Hat OpenShift Virtualization</block>
   <block id="cc7e5505fa4bc50f5457fa8f8b55f94f" category="section-title">marzo de 2026</block>
-  <block id="c62d7b96ff17fd52f5c5b5957d12ce47" category="section-title">¡El asistente de IA de DII está disponible para todos!</block>
-  <block id="dd0f9294fa313d494966ae16cbe89435" category="paragraph">El Asistente de IA de Data Infrastructure Insights está disponible para Preview y ahora incluye las siguientes mejoras:</block>
-  <block id="e609c64ff8e8c15f1ce845903ca2db7e" category="list-text">Disponibilidad de la región Azure: para los clientes cuyo sitio de DII está alojado en Azure, el DII Assistant ya está listo para ayudarte.</block>
-  <block id="056a97d89a4b6d30acf8e9b86d3ed172" category="list-text">Hasta 7 días de datos: el Assistant ahora puede acceder a hasta 7 días de métricas de alta resolución, lo que permite un análisis de datos y perspectivas de mayor alcance.</block>
   <block id="e43d8f702818ecf5597859f98ff1e993" category="list-text">El tipo ASSETS contiene asset, query y search APIs. A veces, los atributos y métricas de asset de DII se llaman “odata”. Normalmente se accede a las APIs para estos a través de /rest/v1/asset o /rest/v1/query. Consulta el <block ref="622b990b99495c7072e19eb08becc13e" category="inline-xref-macro-rx"></block> para más información.</block>
   <block id="627c6b105244e1b95d64a8f71c382473" category="list-text">El tipo DATA INGESTION se usa para recuperar y gestionar datos de ingestión y métricas personalizadas, como las de los agentes Telegraf. A veces se les llama métricas “datalake” o “lake”. Las APIs para estas normalmente se acceden a través de /rest/v1/lake. Consulta el <block ref="622b990b99495c7072e19eb08becc13e" category="inline-xref-macro-rx"></block> para más información.</block>
   <block id="d14a20e4ad37ea89f3a29854e5a1934c" category="paragraph">Ten en cuenta que los tipos de API a los que tiene acceso un usuario también dependen del <block ref="ead2141fb682d81a2f0b1deca7bb95c5" category="inline-link-macro-rx"></block> que tenga en cada conjunto de funciones de Data Infrastructure Insights (Observability, Workload Security, Reporting).</block>
+  <block id="627f42d17d7ea3d6e54846b3aac2b49f" category="paragraph">Un ordenador que ejecute una versión con licencia de uno de los siguientes:</block>
+  <block id="62f84edfc095da652c65bd53d752ae9f" category="list-text">AlmaLinux 9.5, 10</block>
+  <block id="e4b10322d174dad1b342b960d4db4a1a" category="paragraph">Este ordenador no debe ejecutar ningún otro software de aplicación. Se recomienda un servidor dedicado.</block>
+  <block id="ad1be19da774dae802b440155ce7d99e" category="paragraph">Si estás ejecutando con SELinux, se recomienda ejecutar los siguientes comandos en el sistema de la unidad de adquisición:</block>
+  <block id="c05e480e3f21ed06330149211021128c" category="list-text">Microsoft Windows 11</block>
+  <block id="74dd40aa9a6635d79204e610e8324c38" category="list-text">Microsoft Windows Server 2016</block>
+  <block id="1ee2c5253c485a81cfff8c8e3e23a23f" category="list-text">Microsoft Windows Server 2019</block>
+  <block id="6ed0120f37738e825d889dcb299d9251" category="list-text">Microsoft Windows Server 2022</block>
+  <block id="6e6b7efb9f9c24d5ca212d65430689fd" category="list-text">Microsoft Windows Server 2025</block>
+  <block id="4f9edfe2d639bdf84659ce06867169be" category="paragraph">50 GB (se recomiendan 100 GB)</block>
+  <block id="cd7b5f0dcf0b21cd4f7309088a390cc0" category="paragraph">Para Linux, el espacio en disco debe asignarse de esta manera:</block>
+  <block id="edad7b7dcf5cc00b2dda3c18951100a2" category="list-text">/opt/netapp 10 GB (20 GB para entornos grandes)</block>
+  <block id="bb8581977ca7a9a1f259d38b9862e60a" category="list-text">/var/log/netapp 40 GB (80 GB para entornos grandes)</block>
+  <block id="747ac0c92d8f5c3aa0f9c512ce6cddcf" category="list-text">/tmp al menos 1 GB disponible durante la instalación</block>
+  <block id="c5c33f7f872335cb93ed44e9b04d0a42" category="paragraph">Tu sistema de archivos puede usar algo de espacio para su sobrecarga. Estos son los espacios mínimos que deben estar _disponibles_ antes de la instalación.</block>
+  <block id="57919acc530156af753aec7b4f2f3fd0" category="section-title">AI Assistant ya está disponible de forma general</block>
+  <block id="f58fde87057b6940a6342bbe077ef420" category="paragraph">El asistente de IA de Data Infrastructure Insights ya está disponible de forma general para todos los clientes de sitios de DII alojados en AWS.</block>
+  <block id="0e03cca45a1184995a9ec2d51413668b" category="paragraph">Ten en cuenta que el AI Assistant en sitios Azure aún está en versión preliminar. Estate atento a este espacio para el anuncio de la disponibilidad general.</block>
+  <block id="74909051b7c24faefceb41b1c2f67f3f" category="section-title">Funciones eliminadas de Infrastructure Insights</block>
+  <block id="eeca18d86334ede222257bab8c195d15" category="paragraph">Las funciones "Infrastructure Insights" de DII, _Shared Resources Under Stress_, _Kubernetes Namespaces Running out of Space_ y _Reclaiming ONTAP Cold Storage_ ya no están disponibles en DII.</block>
+  <block id="f1e2a8b4ad8172c17aa60b03b39227c4" category="inline-link-macro">Pure Storage FlashBlade</block>
+  <block id="6b27f70000f03c5a24fb70b6ed340d8e" category="cell"><block ref="6b27f70000f03c5a24fb70b6ed340d8e" category="inline-link-macro-rx"></block></block>
+  <block id="079cdcfd43abfa5548c437b1a50427fb" category="inline-link-macro">Red Hat OpenShift Virtualization</block>
+  <block id="bd6345d055b68904ea42423102195045" category="cell"><block ref="bd6345d055b68904ea42423102195045" category="inline-link-macro-rx"></block></block>
+  <block id="d818fc83532d27c308cb47649bd5ec02" category="admonition">Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.</block>
+  <block id="faf4a8391186fe75061a56efa03cbe77" category="paragraph">Este recopilador de datos reúne información de inventario de los sistemas de almacenamiento con deduplicación DELL EMC Data Domain. Para configurar este recopilador de datos, existen instrucciones de configuración y recomendaciones de uso específicas que debes seguir.</block>
+  <block id="6b4e228e21f03e0f137a5d82c17defab" category="paragraph">El recolector de datos DII para Red Hat Virtualization también es compatible con el proyecto de código abierto oVirt y Oracle Linux Virtualization Manager. Este recolector de datos se comunica a través de la API de REST con la interfaz HTTPS de la estación de gestión.</block>
+  <block id="154535c2753f4d1eedc433e63b2e796f" category="list-text">Dirección IP/nombre de host del servidor RHV/oVirt/OLVM a través del puerto 443 vía API de REST</block>
+  <block id="aee702f6738b473d9ebf07b43255af32" category="list-text">RHV versión 3.0+/Ovirt 4.0+/OLVM 4.0+</block>
+  <block id="e4d0cf9093fde0665165a53499aff00b" category="cell">Dirección IP del servidor RHV/Ovirt/OLVM</block>
+  <block id="cb5cba13a9dcf03bdccf20db87fe2d0c" category="cell">Dirección IP de la estación de gestión</block>
+  <block id="c304b6eec4c1c5c3c0517f83640ef6e3" category="cell">Habilitar la recopilación de rendimiento</block>
+  <block id="10558b4f829f071034d968780bb7a36e" category="cell">Intervalo de sondeo de rendimiento (seg)</block>
+  <block id="6f159883a7f482d97fbfbd3597406382" category="cell">El valor por defecto es 900</block>
+  <block id="b222969a0e0fca1c5ae1f58770c55fd3" category="summary">Nuevas características y funcionalidades disponibles en Data Infrastructure Insights desde 2020</block>
+  <block id="3535e34a6ea939a9c4a64fcb08c9f72d" category="doc">Novedades sobre Data Infrastructure Insights - Archivo 2020</block>
 </blocks>

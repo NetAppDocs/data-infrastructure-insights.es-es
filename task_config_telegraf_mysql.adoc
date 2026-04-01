@@ -7,10 +7,17 @@ summary: Configuración del recopilador de datos MySQL
 = Recopilador de datos MySQL
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de MySQL.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 
 

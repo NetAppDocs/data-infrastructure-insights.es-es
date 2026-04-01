@@ -7,10 +7,17 @@ summary: Configuración del recopilador de datos de Redis
 = Recopilador de datos de Redis
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de Redis.  Redis es un almacén de estructuras de datos en memoria de código abierto que se utiliza como base de datos, caché y agente de mensajes, y que admite las siguientes estructuras de datos: cadenas, hashes, listas, conjuntos y más.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 
 

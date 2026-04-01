@@ -7,10 +7,17 @@ summary: Configuración del recopilador de datos Apache
 = Recopilador de datos Apache
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Este recopilador de datos permite la recopilación de datos de los servidores Apache en su inquilino.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 .Prerrequisitos
 * Debe tener su servidor HTTP Apache configurado y funcionando correctamente

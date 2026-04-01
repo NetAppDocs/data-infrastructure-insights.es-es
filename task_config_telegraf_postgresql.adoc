@@ -7,10 +7,17 @@ summary: Configuración del recopilador de datos de PostgreSQL
 = Recopilador de datos de PostgreSQL
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
 Data Infrastructure Insights utiliza este recopilador de datos para recopilar métricas de PostgreSQL.
+
+
+NOTE: Este recolector está obsoleto. Dejará de estar disponible a partir de enero de 2027.
 
 
 
