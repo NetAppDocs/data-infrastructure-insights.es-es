@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: ws_alert_exclusions.html 
+keywords: workload security, cloud secure, include list, allowed, file types, ransomware, tampering, exclusion, alerts 
+summary: Agrega extensiones de archivo a una lista de exclusión de alertas para reducir las notificaciones. 
+---
+= Exclusiones de alertas
+:allow-uri-read: 
+
+
+[role="lead"]
+Si se detecta un ataque de manipulación de archivos para una extensión de archivo conocida, y se están generando alertas en la pantalla de Alertas, entonces esa extensión de archivo se puede añadir a una lista de _exclusiones de alertas_ para evitar alertas innecesarias. Esto también se puede considerar como una lista de _tipos de archivo permitidos_, ya que Workload Security permitirá que esos archivos eviten las alertas de manipulación.
+
+Ve a *Workload Security > Policies* y entra en la pestaña _Alert Exclusions_.
+
+image:ws_alert_exclusions_list.png["Tipos de archivo permitidos que se excluirán de las alertas"]
+
+Una vez añadido a la lista de tipos de archivo permitidos, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo. Ten en cuenta que la política de exclusión de alertas solo es aplicable para la detección de manipulación de archivos.
+
+Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de manipulación de archivos debido a la extensión _.abc_, la extensión _.abc_ se puede agregar a la lista de tipos de archivos permitidos. Después de agregarla a la lista, ya no se generarán ataques de manipulación de archivos contra archivos con la extensión _.abc_.
+
+Los tipos de archivo permitidos pueden ser coincidencias exactas (por ejemplo, ".abc") o expresiones (por ejemplo, "*.type", ".type*" o ".*type*"). No se admiten expresiones de los tipos ".a*c", ".p*f".
+
+Se han introducido atributos adicionales de "Set By" y "Set Date" para la auditoría. Los tipos de archivo existentes se migrarán al nuevo formato con los valores de estos dos atributos establecidos como "migrated".
