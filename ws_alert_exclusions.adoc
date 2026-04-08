@@ -9,16 +9,31 @@ summary: Agrega extensiones de archivo a una lista de exclusión de alertas para
 
 
 [role="lead"]
-Si se detecta un ataque de manipulación de archivos para una extensión de archivo conocida, y se están generando alertas en la pantalla de Alertas, entonces esa extensión de archivo se puede añadir a una lista de _exclusiones de alertas_ para evitar alertas innecesarias. Esto también se puede considerar como una lista de _tipos de archivo permitidos_, ya que Workload Security permitirá que esos archivos eviten las alertas de manipulación.
+La exclusión de alertas te permite suprimir la generación de alertas para tipos de archivo, usuarios y rutas de directorio específicos. Usa esto para reducir los falsos positivos excluyendo la actividad conocida y esperada que, de lo contrario, podría coincidir con los patrones de alerta.
 
-Ve a *Workload Security > Policies* y entra en la pestaña _Alert Exclusions_.
+La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 
-image:ws_alert_exclusions_list.png["Tipos de archivo permitidos que se excluirán de las alertas"]
+. Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos link:ws_allowed_file_types.html["extensiones de archivo"]
+. Usuarios: suprime las alertas activadas por los usuarios seleccionados.
+. Rutas: suprime las alertas de actividad en las rutas de directorio seleccionadas (hasta cuatro niveles de directorio, empezando en la ruta de unión).
 
-Una vez añadido a la lista de tipos de archivo permitidos, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo. Ten en cuenta que la política de exclusión de alertas solo es aplicable para la detección de manipulación de archivos.
 
-Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de manipulación de archivos debido a la extensión _.abc_, la extensión _.abc_ se puede agregar a la lista de tipos de archivos permitidos. Después de agregarla a la lista, ya no se generarán ataques de manipulación de archivos contra archivos con la extensión _.abc_.
+La exclusión de tipos de archivo (también conocida como "Políticas de tipos de archivo permitidos") se ha actualizado y descrito en link:ws_allowed_file_types.html["Tipos de archivo permitidos"].
 
-Los tipos de archivo permitidos pueden ser coincidencias exactas (por ejemplo, ".abc") o expresiones (por ejemplo, "*.type", ".type*" o ".*type*"). No se admiten expresiones de los tipos ".a*c", ".p*f".
+La lista de exclusión de usuarios es compatible con type-ahead, donde los administradores pueden seleccionar usuarios para excluir de las alertas.
 
-Se han introducido atributos adicionales de "Set By" y "Set Date" para la auditoría. Los tipos de archivo existentes se migrarán al nuevo formato con los valores de estos dos atributos establecidos como "migrated".
+La exclusión de directorios admite hasta cuatro niveles de rutas de directorio, comenzando con la ruta de unión.
+
+Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la lista de exclusión correspondiente. Cada entrada de cada lista tendrá la información de cuándo y por quién fue añadida a la lista, y esta información se usará para fines de auditoría.
+
+
+
+== Gestiona exclusiones y auditorías
+
+* Los administradores pueden añadir o eliminar extensiones de archivo, usuarios individuales o rutas en cualquier momento.
+* Cada entrada de exclusión registra el nombre del admin que la estableció y la fecha en que se estableció. Esta información se conserva para auditoría.
+
+
+image:ws_alert_exclusions_users.png[""]
+
+image:ws_alert_exclusions_paths.png[""]
