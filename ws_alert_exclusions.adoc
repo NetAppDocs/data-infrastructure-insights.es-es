@@ -11,14 +11,14 @@ summary: Agrega extensiones de archivo a una lista de exclusión de alertas para
 [role="lead"]
 La exclusión de alertas te permite suprimir la generación de alertas para tipos de archivo, usuarios y rutas de directorio específicos. Usa esto para reducir los falsos positivos excluyendo la actividad conocida y esperada que, de lo contrario, podría coincidir con los patrones de alerta.
 
+Ve a *Workload Security > Policies* y selecciona la pestaña *Alert Exclusions*.
+
 La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 
-. Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos link:ws_allowed_file_types.html["extensiones de archivo"]
+. Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos <<allowed-file-types,Tipos de archivo permitidos>>
 . Usuarios: suprime las alertas activadas por los usuarios seleccionados.
 . Rutas: suprime las alertas de actividad en las rutas de directorio seleccionadas (hasta cuatro niveles de directorio, empezando en la ruta de unión).
 
-
-La exclusión de tipos de archivo (también conocida como "Políticas de tipos de archivo permitidos") se ha actualizado y descrito en link:ws_allowed_file_types.html["Tipos de archivo permitidos"].
 
 La lista de exclusión de usuarios es compatible con type-ahead, donde los administradores pueden seleccionar usuarios para excluir de las alertas.
 
@@ -37,3 +37,19 @@ Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la l
 image:ws_alert_exclusions_users.png[""]
 
 image:ws_alert_exclusions_paths.png[""]
+
+
+
+== Tipos de archivo permitidos
+
+Se pueden agregar extensiones de archivo a una lista de tipos de archivo permitidos para evitar alertas innecesarias.
+
+Selecciona *+Tipo de archivo* para agregar tipos de archivo a la lista de tipos de archivo permitidos en la alerta.
+
+image:ws_allowed_file_types.png["Agregar tipos de archivo permitidos"]
+
+Una vez agregado a la lista de _tipos de archivos permitidos_, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo permitido. Tenga en cuenta que la política _Tipos de archivos permitidos_ solo se aplica para la detección de manipulación de archivos.
+
+Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de ransomware debido a la extensión _.abc_, esta extensión puede agregarse a la lista de _tipos de archivo permitidos_. Después de agregarla a la lista, los ataques de ransomware ya no se generarán contra archivos con la extensión _.abc_.
+
+Los tipos de archivo permitidos pueden ser coincidencias exactas (p. ej., ".abc") o expresiones (p. ej., ++.*type++, ++.type*++ o ++.*type*++). No se admiten expresiones de tipo .a*c ni .p*f.
