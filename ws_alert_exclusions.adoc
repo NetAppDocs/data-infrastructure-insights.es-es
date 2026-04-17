@@ -11,6 +11,8 @@ summary: Agrega extensiones de archivo a una lista de exclusión de alertas para
 [role="lead"]
 La exclusión de alertas te permite suprimir la generación de alertas para tipos de archivo, usuarios y rutas de directorio específicos. Usa esto para reducir los falsos positivos excluyendo la actividad conocida y esperada que, de lo contrario, podría coincidir con los patrones de alerta.
 
+Ten en cuenta que solo se suprime la alerta del evento; los propios eventos se siguen capturando y se pueden revisar.
+
 Ve a *Workload Security > Policies* y selecciona la pestaña *Alert Exclusions*.
 
 La exclusión de alertas se configura por inquilino e incluye lo siguiente:
@@ -20,36 +22,38 @@ La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 . Rutas: suprime las alertas de actividad en las rutas de directorio seleccionadas (hasta cuatro niveles de directorio, empezando en la ruta de unión).
 
 
-La lista de exclusión de usuarios es compatible con type-ahead, donde los administradores pueden seleccionar usuarios para excluir de las alertas.
-
-La exclusión de directorios admite hasta cuatro niveles de rutas de directorio, comenzando con la ruta de unión.
-
-Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la lista de exclusión correspondiente. Cada entrada de cada lista tendrá la información de cuándo y por quién fue añadida a la lista, y esta información se usará para fines de auditoría.
-
 
 
 == Gestiona exclusiones y auditorías
 
 * Los administradores pueden añadir o eliminar extensiones de archivo, usuarios individuales o rutas en cualquier momento.
-* Cada entrada de exclusión registra el nombre del admin que la estableció y la fecha en que se estableció. Esta información se conserva para auditoría.
+* Cada entrada de exclusión registra el nombre del administrador que la estableció y la fecha en que se estableció. Esta información se conserva para auditoría.
+
+
+
+
+== Usuarios y rutas
+
+* Lista de exclusión de usuarios: agrega usuarios que serán excluidos de las alertas.
+* Lista de exclusión de directorios: admite hasta cuatro niveles de rutas de directorios, empezando por la ruta de unión.
 
 
 image:ws_alert_exclusions_users.png[""]
 
 image:ws_alert_exclusions_paths.png[""]
 
+Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la lista de exclusión correspondiente. Cada entrada de cada lista tendrá la información de cuándo y por quién fue añadida a la lista, y esta información se usará para fines de auditoría.
 
 
-== Tipos de archivo permitidos
 
-Se pueden agregar extensiones de archivo a una lista de tipos de archivo permitidos para evitar alertas innecesarias.
+== Tipos de archivos
 
-Selecciona *+Tipo de archivo* para agregar tipos de archivo a la lista de tipos de archivo permitidos en la alerta.
+Una vez añadida a la lista de Tipos de archivo, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo permitido. Ten en cuenta que la política de Tipos de archivo solo es aplicable para la detección de manipulación de archivos.
 
-image:ws_allowed_file_types.png["Agregar tipos de archivo permitidos"]
-
-Una vez agregado a la lista de _tipos de archivos permitidos_, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo permitido. Tenga en cuenta que la política _Tipos de archivos permitidos_ solo se aplica para la detección de manipulación de archivos.
+image:ws_file_types_list.png["Lista de tipos de archivos"]
 
 Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de ransomware debido a la extensión _.abc_, esta extensión puede agregarse a la lista de _tipos de archivo permitidos_. Después de agregarla a la lista, los ataques de ransomware ya no se generarán contra archivos con la extensión _.abc_.
 
 Los tipos de archivo permitidos pueden ser coincidencias exactas (p. ej., ".abc") o expresiones (p. ej., ++.*type++, ++.type*++ o ++.*type*++). No se admiten expresiones de tipo .a*c ni .p*f.
+
+Se han introducido atributos adicionales de "Set By" y "Set Date" para la auditoría. Los tipos de archivo existentes se migrarán al nuevo formato con los valores de estos dos atributos establecidos como "migrated".
