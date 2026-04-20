@@ -8,6 +8,9 @@ summary: Data Infrastructure Insights apoya a Telegraf como su agente para la re
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
