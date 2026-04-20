@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: ws_audit_events.html 
+summary: Eventos de auditoría en Workload Security 
+keywords: workload security, audit, events 
+---
+= Audita eventos de seguridad de la carga de trabajo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Identifica los cambios esperados (para el seguimiento) o inesperados (para la solución de problemas). Consulta un registro de auditoría de los eventos del sistema de Workload Security y de las actividades de los usuarios.
+
+
+
+== Visualización de eventos auditados
+
+Para ver la página Auditoría, haz clic en Admin > Audit en el menú. Se muestra la página Audit, que proporciona los siguientes detalles para cada entrada de auditoría:
+
+* Hora - Fecha y hora del evento o actividad
+* Usuario - El usuario que inició la actividad
+* Rol: el rol del usuario en Workload Security (invitado, usuario, administrador)
+* IP - La dirección IP asociada con el evento
+* Acción - Tipo de actividad, por ejemplo Iniciar sesión, Crear, Actualizar
+* Categoría - La categoría de la actividad.
+* Detalles - Detalles de la actividad
+* Application Type - Tipo de aplicación auditada: observabilidad o seguridad de la carga de trabajo. Úsalo para filtrar solo las auditorías de seguridad de la carga de trabajo.
+
+
+Los eventos de Workload Security que se auditan incluyen, entre otros, los siguientes:
+
+* Cambios en las políticas de seguridad de la carga de trabajo.
+* Creación de nuevos recopiladores de fuentes de datos (DSC).
+* Modificación de los DSC.
+* Creación de agentes.
+* Tareas de gestión de usuarios.
+* Tareas de token de API.
+
+
+
+
+== Visualización de entradas de auditoría
+
+Hay varias formas diferentes de ver las entradas de auditoría:
+
+* Puede mostrar las entradas de auditoría eligiendo un período de tiempo particular (1 hora, 24 horas, 3 días, etc.).
+* Puedes cambiar el orden de clasificación de las entradas a ascendente (flecha hacia arriba) o descendente (flecha hacia abajo) haciendo clic en la flecha del encabezado de la columna. Por defecto, la tabla muestra las entradas en orden temporal descendente.
+* Puede utilizar los campos de filtro para mostrar sólo las entradas que desee en la tabla.  Haga clic en el botón [+] para agregar filtros adicionales.
+
+
+
+
+== Más sobre el filtrado
+
+Puede utilizar cualquiera de los siguientes para refinar su filtro:
+
+|===
+
+
+| Filtrar | Qué hace | Ejemplo | Resultado 
+
+
+| * (Asterisco) | te permite buscar todo | vol*rhel | devuelve todos los recursos que comienzan con "vol" y terminan con "rhel" 
+
+
+| ?  (signo de interrogación) | le permite buscar un número específico de caracteres | BOS-PRD??-S12 | devuelve BOS-PRD12-S12, BOS-PRD23-S12, y así sucesivamente 
+
+
+| O | le permite especificar múltiples entidades | FAS2240 O CX600 O FAS3270 | devuelve cualquiera de los modelos FAS2440, CX600 o FAS3270 
+
+
+| NO | le permite excluir texto de los resultados de búsqueda | NO EMC* | devuelve todo lo que no comience con "EMC" 
+
+
+| Ninguno | busca espacios en blanco/NULOS/Ninguno en cualquier campo donde esté seleccionado | Ninguno | devuelve resultados donde el campo de destino no está vacío 
+
+
+| No * | como con None arriba, pero también puedes usar esta forma para buscar valores NULL en campos solo de texto | No * | devuelve resultados donde el campo de destino no está vacío. 
+
+
+| "" | busca una coincidencia exacta | "NetApp*" | devuelve resultados que contienen la cadena literal exacta NetApp* 
+|===
+Si encierra una cadena de filtro entre comillas dobles, Insight trata todo lo que esté entre la primera y la última comilla como una coincidencia exacta.  Cualquier carácter especial u operador dentro de las comillas se tratará como literal.  Por ejemplo, filtrar por "*" devolverá resultados que son un asterisco literal; el asterisco no se tratará como un comodín en este caso.  Los operadores OR y NOT también se tratarán como cadenas literales cuando estén entre comillas dobles.
+
+
+
+== Eventos y acciones auditados
+
+Los eventos y acciones auditados por Workload Security pueden clasificarse en las siguientes grandes áreas:
+
+* Cuenta de usuario: entrar, salir, cambio de rol, etc.
+* Agente: crear, eliminar, actualizar, anclar, desanclar, etc.
++
+Ejemplos: _Agent Agent-Boston-1 se elimina._ _La actualización del agente a la versión 1.760.0 se inicia mediante una operación masiva_
+
+* Datos/Directorio de usuario Collector: añadir, eliminar, modificar, actualizar, aplazar/reanudar, cambiar agente, reiniciar, etc.
++
+Ejemplos: _Data collector Collector-Boston1 eliminado, tipo ONTAP SVM_ _Agent: Agent-Boston-1, dirección IP del clúster 10.193.88.36, SVM demoGroupShares2_ _Actualización del collector ONTAP SVM a la versión 1.417.0 iniciada por operación masiva_
+
+* Políticas de respuesta automatizada: añadir, actualizar, eliminar, activar, desactivar, etc.
++
+Ejemplo: _Automated attack policy Policy-Boston1 actualizada. Propiedades Dispositivos actualizados, valor antiguo: [Dispositivo(name=svm_boston1, dataSourceId=39fb3b9c-9dd4-4961-bc27-23eb0b6f9ab7)], nuevo valor: [Dispositivo(name=demoGroupShares2, dataSourceId=5b9f5b74-4533-4852-909d-8886582a4359)]_
+
+* Bloqueo/desbloqueo de usuarios: bloqueo y desbloqueo de usuarios automatizado o manual.
++
+Ejemplo: _Bloqueo iniciado para el usuario Safwan Langley como parte de la Respuesta Automática durante un periodo de 2 horas_
+
+* Apikey: agregar, eliminar, etc.
++
+Ejemplo: _Se ha creado el token de acceso a la API de Workload Security JPick-SWS_
+
+* Notificación: cambio de correo electrónico, etc.
++
+Ejemplo: _destinatario ci-alerts-notifications-dl creado_
+
+
+
+
+
+== Exportación de eventos de auditoría
+
+Puedes exportar los resultados de la visualización de Auditoría a un archivo .CSV, lo que te permitirá analizar los datos o importarlos a otra aplicación. Pasos 1. En la página de Auditoría, establece el intervalo de tiempo que desees y cualquier filtro que quieras. Workload Security exportará solo las entradas de Auditoría que coincidan con el filtrado y el intervalo de tiempo que hayas establecido. 2. Haz clic en el botón Exportar en la parte superior derecha de la tabla. Los eventos de Auditoría mostrados se exportarán a un archivo .CSV, hasta un máximo de 10,000 filas.
+
+
+
+== Retención de datos de auditoría
+
+La cantidad de tiempo que Workload Security retiene los datos de auditoría depende de tu suscripción:
+
+* Entornos de prueba: los datos de auditoría se conservan durante 30 días
+* Entornos suscritos: Los datos de auditoría se conservan durante 1 año más 1 día
+
+
+Las entradas de auditoría más antiguas que el tiempo de retención se eliminan automáticamente.  No se necesita interacción del usuario.
