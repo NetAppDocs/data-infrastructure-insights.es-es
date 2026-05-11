@@ -1109,7 +1109,6 @@
   <block id="250a0e817001d5aadc297d9943b4611a" category="list-text">12ep0</block>
   <block id="7fbc2da9d2e5b20105696da7ea4ce3dd" category="list-text">emc3</block>
   <block id="cb0dda161e32cb6fdfcbd71707929167" category="list-text">hba3</block>
-  <block id="ea72e8c9dc8f8b845a6ad19e15b5867a" category="list-text">Las reglas que utilizan expresiones regulares requieren una expresión regular, el formato y la selección de distinción entre mayúsculas y minúsculas.</block>
   <block id="669613ed670b6c6c42c39acf0bfee7b0" category="list-text">Haga clic en *Ejecutar AR* para ejecutar todas las reglas, o haga clic en la flecha hacia abajo en el botón para ejecutar la regla que creó (y cualquier otra regla que se haya creado desde la última ejecución completa de AR).</block>
   <block id="f5d37dace9a539d56f93b2e2c32704d5" category="paragraph">Los resultados de la ejecución de la regla se muestran en la pestaña *Identificación de FC*.</block>
   <block id="c2c94fa68f8065fa325aff6c260bebfb" category="section-title">Iniciar una actualización automática de la resolución del dispositivo</block>
@@ -14091,4 +14090,8 @@
   <block id="e63e4cacc359b740fa0bc5ab6ea0ba8d" category="paragraph">La cantidad de tiempo que Workload Security retiene los datos de auditoría depende de tu suscripción:</block>
   <block id="db33137206c4f6b3edeb7dda117f05dd" category="sidebar">Visualización de eventos de auditoría</block>
   <block id="30e34a68b374f1718d077f39f1e4b558" category="admonition">Las actualizaciones mediante pulsador no están disponibles para las versiones del operador anteriores a la 1.2057.0. Sigue las instrucciones de actualización manual que aparecen a continuación para actualizar a la última versión. Después de hacer esto, las futuras actualizaciones se pueden realizar usando la función de actualización mediante pulsador.</block>
+  <block id="d0c7c0947ebc2f58067c90be172b88e0" category="list-text">Haz clic en *Observability &gt; Enrich &gt; Device Resolution*</block>
+  <block id="7ecd430509607d1a2c2f3ffad808df91" category="list-text">Las reglas que utilizan expresiones regulares requieren una expresión regular, el formato y la selección de mayúsculas y minúsculas.</block>
+  <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Pausar y reanudar reglas</block>
+  <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para evitar que una regla se ejecute, elige "Pausar" en el menú de la derecha de la regla, o selecciona varias reglas y elige "Pausar" en el menú desplegable "Acciones masivas". Puedes reanudar la ejecución de la regla de la misma manera.</block>
 </blocks>
