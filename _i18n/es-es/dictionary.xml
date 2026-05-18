@@ -14030,7 +14030,6 @@
   <block id="d01a003326568eee4579a0b14096808a" category="list-text">Cada entrada de exclusión registra el nombre del administrador que la estableció y la fecha en que se estableció. Esta información se conserva para auditoría.</block>
   <block id="502a3077dba0d1ad6f92723157947eb2" category="section-title">Usuarios y rutas</block>
   <block id="fbe64a9bdbefe7d8e246dbe4db973fd6" category="list-text">Lista de exclusión de usuarios: agrega usuarios que serán excluidos de las alertas.</block>
-  <block id="7f21f675f8b42bfe63a9f7bf4d897cb0" category="list-text">Lista de exclusión de directorios: admite hasta cuatro niveles de rutas de directorios, empezando por la ruta de unión.</block>
   <block id="f12b42eece54a56ffab836a42eb37488" category="section-title">Tipos de archivos</block>
   <block id="137e136f6b4d96d6452fec8d0ed99197" category="paragraph">Una vez añadida a la lista de Tipos de archivo, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo permitido. Ten en cuenta que la política de Tipos de archivo solo es aplicable para la detección de manipulación de archivos.</block>
   <block id="b3e41e2fae7745b697dbed9b6f854aa1" category="inline-image-macro">Lista de tipos de archivos</block>
@@ -14094,4 +14093,5 @@
   <block id="7ecd430509607d1a2c2f3ffad808df91" category="list-text">Las reglas que utilizan expresiones regulares requieren una expresión regular, el formato y la selección de mayúsculas y minúsculas.</block>
   <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Pausar y reanudar reglas</block>
   <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para evitar que una regla se ejecute, elige "Pausar" en el menú de la derecha de la regla, o selecciona varias reglas y elige "Pausar" en el menú desplegable "Acciones masivas". Puedes reanudar la ejecución de la regla de la misma manera.</block>
+  <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">Lista de exclusión de directorios: Admite hasta cuatro niveles de rutas de directorio, empezando por la ruta de unión. Todos los subdirectorios y archivos que se encuentren bajo esta ruta se excluirán para la generación de alertas. No se admiten comodines en las rutas de directorio.</block>
 </blocks>

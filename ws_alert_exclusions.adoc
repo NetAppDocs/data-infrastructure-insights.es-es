@@ -35,7 +35,7 @@ La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 == Usuarios y rutas
 
 * Lista de exclusión de usuarios: agrega usuarios que serán excluidos de las alertas.
-* Lista de exclusión de directorios: admite hasta cuatro niveles de rutas de directorios, empezando por la ruta de unión.
+* Lista de exclusión de directorios: Admite hasta cuatro niveles de rutas de directorio, empezando por la ruta de unión. Todos los subdirectorios y archivos que se encuentren bajo esta ruta se excluirán para la generación de alertas. No se admiten comodines en las rutas de directorio.
 
 
 image:ws_alert_exclusions_users.png[""]
