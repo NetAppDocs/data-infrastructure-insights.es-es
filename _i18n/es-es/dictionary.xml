@@ -6671,8 +6671,6 @@
   <block id="df6a21f670066b82b5409a049dec0efe" category="doc">Políticas de respuesta automatizada</block>
   <block id="e5da02c738b911c42fb0a45a5b76c8d9" category="paragraph">Las políticas de respuesta activan acciones como tomar una instantánea o restringir el acceso del usuario en caso de un ataque o comportamiento anormal del usuario.</block>
   <block id="8816114441548a7f4d390de764f25ad9" category="paragraph">Puede establecer políticas en dispositivos específicos o en todos los dispositivos.  Para establecer una política de respuesta, seleccione *Admin &gt; Políticas de respuesta automatizadas* y haga clic en el botón *+Política* apropiado.  Puede crear políticas para ataques o advertencias.</block>
-  <block id="29d142bb0759eaeb3b47bf1809087cc7" category="inline-image-macro">Agregar un cuadro de diálogo de Política de ataque que muestra el menú desplegable del webhook</block>
-  <block id="9c3cfe368d37e834800103686eba11c1" category="paragraph"><block ref="9c3cfe368d37e834800103686eba11c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10519a96ebde07deba902eb606bf97ff" category="paragraph">Debes guardar la política con un nombre único.</block>
   <block id="168e31fead9fc72274b5723b0c86d27f" category="paragraph">Para deshabilitar una acción de respuesta automatizada (por ejemplo, Tomar instantánea), simplemente desmarque la acción y guarde la política.</block>
   <block id="3218ac0e5f26253bd8724ab98d8f5e02" category="inline-link-macro">Página de detalles de alerta</block>
@@ -14094,4 +14092,6 @@
   <block id="9372fa792b7b3d019662b44dd2963355" category="section-title">Pausar y reanudar reglas</block>
   <block id="716da8f41fd22d5cd56ad74991f757ba" category="paragraph">Para evitar que una regla se ejecute, elige "Pausar" en el menú de la derecha de la regla, o selecciona varias reglas y elige "Pausar" en el menú desplegable "Acciones masivas". Puedes reanudar la ejecución de la regla de la misma manera.</block>
   <block id="baac891fc4329aa8b558fa7560c83369" category="list-text">Lista de exclusión de directorios: Admite hasta cuatro niveles de rutas de directorio, empezando por la ruta de unión. Todos los subdirectorios y archivos que se encuentren bajo esta ruta se excluirán para la generación de alertas. No se admiten comodines en las rutas de directorio.</block>
+  <block id="fc6be75876bcdad138173b62e9ab5c17" category="inline-image-macro">Cuadro de diálogo para agregar una Attack Policy mostrando el menú desplegable de webhook, ancho=300</block>
+  <block id="7cb01fa627551da61643f2eab2af39fb" category="paragraph"><block ref="7cb01fa627551da61643f2eab2af39fb" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
