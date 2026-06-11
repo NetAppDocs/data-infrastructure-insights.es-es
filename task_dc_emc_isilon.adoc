@@ -7,6 +7,10 @@ summary: 'Configuración del recopilador de datos Dell EMC PowerScale (anteriorm
 = Recopilador de datos Dell EMC PowerScale
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

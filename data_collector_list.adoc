@@ -209,6 +209,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_pure_flashblade.html["Pure Storage FlashBlade"] | Infraestructura 
 
 
+| link:task_dc_qumulo_rest.html["Qumulo REST"] | Infraestructura 
+
+
 | link:task_dc_redhat_virtualization.html["Virtualización de Red Hat"] | Infraestructura 
 
 

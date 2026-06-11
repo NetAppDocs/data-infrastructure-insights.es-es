@@ -25,10 +25,10 @@ oc adm policy add-cluster-role-to-user cluster-monitoring-view -z acq-readonly-c
 ....
 Ejecuta esos 3 comandos y fíjate si aparece algún error.
 
-Cuando los comandos se completen:
+Cuando se hayan ejecutado los comandos, ejecuta:
 
- oc sa new-token acq-readonly-cluster-user
-Esto creará un token vinculado a tu usuario.
+ oc create token acq-readonly-cluster-user --duration=8760h
+Esto creará un token vinculado a tu usuario. Nota: se recomienda establecer la duración del token. Ten en cuenta que la recopilación de datos fallará con un error de “No se ha podido conectar” después de que el token expire.
 
 Por último, también puedes querer que tu administrador de OSV ejecute:
 

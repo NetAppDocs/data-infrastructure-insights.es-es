@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: task_dc_qumulo_rest.html 
+keywords: data collector, qumulo, rest 
+summary: Configuración del recopilador de datos REST de Qumulo. 
+---
+= Recopilador de datos REST de Qumulo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Data Infrastructure Insights utiliza este recopilador para obtener datos de inventario y rendimiento del almacenamiento de Qumulo.
+
+
+
+== Terminología
+
+Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
+
+[cols="2*"]
+|===
+| Término de proveedor/modelo | Data Infrastructure Insights 
+
+
+| Conducir | Disco 
+
+
+| Grupo | Almacenamiento 
+
+
+| Node | Nodo de almacenamiento 
+
+
+| Sistema de archivos OneFS | Volumen interno 
+
+
+| Sistema de archivos OneFS | Pool de almacenamiento 
+
+
+| Árbol Q | Árbol Q 
+|===
+Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
+
+
+
+== Requisitos
+
+Necesita la siguiente información para configurar este recopilador de datos:
+
+* Una cuenta de usuario y contraseña.  Esta cuenta NO necesita ser administrador/root, pero DEBE otorgar una cantidad sustancial de privilegios de solo lectura a su cuenta de servicio: consulte la tabla a continuación
+* Dirección IP / Nombre de dominio completo del clúster de Qumulo
+* Acceso HTTPS al puerto 8080
+
+
+
+
+== Configuración
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Dirección IP de Qumulo | La dirección IP o el nombre de dominio completo del almacenamiento de Qumulo 
+
+
+| Nombre de usuario | Nombre de usuario para Qumulo 
+
+
+| Password | Contraseña utilizada para Qumulo 
+|===
+
+
+== Configuración avanzada
+
+[cols="2*"]
+|===
+| Campo | Descripción 
+
+
+| Puerto HTTPS | El valor predeterminado es 8080. 
+
+
+| Intervalo de sondeo de inventario (min) | Intervalo entre las consultas de inventario. El valor predeterminado es 30. 
+
+
+| Intervalo de encuesta de rendimiento (min) | Intervalo entre las encuestas de rendimiento. El valor predeterminado es 5. 
+|===
+
+
+== Solución de problemas
+
+Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

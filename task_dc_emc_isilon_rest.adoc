@@ -7,6 +7,10 @@ summary: Configuración del recopilador de datos REST de Dell EMC Isilon/PowerSc
 = Recopilador de datos REST de Dell EMC Isilon/PowerScale
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
