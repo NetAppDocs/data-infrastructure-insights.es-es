@@ -14123,4 +14123,5 @@
   <block id="6d0f6de7ebc4523de6bfdcd599b62bf1" category="paragraph">Esto creará un token vinculado a tu usuario. Nota: se recomienda establecer la duración del token. Ten en cuenta que la recopilación de datos fallará con un error de “No se ha podido conectar” después de que el token expire.</block>
   <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">Acceso HTTPS al puerto 8000</block>
   <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">El valor predeterminado es 8000.</block>
+  <block id="606930ccd6550cc24fe845f69572c586" category="list-text">Una cuenta de usuario y una contraseña con al menos permiso de lectura.</block>
 </blocks>

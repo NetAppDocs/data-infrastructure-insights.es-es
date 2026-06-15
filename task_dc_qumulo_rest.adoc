@@ -43,7 +43,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 Necesita la siguiente información para configurar este recopilador de datos:
 
-* Una cuenta de usuario y contraseña.  Esta cuenta NO necesita ser administrador/root, pero DEBE otorgar una cantidad sustancial de privilegios de solo lectura a su cuenta de servicio: consulte la tabla a continuación
+* Una cuenta de usuario y una contraseña con al menos permiso de lectura.
 * Dirección IP / Nombre de dominio completo del clúster de Qumulo
 * Acceso HTTPS al puerto 8000
 
