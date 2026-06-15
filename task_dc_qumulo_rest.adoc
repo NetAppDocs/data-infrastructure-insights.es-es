@@ -34,15 +34,6 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 
 | Node | Nodo de almacenamiento 
-
-
-| Sistema de archivos OneFS | Volumen interno 
-
-
-| Sistema de archivos OneFS | Pool de almacenamiento 
-
-
-| Árbol Q | Árbol Q 
 |===
 Nota: Estas son solo asignaciones de terminología común y es posible que no representen todos los casos de este recopilador de datos.
 
@@ -54,7 +45,7 @@ Necesita la siguiente información para configurar este recopilador de datos:
 
 * Una cuenta de usuario y contraseña.  Esta cuenta NO necesita ser administrador/root, pero DEBE otorgar una cantidad sustancial de privilegios de solo lectura a su cuenta de servicio: consulte la tabla a continuación
 * Dirección IP / Nombre de dominio completo del clúster de Qumulo
-* Acceso HTTPS al puerto 8080
+* Acceso HTTPS al puerto 8000
 
 
 
@@ -83,7 +74,7 @@ Necesita la siguiente información para configurar este recopilador de datos:
 | Campo | Descripción 
 
 
-| Puerto HTTPS | El valor predeterminado es 8080. 
+| Puerto HTTPS | El valor predeterminado es 8000. 
 
 
 | Intervalo de sondeo de inventario (min) | Intervalo entre las consultas de inventario. El valor predeterminado es 30. 
