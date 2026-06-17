@@ -14124,4 +14124,6 @@
   <block id="90e0071503be9324e2266cfd3368d18a" category="list-text">Acceso HTTPS al puerto 8000</block>
   <block id="bdda6785fe5c26b462fa0a87d4327560" category="cell">El valor predeterminado es 8000.</block>
   <block id="606930ccd6550cc24fe845f69572c586" category="list-text">Una cuenta de usuario y una contraseña con al menos permiso de lectura.</block>
+  <block id="38fbce916138020848ac3b594a6648d0" category="section-title">Comparte actualizaciones importantes mediante mensajes de inicio de sesión</block>
+  <block id="7260908f665e8b3c02f0fce13c7ea541" category="paragraph">Mantén a tu equipo informado y alineado con mensajes de inicio de sesión personalizables. Comunica anuncios importantes, horarios de mantenimiento o actualizaciones de políticas directamente a los usuarios cuando inicien sesión. Con soporte para markdown, puedes dar formato a los mensajes para mayor claridad y asegurarte de que la información crítica llegue a cada usuario de DII. Las cuentas con privilegios de admin pueden encontrar la configuración en el menú Admin, en Notificaciones.</block>
 </blocks>

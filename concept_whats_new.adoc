@@ -22,6 +22,12 @@ NetApp mejora y optimiza continuamente sus productos y servicios.  A continuaci�
 
 
 
+=== Comparte actualizaciones importantes mediante mensajes de inicio de sesión
+
+Mantén a tu equipo informado y alineado con mensajes de inicio de sesión personalizables. Comunica anuncios importantes, horarios de mantenimiento o actualizaciones de políticas directamente a los usuarios cuando inicien sesión. Con soporte para markdown, puedes dar formato a los mensajes para mayor claridad y asegurarte de que la información crítica llegue a cada usuario de DII. Las cuentas con privilegios de admin pueden encontrar la configuración en el menú Admin, en Notificaciones.
+
+
+
 === Más espacio de trabajo, menos desorden
 
 El menú de navegación de DII presenta un nuevo y renovado diseño, que ahora se adapta a los colores y al comportamiento de Console para ofrecer una experiencia más unificada. El menú principal, que antes era estático, aparecerá oculto de forma predeterminada para proporcionar un espacio de trabajo más centrado y un uso más eficiente del espacio en pantalla. Simplemente haz clic en el icono de hamburguesa (☰) en la esquina superior izquierda para acceder a él.
