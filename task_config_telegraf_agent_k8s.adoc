@@ -296,7 +296,7 @@ Edita el _AgentConfiguration_ en _operator-config.yaml_ para reflejar la nueva u
 agent:
   ...
   # An optional docker registry where you want docker images to be pulled from as compared to CI's docker registry
-  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository
+  # Please see documentation link here: link:task_config_telegraf_agent_k8s.html#using-a-custom-or-private-docker-repository[Using a custom or private docker repository]
   dockerRepo: your.docker.repo/long/path/to/test
   # Optional: A docker image pull secret that maybe needed for your private docker registry
   dockerImagePullSecret: docker-secret-name
@@ -426,7 +426,7 @@ Algunas cosas que puedes probar si tienes problemas al configurar el operador de
 | Tuve problemas al intentar implementar el Operador y tengo PSP/PSA en uso. | 1. Edite el agente utilizando el siguiente comando: kubectl -n <name-space> edit agent 2.  Marcar 'security-policy-enabled' como 'falso'.  Esto deshabilitará las Políticas de seguridad de pod y la Admisión de seguridad de pod y permitirá que el Operador realice la implementación.  Confirme usando los siguientes comandos: kubectl get psp (debería mostrar que se eliminó la política de seguridad del pod) kubectl get all -n <namespace> | grep -i psp (debería mostrar que no se encontró nada) 
 
 
-| Errores "ImagePullBackoff" detectados | Estos errores pueden aparecer si tiene un repositorio Docker personalizado o privado y aún no ha configurado el operador de monitoreo de Kubernetes para reconocerlo correctamente. <<using-a-custom-or-private-docker-repository,Leer más>> Acerca de la configuración para un repositorio personalizado/privado. 
+| Errores "ImagePullBackoff" detectados | Estos errores pueden aparecer si tienes un repositorio de docker personalizado o privado y aún no has configurado el Kubernetes Monitoring Operator para que lo reconozca correctamente. <<Uso de un repositorio Docker personalizado o privado,Leer más>> sobre cómo configurar para un repo personalizado/privado. 
 
 
 | Tengo un problema con la implementación de mi operador de monitoreo y la documentación actual no me ayuda a resolverlo.  a| 

@@ -17,7 +17,7 @@ Ve a *Workload Security > Policies* y selecciona la pestaña *Alert Exclusions*.
 
 La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 
-. Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos <<allowed-file-types,Tipos de archivo permitidos>>
+. Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos <<file-types,Tipos de archivo permitidos>>
 . Usuarios: suprime las alertas activadas por los usuarios seleccionados.
 . Rutas: suprime las alertas de actividad en las rutas de directorio seleccionadas (hasta cuatro niveles de directorio, empezando en la ruta de unión).
 
@@ -38,9 +38,9 @@ La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 * Lista de exclusión de directorios: Admite hasta cuatro niveles de rutas de directorio, empezando por la ruta de unión. Todos los subdirectorios y archivos que se encuentren bajo esta ruta se excluirán para la generación de alertas. No se admiten comodines en las rutas de directorio.
 
 
-image:ws_alert_exclusions_users.png[""]
+image:ws_alert_exclusions_users.png["Usuarios excluidos de alertas"]
 
-image:ws_alert_exclusions_paths.png[""]
+image:ws_alert_exclusions_paths.png["Rutas de exclusión de alertas"]
 
 Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la lista de exclusión correspondiente. Cada entrada de cada lista tendrá la información de cuándo y por quién fue añadida a la lista, y esta información se usará para fines de auditoría.
 

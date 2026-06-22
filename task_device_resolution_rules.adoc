@@ -161,4 +161,48 @@ Data Infrastructure Insights ejecuta el proceso de resolución del host en el or
 
 Cuando se encuentran reglas que se aplican, los nombres de las reglas se muestran en la columna de reglas y se identifican como manuales.
 
-Relacionado:link:task_device_resolution_fibre_channel.html["Resolución del dispositivo de canal de fibra"] link:task_device_resolution_ip.html["Resolución de dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]
+
+
+== Generación de reglas asistida por IA
+
+Como alternativa, puedes evitar las conjeturas gracias a la identificación de dispositivos basada en IA para crear reglas de forma rápida y sencilla. Simplemente ejecuta el generador de reglas asistido por IA para analizar tu entorno y sugerir reglas de resolución de dispositivos, ayudándote a identificar y gestionar más dispositivos rápidamente.
+
+
+
+=== Comenzar
+
+Para empezar a usar la IA para generar reglas de resolución, un administrador debe primero activar las reglas generadas por IA.
+
+image:ahr_ai_get_started.png["Empieza a crear reglas de IA, width=400"]
+
+El asistente de IA te indicará qué porcentaje de tus dispositivos Fibre Channel no están identificados y te pedirá que le permitas generar reglas. Selecciona "¡Manos a la obra!".
+
+image:ahr_ai_lets_go.png["Selecciona «Let's Go» para generar reglas, width=400"]
+
+Se te pedirá que confirmes tus nombres de dominio antes de activar las reglas generadas por IA. Debes incluir todos tus dominios para que la identificación sea eficaz.
+
+
+
+=== Comprobar progreso
+
+De forma periódica, DII generará una notificación cuando haya dispositivos adicionales disponibles para su posible identificación. Si ves un punto verde en el icono de la campana situado en la esquina superior derecha de la página, selecciónalo para ver la notificación.
+
+image:ahr_ai_notification.png["campana de notificación, width=400"]
+
+Utiliza el icono de la campana para comprobar también el estado de la generación de reglas, que puede tardar desde unos segundos hasta varios minutos, dependiendo de la complejidad de tu entorno.
+
+Las reglas generadas por IA mostrarán una insignia de "Generado por IA" en la lista.
+
+image:ahr_ai_badge.png["Insignia de regla generada por IA, ancho=400"]
+
+
+
+=== Reanudar y continuar
+
+Las reglas generadas por IA se encuentran en estado _Pausadas_ de forma predeterminada. Debes revisar cada regla y _Reanudarla_ antes de que identifique los dispositivos.
+
+
+
+== Relacionado:
+
+link:task_device_resolution_fibre_channel.html["Resolución del dispositivo de canal de fibra"] link:task_device_resolution_ip.html["Resolución de dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]

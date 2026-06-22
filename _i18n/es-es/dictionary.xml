@@ -526,7 +526,6 @@
   <block id="63800fa4905e8f1340ac92bcc42decb9" category="cell">Esto puede suceder si utiliza este recopilador de datos para descubrir el archivador de modo 7.  Cambie la IP para que apunte al clúster cdot.</block>
   <block id="ba47f8d8510049a6a646bcaab9868c9b" category="cell">Error “No se pudo recopilar el rendimiento de ZAPI”</block>
   <block id="60c7f1e49f405a1836fb656a8fffe2aa" category="cell">Generalmente, esto se debe a que la estadística de rendimiento no se está ejecutando.  Pruebe el siguiente comando en cada nodo: &gt; _system node systemshell -node * -command “spmctl -h cmd –stop; spmctl -h cmd –exec”_</block>
-  <block id="a9d11491cdc145dca25e537c123d978b" category="summary">Configurar la conexión a la nube de NetApp para el recopilador de datos ONTAP 9.9+</block>
   <block id="34727dd01aaa3e0d53fd68d429bbff53" category="doc">Conexión a la nube de NetApp para el recopilador de datos ONTAP 9.9+</block>
   <block id="0803ffc49bb5d009027ad578d29858b8" category="paragraph">Este recopilador de datos crea una conexión en la nube para respaldar la recopilación de datos de los sistemas ONTAP 9.9+ CVO, AFF y FAS .</block>
   <block id="fb915b764f3baecfa629ff22686e14ee" category="admonition">Este recopilador de datos ya no está disponible para su instalación en Data Infrastructure Insights a partir del 4 de abril de 2023 y se eliminará de todas las instalaciones de Data Infrastructure Insights en julio de 2023.</block>
@@ -1128,7 +1127,6 @@
   <block id="3e6a6e204935e5560fba5d2fbe05a425" category="list-text">Seleccione el método que mejor se adapte a sus necesidades.</block>
   <block id="d58aecd7040e7d513c5340e479099d22" category="paragraph">Data Infrastructure Insights ejecuta el proceso de resolución del host en el orden en el que aparecen los métodos, comenzando por los que están en la parte superior.</block>
   <block id="ef134b9e133b3a5eb7b3017bb03532e8" category="paragraph">Cuando se encuentran reglas que se aplican, los nombres de las reglas se muestran en la columna de reglas y se identifican como manuales.</block>
-  <block id="ea4f37cdc61f22bab06bd53f38731b48" category="paragraph">Relacionado:<block ref="9606d230686b3a54ef0c843c6a8d06ee" category="inline-link-macro-rx"></block> <block ref="f7ab518a04b5eb9592800f6375835782" category="inline-link-macro-rx"></block> <block ref="9afa071c2420f8347dcfd0e1bd5f4e5c" category="inline-link-macro-rx"></block></block>
   <block id="8b720a56569a3c7ab2f160ab1eda080e" category="summary">Visualización de leyendas en los widgets del panel.</block>
   <block id="d40435902e9d2aff211851b4be9e2a25" category="paragraph">Los widgets en los paneles se pueden mostrar con o sin leyendas.</block>
   <block id="82908db5a2e57cb0c3c9c7daae713304" category="paragraph">Al mostrar el panel de control, las leyendas en los widgets se pueden activar o desactivar haciendo clic en el botón *Opciones* en el widget y seleccionando *Mostrar leyendas* en el menú.</block>
@@ -1293,7 +1291,6 @@
   <block id="b20aea1fa1664bcc048770ea0e008918" category="paragraph">Haga clic en Descargar archivo.  Si está realizando estos pasos en un sistema distinto del sistema AU, copie el paquete zip del parche descargado al sistema AU.</block>
   <block id="3e7f4643e7c9ebf9318c59a568b2521c" category="paragraph">Asegúrese de que el paquete zip del parche se copie en el siguiente directorio: /var/lib/netapp/cloudinsights/acq/download</block>
   <block id="9cb12f64263025528c33b8d045cd0c4a" category="paragraph">Navegue al directorio /var/lib/netapp/cloudinsights/acq/download para el parche y verifique el archivo .zip allí:</block>
-  <block id="6d225eb97f4a253f028dffb578250de4" category="summary">Al consultar una alta densidad de E/S, conviene excluir los volúmenes raíz.</block>
   <block id="1ab57582b962bd9a8bcc5c1ad73a3370" category="doc">Garantizar que los informes de densidad de E/S describan únicamente los volúmenes de datos internos</block>
   <block id="7fd61f2044d1ea7e162156b49842f9b8" category="paragraph">El volumen raíz de NetApp contiene directorios y archivos de configuración para administrar el sistema de almacenamiento.  Al consultar una alta densidad de E/S, conviene excluir estos volúmenes raíz.</block>
   <block id="7a1632b55f7e986af31872ad12602af6" category="paragraph">Al supervisar su entorno, es más importante determinar qué volúmenes de datos internos están produciendo números de alta densidad de E/S.  Para identificar con precisión solo los volúmenes de datos, debe aislar los volúmenes internos de NetApp de las consultas que utiliza para monitorear la densidad de E/S.</block>
@@ -2197,20 +2194,15 @@
   <block id="61af0e7885b3d07748159728a44e4ad9" category="list-text">Elija el webhook "Discord" para los eventos deseados (Crítico, Advertencia, Resuelto)</block>
   <block id="ed5c4b12d92f20d8019eeff5f0fd66c6" category="inline-image-macro">Notificaciones de webhook</block>
   <block id="5a9350e3ec5e1d6389a7846d4b45fff3" category="paragraph"><block ref="5a9350e3ec5e1d6389a7846d4b45fff3" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="bf6fa6c5bb37c6b734af290224d14b3b" category="summary">Cree un webhook para alertar sobre los umbrales de rendimiento o inventario para Pagerduty</block>
   <block id="ebe61c67e9deed871c60838fd5e9f7be" category="doc">Ejemplo de webhook para PagerDuty</block>
   <block id="71298eef97e0ed788542ad241ccd8519" category="paragraph">Los webhooks permiten a los usuarios enviar notificaciones de alerta a varias aplicaciones utilizando un canal webhook personalizado.  Esta página proporciona un ejemplo para configurar webhooks para PagerDuty.</block>
   <block id="00a64325d6215e869d901337c5733f9f" category="inline-link-macro">Documentación de PagerDuty</block>
   <block id="b9c4db244f886c8ad1c6fa5fe3a5597f" category="admonition">Esta página hace referencia a instrucciones de terceros, que podrían estar sujetas a cambios.  Consulte la<block ref="4cf6cb20b95cded724b319964a5ce815" category="inline-link-macro-rx"></block> para obtener la información más actualizada.</block>
   <block id="5fe5cd9eb2f533342eccb34df79fde72" category="section-title">Configuración de PagerDuty:</block>
   <block id="bd4bbe8a9ea1ffdf00ee8bd94fc1e16d" category="list-text">En PagerDuty, navegue a *Servicios &gt; Directorio de servicios* y haga clic en el botón *+Nuevo servicio*</block>
-  <block id="b476f138570162c042a088beeeccec15" category="list-text">Ingrese un _Nombre_ y seleccione _Usar nuestra API directamente_.  Haga clic en _Agregar servicio_.</block>
   <block id="87f2841c34802570db42ed259a72659f" category="inline-image-macro">Pantalla de servicio de buscapersonas</block>
   <block id="db788963e43859ced84fd2d54c4a1826" category="paragraph"><block ref="db788963e43859ced84fd2d54c4a1826" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b59bb2be40103d441711440903e77391" category="list-text">Haga clic en la pestaña _Integraciones_ para ver la *Clave de integración*.  Necesitará esta clave cuando cree el webhook de Data Infrastructure Insights a continuación.</block>
   <block id="14b1b977a367efc00b3c3c2a27dd9df6" category="list-text">Vaya a *Incidentes* o *Servicios* para ver las alertas.</block>
-  <block id="38cd2297d6a0d6ebf34eba2cd7a08ed5" category="inline-image-macro">Pantalla de servicio de buscapersonas</block>
-  <block id="583d30680a45f7d79eafed1816002071" category="paragraph"><block ref="583d30680a45f7d79eafed1816002071" category="inline-image-macro-rx" type="image"></block></block>
   <block id="080e61216b58fb3cb63bae2ed7de1c2c" category="list-text">Dale al webhook un nombre significativo, como por ejemplo "PagerDuty Trigger".  Utilizará este webhook para eventos de nivel crítico y de advertencia.</block>
   <block id="56d3e1d7cf9cd6ae0eef088d30e682b7" category="list-text">En el menú desplegable _Tipo de plantilla_, seleccione *PagerDuty*.</block>
   <block id="6da6fedcac10d8b2fdf051a1ed598349" category="list-text">Cree un parámetro secreto personalizado llamado _routingKey_ y establezca el valor en el valor _Integration Key_ de PagerDuty mencionado anteriormente.</block>
@@ -2439,7 +2431,6 @@
   <block id="ac14acdc92f36791be661880d12b7270" category="paragraph">Tenga en cuenta que el recopilador de datos de HCI adquiere únicamente desde el Centro Virtual de HCI.  Para recopilar datos del sistema de almacenamiento, también debe configurar NetApp<block ref="6712d9c3428b5f40681aae619dc8b571" category="inline-link-macro-rx"></block> recopilador de datos</block>
   <block id="40c6992ea910d43026a8f13fd0d7bfd6" category="section-title">mayo de 2019</block>
   <block id="037eddd16d35fc9eac278648da06c173" category="section-title">Nuevo recopilador de datos de servicio: Kapacitor</block>
-  <block id="a6c914a36af9cdcc4bc051dbdcd4eefb" category="list-text"><block ref="ca466468045f7ff3875d7132bbbf9398" category="inline-link-macro-rx"></block>Se ha añadido como recopilador de datos para servicios.</block>
   <block id="4d62d13d165eebe4e80017471b97b8ed" category="section-title">Integración con servicios a través de Telegraf</block>
   <block id="7aa7603ad6de1f47f78ba9423a0e4fcd" category="inline-link-macro">Telegraf como su agente</block>
   <block id="6d022ec9f2c6bb5d17eeb27eda72fe71" category="paragraph">Además de la adquisición de datos de dispositivos de infraestructura como conmutadores y almacenamiento, Cloud Insights ahora recopila datos de una variedad de sistemas operativos y servicios, utilizando<block ref="ba0db348f579f56a750410b7eabc1b9a" category="inline-link-macro-rx"></block> para la recopilación de datos de integración.  Telegraf es un agente controlado por complementos que se puede utilizar para recopilar e informar métricas.  Los complementos de entrada se utilizan para recopilar la información deseada en el agente accediendo directamente al sistema/SO, llamando a API de terceros o escuchando transmisiones configuradas.</block>
@@ -2849,7 +2840,6 @@
   <block id="885f8cdd65feed9099d3ba4bb0386c7b" category="sidebar">Asignar múltiples aplicaciones/anotaciones a objetos</block>
   <block id="3d59dc93db3f03aea5b8d1cc50d995f6" category="sidebar">Copiar valores de la tabla al portapapeles</block>
   <block id="72a442c57900f55848aa4acb856a507d" category="sidebar">Identificación de dispositivos inactivos</block>
-  <block id="b181654a18c519e18fe14012429b9ef1" category="sidebar">Monitores y alertas</block>
   <block id="cdd0e837105d3238f7da72918d54613a" category="sidebar">Creación de monitores</block>
   <block id="ad9a3a2d37a9151fd99385dc40e9ceb2" category="sidebar">Configuración de destinatarios de notificaciones</block>
   <block id="a212bf20191ce3ebcdc71cc32cd6c8f9" category="sidebar">Configuración de webhooks</block>
@@ -5727,8 +5717,6 @@
   <block id="2a81267b1c9c4611addccc58ffea4ce5" category="list-text">Opción para omitir la recopilación de métricas de Docker</block>
   <block id="62643d895d41437dc1854e6321bbca7d" category="list-text">Capacidad de agregar y personalizar tolerancias a Daemonsets y Replicasets de Telegraf</block>
   <block id="4157bbc9478996de33c632d1be8b4617" category="section-title">Perspectiva: Recuperar el almacenamiento en frío</block>
-  <block id="82f32ca1972e78989f469529f9e93e21" category="inline-link-macro">Recupere la información sobre almacenamiento en frío de ONTAP</block>
-  <block id="2703e92da2def9a17ac70dcd90bd8ab5" category="paragraph">El<block ref="a08e2a6a27f9f88fce91a86a2a4aaa0e" category="inline-link-macro-rx"></block> ahora es compatible con FlexGroups y está disponible para todos los clientes.</block>
   <block id="ffd94c31fd478610bae8a28f858f4967" category="section-title">Firma de la imagen del operador</block>
   <block id="b58a6be98adebdc6de5cd79aa5cf7223" category="paragraph">Los clientes que usan un repositorio privado para su operador de monitoreo de Kubernetes de NetApp , ahora pueden copiar la clave pública de firma de imagen durante la instalación del operador, lo que les permite confirmar la autenticidad del software descargado.  Seleccione el botón _Copiar clave pública de firma de imagen_ durante el paso opcional para _Cargar la imagen del operador en su repositorio privado_.</block>
   <block id="b48c3957268aba1d2cb9774cdfb76b1a" category="inline-image-macro">Descargar la clave pública</block>
@@ -5879,9 +5867,6 @@
   <block id="ec0592cbe0adf98f6b8b6f3682b80783" category="paragraph">Chatee con un especialista de soporte de NetApp desde cualquier pantalla de Cloud Insights seleccionando el nuevo enlace *Ayuda &gt; Chat en vivo*.  La ayuda está disponible mediante el ícono "?" en la parte superior derecha de la pantalla.</block>
   <block id="0308ff2faf3259518f15748d7e652260" category="inline-image-macro">Menú de ayuda con chat en vivo resaltado</block>
   <block id="b873771142e1375b8c2448ef06d827c0" category="paragraph"><block ref="b873771142e1375b8c2448ef06d827c0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4eecf9894a35e5b8b6c8f2cd8456dc16" category="section-title">Perspectivas más visibles</block>
-  <block id="9e1c9c294ec3f4b96a8a0cc0df13f98e" category="inline-link-macro">Conocimiento</block>
-  <block id="5959863675c12bd7e50191f64156c0d0" category="paragraph">Si su entorno está experimentando una<block ref="fa362768d673aca77d85a6a4c5ca3f07" category="inline-link-macro-rx"></block> como _Recursos compartidos bajo estrés_ o _Los espacios de nombres de Kubernetes se están quedando sin espacio_, las páginas de destino de los recursos afectados ahora incluyen enlaces al Insight en sí, lo que proporciona una exploración y resolución de problemas más rápidas.</block>
   <block id="b3a4cb8b1cc794671c98b17aac5ba206" category="section-title">Nuevos recopiladores de datos</block>
   <block id="b8cf9f003c21d314dc33ec400eddec24" category="list-text">Amazon S3 (disponible en versión preliminar)</block>
   <block id="337813588cd1360f633725a1a1d06b02" category="list-text">Brocade FOS 9.0.x</block>
@@ -5916,9 +5901,7 @@
   <block id="5fa0ef8fc40e60003288942e2da3e300" category="cell">*Característica*</block>
   <block id="bbe116aac998e7707bfddff610136f34" category="cell">Los espacios de nombres de Kubernetes se están quedando sin espacio</block>
   <block id="decbe415d8accca7c2c16d48a79ee934" category="inline-link-macro">Leer más</block>
-  <block id="639cd114dad5880c94752e290d36353a" category="cell">La información _Los espacios de nombres de Kubernetes se están quedando sin espacio_ le brinda una visión de las cargas de trabajo en sus espacios de nombres de Kubernetes que corren el riesgo de quedarse sin espacio, con una estimación de la cantidad de días restantes antes de que cada espacio se llene.<block ref="91569d71925d0cb55a46b7a5e8a36cb5" category="inline-link-macro-rx"></block></block>
   <block id="f1e906bd3edd784d1978ed7c4566e64c" category="cell">Recurso compartido bajo estrés</block>
-  <block id="9bfa6f1e81e8e1a4af8a2057b85a0257" category="cell">La información _Recursos compartidos bajo estrés_ utiliza IA/ML para identificar automáticamente dónde la contención de recursos está causando una degradación del rendimiento en su entorno, resalta las cargas de trabajo afectadas y brinda acciones recomendadas para remediarlas, lo que le permite resolver problemas de rendimiento más rápidamente.<block ref="b97265367ad52c02d31fa7522e26571d" category="inline-link-macro-rx"></block></block>
   <block id="64f0171311f2657dbd0578fca9fb2fa5" category="cell">Cloud Secure : bloquea el acceso de los usuarios en caso de ataque</block>
   <block id="6ad1deaea422210384bf8c46adb4027a" category="cell">Mayor protección para los datos críticos de su negocio con la capacidad de bloquear el acceso de los usuarios cuando se detecta un ataque.  El acceso se puede bloquear automáticamente, mediante políticas de respuesta automatizadas, o manualmente desde las páginas de alertas o detalles del usuario.<block ref="e8dc9c29c76388404a63bbf729dac2fd" category="inline-link-macro-rx"></block></block>
   <block id="d1e4cf4e509b74019a6ec3d98c6300da" category="section-title">¿Cómo está la salud de mi recopilación de datos?</block>
@@ -5965,8 +5948,6 @@
   <block id="9a3185d3dd699a74f8c315584250a80c" category="inline-link-macro">Instalación del agente</block>
   <block id="c41fe2272c9ff38bed21d6e67f9945cc" category="paragraph">El agente para la ingestión de datos de integración de Telegraf se ha actualizado a la versión *1.22.3*, con mejoras de rendimiento y seguridad.  Los usuarios que deseen actualizar pueden consultar la sección de actualización correspondiente del<block ref="7eca75c9707898b05c3a8b3fe84d7968" category="inline-link-macro-rx"></block> documentación.  Las versiones anteriores del agente continuarán funcionando sin necesidad de ninguna acción por parte del usuario.</block>
   <block id="ecf4e9e3c38358de05561be5ed03f5d0" category="section-title">Características de vista previa</block>
-  <block id="2240ee7d4e56b8ba7ac49b14311cdeed" category="inline-link-macro">Equipo de ventas de NetApp</block>
-  <block id="0d0549b05d1645d38baa1a6cedaa7190" category="paragraph">Cloud Insights destaca periódicamente una serie de nuevas y emocionantes funciones de vista previa.  Si está interesado en obtener una vista previa de una o más de estas funciones, comuníquese con su<block ref="02af545fedbe237243dabe2f44648f4d" category="inline-link-macro-rx"></block> Para más información.</block>
   <block id="2ad48475868a5acf715f48e45c20d2d1" category="cell">Cloud Secure : bloquea el acceso de los usuarios en caso de ataque</block>
   <block id="4e28671aa760c1ba504510846bdf520c" category="cell">Mayor protección para los datos críticos de su negocio con la capacidad de bloquear el acceso de los usuarios cuando se detecta un ataque.  El acceso se puede bloquear automáticamente, mediante políticas de respuesta automatizadas o manualmente desde las páginas de alerta o detalles del usuario.<block ref="e8dc9c29c76388404a63bbf729dac2fd" category="inline-link-macro-rx"></block></block>
   <block id="b56a5394775a9f077c12cb3e770d913c" category="section-title">mayo de 2022</block>
@@ -6008,7 +5989,6 @@
   <block id="d8afe893977b1761d465e261f7f0645c" category="list-text">Escalera: utiliza el punto de datos anterior como punto de datos interpolado</block>
   <block id="0d55cb88c50b339df6b23026d70f4851" category="section-title">Monitoreo mejorado para su infraestructura de Kubernetes</block>
   <block id="6e8d08f021f143c0380bcfda2a0d8e35" category="paragraph">Cloud Insights lo mantiene al tanto de los cambios en su entorno de Kubernetes al alertarlo cuando se crean o eliminan pods, conjuntos de demonios y conjuntos de réplicas, así como cuando se crean nuevas implementaciones.  Los monitores de Kubernetes tienen el estado _pausado_ de manera predeterminada, por lo que debes habilitar solo los específicos que necesites.</block>
-  <block id="58114ec5d8ca1494b408777c1a724eef" category="cell">La información de recursos compartidos bajo estrés utiliza IA/ML para identificar automáticamente dónde la contención de recursos está causando una degradación del rendimiento en su entorno, resalta las cargas de trabajo afectadas y brinda acciones recomendadas para remediarlas, lo que le permite resolver problemas de rendimiento más rápidamente.<block ref="b97265367ad52c02d31fa7522e26571d" category="inline-link-macro-rx"></block></block>
   <block id="9fc31ce4550c4f68c1ea81f5a37335aa" category="section-title">Nuevo recopilador de datos</block>
   <block id="99449a8a20c724ea6cd587ff41d0672f" category="list-text">*Cohesity SmartFiles*: este recopilador basado en API REST adquirirá un clúster de Cohesity, descubrirá las “Vistas” (como volúmenes internos de CI), los diversos nodos y recopilará métricas de rendimiento.</block>
   <block id="cd96347d3d125d14ec06afe0adbac82a" category="paragraph">Se ha mejorado la recopilación y visualización de datos de rendimiento en los siguientes recopiladores de datos:</block>
@@ -9439,8 +9419,6 @@
   <block id="1d3a47e64cfbeb6f43f26517be02a023" category="list-text"><block ref="1d3a47e64cfbeb6f43f26517be02a023" category="inline-link-macro-rx"></block></block>
   <block id="286ecb4572a276871772bdbf167316f2" category="inline-link-macro">Transferencias transfronterizas de datos</block>
   <block id="e38fea3e33cc0a5f1866f4eb9682e240" category="list-text"><block ref="e38fea3e33cc0a5f1866f4eb9682e240" category="inline-link-macro-rx"></block></block>
-  <block id="20505218646d682cb07a0cf279e9cf29" category="inline-link-macro">Normas corporativas vinculantes</block>
-  <block id="d352b73ef3c84d8725e56efbf13e84f1" category="list-text"><block ref="d352b73ef3c84d8725e56efbf13e84f1" category="inline-link-macro-rx"></block></block>
   <block id="f27a46645af620bac8278c39a9d657b8" category="inline-link-macro">Respuesta a solicitudes de datos de terceros</block>
   <block id="0e07493de1ccce1a68aff3dbd2cd6cac" category="list-text"><block ref="0e07493de1ccce1a68aff3dbd2cd6cac" category="inline-link-macro-rx"></block></block>
   <block id="e87433704018842ba5eb9ad6c1a93e26" category="inline-link-macro">Principios de privacidad de NetApp</block>
@@ -9771,8 +9749,6 @@
   <block id="72213a3f462eab56462e1fd1892f6fc0" category="list-text">Elija la plataforma adecuada para su host (Windows, Linux)</block>
   <block id="0b5b60f6bf77a0318f6283c5d8ce5be7" category="list-text">Siga los pasos restantes para cada plataforma.</block>
   <block id="09e0466fcc22c337dc6af8a799296033" category="admonition">Una vez que haya instalado un agente en un host, no necesitará instalar otro agente nuevamente en ese host.</block>
-  <block id="4779eaa1340da59df6b8231755992886" category="inline-link-macro">Métricas de "nodo"</block>
-  <block id="9ada5756ebf6ec40086a8c2629d928aa" category="admonition">Una vez que haya instalado un agente en un servidor/máquina virtual, Data Infrastructure Insights recopila métricas de ese sistema además de recopilarlas de cualquier recopilador de datos que configure.  Estas métricas se recopilan como<block ref="721decf63f7a81173878238d526f87a6" category="inline-link-macro-rx"></block> .</block>
   <block id="2611d0720b029b968257661771d287e6" category="admonition">Si está utilizando un proxy, lea las instrucciones del proxy para su plataforma antes de instalar el agente Telegraf.</block>
   <block id="b2997605f7b826343b475f71837415f4" category="section-title">Ubicaciones de registros</block>
   <block id="21872dffda230726cb93a6dddff7dd00" category="paragraph">Los mensajes de registro de Telegraf se redirigen desde stdout a los siguientes archivos de registro de forma predeterminada:</block>
@@ -10022,7 +9998,6 @@
   <block id="f005ad36a865e60c2f589a58c0daafa5" category="cell">1. Edite el agente utilizando el siguiente comando: kubectl -n &lt;name-space&gt; edit agent 2.  Marcar 'security-policy-enabled' como 'falso'.  Esto deshabilitará las Políticas de seguridad de pod y la Admisión de seguridad de pod y permitirá que el Operador realice la implementación.  Confirme usando los siguientes comandos: kubectl get psp (debería mostrar que se eliminó la política de seguridad del pod) kubectl get all -n &lt;namespace&gt; | grep -i psp (debería mostrar que no se encontró nada)</block>
   <block id="59e3026f71d01a624108642cdb778ebd" category="cell">Errores "ImagePullBackoff" detectados</block>
   <block id="43340e6cc4e88197d57f8d6d5ea50a46" category="inline-xref">Leer más</block>
-  <block id="31c512270381a100a1d6ed5460e4382a" category="cell">Estos errores pueden aparecer si tiene un repositorio Docker personalizado o privado y aún no ha configurado el operador de monitoreo de Kubernetes para reconocerlo correctamente. <block ref="64c2e35c96e92fc99426098fae703fff" category="inline-xref-macro-rx"></block> Acerca de la configuración para un repositorio personalizado/privado.</block>
   <block id="6da3e5f4ef4407262c741e8325a8249d" category="cell">Tengo un problema con la implementación de mi operador de monitoreo y la documentación actual no me ayuda a resolverlo.</block>
   <block id="368fbe1d48012e8e4f24249e2b27a8dd" category="paragraph">Capture o anote de otro modo el resultado de los siguientes comandos y comuníquese con el equipo de soporte técnico.</block>
   <block id="70d79a6ca6098037988336f11346dce8" category="cell">Los pods de net-observer (Mapa de carga de trabajo) en el espacio de nombres del operador están en CrashLoopBackOff</block>
@@ -10071,7 +10046,6 @@
   <block id="006f752e44410388cadd8f8a37ce069f" category="inline-link-macro">configuración del agente</block>
   <block id="e7367bd1ec175ef5c58d982c52bc4348" category="inline-link-macro">servidorTLSBootstrap</block>
   <block id="eb693e07b3c7e38a77aa691eee254db7" category="cell">Esto ocurrirá si el kubelet usa certificados autofirmados y/o el certificado especificado no incluye &lt;kubelet_IP&gt; en la lista _Nombre alternativo del sujeto_ del certificado.  Para solucionar esto, el usuario puede modificar el<block ref="1ff2a3d734af6ebdb77c417baa3479b1" category="inline-link-macro-rx"></block> , y establezca _telegraf:insecureK8sSkipVerify_ en _true_.  Esto configurará el complemento de entrada de telegraf para omitir la verificación.  Alternativamente, el usuario puede configurar el kubelet para<block ref="9ed8afe3c99331fa3d23c13414b98aba" category="inline-link-macro-rx"></block> , lo que activará una solicitud de certificado desde la API 'certificates.k8s.io'.</block>
-  <block id="496e790e66d36d3bfbadd9eca21b9d6b" category="cell">Condensador</block>
   <block id="8c362b737d9d3a6fff5acfc29aaa5225" category="summary">Recopilador de datos para Kubernetes</block>
   <block id="3ce5067a26bb6509b15cfb6487590ed5" category="doc">Recopilador de datos: Kubernetes</block>
   <block id="6ffb121d702031b943827f26c164c756" category="paragraph">Data Infrastructure Insights utiliza este recopilador de datos para reunir métricas de pods, nodos y contenedores de Kubernetes.</block>
@@ -10205,7 +10179,6 @@
   <block id="7570972df9d369d66d38cf0e825776a0" category="cell">número de departamento</block>
   <block id="5ae0c1c8a5260bc7b6648f6fbd115c35" category="cell">foto</block>
   <block id="a24d56a7bae022bdb7c209634de95598" category="list-text">Utilice LDAP Explorer para navegar por una base de datos LDAP, ver propiedades y atributos de objetos, ver permisos, ver el esquema de un objeto, ejecutar búsquedas sofisticadas que puede guardar y volver a ejecutar.</block>
-  <block id="34baf307c1feaeab47e51f964eb78134" category="list-text">Instalar el explorador LDAP<block ref="b0643aa9f9b138fe3304044353a15064" category="inline-link-rx"></block> ) o el Explorador LDAP de Java<block ref="0e1466743bc4c5a65654aff64a5c8d57" category="inline-link-rx"></block> ) en cualquier máquina Windows que pueda conectarse al servidor LDAP.</block>
   <block id="cc7c5e373102d7c40456a0932056d813" category="list-text">Conéctese al servidor LDAP utilizando el nombre de usuario y la contraseña del servidor de directorio LDAP.</block>
   <block id="b4fe7a0e70b4e56323acfd674257077e" category="inline-image-macro">Conexión LDAP</block>
   <block id="23df8ccbde1c236e533548a253cc3eee" category="paragraph"><block ref="23df8ccbde1c236e533548a253cc3eee" category="inline-image-macro-rx" type="image"></block></block>
@@ -13367,9 +13340,6 @@
   <block id="ecd1b5f31c28de0c631ee58c6b41b0ce" category="inline-link-macro">Tablas de esquema - Performance</block>
   <block id="641194ba8e9eb6bea72a6c8555dba312" category="inline-link-macro">Tablas de esquema - Puertos</block>
   <block id="30447449adfd6d4aba37ceff8ad6d44c" category="paragraph"><block ref="d7f4229ab5b0a23fc5733709f009bb9e" category="inline-link-macro-rx"></block> <block ref="cc065afde5664e2223ba0976d7427c1a" category="inline-link-macro-rx"></block> <block ref="743d4aaaedfa5c8a24d5ae2d7eb2fd6f" category="inline-link-macro-rx"></block> <block ref="c26959329d694ba673ccce22300f912c" category="inline-link-macro-rx"></block> <block ref="bb4b6081cd653f5a71a0887c16d1a9a1" category="inline-link-macro-rx"></block> <block ref="a84fddf1b8ccb11a0434fc30c7af2a6a" category="inline-link-macro-rx"></block></block>
-  <block id="5ea22d2e8fc28ebb23d6c57d502666b3" category="paragraph">Este documento proporciona tablas de esquema para la Reporting Database.</block>
-  <block id="88bf9a2e65ee5333fd86a914ed4d4dac" category="inline-link-macro">Esquema de capacidad</block>
-  <block id="9f8e620c6fad8108bd9d954d0fa14a52" category="paragraph"><block ref="9f8e620c6fad8108bd9d954d0fa14a52" category="inline-link-macro-rx"></block></block>
   <block id="e0f595cb2362f95f18d132f94d406cc4" category="summary">Tablas de esquema y relaciones para la base de datos dwh_capacity</block>
   <block id="896f40a8060d15f9a22064d62506f2e6" category="doc">Referencia del esquema de base de datos para dwh_capacity</block>
   <block id="3ebfabfdba61057b0445ee6ad62e9bbc" category="paragraph">Esta referencia proporciona información detallada sobre el esquema de la base de datos dwh_capacity, incluyendo estructuras de tablas, definiciones de campos, tipos de datos y relaciones.</block>
@@ -14013,10 +13983,7 @@
   <block id="33b828c8fb435b67f3a4a321adbc89c1" category="paragraph">Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la lista de exclusión correspondiente. Cada entrada de cada lista tendrá la información de cuándo y por quién fue añadida a la lista, y esta información se usará para fines de auditoría.</block>
   <block id="b2bc711706213f5680535c284278fd8a" category="section-title">Gestiona exclusiones y auditorías</block>
   <block id="4cc0f970741fc7eef05a2f6890f15228" category="list-text">Los administradores pueden añadir o eliminar extensiones de archivo, usuarios individuales o rutas en cualquier momento.</block>
-  <block id="430f66c61c1d6e05ef92945c7107306f" category="paragraph"><block ref="430f66c61c1d6e05ef92945c7107306f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4d06e3dd77aaee13a5d969e19fc7acf6" category="paragraph"><block ref="4d06e3dd77aaee13a5d969e19fc7acf6" category="inline-image-macro-rx" type="image"></block></block>
   <block id="147e7f8d7d8064d51ff49f93c07adfeb" category="paragraph">Ve a *Workload Security &gt; Policies* y selecciona la pestaña *Alert Exclusions*.</block>
-  <block id="9bf079c262098280af19e475b460e655" category="list-text">Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos <block ref="e9fd5a7947ff579f7dabe8508e9cb8cd" category="inline-xref-macro-rx"></block></block>
   <block id="492f463a35ea215d77ae021c64cddb64" category="paragraph">Por ejemplo, si un archivo llamado _test.txt_ se renombra a _test.txt.abc_ y Workload Security detecta un ataque de ransomware debido a la extensión _.abc_, esta extensión puede agregarse a la lista de _tipos de archivo permitidos_. Después de agregarla a la lista, los ataques de ransomware ya no se generarán contra archivos con la extensión _.abc_.</block>
   <block id="318685a1827ca5f4280e59d71f7d1438" category="paragraph">Los tipos de archivo permitidos pueden ser coincidencias exactas (p. ej., ".abc") o expresiones (p. ej., ++.*type++, ++.type*++ o ++.*type*++). No se admiten expresiones de tipo .a*c ni .p*f.</block>
   <block id="664ba14b3efcf7d6e7a9409a24223a79" category="paragraph">Ten en cuenta que solo se suprime la alerta del evento; los propios eventos se siguen capturando y se pueden revisar.</block>
@@ -14038,9 +14005,6 @@
   <block id="bd0fc56b14454f1ee18d759d4af08ed3" category="list-text">¿Puedes mostrarme la tendencia de uso de la capacidad de este dispositivo en las últimas 24 horas?</block>
   <block id="aa7271070bccbdb553337d1d11a546e3" category="list-text">¿Qué volúmenes están consumiendo más espacio en este almacenamiento?</block>
   <block id="d166bd4cdca169a67a613a26fe8770ce" category="paragraph">'''nt1.png[Gestión de unidades del widget de tabla]</block>
-  <block id="3d2f1005746d7db51821bc629f7d4407" category="paragraph">Página detallada de un posible ataque de ransomware: vista "Screen": los widgets de tabla muestran el objeto/agrupación a la izquierda y los datos del objeto (atributos/métricas) a la derecha.</block>
-  <block id="af730d8a2733a784c669eb49b4d22282" category="paragraph">+ <block ref="d39f912f84d3b7c6330ea5e1e4443c8f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e81234c807cc73fff59051e85698456e" category="paragraph">Widget de valor con formato] <block ref="ea343c0c42e5fd6968847a90104062ca" category="inline-image-macro-rx" type="image"></block></block>
   <block id="460cdd4165472896cc30053fb384c428" category="summary">Eventos de auditoría en Workload Security</block>
   <block id="7fb266e1b99b0df47eb66e941859d665" category="doc">Audita eventos de seguridad de la carga de trabajo</block>
   <block id="fd353ad75bcbf126fad9d6e35df7010e" category="paragraph">Identifica los cambios esperados (para el seguimiento) o inesperados (para la solución de problemas). Consulta un registro de auditoría de los eventos del sistema de Workload Security y de las actividades de los usuarios.</block>
@@ -14126,4 +14090,71 @@
   <block id="606930ccd6550cc24fe845f69572c586" category="list-text">Una cuenta de usuario y una contraseña con al menos permiso de lectura.</block>
   <block id="38fbce916138020848ac3b594a6648d0" category="section-title">Comparte actualizaciones importantes mediante mensajes de inicio de sesión</block>
   <block id="7260908f665e8b3c02f0fce13c7ea541" category="paragraph">Mantén a tu equipo informado y alineado con mensajes de inicio de sesión personalizables. Comunica anuncios importantes, horarios de mantenimiento o actualizaciones de políticas directamente a los usuarios cuando inicien sesión. Con soporte para markdown, puedes dar formato a los mensajes para mayor claridad y asegurarte de que la información crítica llegue a cada usuario de DII. Las cuentas con privilegios de admin pueden encontrar la configuración en el menú Admin, en Notificaciones.</block>
+  <block id="bf60f9bc5ee0d8e38d0241a3b6dc57b7" category="paragraph">La solución Reclaim ONTAP Cold Storage Insight ahora es compatible con FlexGroups y ya está disponible para todos los clientes.</block>
+  <block id="50b8446a2f6570ae66ebb7c9c6f366c9" category="cell">La vista «Kubernetes Namespaces Running Out of Space» te ofrece información sobre las cargas de trabajo de tus espacios de nombres de Kubernetes que corren el riesgo de quedarse sin espacio, junto con una estimación del número de días restantes antes de que cada espacio se llene por completo.</block>
+  <block id="a33d658e60eacb234b7c8ba889d8fde8" category="cell">La función _Shared Resource Under Stress_ utiliza IA y aprendizaje automático para identificar automáticamente en qué puntos la competencia por los recursos está provocando una disminución del rendimiento en tu entorno, destaca las cargas de trabajo afectadas por ello y ofrece recomendaciones para solucionarlo, lo que te permite resolver los problemas de rendimiento con mayor rapidez.</block>
+  <block id="1a32be6075ec24a9a6ae9d4061fcf46a" category="paragraph">Cloud Insights destaca periódicamente una serie de nuevas y emocionantes funciones en fase de prueba. Si te interesa probar una o varias de estas funciones, ponte en contacto con tu equipo de ventas de NetApp para más información.</block>
+  <block id="f9cc1b0baa3acc4668c046e61bab584b" category="cell">La función «Shared Resource Under Stress» utiliza IA y aprendizaje automático para identificar automáticamente en qué puntos la competencia por los recursos está provocando una disminución del rendimiento en tu entorno, destaca las cargas de trabajo afectadas por ello y ofrece recomendaciones para solucionarlo, lo que te permite resolver los problemas de rendimiento con mayor rapidez.</block>
+  <block id="ee6b260a508ca58c8733b23090cd87a7" category="summary">Configura un mensaje emergente del día para todos los usuarios.</block>
+  <block id="cb5c0ec2514b9d06359e770769a8d39c" category="doc">Configurar un mensaje de inicio de sesión</block>
+  <block id="42f1345d41ac1e51a16da7649db8b092" category="paragraph">Puedes configurar un mensaje para que aparezca en una ventana emergente a todos los usuarios cuando inicien sesión. Puedes elegir que se muestre solo en el próximo inicio de sesión o en todos los inicios de sesión posteriores.</block>
+  <block id="810bac3bcbfe61628b10fe3df2e0ea96" category="paragraph">Un administrador puede configurar el mensaje en Admin &gt; Notificaciones, en la pestaña "Login Banner".</block>
+  <block id="22f60aff39394bad553a00e2940bdf11" category="paragraph">El mensaje admite Markdown básico, así que puedes aplicar formato como negrita, cursiva, tablas, etc.</block>
+  <block id="6a46079dd2d659655fc832470519e71a" category="paragraph">Elige si los usuarios ven el mensaje solo en su próximo inicio de sesión o en cada inicio de sesión posterior.</block>
+  <block id="6a5f1dd41e7d3fa22fbd71d29b46cea4" category="inline-image-macro">Configuración del banner de inicio de sesión</block>
+  <block id="bd6c3bd0a46b9e6da4828acea4a9e315" category="paragraph"><block ref="bd6c3bd0a46b9e6da4828acea4a9e315" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1ef61a1b7e25b910ec7beca0741bd208" category="paragraph">Ten en cuenta que el usuario _debe_ confirmar el mensaje de inicio de sesión para poder cerrarlo. Una vez cerrado, se mostrarán las ventanas emergentes adicionales (What's New updates, actualizaciones de las Terms-of-Service, etc.).</block>
+  <block id="38f64824b0d19083b9c439a8b4af41e4" category="admonition">Una vez que hayas instalado un agente en un servidor o máquina virtual, Data Infrastructure Insights recopila métricas de ese sistema además de recopilar de cualquier recopilador de datos que configures. Estas métricas se recopilan como métricas de "Node".</block>
+  <block id="7fa36585f976625a51b4f3be0f46f0b5" category="cell">Estos errores pueden aparecer si tienes un repositorio de docker personalizado o privado y aún no has configurado el Kubernetes Monitoring Operator para que lo reconozca correctamente. <block ref="2d47cbc88497421e2fe69677ce7d4cef" category="inline-xref-macro-rx"></block> sobre cómo configurar para un repo personalizado/privado.</block>
+  <block id="f02e4a9177c27a051b895699ea0110ce" category="inline-link-macro">Explorador LDAP</block>
+  <block id="d13806041219cf369ed889a6ff834216" category="inline-link-macro">Explorador LDAP de Java</block>
+  <block id="32b7ad0935b353d5c424244711c6c8cd" category="list-text">Instala <block ref="bdc822b7c7d5a07392a373c8455d25e9" category="inline-link-macro-rx"></block> o <block ref="21af31fb3fc4369ed8be68bf76e0e99a" category="inline-link-macro-rx"></block> en cualquier equipo con Windows que pueda conectarse al servidor LDAP.</block>
+  <block id="9d2365ff6e78da3b972051b1d94c82a9" category="summary">Configura la conexión a la nube de NetApp para el recopilador de datos de ONTAP 9.9 y versiones posteriores</block>
+  <block id="ddee1a7420119fd909427746c177cb37" category="section-title">Generación de reglas asistida por IA</block>
+  <block id="2eb83c9e235304f6ab08d1e3e100b334" category="paragraph">Como alternativa, puedes evitar las conjeturas gracias a la identificación de dispositivos basada en IA para crear reglas de forma rápida y sencilla. Simplemente ejecuta el generador de reglas asistido por IA para analizar tu entorno y sugerir reglas de resolución de dispositivos, ayudándote a identificar y gestionar más dispositivos rápidamente.</block>
+  <block id="e0c4332e8c13be976552a059f106354f" category="section-title">Comenzar</block>
+  <block id="13ecdfe446ce7572d9674cca5dc69399" category="paragraph">Para empezar a usar la IA para generar reglas de resolución, un administrador debe primero activar las reglas generadas por IA.</block>
+  <block id="38bf7159a22b7d9149664e77a95f4fb9" category="inline-image-macro">Empieza a crear reglas de IA, width=400</block>
+  <block id="c574b1e2b5b6f8c0fb2a7f3cc9cd74eb" category="paragraph"><block ref="c574b1e2b5b6f8c0fb2a7f3cc9cd74eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7fb6be1251cff450bdbe894f3a6947ca" category="paragraph">El asistente de IA te indicará qué porcentaje de tus dispositivos Fibre Channel no están identificados y te pedirá que le permitas generar reglas. Selecciona "¡Manos a la obra!".</block>
+  <block id="154f6949b5d604485edfd5554cfc73c2" category="inline-image-macro">Selecciona «Let's Go» para generar reglas, width=400</block>
+  <block id="4e41c64207dd722b6d6c679c6d6b06b0" category="paragraph"><block ref="4e41c64207dd722b6d6c679c6d6b06b0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f639ccbda25c3b7c5e0e54e8f336f6d1" category="paragraph">Se te pedirá que confirmes tus nombres de dominio antes de activar las reglas generadas por IA. Debes incluir todos tus dominios para que la identificación sea eficaz.</block>
+  <block id="272258d081ffa5d88457e9398c962cd8" category="section-title">Comprobar progreso</block>
+  <block id="ad54ef35087de51e4251cfe264d981f0" category="paragraph">De forma periódica, DII generará una notificación cuando haya dispositivos adicionales disponibles para su posible identificación. Si ves un punto verde en el icono de la campana situado en la esquina superior derecha de la página, selecciónalo para ver la notificación.</block>
+  <block id="619cd5374b326ad19aeb8ca6766b51f5" category="inline-image-macro">campana de notificación, width=400</block>
+  <block id="e9d685345131d05b8301eb4fb633e5d4" category="paragraph"><block ref="e9d685345131d05b8301eb4fb633e5d4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="74bc3d1913a701a4d16df961e9a8487a" category="paragraph">Utiliza el icono de la campana para comprobar también el estado de la generación de reglas, que puede tardar desde unos segundos hasta varios minutos, dependiendo de la complejidad de tu entorno.</block>
+  <block id="a5d99e1d64aa482f996a006aa1704c49" category="paragraph">Las reglas generadas por IA mostrarán una insignia de "Generado por IA" en la lista.</block>
+  <block id="07465efb5bc3b5a8f6f4b8398cf2d346" category="inline-image-macro">Insignia de regla generada por IA, ancho=400</block>
+  <block id="94fba23c3c2a0770f556c5e615c0b1a6" category="paragraph"><block ref="94fba23c3c2a0770f556c5e615c0b1a6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="54a3901a6231fc440a261ea73f581658" category="section-title">Reanudar y continuar</block>
+  <block id="e67fe5612ea54e90c6cd6297fad6b3aa" category="paragraph">Las reglas generadas por IA se encuentran en estado _Pausadas_ de forma predeterminada. Debes revisar cada regla y _Reanudarla_ antes de que identifique los dispositivos.</block>
+  <block id="8adc06985cc11866dd25119eb70226ab" category="section-title">Relacionado:</block>
+  <block id="aa83dd9621bf2fe08cfaf29fd6ba92bc" category="paragraph"><block ref="9606d230686b3a54ef0c843c6a8d06ee" category="inline-link-macro-rx"></block> <block ref="f7ab518a04b5eb9592800f6375835782" category="inline-link-macro-rx"></block> <block ref="9afa071c2420f8347dcfd0e1bd5f4e5c" category="inline-link-macro-rx"></block></block>
+  <block id="ce9b3546654fac61e740457e736941c0" category="summary">Cuando consultes por alta densidad de E/S, quieres excluir los volúmenes raíz.</block>
+  <block id="17d39c84f8b8300ad07b5407dbf9730a" category="summary">Crea un webhook para alertar sobre los umbrales de rendimiento o inventario para PagerDuty</block>
+  <block id="c72f92d02ad6ff9b7ceac63f3fe89d45" category="list-text">Introduce un _Nombre_ y una _descripción_ significativa. Haz clic en _Siguiente_.</block>
+  <block id="61cf54bbd40ef1dd67f4a54e083ac6e4" category="inline-image-macro">PagerDuty pantalla,width=500</block>
+  <block id="a4e0db6c672f7c2510cfdb81666421f8" category="paragraph"><block ref="a4e0db6c672f7c2510cfdb81666421f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3b16af9f9378f7c389da4e8c9f918d1" category="list-text">En la siguiente pantalla, selecciona una política de escalación existente o genera una nueva. Haz clic en _Siguiente_.</block>
+  <block id="d116d62ce89c20be3cb9917a6d759321" category="inline-image-macro">Asignar una política de escalado,width=500</block>
+  <block id="58624e4ccd31d6fe4fe6caa0fdde9f63" category="paragraph"><block ref="58624e4ccd31d6fe4fe6caa0fdde9f63" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9c2fe0bd0fa4ba097b30911aeb54ced4" category="list-text">Selecciona las funciones de AIOps que desees. Haz clic en _Siguiente_.</block>
+  <block id="d60b9d1db74c19e79bf879ac4bcd9cf5" category="inline-image-macro">Pantalla de selección de servicios de AIOps, width=500</block>
+  <block id="3038bf1ea5b5370c3c176f8872f9bfdd" category="paragraph"><block ref="3038bf1ea5b5370c3c176f8872f9bfdd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f6d94044ca6ce1c0b87d3f1883fd14ab" category="list-text">Selecciona la(s) integración(es) que desees utilizar para enviar alertas a PagerDuty. Para DII, utiliza la integración Events API V2.</block>
+  <block id="43871cbdae63fa7472200d755b502861" category="inline-image-macro">PagerDuty pantalla de selección de integraciones, width=500</block>
+  <block id="4e3245eaf9d90f3ecc15300985caa196" category="paragraph"><block ref="4e3245eaf9d90f3ecc15300985caa196" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="185d2921ba09f306e8dd90a2e3c3f22b" category="paragraph">En la pantalla de configuración de la integración, anota la *clave de integración*. Vas a necesitar esta clave cuando crees el webhook de Data Infrastructure Insights que se indica a continuación.</block>
+  <block id="af4236f034283c7699428b575513a6d2" category="inline-image-macro">Copiar la clave de integración,width=500</block>
+  <block id="d50fbd4d62a0179f14ebd0c2b93dd357" category="paragraph">+ <block ref="cdd00a2746e22efb0bd3e4f3e89310e3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23dbecf4c1701d7ea26399234db8b53d" category="list-text">Kapacitor se ha añadido como recopilador de datos para servicios.</block>
+  <block id="cc6f0b5db8e54e2bd636fc0ae818e97a" category="list-text">Tipos de archivo: suprime las alertas de manipulación de archivos en tipos de archivo específicos <block ref="3f41337fac4ca104c57911a2b4a83477" category="inline-xref-macro-rx"></block></block>
+  <block id="36025b18f09d25d0c8b6bef3b9d9fcfc" category="inline-image-macro">Usuarios excluidos de alertas</block>
+  <block id="9bc8863049b78d2c731d6e05b7211c2b" category="paragraph"><block ref="9bc8863049b78d2c731d6e05b7211c2b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9ea7b40b3db8212823df746dc5573490" category="inline-image-macro">Rutas de exclusión de alertas</block>
+  <block id="180f4f510f0a043b315312d10faa507e" category="paragraph"><block ref="180f4f510f0a043b315312d10faa507e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eda220a2d8b65414dd2552b1cc37aca5" category="sidebar">Supervisión, alertas y notificaciones</block>
+  <block id="b3dd2c9c1ffecc51c5a189f2d6c9d4c6" category="sidebar">Mensaje de inicio de sesión</block>
 </blocks>

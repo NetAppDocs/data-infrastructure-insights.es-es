@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: login_message_popup.html 
+summary: Configura un mensaje emergente del día para todos los usuarios. 
+keywords: notifications, pop-up, banner, motd, message, login 
+---
+= Configurar un mensaje de inicio de sesión
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puedes configurar un mensaje para que aparezca en una ventana emergente a todos los usuarios cuando inicien sesión. Puedes elegir que se muestre solo en el próximo inicio de sesión o en todos los inicios de sesión posteriores.
+
+Un administrador puede configurar el mensaje en Admin > Notificaciones, en la pestaña "Login Banner".
+
+El mensaje admite Markdown básico, así que puedes aplicar formato como negrita, cursiva, tablas, etc.
+
+Elige si los usuarios ven el mensaje solo en su próximo inicio de sesión o en cada inicio de sesión posterior.
+
+image:login_banner_settings.png["Configuración del banner de inicio de sesión"]
+
+Ten en cuenta que el usuario _debe_ confirmar el mensaje de inicio de sesión para poder cerrarlo. Una vez cerrado, se mostrarán las ventanas emergentes adicionales (What's New updates, actualizaciones de las Terms-of-Service, etc.).

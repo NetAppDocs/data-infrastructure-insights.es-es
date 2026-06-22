@@ -13,6 +13,7 @@ keywords: workload security, audit, events
 :imagesdir: ./media/
 
 
+[role="lead"]
 Identifica los cambios esperados (para el seguimiento) o inesperados (para la solución de problemas). Consulta un registro de auditoría de los eventos del sistema de Workload Security y de las actividades de los usuarios.
 
 

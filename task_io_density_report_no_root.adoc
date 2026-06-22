@@ -1,12 +1,16 @@
 ---
 sidebar: sidebar 
 permalink: task_io_density_report_no_root.html 
-summary: Al consultar una alta densidad de E/S, conviene excluir los volúmenes raíz. 
-keywords: NetApp, root volume, high I/O, 
+summary: Cuando consultes por alta densidad de E/S, quieres excluir los volúmenes raíz. 
+keywords: NetApp, root volume, high IO, 
 ---
 = Garantizar que los informes de densidad de E/S describan únicamente los volúmenes de datos internos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]

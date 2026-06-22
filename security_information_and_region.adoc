@@ -99,7 +99,6 @@ Puede leer más sobre la privacidad y seguridad de NetApp en los siguientes enla
 
 * link:https://www.netapp.com/us/company/trust-center/index.aspx["Centro de confianza"]
 * link:https://www.netapp.com/us/company/trust-center/privacy/data-location-cross-border-transfers.aspx["Transferencias transfronterizas de datos"]
-* link:https://www.netapp.com/us/company/trust-center/privacy/bcr-binding-corporate-rules.aspx["Normas corporativas vinculantes"]
 * link:https://www.netapp.com/us/company/trust-center/transparency/third-party-data-requests.aspx["Respuesta a solicitudes de datos de terceros"]
 * link:https://www.netapp.com/us/company/trust-center/privacy/privacy-principles-security-safeguards.aspx["Principios de privacidad de NetApp"]
 

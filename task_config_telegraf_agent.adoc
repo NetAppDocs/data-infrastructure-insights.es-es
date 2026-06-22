@@ -44,7 +44,7 @@ Para instalar un agente, independientemente de la plataforma que esté utilizand
 NOTE: Una vez que haya instalado un agente en un host, no necesitará instalar otro agente nuevamente en ese host.
 
 
-TIP: Una vez que haya instalado un agente en un servidor/máquina virtual, Data Infrastructure Insights recopila métricas de ese sistema además de recopilarlas de cualquier recopilador de datos que configure.  Estas métricas se recopilan comolink:task_config_telegraf_node.html["Métricas de "nodo""] .
+TIP: Una vez que hayas instalado un agente en un servidor o máquina virtual, Data Infrastructure Insights recopila métricas de ese sistema además de recopilar de cualquier recopilador de datos que configures. Estas métricas se recopilan como métricas de "Node".
 
 
 NOTE: Si está utilizando un proxy, lea las instrucciones del proxy para su plataforma antes de instalar el agente Telegraf.

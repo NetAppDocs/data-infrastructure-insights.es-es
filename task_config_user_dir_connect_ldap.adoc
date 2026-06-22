@@ -7,6 +7,10 @@ summary: Configuración de la seguridad de la carga de trabajo del recopilador d
 = Configuración de un recopilador de servidor de directorio LDAP
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -126,7 +130,7 @@ Puede validar los permisos de usuario y las definiciones de atributos de LDAP me
  ldapsearch -D "uid=john ,cn=users,cn=accounts,dc=dorp,dc=company,dc=com" -W -x -LLL -o ldif-wrap=no -b "cn=accounts,dc=dorp,dc=company,dc=com" -H ldap://vmwipaapp08.dorp.company.com
 * Utilice LDAP Explorer para navegar por una base de datos LDAP, ver propiedades y atributos de objetos, ver permisos, ver el esquema de un objeto, ejecutar búsquedas sofisticadas que puede guardar y volver a ejecutar.
 +
-** Instalar el explorador LDAP(http://ldaptool.sourceforge.net/[] ) o el Explorador LDAP de Java(http://jxplorer.org/[] ) en cualquier máquina Windows que pueda conectarse al servidor LDAP.
+** Instala link:http://ldaptool.sourceforge.net/["Explorador LDAP"] o link:http://jxplorer.org/["Explorador LDAP de Java"] en cualquier equipo con Windows que pueda conectarse al servidor LDAP.
 ** Conéctese al servidor LDAP utilizando el nombre de usuario y la contraseña del servidor de directorio LDAP.
 
 

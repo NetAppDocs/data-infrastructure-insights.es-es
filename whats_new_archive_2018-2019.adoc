@@ -771,7 +771,7 @@ Tenga en cuenta que el recopilador de datos de HCI adquiere únicamente desde el
 
 === Nuevo recopilador de datos de servicio: Kapacitor
 
-* link:task_config_telegraf_kapacitor.html["Condensador"]Se ha añadido como recopilador de datos para servicios.
+* Kapacitor se ha añadido como recopilador de datos para servicios.
 
 
 
