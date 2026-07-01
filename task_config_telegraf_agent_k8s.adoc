@@ -281,6 +281,11 @@ Rendimiento y mapa de la red
 * observador de ci-net
 
 
+Análisis de cambios
+
+* ci-k8s-change-observer
+
+
 Envíe la imagen de Docker del operador a su repositorio de Docker privado/local/empresarial de acuerdo con sus políticas corporativas.  Asegúrese de que las etiquetas de imagen y las rutas de directorio de estas imágenes en su repositorio sean coherentes con las del repositorio de Data Infrastructure Insights .
 
 Edite la implementación del operador de monitoreo en operator-deployment.yaml y modifique todas las referencias de imágenes para usar su repositorio privado de Docker.
@@ -534,5 +539,8 @@ Nota: para que estas configuraciones sean persistentes después de reiniciar el 
 
 
 | Estoy recibiendo el siguiente error en los pods de Fluent-bit y el pod no puede arrancar: 026/01/12 20:20:32] [error] [sqldb] error=unable to open database file [2026/01/12 20:20:32] [error] [input:tail:tail.0] db: could not create 'in_tail_files' table [2026/01/12 20:20:32] [error] [input:tail:tail.0] no se pudo abrir/crear la base de datos [2026/01/12 20:20:32] [error] falló la inicialización de la entrada tail.0 [2026/01/12 20:20:32] [error] [engine] falló la inicialización de la entrada | Asegúrate de que el directorio host en el que reside el archivo DB tiene los permisos de lectura/escritura adecuados. Más específicamente, el directorio host debe conceder permisos de lectura/escritura a los usuarios que no sean root. La ubicación predeterminada del archivo DB es /var/log/ a menos que se anule mediante la opción fluent-bit-dbFile _agentconfiguration_. Si SELinux está activado, intenta establecer la opción fluent-bit-seLinuxOptionsType agentconfiguration en 'spc_t' 
+
+
+| Me aparecen mensajes de error de Telegraf similares a los siguientes, aunque Telegraf sí se inicia y funciona: E! [inputs.kubernetes] Error en el complemento: https://<IP>>:<port>>/pods[] devolvió el estado HTTP 403 Forbidden | Estos mensajes pueden aparecer si estás utilizando versiones de Kubernetes anteriores a la 1.33. El recurso RBAC "nodes/pods" que utiliza telegraf no existe en estas versiones. Consulta la sección "For Kubernetes versions < 1.33" del archivo operator-additional-permissions.yaml para conocer los recursos RBAC necesarios en versiones anteriores. 
 |===
 Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

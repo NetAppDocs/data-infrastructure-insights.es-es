@@ -14158,4 +14158,8 @@
   <block id="eda220a2d8b65414dd2552b1cc37aca5" category="sidebar">Supervisión, alertas y notificaciones</block>
   <block id="b3dd2c9c1ffecc51c5a189f2d6c9d4c6" category="sidebar">Mensaje de inicio de sesión</block>
   <block id="241aeccf602b677945fa5597f1832e5e" category="section-title">Generar alerta de manipulación de archivos</block>
+  <block id="3e021c6004e444ced45e08a6ac9e1e61" category="paragraph">Análisis de cambios</block>
+  <block id="25a317566de430ddfd2c6f4b3fdea612" category="list-text">ci-k8s-change-observer</block>
+  <block id="9da5aa79f5375ccea3c84723b5759557" category="cell">Me aparecen mensajes de error de Telegraf similares a los siguientes, aunque Telegraf sí se inicia y funciona: E! [inputs.kubernetes] Error en el complemento:<block ref="6d1752bb8ee46f6164f07ea885d5c072" category="inline-link-rx"></block> devolvió el estado HTTP 403 Forbidden</block>
+  <block id="51635ff11969666db6bdeaf0c68d58b0" category="cell">Estos mensajes pueden aparecer si estás utilizando versiones de Kubernetes anteriores a la 1.33. El recurso RBAC "nodes/pods" que utiliza telegraf no existe en estas versiones. Consulta la sección "For Kubernetes versions &lt; 1.33" del archivo operator-additional-permissions.yaml para conocer los recursos RBAC necesarios en versiones anteriores.</block>
 </blocks>
