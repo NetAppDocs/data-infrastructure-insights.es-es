@@ -154,9 +154,7 @@ Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo u
 
 
 
-== Genere los archivos de muestra mediante programación:
-
-Antes de crear los archivos, primero debe detener olink:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
+== Generar alerta de manipulación de archivos
 
 Para generar una alerta de manipulación de archivos, puede ejecutar el script incluido que simulará una alerta de manipulación de archivos en Workload Security.
 
