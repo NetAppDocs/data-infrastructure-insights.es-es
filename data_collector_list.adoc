@@ -203,6 +203,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_oracle_zfs.html["Dispositivo de almacenamiento Oracle ZFS"] | Infraestructura 
 
 
+| link:task_dc_promox_ve.html["Promox Virtual Environment"] | Infraestructura 
+
+
 | link:task_dc_pure_flasharray.html["FlashArray de almacenamiento puro"] | Infraestructura 
 
 
