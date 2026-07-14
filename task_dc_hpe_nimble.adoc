@@ -14,11 +14,12 @@ El recopilador de datos HP Enterprise Alletra 6000 (anteriormente Nimble) admite
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -47,6 +48,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 Debe tener lo siguiente para poder recopilar datos de inventario y configuración de la matriz de almacenamiento:
@@ -65,9 +67,10 @@ Debe tener lo siguiente para poder recopilar datos de rendimiento de la matriz d
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -82,6 +85,7 @@ Debe tener lo siguiente para poder recopilar datos de rendimiento de la matriz d
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 |===

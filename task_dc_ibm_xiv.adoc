@@ -14,9 +14,10 @@ El recopilador de datos de IBM XIV y A9000 (CLI) utiliza la interfaz de línea d
 
 
 
+[[terminology]]
 == Terminología
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -34,6 +35,7 @@ El recopilador de datos de IBM XIV y A9000 (CLI) utiliza la interfaz de línea d
 |===
 
 
+[[requirements]]
 == Requisitos
 
 Para configurar y utilizar este recopilador de datos se deben cumplir los siguientes requisitos:
@@ -45,6 +47,7 @@ Para configurar y utilizar este recopilador de datos se deben cumplir los siguie
 
 
 
+[[performance-requirements]]
 == Requisitos de rendimiento
 
 Los siguientes son requisitos para la recaudación de rendimiento:
@@ -59,9 +62,10 @@ Los siguientes son requisitos para la recaudación de rendimiento:
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -82,9 +86,10 @@ Los siguientes son requisitos para la recaudación de rendimiento:
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -108,6 +113,7 @@ Los siguientes son requisitos para la recaudación de rendimiento:
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

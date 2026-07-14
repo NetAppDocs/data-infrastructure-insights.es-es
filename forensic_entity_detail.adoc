@@ -18,6 +18,7 @@ La página Entidades forenses proporciona información detallada sobre la activi
 
 
 
+[[examining-entity-information]]
 == Información de la entidad examinadora
 
 Haga clic en *Análisis forense > Análisis forense de actividades* y haga clic en la pestaña _Entidades_ para acceder a la página Entidades.

@@ -17,6 +17,7 @@ NOTE: Esta página hace referencia a instrucciones de terceros, que podrían est
 
 
 
+[[slack-example]]
 == Ejemplo de Slack:
 
 * Ir a https://api.slack.com/apps[] y crea una nueva aplicación.  Asígnele un nombre significativo y seleccione el espacio de trabajo de Slack.
@@ -29,6 +30,7 @@ image:Webhooks_Slack_Create_Webhook.png["Crear un webhook de Slack"]
 
 
 
+[[create-data-infrastructure-insights-webhook]]
 == Crear webhook de Data Infrastructure Insights :
 
 . En Data Infrastructure Insights, navegue a *Admin > Notificaciones* y seleccione la pestaña *Webhooks*.  Haga clic en *+Webhook* para crear un nuevo webhook.
@@ -41,6 +43,7 @@ image:Webhooks-Slack_example.png["Plantilla de webhook de Slack"]
 
 
 
+[[notifications-via-webhook]]
 == Notificaciones mediante webhook
 
 Para notificar eventos a través de un webhook, en Data Infrastructure Insights navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear un nuevolink:task_create_monitor.html["supervisión"] .

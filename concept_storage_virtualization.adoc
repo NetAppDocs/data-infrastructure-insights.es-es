@@ -14,6 +14,7 @@ Data Infrastructure Insights puede diferenciar entre una matriz de almacenamient
 
 
 
+[[virtualization-in-a-table-widget]]
 === Virtualización en un widget de tabla
 
 Una de las formas más sencillas de comenzar a analizar la virtualización de su almacenamiento es crear un widget de tabla de panel que muestre el tipo virtualizado.  Al crear la consulta para el widget, simplemente agregue "virtualizedType" a su agrupación o filtro.
@@ -26,6 +27,7 @@ image:StorageVirtualization_TableWidgetShowingVirtualizedTypes.png["Tabla que mu
 
 
 
+[[landing-pages-show-virtualized-information]]
 === Las páginas de destino muestran información virtualizada
 
 En una página de inicio de almacenamiento, volumen, volumen interno o disco, puede ver información de virtualización relevante.  Por ejemplo, al observar la página de inicio de almacenamiento a continuación, puede ver que se trata de un almacenamiento virtual y qué sistema de almacenamiento de backend se aplica.  Cualquier tabla relevante en las páginas de destino también mostrará información de virtualización según corresponda.
@@ -34,6 +36,7 @@ image:StorageVirtualization_StorageSummary.png["Página de inicio de almacenamie
 
 
 
+[[existing-landing-pages-and-dashboards]]
 === Páginas de destino y paneles de control existentes
 
 Tenga en cuenta que si actualmente tiene páginas de destino o paneles personalizados en su inquilino, estos no mostrarán automáticamente toda la información de virtualización de manera predeterminada.  Sin embargo, puede _Revertir a los valores predeterminados_ cualquier panel o página de destino personalizados (tendrá que volver a implementar sus personalizaciones) o modificar los widgets relevantes para incluir los atributos o métricas de virtualización deseados.

@@ -44,6 +44,7 @@ La función de resolución del dispositivo (Administrar > Resolución del dispos
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 Debe saber cómo está configurado su entorno antes de definir las reglas para identificar dispositivos.  Cuanto más sepa sobre su entorno, más fácil será identificar los dispositivos.
@@ -66,6 +67,7 @@ En este ejemplo, la mayor cantidad de dispositivos están representados de maner
 
 
 
+[[steps-to-identifying-devices]]
 == Pasos para identificar dispositivos
 
 Normalmente, utilizaría un flujo de trabajo similar al siguiente para identificar dispositivos en su inquilino.  La identificación es un proceso iterativo y puede requerir múltiples pasos de planificación y refinamiento de reglas.

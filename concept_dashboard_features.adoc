@@ -20,6 +20,7 @@ Los paneles y widgets permiten una gran flexibilidad en cómo se muestran los da
 
 
 
+[[widget-naming]]
 == Nombre de widgets
 
 Los widgets se nombran automáticamente en función del objeto, la métrica o el atributo seleccionado para la primera consulta del widget.  Si también elige una agrupación para el widget, los atributos "Agrupar por" se incluyen en el nombre automático (método de agregación y métrica).
@@ -32,18 +33,21 @@ Si no desea utilizar el nombre automático del widget, simplemente puede escribi
 
 
 
+[[widget-placement-and-size]]
 == Ubicación y tamaño de los widgets
 
 Todos los widgets del tablero se pueden posicionar y dimensionar según sus necesidades para cada tablero en particular.
 
 
 
+[[duplicating-a-widget]]
 == Duplicar un widget
 
 En el modo de edición del panel, haga clic en el menú del widget y seleccione *Duplicar*.  Se inicia el editor de widgets, rellenado previamente con la configuración del widget original y con un sufijo “copia” en el nombre del widget.  Puede realizar fácilmente los cambios necesarios y guardar el nuevo widget.  El widget se colocará en la parte inferior de tu panel y podrás posicionarlo según lo necesites.  Recuerde guardar su panel de control cuando se hayan completado todos los cambios.
 
 
 
+[[displaying-widget-legends]]
 == Visualización de leyendas de widgets
 
 La mayoría de los widgets en los paneles se pueden mostrar con o sin leyendas.  Las leyendas en los widgets se pueden activar o desactivar en un panel mediante cualquiera de los siguientes métodos:
@@ -57,6 +61,7 @@ Cuando se muestran leyendas, si se puede navegar a la página de destino del act
 
 
 
+[[transforming-metrics]]
 == Transformando métricas
 
 Data Infrastructure Insights ofrece diferentes opciones de *transformación* para ciertas métricas en widgets (específicamente, aquellas métricas llamadas "Personalizadas" o Métricas de integración, como las de Kubernetes, ONTAP Advanced Data, complementos de Telegraf, etc.), lo que le permite mostrar los datos de varias maneras.  Al agregar métricas transformables a un widget, se le presenta un menú desplegable que ofrece las siguientes opciones de transformación:
@@ -77,10 +82,12 @@ Tenga en cuenta que la transformación de métricas no cambia los datos subyacen
 
 
 
+[[dashboard-widget-queries-and-filters]]
 == Consultas y filtros del widget del panel
 
 
 
+[[queries]]
 === Consultas
 
 La consulta en un widget del panel es una herramienta poderosa para administrar la visualización de sus datos.  A continuación se muestran algunas cosas a tener en cuenta sobre las consultas de widgets.
@@ -108,6 +115,7 @@ Los tipos de widgets restantes solo pueden tener una única consulta:
 
 
 
+[[filtering-in-dashboard-widget-queries]]
 === Filtrado en consultas de widgets del panel
 
 Aquí hay algunas cosas que puedes hacer para aprovechar al máximo tus filtros.
@@ -208,6 +216,7 @@ para mostrar campos que no contienen ningún valor.
 
 
 
+[[identifying-objects-returned-by-queries-and-filters]]
 === Identificación de objetos devueltos por consultas y filtros
 
 Los objetos devueltos por consultas y filtros se ven similares a los que se muestran en la siguiente ilustración.  Los objetos con 'etiquetas' asignadas son anotaciones, mientras que los objetos sin etiquetas son contadores de rendimiento o atributos de objeto.
@@ -216,10 +225,12 @@ image:ObjectsReturnedByFilters.png["Objetos devueltos por filtros"]
 
 
 
+[[grouping-identifying-and-aggregating]]
 == Agrupación, identificación y agregación
 
 
 
+[[grouping-rolling-up]]
 === Agrupación (Acumulación)
 
 Los datos que se muestran en un widget se agrupan (a veces se denominan acumulados) a partir de los puntos de datos subyacentes recopilados durante la adquisición. Por ejemplo, si tiene un widget de gráfico de líneas que muestra IOPS de almacenamiento a lo largo del tiempo, es posible que desee ver una línea separada para cada uno de sus centros de datos, para una comparación rápida. En el campo "Agrupar por", seleccione el tipo de objeto para ver líneas, áreas, barras, columnas, etc. individuales (dependiendo del tipo de widget) para cada objeto.  Puedes optar por agrupar por cualquier atributo disponible en la lista para ese objeto.  Por ejemplo, al visualizar los datos de un volumen interno, es posible que desee agrupar los datos por el nombre de almacenamiento.
@@ -240,6 +251,7 @@ Si ha establecido un filtro para la consulta, los datos se agrupan según los da
 
 
 
+[[identifying-custom-data]]
 === Identificación de datos personalizados
 
 Cuando crea o modifica un widget que se basa en sus propios datos personalizados, es posible que sus datos no se representen correctamente en el widget sin un atributo identificativo.  Si DII no puede identificar el objeto que ha seleccionado para su widget, le presentará un enlace de _Configuración avanzada_ en el área "Agrupar por".  Amplíe esta sección para seleccionar el atributo con el que desea identificar sus datos.
@@ -248,6 +260,7 @@ image:unmodeled_data_identify_by.png["Identificar mediante menú desplegable par
 
 
 
+[[aggregating-data]]
 === Agregación de datos
 
 Puede alinear aún más sus gráficos agregando puntos de datos en intervalos de minutos, horas o días antes de que esos datos se agrupen posteriormente por atributo (si se elige). Puede elegir agregar puntos de datos según su _Promedio_, _Máximo_, _Mínimo_, _Suma_ o _Recuento_.
@@ -258,12 +271,14 @@ La mayoría de los contadores de activos se agregan a _Promedio_ de manera prede
 
 
 
+[[showing-topbottom-results]]
 == Mostrar resultados superiores e inferiores
 
 En un widget de gráfico, puede mostrar los resultados *Superiores* o *Inferiores* para los datos acumulados y elegir la cantidad de resultados que se muestran en la lista desplegable proporcionada.  En un widget de tabla, puedes ordenar por cualquier columna.
 
 
 
+[[chart-widget-topbottom]]
 === Widget de gráfico superior/inferior
 
 En un widget de gráfico, cuando elige agrupar datos por un atributo específico, tiene la opción de ver los N resultados superiores o los N resultados inferiores.  Tenga en cuenta que no puede elegir los resultados superiores o inferiores cuando elige agrupar por _todos_ los atributos.
@@ -272,6 +287,7 @@ Puede elegir qué resultados desea mostrar eligiendo *Superior* o *Inferior* en 
 
 
 
+[[table-widget-show-entries]]
 === El widget de tabla muestra entradas
 
 En un widget de tabla, puede seleccionar la cantidad de resultados que se muestran en la tabla.  No se le da la opción de elegir resultados superiores o inferiores porque la tabla le permite ordenar de manera ascendente o descendente por cualquier columna a pedido.
@@ -280,6 +296,7 @@ Puede elegir la cantidad de resultados que desea mostrar en la tabla del panel s
 
 
 
+[[grouping-in-table-widget]]
 == Agrupación en el widget de tabla
 
 Los datos en un widget de tabla se pueden agrupar por cualquier atributo disponible, lo que le permite ver una descripción general de sus datos y explorarlos en profundidad para obtener más detalles.  Las métricas de la tabla se agrupan para facilitar su visualización en cada fila contraída.
@@ -290,6 +307,7 @@ La agrupación solo está disponible en el tipo de widget Tabla.
 
 
 
+[[grouping-example-with-rollup-explained]]
 === Ejemplo de agrupación (con explicación del rollup)
 
 Los widgets de tabla le permiten agrupar datos para facilitar su visualización.
@@ -327,12 +345,14 @@ La lista de VM ahora está agrupada por hipervisor.  Puede expandir cada hipervi
 
 
 
+[[performance-data-roll-up]]
 === Resumen de datos de rendimiento
 
 Si incluye una columna para datos de rendimiento (por ejemplo, _IOPS - Total_) en un widget de tabla, cuando elige agrupar los datos, puede elegir un método de acumulación para esa columna.  El método de acumulación predeterminado es mostrar el promedio (_avg_) de los datos subyacentes en la fila del grupo.  También puede optar por mostrar la suma, el mínimo o el máximo de los datos.
 
 
 
+[[dashboard-time-range-selector]]
 == Selector de rango de tiempo del tablero
 
 Puede seleccionar el rango de tiempo para los datos de su panel.  En los widgets del panel solo se mostrarán los datos relevantes para el rango de tiempo seleccionado.  Puede seleccionar entre los siguientes rangos de tiempo:
@@ -357,12 +377,14 @@ El rango de tiempo personalizado le permite seleccionar hasta 31 días consecuti
 
 
 
+[[zooming-in-to-a-time-range]]
 === Ampliar un rango de tiempo
 
 Mientras visualiza un widget de serie temporal (línea, spline, área, área apilada) o un gráfico en una página de destino, puede arrastrar el mouse sobre el gráfico para acercarlo. En la parte superior derecha de la pantalla, puede bloquear ese rango de tiempo para que los gráficos en otras páginas reflejen los datos de ese rango de tiempo bloqueado.  Para desbloquear, seleccione un rango de tiempo diferente de la lista.
 
 
 
+[[overriding-dashboard-time-in-individual-widgets]]
 == Anulación del tiempo del panel en widgets individuales
 
 Puede anular la configuración del rango de tiempo del panel principal en widgets individuales.  Estos widgets mostrarán datos basados en el período de tiempo establecido, no en el período de tiempo del tablero.
@@ -377,6 +399,7 @@ image:OverrideTimeOnWidget.png["anular el rango de tiempo del panel para un widg
 
 
 
+[[primary-and-secondary-axis]]
 == Eje primario y secundario
 
 Las distintas métricas utilizan distintas unidades de medida para los datos que informan en un gráfico.  Por ejemplo, al observar IOPS, la unidad de medida es el número de operaciones de E/S por segundo de tiempo (IO/s), mientras que la latencia es puramente una medida de tiempo (milisegundos, microsegundos, segundos, etc.).  Al graficar ambas métricas en un gráfico de una sola línea usando un único conjunto de valores para el eje Y, los números de latencia (normalmente un puñado de milisegundos) se grafican en la misma escala que las IOPS (normalmente numeradas en miles), y la línea de latencia se pierde en esa escala.
@@ -405,6 +428,7 @@ image:SecondaryAxisExplained.png["Ejemplo de eje secundario"]
 
 
 
+[[expressions-in-widgets]]
 == Expresiones en widgets
 
 En un panel, cualquier widget de serie temporal (línea, spline, área, área apilada), gráfico de barras, gráfico de columnas, gráfico circular o widget de tabla le permite crear expresiones a partir de las métricas que elija y mostrar el resultado de esas expresiones en un solo gráfico (o columna en el caso del widget).<<expressions-in-a-table-widget,widget de tabla>> ).  Los siguientes ejemplos utilizan expresiones para resolver problemas específicos.  En el primer ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de las IOPS totales para todos los activos de almacenamiento en su inquilino.  El segundo ejemplo brinda visibilidad de las IOPS de "sistema" o "generales" que se producen en su inquilino (es decir, aquellas IOPS que no provienen directamente de la lectura o escritura de datos).
@@ -413,6 +437,7 @@ Puede utilizar variables en expresiones (por ejemplo, _$Var1 * 100_)
 
 
 
+[[expressions-example-read-iops-percentage]]
 === Ejemplo de expresiones: porcentaje de IOPS de lectura
 
 En este ejemplo, queremos mostrar las IOPS de lectura como un porcentaje de las IOPS totales.  Puedes pensar en esto como la siguiente fórmula:
@@ -450,6 +475,7 @@ El gráfico muestra el porcentaje de lectura de IOPS a lo largo del tiempo para 
 
 
 
+[[expressions-example-system-io]]
 === Ejemplo de expresiones: E/S "Sistema"
 
 Ejemplo 2: Entre las métricas recopiladas de las fuentes de datos se encuentran las IOPS de lectura, escritura y total.  Sin embargo, el número total de IOPS informado por una fuente de datos a veces incluye IOPS "del sistema", que son aquellas operaciones de E/S que no son parte directa de la lectura o escritura de datos.  Este sistema de E/S también puede considerarse como una E/S "general", necesaria para el correcto funcionamiento del sistema pero no relacionada directamente con las operaciones de datos.
@@ -499,6 +525,7 @@ Para utilizar una variable en una expresión, simplemente escriba el nombre de l
 
 
 
+[[expressions-in-a-table-widget]]
 === Expresiones en un widget de tabla
 
 Los widgets de tabla manejan las expresiones de forma un poco diferente.  Puede tener hasta cinco expresiones en un solo widget de tabla, cada una de las cuales se agrega como una nueva columna a la tabla.  Cada expresión puede incluir hasta cinco valores sobre los que realizar su cálculo.  Puedes nombrar fácilmente la columna con un nombre significativo.
@@ -507,12 +534,14 @@ image:ExpressionExample.png["Expresión en un widget de tabla"]
 
 
 
+[[variables]]
 == Variables
 
 Las variables le permiten cambiar los datos que se muestran en algunos o todos los widgets de un tablero a la vez.  Al configurar uno o más widgets para usar una variable común, los cambios realizados en un lugar hacen que los datos mostrados en cada widget se actualicen automáticamente.
 
 
 
+[[variable-types]]
 === Tipos de variables
 
 Una variable puede ser de uno de los siguientes tipos:
@@ -604,6 +633,7 @@ Nombres de variables:
 
 
 
+[[formatting-gauge-widgets]]
 == Formato de widgets de indicador
 
 Los widgets Indicador sólido y de bala le permiten establecer umbrales para niveles _Advertencia_ y/o _Crítico_, lo que proporciona una representación clara de los datos que especifique.
@@ -623,6 +653,7 @@ image:Gauge-Solid.png["Calibre sólido/tradicional, ancho=374"] image:Gauge-Bull
 
 
 
+[[formatting-single-value-widget]]
 == Formato de widget de valor único
 
 en el widget Valor único, además de configurar los umbrales de Advertencia (naranja) y Crítico (rojo), puede elegir que los valores "En rango" (aquellos por debajo del nivel de Advertencia) se muestren con fondo verde o blanco.
@@ -633,6 +664,7 @@ Al hacer clic en el enlace en un widget de valor único o en un widget de indica
 
 
 
+[[formatting-table-widgets]]
 == Formato de widgets de tabla
 
 Al igual que los widgets de valor único y de indicador, puede establecer un formato condicional en los widgets de tabla, lo que le permitirá resaltar datos con colores y/o íconos especiales.
@@ -651,6 +683,7 @@ Puede elegir si desea mostrar el formato de la condición como color, íconos o 
 
 
 
+[[choosing-the-unit-for-displaying-data]]
 == Selección de la unidad para visualizar datos
 
 La mayoría de los widgets en un panel le permiten especificar las unidades en las que se mostrarán los valores, por ejemplo, _Megabytes_, _Miles_, _Porcentaje_, _Milisegundos (ms)_, etc. En muchos casos, Data Infrastructure Insights conoce el mejor formato para los datos que se adquieren.  En los casos donde no se conoce el mejor formato, puedes configurar el formato que desees.
@@ -671,6 +704,7 @@ Para borrar la configuración y comenzar de nuevo, haga clic en *Restablecer val
 
 
 
+[[a-word-about-auto-format]]
 === Una palabra sobre el formato automático
 
 Los recopiladores de datos informan la mayoría de las métricas en la unidad más pequeña, por ejemplo, un número entero como 1.234.567.890 bytes.  De forma predeterminada, Data Infrastructure Insights formateará automáticamente el valor para que se muestre de forma más legible.  Por ejemplo, un valor de datos de 1.234.567.890 bytes se formatearía automáticamente a 1,23 _Gibibytes_.  Puedes elegir mostrarlo en otro formato, como _Mebibytes_.  El valor se mostrará correspondientemente.
@@ -680,6 +714,7 @@ NOTE: Data Infrastructure Insights utiliza estándares de nombres de números en
 
 
 
+[[widgets-with-multiple-queries]]
 === Widgets con múltiples consultas
 
 Si tiene un widget de series de tiempo (es decir, línea, spline, área, área apilada) que tiene dos consultas donde ambas se trazan en el eje Y principal, la unidad base no se muestra en la parte superior del eje Y.  Sin embargo, si su widget tiene una consulta en el eje Y principal y una consulta en el eje Y secundario, se muestran las unidades base de cada uno.
@@ -690,6 +725,7 @@ Si su widget tiene tres o más consultas, las unidades base no se muestran en el
 
 
 
+[[available-units]]
 === Unidades disponibles
 
 La siguiente tabla muestra todas las unidades disponibles por categoría.
@@ -740,6 +776,7 @@ La siguiente tabla muestra todas las unidades disponibles por categoría.
 |===
 
 
+[[tv-mode-and-auto-refresh]]
 == Modo TV y actualización automática
 
 Los datos en los widgets de los paneles y las páginas de destino de activos se actualizan automáticamente según un intervalo de actualización determinado por el rango de tiempo del panel seleccionado.  El intervalo de actualización se basa en si el widget es de serie temporal (gráfico de líneas, spline, área, área apilada) o no es de serie temporal (todos los demás gráficos).
@@ -804,6 +841,7 @@ image:AutoRefreshPaused.png["Actualización automática en pausa"]
 
 
 
+[[dashboard-groups]]
 == Grupos de paneles
 
 La agrupación le permite ver y administrar paneles relacionados.  Por ejemplo, puede tener un grupo de paneles dedicado al almacenamiento en su inquilino.  Los grupos de paneles se administran en la página *Paneles > Mostrar todos los paneles*.
@@ -833,6 +871,7 @@ NOTE: Eliminar un panel de un grupo no elimina el panel de Data Infrastructure I
 
 
 
+[[pin-your-favorite-dashboards]]
 == Fija tus paneles favoritos
 
 Puede administrar aún más sus paneles fijando sus favoritos en la parte superior de su lista de paneles.  Para fijar un panel, simplemente haga clic en el botón de chincheta que aparece cuando pasa el cursor sobre un panel en cualquier lista.
@@ -843,6 +882,7 @@ image:DashboardPin.png["Paneles anclados"]
 
 
 
+[[dark-theme]]
 == Tema oscuro
 
 Puede elegir mostrar Data Infrastructure Insights utilizando un tema claro (predeterminado), que muestra la mayoría de las pantallas con un fondo claro y texto oscuro, o un tema oscuro, que muestra la mayoría de las pantallas con un fondo oscuro y texto claro.
@@ -860,6 +900,7 @@ NOTE: Algunas áreas de la pantalla, como ciertos gráficos de widgets, aún mue
 
 
 
+[[line-chart-interpolation]]
 == Interpolación de gráficos de líneas
 
 Los distintos recopiladores de datos suelen consultar sus datos en intervalos diferentes.  Por ejemplo, el recopilador de datos A puede realizar un sondeo cada 15 minutos, mientras que el recopilador de datos B realiza un sondeo cada cinco minutos.  Cuando un widget de gráfico de líneas (también gráficos de splines, de áreas y de áreas apiladas) agrega estos datos de múltiples recopiladores de datos en una sola línea (por ejemplo, cuando el widget agrupa por "todos") y actualiza la línea cada cinco minutos, los datos del recopilador B pueden mostrarse con precisión mientras que los datos del recopilador A pueden tener espacios, lo que afecta la agregación hasta que el recopilador A vuelva a sondear.
@@ -868,6 +909,7 @@ Para aliviar esto, Data Infrastructure Insights interpola los datos al agregarlo
 
 
 
+[[interpolation-methods]]
 === Métodos de interpolación
 
 Al crear o modificar un gráfico de líneas (o de splines, de áreas o de áreas apiladas), puede establecer el método de interpolación en uno de tres tipos.  En la sección “Agrupar por”, elija la Interpolación deseada.
@@ -891,6 +933,7 @@ image:Interpolation_Linear.png["Línea recta simple que muestra una interpolaci�
 
 
 
+[[anomaly-bounds-in-line-widgets]]
 === Límites de anomalía en widgets de línea
 
 Al incluir un widget de gráfico de líneas o splines en un panel o página de destino, puede elegir ver el gráfico en el contexto de los *límites esperados* para los datos.  Puedes pensar en esto como buscar anomalías en los patrones de tus datos.

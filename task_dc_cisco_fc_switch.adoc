@@ -16,11 +16,12 @@ Además, puede descubrir muchos modelos de dispositivos Cisco que se ejecutan en
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de Cisco FC Switch.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -49,6 +50,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 * Una dirección IP de un conmutador en la red o de conmutadores individuales
@@ -59,9 +61,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -82,9 +85,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -141,15 +145,17 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 
@@ -170,9 +176,10 @@ Algunas cosas que puedes probar si encuentras problemas con este recopilador de 
 |===
 
 
+[[performance]]
 === Actuación
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

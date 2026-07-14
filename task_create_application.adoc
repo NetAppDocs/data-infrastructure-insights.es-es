@@ -29,6 +29,7 @@ Después de definir una aplicación, se puede asignar a los activos.
 
 
 
+[[assigning-applications-to-assets]]
 == Asignación de aplicaciones a activos
 
 Este procedimiento asigna la aplicación a un host como ejemplo.  Puede asignar host, máquina virtual, volumen o volúmenes internos a una aplicación.

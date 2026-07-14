@@ -14,6 +14,7 @@ NetApp Data Infrastructure Insights (anteriormente Cloud Insights) es una herram
 
 
 
+[[what-can-data-infrastructure-insights-do-for-me]]
 == ¿Qué puede hacer Data Infrastructure Insights por mí?
 
 Data Infrastructure Insights proporciona monitoreo multicloud híbrido, lo que le brinda capacidad de observación completa de la infraestructura y las cargas de trabajo.
@@ -31,6 +32,7 @@ Data Infrastructure Insights proporciona monitoreo multicloud híbrido, lo que l
 '''
 
 
+[[getting-started]]
 == Empezando
 
 * ¿Cómo hago?link:task_cloud_insights_onboarding_1.html["*Comienza*"] ¿con Data Infrastructure Insights?

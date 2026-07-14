@@ -14,6 +14,7 @@ Puede cambiar los criterios asociados a una consulta cuando desee cambiar los cr
 
 
 
+[[modifying-a-query]]
 == Modificar una consulta
 
 .Pasos
@@ -35,6 +36,7 @@ Cuando haya realizado todos los cambios necesarios, realice una de las siguiente
 
 
 
+[[deleting-a-query]]
 == Eliminar una consulta
 
 Para eliminar una consulta, haga clic en *Consultas* y seleccione *Mostrar todas las consultas*, y realice una de las siguientes acciones:

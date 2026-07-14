@@ -18,6 +18,7 @@ El recopilador de datos ONTAP SVM permite que Workload Security monitoree las ac
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 * Este recopilador de datos es compatible con lo siguiente:
@@ -79,6 +80,7 @@ Verlink:concept_cs_agent_requirements.html["Requisitos del agente"] para obtener
 
 
 
+[[test-connectivity-for-data-collectors]]
 == Prueba de conectividad para recopiladores de datos
 
 La función de conectividad de prueba (introducida en marzo de 2025) tiene como objetivo ayudar a los usuarios finales a identificar las causas específicas de las fallas al configurar recopiladores de datos en Data Infrastructure Insights (DII) Workload Security.  Esto permite a los usuarios autocorregir problemas relacionados con la comunicación de red o roles faltantes.
@@ -90,6 +92,7 @@ NOTE: La conectividad de prueba no es compatible con los recopiladores del Direc
 
 
 
+[[prerequisites-for-connection-testing]]
 === Requisitos previos para las pruebas de conexión
 
 * Se necesitan credenciales de nivel de clúster para que esta función funcione completamente.
@@ -104,6 +107,7 @@ Asegúrese de revisar el<<a-note-about-permissions,Permisos>> sección a continu
 
 
 
+[[test-the-connection]]
 === Pruebe la conexión
 
 El usuario puede ir a la página para agregar o editar recopilador, ingresar los detalles de nivel de clúster (en modo de clúster) o los detalles de nivel de SVM (en modo SVM) y hacer clic en el botón *Probar conexión*.  Luego, Workload Security procesará la solicitud y mostrará un mensaje de éxito o fracaso apropiado.
@@ -112,6 +116,7 @@ image:ws_test_connection_success_example.png["Mensaje de éxito de 'Conexión de
 
 
 
+[[things-to-note-for-ontap-multi-admin-verify-mav]]
 == Cosas a tener en cuenta para ONTAP Multi Admin Verify (MAV)
 
 Es posible que algunas funciones, como la creación y eliminación de instantáneas o el bloqueo de usuarios (SMB), no funcionen según los comandos MAV añadidos en tu versión de ONTAP.
@@ -129,6 +134,7 @@ Comando para permitir el bloqueo de usuarios:
  multi-admin-verify rule delete -operation set
 
 
+[[prerequisites-for-user-access-blocking]]
 == Requisitos previos para el bloqueo del acceso de usuarios
 
 Tenga en cuenta lo siguiente paralink:cs_restrict_user_access.html["Bloqueo de acceso de usuarios"] :
@@ -141,10 +147,12 @@ Si está utilizando un usuario personalizado (por ejemplo, _csuser_) con permiso
 
 
 
+[[a-note-about-permissions]]
 == Una nota sobre los permisos
 
 
 
+[[permissions-when-adding-via-cluster-management-ip]]
 === Permisos al agregar mediante *IP de administración de clúster*:
 
 Si no puede usar el usuario administrador de administración de clúster para permitir que Workload Security acceda al recopilador de datos de ONTAP SVM, puede crear un nuevo usuario llamado “csuser” con los roles que se muestran en los comandos a continuación.  Utilice el nombre de usuario “csuser” y la contraseña “csuser” al configurar el recopilador de datos de seguridad de carga de trabajo para utilizar la IP de administración de clúster.
@@ -175,6 +183,7 @@ security login create -user-or-group-name csuser -application http -authmethod p
 ....
 
 
+[[permissions-when-adding-via-vserver-management-ip]]
 === Permisos al agregar a través de *Vserver Management IP*:
 
 Si no puede usar el usuario administrador de administración de clúster para permitir que Workload Security acceda al recopilador de datos de ONTAP SVM, puede crear un nuevo usuario llamado “csuser” con los roles que se muestran en los comandos a continuación.  Utilice el nombre de usuario “csuser” y la contraseña “csuser” al configurar el recopilador de datos de seguridad de carga de trabajo para utilizar la IP de administración de Vserver.
@@ -205,6 +214,7 @@ security login create -user-or-group-name csuser -application http -authmethod p
 ....
 
 
+[[protobuf-mode]]
 === Modo Protobuf
 
 Workload Security configurará el motor FPolicy en modo protobuf cuando esta opción esté habilitada en la configuración _Configuración avanzada_ del recopilador.  El modo Protobuf es compatible con ONTAP versión 9.15 y posteriores.
@@ -221,6 +231,7 @@ Modo vserver:
  security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
 
 
+[[permissions-for-ontap-autonomous-ransomware-protection-and-ontap-access-denied]]
 === Permisos para ONTAP Autonomous Ransomware Protection y acceso denegado a ONTAP
 
 Si está utilizando credenciales de administración del clúster, no se necesitan permisos nuevos.
@@ -233,6 +244,7 @@ ylink:concept_cs_integration_with_ontap_arp.html["Integración con ONTAP Autonom
 
 
 
+[[configure-the-data-collector]]
 == Configurar el recopilador de datos
 
 .Pasos para la configuración
@@ -295,6 +307,7 @@ El sistema muestra la página de configuración de ONTAP SVM.  Introduzca los da
 
 
 
+[[recommended-configuration-for-metrocluster]]
 == Configuración recomendada para MetroCluster
 
 Se recomienda lo siguiente para MetroCluster:
@@ -308,6 +321,7 @@ Se recomienda lo siguiente para MetroCluster:
 
 
 
+[[service-policy]]
 == Política de servicio
 
 Si se utiliza la política de servicio con ONTAP *versión 9.9.1 o más reciente*, para conectarse al recopilador de origen de datos, se requiere el servicio _data-fpolicy-client_ junto con el servicio de datos _data-nfs_ y/o _data-cifs_.
@@ -323,6 +337,7 @@ En versiones de ONTAP anteriores a 9.9.1, no es necesario configurar _data-fpoli
 
 
 
+[[play-pause-data-collector]]
 == Recopilador de datos de reproducción y pausa
 
 Si el recopilador de datos está en estado _En ejecución_, puede pausar la recopilación.  Abra el menú de "tres puntos" del colector y seleccione PAUSA.  Mientras el recopilador está en pausa, no se recopilan datos de ONTAP y no se envían datos del recopilador a ONTAP.  Esto significa que no fluirán eventos de Fpolicy desde ONTAP al recopilador de datos, y desde allí a Data Infrastructure Insights.
@@ -345,6 +360,7 @@ Tenga en cuenta lo siguiente:
 
 
 
+[[persistent-store]]
 == Almacén persistente
 
 El almacenamiento persistente es compatible con ONTAP 9.14.1 y versiones posteriores.  Tenga en cuenta que las instrucciones del nombre del volumen varían de ONTAP 9.14 a 9.15.
@@ -371,12 +387,14 @@ security login role create -vserver <vservername> -role csrole -cmddirname "job 
 ....
 
 
+[[migrate-collectors]]
 == Migrar recolectores
 
 Puede migrar fácilmente un recopilador de seguridad de carga de trabajo de un agente a otro, lo que permite un equilibrio de carga eficiente de los recopiladores entre agentes.
 
 
 
+[[prerequisites]]
 === Prerrequisitos
 
 * El agente de origen debe estar en estado _conectado_.
@@ -391,6 +409,7 @@ Nota:
 
 
 
+[[migrate-collector]]
 === Migrar colector
 
 Para migrar un recopilador, siga estos pasos:
@@ -408,6 +427,7 @@ image:ws_migrate_collector_to_another_agent.png["migrar un recopilador eligiendo
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Ver ellink:troubleshooting_collector_svm.html["Solución de problemas del recopilador SVM"] Página para obtener sugerencias para la solución de problemas.

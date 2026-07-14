@@ -14,11 +14,12 @@ Este recopilador de datos adquiere datos de inventario y rendimiento de los sist
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere datos de inventario y rendimiento del recopilador de datos ONTAP .  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -45,12 +46,14 @@ Data Infrastructure Insights adquiere datos de inventario y rendimiento del reco
 |===
 
 
+[[ontap-data-management-terminology]]
 == Terminología de gestión de datos de ONTAP
 
 Los siguientes términos se aplican a objetos o referencias que pueda encontrar en las páginas de inicio de activos de almacenamiento de ONTAP Data Management.  Muchos de estos términos se aplican también a otros recopiladores de datos.
 
 
 
+[[storage]]
 === Almacenamiento
 
 * Modelo: una lista delimitada por comas de los nombres de modelos de nodos únicos y discretos dentro de este clúster.  Si todos los nodos de los clústeres son del mismo tipo de modelo, solo aparecerá un nombre de modelo.
@@ -65,6 +68,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[storage-pool]]
 === Pool de almacenamiento
 
 * Almacenamiento: en qué matriz de almacenamiento reside este grupo.  Obligatorio.
@@ -81,6 +85,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[storage-node]]
 === Nodo de almacenamiento
 
 * Almacenamiento: de qué matriz de almacenamiento forma parte este nodo.  Obligatorio.
@@ -99,6 +104,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[requirements]]
 == Requisitos
 
 Los siguientes son los requisitos para configurar y utilizar este recopilador de datos:
@@ -121,15 +127,17 @@ Los siguientes son los requisitos para configurar y utilizar este recopilador de
 
 
 
+[[permission-requirements-for-collecting-ontap-switch-metrics]]
 === Requisitos de permisos para recopilar métricas de conmutadores ONTAP
 
 Data Infrastructure Insights tiene la capacidad de recopilar datos de conmutadores de clúster de ONTAP como una opción en el recopilador.<<advanced-configuration,Configuración avanzada>> ajustes.  Además de habilitar esto en el recopilador de Data Infrastructure Insights , también debe *configurar el sistema ONTAP * para proporcionarlink:https://docs.netapp.com/us-en/ontap-cli-98/system-switch-ethernet-create.html["información del interruptor"] , y garantizar la correcta<<a-note-about-permissions,permisos>> se configuran para permitir que los datos del conmutador se envíen a Data Infrastructure Insights.
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -144,9 +152,10 @@ Data Infrastructure Insights tiene la capacidad de recopilar datos de conmutador
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -185,6 +194,7 @@ Data Infrastructure Insights tiene la capacidad de recopilar datos de conmutador
 |===
 
 
+[[ontap-power-metrics]]
 == Métricas de potencia de ONTAP
 
 Varios modelos de ONTAP proporcionan métricas de potencia para Data Infrastructure Insights que se pueden usar para monitorear o generar alertas.
@@ -202,6 +212,7 @@ FAS2620 FAS3250 FAS3270 FAS500f FAS6280 FAS/ AFF 8020 FAS/ AFF 8040 FAS/ AFF 806
 
 
 
+[[a-note-about-permissions]]
 == Una nota sobre los permisos
 
 Dado que varios paneles ONTAP de Data Infrastructure Insights dependen de contadores ONTAP avanzados, debe habilitar la *Recopilación avanzada de datos de contadores* en la sección Configuración avanzada del recopilador de datos.
@@ -254,15 +265,17 @@ NOTE: Si el control de acceso de ONTAP no está configurado correctamente, las l
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 
@@ -292,9 +305,10 @@ Algunas cosas que puedes probar si encuentras problemas con este recopilador de 
 |===
 
 
+[[performance]]
 === Actuación
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

@@ -18,6 +18,7 @@ El recopilador de datos de EMC RecoverPoint reúne las relaciones de replicació
 
 
 
+[[requirements]]
 == Requisitos
 
 Se requiere la siguiente información para configurar este recopilador de datos:
@@ -29,9 +30,10 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -46,9 +48,10 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -63,6 +66,7 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

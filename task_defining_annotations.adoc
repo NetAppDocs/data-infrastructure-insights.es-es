@@ -31,6 +31,7 @@ Por ejemplo, si se está arrendando un activo y el contrato de arrendamiento ven
 
 
 
+[[default-annotation-types]]
 == Tipos de anotación predeterminados
 
 Data Infrastructure Insights proporciona algunos tipos de anotaciones predeterminados.  Estas anotaciones se pueden utilizar para filtrar o agrupar datos.
@@ -86,6 +87,7 @@ NOTE: Alias, Centro de datos, Activo, Nivel de servicio, Atardecer, Nivel de con
 
 
 
+[[creating-custom-annotations]]
 == Creación de anotaciones personalizadas
 
 Al usar anotaciones, puede agregar datos personalizados específicos de su negocio que coincidan con las necesidades de su negocio y sus activos.  Si bien Data Infrastructure Insights proporciona un conjunto de anotaciones predeterminadas, es posible que desee ver los datos de otras maneras.  Los datos en anotaciones personalizadas complementan los datos del dispositivo ya recopilados, como el fabricante del almacenamiento, la cantidad de volúmenes y las estadísticas de rendimiento.  Data Infrastructure Insights no descubre los datos que agrega mediante anotaciones.

@@ -17,6 +17,7 @@ NOTE: Esta página hace referencia a instrucciones de terceros, que podrían est
 
 
 
+[[teams-setup]]
 == Configuración de los equipos:
 
 . En Teams, seleccione el kebab y busque Webhook entrante.
@@ -29,6 +30,7 @@ image:Webhooks_Teams_Create_Webhook.png["Webhook entrante en Teams"]
 
 
 
+[[create-data-infrastructure-insights-webhook]]
 == Crear webhook de Data Infrastructure Insights :
 
 . En Data Infrastructure Insights, navegue a *Admin > Notificaciones* y seleccione la pestaña *Webhooks*.  Haga clic en *+Webhook* para crear un nuevo webhook.
@@ -43,6 +45,7 @@ image:Webhooks-Teams_example.png["Plantilla de webhook de Teams"]
 
 
 
+[[notifications-via-webhook]]
 == Notificaciones mediante webhook
 
 Para notificar eventos a través de un webhook, en Data Infrastructure Insights navegue a *Alertas > Monitores* y haga clic en *+Monitor* para crear un nuevolink:task_create_monitor.html["supervisión"] .

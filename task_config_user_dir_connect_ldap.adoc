@@ -121,6 +121,7 @@ Haga clic en Incluir atributos opcionales para agregar cualquiera de los siguien
 |===
 
 
+[[testing-your-user-directory-collector-configuration]]
 == Prueba de la configuración del recopilador de directorios de usuarios
 
 Puede validar los permisos de usuario y las definiciones de atributos de LDAP mediante los siguientes procedimientos:
@@ -140,6 +141,7 @@ image:CloudSecure_LDAPDialog.png["Conexión LDAP"]
 
 
 
+[[troubleshooting-ldap-directory-collector-configuration-errors]]
 == Solución de problemas de configuración del recopilador de directorios LDAP
 
 La siguiente tabla describe problemas conocidos y resoluciones que pueden ocurrir durante la configuración del recopilador:

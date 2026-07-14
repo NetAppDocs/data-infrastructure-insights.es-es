@@ -16,11 +16,12 @@ Este recopilador de datos adquiere únicamente del *servidor de administración 
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario de este recopilador de datos.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -46,6 +47,7 @@ Estas son solo asignaciones de terminología común y es posible que no represen
 
 
 
+[[requirements]]
 == Requisitos
 
 Se requiere la siguiente información para configurar este recopilador de datos:
@@ -65,9 +67,10 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 
 
 
+[[setup-and-connection]]
 == Configuración y conexión
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -79,9 +82,10 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -105,14 +109,13 @@ Se requiere la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 En la pantalla de configuración avanzada, marque la casilla *Rendimiento de VM* para recopilar datos de rendimiento.  La recopilación de inventario está habilitada de forma predeterminada.  Se pueden configurar los siguientes campos:
 
-[cols="2*"]
+[cols="50,50"]
 |===
-
-
 | Campo | Descripción 
 
 
@@ -132,15 +135,17 @@ En la pantalla de configuración avanzada, marque la casilla *Rendimiento de VM*
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

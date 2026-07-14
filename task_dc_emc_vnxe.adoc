@@ -14,6 +14,7 @@ El recopilador de datos DELL EMC VNXe proporciona soporte de inventario para mat
 
 
 
+[[requirements]]
 == Requisitos
 
 * El recopilador de datos de VNXe se basa en CLI; debe instalar la CLI de Unisphere para VNXe (uemcli.exe) en la unidad de adquisición donde reside el recopilador de datos de VNXe.
@@ -27,11 +28,12 @@ El recopilador de datos DELL EMC VNXe proporciona soporte de inventario para mat
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos VNXe.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -63,9 +65,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -80,9 +83,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -97,15 +101,17 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

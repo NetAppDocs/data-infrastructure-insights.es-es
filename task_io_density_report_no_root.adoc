@@ -29,6 +29,7 @@ Los pasos de esta guía también se pueden aplicar a los sistemas de almacenamie
 
 
 
+[[creating-a-query-to-identify-netapp-root-aggregates]]
 == Creación de una consulta para identificar agregados raíz de NetApp
 
 Las consultas proporcionan búsqueda a un nivel granular, según criterios seleccionados por el usuario.  El uso de una consulta le permite buscar volúmenes internos en su inquilino que contengan el agregado raíz de NetApp .
@@ -54,6 +55,7 @@ Como se mencionó anteriormente, este podría ser un proceso iterativo y requeri
 
 
 
+[[create-an-annotation-for-the-root-volumes-returned-by-your-queries]]
 == Cree una anotación para los volúmenes raíz devueltos por sus consultas
 
 Las anotaciones son notas especializadas que usted asigna a sus activos, lo que le permite filtrarlos por sus anotaciones.  La anotación que cree se utilizará para identificar los agregados raíz de NetApp en su inquilino y garantizar que no se incluyan en un informe específico.
@@ -75,6 +77,7 @@ Debe haber identificado todos los agregados raíz que desea excluir del informe 
 
 
 
+[[create-an-annotation-rule-to-automate-excluding-specific-aggregates-from-your-io-density-report]]
 == Cree una regla de anotación para automatizar la exclusión de agregados específicos de su informe de densidad de E/S
 
 Como alternativa a la aplicación manual de anotaciones a activos individuales, puede aplicar anotaciones automáticamente a múltiples activos utilizando reglas de anotación.  Las reglas de anotación se basan en consultas que usted crea y cuando se ejecutan en el sistema, agregan nuevos activos a conjuntos de activos existentes.  Cuando estos conjuntos de activos se excluyen de un informe, los nuevos activos también se excluyen automáticamente.

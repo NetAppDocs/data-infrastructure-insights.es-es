@@ -24,6 +24,7 @@ Requisitos para el acceso a la API:
 
 
 
+[[api-documentation-swagger]]
 == Documentación de la API (Swagger)
 
 La información más reciente sobre la API se puede encontrar iniciando sesión en Workload Security y navegando a *Admin > Acceso a API*.  Haga clic en el enlace *Documentación de API*.  La documentación de la API está basada en Swagger, lo que proporciona una breve descripción e información de uso de la API y le permite probarla en su inquilino.
@@ -33,6 +34,7 @@ NOTE: Si llama a la API de actividad forense, utilice la API cloudsecure_forensi
 
 
 
+[[api-access-tokens]]
 == Tokens de acceso a la API
 
 Antes de utilizar la API de seguridad de carga de trabajo, debe crear uno o más *Tokens de acceso a API*.  Los tokens de acceso otorgan permisos de lectura.  También puede establecer la fecha de vencimiento para cada token de acceso.
@@ -65,6 +67,7 @@ Puede encontrar información detallada en el enlace _Documentación de API_ en *
 
 
 
+[[script-to-extract-data-via-the-api]]
 == Script para extraer datos a través de la API
 
 Los agentes de seguridad de carga de trabajo incluyen un script de exportación para facilitar las llamadas paralelas a la API v2 al dividir el rango de tiempo solicitado en lotes más pequeños.

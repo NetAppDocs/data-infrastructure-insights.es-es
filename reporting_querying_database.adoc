@@ -21,6 +21,7 @@ NOTE: Esta documentación hace referencia a la función de informes de Data Infr
 
 
 
+[[odata]]
 == Odata
 
 La API de informes de Data Infrastructure Insights sigue laslink:https://www.odata.org/["OData versión 4"] (Open Data Protocol) estándar para su consulta a la base de datos de Reportes.  Para obtener más información o aprender más, consultelink:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] en OData.
@@ -29,6 +30,7 @@ Todas las solicitudes comenzarán con la URL _\https://< URL de Data Infrastruct
 
 
 
+[[generating-an-apikey]]
 == Generar una clave API
 
 Leer más sobrelink:API_Overview.html["API de Data Infrastructure Insights"] .
@@ -48,6 +50,7 @@ Las claves API son útiles para<<synchronous-or-asynchronous,_Sincronización_ o
 
 
 
+[[direct-query-of-tables]]
 == Consulta directa de tablas
 
 Con la clave API instalada, ahora es posible realizar consultas directas a la base de datos de informes.  Las URL largas se pueden simplificar a \https://.../odata/ para fines de visualización en lugar del formato completo \https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata/
@@ -63,6 +66,7 @@ Pruebe consultas sencillas como
 
 
 
+[[rest-api-examples]]
 == Ejemplos de API REST
 
 La URL para todas las llamadas es _\https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata_.
@@ -107,6 +111,7 @@ Resultado:
 ....
 
 
+[[helpful-hints]]
 == Consejos útiles
 
 Tenga en cuenta lo siguiente al trabajar con consultas de API de informes.
@@ -133,6 +138,7 @@ Su clave API será específica para su entorno de Data Infrastructure Insights .
 
 
 
+[[synchronous-or-asynchronous]]
 == ¿Sincrónico o asincrónico?
 
 De forma predeterminada, un comando API funcionará en modo _sincrónico_, lo que significa que usted envía la solicitud y la respuesta se devuelve inmediatamente.  Sin embargo, a veces una consulta puede tardar mucho tiempo en ejecutarse, lo que podría provocar que se agote el tiempo de espera de la solicitud.  Para evitar esto, puedes ejecutar una solicitud de forma _asincrónica_.  En el modo asincrónico, la solicitud devolverá una URL a través de la cual se podrá monitorear la ejecución.  La URL devolverá el resultado cuando esté listo.

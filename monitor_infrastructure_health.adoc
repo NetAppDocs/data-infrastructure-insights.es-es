@@ -18,6 +18,7 @@ Data Infrastructure Insights proporciona un monitoreo integral del estado de la 
 
 
 
+[[the-infrastructure-health-dashboard]]
 == El panel de control de salud de la infraestructura
 
 
@@ -31,6 +32,7 @@ De forma predeterminada, los puntajes de salud se agrupan por centro de datos; p
 
 
 
+[[configure-monitors-to-use-for-infrastructure-health]]
 == Configurar monitores para usarlos en el estado de la infraestructura
 
 Los puntajes de salud se controlan mediante alertas que se configuran para su inclusión en los cálculos de salud del sistema.
@@ -47,6 +49,7 @@ image:infra_health_monitor_advanced_config.png["Monitorizar configuración avanz
 
 
 
+[[health-scores-explained]]
 == Explicación de las puntuaciones de salud
 
 Las puntuaciones se presentan en una escala de 0 a 100, donde 100 representa plena salud. Los objetos de infraestructura monitoreados que actualmente o recientemente hayan experimentado problemas reducirán esta puntuación de acuerdo con los siguientes promedios ponderados:

@@ -27,6 +27,7 @@ El enlace _Cobertura total_ muestra una lista de la cantidad de dispositivos ide
 
 
 
+[[adding-a-fibre-channel-device-manually]]
 == Cómo agregar un dispositivo Fibre Channel manualmente
 
 Puede agregar manualmente un dispositivo de canal de fibra a Data Infrastructure Insights utilizando la función _Agregar manualmente_ disponible en la pestaña Identificar canal de fibra de resolución del dispositivo.  Este proceso podría usarse para la identificación previa de un dispositivo que se espera descubrir en el futuro.
@@ -53,6 +54,7 @@ El dispositivo que ingrese se agregará a la lista de dispositivos en la pestañ
 
 
 
+[[importing-fibre-channel-device-identification-from-a-csv-file]]
 == Importación de la identificación del dispositivo Fibre Channel desde un archivo .CSV
 
 Puede importar manualmente la identificación del dispositivo de canal de fibra a la resolución del dispositivo de Data Infrastructure Insights utilizando una lista de dispositivos en un archivo .CSV.
@@ -92,6 +94,7 @@ Los dispositivos que ingrese se agregarán a la lista de dispositivos en la pest
 
 
 
+[[exporting-fibre-channel-device-identifications-to-a-csv-file]]
 == Exportación de identificaciones de dispositivos Fibre Channel a un archivo .CSV
 
 Puede exportar identificaciones de dispositivos de canal de fibra existentes a un archivo .CSV desde la función de resolución de dispositivos de Data Infrastructure Insights .  Es posible que desee exportar una identificación de dispositivo para poder modificarla y luego importarla nuevamente a Data Infrastructure Insights, donde se utiliza para identificar dispositivos similares a aquellos que coinciden originalmente con la identificación exportada.

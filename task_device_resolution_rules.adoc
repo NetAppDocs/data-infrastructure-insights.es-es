@@ -18,6 +18,7 @@ Crea reglas de resolución de dispositivos para identificar hosts, almacenamient
 
 
 
+[[creating-device-resolution-rules]]
 == Creación de reglas de resolución de dispositivos
 
 Al crear reglas, comienza por identificar la fuente de información sobre la que se ejecuta la regla, el método utilizado para extraer información y si la búsqueda de DNS se aplica a los resultados de la regla.
@@ -109,12 +110,14 @@ Los resultados de la ejecución de la regla se muestran en la pestaña *Identifi
 
 
 
+[[pausing-and-resuming-rules]]
 === Pausar y reanudar reglas
 
 Para evitar que una regla se ejecute, elige "Pausar" en el menú de la derecha de la regla, o selecciona varias reglas y elige "Pausar" en el menú desplegable "Acciones masivas". Puedes reanudar la ejecución de la regla de la misma manera.
 
 
 
+[[starting-an-automatic-device-resolution-update]]
 == Iniciar una actualización automática de la resolución del dispositivo
 
 Una actualización de la resolución del dispositivo confirma los cambios manuales que se han agregado desde la última ejecución de la resolución automática completa del dispositivo.  La ejecución de una actualización se puede utilizar para confirmar y ejecutar únicamente las nuevas entradas manuales realizadas en la configuración de resolución del dispositivo.  No se realiza ninguna ejecución de resolución completa del dispositivo.
@@ -128,6 +131,7 @@ Una actualización de la resolución del dispositivo confirma los cambios manual
 
 
 
+[[rule-assisted-manual-identification]]
 == Identificación manual asistida por reglas
 
 Esta función se utiliza para casos especiales en los que desea ejecutar una regla específica o una lista de reglas (con o sin un reordenamiento único) para resolver hosts desconocidos, dispositivos de almacenamiento y de cinta.
@@ -163,12 +167,14 @@ Cuando se encuentran reglas que se aplican, los nombres de las reglas se muestra
 
 
 
+[[ai-assisted-rule-generation]]
 == Generación de reglas asistida por IA
 
 Como alternativa, puedes evitar las conjeturas gracias a la identificación de dispositivos basada en IA para crear reglas de forma rápida y sencilla. Simplemente ejecuta el generador de reglas asistido por IA para analizar tu entorno y sugerir reglas de resolución de dispositivos, ayudándote a identificar y gestionar más dispositivos rápidamente.
 
 
 
+[[get-started]]
 === Comenzar
 
 Para empezar a usar la IA para generar reglas de resolución, un administrador debe primero activar las reglas generadas por IA.
@@ -183,6 +189,7 @@ Se te pedirá que confirmes tus nombres de dominio antes de activar las reglas g
 
 
 
+[[check-progress]]
 === Comprobar progreso
 
 De forma periódica, DII generará una notificación cuando haya dispositivos adicionales disponibles para su posible identificación. Si ves un punto verde en el icono de la campana situado en la esquina superior derecha de la página, selecciónalo para ver la notificación.
@@ -197,12 +204,14 @@ image:ahr_ai_badge.png["Insignia de regla generada por IA, ancho=400"]
 
 
 
+[[resume-and-go]]
 === Reanudar y continuar
 
 Las reglas generadas por IA se encuentran en estado _Pausadas_ de forma predeterminada. Debes revisar cada regla y _Reanudarla_ antes de que identifique los dispositivos.
 
 
 
+[[related]]
 == Relacionado:
 
 link:task_device_resolution_fibre_channel.html["Resolución del dispositivo de canal de fibra"] link:task_device_resolution_ip.html["Resolución de dispositivo IP"] link:task_device_resolution_preferences.html["Configuración de las preferencias de resolución del dispositivo"]

@@ -18,6 +18,7 @@ La página Toda la actividad le ayuda a comprender las acciones realizadas en la
 
 
 
+[[examining-all-activity-data]]
 == Examinando todos los datos de actividad
 
 Haga clic en *Análisis forense > Análisis forense de actividades* y haga clic en la pestaña *Todas las actividades* para acceder a la página Todas las actividades.  Esta página proporciona una descripción general de las actividades de su inquilino, destacando la siguiente información:
@@ -78,6 +79,7 @@ El método _Agrupar por_ predeterminado es _Análisis forense de actividad_.  Si
 
 
 
+[[filtering-forensic-activity-history-data]]
 == Filtrado de datos del historial de actividad forense
 
 Hay dos métodos que puede utilizar para filtrar datos.
@@ -140,6 +142,7 @@ Tenga en cuenta que todos los campos de filtro distinguen entre mayúsculas y mi
 
 
 
+[[activity-forensics-filter-examples]]
 == Ejemplos de filtros de análisis forense de actividades:
 
 |===
@@ -183,22 +186,26 @@ NOTA:
 
 
 
+[[sorting-forensic-activity-history-data]]
 == Clasificación de datos del historial de actividad forense
 
 Puede ordenar los datos del historial de actividad por _Tiempo, Usuario, IP de origen, Actividad,_, _Tipo de entidad_, Carpeta de primer nivel (raíz), Carpeta de segundo nivel, Carpeta de tercer nivel y Carpeta de cuarto nivel.  De forma predeterminada, la tabla se ordena en orden descendente de _Tiempo_, lo que significa que los datos más recientes se mostrarán primero.  La clasificación está deshabilitada para los campos _Dispositivo_ y _Protocolo_.
 
 
 
+[[user-guide-for-asynchronous-exports]]
 == Guía del usuario para exportaciones asincrónicas
 
 
 
+[[overview]]
 === Descripción general
 
 La función Exportaciones asincrónicas en Seguridad de carga de trabajo de almacenamiento está diseñada para manejar grandes exportaciones de datos.
 
 
 
+[[step-by-step-guide-exporting-data-with-asynchronous-exports]]
 === Guía paso a paso: Exportación de datos asincrónica
 
 . *Iniciar exportación*: Seleccione la duración deseada y los filtros para la exportación y haga clic en el botón exportar.
@@ -216,6 +223,7 @@ Hay un script de muestra para extraer datos forenses a través de API en _/opt/n
 
 
 
+[[column-selection-for-all-activity]]
 == Selección de columnas para todas las actividades
 
 La tabla _Todas las actividades_ muestra columnas seleccionadas de forma predeterminada.  Para agregar, eliminar o cambiar las columnas, haga clic en el ícono de engranaje a la derecha de la tabla y seleccione de la lista de columnas disponibles.
@@ -224,12 +232,14 @@ image:CloudSecure_ActivitySelection.png["Selector de actividad, ancho=30%"]
 
 
 
+[[activity-history-retention]]
 == Retención del historial de actividades
 
 El historial de actividades se conserva durante 13 meses para los entornos de seguridad de carga de trabajo activos.
 
 
 
+[[applicability-of-filters-in-forensics-page]]
 == Aplicabilidad de los filtros en la investigación forense
 
 |===
@@ -252,6 +262,7 @@ El historial de actividades se conserva durante 13 meses para los entornos de se
 |===
 
 
+[[path-search]]
 == Búsqueda de ruta
 
 Los resultados de búsqueda con y sin / serán diferentes
@@ -284,6 +295,7 @@ Los resultados de búsqueda con y sin / serán diferentes
 |===
 
 
+[[local-root-svm-user-activity-changes]]
 == Cambios en la actividad del usuario raíz local de SVM
 
 Si un usuario raíz local de SVM realiza alguna actividad, la IP del cliente en el que está montado el recurso compartido NFS ahora se considera en el nombre de usuario, que se mostrará como root@<dirección-ip-del-cliente> tanto en las páginas de actividad forense como en las de actividad del usuario.
@@ -298,6 +310,7 @@ Por ejemplo:
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 |===

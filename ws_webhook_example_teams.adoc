@@ -21,6 +21,7 @@ NOTE: Esta página hace referencia a instrucciones de terceros, que están sujet
 
 
 
+[[teams-setup]]
 == Configuración de los equipos:
 
 . En Teams, seleccione el kebab y busque Webhook entrante.
@@ -33,6 +34,7 @@ image:Webhooks_Teams_Create_Webhook.png["Webhook entrante en Teams"]
 
 
 
+[[create-workload-security-teams-webhook]]
 == Crear webhook de equipos de seguridad de carga de trabajo:
 
 . Vaya a Admin > Notificaciones y seleccione la pestaña _“Webhooks de seguridad de carga de trabajo_.  Seleccione _+ Webhook_ para crear un nuevo webhook.
@@ -46,6 +48,7 @@ image:ws_webhook_teams_example.png["Ejemplo de webhook de equipos de seguridad d
 
 
 
+[[steps-for-creating-teams-notification-with-adaptive-card-template]]
 === Pasos para crear una notificación de Teams con la plantilla de tarjeta adaptable
 
 . Reemplaza el cuerpo del mensaje con la siguiente plantilla:
@@ -140,6 +143,7 @@ image:ws_webhook_teams_example.png["Ejemplo de webhook de equipos de seguridad d
 
 
 
+[[notifications-via-webhook]]
 == Notificaciones mediante webhook
 
 Para notificar eventos a través de webhook, navegue a _Seguridad de carga de trabajo > Políticas_.  Seleccione _+Política de ataque_ o _+Política de advertencia_.

@@ -14,6 +14,7 @@ La sección Datos de usuario de una página de activos muestra y le permite camb
 
 
 
+[[using-the-user-data-section-to-assign-or-modify-applications]]
 == Uso de la sección Datos de usuario para asignar o modificar aplicaciones
 
 Puede asignar aplicaciones que se ejecutan en su inquilino a determinados activos (host, máquinas virtuales, volúmenes, volúmenes internos, qtrees e hipervisores).  La sección Datos de usuario le permite agregar, cambiar o eliminar las aplicaciones asignadas a un activo.  Para todos estos tipos de activos, excepto los volúmenes, puede asignar más de una aplicación.
@@ -37,6 +38,7 @@ Para eliminar una aplicación, despliegue la lista de aplicaciones y desmarque l
 
 
 
+[[using-the-user-data-section-to-assign-or-modify-annotations]]
 == Uso de la sección Datos de usuario para asignar o modificar anotaciones
 
 Al personalizar Data Infrastructure Insights para rastrear datos según sus requisitos corporativos, puede definir notas especializadas llamadas anotaciones y asignarlas a sus activos.  La sección Datos de usuario de una página de activos muestra las anotaciones asignadas a un activo y también le permite cambiar las anotaciones asignadas a ese activo.

@@ -111,6 +111,7 @@ Haga clic en Incluir atributos opcionales para agregar cualquiera de los siguien
 |===
 
 
+[[testing-your-user-directory-collector-configuration]]
 == Prueba de la configuración del recopilador de directorios de usuarios
 
 Puede validar los permisos de usuario y las definiciones de atributos de LDAP mediante los siguientes procedimientos:
@@ -131,6 +132,7 @@ image:cs_ADExample.png["Conexión AD"]
 
 
 
+[[troubleshooting-user-directory-collector-configuration-errors]]
 == Solución de problemas de configuración del recopilador de directorios de usuarios
 
 La siguiente tabla describe problemas conocidos y resoluciones que pueden ocurrir durante la configuración del recopilador:

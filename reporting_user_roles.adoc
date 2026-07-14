@@ -76,6 +76,7 @@ La siguiente tabla muestra las funciones disponibles para cada rol de informes.
 |===
 
 
+[[setting-reporting-cognos-email-preferences]]
 == Configuración de las preferencias de correo electrónico de Informes (Cognos)
 
 
@@ -83,6 +84,7 @@ NOTE: Si cambia sus preferencias de correo electrónico de usuario dentro de Dat
 
 
 
+[[what-steps-should-i-take-to-prepare-my-existing-environment-for-enabling-sso]]
 === ¿Qué pasos debo seguir para preparar mi entorno existente para habilitar SSO?
 
 Para garantizar que se conserven sus informes, migre todos los informes de _Mi contenido_ a _Contenido del equipo_ siguiendo estos pasos.  Debes hacer esto antes de habilitar SSO en tu inquilino:

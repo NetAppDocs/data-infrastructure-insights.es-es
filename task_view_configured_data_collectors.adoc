@@ -35,6 +35,7 @@ Se muestra una lista de todos los recopiladores de datos instalados.  La lista p
 
 
 
+[[controlling-data-collector-polling]]
 == Control del sondeo del recopilador de datos
 
 Después de realizar un cambio en un recopilador de datos, es posible que desee que sondee inmediatamente para verificar los cambios, o puede que desee posponer la recopilación de datos en un recopilador de datos durante uno, tres o cinco días mientras trabaja en un problema.
@@ -51,6 +52,7 @@ Se pueden realizar acciones masivas simultáneamente en varios recopiladores de 
 
 
 
+[[editing-data-collector-information]]
 == Edición de la información del recopilador de datos
 
 Puede editar la información de configuración del recopilador de datos existente.
@@ -83,6 +85,7 @@ Al editar varios recopiladores de datos, el botón *Configuración de prueba* no
 
 
 
+[[cloning-data-collectors]]
 == Clonación de recopiladores de datos
 
 Al utilizar la función de clonación, puede agregar rápidamente una fuente de datos que tenga las mismas credenciales y atributos que otra fuente de datos.  La clonación le permite configurar fácilmente múltiples instancias del mismo tipo de dispositivo.
@@ -104,6 +107,7 @@ La operación de clonación copia todos los demás atributos y configuraciones p
 
 
 
+[[performing-bulk-actions-on-data-collectors]]
 == Realizar acciones masivas en recopiladores de datos
 
 Puede editar simultáneamente cierta información para varios recopiladores de datos.  Esta función le permite iniciar una encuesta, posponerla y reanudarla en varios recopiladores de datos.  Además, puedes eliminar varios recopiladores de datos.

@@ -18,6 +18,7 @@ Aprenda de forma eficiente Data Infrastructure Insights con nuestros tutoriales 
 
 
 
+[[checklist-and-video-tutorials]]
 == Lista de verificación y tutoriales en vídeo
 
 La *Lista de verificación de inicio* que se muestra en su inquilino de Data Infrastructure Insights contiene una lista de varias tareas y conceptos útiles.  Al seleccionar un elemento de la lista de verificación, accederá a la página de Data Infrastructure Insights adecuada para ese concepto.  Por ejemplo, al hacer clic en el elemento _Crear un panel_ se abre la página *Paneles* de Data Infrastructure Insights .
@@ -35,12 +36,14 @@ NOTE: Puedes ver los tutoriales en el orden que desees, tantas veces como quiera
 
 
 
+[[dismissing-the-checklist]]
 === Descartando la lista de verificación
 
 La lista de verificación de inicio se muestra hasta que haga clic en el enlace _No mostrar esto nuevamente_ en la parte inferior de la lista de verificación.  Incluso después de descartar la lista de verificación, los tutoriales siguen estando disponibles en cada página de Data Infrastructure Insights correspondiente hasta que descarte cada uno de ellos desde la barra de encabezado del mensaje.
 
 
 
+[[video-tutorials]]
 == Videotutoriales
 
 Mira los siguientes vídeos para obtener más información.

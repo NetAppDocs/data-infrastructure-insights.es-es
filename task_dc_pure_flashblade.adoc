@@ -18,6 +18,7 @@ Data Infrastructure Insights utiliza el recopilador de datos Pure Storage FlashB
 
 
 
+[[terminology]]
 == Terminología
 
 Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
@@ -48,6 +49,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 * Dirección IP del sistema de almacenamiento o nombre de dominio completo
@@ -57,6 +59,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[configuration]]
 == Configuración
 
 [cols="50,50"]
@@ -74,6 +77,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 [cols="50,50"]
@@ -94,12 +98,14 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
 [cols="50,50"]

@@ -32,10 +32,12 @@ image:LogExplorer_QueryForFailed.png["Ejemplo de consulta que muestra el filtro"
 
 
 
+[[filtering]]
 == Filtración
 
 
 
+[[include-exclude]]
 === Incluir / Excluir
 
 Al filtrar los registros, puede elegir *incluir* (es decir, "Filtrar a") o *excluir* las cadenas que escribe.  Las cadenas excluidas se muestran en el filtro completado como "NOT <string>".
@@ -49,6 +51,7 @@ NOTE: En cualquier momento, puede hacer clic en _Crear un monitor de registro_ p
 
 
 
+[[advanced-filtering]]
 === Filtrado avanzado
 
 Cuando filtra texto o valores de lista en consultas o widgets del panel, a medida que comienza a escribir se le presenta la opción de crear un *filtro comodín* basado en el texto actual.  Al seleccionar esta opción se devolverán todos los resultados que coincidan con la expresión comodín.  También puede crear expresiones usando NOT, AND u OR, o puede seleccionar la opción "Ninguno" para filtrar valores nulos.
@@ -112,6 +115,7 @@ Puede combinar un filtro simple con un filtro de consulta avanzado; el filtro re
 
 
 
+[[the-chart-legend]]
 === La leyenda del gráfico
 
 La _Leyenda_ debajo del gráfico también tiene algunas sorpresas.  Para cada resultado (basado en el filtro actual) que se muestra en la Leyenda, tiene la opción de mostrar solo los resultados de esa línea (Agregar filtro) o de mostrar cualquier resultado que NO sea para esa línea (Agregar filtro de exclusión).  El gráfico y la lista de entradas del registro se actualizan para mostrar resultados según su selección.  Para eliminar este filtrado, abra la Leyenda nuevamente y seleccione la [X] para borrar el filtro basado en Leyenda.
@@ -120,6 +124,7 @@ image:Log_Advanced_Query_Legend.png["Leyenda de consulta avanzada que muestra \"
 
 
 
+[[log-details]]
 == Detalles del registro
 
 Al hacer clic en cualquier parte de una entrada de registro de la lista, se abrirá un panel de detalles para esa entrada.  Aquí podrás explorar más información sobre el evento.
@@ -132,6 +137,7 @@ image:LogExplorer_DetailPane.png["Panel de detalles de entrada de registro"]
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Aquí encontrará sugerencias para solucionar problemas con consultas de registro.

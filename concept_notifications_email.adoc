@@ -19,6 +19,7 @@ image:Notifications_email_list.png["Notificaciones por correo electrónico"]
 
 
 
+[[subscription-notification-recipients]]
 == Destinatarios de notificaciones de suscripción
 
 Para configurar destinatarios para notificaciones de eventos relacionados con suscripciones, vaya a la sección "Destinatarios de notificaciones de suscripción".  Puede elegir que se envíen notificaciones por correo electrónico sobre eventos relacionados con la suscripción a cualquiera o todos los siguientes destinatarios:
@@ -58,6 +59,7 @@ Para garantizar que sus destinatarios reciban notificaciones de Data Infrastruct
 ====
 
 
+[[global-recipient-list-for-alerts]]
 == Lista global de destinatarios de alertas
 
 Las notificaciones por correo electrónico de las alertas se envían a la lista de destinatarios de la alerta para cada acción relacionada con la alerta.  Puede elegir enviar notificaciones de alerta a una lista global de destinatarios.
@@ -71,6 +73,7 @@ NOTE: Las notificaciones del recopilador de datos de ONTAP tienen prioridad sobr
 
 
 
+[[editing-notifications-for-ontap]]
 == Edición de notificaciones para ONTAP
 
 Puede modificar las notificaciones de los clústeres de ONTAP seleccionando _Editar notificaciones_ en el menú desplegable superior derecho de una página de inicio de Almacenamiento.

@@ -14,6 +14,7 @@ Data Infrastructure Insights descubre matrices de almacenamiento EMC VMAX y Powe
 
 
 
+[[requirements]]
 == Requisitos
 
 Antes de configurar este recopilador de datos, debe asegurarse de que Data Infrastructure Insights tenga conectividad TCP al puerto 2707 en el servidor Solutions Enabler existente.  Data Infrastructure Insights descubre todas las matrices Symmetrix que son "locales" para este servidor, como se ve en la salida "symcfg list" de ese servidor.
@@ -47,11 +48,12 @@ cisys storapid <all>
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario de la fuente de datos EMC VMAX/PowerMax.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -77,11 +79,12 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[configuration]]
 == Configuración
 
 *Nota:* Si la autenticación de usuario SMI-S no está habilitada, se ignoran los valores predeterminados en el recopilador de datos de Data Infrastructure Insights .
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -96,9 +99,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -137,11 +141,12 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

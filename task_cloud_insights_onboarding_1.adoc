@@ -18,6 +18,7 @@ Antes de que puedas empezar a trabajar con Data Infrastructure Insights, tienes 
 
 
 
+[[creating-your-netapp-console-account]]
 == Creando tu cuenta de NetApp Console
 
 Para empezar a usar los servicios en la nube de NetApp, ve a link:https://console.netapp.com/["* NetApp Console*"^] y haz clic en *Get Started*.
@@ -31,6 +32,7 @@ Para empezar a usar los servicios en la nube de NetApp, ve a link:https://consol
 
 
 
+[[what-if-i-already-have-a-netapp-console-login]]
 === ¿Qué pasa si ya tengo un inicio de sesión en NetApp Console?
 
 Una vez que tengas una cuenta de NetApp Console, simplemente elige *Iniciar sesión* en la página del portal link:https://console.netapp.com/["NetApp Console"].
@@ -44,6 +46,7 @@ En el menú principal en la parte superior izquierda, selecciona *Governance > D
 
 
 
+[[starting-your-data-infrastructure-insights-free-trial]]
 == Comenzar tu prueba gratuita de Data Infrastructure Insights
 
 Cuando estés listo para empezar, selecciona *Iniciar prueba gratuita de 30 días*. Elige la región en la que quieres alojar tu sitio y sigue las demás indicaciones.
@@ -58,6 +61,7 @@ Una vez completada la integración, Console te informa que tu tenant está listo
 
 
 
+[[logging-out]]
 == Cerrar sesión
 
 Para salir de Data Infrastructure Insights, haz clic en tu *Nombre de usuario* y selecciona *Salir*.
@@ -67,6 +71,7 @@ NOTE: Cerrar sesión en Data Infrastructure Insights también te desconecta de C
 
 
 
+[[inactivity-timeout]]
 === Tiempo de espera de inactividad
 
 Por defecto, Console cerrará la sesión de un usuario si no hay actividad durante seis horas (360 minutos). Independientemente de la actividad, los usuarios serán desconectados después de siete días.

@@ -10,6 +10,7 @@ keywords: reporting, annotations, publish, unpublish, data warehouse, dwh
 
 
 
+[[publishing-and-unpublishing-annotations-for-reporting]]
 == Publicación y anulación de publicaciones de anotaciones para informes
 
 [role="lead"]
@@ -17,12 +18,14 @@ Aprenda a publicar anotaciones para usarlas en informes y en el almacén de dato
 
 
 
+[[publishing-annotations-for-reporting]]
 == Publicación de anotaciones para informes
 
 Después de haber creado anotaciones en Data Infrastructure Insights, puede publicarlas para usarlas en informes.
 
 
 
+[[steps-to-publish-annotations]]
 === Pasos para publicar anotaciones
 
 . Vaya a la página *Observabilidad > Enriquecer > Anotaciones y seleccione la pestaña _Anotaciones para informes_.
@@ -39,12 +42,14 @@ Cualquier informe que haga referencia a la anotación utilizará los valores pub
 ====
 
 
+[[unpublishing-annotations-for-reporting]]
 == Cancelar la publicación de anotaciones para informes
 
 Puede haber ocasiones en las que necesite eliminar o anular la publicación de anotaciones para que ya no se utilicen en los informes.  Por ejemplo, es posible que una anotación ya no sea necesaria o que contenga información obsoleta que no debería aparecer en los informes.
 
 
 
+[[steps-to-unpublish-annotations]]
 === Pasos para anular la publicación de anotaciones
 
 Antes de cancelar la publicación de una anotación, tenga en cuenta que esta acción afectará a cualquier informe existente que utilice la anotación.  Es posible que los informes requieran edición o asistencia de servicios profesionales para eliminar las referencias de anotaciones.
@@ -64,6 +69,7 @@ Las anotaciones seguirán apareciendo en el almacén de datos hasta que se despu
 ====
 
 
+[[impact-on-existing-reports]]
 == Impacto en los informes existentes
 
 La eliminación o cancelación de la publicación de anotaciones puede requerir modificaciones en los informes existentes que hacen referencia a dichas anotaciones. Considere lo siguiente:

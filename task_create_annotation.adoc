@@ -18,6 +18,7 @@ Crea anotaciones y asígnalas a los activos que supervisas.  Las anotaciones son
 
 
 
+[[defining-annotations]]
 == Definición de anotaciones
 
 Al usar anotaciones, puede agregar datos personalizados específicos de su negocio que coincidan con las necesidades de su negocio y sus activos.  Si bien Data Infrastructure Insights proporciona un conjunto de anotaciones predeterminadas, como el ciclo de vida del activo (fecha de nacimiento o fin de vida útil), la ubicación del edificio o centro de datos y el nivel, es posible que desee ver los datos de otras maneras.
@@ -50,6 +51,7 @@ Por ejemplo, ingrese lo siguiente para crear una anotación de texto que defina 
 
 
 
+[[manually-assigning-annotations-to-assets]]
 == Asignar anotaciones manualmente a los activos
 
 Asignar anotaciones a los activos le ayuda a ordenarlos, agruparlos y generar informes sobre ellos de maneras relevantes para su negocio.  Si bien puede asignar anotaciones a activos de un tipo particular automáticamente mediante reglas de anotación, puede asignar anotaciones a un activo individual mediante su página de activos.
@@ -81,12 +83,14 @@ Si desea cambiar el valor de la anotación después de asignarla, haga clic en e
 
 
 
+[[assigning-annotations-using-annotation-rules]]
 == Asignar anotaciones mediante reglas de anotación
 
 Para asignar automáticamente anotaciones a los activos según los criterios que usted defina, configure reglas de anotación.  Data Infrastructure Insights asigna las anotaciones a los activos según estas reglas.  Data Infrastructure Insights también proporciona dos reglas de anotación predeterminadas, que puede modificar para adaptarlas a sus necesidades o eliminarlas si no desea utilizarlas.
 
 
 
+[[creating-annotation-rules]]
 === Creación de reglas de anotación
 
 Como alternativa a la aplicación manual de anotaciones a activos individuales, puede aplicar anotaciones automáticamente a múltiples activos utilizando reglas de anotación.  Las anotaciones configuradas manualmente en las páginas de activos individuales tienen prioridad sobre las anotaciones basadas en reglas cuando Insight evalúa las reglas de anotación.

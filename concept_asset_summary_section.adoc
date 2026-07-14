@@ -29,6 +29,7 @@ Si corresponde, puede hacer clic en un enlace de alerta para ver la alerta y el 
 
 
 
+[[topology]]
 == Topología
 
 En ciertas páginas de activos, la sección de resumen contiene un enlace para ver la topología del activo y sus conexiones.

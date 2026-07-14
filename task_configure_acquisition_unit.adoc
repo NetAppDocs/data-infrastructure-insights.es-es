@@ -21,6 +21,7 @@ Lea sobre la seguridad de Data Infrastructure Insightslink:security_overview.htm
 
 
 
+[[adding-a-linux-acquisition-unit]]
 == Agregar una unidad de adquisición de Linux
 
 .Antes de empezar
@@ -61,6 +62,7 @@ image:NewLinuxAUInstall.png["Instrucciones de Linux AU"]
 
 
 
+[[setting-proxy-environment-variables]]
 === Configuración de variables de entorno de proxy
 
 Para los entornos que utilizan un proxy, debe configurar las variables de entorno del proxy antes de agregar la unidad de adquisición.  Las instrucciones para configurar el proxy se proporcionan en el cuadro de diálogo _Agregar unidad de adquisición_.
@@ -76,6 +78,7 @@ Nota: Tenga en cuenta las restricciones sobre caracteres especiales en los campo
 
 
 
+[[proxy-configuration]]
 === Configuración de proxy
 
 La Unidad de Adquisición utiliza autenticación mutua/bidireccional para conectarse al servidor de Data Infrastructure Insights .  El certificado del cliente debe pasarse al servidor de Data Infrastructure Insights para ser autenticado.  Para lograr esto, el proxy debe configurarse para reenviar la solicitud https al servidor de Data Infrastructure Insights sin descifrar los datos.
@@ -100,6 +103,7 @@ Si tiene Workload Security en su inquilino, las URL de los puntos finales config
 
 
 
+[[adding-a-windows-acquisition-unit]]
 == Agregar una unidad de adquisición de Windows
 
 .Pasos para la instalación de la unidad de adquisición de Windows
@@ -133,6 +137,7 @@ image:NewWindowsAUInstall.png["Instalación de Windows AU"]
 
 
 
+[[proxy-configuration]]
 === Configuración de proxy
 
 La Unidad de Adquisición utiliza autenticación mutua/bidireccional para conectarse al servidor de Data Infrastructure Insights .  El certificado del cliente debe pasarse al servidor de Data Infrastructure Insights para ser autenticado.  Para lograr esto, el proxy debe configurarse para reenviar la solicitud https al servidor de Data Infrastructure Insights sin descifrar los datos.
@@ -157,6 +162,7 @@ Si tiene Workload Security en su inquilino, las URL de los puntos finales config
 
 
 
+[[uninstalling-an-acquisition-unit]]
 == Desinstalación de una unidad de adquisición
 
 Para desinstalar el software de la Unidad de Adquisición, haga lo siguiente:
@@ -201,6 +207,7 @@ image:AU_for_Device_Resolution.png["AU utilizado para la resolución del disposi
 
 
 
+[[reinstalling-an-acquisition-unit]]
 == Reinstalación de una unidad de adquisición
 
 Para reinstalar una unidad de adquisición en el mismo servidor/VM, debe seguir estos pasos:
@@ -223,6 +230,7 @@ También puede seleccionar varios recopiladores de datos del mismo tipo y hacer 
 
 
 
+[[viewing-au-details]]
 == Visualización de detalles de AU
 
 La página de detalles de la Unidad de adquisición (AU) proporciona detalles útiles para una AU, así como información para ayudar con la resolución de problemas.  La página de detalles de AU contiene las siguientes secciones:

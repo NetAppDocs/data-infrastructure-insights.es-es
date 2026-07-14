@@ -38,6 +38,7 @@ Los informes de Data Infrastructure Insights pueden generar informes personaliza
 
 
 
+[[accessing-data-infrastructure-insights-reporting]]
 == Acceso a informes de Data Infrastructure Insights
 
 Puede acceder a los informes de Data Infrastructure Insights haciendo clic en el enlace *Informes* en el menú.
@@ -46,6 +47,7 @@ Serás llevado a la interfaz de informes.  Data Infrastructure Insights utiliza 
 
 
 
+[[what-is-etl]]
 == ¿Qué es ETL?
 
 Cuando trabaje con informes, escuchará los términos "Almacén de datos" y "ETL".  ETL significa "Extraer, Transformar y Cargar".  El proceso ETL recupera datos recopilados en Data Infrastructure Insights y transforma los datos en un formato para usar en informes.  "Almacén de datos" se refiere a los datos recopilados disponibles para la elaboración de informes.

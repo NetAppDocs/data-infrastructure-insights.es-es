@@ -18,6 +18,7 @@ Data Infrastructure Insights ofrece una serie de paneles recomendados para brind
 
 
 
+[[importing-from-the-dashboard-gallery]]
 == Importar desde la Galería del Panel de Control
 
 Para importar un panel desde la galería, haga lo siguiente:
@@ -36,6 +37,7 @@ La importación desde la galería del panel está disponible para usuarios con r
 
 
 
+[[importing-an-exported-dashboard]]
 == Importar un panel exportado
 
 Para *exportar* un panel, en la página *Observabilidad > Explorar > Todos los paneles*, haga clic en el menú a la derecha del panel y seleccione _Exportar_. También puede seleccionar varios paneles y elegir _Exportar_ en el menú desplegable _Acciones masivas_. Los paneles se guardan en un archivo .ZIP en su sistema local.

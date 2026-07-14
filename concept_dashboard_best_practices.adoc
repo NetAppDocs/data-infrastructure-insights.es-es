@@ -18,6 +18,7 @@ Consejos y trucos para ayudarle a aprovechar al máximo las potentes funciones d
 
 
 
+[[finding-the-right-metric]]
 == Encontrar la métrica correcta
 
 Data Infrastructure Insights adquiere contadores y métricas utilizando nombres que a veces difieren de un recopilador de datos a otro.
@@ -64,6 +65,7 @@ Esta no es una lista completa.  Estos son sólo ejemplos de posibles términos d
 
 
 
+[[finding-the-right-assets]]
 == Encontrar los activos adecuados
 
 Los activos a los que puedes hacer referencia en los filtros y búsquedas de widgets varían según el tipo de activo.
@@ -96,6 +98,7 @@ Esta no es una lista completa.
 
 
 
+[[scatter-plot-example-knowing-your-axis]]
 == Ejemplo de diagrama de dispersión: conocer su eje
 
 Cambiar el orden de los contadores en un widget de gráfico de dispersión cambia los ejes en los que se muestran los datos.

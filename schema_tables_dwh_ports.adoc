@@ -18,10 +18,12 @@ Esta referencia proporciona información detallada del esquema para la base de d
 
 
 
+[[tables-and-views]]
 == Tablas y vistas
 
 
 
+[[cardinals]]
 === cardenales
 
 [cols="1,1,2"]
@@ -34,6 +36,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[connecteddevicedimension]]
 === dimensión_dispositivo_conectado
 
 *Clave primaria:* tk
@@ -74,6 +77,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[datedimension]]
 === date_dimension
 
 [cols="1,1,2"]
@@ -148,6 +152,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[portdimension]]
 === dimensión_puerto
 
 [cols="1,1,2"]
@@ -195,6 +200,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[portsfact]]
 === ports_fact
 
 *Clave primaria:* tk
@@ -244,6 +250,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[portsfactcurrent]]
 === ports_fact_current
 
 [cols="1,1,2"]
@@ -283,6 +290,7 @@ Esta referencia proporciona información detallada del esquema para la base de d
 '''
 
 
+[[switchdimension]]
 === switch_dimension
 
 [cols="1,1,2"]

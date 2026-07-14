@@ -18,18 +18,21 @@ keywords: icons, assets, objects, reference, map
 
 
 
+[[infrastructure-icons]]
 == Iconos de infraestructura:
 
 image:Icon_Glossary.png["Referencia de iconos de infraestructura"]
 
 
 
+[[kubernetes-icons]]
 == Iconos de Kubernetes:
 
 image:K8sIconsWithLabels.png["Referencia de iconos de Kubernetes, ancho=180"]
 
 
 
+[[kubernetes-network-performance-monitoring-and-map-icons]]
 == Iconos de mapas y monitoreo del rendimiento de la red de Kubernetes:
 
 image:ServiceMap_Icons.png["Monitoreo y mapa del rendimiento de la red de Kubernetes, ancho=640"]

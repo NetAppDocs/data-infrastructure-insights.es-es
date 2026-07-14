@@ -18,6 +18,7 @@ El análisis de cambios de infraestructura le proporciona una vista todo en uno 
 
 
 
+[[how-does-infrastructure-change-analysis-help]]
 == ¿Cómo ayuda el análisis de cambios en la infraestructura?
 
 En cualquier entorno, pueden ocurrir cambios en sus recursos debido a cambios mal configurados, pérdida de energía, etc. El análisis de cambios ayuda a proporcionar un panel único para ver y correlacionar el estado de sus recursos con interrupciones o cambios planificados.  Los cambios se calculan con cada encuesta de inventario (después de la primera encuesta realizada en un nuevo recopilador).
@@ -32,6 +33,7 @@ Al seleccionar un elemento de la lista, se abrirá un panel deslizable que brind
 
 
 
+[[filtering]]
 == Filtración
 
 Al igual que con todas las funciones de Cloud Insights, filtrar la lista de cambios es intuitivo: en la parte superior de la página, puede filtrar por tipos de activos específicos (_Triggered On:type_) y/o filtrar solo por activos con nombres específicos si lo desea (_Triggered On:name_), o agregar sus propios filtros seleccionando el botón {+].
@@ -44,12 +46,14 @@ image:Change_Analysis_filters_and_status.png["Estado y enlaces rápidos a alerta
 
 
 
+[[a-note-about-long-term-alerts]]
 == Una nota sobre las alertas a largo plazo
 
 Tenga en cuenta que las alertas que permanecen activas durante más de 24 horas serán visibles en la lista de Alertas y cambios una vez cada 24 horas, por lo que es posible que observe la misma alerta en la lista varias veces. Cada una de estas alertas tendrá el mismo ID de alerta, la misma hora de inicio, etc., y tendrá un estado de "Alerta" hasta que se resuelva la alerta.
 
 
 
+[[which-objects-are-analyzed-for-changes]]
 == ¿Qué objetos se analizan para detectar cambios?
 
 La siguiente tabla enumera los objetos y atributos incluidos en el análisis de cambios de infraestructura.

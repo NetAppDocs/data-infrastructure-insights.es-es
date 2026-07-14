@@ -20,6 +20,7 @@ Data Infrastructure Insightslink:https://docs.netapp.com/us-en/cloudinsights/con
 
 
 
+[[requirements-for-api-access]]
 == Requisitos para el acceso a la API
 
 * Se utiliza un modelo de token de acceso API para otorgar acceso.
@@ -28,6 +29,7 @@ Data Infrastructure Insightslink:https://docs.netapp.com/us-en/cloudinsights/con
 
 
 
+[[api-documentation-swagger]]
 == Documentación de la API (Swagger)
 
 La información más reciente sobre la API se puede encontrar iniciando sesión en Data Infrastructure Insights y navegando a *Admin > Acceso API*.  Haga clic en el enlace *Documentación de API*.
@@ -40,6 +42,7 @@ image:API_Swagger_Example.png["Ejemplo de API Swagger"]
 
 
 
+[[api-access-tokens]]
 == Tokens de acceso a la API
 
 Antes de utilizar la API de Data Infrastructure Insights , debe crear uno o más *Tokens de acceso a API*.  Los tokens de acceso se utilizan para tipos de API específicos y pueden otorgar permisos de lectura y/o escritura.  También puede establecer la fecha de vencimiento para cada token de acceso.  Todas las API de los tipos especificados son válidas para el token de acceso.  Cada token no tiene nombre de usuario ni contraseña.
@@ -77,6 +80,7 @@ Consulta las páginas de swagger para ver ejemplos específicos de la API que de
 
 
 
+[[api-type]]
 == Tipo de API
 
 La API de Data Infrastructure Insights se basa en categorías y actualmente contiene los siguientes tipos:
@@ -100,12 +104,14 @@ Ten en cuenta que los tipos de API a los que tiene acceso un usuario también de
 
 
 
+[[inventory-traversal]]
 == Recorrido del inventario
 
 Esta sección describe cómo recorrer una jerarquía de objetos de Data Infrastructure Insights .
 
 
 
+[[top-level-objects]]
 === Objetos de nivel superior
 
 Los objetos individuales se identifican en las solicitudes mediante una URL única (denominada "self" en JSON) y requieren conocer el tipo de objeto y su ID interno. Para algunos objetos de nivel superior (hosts, almacenamientos, etc.), la API REST proporciona acceso a la colección completa.
@@ -118,6 +124,7 @@ Por ejemplo, para recuperar todos los almacenamientos de un inquilino llamado _m
  https://mysite.c01.cloudinsights.netapp.com/rest/v1/assets/storages
 
 
+[[children-and-related-objects]]
 === Niños y objetos relacionados
 
 Los objetos de nivel superior, como Almacenamiento, se pueden usar para acceder a otros objetos secundarios y relacionados.  Por ejemplo, para recuperar todos los discos para un almacenamiento específico, concatene la URL “propia” del almacenamiento con “/disks”, por ejemplo:
@@ -125,6 +132,7 @@ Los objetos de nivel superior, como Almacenamiento, se pueden usar para acceder 
  https://<tenant>/rest/v1/assets/storages/4537/disks
 
 
+[[expands]]
 == Se expande
 
 Muchos comandos API admiten el parámetro *expand*, que proporciona detalles adicionales sobre el objeto o las URL de los objetos relacionados.
@@ -147,6 +155,7 @@ Para evitarlo, no se pueden ampliar las solicitudes de colecciones de nivel supe
 
 
 
+[[performance-data]]
 == Datos de rendimiento
 
 Los datos de rendimiento se recopilan en muchos dispositivos como muestras independientes.  Cada hora (valor predeterminado), Data Infrastructure Insights agrega y resume muestras de rendimiento.
@@ -188,6 +197,7 @@ Los resúmenes de rendimiento están disponibles para estos tipos de contadores:
 
 
 
+[[object-performance-metrics]]
 == Métricas de rendimiento de objetos
 
 La API puede devolver métricas detalladas de los objetos en su inquilino, por ejemplo:
@@ -200,6 +210,7 @@ Ver ellink:#api-documentation-swagger["Documentación de API Swagger"] para obte
 
 
 
+[[performance-history-data]]
 == Datos del historial de rendimiento
 
 Los datos históricos se presentan en los datos de rendimiento como una lista de pares de marcas de tiempo y mapas de contadores.
@@ -215,12 +226,14 @@ image:DiskPerformanceExample.png["JSON de rendimiento del disco"]
 
 
 
+[[objects-with-capacity-attributes]]
 == Objetos con atributos de capacidad
 
 Los objetos con atributos de capacidad utilizan tipos de datos básicos y CapacityItem para su representación.
 
 
 
+[[capacityitem]]
 === Artículo de capacidad
 
 CapacityItem es una única unidad lógica de capacidad.  Tiene “valor” y “umbral alto” en unidades definidas por su objeto padre.  También admite un mapa de desglose opcional que explica cómo se construye el valor de capacidad.  Por ejemplo, la capacidad total de un pool de almacenamiento de 100 TB sería un CapacityItem con un valor de 100.  El desglose puede mostrar 60 TB asignados para “datos” y 40 TB para “instantáneas”.
@@ -233,6 +246,7 @@ image:StoragePoolCapacity.png["Ejemplo de capacidad de grupo de almacenamiento"]
 
 
 
+[[using-search-to-look-up-objects]]
 == Uso de la búsqueda para buscar objetos
 
 La API de búsqueda es un punto de entrada simple al sistema.  El único parámetro de entrada a la API es una cadena de formato libre y el JSON resultante contiene una lista categorizada de resultados.  Los tipos son diferentes tipos de activos del inventario, como almacenamientos, hosts, almacenes de datos, etc.  Cada tipo contendría una lista de objetos del tipo que coinciden con los criterios de búsqueda.
@@ -243,6 +257,7 @@ La API RESTful de Cloud Insight es un punto principal de integración que permit
 
 
 
+[[disabling-or-revoking-an-api-token]]
 == Deshabilitar o revocar un token de API
 
 Para deshabilitar temporalmente un token de API, en la página de lista de tokens de API, haga clic en el menú de "tres puntos" de la API y seleccione _Deshabilitar_.  Puede volver a habilitar el token en cualquier momento utilizando el mismo menú y seleccionando _Habilitar_.
@@ -253,6 +268,7 @@ image:API_Disable_Token.png["Deshabilitar o revocar un token de API"]
 
 
 
+[[rotating-expired-api-access-tokens]]
 == Rotación de tokens de acceso a API vencidos
 
 Los tokens de acceso a la API tienen una fecha de vencimiento.  Cuando caduca un token de acceso a API, los usuarios deben generar un nuevo token (de tipo _Ingestión de datos_ con permisos de lectura y escritura) y reconfigurar Telegraf para usar el token recién generado en lugar del token caducado.  Los pasos a continuación detallan cómo hacer esto.

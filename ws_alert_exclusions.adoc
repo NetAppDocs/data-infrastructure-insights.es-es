@@ -24,6 +24,7 @@ La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 
 
 
+[[manage-exclusions-and-auditing]]
 == Gestiona exclusiones y auditorías
 
 * Los administradores pueden añadir o eliminar extensiones de archivo, usuarios individuales o rutas en cualquier momento.
@@ -32,6 +33,7 @@ La exclusión de alertas se configura por inquilino e incluye lo siguiente:
 
 
 
+[[users-and-paths]]
 == Usuarios y rutas
 
 * Lista de exclusión de usuarios: agrega usuarios que serán excluidos de las alertas.
@@ -46,6 +48,7 @@ Se pueden añadir o eliminar usuarios individuales y rutas de directorio de la l
 
 
 
+[[file-types]]
 == Tipos de archivos
 
 Una vez añadida a la lista de Tipos de archivo, no se generará ninguna alerta de ataque de manipulación de archivos para ese tipo de archivo permitido. Ten en cuenta que la política de Tipos de archivo solo es aplicable para la detección de manipulación de archivos.

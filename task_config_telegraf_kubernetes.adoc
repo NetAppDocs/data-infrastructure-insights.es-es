@@ -18,18 +18,21 @@ Data Infrastructure Insights utiliza este recopilador de datos para reunir métr
 
 
 
+[[installation]]
 == Instalación
 
 Para obtener instrucciones sobre la instalación de Kubernetes, consulte lalink:task_config_telegraf_agent_k8s.html["Operador de monitoreo de Kubernetes"] página.
 
 
 
+[[about-kube-state-metrics]]
 == Acerca de Kube-state-metrics
 
 El operador de monitoreo de Kubernetes instala kube-state-metrics automáticamente; no se necesita interacción del usuario.
 
 
 
+[[kube-state-metrics-counters]]
 === Contadores de métricas de estado de Kube
 
 El operador de monitoreo de Kubernetes de NetApp extrae los contadores kube-state-metrics que se enumeran a continuación.  Puede encontrar más detalles sobre cada contador en: https://github.com/kubernetes/kube-state-metrics/tree/main/docs#exposed-metrics[] .

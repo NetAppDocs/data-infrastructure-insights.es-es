@@ -14,6 +14,7 @@ Data Infrastructure Insights utiliza el recopilador de datos Brocade Sphereon/In
 
 
 
+[[requirements]]
 == Requisitos
 
 Para configurar este recopilador de datos se deben cumplir los siguientes requisitos:
@@ -26,9 +27,10 @@ Para configurar este recopilador de datos se deben cumplir los siguientes requis
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -49,9 +51,10 @@ Para configurar este recopilador de datos se deben cumplir los siguientes requis
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -81,6 +84,7 @@ Para configurar este recopilador de datos se deben cumplir los siguientes requis
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

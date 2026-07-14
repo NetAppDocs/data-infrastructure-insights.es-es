@@ -17,11 +17,12 @@ NOTE: Este recopilador de Data Infrastructure Insights requiere un usuario de ON
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere datos de inventario y rendimiento del recopilador de datos FSx- NetApp .  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para el activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -36,12 +37,14 @@ Data Infrastructure Insights adquiere datos de inventario y rendimiento del reco
 |===
 
 
+[[fsx-netapp-terminology]]
 == Terminología de FSx- NetApp
 
 Los siguientes términos se aplican a objetos o referencias que pueda encontrar en las páginas de inicio de activos de almacenamiento de FSx- NetApp .  Muchos de estos términos se aplican también a otros recopiladores de datos.
 
 
 
+[[storage]]
 === Almacenamiento
 
 * Modelo: una lista delimitada por comas de los nombres de modelos únicos y discretos dentro de este clúster.
@@ -55,6 +58,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[storage-pool]]
 === Pool de almacenamiento
 
 * Almacenamiento: en qué matriz de almacenamiento reside este grupo.  Obligatorio.
@@ -66,6 +70,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[requirements]]
 == Requisitos
 
 Los siguientes son los requisitos para configurar y utilizar este recopilador de datos:
@@ -77,9 +82,10 @@ Los siguientes son los requisitos para configurar y utilizar este recopilador de
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -94,6 +100,7 @@ Los siguientes son los requisitos para configurar y utilizar este recopilador de
 |===
 
 
+[[advanced-metrics]]
 == Métricas avanzadas
 
 Este recopilador de datos recopila las siguientes métricas avanzadas del almacenamiento FSx para NetApp ONTAP :
@@ -115,15 +122,17 @@ Tenga en cuenta que los comandos CLI y API de FSx recuperan algunos valores de c
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

@@ -22,6 +22,7 @@ image:vm_analyzer_example_with_panel_a.png["Mapa de topología de VM Analyzer de
 
 
 
+[[explore-connections-among-your-assets]]
 == Explora las conexiones entre tus activos
 
 Seleccione *Observabilidad > Analizar > Analizador de VM* para ver el Analizador de VM.  Establezca un filtro para Aplicación, Máquina virtual, Volumen, Volumen interno o agregue sus propios filtros.  Se muestra el mapa de los objetos, mostrando los objetos conectados.  Coloque el cursor sobre un objeto para ver las métricas de tráfico de esas conexiones.
@@ -35,6 +36,7 @@ Al hacer clic en un objeto o grupo, se abre un panel deslizable que proporciona 
 
 
 
+[[see-it-in-action]]
 == Véalo en acción
 
 link:https://media.netapp.com/video-detail/0e62b784-8456-5ef7-8879-f0352135a0f1/simplified-troubleshooting-with-vm-analyzer["Solución de problemas simplificada con VM Analyzer (video),window=read-later"]

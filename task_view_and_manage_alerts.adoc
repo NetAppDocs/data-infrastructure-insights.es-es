@@ -17,6 +17,7 @@ TIP: Los monitores y alertas están disponibles en Data Infrastructure Insights 
 
 
 
+[[viewing-and-managing-alerts]]
 == Visualización y gestión de alertas
 
 Para ver y administrar alertas, haga lo siguiente.
@@ -52,6 +53,7 @@ Al hacer clic en un ID de alerta, se abre la página de detalles de alerta.
 
 
 
+[[alert-detail-panel]]
 == Panel de detalles de alertas
 
 Seleccione cualquier fila de alerta para abrir el panel de detalles de la alerta.  El panel de detalles de alerta proporciona detalles adicionales sobre la alerta, incluido un _Resumen_, una sección _Rendimiento_ que muestra gráficos relacionados con los datos del objeto, cualquier _Activo relacionado_ y _Comentarios_ ingresados por los investigadores de alerta.
@@ -60,6 +62,7 @@ image:metric_alert_detail_pane.png["panel de detalles de alertas métricas"]
 
 
 
+[[alerts-when-data-is-missing]]
 == Alertas cuando faltan datos
 
 En un sistema en tiempo real como Data Infrastructure Insights, para activar el análisis de un monitor para decidir si se debe generar una alerta, confiamos en una de dos cosas:
@@ -74,6 +77,7 @@ Si tiene un monitor con una ventana de 30 minutos que detecta que se viola una c
 
 
 
+[[permanently-active-alerts]]
 == Alertas "Permanentemente activas"
 
 Es posible configurar un monitor de tal manera que la condición *siempre* exista en el objeto monitoreado; por ejemplo, IOPS > 1 o latencia > 0.  A menudo se crean como monitores de "prueba" y luego se olvidan.  Estos monitores crean alertas que permanecen abiertas permanentemente en los objetos constituyentes, lo que puede provocar estrés en el sistema y problemas de estabilidad a lo largo del tiempo.

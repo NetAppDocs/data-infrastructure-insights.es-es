@@ -18,11 +18,12 @@ Este recopilador de datos reúne información de inventario de los sistemas de a
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Data Domain.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -48,6 +49,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 Necesita la siguiente información para configurar este recopilador de datos:
@@ -59,9 +61,10 @@ Necesita la siguiente información para configurar este recopilador de datos:
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -76,9 +79,10 @@ Necesita la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -90,6 +94,7 @@ Necesita la siguiente información para configurar este recopilador de datos:
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

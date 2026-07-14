@@ -21,6 +21,7 @@ IMPORTANT: Los ejemplos en estas secciones son sólo para fines explicativos y n
 
 
 
+[[creating-a-dashboard]]
 == Creación de un panel de control
 
 Puedes crear un nuevo panel en uno de dos lugares:
@@ -31,12 +32,14 @@ Puedes crear un nuevo panel en uno de dos lugares:
 
 
 
+[[see-it-in-action]]
 == Véalo en acción
 
 link:https://media.netapp.com/video-detail/5a293f3c-c655-5879-9133-1a32aaa140e8["Cree paneles de control potentes con NetApp (vídeo),window=read-later"]
 
 
 
+[[dashboard-controls]]
 == Controles del tablero
 
 La pantalla del Tablero tiene varios controles:
@@ -55,6 +58,7 @@ Los widgets se pueden redimensionar y reubicar en diferentes posiciones dentro d
 
 
 
+[[widget-types]]
 == Tipos de widgets
 
 Puede elegir entre los siguientes tipos de widgets:
@@ -107,6 +111,7 @@ Para obtener explicaciones más detalladas de estas y otras funciones del panel,
 
 
 
+[[setting-a-dashboard-as-your-home-page]]
 == Configurar un panel de control como página de inicio
 
 Puede elegir qué panel establecer como *página de inicio* de su inquilino utilizando cualquiera de los siguientes métodos:

@@ -20,6 +20,7 @@ Data Infrastructure Insights Workload Security se integra con ONTAP para recibir
 
 
 
+[[prerequisites]]
 == Prerrequisitos
 
 * Versión mínima de ONTAP : 9.13.0.
@@ -30,6 +31,7 @@ image:WS_Access_Denied_Enable_in_Collector.png["Habilitar acceso denegado en la 
 
 
 
+[[user-permissions-required]]
 == Se requieren permisos de usuario
 
 Si se agrega el recopilador de datos mediante credenciales de administración del clúster, no se necesitan nuevos permisos.
@@ -46,6 +48,7 @@ Lea más sobre cómo configurar otroslink:task_add_collector_svm.html["Permisos 
 
 
 
+[[access-denied-events]]
 == Eventos de acceso denegado
 
 Una vez que se hayan adquirido eventos del sistema ONTAP , la página de Análisis forense de seguridad de carga de trabajo mostrará eventos de acceso denegado.  Además de la información mostrada, puede ver los permisos de usuario faltantes para una operación en particular agregando la columna _Actividad deseada_ a la tabla desde el ícono de engranaje.

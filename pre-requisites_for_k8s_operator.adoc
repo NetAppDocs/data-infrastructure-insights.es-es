@@ -45,6 +45,7 @@ Lea esta información antes de instalar o actualizar ellink:task_config_telegraf
 |===
 
 
+[[important-things-to-note-before-you-start]]
 == Cosas importantes a tener en cuenta antes de empezar
 
 Si estás corriendo con un<<configuring-proxy-support,apoderado>> , tener una<<using-a-custom-or-private-docker-repository,repositorio personalizado>> , o están usando<<openshift-instructions,OpenShift>> , lea atentamente las siguientes secciones.
@@ -53,6 +54,7 @@ Lea también sobre<<permisos,Permisos>> .
 
 
 
+[[configuring-proxy-support]]
 === Configuración del soporte de proxy
 
 Hay dos lugares donde puedes usar un proxy en tu inquilino para instalar el operador de monitoreo de Kubernetes de NetApp .  Estos pueden ser los mismos sistemas proxy o sistemas separados:
@@ -107,6 +109,7 @@ agent:
 ----
 
 
+[[using-a-custom-or-private-docker-repository]]
 === Uso de un repositorio Docker personalizado o privado
 
 De forma predeterminada, el operador de monitoreo de Kubernetes de NetApp extraerá imágenes de contenedores del repositorio de Data Infrastructure Insights .  Si tiene un clúster de Kubernetes utilizado como destino para la supervisión, y ese clúster está configurado para extraer únicamente imágenes de contenedores desde un repositorio de Docker personalizado o privado o un registro de contenedores, debe configurar el acceso a los contenedores que necesita el operador de supervisión de Kubernetes de NetApp .
@@ -155,6 +158,7 @@ agent:
 ----
 
 
+[[openshift-instructions]]
 === Instrucciones de OpenShift
 
 Si está ejecutando OpenShift 4.6 o una versión superior, debe editar AgentConfiguration en _operator-config.yaml_ para habilitar la configuración _runPrivileged_:
@@ -167,6 +171,7 @@ Openshift puede implementar un nivel adicional de seguridad que puede bloquear e
 
 
 
+[[permissions]]
 === Permisos
 
 Si el clúster que está supervisando contiene recursos personalizados que no tienen un ClusterRole quelink:https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles["agregados para ver"] Será necesario otorgar manualmente al operador acceso a estos recursos para monitorearlos con registros de eventos.

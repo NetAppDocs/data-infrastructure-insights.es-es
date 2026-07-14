@@ -18,6 +18,7 @@ El proceso es similar para Linux y Windows.
 
 
 
+[[performing-a-new-au-install-on-linux]]
 == Realizar una NUEVA instalación de AU en Linux:
 
 . En Data Infrastructure Insights, cree un token de API.
@@ -103,6 +104,7 @@ En este punto, el software AU está instalado en el sistema y el usuario y grupo
 
 
 
+[[manually-installing-data-collectors]]
 == Instalación manual de recopiladores de datos
 
 Descargue la última versión de datasources.war utilizando la API /collector/patch/datasourceswar/latest:
@@ -146,6 +148,7 @@ Nota: Si planea realizar la instalación utilizando diferentes usuarios personal
 
 
 
+[[downloading-a-patch]]
 == Descargar un parche
 
 Descargue el parche usando la API /collector/patch/file/{version}:
@@ -189,6 +192,7 @@ Nota: Si planea realizar la instalación utilizando diferentes usuarios personal
 
 
 
+[[external-key-retrieval]]
 == Recuperación de clave externa
 
 Si proporciona un script de shell de UNIX, la unidad de adquisición puede ejecutarlo para recuperar la *clave privada* y la *clave pública* de su sistema de administración de claves.

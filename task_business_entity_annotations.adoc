@@ -18,6 +18,7 @@ Cree y administre entidades comerciales para su entorno corporativo utilizando e
 
 
 
+[[creating-a-business-entity]]
 == Creación de una entidad comercial
 
 Para crear una entidad comercial, haga lo siguiente:
@@ -39,6 +40,7 @@ NOTE: Los valores seleccionados deben componer una entidad comercial total únic
 
 
 
+[[applying-a-business-entity-to-an-object]]
 == Aplicación de una entidad comercial a un objeto
 
 La forma más sencilla de aplicar una entidad comercial a un objeto u objetos es mediante una consulta.
@@ -59,6 +61,7 @@ NOTE: Un objeto sólo puede tener una entidad comercial asociada a él.
 
 
 
+[[removing-a-business-entity-from-an-object]]
 == Eliminar una entidad comercial de un objeto
 
 Para eliminar una entidad comercial de un objeto u objetos, consulte y seleccione el/los objeto(s), haga clic en *Acciones masivas* y seleccione _Eliminar anotación_.  Seleccione la anotación Entidad comercial y haga clic en *Eliminar*.

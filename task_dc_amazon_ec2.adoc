@@ -14,6 +14,7 @@ Data Infrastructure Insights utiliza el recopilador de datos de Amazon EC2 para 
 
 
 
+[[requirements]]
 == Requisitos
 
 Para recopilar datos de los dispositivos Amazon EC2, debe tener la siguiente información:
@@ -33,11 +34,12 @@ Las claves de acceso constan de un ID de clave de acceso (por ejemplo, AKIAIOSFO
 
 
 
+[[configuration]]
 == Configuración
 
 Introduzca datos en los campos del recopilador de datos de acuerdo con la siguiente tabla:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -58,9 +60,10 @@ Introduzca datos en los campos del recopilador de datos de acuerdo con la siguie
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -87,6 +90,7 @@ Introduzca datos en los campos del recopilador de datos de acuerdo con la siguie
 |===
 
 
+[[iam-access-key]]
 == Clave de acceso de IAM
 
 Las claves de acceso son credenciales a largo plazo para un usuario de IAM o el usuario raíz de la cuenta de AWS.  Las claves de acceso se utilizan para firmar solicitudes programáticas a la AWS CLI o la API de AWS (directamente o mediante el AWS SDK).
@@ -95,6 +99,7 @@ Las claves de acceso constan de dos partes: un ID de clave de acceso y una clave
 
 
 
+[[iam-role]]
 == Rol de IAM
 
 Al utilizar la autenticación _IAM Role_ (a diferencia de la autenticación de clave de acceso IAM), debe asegurarse de que el rol que crea o especifica tenga los permisos adecuados necesarios para acceder a sus recursos.
@@ -111,6 +116,7 @@ Nota: La función IAM solo se puede usar cuando la unidad de adquisición se eje
 
 
 
+[[mapping-amazon-tags-to-data-infrastructure-insights-annotations]]
 == Asignación de etiquetas de Amazon a anotaciones de Data Infrastructure Insights
 
 El recopilador de datos de Amazon EC2 incluye una opción que le permite completar las anotaciones de Data Infrastructure Insights con etiquetas configuradas en EC2.  Las anotaciones deben tener exactamente el mismo nombre que las etiquetas EC2.  Data Infrastructure Insights siempre completará las anotaciones de tipo texto con el mismo nombre y hará el "mejor intento" por completar las anotaciones de otros tipos (numéricos, booleanos, etc.).  Si su anotación es de un tipo diferente y el recopilador de datos no logra completarla, puede ser necesario eliminar la anotación y volver a crearla como un tipo de texto.
@@ -119,12 +125,14 @@ Tenga en cuenta que AWS distingue entre mayúsculas y minúsculas, mientras que 
 
 
 
+[[include-extra-regions]]
 == Incluir regiones adicionales
 
 En la sección *Configuración avanzada* de AWS Data Collector, puede configurar el campo *Incluir regiones adicionales* para incluir regiones adicionales, separadas por coma o punto y coma.  De forma predeterminada, este campo está configurado en *_us-.*_*, que recopila datos en todas las regiones de AWS de EE. UU.  Para recopilar datos en _todas_ las regiones, configure este campo en *_.*_*.  Si el campo *Incluir regiones adicionales* está vacío, el recopilador de datos recopilará datos de los activos especificados en el campo *Región de AWS* como se especifica en la sección *Configuración*.
 
 
 
+[[collecting-from-aws-child-accounts]]
 == Recopilación de cuentas secundarias de AWS
 
 Data Infrastructure Insights admite la recopilación de cuentas secundarias para AWS dentro de un único recopilador de datos de AWS.  La configuración de esta colección se realiza en el entorno de AWS:
@@ -147,6 +155,7 @@ link:https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.h
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

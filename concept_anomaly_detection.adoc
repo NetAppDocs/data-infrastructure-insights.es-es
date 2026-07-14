@@ -19,12 +19,14 @@ image:anomaly_detection_expert_view.png["gráfico que muestra la anomalía detec
 
 
 
+[[what-is-anomaly-detection]]
 == ¿Qué es la detección de anomalías?
 
 Se produce una anomalía cuando el valor medio de una métrica está a varias desviaciones estándar de la media ponderada de esa métrica durante las semanas anteriores, y las semanas recientes tienen más peso que las semanas anteriores.  Data Infrastructure Insights proporciona la capacidad de monitorear datos y alertar cuando se detectan anomalías.  Tiene la opción de establecer los niveles de "sensibilidad" de detección.  Por ejemplo, una mayor sensibilidad sería cuando el valor medio tenga menos desviaciones estándar de la media, lo que provocaría que se generaran más alertas.  Por el contrario, menor sensibilidad = más desviaciones estándar de la media = menos alertas.
 
 
 
+[[anomaly-detection-monitoring-differs-from-threshold-monitoring]]
 === La monitorización de detección de anomalías se diferencia de la monitorización de umbrales.
 
 * La *supervisión basada en umbrales* funciona cuando tienes umbrales predefinidos para métricas específicas.  En otras palabras, cuando tienes una comprensión clara de lo que se espera (es decir, dentro de un rango normal).
@@ -39,6 +41,7 @@ image:ADMonitor_blurb.png["Los monitores de detección de anomalías son para cu
 
 
 
+[[when-would-i-need-anomaly-detection]]
 == ¿Cuándo necesitaría detección de anomalías?
 
 La monitorización de detección de anomalías puede proporcionar alertas útiles para muchas situaciones, incluidas las siguientes:
@@ -50,6 +53,7 @@ La monitorización de detección de anomalías puede proporcionar alertas útile
 
 
 
+[[creating-an-anomaly-detection-monitor]]
 == Creación de un monitor de detección de anomalías
 
 Para alertar sobre anomalías, cree un monitor navegando a *Observabilidad > Alertas > +Monitor*.  Seleccione _Monitor de detección de anomalías_ como tipo de monitor.
@@ -79,6 +83,7 @@ NOTE: Cuando se crea un monitor, DII analiza los datos existentes de la semana a
 
 
 
+[[viewing-the-anomalies]]
 == Viendo las anomalías
 
 En una página de inicio de alerta, las alertas que se activan cuando se detectan anomalías mostrarán una banda resaltada en el gráfico, desde el momento en que la métrica se disparó fuera de los límites previstos hasta cuando volvió a estar dentro de esos límites.

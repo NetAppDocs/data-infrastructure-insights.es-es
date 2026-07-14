@@ -18,6 +18,7 @@ La sección Rendimiento de una página de activos o un panel deslizable le permi
 
 
 
+[[using-the-performance-section]]
 == Uso de la sección Rendimiento
 
 El siguiente es un ejemplo de la sección Rendimiento en una página de activos de almacenamiento:
@@ -46,6 +47,7 @@ Muestra los activos que impactan o se ven impactados por otros recursos comparti
 
 
 
+[[alerts-in-performance-section]]
 == Alertas en la sección de Rendimiento
 
 Las alertas también se muestran en la sección Rendimiento de una página de destino de un activo, mostrando la hora y la duración de la alerta, así como la condición del monitor que la activó.  Pase el cursor sobre un indicador de alerta para ver detalles sobre la alerta.
@@ -54,6 +56,7 @@ image:asset_page_alert_section.png["Alertas en la sección de rendimiento"]
 
 
 
+[[performance-metric-definitions]]
 == Definiciones de métricas de rendimiento
 
 La sección Rendimiento de una página de activo muestra varias métricas según el período de tiempo seleccionado para el activo.  Cada métrica se muestra en su propio gráfico de rendimiento.  Puede agregar o eliminar métricas y activos relacionados de los gráficos según los datos que desee ver.  Las métricas que puede elegir variarán según el tipo de activo.
@@ -164,6 +167,7 @@ La sección Rendimiento de una página de activo muestra varias métricas según
 |===
 
 
+[[using-the-performance-section]]
 == Uso de la sección Rendimiento
 
 La sección Rendimiento le permite ver gráficos de rendimiento de un activo en función de cualquier cantidad de métricas aplicables durante un período de tiempo elegido, y agregar activos relacionados para comparar y contrastar el rendimiento de los activos y los activos relacionados durante diferentes períodos de tiempo.

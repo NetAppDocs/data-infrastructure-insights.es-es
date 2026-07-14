@@ -20,6 +20,7 @@ image:CloudSecureAlertsListPage.png["Lista de alertas"]
 
 
 
+[[alert]]
 == Alerta
 
 La lista de alertas muestra un gráfico que muestra el número total de posibles ataques y/o advertencias que se han generado en el rango de tiempo seleccionado, seguido de una lista de los ataques y/o advertencias que ocurrieron en ese rango de tiempo.  Puede cambiar el rango de tiempo ajustando los controles deslizantes de hora de inicio y hora de finalización en el gráfico.
@@ -61,6 +62,7 @@ image:CloudSecureChangeAlertStatus.png["Cambiar el estado de alerta"]
 
 
 
+[[filter-options]]
 == Opciones de filtro
 
 Puede filtrar las alertas por lo siguiente:
@@ -73,12 +75,14 @@ Puede filtrar las alertas por lo siguiente:
 
 
 
+[[the-alert-details-page]]
 == La página de detalles de la alerta
 
 Puede hacer clic en un enlace de alerta en la página de lista de alertas para abrir una página de detalles de la alerta. Los detalles de la alerta pueden variar según el tipo de ataque o alerta. Por ejemplo, una página de detalles de un ataque de manipulación de archivos puede mostrar la siguiente información:
 
 
 
+[[summary-section]]
 === Sección de resumen:
 
 * Tipo de ataque (manipulación de archivos, sabotaje) e ID de alerta (asignado por Workload Security)
@@ -89,6 +93,7 @@ Puede hacer clic en un enlace de alerta en la página de lista de alertas para a
 
 
 
+[[attack-results-section]]
 === Sección de resultados del ataque:
 
 * Recuento de volúmenes y archivos afectados
@@ -98,6 +103,7 @@ Puede hacer clic en un enlace de alerta en la página de lista de alertas para a
 
 
 
+[[related-users-section]]
 === Sección de Usuarios Relacionados:
 
 Esta sección muestra detalles sobre el usuario involucrado en el ataque potencial, incluido un gráfico de la actividad principal del usuario.
@@ -108,6 +114,7 @@ Página de detalles (este ejemplo muestra un posible ataque de manipulación de 
 
 
 
+[[take-a-snapshot-action]]
 == _Tomar una instantánea_ Acción
 
 Workload Security protege sus datos tomando automáticamente una instantánea cuando se detecta actividad maliciosa, lo que garantiza que sus datos estén respaldados de forma segura.
@@ -120,18 +127,21 @@ Instantánea manual:image:AlertActionsExample.png["Pantalla de acción de alerta
 
 
 
+[[alert-notifications]]
 == Notificaciones de alerta
 
 Las notificaciones por correo electrónico de alertas se envían a una lista de destinatarios de alertas para cada acción relacionada con la alerta.  Para configurar los destinatarios de alertas, haga clic en *Admin > Notificaciones* e ingrese una dirección de correo electrónico para cada destinatario.
 
 
 
+[[retention-policy]]
 == Política de retención
 
 Las alertas y advertencias se conservan durante 13 meses.  Las alertas y advertencias que tengan más de 13 meses de antigüedad se eliminarán.  Si se elimina el entorno de seguridad de carga de trabajo, también se eliminan todos los datos asociados con el entorno.
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 |===

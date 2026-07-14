@@ -18,6 +18,7 @@ Determina el tamaño óptimo de la máquina del Agent midiendo las tasas de even
 
 
 
+[[requirements]]
 == Requisitos:
 
 * IP del clúster
@@ -80,6 +81,7 @@ Ver ellink:concept_cs_agent_requirements.html["Requisitos del agente"] Página p
 
 
 
+[[example]]
 == Ejemplo
 
 Digamos que tenemos tres SVMS que generan tasas de eventos de 100, 200 y 300 eventos por segundo, respectivamente.
@@ -141,6 +143,7 @@ Overall svm audit_svm is generating 300 events/sec
  [root@ci-cs-data agent]#
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 |===

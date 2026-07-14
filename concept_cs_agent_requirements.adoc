@@ -47,6 +47,7 @@ Tenga en cuenta: El agente de seguridad de carga de trabajo se puede instalar en
 |===
 
 
+[[additional-recommendations]]
 == Recomendaciones adicionales
 
 * Se recomienda encarecidamente sincronizar la hora tanto en el sistema ONTAP como en la máquina del Agente mediante el Protocolo de tiempo de red (NTP) o el Protocolo simple de tiempo de red (SNTP).
@@ -54,6 +55,7 @@ Tenga en cuenta: El agente de seguridad de carga de trabajo se puede instalar en
 
 
 
+[[cloud-network-access-rules]]
 == Reglas de acceso a la red en la nube
 
 Para entornos de seguridad de carga de trabajo con sede en EE. UU.:
@@ -94,6 +96,7 @@ Para entornos de seguridad de carga de trabajo basados en *APAC*:
 |===
 
 
+[[in-network-rules]]
 == Reglas dentro de la red
 
 [cols="5*"]
@@ -117,6 +120,7 @@ Para entornos de seguridad de carga de trabajo basados en *APAC*:
 |===
 
 
+[[system-sizing]]
 == Dimensionamiento del sistema
 
 Ver ellink:concept_cs_event_rate_checker.html["Comprobador de tasa de eventos"] Documentación para obtener información sobre el tamaño.

@@ -18,6 +18,7 @@ image:Kubernetes_List_Page_new.png["Página de lista de Kubernetes"]
 
 
 
+[[cluster-list]]
 === Lista de clústeres
 
 La lista de clústeres muestra la siguiente información para cada clúster de su inquilino:
@@ -32,6 +33,7 @@ La lista de clústeres muestra la siguiente información para cada clúster de s
 
 
 
+[[refining-the-filter]]
 == Refinando el filtro
 
 Cuando esté filtrando, a medida que comience a escribir se le presentará la opción de crear un *filtro comodín* basado en el texto actual.  Al seleccionar esta opción se devolverán todos los resultados que coincidan con la expresión comodín.  También puede crear *expresiones* usando NOT o AND, o puede seleccionar la opción "Ninguno" para filtrar valores nulos en el campo.

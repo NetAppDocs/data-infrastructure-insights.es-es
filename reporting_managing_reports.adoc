@@ -20,6 +20,7 @@ IMPORTANT: Antes de realizar cambios en los permisos de informes o en la segurid
 
 
 
+[[customizing-a-reports-output-format-and-delivery]]
 == Personalizar el formato de salida y la entrega de un informe
 
 Puede personalizar el formato y el método de entrega de los informes.
@@ -41,6 +42,7 @@ image:Reporting_Output_and_Delivery.png["Salida y entrega de informes"]
 
 
 
+[[copying-a-report-to-the-clipboard]]
 == Copiar un informe al portapapeles
 
 Utilice este proceso para copiar un informe al portapapeles.
@@ -59,6 +61,7 @@ image:Reporting_Copy_To_Clipboard.png["Copiar un informe al portapapeles"]
 
 
 
+[[opening-reports-from-the-clipboard]]
 == Abrir informes desde el portapapeles
 
 Puede abrir una especificación de informe que se haya copiado previamente al portapapeles.
@@ -80,12 +83,14 @@ image:Reporting_Open_From_Clipboard.png["Abrir un informe desde el portapapeles"
 
 
 
+[[editing-an-existing-report]]
 == Editar un informe existente
 
 Tenga en cuenta que editar archivos en su ubicación predeterminada implica el riesgo de que dichos informes se sobrescriban en la próxima actualización del catálogo de informes.  Se recomienda guardar el informe editado con un nombre nuevo o almacenarlo en una ubicación que no sea la predeterminada.
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Aquí encontrará sugerencias para solucionar problemas con los informes.

@@ -15,10 +15,12 @@ Data Infrastructure Insights incluye una serie de monitores definidos por el sis
 
 NOTE: Muchos monitores del sistema están en estado _Pausado_ de forma predeterminada.  Puede habilitar un monitor del sistema seleccionando la opción _Reanudar_ para el monitor.  Asegúrese de que _Recopilación avanzada de datos de contador_ y _Habilitar recopilación de registros de ONTAP EMS_ estén habilitados en el Recopilador de datos.  Estas opciones se pueden encontrar en el Recopilador de datos de ONTAP en _Configuración avanzada_:image:Enable_Log_Monitor_Collection.png["Habilitación de la recopilación avanzada de contadores y registros EMS para ONTAP"]
 
+[[top]]
 índice:[]
 
 
 
+[[monitor-descriptions]]
 == Descripciones de los monitores
 
 Los monitores definidos por el sistema se componen de métricas y condiciones predefinidas, así como descripciones predeterminadas y acciones correctivas, que no se pueden modificar.  _Puede_ modificar la lista de destinatarios de notificaciones para los monitores definidos por el sistema.  Para ver las métricas, las condiciones, la descripción y las acciones correctivas, o para modificar la lista de destinatarios, abra un grupo de monitores definido por el sistema y haga clic en el nombre del monitor en la lista.
@@ -36,6 +38,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[metric-monitors]]
 === Monitores métricos
 
 |===
@@ -122,6 +125,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[log-monitors]]
 === Monitores de registro
 
 |===
@@ -292,6 +296,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[anti-ransomware-log-monitors]]
 === Monitores de registros anti-ransomware
 
 |===
@@ -330,6 +335,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[fsx-for-netapp-ontap-monitors]]
 === FSx para monitores NetApp ONTAP
 
 |===
@@ -359,6 +365,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[k8s-monitors]]
 === Monitores K8s
 
 |===
@@ -484,6 +491,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[change-log-monitors]]
 === Monitores de registro de cambios
 
 |===
@@ -516,6 +524,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[data-collection-monitors]]
 === Monitores de recopilación de datos
 
 |===
@@ -536,6 +545,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[security-monitors]]
 === Monitores de seguridad
 
 |===
@@ -592,6 +602,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[data-protection-monitors]]
 === Monitores de protección de datos
 
 |===
@@ -609,6 +620,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[cloud-volume-cvo-monitors]]
 === Monitores de volumen de nube (CVO)
 
 |===
@@ -689,6 +701,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[snapmirror-for-business-continuity-smbc-mediator-log-monitors]]
 === Monitores de registro del mediador de SnapMirror para la continuidad empresarial (SMBC)
 
 |===
@@ -733,6 +746,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[additional-power-heartbeat-and-miscellaneous-system-monitors]]
 === Monitores adicionales de energía, frecuencia cardíaca y otros sistemas
 
 |===
@@ -808,6 +822,7 @@ A continuación se muestran los monitores del sistema incluidos actualmente con 
 
 
 
+[[more-information]]
 == Más información
 
 * link:task_view_and_manage_alerts.html["Visualización y desestimación de alertas"]

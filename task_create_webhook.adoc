@@ -47,6 +47,7 @@ La instancia del canal webhook se compone de los siguientes elementos:
 |===
 
 
+[[creating-a-webhook]]
 == Creación de un webhook
 
 Para crear un webhook de Data Infrastructure Insights , vaya a *Admin > Notificaciones* y seleccione la pestaña *Webhooks*.
@@ -65,6 +66,7 @@ image:Webhook_Default_Parameters.png["Parámetros de webhook predeterminados de 
 
 
 
+[[parameters-what-are-they-and-how-do-i-use-them]]
 === Parámetros: ¿Qué son y cómo los uso?
 
 Los parámetros de alerta son valores dinámicos que se completan por cada alerta.  Por ejemplo, el parámetro _%%TriggeredOn%%_ se reemplazará con el objeto en el que se activó la alerta.
@@ -75,18 +77,21 @@ Tenga en cuenta que en esta sección, las sustituciones _no_ se realizan al hace
 
 
 
+[[custom-parameters-and-secrets]]
 === Parámetros y secretos personalizados
 
 En esta sección puedes agregar cualquier parámetro personalizado y/o secretos que desees.  Por razones de seguridad, si se define un secreto, solo el creador del webhook puede modificar este canal del webhook.  Es de sólo lectura para otros.  Puedes usar secretos en URL/encabezados como _%%<secret_name>%%_.
 
 
 
+[[webhooks-list-page]]
 === Página de lista de webhooks
 
 En la página de lista de Webhooks, se muestran los campos Nombre, Creado por, Creado el, Estado, Seguro y Último informe.
 
 
 
+[[choosing-webhook-notification-in-a-monitor]]
 == Cómo elegir la notificación de webhook en un monitor
 
 Para elegir la notificación de webhook en unlink:task_create_monitor.html["supervisión"] , vaya a *Alertas > Administrar monitores* y seleccione el monitor deseado o agregue un nuevo monitor.  En la sección _Configurar notificaciones del equipo_, elija _Webhook_ como método de entrega.  Seleccione los niveles de alerta (Crítico, Advertencia, Resuelto) y luego elija el webhook deseado.
@@ -95,6 +100,7 @@ image:Webhook_Monitor_Notify.png["Notificación del monitor de webhook"]
 
 
 
+[[webhook-examples]]
 == Ejemplos de webhooks:
 
 Webhooks paralink:task_webhook_example_slack.html["Flojo"] Webhooks paralink:task_webhook_example_pagerduty.html["PagerDuty"] Webhooks paralink:task_webhook_example_teams.html["Equipos"] Webhooks paralink:task_webhook_example_discord.html["Discordia"]

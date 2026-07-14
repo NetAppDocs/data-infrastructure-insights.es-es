@@ -16,6 +16,7 @@ Véase tambiénlink:task_troubleshooting_linux_acquisition_unit_problems.html["S
 
 
 
+[[login-issues]]
 == Problemas de inicio de sesión
 
 |===
@@ -44,6 +45,7 @@ Véase tambiénlink:task_troubleshooting_linux_acquisition_unit_problems.html["S
 |===
 
 
+[[other-issues]]
 == Otros problemas
 
 |===
@@ -62,6 +64,7 @@ Véase tambiénlink:task_troubleshooting_linux_acquisition_unit_problems.html["S
 |===
 
 
+[[resources]]
 == Recursos
 
 Se pueden encontrar consejos adicionales para la solución de problemas enlink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["Base de conocimientos de NetApp"] (se requiere iniciar sesión para obtener soporte).

@@ -16,12 +16,14 @@ image:Kubernetes_Detail_Page_new.png["Página de detalles del clúster"]
 
 
 
+[[namespace-node-and-pod-counts]]
 == Número de espacios de nombres, nodos y pods
 
 Los recuentos en la parte superior de la página muestran la cantidad total de espacios de nombres, nodos y pods en el clúster, así como la cantidad de popds que actualmente están en alerta y pendientes.
 
 
 
+[[shared-resources-and-saturation]]
 == Recursos compartidos y saturación
 
 En la parte superior derecha de la página de detalles se encuentra la saturación del clúster como porcentaje actual, así como un gráfico que muestra la tendencia reciente a lo largo del tiempo.  La saturación del clúster es el nivel más alto de saturación de CPU, memoria o almacenamiento en cualquier momento.
@@ -32,6 +34,7 @@ Los dispositivos con mayor uso se muestran en una tabla en la parte inferior.  H
 
 
 
+[[namespaces]]
 == Espacios de nombres
 
 La pestaña Espacios de nombres muestra una lista de todos los espacios de nombres en su entorno de Kubernetes, mostrando el uso de CPU y memoria, así como un recuento de cargas de trabajo en cada espacio de nombres.  Haga clic en los enlaces de Nombre para explorar cada espacio de nombres.
@@ -40,6 +43,7 @@ image:Kubernetes_Namespace_tab_new.png["lista de espacios de nombres actuales en
 
 
 
+[[workloads]]
 == Cargas de trabajo
 
 De manera similar, la pestaña Cargas de trabajo muestra una lista de las cargas de trabajo en cada espacio de nombres, mostrando nuevamente el uso de CPU y memoria.  Al hacer clic en los vínculos del espacio de nombres se accede a cada uno de ellos.
@@ -48,6 +52,7 @@ image:Kubernetes_Workloads_tab_new.png["lista de espacios de nombres actuales en
 
 
 
+[[the-cluster-wheel]]
 == La "rueda" del clúster
 
 image:Kubernetes_Wheel_Section.png["Rueda de racimo"]
@@ -74,6 +79,7 @@ image:Kubernetes_Capacity_Info.png["Capacidad y asignación de nodos"]
 
 
 
+[[a-note-about-the-gauges]]
 == Una nota sobre los indicadores
 
 Los indicadores de memoria y CPU muestran tres colores, ya que muestran lo _usado_ en relación con la _capacidad asignable_ y la _capacidad total_.

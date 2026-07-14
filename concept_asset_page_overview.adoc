@@ -22,6 +22,7 @@ image:lp_new_design.png["nuevo diseño de LP"]
 
 
 
+[[summary-section]]
 == Sección de resumen
 
 En la parte superior de una página de destino se encuentra la sección Resumen expandible, que incluye varios gráficos de líneas que muestran tendencias de datos recientes sobre aspectos como el rendimiento o la latencia, así como información y atributos de los objetos y cualquier monitor que pueda estar alertando sobre el objeto.
@@ -30,6 +31,7 @@ La sección Resumen también muestra y le permite cambiar las anotaciones asigna
 
 
 
+[[performance-section]]
 == Sección de Actuación
 
 La sección Rendimiento muestra datos de rendimiento del objeto.  Seleccione _Configuración_ para agregar gráficos adicionales a la pantalla, como Rendimiento o Capacidad, o seleccione recursos correlacionados o contribuyentes para graficar sus datos junto con los del objeto.  Los dispositivos que potencialmente puedan causar contención también aparecerán en la sección Rendimiento.  Los datos de los gráficos se actualizan automáticamente a medida que los recopiladores de datos realizan una encuesta y se adquieren datos actualizados.
@@ -62,12 +64,14 @@ Muestra los activos que impactan o se ven impactados por otros recursos comparti
 
 
 
+[[additional-resources-section]]
 == Sección de recursos adicionales
 
 La sección Recursos adicionales muestra tablas de datos de recursos relacionados con el tipo de objeto actual.  Puede expandir y contraer estas tablas para centrarse en recursos específicos.  Seleccione el ícono de engranaje para mostrar temporalmente métricas o atributos adicionales en una tabla.
 
 
 
+[[add-custom-widgets]]
 == Agregar widgets personalizados
 
 Puede agregar sus propios widgets a cualquier página de activos.  Los widgets que agregue aparecerán en las páginas de activos para todos los objetos de ese tipo.  Por ejemplo, agregar un widget personalizado a una página de activos de almacenamiento mostrará ese widget en las páginas de activos de todos los activos de almacenamiento.
@@ -76,6 +80,7 @@ Los widgets personalizados se colocan en la parte inferior de una página de des
 
 
 
+[[types-of-asset-pages]]
 == Tipos de páginas de activos
 
 Data Infrastructure Insights proporciona páginas de activos para los siguientes activos:
@@ -102,6 +107,7 @@ Data Infrastructure Insights proporciona páginas de activos para los siguientes
 
 
 
+[[changing-the-time-range-of-displayed-data]]
 == Cambiar el rango de tiempo de los datos mostrados
 
 De forma predeterminada, una página de activos muestra las últimas 3 horas de datos; sin embargo, puede cambiar el segmento de tiempo de los datos mostrados mediante una opción que se encuentra en cada página de activos, independientemente del tipo de activo.  Para cambiar el rango de tiempo, haga clic en el rango de tiempo mostrado en la barra superior y elija entre los siguientes segmentos de tiempo:
@@ -128,6 +134,7 @@ La información de la página se actualiza automáticamente según el rango de t
 
 
 
+[[performance-metric-definitions]]
 == Definiciones de métricas de rendimiento
 
 La sección Rendimiento puede mostrar varias métricas según el período de tiempo seleccionado para el activo.  Cada métrica se muestra en su propio gráfico de rendimiento.  Puede agregar o eliminar métricas y activos relacionados de los gráficos según los datos que desee ver; las métricas que puede elegir varían según el tipo de activo.

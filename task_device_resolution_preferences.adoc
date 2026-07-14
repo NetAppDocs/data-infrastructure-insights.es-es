@@ -14,6 +14,7 @@ La pestaña de preferencias de resolución del dispositivo le permite crear un p
 
 
 
+[[auto-resolution-schedule]]
 == Programación de resolución automática
 
 Un programa de resolución automática puede especificar cuándo se ejecuta la resolución automática del dispositivo:
@@ -39,6 +40,7 @@ Si especifica _Manualmente_, se deshabilita la resolución automática nocturna 
 
 
 
+[[dns-processing-options]]
 == Opciones de procesamiento de DNS
 
 Las opciones de procesamiento de DNS le permiten seleccionar las siguientes funciones:
@@ -50,6 +52,7 @@ Las opciones de procesamiento de DNS le permiten seleccionar las siguientes func
 
 
 
+[[including-or-excluding-specific-storage-and-tape-vendors]]
 === Incluir o excluir proveedores específicos de almacenamiento y cintas
 
 Puede incluir o excluir proveedores de almacenamiento y cintas específicos para una resolución automática.  Es posible que desee excluir proveedores específicos si sabe, por ejemplo, que un host específico se convertirá en un host heredado y debería excluirse de su nuevo entorno.  También puedes volver a agregar proveedores que hayas excluido anteriormente pero que ya no quieras excluir.

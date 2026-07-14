@@ -25,6 +25,7 @@ Seleccione su primer recopilador de datos entre los proveedores y modelos compat
 
 
 
+[[install-an-acquisition-unit]]
 == Instalar una unidad de adquisición
 
 Si seleccionó un recopilador de datos de _Infraestructura_, se requiere una Unidad de adquisición para inyectar datos en Data Infrastructure Insights.  Necesitará descargar e instalar el software de la Unidad de Adquisición en un servidor o máquina virtual en el centro de datos desde el cual realizará la recopilación.  Se puede utilizar una única unidad de adquisición para varios recopiladores de datos.
@@ -40,6 +41,7 @@ Puede configurar unidades de adquisición adicionales más adelante si es necesa
 
 
 
+[[configure-the-data-collector-infrastructure]]
 == Configurar el recopilador de datos - Infraestructura
 
 Para los recopiladores de datos de _Infraestructura_, se le solicitará que complete los campos del recopilador de datos presentados:
@@ -54,10 +56,12 @@ Podrás configurar recopiladores de datos adicionales más adelante.
 
 
 
+[[configure-the-data-collector-operating-systems-and-services]]
 == Configurar el recopilador de datos: sistemas operativos y servicios
 
 
 
+[[operating-system]]
 === Sistema operativo:
 
 Para los recopiladores de datos del _Sistema operativo_, elija una plataforma (Linux, Windows) para instalar un Agente de Data Infrastructure Insights .  Debe tener al menos un agente para recopilar datos de los Servicios.  El agente también recopila datos del propio host para utilizarlos en Data Infrastructure Insights.  Estos datos se clasifican como datos de "Nodo" en widgets, etc.
@@ -68,6 +72,7 @@ Para los recopiladores de datos del _Sistema operativo_, elija una plataforma (L
 
 
 
+[[services]]
 === Servicios:
 
 Para los recopiladores de datos de _Servicio_, haga clic en un mosaico para abrir la página de instrucciones para ese servicio.
@@ -81,6 +86,7 @@ Para los recopiladores de datos de _Servicio_, haga clic en un mosaico para abri
 
 
 
+[[add-dashboards]]
 == Agregar paneles
 
 Dependiendo del tipo de recopilador de datos inicial que haya seleccionado para configurar (almacenamiento, conmutador, etc.), se importarán uno o más paneles relevantes.  Por ejemplo, si configuró un recopilador de datos de almacenamiento, se importará un conjunto de paneles relacionados con el almacenamiento y uno se configurará como su página de inicio de Data Infrastructure Insights .  Puede cambiar la página de inicio desde la lista *Paneles > Mostrar todos los paneles*.
@@ -89,6 +95,7 @@ Puede importar paneles adicionales más tarde olink:concept_dashboards_overview.
 
 
 
+[[thats-all-there-is-to-it]]
 == Eso es todo lo que hay que hacer
 
 Después de completar el proceso de configuración inicial, su entorno comenzará a recopilar datos.
@@ -102,6 +109,7 @@ Si se interrumpe el proceso de configuración inicial (por ejemplo, si cierra la
 
 
 
+[[useful-definitions]]
 == Definiciones útiles
 
 Las siguientes definiciones pueden ser útiles cuando se habla de recopiladores de datos o funciones de Data Infrastructure Insights :

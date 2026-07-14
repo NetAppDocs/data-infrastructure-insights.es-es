@@ -14,11 +14,12 @@ El recopilador de datos Infinidat InfiniBox (HTTP) se utiliza para recopilar inf
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos Infinidat InfiniBox.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -39,6 +40,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 |===
 
 
+[[requirements]]
 == Requisitos
 
 Los siguientes son requisitos al configurar este recopilador de datos.
@@ -50,9 +52,10 @@ Los siguientes son requisitos al configurar este recopilador de datos.
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -67,9 +70,10 @@ Los siguientes son requisitos al configurar este recopilador de datos.
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -81,6 +85,7 @@ Los siguientes son requisitos al configurar este recopilador de datos.
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

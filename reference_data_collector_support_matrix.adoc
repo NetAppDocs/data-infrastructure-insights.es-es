@@ -18,6 +18,7 @@ La Matriz de soporte del recopilador de datos proporciona una referencia para lo
 
 
 
+[[hp-enterprise-3par-alletra-9000-primera-storeserv-storage]]
 == Almacenamiento HP Enterprise 3PAR / Alletra 9000 / Primera StoreServ
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -828,6 +829,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[amazon-aws-ec2]]
 == Amazon AWS EC2
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:
@@ -1102,6 +1104,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[amazon-aws-s3]]
 == Amazon AWS S3
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -1265,6 +1268,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[microsoft-azure-netapp-files]]
 == Azure NetApp Files
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -1587,6 +1591,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[brocade-fibre-channel-switches]]
 == Conmutadores de canal de fibra Brocade
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -2162,6 +2167,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[brocade-network-advisor-http]]
 == Asesor de red Brocade HTTP
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -2418,6 +2424,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[brocade-fos-rest]]
 == Brocade FOS REST
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -2898,6 +2905,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[cisco-mds-nexus-fabric-switches]]
 == Conmutadores de estructura Cisco MDS y Nexus
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -3412,6 +3420,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[cohesity]]
 == Cohesión
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -3683,6 +3692,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-celerra-ssh]]
 == EMC Celerra (SSH)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -3963,6 +3973,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-clariion-navicli]]
 == EMC CLARiiON (NaviCLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -4576,6 +4587,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-data-domain-ssh]]
 == Dominio de datos de EMC (SSH)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -4929,6 +4941,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-ecs]]
 == Sistema de control electrónico de compatibilidad electromagnética (ECS)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -5260,6 +5273,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[dell-emc-isilon-powerscale-rest]]
 == Resto de Dell EMC Isilon y PowerScale
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -5982,6 +5996,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[dell-emc-isilon-powerscale-cli]]
 == Dell EMC Isilon/PowerScale (CLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -6549,6 +6564,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-powerstore-rest]]
 == Resto de EMC PowerStore
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -7184,6 +7200,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-recoverpoint-http]]
 == Punto de recuperación de EMC (HTTP)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -7311,6 +7328,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-scaleio-powerflex-rest]]
 == EMC ScaleIO y PowerFlex REST
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -7525,6 +7543,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-symmetrix-cli]]
 == Interfaz de línea de comandos de Symmetrix de EMC
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -8388,6 +8407,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[dell-unisphere-rest]]
 == Resto de Dell Unisphere
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -9111,6 +9131,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-vnx-ssh]]
 == EMC VNX (SSH)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -9796,6 +9817,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-vnxe-unity-unisphere-cli]]
 == EMC VNXe y Unity Unisphere (CLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -10390,6 +10412,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-vplex]]
 == EMC VPLEX
 
 |===
@@ -10469,6 +10492,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[emc-xtremio-http]]
 == EMC XtremIO (HTTP)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -11026,6 +11050,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-e-series]]
 == Serie E de NetApp
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -11672,6 +11697,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[pure-storage-flashblade-rest]]
 == FlashBlade REST de Pure Storage
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -12045,6 +12071,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[google-cloud-compute]]
 == Computación en la nube de Google
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:
@@ -12277,6 +12304,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[hds-hcp-https]]
 == HDS HCP (HTTPS)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -12461,6 +12489,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[hicommand-device-manager]]
 == Administrador de dispositivos HiCommand
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -13135,6 +13164,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[hitachi-ops-center]]
 == Centro de operaciones de Hitachi
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -13822,6 +13852,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[hds-hnas-cli]]
 == HDS HNAS (CLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -14108,6 +14139,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[hpe-nimble-alletra-6000-storage]]
 == Almacenamiento HPE Nimble/Alletra 6000
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -14598,6 +14630,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[huawei-oceanstor-resthttps]]
 == Huawei OceanStor (REST/HTTPS)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -15322,6 +15355,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[ibm-cleversafe]]
 == IBM Cleversafe
 
 |===
@@ -15512,6 +15546,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[ibm-ds-8k-dscli]]
 == IBM DS 8K (DSCLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -16011,6 +16046,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[ibm-powervm-ssh]]
 == IBM PowerVM (SSH)
 
 |===
@@ -16192,6 +16228,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[ibm-svc-cli]]
 == IBM SVC (CLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -16939,6 +16976,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[ibm-xiv-a9000-xivcli]]
 == IBM XIV y A9000 (XIVCLI)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -17171,6 +17209,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[infinidat-infinibox-http]]
 == Infinidat Infinibox (HTTP)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -17520,6 +17559,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[microsoft-azure-compute]]
 == Computación de Microsoft Azure
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:
@@ -17776,6 +17816,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[microsoft-hyper-v]]
 == Microsoft Hyper-V
 
 |===
@@ -18257,6 +18298,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-7-mode]]
 == Modo NetApp 7
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -19239,6 +19281,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-e-series-rest]]
 == REST de la serie E de NetApp
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -19609,6 +19652,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[amazon-fsx-for-netapp-ontap]]
 == Amazon FSx for NetApp ONTAP
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -20534,6 +20578,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-clustered-data-ontap-8-1-1]]
 == NetApp Clustered Data ONTAP 8.1.1+
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -22289,6 +22334,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[asa]]
 == ASA
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -22917,6 +22963,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-ontap-rest]]
 == Resto de NetApp ONTAP
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -23775,6 +23822,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-solidfire-8-1]]
 == NetApp SolidFire 8.1+
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -24520,6 +24568,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-storagegrid-https]]
 == StorageGRID de NetApp (HTTPS)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -24903,6 +24952,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[nutanix-storage-rest]]
 == Almacenamiento Nutanix (REST)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -25414,6 +25464,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[oracle-zfs-https]]
 == Oracle ZFS (HTTPS)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -25964,6 +26015,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[pure-storage-flasharray-http]]
 == FlashArray de almacenamiento puro (HTTP)
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -26573,6 +26625,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[red-hat-rhv-rest]]
 == Red Hat RHV (REST)
 
 |===
@@ -26817,6 +26870,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[rubrik-storage]]
 == Almacenamiento de Rúbrica
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de firmware:
@@ -27159,6 +27213,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[vast-datastore]]
 == Almacén de datos VAST
 
 Modelos y versiones compatibles con este recopilador de datos:
@@ -27571,6 +27626,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[netapp-hci-virtual-center]]
 == Centro virtual NetApp HCI
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:
@@ -28119,6 +28175,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[vmware-cloud-on-aws]]
 == VMware Cloud en AWS
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:
@@ -28461,6 +28518,7 @@ API de gestión utilizadas por este recopilador de datos:
 |===
 
 
+[[vmware-vsphere-web-services]]
 == VMware vSphere (servicios web)
 
 Modelos y versiones compatibles con este recopilador de datos: Versiones de API:

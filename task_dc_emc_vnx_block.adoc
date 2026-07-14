@@ -14,11 +14,12 @@ Data Infrastructure Insights utiliza el recopilador de datos Dell EMC VNX Block 
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de almacenamiento en bloque EMC VNX.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -41,6 +42,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 Para poder recopilar datos se deben cumplir los siguientes requisitos:
@@ -56,15 +58,17 @@ Para poder recopilar datos se deben cumplir los siguientes requisitos:
 
 
 
+[[navisphere-command-line-interface-syntax]]
 == Sintaxis de la interfaz de línea de comandos de NaviSphere
 
 naviseccli.exe -h <dirección IP> -user <usuario> -password <contraseña> -scope <alcance, use 0 para alcance global> -port <use 443 por defecto> comando
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -82,9 +86,10 @@ naviseccli.exe -h <dirección IP> -user <usuario> -password <contraseña> -scope
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -99,12 +104,14 @@ naviseccli.exe -h <dirección IP> -user <usuario> -password <contraseña> -scope
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
 [cols="2a, 2a"]

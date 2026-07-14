@@ -14,9 +14,10 @@ Este recopilador basado en API REST adquirirá un clúster Cohesity, descubriend
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -31,9 +32,10 @@ Este recopilador basado en API REST adquirirá un clúster Cohesity, descubriend
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -48,6 +50,7 @@ Este recopilador basado en API REST adquirirá un clúster Cohesity, descubriend
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

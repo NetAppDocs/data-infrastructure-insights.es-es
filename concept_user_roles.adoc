@@ -14,6 +14,7 @@ Data Infrastructure Insights proporciona hasta cuatro roles de cuenta de usuario
 
 
 
+[[permission-levels]]
 == Niveles de permiso
 
 Utilice una cuenta que tenga privilegios de administrador para crear o modificar cuentas de usuario.  A cada cuenta de usuario se le asigna un rol para cada función de Data Infrastructure Insights de los siguientes niveles de permiso.
@@ -37,6 +38,7 @@ La mejor práctica es limitar la cantidad de usuarios con permisos de administra
 
 
 
+[[data-infrastructure-insights-permissions-by-user-role]]
 === Permisos de Data Infrastructure Insights por rol de usuario
 
 La siguiente tabla muestra los permisos de Data Infrastructure Insights otorgados a cada rol de usuario.
@@ -122,6 +124,7 @@ La siguiente tabla muestra los permisos de Data Infrastructure Insights otorgado
 
 
 
+[[creating-accounts-by-inviting-users]]
 == Creación de cuentas invitando a usuarios
 
 La creación de una nueva cuenta de usuario se logra a través de la NetApp Console.  Un usuario puede responder a la invitación enviada por correo electrónico, pero si el usuario no tiene una cuenta en Console, deberá registrarse para poder aceptar la invitación.
@@ -164,6 +167,7 @@ La invitación se envía al usuario.  Los usuarios tendrán 14 días para acepta
 
 
 
+[[modifying-an-existing-users-role]]
 == Modificar el rol de un usuario existente
 
 Para modificar el rol de un usuario existente, incluso agregarlo como *propietario de cuenta secundaria*, siga estos pasos.
@@ -176,6 +180,7 @@ Para modificar el rol de un usuario existente, incluso agregarlo como *propietar
 
 
 
+[[to-assign-a-secondary-account-owner]]
 === Para asignar un propietario de cuenta secundaria
 
 Debe iniciar sesión como propietario de una cuenta de Observability para poder asignar el rol de propietario de una cuenta a otro usuario.
@@ -192,6 +197,7 @@ Puedes tener tantos propietarios de cuentas como desees, pero la mejor práctica
 
 
 
+[[deleting-users]]
 == Eliminar usuarios
 
 Un usuario con el rol de Administrador puede eliminar un usuario (por ejemplo, alguien que ya no trabaja en la empresa) haciendo clic en el nombre del usuario y haciendo clic en _Eliminar usuario_ en el cuadro de diálogo.  El usuario será eliminado del entorno de Data Infrastructure Insights .
@@ -200,10 +206,12 @@ Tenga en cuenta que todos los paneles, consultas, etc. creados por el usuario pe
 
 
 
+[[single-sign-on-sso-and-identity-federation]]
 == Inicio de sesión único (SSO) y federación de identidades
 
 
 
+[[what-is-identity-federation]]
 === ¿Qué es la Federación de Identidad?
 
 Con Federación de Identidad:
@@ -226,6 +234,7 @@ En el diagrama anterior, cuando un usuario accede a Data Infrastructure Insights
 
 
 
+[[enabling-identity-federation]]
 === Habilitación de la federación de identidades
 
 La consola usa Auth0 para implementar la federación de identidad e integrarse con servicios como Active Directory Federation Services (ADFS) y Microsoft Azure Active Directory (AD).  Para configurar la federación de identidad, consulte lalink:https://services.cloud.netapp.com/misc/federation-support["Instrucciones de la Federación"] .
@@ -241,6 +250,7 @@ Para este o cualquier otro problema de la federación, puede abrir un ticket de 
 
 
 
+[[single-sign-on-sso-user-auto-provisioning]]
 === Aprovisionamiento automático de usuarios de inicio de sesión único (SSO)
 
 Además de invitar a los usuarios, los administradores pueden habilitar el acceso de *aprovisionamiento automático de usuarios de inicio de sesión único (SSO)* a Data Infrastructure Insights para todos los usuarios de su dominio corporativo, sin tener que invitarlos individualmente.  Con SSO habilitado, cualquier usuario con la misma dirección de correo electrónico del dominio puede iniciar sesión en Data Infrastructure Insights usando sus credenciales corporativas.
@@ -266,6 +276,7 @@ Sin embargo, no habilite el _Aprovisionamiento automático de usuarios SSO_ si a
 
 
 
+[[restricting-access-by-domain]]
 == Restringir el acceso por dominio
 
 Data Infrastructure Insights puede restringir el acceso de los usuarios únicamente a los dominios que usted especifique.  En la página *Admin > Administración de usuarios*, seleccione "Restringir dominios".

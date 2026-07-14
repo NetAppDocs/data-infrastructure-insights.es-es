@@ -14,6 +14,7 @@ Data Infrastructure Insights conserva los datos durante períodos que van desde 
 
 
 
+[[data-retention]]
 == Retención de datos
 
 Data Infrastructure Insights retiene los datos durante un período de tiempo determinado según su tipo de suscripción.
@@ -31,12 +32,14 @@ Para obtener información detallada sobre las características y opciones de pre
 
 
 
+[[downsampling-of-data]]
 == Reducción de muestreo de datos
 
 *Downsampling* proporciona una aproximación estadística de sus datos en gráficos, lo que le proporciona una descripción general eficiente de los datos sin tener que mostrar cada punto de datos, al tiempo que mantiene una vista precisa de los datos recopilados.
 
 
 
+[[why-is-downsampling-needed]]
 === ¿Por qué es necesario el downsampling?
 
 Debido a que se necesita una gran cantidad de procesamiento para preparar datos para su visualización en cuadros y gráficos, para permitir que los gráficos se muestren de manera rápida y eficiente, los datos se pueden reducir de tamaño de manera que mantengan la forma general de un gráfico sin necesidad de procesar cada punto de datos de ese gráfico.
@@ -45,6 +48,7 @@ Nota: No se pierden datos reales durante el muestreo reducido.  Puede elegir ver
 
 
 
+[[how-downsampling-works]]
 === Cómo funciona el submuestreo
 
 Los datos se reducen en las siguientes condiciones:
@@ -76,6 +80,7 @@ NOTE: Debido a la forma en que se aproximan los datos para el muestreo reducido,
 
 
 
+[[violations-on-downsampled-charts]]
 === Violaciones en gráficos con muestreo reducido
 
 Al visualizar gráficos con muestreo reducido, tenga en cuenta que no se muestran las violaciones.  Para ver las infracciones, puede realizar una de dos cosas:

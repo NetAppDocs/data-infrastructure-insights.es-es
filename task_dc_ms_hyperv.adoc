@@ -14,11 +14,12 @@ El recopilador de datos de Microsoft Hyper-V adquiere datos de inventario y rend
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario de Microsoft Hyper-V (WMI).  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -44,6 +45,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 Para configurar este recopilador de datos se requiere lo siguiente:
@@ -68,9 +70,10 @@ NOTE: El recopilador de datos de Hyper-V requiere una unidad de adquisición de 
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -88,9 +91,10 @@ NOTE: El recopilador de datos de Hyper-V requiere una unidad de adquisición de 
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -99,6 +103,7 @@ NOTE: El recopilador de datos de Hyper-V requiere una unidad de adquisición de 
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

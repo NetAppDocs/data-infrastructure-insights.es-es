@@ -14,6 +14,7 @@ De forma predeterminada, cuando hay una nueva versión de un agente o recopilado
 
 
 
+[[before-you-begin]]
 == Antes de empezar
 
 . Verifique en swagger que las categorías de API denominadas “cloudsecure_installers.agent” y “cloudsecure_installers.collector” estén disponibles.  De lo contrario, no se habilita la compatibilidad con la instalación manual del agente.  Comuníquese con el soporte de NetApp para habilitar la función.
@@ -25,6 +26,7 @@ image:ws_manual_install_APIs.png["API de instalación manual"]
 
 
 
+[[installing-a-new-agent]]
 == Instalación de un nuevo agente
 
 . Cree un nuevo token de acceso a la API de seguridad de carga de trabajo.
@@ -197,6 +199,7 @@ image:ws_agentsPageShowingConnected.png["Interfaz de usuario que muestra agentes
 
 
 
+[[installing-a-new-data-collector]]
 == Instalación de un nuevo recopilador de datos.
 
 Nota: Este documento contiene instrucciones para instalar el “recolector de datos ONTAP SVM”.  Los mismos pasos se aplican al “recopilador de datos de Cloud Volumes ONTAP ” y al “recopilador de datos de Amazon FSx for NetApp ONTAP ”.
@@ -289,6 +292,7 @@ image:ws_collectorPageList.png["Página de lista de IU que muestra los recolecto
 
 
 
+[[installing-a-new-user-directory-collector]]
 == Instalación de un nuevo recopilador de directorios de usuarios
 
 Nota: En este documento hemos mencionado los pasos para instalar un recopilador LDAP.  Los mismos pasos se aplican para instalar un recopilador AD.
@@ -401,6 +405,7 @@ image:ws_LDAP_collector_list.png["Lista de recopiladores LDAP en la interfaz de 
 
 
 
+[[upgrading-an-agent]]
 == Actualizar un agente
 
 Se enviará una notificación por correo electrónico cuando esté disponible una nueva versión del agente/recopilador.
@@ -487,6 +492,7 @@ image:ws_agentsPageShowingConnected.png["Interfaz de usuario que muestra los age
 
 
 
+[[upgrading-collectors]]
 == Actualización de coleccionistas
 
 Nota: Los pasos de actualización son los mismos para todos los tipos de coleccionistas.  En este documento demostraremos la actualización del recopilador “ONTAP SVM”.
@@ -570,6 +576,7 @@ Repita los pasos anteriores para actualizar otros tipos de recolectores también
 
 
 
+[[commons-issues-and-fixes]]
 == Problemas comunes y soluciones.
 
 . Error AGENT014

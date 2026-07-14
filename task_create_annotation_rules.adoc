@@ -49,6 +49,7 @@ NOTE: En un entorno de Data Infrastructure Insights de gran tamaño, es posible 
 
 
 
+[[modifying-annotation-rules]]
 == Modificar las reglas de anotación
 
 Puede modificar una regla de anotación para cambiar el nombre de la regla, su anotación, el valor de la anotación o la consulta asociada con la regla.
@@ -72,6 +73,7 @@ Se muestra el cuadro de diálogo Editar regla.
 
 
 
+[[changing-the-order-of-rules]]
 == Cambiar el orden de las reglas
 
 Las reglas de anotación se procesan desde la parte superior de la lista de reglas hasta la parte inferior.  Para cambiar el orden en que se procesa una regla, haga lo siguiente:
@@ -85,6 +87,7 @@ Tenga en cuenta que al ejecutar varias reglas que actualizan la misma anotación
 
 
 
+[[deleting-annotation-rules]]
 == Eliminar reglas de anotación
 
 Es posible que desees eliminar las reglas de anotación que ya no se utilizan.

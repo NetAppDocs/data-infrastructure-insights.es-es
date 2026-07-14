@@ -14,11 +14,12 @@ El recopilador de datos ScaleIO/PowerFlex recopila información de inventario de
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos ScaleIO/PowerFlex.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -41,6 +42,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 * Acceso de solo lectura a la cuenta de usuario administrador
@@ -49,9 +51,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -66,11 +69,12 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 Haga clic en la casilla de verificación Inventario para habilitar la recopilación de inventario.
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -85,6 +89,7 @@ Haga clic en la casilla de verificación Inventario para habilitar la recopilaci
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional se puede encontrar en ellink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

@@ -14,6 +14,7 @@ Data Infrastructure Insights Storage Workload Security (anteriormente Cloud Secu
 
 
 
+[[visibility]]
 == Visibilidad
 
 Obtenga visibilidad y control centralizados del acceso de los usuarios a sus datos corporativos críticos almacenados localmente o en la nube.
@@ -22,6 +23,7 @@ Reemplace las herramientas y los procesos manuales que no brindan visibilidad op
 
 
 
+[[protection]]
 == Protection
 
 Proteja los datos de la organización contra el uso indebido por parte de usuarios maliciosos o comprometidos mediante aprendizaje automático avanzado y detección de anomalías.
@@ -30,6 +32,7 @@ Le alerta sobre cualquier acceso anormal a los datos a través del aprendizaje a
 
 
 
+[[compliance]]
 == Cumplimiento
 
 Garantice el cumplimiento corporativo auditando el acceso de los usuarios a sus datos corporativos críticos almacenados localmente o en la nube.

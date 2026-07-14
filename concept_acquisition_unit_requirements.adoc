@@ -18,6 +18,7 @@ Debe instalar una Unidad de Adquisición (AU) para adquirir información de los 
 
 
 
+[[requirements]]
 == Requisitos
 
 |===
@@ -92,6 +93,7 @@ Tu sistema de archivos puede usar algo de espacio para su sobrecarga. Estos son 
 |===
 
 
+[[additional-recommendations]]
 == Recomendaciones adicionales
 
 * Para obtener informes de datos y auditorías precisos, se recomienda encarecidamente sincronizar la hora en la máquina de la unidad de adquisición utilizando *Protocolo de tiempo de red (NTP)* o *Protocolo simple de tiempo de red (SNTP)*.
@@ -99,6 +101,7 @@ Tu sistema de archivos puede usar algo de espacio para su sobrecarga. Estos son 
 
 
 
+[[regarding-sizing]]
 == Respecto al tamaño
 
 Puede comenzar con una unidad de adquisición de Data Infrastructure Insights con solo 8 GB de memoria y 50 GB de espacio en disco; sin embargo, para entornos más grandes debe hacerse las siguientes preguntas:

@@ -20,6 +20,7 @@ Para la configuración, el recopilador de datos requiere una dirección IP/FQDN 
 
 
 
+[[requirements]]
 == Requisitos
 
 * Una dirección IP/nombre de dominio completo del servidor Unisphere
@@ -29,9 +30,10 @@ Para la configuración, el recopilador de datos requiere una dirección IP/FQDN 
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -49,9 +51,10 @@ Para la configuración, el recopilador de datos requiere una dirección IP/FQDN 
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -72,15 +75,17 @@ Para la configuración, el recopilador de datos requiere una dirección IP/FQDN 
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

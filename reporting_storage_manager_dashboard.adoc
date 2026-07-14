@@ -17,6 +17,7 @@ NOTE: La función de informes está disponible en Data Infrastructure Insightsli
 
 
 
+[[summary]]
 == Resumen
 
 Al seleccionar *Panel del administrador de almacenamiento* en Contenido del equipo, obtendrá varios informes que brindan información sobre su tráfico y almacenamiento.
@@ -31,6 +32,7 @@ Este componente muestra la capacidad de almacenamiento utilizada versus la capac
 
 
 
+[[storage-tiers-capacity]]
 === Capacidad de niveles de almacenamiento
 
 Este componente muestra la capacidad de nivel utilizada versus la capacidad asignada al nivel, lo que indica cómo aumenta o disminuye la capacidad utilizada durante un período de 12 meses y cuántos meses faltan para alcanzar la capacidad máxima.  El uso de la capacidad se muestra con valores proporcionados para el uso real, el pronóstico de uso y un objetivo de capacidad, que puede configurar.  Cuando la capacidad utilizada prevista, que se basa en la fecha de proyección de uso futuro, excede la capacidad objetivo, aparece una alerta (círculo rojo sólido) junto a un nivel.
@@ -39,6 +41,7 @@ Puede hacer clic en cualquier nivel para mostrar el informe Detalles de rendimie
 
 
 
+[[daily-storage-traffic]]
 === Tráfico diario de almacenamiento
 
 Este componente muestra cómo está funcionando el entorno, si hay algún gran crecimiento, cambios o problemas potenciales en comparación con los seis meses anteriores.  También muestra el tráfico promedio en comparación con el tráfico de los siete días anteriores y del día anterior.  Puede visualizar cualquier anomalía en el funcionamiento de la infraestructura porque proporciona información que resalta tanto las variaciones cíclicas (los últimos siete días) como las estacionales (los últimos seis meses).
@@ -47,6 +50,7 @@ Puede hacer clic en el título (Tráfico de almacenamiento diario) para mostrar 
 
 
 
+[[data-centers-time-to-full]]
 === Tiempo de saturación de los centros de datos
 
 Este componente muestra todos los centros de datos versus todos los niveles y cuánta capacidad queda en cada centro de datos para cada nivel de almacenamiento en función de las tasas de crecimiento previstas.  El nivel de capacidad del nivel se muestra en azul; cuanto más oscuro sea el color, menos tiempo le queda al nivel de la ubicación antes de llenarse.
@@ -55,6 +59,7 @@ Puede hacer clic en una sección de un nivel para mostrar el informe Detalles de
 
 
 
+[[top-10-applications]]
 === Las 10 mejores aplicaciones
 
 Este componente muestra las 10 aplicaciones principales según la capacidad utilizada.  Independientemente de cómo el nivel organiza los datos, esta área muestra la capacidad utilizada actual y la proporción de la infraestructura.  Puede visualizar el rango de experiencia del usuario durante los últimos siete días para ver si los consumidores experimentan tiempos de respuesta aceptables (o, más importante aún, inaceptables).
@@ -63,6 +68,7 @@ Esta área también muestra tendencias, que indican si las aplicaciones cumplen 
 
 
 
+[[storage-tiers-daily-performance]]
 === Rendimiento diario de los niveles de almacenamiento
 
 Este componente muestra un resumen del rendimiento del nivel en cuanto a tiempo de respuesta e IOPS durante los últimos siete días.  Este rendimiento se compara con un SLO, que puede configurar, lo que le permite ver si existe la oportunidad de consolidar niveles, realinear cargas de trabajo entregadas desde esos niveles o identificar problemas con niveles específicos.  Cuando el tiempo de respuesta medio o el IOPS medio está fuera del rango SLO aceptable, aparece una alerta (círculo rojo sólido) junto a un nivel.
@@ -71,6 +77,7 @@ Puede hacer clic en el nombre de un nivel para mostrar el informe Detalles de re
 
 
 
+[[orphaned-capacity]]
 === Capacidad huérfana
 
 Este componente muestra la capacidad huérfana total y la capacidad huérfana por nivel, comparándola con rangos aceptables para la capacidad total utilizable y mostrando la capacidad real que está huérfana.  La capacidad huérfana se define por la configuración y el rendimiento.  El almacenamiento huérfano por configuración describe una situación en la que hay almacenamiento asignado a un host.  Sin embargo, la configuración no se ha realizado correctamente y el host no puede acceder al almacenamiento.  "Huérfano por rendimiento" es cuando el almacenamiento está configurado correctamente para que un host pueda acceder a él.  Sin embargo, no ha habido tráfico de almacenamiento.

@@ -14,6 +14,7 @@ Para los sistemas de almacenamiento que utilizan el software Data ONTAP que func
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de 7 modos de NetApp .  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
@@ -21,7 +22,7 @@ Data Infrastructure Insights adquiere la siguiente información de inventario de
 
 NOTE: Este recopilador de datos eslink:task_getting_started_with_cloud_insights.html#useful-definitions["obsoleto"] .
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -50,6 +51,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[requirements]]
 == Requisitos
 
 Necesita lo siguiente para configurar y utilizar este recopilador de datos:
@@ -71,9 +73,10 @@ Necesita lo siguiente para configurar y utilizar este recopilador de datos:
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -97,9 +100,10 @@ Necesita lo siguiente para configurar y utilizar este recopilador de datos:
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -117,6 +121,7 @@ Necesita lo siguiente para configurar y utilizar este recopilador de datos:
 |===
 
 
+[[storage-systems-connection]]
 == Conexión de sistemas de almacenamiento
 
 Como alternativa al uso del usuario administrativo predeterminado para este recopilador de datos, puede configurar un usuario con derechos administrativos directamente en los sistemas de almacenamiento de NetApp para que este recopilador de datos pueda adquirir datos de los sistemas de almacenamiento de NetApp .
@@ -156,15 +161,17 @@ Para adquirir una fuente de datos de 7 modos con éxito y no generar advertencia
 
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

@@ -58,6 +58,7 @@ Aquí encontrará sugerencias para solucionar problemas con las unidades de adqu
 |===
 
 
+[[considerations-about-proxies-and-firewalls]]
 == Consideraciones sobre servidores proxy y firewalls
 
 Si su organización requiere el uso de proxy para acceder a Internet, es posible que deba comprender el comportamiento del proxy de su organización y buscar ciertas excepciones para que Data Infrastructure Insights funcione.  Tenga en cuenta lo siguiente:
@@ -80,6 +81,7 @@ En el caso en que el proxy no esté configurado para la inspección de tráfico,
 
 
 
+[[viewing-proxy-endpoints]]
 === Visualización de puntos finales de proxy
 
 Puede ver sus puntos finales de proxy haciendo clic en el enlace *Configuración de proxy* al elegir un recopilador de datos durante la incorporación, o en el enlace debajo de _Configuración de proxy_ en la página *Ayuda > Soporte*.  Se muestra una tabla como la siguiente.  Si tiene Workload Security en su entorno, las URL de los puntos finales configurados también se mostrarán en esta lista.
@@ -88,6 +90,7 @@ image:ProxyEndpoints_NewTable.png["Tabla de puntos finales del proxy"]
 
 
 
+[[resources]]
 == Recursos
 
 Se pueden encontrar consejos adicionales para la solución de problemas enlink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs["Base de conocimientos de NetApp"] (se requiere iniciar sesión para obtener soporte).

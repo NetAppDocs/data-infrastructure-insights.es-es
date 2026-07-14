@@ -14,11 +14,12 @@ El recopilador de datos HP Enterprise Command View Advanced Edition admite la de
 
 
 
+[[terminology]]
 == Terminología
 
 Data Infrastructure Insights adquiere la siguiente información de inventario del recopilador de datos de HP Enterprise Command View.  Para cada tipo de activo adquirido por Data Infrastructure Insights, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -44,6 +45,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[inventory-requirements]]
 == Requisitos de inventario
 
 Para poder recopilar datos de inventario, debe tener lo siguiente:
@@ -55,6 +57,7 @@ Para poder recopilar datos de inventario, debe tener lo siguiente:
 
 
 
+[[performance-requirements]]
 == Requisitos de rendimiento
 
 Para poder recopilar datos de rendimiento se deben cumplir los siguientes requisitos:
@@ -82,9 +85,10 @@ Para poder recopilar datos de rendimiento se deben cumplir los siguientes requis
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -122,6 +126,7 @@ Nota: En HDS USP, USP V y VSP, cualquier disco puede pertenecer a más de un gru
 
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 |===
@@ -152,15 +157,17 @@ Nota: En HDS USP, USP V y VSP, cualquier disco puede pertenecer a más de un gru
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Algunas cosas que puedes probar si encuentras problemas con este recopilador de datos:
 
 
 
+[[inventory]]
 === Inventario
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 
@@ -175,9 +182,10 @@ Algunas cosas que puedes probar si encuentras problemas con este recopilador de 
 |===
 
 
+[[performance]]
 === Actuación
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Problema: | Prueba esto: 
 

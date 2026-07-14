@@ -18,6 +18,7 @@ Puede utilizar las instrucciones de esta página para simular la manipulación d
 
 
 
+[[things-to-note-before-you-begin]]
 == Cosas a tener en cuenta antes de empezar
 
 * El script de simulación de manipulación de archivos solo funciona en Linux. El script de simulación también debe generar alertas de alta confianza en caso de que el usuario haya integrado ONTAP ARP con Workload Security.
@@ -30,6 +31,7 @@ Puede utilizar las instrucciones de esta página para simular la manipulación d
 
 
 
+[[guidelines]]
 == Pautas:
 
 Este script debe ejecutarse en un SVM que contenga una carpeta con una cantidad sustancial de archivos para cifrar, idealmente 100 o más, incluidos los archivos en subcarpetas.  Asegúrese de que los archivos no estén vacíos.
@@ -38,10 +40,12 @@ Para generar la alerta, pause temporalmente el recopilador antes de la creación
 
 
 
+[[steps]]
 == Pasos:
 
 
 
+[[prepare-the-system]]
 === Preparar el sistema:
 
 Primero, monte el volumen de destino en la máquina.  Puede montar una exportación NFS o CIFS.
@@ -81,6 +85,7 @@ A continuación, configure un recopilador de datos:
 
 
 
+[[generate-the-sample-files-programmatically]]
 == Genere los archivos de muestra mediante programación:
 
 Antes de crear los archivos, primero debe detener olink:task_add_collector_svm.html#play-pause-data-collector["pausar el recopilador de datos"] tratamiento.
@@ -91,6 +96,7 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 
 
+[[shell]]
 === Caparazón:
 
 . Inicie sesión en el cuadro de Agente.
@@ -104,6 +110,7 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 
 
+[[python]]
 === Pitón:
 
 
@@ -148,18 +155,21 @@ Si elige crear los archivos mediante programación, puede utilizar Shell o Pytho
 
 
 
+[[resume-the-collector]]
 == Reanudar el colector
 
 Si pausó el recopilador antes de seguir estos pasos, asegúrese de reanudarlo una vez que se hayan creado los archivos de muestra.
 
 
 
+[[generate-file-tampering-alert]]
 == Generar alerta de manipulación de archivos
 
 Para generar una alerta de manipulación de archivos, puede ejecutar el script incluido que simulará una alerta de manipulación de archivos en Workload Security.
 
 
 
+[[shell]]
 === Caparazón:
 
 . Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/shell/simulate_attack.sh) a la ubicación de montaje de destino.
@@ -171,6 +181,7 @@ Para generar una alerta de manipulación de archivos, puede ejecutar el script i
 
 
 
+[[python]]
 === Pitón:
 
 . Copie el script del directorio de instalación del agente (%AGENT_INSTALL_DIR/agent/install/ransomware_simulation/python/simulate_attack.py) a la ubicación de montaje de destino.
@@ -183,6 +194,7 @@ Para generar una alerta de manipulación de archivos, puede ejecutar el script i
 
 
 
+[[generate-an-alert-in-workload-security]]
 == Generar una alerta en Seguridad de la carga de trabajo
 
 Una vez finalizada la ejecución del script del simulador, se verá una alerta en la interfaz de usuario web en unos minutos.
@@ -208,6 +220,7 @@ image:ws_high_confidence_alert_detail.png["Ejemplo de alerta de alta confianza, 
 
 
 
+[[triggering-alert-multiple-times]]
 == Activar alerta varias veces
 
 Workload Security aprende el comportamiento del usuario y no generará alertas sobre ataques repetidos de manipulación de archivos dentro de las 24 horas para el mismo usuario.

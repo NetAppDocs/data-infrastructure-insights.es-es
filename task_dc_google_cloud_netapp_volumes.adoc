@@ -18,6 +18,7 @@ Este recopilador de datos admite la recopilación de inventario y rendimiento de
 
 
 
+[[service-account-requirements]]
 == Requisitos de la cuenta de servicio
 
 * Debe crear una cuenta de servicio siguiendo las instrucciones enlink:https://cloud.google.com/iam/docs/creating-managing-service-accounts["Creación y gestión de cuentas de servicio"] .  Esta cuenta de servicio se identifica mediante un ID único, conocido como _clientId_, que se utilizará como nombre de usuario.
@@ -27,6 +28,7 @@ Este recopilador de datos admite la recopilación de inventario y rendimiento de
 
 
 
+[[configuration]]
 == Configuración
 
 [cols="50,50"]
@@ -53,6 +55,7 @@ Este recopilador de datos admite la recopilación de inventario y rendimiento de
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
 [cols="50,50"]
@@ -73,6 +76,7 @@ Este recopilador de datos admite la recopilación de inventario y rendimiento de
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

@@ -14,11 +14,12 @@ El recopilador de datos API Santricity Legacy de NetApp E-Series recopila datos 
 
 
 
+[[terminology]]
 == Terminología
 
 Cloud Insight adquiere la siguiente información de inventario del recopilador de datos NetApp E-Series.  Para cada tipo de activo adquirido, se muestra la terminología más común utilizada para este activo.  Al visualizar o solucionar problemas de este recopilador de datos, tenga en cuenta la siguiente terminología:
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Término de proveedor/modelo | Data Infrastructure Insights 
 
@@ -44,12 +45,14 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 
 
 
+[[e-series-terminology-landing-page]]
 == Terminología de la serie E (página de inicio)
 
 Los siguientes términos se aplican a objetos o referencias que pueda encontrar en las páginas de destino de activos de NetApp E-Series.  Muchos de estos términos se aplican también a otros recopiladores de datos.
 
 
 
+[[storage]]
 === Almacenamiento
 
 * Modelo – nombre del modelo del dispositivo.
@@ -65,6 +68,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[storage-pool]]
 === Pool de almacenamiento
 
 * Almacenamiento: en qué matriz de almacenamiento reside este grupo. Obligatorio
@@ -82,6 +86,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[storage-node]]
 === Nodo de almacenamiento
 
 * Almacenamiento: de qué matriz de almacenamiento forma parte este nodo. Obligatorio
@@ -100,6 +105,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[requirements]]
 == Requisitos
 
 * La dirección IP de cada controlador en la matriz
@@ -108,9 +114,10 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 
 
 
+[[configuration]]
 == Configuración
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -119,9 +126,10 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 |===
 
 
+[[advanced-configuration]]
 == Configuración avanzada
 
-[cols="2*"]
+[cols="50,50"]
 |===
 | Campo | Descripción 
 
@@ -133,6 +141,7 @@ Los siguientes términos se aplican a objetos o referencias que pueda encontrar 
 |===
 
 
+[[troubleshooting]]
 == Solución de problemas
 
 Información adicional sobre este recopilador de datos se puede encontrar enlink:concept_requesting_support.html["Soporte"] página o en ellink:reference_data_collector_support_matrix.html["Matriz de soporte del recopilador de datos"] .

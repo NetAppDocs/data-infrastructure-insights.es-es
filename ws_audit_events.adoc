@@ -18,6 +18,7 @@ Identifica los cambios esperados (para el seguimiento) o inesperados (para la so
 
 
 
+[[viewing-audited-events]]
 == Visualización de eventos auditados
 
 Para ver la página Auditoría, haz clic en Admin > Audit en el menú. Se muestra la página Audit, que proporciona los siguientes detalles para cada entrada de auditoría:
@@ -44,6 +45,7 @@ Los eventos de Workload Security que se auditan incluyen, entre otros, los sigui
 
 
 
+[[displaying-audit-entries]]
 == Visualización de entradas de auditoría
 
 Hay varias formas diferentes de ver las entradas de auditoría:
@@ -55,6 +57,7 @@ Hay varias formas diferentes de ver las entradas de auditoría:
 
 
 
+[[more-on-filtering]]
 == Más sobre el filtrado
 
 Puede utilizar cualquiera de los siguientes para refinar su filtro:
@@ -89,6 +92,7 @@ Si encierra una cadena de filtro entre comillas dobles, Insight trata todo lo qu
 
 
 
+[[audited-events-and-actions]]
 == Eventos y acciones auditados
 
 Los eventos y acciones auditados por Workload Security pueden clasificarse en las siguientes grandes áreas:
@@ -122,12 +126,14 @@ Ejemplo: _destinatario ci-alerts-notifications-dl creado_
 
 
 
+[[exporting-audit-events]]
 == Exportación de eventos de auditoría
 
 Puedes exportar los resultados de la visualización de Auditoría a un archivo .CSV, lo que te permitirá analizar los datos o importarlos a otra aplicación. Pasos 1. En la página de Auditoría, establece el intervalo de tiempo que desees y cualquier filtro que quieras. Workload Security exportará solo las entradas de Auditoría que coincidan con el filtrado y el intervalo de tiempo que hayas establecido. 2. Haz clic en el botón Exportar en la parte superior derecha de la tabla. Los eventos de Auditoría mostrados se exportarán a un archivo .CSV, hasta un máximo de 10,000 filas.
 
 
 
+[[retention-of-audit-data]]
 == Retención de datos de auditoría
 
 La cantidad de tiempo que Workload Security retiene los datos de auditoría depende de tu suscripción:
