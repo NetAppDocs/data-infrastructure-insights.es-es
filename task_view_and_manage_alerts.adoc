@@ -83,3 +83,32 @@ Si tiene un monitor con una ventana de 30 minutos que detecta que se viola una c
 Es posible configurar un monitor de tal manera que la condición *siempre* exista en el objeto monitoreado; por ejemplo, IOPS > 1 o latencia > 0.  A menudo se crean como monitores de "prueba" y luego se olvidan.  Estos monitores crean alertas que permanecen abiertas permanentemente en los objetos constituyentes, lo que puede provocar estrés en el sistema y problemas de estabilidad a lo largo del tiempo.
 
 Para evitar esto, Data Infrastructure Insights cerrará automáticamente cualquier alerta "permanentemente activa" después de 7 días.  Tenga en cuenta que las condiciones subyacentes del monitor pueden (probablemente lo harán) seguir existiendo, lo que provocará que se emita una nueva alerta casi de inmediato, pero este cierre de las alertas "siempre activas" alivia parte del estrés del sistema que de lo contrario puede ocurrir.
+
+
+
+[[maintenance-windows]]
+== Ventana de mantenimiento
+
+Las ventanas de mantenimiento le permiten suprimir las notificaciones de alerta durante los períodos de mantenimiento programados, lo que le ayuda a evitar interrupciones innecesarias.
+
+Con las ventanas de mantenimiento, puedes programar periodos de mantenimiento específicos durante los cuales se suprimen las notificaciones de alertas para los objetos y métricas que elijas. Por ejemplo, puedes suprimir las notificaciones de alertas activadas por sistemas de almacenamiento concretos cuando esos sistemas estén en un periodo de actualización planificada.
+
+Puedes elegir si quieres desactivar tanto las alertas como las notificaciones durante la ventana, o desactivar solo las notificaciones pero seguir detectando las alertas.
+
+image:Maintenance_Windows_example.png["Ejemplo de ventana de mantenimiento, ancho=400"]
+
+
+
+[[creating-a-maintenance-window]]
+=== Creando una ventana de mantenimiento
+
+Para crear una ventana de mantenimiento:
+
+. Ve a *Observabilidad > Alertas > Ventanas de mantenimiento* y haz clic en *+ Ventana de mantenimiento*.
+. Introduce un *Nombre* para la ventana de mantenimiento. Para obtener los mejores resultados, elige un nombre significativo y específico.
+. Selecciona el *dispositivo de almacenamiento* o el *atributo del objeto*.
+. Filtra por el *monitor o los monitores*. Se aceptan caracteres comodín.
+. Selecciona la *Hora de inicio* y la *Hora de finalización* para el periodo de mantenimiento.
+. Elige si deseas desactivar *las alertas y notificaciones*, o *solo las notificaciones* (las alertas seguirán detectándose durante la ventana).
+. Haz clic en *Guardar* para crear la ventana de mantenimiento.
+

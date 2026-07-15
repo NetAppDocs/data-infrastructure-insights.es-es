@@ -22,6 +22,6 @@ El mensaje admite Markdown básico, así que puedes aplicar formato como negrita
 
 Elige si los usuarios ven el mensaje solo en su próximo inicio de sesión o en cada inicio de sesión posterior.
 
-image:login_banner_settings.png["Configuración del banner de inicio de sesión"]
+image:login_banner_settings.png["Configuración del banner de inicio de sesión, ancho=400"]
 
 Ten en cuenta que el usuario _debe_ confirmar el mensaje de inicio de sesión para poder cerrarlo. Una vez cerrado, se mostrarán las ventanas emergentes adicionales (What's New updates, actualizaciones de las Terms-of-Service, etc.).
