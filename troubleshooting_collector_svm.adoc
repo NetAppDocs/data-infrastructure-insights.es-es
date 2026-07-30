@@ -245,4 +245,21 @@ Reinicie el recopilador una vez establecidos los permisos.
 {vacío}
 
 '''
+*Problema:* Tras añadir o actualizar un colector de datos SVM de ONTAP (Workload Security), el tenant muestra una alerta de sobreaprovisionamiento o de incumplimiento de suscripción. La capacidad de almacenamiento sin procesar aumentó aunque no se añadió hardware nuevo.
+
+*Prueba esto:* Es posible que el mismo almacenamiento se cuente dos veces — una vez por un recopilador de clúster de Observability ONTAP y otra vez por un recopilador de SVM de Workload Security en el mismo clúster.
+
+Compara la capacidad de almacenamiento bruta que indican los colectores de Observability ONTAP y los colectores SVM de Workload Security. Para cada colector SVM, comprueba si su clúster principal ya está supervisado por un colector de Observability ONTAP. Si es así, solo la capacidad del clúster debería contar para el uso de la suscripción.
+
+Comprueba si se ha producido alguna migración reciente de SVM entre clústeres. Tras la migración de un SVM, es posible que las métricas de capacidad sigan asociadas al clúster anterior hasta que Workload Security reciba información actualizada del colector.
+
+Asegúrate de que el colector de datos ONTAP SVM correspondiente al SVM migrado se encuentre en estado RUNNING. Si es necesario, reinicia el colector para que Workload Security pueda recopilar las métricas correctas del clúster y de la capacidad tras la migración.
+
+Si tanto la capacidad del clúster como la del SVM aparecen en el total, es probable que la capacidad se esté contabilizando por duplicado. Esto suele ocurrir poco después de añadir, actualizar o reiniciar un colector SVM, o de migrar un SVM entre clústeres.
+
+Si el consumo sigue superando tu suscripción, abre un caso de soporte de NetApp con el uso de la suscripción antes y después de la alerta, y una lista de los colectores de Observability y SVM con su capacidad de almacenamiento bruta reportada.
+
+{vacío}
+
+'''
 Si aún tiene problemas, comuníquese con los enlaces de soporte mencionados en la página *Ayuda > Soporte*.
