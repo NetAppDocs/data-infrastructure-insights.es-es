@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_dc_nutanix_ahv.html 
-keywords: data collector, Nutanix, AHV Series 
+keywords: data collector, Nutanix, AHV Series , Acropolis, hypervisor 
 summary: Configurando el recopilador de datos de Nutanix AHV. 
 ---
 = Recopilador de datos de Nutanix AHV
@@ -51,10 +51,10 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 == Requisitos
 
 * Dirección IP de Prism Central o nombre de dominio completo
-* Nombre de usuario y contraseña locales o LDAP de Prism Central (una cuenta de solo lectura es suficiente para el inventario y el rendimiento; no se requiere ser Admin)
+* Nombre de usuario y contraseña locales o LDAP de Prism Central (basta con una cuenta de solo lectura)
 * Requisito de puerto: HTTPS 9440
 * Prism Central version pc.2023.x o posterior (API v3); se recomienda pc.7.x o posterior (API v4)
-* Las métricas de rendimiento requieren Prism Central con la API v4.0.b1 o posterior (pc.7.3+). En versiones anteriores, todavía se recopila el inventario, pero no se reportan datos de rendimiento.
+* Las métricas de rendimiento requieren Prism Central con API v4.0.b1 o posterior (pc.7.3+). En versiones anteriores, se recopila el inventario pero no se reportan datos de rendimiento.
 
 
 
@@ -67,7 +67,7 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 | Campo | Descripción 
 
 
-| Dirección IP de Prism Central | Dirección IP o FQDN de la instancia de Prism Central 
+| IP de Prism Central / Nombre de host | Dirección IP o FQDN de la instancia de Prism Central 
 
 
 | Nombre de usuario | Nombre de usuario de Prism Central 
@@ -88,13 +88,13 @@ Nota: Estas son solo asignaciones de terminología común y es posible que no re
 | Puerto TCP | Puerto TCP utilizado para conectarse a Prism Central. El valor predeterminado es 9440. 
 
 
-| Intervalo de sondeo de inventario (min) | Intervalo entre sondeos de inventario. El valor predeterminado es 60 minutos. 
+| Intervalo de sondeo de inventario (min) | Intervalo entre las consultas de inventario. El valor predeterminado es 60 minutos. 
 
 
-| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre encuestas de rendimiento. El valor predeterminado es 300 segundos. 
+| Intervalo de sondeo de rendimiento (seg.) | Intervalo entre las encuestas de rendimiento. El valor predeterminado es 300 segundos. 
 
 
-| Tiempo de espera HTTP (seg) | Tiempo de espera de la solicitud HTTP. El valor predeterminado es 60 segundos. 
+| Tiempo de espera HTTP (seg) | Tiempo de espera de la solicitud HTTP. El valor predeterminado es 60. 
 
 
 | Número de reintentos HTTP | Número de reintentos HTTP en caso de fallos transitorios. El valor por defecto es 3. 

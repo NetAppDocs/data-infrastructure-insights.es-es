@@ -14131,17 +14131,12 @@
   <block id="25a317566de430ddfd2c6f4b3fdea612" category="list-text">ci-k8s-change-observer</block>
   <block id="9da5aa79f5375ccea3c84723b5759557" category="cell">Me aparecen mensajes de error de Telegraf similares a los siguientes, aunque Telegraf sí se inicia y funciona: E! [inputs.kubernetes] Error en el complemento:<block ref="6d1752bb8ee46f6164f07ea885d5c072" category="inline-link-rx"></block> devolvió el estado HTTP 403 Forbidden</block>
   <block id="51635ff11969666db6bdeaf0c68d58b0" category="cell">Estos mensajes pueden aparecer si estás utilizando versiones de Kubernetes anteriores a la 1.33. El recurso RBAC "nodes/pods" que utiliza telegraf no existe en estas versiones. Consulta la sección "For Kubernetes versions &lt; 1.33" del archivo operator-additional-permissions.yaml para conocer los recursos RBAC necesarios en versiones anteriores.</block>
-  <block id="55c55b1241c0ea96ea6cef65b10a23e4" category="inline-link-macro">Promox Virtual Environment</block>
-  <block id="9ddb2ce85d3b0c6085884776fe61a596" category="cell"><block ref="9ddb2ce85d3b0c6085884776fe61a596" category="inline-link-macro-rx"></block></block>
-  <block id="66036899193ada3425c77162bf9d742c" category="summary">Configurando el recopilador de datos de Promox Virtual Environment.</block>
-  <block id="dc8f767a3f6e8f9b98077b7e9a688c5d" category="paragraph">El colector DII Promox Virtual Environment recopilará datos de inventario. Este es un colector basado en una API REST HTTPS.</block>
   <block id="b720c5170acbb344b34398a9ed4fec4b" category="cell">Nombre de host o dirección IP</block>
   <block id="32d285f157ad1acefe9dbe844cee7acf" category="cell">nombre de host dirección IP del sistema de almacenamiento</block>
   <block id="606bae1c220a7cd73cdc71a447b328fd" category="cell">ID del token de la API</block>
   <block id="9ae9995c158c8b32609b8fd098fa5ff5" category="cell">Secreto del token de API</block>
   <block id="923e5171366e1120624f5ea15d195544" category="cell">Secreto para el token anterior</block>
   <block id="07d3835e20364558e54bb222fac4e80c" category="cell">Puerto utilizado para la comunicación HTTPS (por defecto 8006)</block>
-  <block id="c0dcddaaad9648f13d2e54741430ea94" category="sidebar">Promox VE</block>
   <block id="f45a9049372d3cb48c0a5f07d2274d8a" category="inline-link-macro">Serie AHV de Nutanix</block>
   <block id="ad9c1c290afb17645c1abe42082fd356" category="cell"><block ref="ad9c1c290afb17645c1abe42082fd356" category="inline-link-macro-rx"></block></block>
   <block id="dfc304efa37c8d1373249ddd368bc0be" category="summary">Configurando el recopilador de datos de Nutanix NX.</block>
@@ -14157,17 +14152,12 @@
   <block id="93aad9faf21d772e6638b83df990a5f5" category="cell">Grupo de volúmenes ADSF</block>
   <block id="5ccc8ca7259b2e94529827201b7eb255" category="cell">Disco de la máquina virtual</block>
   <block id="59713d7f655f9c892a64a8cfb1bce50f" category="list-text">Dirección IP de Prism Central o nombre de dominio completo</block>
-  <block id="b4cdc83adeeea6f91bf95fe532871bdd" category="list-text">Nombre de usuario y contraseña locales o LDAP de Prism Central (una cuenta de solo lectura es suficiente para el inventario y el rendimiento; no se requiere ser Admin)</block>
   <block id="305bb684f75dc043415486c2063d46c4" category="list-text">Requisito de puerto: HTTPS 9440</block>
   <block id="539110e77db7f1ce573940c3147dbe68" category="list-text">Prism Central version pc.2023.x o posterior (API v3); se recomienda pc.7.x o posterior (API v4)</block>
-  <block id="74c15fa6625bc3241b81c66466e0ce42" category="list-text">Las métricas de rendimiento requieren Prism Central con la API v4.0.b1 o posterior (pc.7.3+). En versiones anteriores, todavía se recopila el inventario, pero no se reportan datos de rendimiento.</block>
-  <block id="fb7d6f6db43d1bb1043df17e264de78a" category="cell">Dirección IP de Prism Central</block>
   <block id="b46321a9cb6ebc3023c7b6ae1f3d8b4f" category="cell">Dirección IP o FQDN de la instancia de Prism Central</block>
   <block id="893b253db3bdc1ebfb515f1f1cc09f50" category="cell">Nombre de usuario de Prism Central</block>
   <block id="0fc00a87efdbecf33bb1448c3eaa5a73" category="cell">Contraseña de Prism Central</block>
-  <block id="ac2fad2f282b0e32c75912e363cfb735" category="cell">Puerto TCP utilizado para conectarse a Prism Central. El valor predeterminado es 9440.</block>
   <block id="834593f1f41ad9180f7c06531584872b" category="cell">Tiempo de espera HTTP (seg)</block>
-  <block id="b8c5ed136238b59bf386d65bf0787acf" category="cell">Tiempo de espera de la solicitud HTTP. El valor predeterminado es 60 segundos.</block>
   <block id="625b6c43e9f8c94b5aa84173a04fa961" category="cell">Número de reintentos HTTP</block>
   <block id="c8f99bb6092a052b29e43263274e103f" category="cell">Número de reintentos HTTP en caso de fallos transitorios. El valor por defecto es 3.</block>
   <block id="4a2e4ff5e220e83407c567779aaf9ba1" category="cell">Se requiere un token de API para acceder</block>
@@ -14206,4 +14196,18 @@
   <block id="ed499d4afa165aaf800d50911ee0d6b7" category="paragraph">Asegúrate de que el colector de datos ONTAP SVM correspondiente al SVM migrado se encuentre en estado RUNNING. Si es necesario, reinicia el colector para que Workload Security pueda recopilar las métricas correctas del clúster y de la capacidad tras la migración.</block>
   <block id="01ee0a41b7ba80a315acf774bca95831" category="paragraph">Si tanto la capacidad del clúster como la del SVM aparecen en el total, es probable que la capacidad se esté contabilizando por duplicado. Esto suele ocurrir poco después de añadir, actualizar o reiniciar un colector SVM, o de migrar un SVM entre clústeres.</block>
   <block id="d1d2aacb054348275b14473a1f1f31f2" category="paragraph">Si el consumo sigue superando tu suscripción, abre un caso de soporte de NetApp con el uso de la suscripción antes y después de la alerta, y una lista de los colectores de Observability y SVM con su capacidad de almacenamiento bruta reportada.</block>
+  <block id="e0a90db369f87ae02adeb16a86201742" category="inline-link-macro">Entorno virtual Proxmox</block>
+  <block id="4a90aaa80c9f510a7ceb078daedd5635" category="cell"><block ref="4a90aaa80c9f510a7ceb078daedd5635" category="inline-link-macro-rx"></block></block>
+  <block id="bf88a9906139e4cb81937529ce5737f7" category="list-text">Nombre de usuario y contraseña locales o LDAP de Prism Central (basta con una cuenta de solo lectura)</block>
+  <block id="616363ce8a56d3faec8ac114ed04d83b" category="list-text">Las métricas de rendimiento requieren Prism Central con API v4.0.b1 o posterior (pc.7.3+). En versiones anteriores, se recopila el inventario pero no se reportan datos de rendimiento.</block>
+  <block id="0c215c7eb97b422d3fbcb651a59480b7" category="cell">IP de Prism Central / Nombre de host</block>
+  <block id="6cb3b4061cdb7e049999801ce8d1d445" category="cell">Puerto TCP utilizado para conectarse a Prism Central. El valor predeterminado es 9440.</block>
+  <block id="19b47095e2b176e478290ba0ddfcbdbc" category="cell">Intervalo entre las consultas de inventario. El valor predeterminado es 60 minutos.</block>
+  <block id="d9ac9c87b6001203eb8b39a253943bd2" category="cell">Intervalo entre las encuestas de rendimiento. El valor predeterminado es 300 segundos.</block>
+  <block id="8626d73b80be039d958752c296fa4e7c" category="cell">Tiempo de espera de la solicitud HTTP. El valor predeterminado es 60.</block>
+  <block id="33c9cb93144548bfcc912b99d1b2555c" category="summary">Configurando el recopilador de datos de Proxmox Virtual Environment.</block>
+  <block id="b37138a3b3b3fcd2958e4e6cc5c5c61b" category="doc">Recopilador de datos del entorno virtual de Proxmox</block>
+  <block id="91a0d06a30de7119cf7ba6773ce38416" category="paragraph">El colector DII Proxmox Virtual Environment recopilará datos de inventario y rendimiento de las máquinas virtuales basadas en PVE (no contenedores LXC) y de los hosts/hipervisores. Este es un colector basado en una API de REST HTTPS que necesita comunicarse con la API de REST de Proxmox proporcionada por el servicio/demonio pveproxy, que escucha en el puerto TCP 8006.</block>
+  <block id="7bd4738e9b2442fc6fa7415e88a3298d" category="paragraph">Este recopilador de datos utiliza autenticación mediante usuario + token. Deberás crear una cuenta de servicio en cada clúster de Proxmox, asignar los permisos adecuados al usuario y luego generar un token de API con esos mismos derechos. Ten en cuenta que el token de un usuario concreto de Proxmox NO tiene necesariamente los mismos derechos o permisos que el usuario. Por lo general, DII necesitará derechos globales de nivel auditoría/supervisión; si estás creando una cuenta de servicio a través de la interfaz de usuario de Proxmox, para PathPermision comienza en “/”, establece Propagate en “Yes” y desbloquea Datastore Audit, Mapping Audit, Pool Audit, SDN Audit, Sys Audit, VM Audit y VM Monitor como mínimo. Con el usuario creado, puedes generar un token de acceso para él. Te recomendamos encarecidamente que crees el token con una caducidad de 0 para asegurarte de que nunca caduque.</block>
+  <block id="57e13573114577b3af8a0a24aa24d576" category="sidebar">Proxmox VE</block>
 </blocks>
