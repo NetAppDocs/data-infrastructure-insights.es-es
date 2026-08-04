@@ -13298,7 +13298,6 @@
   <block id="ecf8fabbb23da2c68f49fe920a05137b" category="list-text">SELinux en las plataformas anteriores</block>
   <block id="3542743c69e8fceb06c77e5e17299c89" category="sidebar">Asistente de IA</block>
   <block id="f7836ca926de84b06b0b4bcbe4b8b756" category="inline-link-macro">Aviso para Data Infrastructure Insights (incluyendo Workload Security), window=_blank</block>
-  <block id="135e17e82c7d3d3d83bd8b0737be432e" category="paragraph"><block ref="135e17e82c7d3d3d83bd8b0737be432e" category="inline-link-macro-rx"></block></block>
   <block id="b6b93d34f92b439117e54d9343c7efda" category="section-title">Avances actuales:</block>
   <block id="559de301b9b7af9f5b932d860f605701" category="list-text"><block ref="7a32ab5261b86b8c9a5d88b540c79f2d" category="inline-link-macro-rx"></block> vista previa.</block>
   <block id="ca39a60f24fda5dbbda8809fbd3fe717" category="inline-link-macro">*Asistente de IA de Data Infrastructure Insights*</block>
@@ -14210,4 +14209,5 @@
   <block id="91a0d06a30de7119cf7ba6773ce38416" category="paragraph">El colector DII Proxmox Virtual Environment recopilará datos de inventario y rendimiento de las máquinas virtuales basadas en PVE (no contenedores LXC) y de los hosts/hipervisores. Este es un colector basado en una API de REST HTTPS que necesita comunicarse con la API de REST de Proxmox proporcionada por el servicio/demonio pveproxy, que escucha en el puerto TCP 8006.</block>
   <block id="7bd4738e9b2442fc6fa7415e88a3298d" category="paragraph">Este recopilador de datos utiliza autenticación mediante usuario + token. Deberás crear una cuenta de servicio en cada clúster de Proxmox, asignar los permisos adecuados al usuario y luego generar un token de API con esos mismos derechos. Ten en cuenta que el token de un usuario concreto de Proxmox NO tiene necesariamente los mismos derechos o permisos que el usuario. Por lo general, DII necesitará derechos globales de nivel auditoría/supervisión; si estás creando una cuenta de servicio a través de la interfaz de usuario de Proxmox, para PathPermision comienza en “/”, establece Propagate en “Yes” y desbloquea Datastore Audit, Mapping Audit, Pool Audit, SDN Audit, Sys Audit, VM Audit y VM Monitor como mínimo. Con el usuario creado, puedes generar un token de acceso para él. Te recomendamos encarecidamente que crees el token con una caducidad de 0 para asegurarte de que nunca caduque.</block>
   <block id="57e13573114577b3af8a0a24aa24d576" category="sidebar">Proxmox VE</block>
+  <block id="48c0a89dc87860e6c3b42a70bbd13c53" category="paragraph"><block ref="48c0a89dc87860e6c3b42a70bbd13c53" category="inline-link-macro-rx"></block></block>
 </blocks>
