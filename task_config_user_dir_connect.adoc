@@ -46,7 +46,7 @@ Configure el recopilador de directorios de usuarios ingresando los datos requeri
 | Nombre del bosque | Nivel de bosque de la estructura del directorio.  El nombre del bosque permite ambos formatos siguientes: _x.y.z_ => nombre de dominio directo tal como lo tiene en su SVM.  [Ejemplo: hq.companyname.com] _DC=x,DC=y,DC=z_ => Nombres distinguidos relativos [Ejemplo: DC=hq,DC= companyname,DC=com] O puede especificarlo de la siguiente manera: _OU=engineering,DC=hq,DC= companyname,DC=com_ [para filtrar por OU engineering específica] _CN=username,OU=engineering,DC=companyname, DC=netapp, DC=com_ [para obtener solo un usuario específico con <username> de la OU <engineering>] _CN=Acrobat Users,CN=Users,DC=hq,DC=companyname,DC=com,O= companyname,L=Boston,S=MA,C=US_ [para obtener todos los usuarios de Acrobat dentro de los usuarios de esa organización] También se admiten dominios de Active Directory de confianza. 
 
 
-| Vincular DN | Usuario autorizado para buscar en el directorio.  Por ejemplo: _nombreusuario@nombreempresa.com_ o _nombreusuario@nombredominio.com_ Además, se requiere permiso de Solo lectura del dominio.  El usuario debe ser miembro del grupo de seguridad _Controladores de dominio de solo lectura_. 
+| Vincular DN | Usuario con permiso para realizar búsquedas en el directorio. Por ejemplo: _username@companyname.com_ o _username@domainname.com_ 
 
 
 | Contraseña BIND | Contraseña del servidor de directorio (es decir, contraseña para el nombre de usuario utilizado en Bind DN) 
