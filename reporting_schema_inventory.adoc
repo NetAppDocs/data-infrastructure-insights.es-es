@@ -1,0 +1,7288 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_inventory.html 
+summary: Tablas de esquema para el almacén de datos de inventario 
+keywords: dwh, data warehouse, schema, reporting, inventory 
+---
+= Esquema de inventario
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Fuente: punto de conexión OData *dwh_inventory* — Data Infrastructure Insights
+
+Tablas encontradas: *106* | Asociaciones: *171*
+
+
+
+[[key-relationships-between-tables]]
+== Relaciones clave entre tablas
+
+
+
+[[acqdatasource]]
+=== acq_data_source
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-acq_acquisition_unit["acq_acquisition_unit"] | acquisitionUnitId | id 
+|===
+
+
+[[autotieringpolicy]]
+=== política_de_escalado_automático
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[autotieringpolicyconstraint]]
+=== restricción_de_la_política_de_ajuste_automático_de_niveles
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-auto_tiering_policy["política_de_escalado_automático"] | autoTieringPolicyId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[backendlun]]
+=== backend_lun
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[backendluntovolume]]
+=== backend_lun_to_volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-backend_lun["backend_lun"] | backendLunId | id 
+
+
+| link:#entity-storage["almacenamiento"] | frontendStorageId | id 
+
+
+| link:#entity-volume["volume"] | backendVolumeId | id 
+|===
+
+
+[[backendpath]]
+=== backend_path
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-backend_lun["backend_lun"] | backendLunId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[clusterswitch]]
+=== cluster_switch
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[clusterswitchport]]
+=== puerto_de_conmutador_de_clúster
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-cluster_switch["cluster_switch"] | clusterSwitchId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-storage_node["nodo_de_almacenamiento"] | storageNodeId | id 
+|===
+
+
+[[computeresource]]
+=== recurso_de_computación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | id 
+|===
+
+
+[[disk]]
+=== disco
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[diskgroup]]
+=== grupo_de_discos
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[drinternalvolumereplica]]
+=== dr_internal_volume_replica
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-internal_volume["volumen_interno"] | sourceInternalVolumeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | targetStorageId | id 
+|===
+
+
+[[drqtreereplica]]
+=== dr_qtree_replica
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-qtree["qtree"] | sourceQtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | targetStorageId | id 
+|===
+
+
+[[drvolumereplica]]
+=== dr_volume_replica
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | targetStorageId | id 
+
+
+| link:#entity-volume["volume"] | sourceVolumeId | id 
+|===
+
+
+[[fcnameserverentry]]
+=== fc_name_server_entry
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-switch_port["puerto de switch"] | connectedSwitchPortId | id 
+|===
+
+
+[[filesystem]]
+=== sistema de archivos
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-compute_resource["recurso_de_computación"] | computeResourceId | id 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+|===
+
+
+[[filesystemtovirtualdisk]]
+=== sistema_de_archivos_a_disco_virtual
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-compute_resource["recurso_de_computación"] | computeResourceId | id 
+
+
+| link:#entity-file_system["sistema de archivos"] | fileSystemId | id 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | id 
+|===
+
+
+[[filesystemtovolume]]
+=== sistema_de_archivos_a_volumen
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-compute_resource["recurso_de_computación"] | computeResourceId | id 
+
+
+| link:#entity-file_system["sistema de archivos"] | fileSystemId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[genericdeviceport]]
+=== puerto_de_dispositivo_genérico
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-generic_device["dispositivo_genérico"] | genericDeviceId | id 
+|===
+
+
+[[hostadapter]]
+=== adaptador_host
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+|===
+
+
+[[hostport]]
+=== host_port
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-host_adapter["adaptador_host"] | adapterId | id 
+|===
+
+
+[[hosttoapplication]]
+=== host_to_application
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+|===
+
+
+[[hvdatastoretointernalvolume]]
+=== hv_data_store_to_internal_volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[hvdatastoretovolume]]
+=== hv_data_store_to_volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[hvdatastoretonasshare]]
+=== hv_datastore_to_nas_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | id 
+|===
+
+
+[[hvhosttonasshare]]
+=== hv_host_to_nas_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | id 
+|===
+
+
+[[hvlun]]
+=== hv_lun
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+|===
+
+
+[[hvluntovolume]]
+=== hv_lun_to_volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_lun["hv_lun"] | hvLunId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[hvnasshare]]
+=== hv_nas_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+|===
+
+
+[[hvnassharetoshare]]
+=== hv_nas_share_to_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_nas_share["hv_nas_share"] | nasShareId | id 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[hvpath]]
+=== hv_path
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_lun["hv_lun"] | lunId | id 
+|===
+
+
+[[hvserver]]
+=== hv_server
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+|===
+
+
+[[hvvirtualdisk]]
+=== hv_virtual_disk
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+
+
+| link:#entity-hv_lun["hv_lun"] | lunId | id 
+|===
+
+
+[[hvvirtualdisktovolume]]
+=== hv_virtual_disk_to_volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[hvvirtualmachine]]
+=== hv_virtual_machine
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-hv_data_store["hv_data_store"] | dataStoreId | id 
+|===
+
+
+[[hvvirtualmachinetodisk]]
+=== hv_virtual_machine_to_disk
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_virtual_disk["hv_virtual_disk"] | virtualDiskId | id 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | virtualMachineId | id 
+|===
+
+
+[[internalvolume]]
+=== volumen_interno
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-storage_pool["pool de almacenamiento"] | storagePoolId | id 
+|===
+
+
+[[internalvolumetoapplication]]
+=== volumen_interno_a_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+|===
+
+
+[[iscsilogical]]
+=== iscsi_logical
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[k8snamespace]]
+=== k8s_namespace
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+|===
+
+
+[[k8snode]]
+=== k8s_node
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | id 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+|===
+
+
+[[k8spv]]
+=== k8s_pv
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+|===
+
+
+[[k8spvc]]
+=== k8s_pvc
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | id 
+
+
+| link:#entity-k8s_pv["k8s_pv"] | pvId | id 
+|===
+
+
+[[k8sworkload]]
+=== k8s_workload
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | id 
+|===
+
+
+[[k8sworkloadtopvc]]
+=== k8s_workload_to_pvc
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-k8s_cluster["k8s_cluster"] | clusterId | id 
+
+
+| link:#entity-k8s_namespace["k8s_namespace"] | namespaceId | id 
+
+
+| link:#entity-k8s_pvc["k8s_pvc"] | pvcId | id 
+
+
+| link:#entity-k8s_workload["k8s_workload"] | workloadId | id 
+|===
+
+
+[[logical]]
+=== lógico
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-generic_device["dispositivo_genérico"] | genericDeviceId | id 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-tape["cinta"] | tapeId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[nascrlogical]]
+=== nas_cr_logical
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-compute_resource["recurso_de_computación"] | computeResourceId | id 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[nasfileshare]]
+=== nas_file_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[nasshare]]
+=== nas_share
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-nas_file_share["nas_file_share"] | fileShareId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[nasshareinitiator]]
+=== nas_share_initiator
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[objecttoannotation]]
+=== objeto_a_anotación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-annotation_value["valor_de_anotación"] | annotationValueId | id 
+|===
+
+
+[[physicalpath]]
+=== ruta_física
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-generic_device["dispositivo_genérico"] | genericDeviceId | id 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-tape["cinta"] | tapeId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[qtree]]
+=== qtree
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[qtreetoapplication]]
+=== qtree_to_application
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+|===
+
+
+[[quota]]
+=== cuota
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[sharetoapplication]]
+=== compartir_con_la_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-nas_share["nas_share"] | shareId | id 
+|===
+
+
+[[storagecontroller]]
+=== controlador de almacenamiento
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[storagenode]]
+=== nodo_de_almacenamiento
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[storagepool]]
+=== pool de almacenamiento
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[storageport]]
+=== puerto_de_almacenamiento
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-storage_controller["controlador de almacenamiento"] | controllerId | id 
+|===
+
+
+[[storagetoapplication]]
+=== almacenamiento_a_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[switch]]
+=== interruptor
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-fabric["fabric"] | fabricId | id 
+|===
+
+
+[[switchport]]
+=== puerto de switch
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-fabric["fabric"] | fabricId | id 
+
+
+| link:#entity-switch["interruptor"] | switchId | id 
+
+
+| link:#entity-virtual_switch["conmutador_virtual"] | virtualSwitchId | id 
+|===
+
+
+[[switchporttoapplication]]
+=== cambiar_puerto_a_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-switch_port["puerto de switch"] | portId | id 
+|===
+
+
+[[switchtoapplication]]
+=== cambiar_a_la_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-switch["interruptor"] | switchId | id 
+|===
+
+
+[[tapecontroller]]
+=== controlador_de_cinta
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-tape["cinta"] | tapeId | id 
+|===
+
+
+[[tapeport]]
+=== puerto_de_cinta
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-tape["cinta"] | tapeId | id 
+
+
+| link:#entity-tape_controller["controlador_de_cinta"] | controllerId | id 
+|===
+
+
+[[unknownlogical]]
+=== desconocido_lógico
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[violation]]
+=== infracción
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-generic_device["dispositivo_genérico"] | genericDeviceId | id 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-tape["cinta"] | tapeId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[virtualswitch]]
+=== conmutador_virtual
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-fabric["fabric"] | fabricId | id 
+|===
+
+
+[[vmtoapplication]]
+=== vm_to_application
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-hv_virtual_machine["hv_virtual_machine"] | vmId | id 
+|===
+
+
+[[vmwarehost]]
+=== vmware_host
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-hv_server["hv_server"] | hvServerId | id 
+|===
+
+
+[[volume]]
+=== volume
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-auto_tiering_policy["política_de_escalado_automático"] | autoTieringPolicyId | id 
+
+
+| link:#entity-internal_volume["volumen_interno"] | internalVolumeId | id 
+
+
+| link:#entity-qtree["qtree"] | qtreeId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+|===
+
+
+[[volumemap]]
+=== mapa de volumen
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[volumemask]]
+=== máscara de volumen
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-host["anfitrión"] | hostId | id 
+
+
+| link:#entity-storage["almacenamiento"] | storageId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[volumetoapplication]]
+=== volumen_a_aplicación
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-application["aplicación"] | applicationId | id 
+
+
+| link:#entity-volume["volume"] | volumeId | id 
+|===
+
+
+[[zone]]
+=== zona
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-fabric["fabric"] | fabricId | id 
+|===
+
+
+[[zonemember]]
+=== miembro_de_zona
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-fabric["fabric"] | fabricId | id 
+
+
+| link:#entity-zone["zona"] | zoneId | id 
+|===
+
+
+[[tables-fields]]
+== Tablas y campos
+
+PK clave primaria FK clave foránea NOT NULL campo obligatorio
+
+
+
+[[acqacquisitionunit]]
+=== acq_acquisition_unit
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: acq_acquisition_unit
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la unidad de adquisición. 
+
+
+| identificador | Cadena | Sí | Identificador de la unidad de adquisición. 
+
+
+| nombre | Cadena | Sí | Nombre de la unidad de adquisición. 
+
+
+| ip | Cadena | Sí | Dirección IP de la unidad de adquisición. 
+
+
+| siteName | Cadena | Sí | El sitio SANscreen al que pertenece esta unidad de adquisición. 
+
+
+| leasePeriod | Int64 | Sí | Período de arrendamiento en milisegundos para la unidad de adquisición. 
+
+
+| nextLeaseRenewal | DateTimeOffset | Sí | Hora en la que vence el contrato de arrendamiento de la unidad de adquisición. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| acq_data_source | link:#entity-acq_data_source["acq_data_source"] | muchos 
+|===
+
+
+[[acqdatasource]]
+=== acq_data_source
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: acq_data_source
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la fuente de datos. 
+
+
+| acquisitionUnitId *[FK]* →link:#entity-acq_acquisition_unit["acq_acquisition_unit"].id | Int64 | Sí | GUID de la unidad de adquisición a la que pertenece esta fuente de datos. 
+
+
+| nombre | Cadena | Sí | Nombre de la fuente de datos. 
+
+
+| tipo | Cadena | Sí | Tipo de la fuente de datos. 
+
+
+| proveedor | Cadena | Sí | Proveedor de la fuente de datos. 
+
+
+| modelo | Cadena | Sí | Modelo de la fuente de datos. 
+
+
+| auditLastStatus | Cadena | Sí | El último informe de estado de la fuente de datos. 
+
+
+| auditStatusDate | DateTimeOffset | Sí | Es el momento de presentar el informe de estado. 
+
+
+| auditStatusSince | DateTimeOffset | Sí | La hora en la que comenzó este informe de estado. 
+
+
+| auditStatusCount | Int32 | Sí | Recuento de entradas de auditoría para este estado. 
+
+
+| auditLastStatusMessage | Cadena | Sí | Descripción del mensaje para el estado de la fuente de datos. 
+
+
+| additionalDataSourceMessage | Cadena | Sí | Mensaje de estado adicional para la fuente de datos. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| acq_acquisition_unit | link:#entity-acq_acquisition_unit["acq_acquisition_unit"] | una JOIN:acquisitionUnitId=link:#entity-acq_acquisition_unit["acq_acquisition_unit"].id 
+|===
+
+
+[[annotationvalue]]
+=== valor_de_anotación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: annotation_value
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la anotación. 
+
+
+| annotationType | Cadena | Sí | Tipo definido por el sistema o por el usuario, como Tier, Data center, etc. 
+
+
+| valueIdentifier | Cadena | Sí | Valor de la anotación. 
+
+
+| valueType | Cadena | Sí | El tipo de datos del valor de la anotación. 
+
+
+| valueDate | DateTimeOffset | Sí | Valor de la anotación (formato de fecha). 
+
+
+| enumSequence | Int32 | Sí | Número de secuencia que determina el orden de los valores de enumeración. Esto se utiliza principalmente con fines de visualización. 
+
+
+| enumCost | Doble | Sí | Coste opcional asociado a la anotación. Aplicable a la anotación de nivel. 
+
+
+| ukHash | Cadena | Sí |  
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| objeto_a_anotación | link:#entity-object_to_annotation["objeto_a_anotación"] | muchos 
+|===
+
+
+[[application]]
+=== aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: aplicación
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la aplicación. 
+
+
+| nombre | Cadena | Sí | Nombre de la aplicación. 
+
+
+| descripción | Cadena | Sí | Descripción de la aplicación. 
+
+
+| ignoreSharing | Byte | Sí | Indica si SANscreen emite avisos de infracciones de uso compartido para los hosts de esta aplicación. 
+
+
+| prioridad | Cadena | Sí | Prioridad de la aplicación. 
+
+
+| url | Cadena | Sí | URL de esta aplicación en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| cambiar_puerto_a_aplicación | link:#entity-switch_port_to_application["cambiar_puerto_a_aplicación"] | muchos 
+
+
+| volumen_interno_a_aplicación | link:#entity-internal_volume_to_application["volumen_interno_a_aplicación"] | muchos 
+
+
+| compartir_con_la_aplicación | link:#entity-share_to_application["compartir_con_la_aplicación"] | muchos 
+
+
+| almacenamiento_a_aplicación | link:#entity-storage_to_application["almacenamiento_a_aplicación"] | muchos 
+
+
+| vm_to_application | link:#entity-vm_to_application["vm_to_application"] | muchos 
+
+
+| volumen_a_aplicación | link:#entity-volume_to_application["volumen_a_aplicación"] | muchos 
+
+
+| qtree_to_application | link:#entity-qtree_to_application["qtree_to_application"] | muchos 
+
+
+| cambiar_a_la_aplicación | link:#entity-switch_to_application["cambiar_a_la_aplicación"] | muchos 
+
+
+| host_to_application | link:#entity-host_to_application["host_to_application"] | muchos 
+|===
+
+
+[[autotieringpolicy]]
+=== política_de_escalado_automático
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: auto_tiering_policy
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la política de auto tiering. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento en el que se ha definido la política de auto tiering. 
+
+
+| identificador | Cadena | Sí | Identificador de la política de auto tiering. 
+
+
+| nombre | Cadena | Sí | Nombre de la política de auto tiering. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | muchos 
+
+
+| restricción_de_la_política_de_ajuste_automático_de_niveles | link:#entity-auto_tiering_policy_constraint["restricción_de_la_política_de_ajuste_automático_de_niveles"] | muchos 
+|===
+
+
+[[autotieringpolicyconstraint]]
+=== restricción_de_la_política_de_ajuste_automático_de_niveles
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: auto_tiering_policy_constraint
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la restricción de la política de auto tiering. 
+
+
+| autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy["política_de_escalado_automático"].id | Int64 | Sí | GUID de la política de auto tiering. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento en el que se ha definido la política de auto tiering. 
+
+
+| vendorTier | Cadena | Sí | Nombre del nivel específico del proveedor. 
+
+
+| limitPercent | Int32 | Sí | Límite de cuota de volumen en este nivel. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| política_de_escalado_automático | link:#entity-auto_tiering_policy["política_de_escalado_automático"] | una JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy["política_de_escalado_automático"].id 
+|===
+
+
+[[backendlun]]
+=== backend_lun
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: backend_lun
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del LUN del backend. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| nombre | Cadena | Sí | Nombre del LUN. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| backend_path | link:#entity-backend_path["backend_path"] | muchos 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | muchos 
+|===
+
+
+[[backendluntovolume]]
+=== backend_lun_to_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: backend_lun_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta del backend. 
+
+
+| frontendStorageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento frontend. 
+
+
+| backendLunId *[FK]* →link:#entity-backend_lun["backend_lun"].id | Int64 | Sí | GUID del LUN del backend en la matriz del frontend. 
+
+
+| backendStorageId | Int64 | Sí | GUID de la matriz de almacenamiento del backend. 
+
+
+| backendVolumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen del backend. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | una JOIN:backendLunId=link:#entity-backend_lun["backend_lun"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:frontendStorageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:backendVolumeId=link:#entity-volume["volume"].id 
+|===
+
+
+[[backendpath]]
+=== backend_path
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: backend_path
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta del backend. 
+
+
+| backendLunId *[FK]* →link:#entity-backend_lun["backend_lun"].id | Int64 | Sí | GUID del LUN del backend. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| LUN | Cadena | Sí | Número de unidad lógica. 
+
+
+| initiatorPortWwn | Cadena | Sí | WWN del puerto de almacenamiento frontend. 
+
+
+| targetPortWwn | Cadena | Sí | WWN del puerto de almacenamiento del backend. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | una JOIN:backendLunId=link:#entity-backend_lun["backend_lun"].id 
+|===
+
+
+[[businessentity]]
+=== entidad_empresarial
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: business_entity
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id | Int64 | Sí | GUID de la anotación. 
+
+
+| nombre completo | Cadena | Sí | Valor de la anotación. 
+
+
+| inquilino | Cadena | Sí |  
+
+
+| lob | Cadena | Sí |  
+
+
+| businessUnit | Cadena | Sí |  
+
+
+| proyecto | Cadena | Sí |  
+|===
+
+
+[[clusterswitch]]
+=== cluster_switch
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: cluster_switch
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID del conmutador del clúster 
+
+
+| identificador | Cadena | Sí | Identificador del switch del clúster 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | ID de almacenamiento del switch del clúster 
+
+
+| nombre | Cadena | Sí | Nombre del switch del clúster 
+
+
+| dirección | Cadena | Sí | Dirección del switch de clúster 
+
+
+| serialNumber | Cadena | Sí | Número de serie del switch de clúster 
+
+
+| red | Cadena | Sí | Red del switch del clúster 
+
+
+| versión | Cadena | Sí | Versión del switch del clúster 
+
+
+| modelo | Cadena | Sí | Modelo del conmutador de clúster 
+
+
+| supervisado | Cadena | Sí | ¿Este switch de clúster está monitorizado? 
+
+
+| monitoringEnabled | Cadena | Sí | ¿La supervisión está activada para el switch del clúster? 
+
+
+| monitoringReason | Cadena | Sí | Motivo de la supervisión del switch del clúster 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| puerto_de_conmutador_de_clúster | link:#entity-cluster_switch_port["puerto_de_conmutador_de_clúster"] | muchos 
+|===
+
+
+[[clusterswitchport]]
+=== puerto_de_conmutador_de_clúster
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: cluster_switch_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID del puerto del switch del clúster 
+
+
+| identificador | Cadena | Sí | Identificador del puerto del switch del clúster 
+
+
+| clusterSwitchId *[FK]* →link:#entity-cluster_switch["cluster_switch"].id | Int64 | Sí | ID del switch de clúster del puerto del switch de clúster 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | ID de almacenamiento del puerto del switch del clúster 
+
+
+| storageNodeId *[FK]* →link:#entity-storage_node["nodo_de_almacenamiento"].id | Int64 | Sí | Identificador del nodo de almacenamiento del puerto del switch del clúster 
+
+
+| nombre | Cadena | Sí | Nombre del puerto del switch del clúster 
+
+
+| duplexType | Cadena | Sí | Tipo de dúplex del puerto del switch de clúster 
+
+
+| storageNodePortName | Cadena | Sí | Nombre del puerto del nodo para el puerto del switch del clúster 
+
+
+| storageNodePortMtu | Cadena | Sí | Unidad máxima de transmisión del puerto del nodo para el puerto del switch del clúster 
+
+
+| portIndex | Cadena | Sí | Índice del puerto del switch del clúster 
+
+
+| isl | Cadena | Sí | Enlace entre switches del puerto del switch del clúster 
+
+
+| macAddress | Cadena | Sí | Dirección MAC del puerto del switch del clúster 
+
+
+| mtu | Cadena | Sí | Unidad máxima de transmisión del puerto del switch del clúster 
+
+
+| número | Cadena | Sí | Número del puerto del switch del clúster 
+
+
+| tipo | Cadena | Sí | Tipo de puerto del switch del clúster 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto del switch del clúster 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| cluster_switch | link:#entity-cluster_switch["cluster_switch"] | una JOIN:clusterSwitchId=link:#entity-cluster_switch["cluster_switch"].id 
+
+
+| nodo_de_almacenamiento | link:#entity-storage_node["nodo_de_almacenamiento"] | una JOIN:storageNodeId=link:#entity-storage_node["nodo_de_almacenamiento"].id 
+|===
+
+
+[[computeresource]]
+=== recurso_de_computación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: compute_resource
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del sistema operativo 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | El ID del host. 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | Sí | El ID de la máquina virtual. 
+
+
+| identificador | Cadena | Sí | identificador del recurso de computación 
+
+
+| nombre | Cadena | Sí | nombre del recurso de computación. 
+
+
+| tipo | Cadena | Sí | tipo de recurso. 
+
+
+| dominio | Cadena | Sí | dominio del recurso de computación. 
+
+
+| ip | Cadena | Sí | Lista de direcciones IP del recurso de computación separadas por comas. 
+
+
+| os | Cadena | Sí | Sistema operativo que se ejecuta en el recurso de computación. 
+
+
+| cpuCount | Int32 | Sí | Cantidad de CPU del recurso de computación. 
+
+
+| memoria | Int32 | Sí | memoria del recurso de computación. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | una JOIN:vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| sistema de archivos | link:#entity-file_system["sistema de archivos"] | muchos 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | muchos 
+
+
+| sistema_de_archivos_a_disco_virtual | link:#entity-file_system_to_virtual_disk["sistema_de_archivos_a_disco_virtual"] | muchos 
+
+
+| sistema_de_archivos_a_volumen | link:#entity-file_system_to_volume["sistema_de_archivos_a_volumen"] | muchos 
+|===
+
+
+[[disk]]
+=== disco
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del disco. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador). 
+
+
+| identificador | Cadena | Sí | El identificador del disco. Identifica de forma única el disco en el almacenamiento. 
+
+
+| nombre | Cadena | Sí | El nombre del disco. 
+
+
+| velocidad | Int32 | Sí | Velocidad del disco. 
+
+
+| capacidadGB | Int64 | Sí | Capacidad del disco en GB. 
+
+
+| ubicación | Cadena | Sí | Ubicación del disco, dónde está instalado. 
+
+
+| papel | Cadena | Sí | Función del disco en el grupo de almacenamiento (p. ej., PARIDAD, DATOS, SPARE). 
+
+
+| proveedor | Cadena | Sí | Proveedor de discos (p. ej., NetApp, SEAGATE). 
+
+
+| modelo | Cadena | Sí | Modelo de disco. 
+
+
+| tipo | Cadena | Sí | Tipo de disco (por ejemplo, SATA, FC). 
+
+
+| grupo de discos | Cadena | Sí | Identificador del grupo de discos al que pertenece el disco (p. ej., rg0, 7). 
+
+
+| estado | Cadena | Sí | Estado del disco (p. ej., NORMAL, FAILED). 
+
+
+| serialNumber | Cadena | Sí | El número de serie del disco 
+
+
+| url | Cadena | Sí | URL de este disco en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+|===
+
+
+[[diskgroup]]
+=== grupo_de_discos
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: disk_group
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del grupo de discos 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento 
+
+
+| nombre | Cadena | Sí | nombre del grupo de discos 
+
+
+| identificador | Cadena | Sí | identificador del grupo de discos 
+
+
+| vendorDiskGroupType | Cadena | Sí | tipo de fabricante del grupo de discos 
+
+
+| diskType | Cadena | Sí | tipo de discos del grupo de discos 
+
+
+| estado | Cadena | Sí | estado del grupo de discos 
+
+
+| redundancia | Cadena | Sí | redundancia del grupo de discos 
+
+
+| isVirtual | Cadena | Sí | indica si el grupo de discos es virtual 
+
+
+| vendorTier | Cadena | Sí | nivel de proveedor del grupo de discos 
+
+
+| capacityMB | Int64 | Sí | capacidad utilizable del grupo de discos 
+
+
+| usedCapacityMB | Int64 | Sí | capacidad utilizada del grupo de discos 
+
+
+| physicalDiskCapacityMB | Int64 | Sí | capacidad física del grupo de discos 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+|===
+
+
+[[diskgrouptodisk]]
+=== grupo_de_discos_a_disco
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: disk_group_to_disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| diskGroupId | Int64 | Sí | GUID del grupo de discos. 
+
+
+| diskId | Int64 | Sí | GUID del disco. 
+|===
+
+
+[[diskgrouptostoragepool]]
+=== grupo_de_discos_a_storage_pool
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: disk_group_to_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| diskGroupId | Int64 | Sí | GUID del grupo de discos. 
+
+
+| storagePoolId | Int64 | Sí | GUID del grupo de almacenamiento. 
+|===
+
+
+[[drinternalvolumereplica]]
+=== dr_internal_volume_replica
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: dr_internal_volume_replica
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| sourceStorageId | Int64 | Sí | GUID del almacenamiento que es el origen de la réplica. 
+
+
+| sourceInternalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno que es el origen de la réplica. 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento que es el destino de la réplica. 
+
+
+| targetInternalVolumeId *[PK]* | Int64 | Sí | GUID del volumen interno que es el destino de la réplica. 
+
+
+| modo | Cadena | Sí | Modo de sincronización de la réplica. Los valores posibles son Synchronous, Asynchronous, Semi Synchronous, Copy y Unknown. 
+
+
+| tecnología | Cadena | Sí | La tecnología utilizada para esta replicación. Por ejemplo, SnapMirror 
+
+
+| dwhCalculated | Cadena | Sí | Verdadero si se trata de una réplica entre sitios calculada por DWH 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:sourceInternalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN: targetStorageId=link:#entity-storage["almacenamiento"].id 
+|===
+
+
+[[drqtreereplica]]
+=== dr_qtree_replica
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: dr_qtree_replica
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| sourceStorageId | Int64 | Sí | GUID del almacenamiento que es el origen de la réplica. 
+
+
+| sourceQtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree que es el origen de la réplica. 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento que es el destino de la réplica. 
+
+
+| targetQtreeId *[PK]* | Int64 | Sí | GUID del qtree que es el destino de la réplica. 
+
+
+| modo | Cadena | Sí | Modo de sincronización de la réplica. Los valores posibles son Synchronous, Asynchronous, Semi Synchronous, Copy y Unknown. 
+
+
+| tecnología | Cadena | Sí | La tecnología utilizada para esta replicación. Por ejemplo, SnapMirror 
+
+
+| dwhCalculated | Cadena | Sí | Verdadero si se trata de una réplica entre sitios calculada por DWH 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:sourceQtreeId=link:#entity-qtree["qtree"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN: targetStorageId=link:#entity-storage["almacenamiento"].id 
+|===
+
+
+[[drreplica]]
+=== dr_replica
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: dr_replica
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| sourceStorageId | Int64 | Sí | GUID del almacenamiento que es el origen de la réplica. 
+
+
+| sourceVolumeId | Int64 | Sí | GUID del volumen que es el origen de la réplica. 
+
+
+| targetStorageId | Int64 | Sí | GUID del almacenamiento que es el destino de la réplica. 
+
+
+| targetVolumeId | Int64 | Sí | GUID del volumen que es el destino de la réplica. 
+
+
+| fabrics | Int32 | Sí | [obsoleto] Número de fabrics utilizados por la réplica. 
+
+
+| punto único de fallo | Byte | Sí | [obsoleto] Indica si la réplica tiene un punto único de fallo. 
+
+
+| sourcePorts | Int32 | Sí | [obsoleto] Número de puertos de origen utilizados por la réplica. 
+
+
+| targetPorts | Int32 | Sí | [obsoleto] Número de puertos de destino utilizados por la réplica. 
+
+
+| hopsCount | Int32 | Sí | [obsoleto] Número de saltos de switch para esta réplica. 
+
+
+| sincronización | Cadena | Sí | Texto enumerado que describe el modo de replicación configurado 
+|===
+
+
+[[drvolumereplica]]
+=== dr_volume_replica
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: dr_volume_replica
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| sourceStorageId | Int64 | Sí | GUID del almacenamiento que es el origen de la réplica. 
+
+
+| sourceVolumeId *[PK]* | Int64 | Sí | GUID del volumen que es el origen de la réplica. 
+
+
+| targetStorageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento que es el destino de la réplica. 
+
+
+| targetVolumeId *[PK]* | Int64 | Sí | GUID del volumen que es el destino de la réplica. 
+
+
+| sourceVolumeGroupId | Cadena | Sí | ID del grupo de volúmenes de origen 
+
+
+| sourceVolumeGroupName | Cadena | Sí | Nombre del grupo de volúmenes de origen 
+
+
+| targetVolumeGroupId | Cadena | Sí | ID de grupo de volúmenes de destino 
+
+
+| targetVolumeGroupName | Cadena | Sí | Nombre del grupo de volúmenes de destino 
+
+
+| fabrics | Int32 | Sí | [obsoleto] Número de fabrics utilizados por la réplica. 
+
+
+| punto único de fallo | Byte | Sí | [obsoleto] Indica si la réplica tiene un punto único de fallo. 
+
+
+| sourcePorts | Int32 | Sí | [obsoleto] Número de puertos de origen utilizados por la réplica. 
+
+
+| targetPorts | Int32 | Sí | [obsoleto] Número de puertos de destino utilizados por la réplica. 
+
+
+| hopsCount | Int32 | Sí | [obsoleto] Número de saltos de switch para esta réplica. 
+
+
+| modo | Cadena | Sí | Texto enumerado que describe el modo de replicación configurado 
+
+
+| modeRaw | Cadena | Sí | Texto que describe el modo de replicación configurado 
+
+
+| tecnología | Cadena | Sí | Texto en el que se describe la tecnología de replicación utilizada 
+
+
+| estado | Cadena | Sí | Texto que describe el estado dinámico de la replicación 
+
+
+| stateRaw | Cadena | Sí | Texto enumerado que describe el estado dinámico de la replicación 
+
+
+| stateStartTime | DateTimeOffset | Sí | La hora de inicio conocida del estado notificado 
+
+
+| stateSampleTime | DateTimeOffset | Sí | La última fecha de actualización del estado 
+
+
+| stateStartTimeCalculated | Cadena | Sí | Cierto, si la hora de inicio la calcula el servidor SANscreen 
+
+
+| dwhCalculated | Cadena | Sí | Verdadero si se trata de una réplica entre sitios calculada por DWH 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:sourceVolumeId=link:#entity-volume["volume"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN: targetStorageId=link:#entity-storage["almacenamiento"].id 
+|===
+
+
+[[extendeddata]]
+=== datos_ampliados
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: extended_data
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| objectId *[PK]* | Int64 | Sí | GUID del objeto. 
+
+
+| objectType *[PK]* | Cadena | Sí | Tipo del objeto. 
+
+
+| fieldName *[PK]* | Cadena | Sí | Nombre del campo de datos ampliado. 
+
+
+| fieldValue | Cadena | Sí | Valor del campo de datos ampliado para este objeto. 
+|===
+
+
+[[fabric]]
+=== fabric
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: fabric
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la estructura. 
+
+
+| identificador | Cadena | Sí | Identificador de la estructura. 
+
+
+| wwn | Cadena | Sí | WWN de la estructura. 
+
+
+| nombre | Cadena | Sí | Nombre de la estructura. 
+
+
+| vsanEnabled | Cadena | Sí | Indica si esta estructura de red es un VSAN. 
+
+
+| vsanId | Cadena | Sí | Identificador de la VSAN en caso de que esta estructura sea una VSAN. 
+
+
+| zoningEnabled | Cadena | Sí | Si es cierto, la división en zonas se aplica en función de los datos de las tablas zone y zone members. De lo contrario, la división en zonas no se aplica en el Fabric. 
+
+
+| url | Cadena | Sí | Url de esta estructura en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| puerto de switch | link:#entity-switch_port["puerto de switch"] | muchos 
+
+
+| zona | link:#entity-zone["zona"] | muchos 
+
+
+| conmutador_virtual | link:#entity-virtual_switch["conmutador_virtual"] | muchos 
+
+
+| miembro_de_zona | link:#entity-zone_member["miembro_de_zona"] | muchos 
+
+
+| interruptor | link:#entity-switch["interruptor"] | muchos 
+|===
+
+
+[[fcnameserverentry]]
+=== fc_name_server_entry
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: fc_name_server_entry
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la entrada del servidor de nombres fc. 
+
+
+| portId | Int64 | Sí | GUID del puerto del nodo. 
+
+
+| tipo | Cadena | Sí | Tipo de puerto del nodo. (por ejemplo, HOST_PORT, STORAGE_PORT, TAPE_PORT, GENERIC_DEVICE_PORT) 
+
+
+| wwn | Cadena | Sí | WWN del puerto del nodo. 
+
+
+| connectedSwitchPortId *[FK]* →link:#entity-switch_port["puerto de switch"].id | Int64 | Sí | GUID del puerto del switch conectado. 
+
+
+| connectedSwitchPortWwn | Cadena | Sí | WWN del puerto del switch conectado. 
+
+
+| physicalPortWwn | Cadena | Sí | WWN del puerto físico (por ejemplo, NP-Port de NPV). Es el mismo que el puerto del nodo si el puerto del nodo está conectado directamente a un puerto del switch. 
+
+
+| fcId | Cadena | Sí | ID asignado tras el apretón de manos/inicio de sesión. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| puerto de switch | link:#entity-switch_port["puerto de switch"] | una JOIN:connectedSwitchPortId=link:#entity-switch_port["puerto de switch"].id 
+|===
+
+
+[[filesystem]]
+=== sistema de archivos
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: file_system
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del sistema de archivos. 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["recurso_de_computación"].id | Int64 | Sí | GUID del recurso de computación. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| nombre | Cadena | Sí | Punto de montaje o letra de unidad. Parte de la clave natural. 
+
+
+| ubicación | Cadena | Sí | Indica dónde se almacenan los datos y cómo se accede a ellos. Por ejemplo: local, SAN, NAS. Se establecerá en null si se desconoce la ubicación. 
+
+
+| hardwareId | Cadena | Sí | Identificador específico del host. Se establecerá en null si se desconoce. 
+
+
+| tipo | Cadena | Sí | Tipo de sistema de archivos. Por ejemplo: NTFS, FAT, UFS, UDF, ZFS, ISO 9660, VXFS, etc. Se establecerá en null si se desconoce. 
+
+
+| lastAgentReportTime | DateTimeOffset | Sí | La última vez que el agente recopiló información del sistema de archivos 
+
+
+| tamañoMB | Int64 | Sí | Tamaño del sistema de archivos en MB. 
+
+
+| usedMB | Int64 | Sí | Cantidad de capacidad del sistema de archivos que está usada y no está disponible. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | una JOIN:computeResourceId=link:#entity-compute_resource["recurso_de_computación"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| sistema_de_archivos_a_disco_virtual | link:#entity-file_system_to_virtual_disk["sistema_de_archivos_a_disco_virtual"] | muchos 
+
+
+| sistema_de_archivos_a_volumen | link:#entity-file_system_to_volume["sistema_de_archivos_a_volumen"] | muchos 
+|===
+
+
+[[filesystemtovirtualdisk]]
+=== sistema_de_archivos_a_disco_virtual
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: file_system_to_virtual_disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre el sistema de archivos y el volumen. 
+
+
+| virtualDiskId *[FK]* →link:#entity-hv_virtual_disk["hv_virtual_disk"].id | Int64 | Sí | GUID del disco virtual. 
+
+
+| fileSystemId *[FK]* →link:#entity-file_system["sistema de archivos"].id | Int64 | Sí | GUID del sistema de archivos. 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["recurso_de_computación"].id | Int64 | Sí | GUID del recurso de computación. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | GUID del almacén de datos. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | una JOIN:computeResourceId=link:#entity-compute_resource["recurso_de_computación"].id 
+
+
+| sistema de archivos | link:#entity-file_system["sistema de archivos"] | una JOIN:fileSystemId=link:#entity-file_system["sistema de archivos"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | una JOIN:virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[filesystemtovolume]]
+=== sistema_de_archivos_a_volumen
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: file_system_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre el sistema de archivos y el volumen. 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["recurso_de_computación"].id | Int64 | Sí | GUID del recurso de computación. 
+
+
+| fileSystemId *[FK]* →link:#entity-file_system["sistema de archivos"].id | Int64 | Sí | GUID del sistema de archivos. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | una JOIN:computeResourceId=link:#entity-compute_resource["recurso_de_computación"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| sistema de archivos | link:#entity-file_system["sistema de archivos"] | una JOIN:fileSystemId=link:#entity-file_system["sistema de archivos"].id 
+|===
+
+
+[[genericdevice]]
+=== dispositivo_genérico
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: generic_device
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del dispositivo genérico. 
+
+
+| wwn | Cadena | Sí | WWN del dispositivo genérico 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| fabricante | Cadena | Sí | Fabricante del dispositivo genérico. 
+
+
+| modelo | Cadena | Sí | Modelo del dispositivo genérico. 
+
+
+| firmware | Cadena | Sí | Versión del firmware del dispositivo genérico. 
+
+
+| controlador | Cadena | Sí | Controlador del dispositivo genérico. 
+
+
+| serialNumber | Cadena | Sí | Número de serie del dispositivo genérico. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| puerto_de_dispositivo_genérico | link:#entity-generic_device_port["puerto_de_dispositivo_genérico"] | muchos 
+
+
+| infracción | link:#entity-violation["infracción"] | muchos 
+
+
+| ruta_física | link:#entity-physical_path["ruta_física"] | muchos 
+
+
+| lógico | link:#entity-logical["lógico"] | muchos 
+|===
+
+
+[[genericdeviceport]]
+=== puerto_de_dispositivo_genérico
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: generic_device_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del puerto. 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["dispositivo_genérico"].id | Int64 | Sí | GUID del dispositivo genérico. 
+
+
+| wwn | Cadena | Sí | WWN del puerto. 
+
+
+| número | Int64 | Sí | Número del puerto en la blade que lo contiene 
+
+
+| portId | Cadena | Sí | Id del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| activo | Cadena | Sí | Verdadero si el puerto no está inactivo 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| dispositivo_genérico | link:#entity-generic_device["dispositivo_genérico"] | una JOIN:genericDeviceId=link:#entity-generic_device["dispositivo_genérico"].id 
+|===
+
+
+[[host]]
+=== anfitrión
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: host
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del host. 
+
+
+| nombre | Cadena | Sí | Nombre del host. 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| ip | Cadena | Sí | Dirección IP del host. 
+
+
+| os | Cadena | Sí | Sistema operativo que se ejecuta en el host. 
+
+
+| modelo | Cadena | Sí | Número de modelo. 
+
+
+| fabricante | Cadena | Sí | Fabricante del host. 
+
+
+| memoria instalada en MB | Cadena | Sí | Cantidad total de memoria disponible en el host, en MB. 
+
+
+| hostFsFreeGB | Cadena | Sí | Cantidad de almacenamiento libre en los sistemas de archivos del host, en GB. 
+
+
+| hostFsTotalGB | Cadena | Sí | Cantidad total de almacenamiento en los sistemas de archivos de un host, en GB. 
+
+
+| hostFsUsedGB | Cadena | Sí | Cantidad de almacenamiento en los sistemas de archivos que se utiliza para un host, en GB. 
+
+
+| cpuCount | Cadena | Sí | Número de CPU que se están ejecutando en el host. 
+
+
+| cpuSpeed | Cadena | Sí | Velocidad de la CPU, en MHz. 
+
+
+| nicCount | Cadena | Sí | Número de NIC. 
+
+
+| nicSpeed | Cadena | Sí | Velocidad de la NIC, Mb/s. 
+
+
+| url | Cadena | Sí | Url de este host en Insight Server. 
+
+
+| activo | Cadena | Sí | Indica si el host está activo en este momento. 
+
+
+| dataCenter | Cadena | Sí | # Valor de la anotación dataCenter asignado al host 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| host_port | link:#entity-host_port["host_port"] | muchos 
+
+
+| hv_path | link:#entity-hv_path["hv_path"] | muchos 
+
+
+| máscara de volumen | link:#entity-volume_mask["máscara de volumen"] | muchos 
+
+
+| adaptador_host | link:#entity-host_adapter["adaptador_host"] | muchos 
+
+
+| desconocido_lógico | link:#entity-unknown_logical["desconocido_lógico"] | muchos 
+
+
+| lógico | link:#entity-logical["lógico"] | muchos 
+
+
+| host_to_application | link:#entity-host_to_application["host_to_application"] | muchos 
+
+
+| hv_host_to_nas_share | link:#entity-hv_host_to_nas_share["hv_host_to_nas_share"] | muchos 
+
+
+| sistema de archivos | link:#entity-file_system["sistema de archivos"] | muchos 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | muchos 
+
+
+| infracción | link:#entity-violation["infracción"] | muchos 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | muchos 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | muchos 
+
+
+| ruta_física | link:#entity-physical_path["ruta_física"] | muchos 
+
+
+| hv_server | link:#entity-hv_server["hv_server"] | muchos 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | muchos 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | muchos 
+|===
+
+
+[[hostadapter]]
+=== adaptador_host
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: host_adapter
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del adaptador de host. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host donde reside este adaptador. 
+
+
+| wwn | Cadena | Sí | WWN del adaptador de host. 
+
+
+| modelo | Cadena | Sí | Modelo del adaptador de host. 
+
+
+| fabricante | Cadena | Sí | Fabricante del adaptador de host. 
+
+
+| controlador | Cadena | Sí | Nombre del controlador que gestiona el acceso al adaptador de host. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el adaptador de host. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| host_port | link:#entity-host_port["host_port"] | muchos 
+|===
+
+
+[[hostport]]
+=== host_port
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: host_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del puerto del host. 
+
+
+| adapterId *[FK]* →link:#entity-host_adapter["adaptador_host"].id | Int64 | Sí | GUID del nodo (adaptador) donde se encuentra este puerto del host. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host donde reside este puerto del host. 
+
+
+| wwn | Cadena | Sí | WWN del puerto de host. 
+
+
+| nodeWwn | Cadena | Sí | WWN del nodo (adaptador) donde se encuentra este puerto. 
+
+
+| portId | Cadena | Sí | Id del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto del host. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| activo | Cadena | Sí | Verdadero si el puerto no está inactivo 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| adaptador_host | link:#entity-host_adapter["adaptador_host"] | una JOIN:adapterId=link:#entity-host_adapter["adaptador_host"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[hosttoapplication]]
+=== host_to_application
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: host_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un host y una aplicación. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[hvdatastore]]
+=== hv_data_store
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_data_store
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del almacén de datos. 
+
+
+| naturalKey | Cadena | Sí | Identificador natural del almacén de datos. 
+
+
+| moid | Cadena | Sí | ID del objeto gestionado, asignado al almacén de datos en Virtual Center. 
+
+
+| nombre | Cadena | Sí | Nombre del almacén de datos. 
+
+
+| capacityMB | Int64 | Sí | Tamaño configurado del almacén de datos, en MB. 
+
+
+| provisionedCapacityMB | Int64 | Sí | Cantidad de espacio de almacenamiento reservado para su uso por parte del datastore, en MB. 
+
+
+| virtualCenterIp | Cadena | Sí | Dirección IP de virtual center. 
+
+
+| capacidad libre MB | Int64 | Sí | [OBSOLETO] Capacidad disponible en el almacén de datos, en MB. 
+
+
+| usedCapacityMB | Int64 | Sí | Cantidad de espacio que realmente utiliza el almacén de datos, en MB. 
+
+
+| url | Cadena | Sí | URL de este almacén de datos en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | muchos 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | muchos 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | muchos 
+
+
+| hv_datastore_to_nas_share | link:#entity-hv_datastore_to_nas_share["hv_datastore_to_nas_share"] | muchos 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | muchos 
+
+
+| sistema_de_archivos_a_disco_virtual | link:#entity-file_system_to_virtual_disk["sistema_de_archivos_a_disco_virtual"] | muchos 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | muchos 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | muchos 
+|===
+
+
+[[hvdatastoretointernalvolume]]
+=== hv_data_store_to_internal_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_data_store_to_internal_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| dataStoreId *[PK]* | Int64 | Sí | GUID del datastore. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento. 
+
+
+| internalVolumeId *[PK]* | Int64 | Sí | GUID del volumen interno. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[hvdatastoretovolume]]
+=== hv_data_store_to_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_data_store_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| dataStoreId *[PK]* | Int64 | Sí | GUID del datastore. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree. 
+
+
+| volumeId *[PK]* | Int64 | Sí | GUID del volumen. 
+
+
+| repVolume | Cadena | Sí | Verdadero si este volumen es el representante de todos los volúmenes en el almacén de datos. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[hvdatastoretonasshare]]
+=== hv_datastore_to_nas_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_datastore_to_nas_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un almacén de datos y un recurso compartido hv nas. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | GUID del almacén de datos. 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | Sí | GUID del recurso compartido hv nas. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | una JOIN:nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+|===
+
+
+[[hvhosttonasshare]]
+=== hv_host_to_nas_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_host_to_nas_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un host y un recurso compartido NAS. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | Sí | GUID del recurso compartido nas (hv_nas_share). 
+
+
+| readOnly | Byte | Sí | Indica si el equipo tiene acceso de solo lectura al recurso compartido del NAS. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | una JOIN:nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[hvlun]]
+=== hv_lun
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_lun
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del lun. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | GUID del almacén de datos que utiliza este LUN. Se establece en NULL para RDM VMDKs. 
+
+
+| naturalKey | Cadena | Sí | Identificador natural del lun. 
+
+
+| número | Cadena | Sí | Número de unidad lógica (lun). 
+
+
+| tid | Int64 | Sí | ID SCSI de destino. 
+
+
+| política | Cadena | Sí | Política de selección de ruta activa de SAN (MRU, FIXED o RR). 
+
+
+| diskName | Cadena | Sí | Nombre del disco para el LUN. 
+
+
+| volumeUuid | Cadena | Sí | UUID del volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| hv_path | link:#entity-hv_path["hv_path"] | muchos 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | muchos 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | muchos 
+|===
+
+
+[[hvluntovolume]]
+=== hv_lun_to_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_lun_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un hv lun y un volumen. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host en el que se encuentra el LUN de hv. 
+
+
+| hvLunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | Sí | GUID del lun. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento en la que se encuentra el volumen. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen. 
+
+
+| tipo | Cadena | Sí | Tipo de tecnología de acceso al volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | una JOIN:hvLunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[hvnasshare]]
+=== hv_nas_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_nas_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del recurso compartido del NAS. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | [Obsoleto] GUID del datastore. 
+
+
+| naturalKey | Cadena | Sí | Identificador natural del recurso compartido NAS. 
+
+
+| filerName | Cadena | Sí | Nombre del archivador para el recurso compartido NAS. 
+
+
+| filerIp | Cadena | Sí | Dirección IP del archivador para el recurso compartido NAS. 
+
+
+| sharePath | Cadena | Sí | Ruta en el disco lógico a la que hace referencia este recurso compartido. 
+
+
+| capacityMB | Int32 | Sí | Capacidad del espacio compartido visible para los hosts, en MB. 
+
+
+| tipo | Cadena | Sí | El protocolo utilizado para el recurso compartido NAS (por ejemplo, NFS o CIFS). 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_datastore_to_nas_share | link:#entity-hv_datastore_to_nas_share["hv_datastore_to_nas_share"] | muchos 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | muchos 
+
+
+| hv_host_to_nas_share | link:#entity-hv_host_to_nas_share["hv_host_to_nas_share"] | muchos 
+|===
+
+
+[[hvnassharetoshare]]
+=== hv_nas_share_to_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_nas_share_to_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un recurso compartido de NAS y un recurso compartido. 
+
+
+| nasShareId *[FK]* →link:#entity-hv_nas_share["hv_nas_share"].id | Int64 | Sí | GUID del recurso compartido NAS. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador) en la que se encuentra el recurso compartido. 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | Sí | GUID del recurso compartido. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| hv_nas_share | link:#entity-hv_nas_share["hv_nas_share"] | una JOIN:nasShareId=link:#entity-hv_nas_share["hv_nas_share"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | una JOIN:shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[hvpath]]
+=== hv_path
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_path
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de una ruta desde un host hasta un LUN. 
+
+
+| lunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | Sí | GUID del lun. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| hostPortWwpn | Cadena | Sí | WWN del puerto del host utilizado por la ruta. 
+
+
+| storagePortWwpn | Cadena | Sí | WWN del puerto de almacenamiento utilizado por la ruta. 
+
+
+| tipo | Cadena | Sí | Tipo de ruta (FC, ISCSI o DESCONOCIDO). 
+
+
+| activo | Byte | Sí | Indica si esta ruta está activa. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | una JOIN:lunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[hvserver]]
+=== hv_server
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_server
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del servidor ESX. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host. 
+
+
+| naturalKey | Cadena | Sí | Identificador natural del servidor ESX. 
+
+
+| moid | Cadena | Sí | ID del objeto gestionado, asignado al servidor en Virtual Center. 
+
+
+| virtualCenterIp | Cadena | Sí | Dirección IP de virtual center. 
+
+
+| clusterName | Cadena | Sí | Nombre de un grupo de servidores que comparten acceso a los mismos volúmenes SAN o a un recurso compartido NAS, o déjalo en blanco si es un servidor independiente. 
+
+
+| dataCenterName | Cadena | Sí | Nombre del centro de datos. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| vmware_host | link:#entity-vmware_host["vmware_host"] | muchos 
+|===
+
+
+[[hvvirtualdisk]]
+=== hv_virtual_disk
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_virtual_disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del disco virtual. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | GUID del almacén de datos para el disco virtual. 
+
+
+| lunId *[FK]* →link:#entity-hv_lun["hv_lun"].id | Int64 | Sí | Solo RDM VMDK, GUID del LUN asociado con el disco virtual. 
+
+
+| naturalKey | Cadena | Sí | Identificador natural del disco virtual. 
+
+
+| nombre | Cadena | Sí | Nombre del disco virtual. 
+
+
+| tipo | Cadena | Sí | Tipo de disco virtual. 
+
+
+| capacityMB | Int64 | Sí | Capacidad del disco virtual, en MB. 
+
+
+| usedCapacityMB | Int64 | Sí | Capacidad consumida del data-store, según lo reportado por el dispositivo, en MB. 
+
+
+| capacidadUtilizadaParaInformesMB | Int64 | Sí | La capacidad consumida del data-store puede ser menor que capacityMB para los VMDK con Thin-Provisioning, en MB. 
+
+
+| url | Cadena | Sí | URL de este disco virtual en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| hv_lun | link:#entity-hv_lun["hv_lun"] | una JOIN:lunId=link:#entity-hv_lun["hv_lun"].id 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | muchos 
+
+
+| hv_virtual_machine_to_disk | link:#entity-hv_virtual_machine_to_disk["hv_virtual_machine_to_disk"] | muchos 
+
+
+| sistema_de_archivos_a_disco_virtual | link:#entity-file_system_to_virtual_disk["sistema_de_archivos_a_disco_virtual"] | muchos 
+|===
+
+
+[[hvvirtualdisktovolume]]
+=== hv_virtual_disk_to_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_virtual_disk_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| virtualDiskId *[PK]* | Int64 | Sí | GUID del disco virtual. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | una JOIN:virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[hvvirtualmachine]]
+=== hv_virtual_machine
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_virtual_machine
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la máquina virtual. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host al que pertenece la máquina virtual. 
+
+
+| moid | Cadena | Sí | ID de objeto gestionado, asignado a la máquina virtual en Virtual Center. 
+
+
+| nombre | Cadena | Sí | Nombre de la máquina virtual. 
+
+
+| dnsName | Cadena | Sí | Nombre de dominio completo de la máquina virtual. 
+
+
+| ips | Cadena | Sí | Lista separada por comas de direcciones IP de la máquina virtual. 
+
+
+| powerState | Cadena | Sí | Estado de alimentación de la máquina virtual combinado con el estado del sistema operativo invitado 
+
+
+| powerStateChangeTime | DateTimeOffset | Sí | Momento en el que el estado de alimentación ha cambiado al valor actual. 
+
+
+| guestState | Cadena | Sí | El estado combinado del hardware virtual de la máquina virtual y del sistema operativo invitado. 
+
+
+| os | Cadena | Sí | Sistema operativo invitado. 
+
+
+| procesadores | Int32 | Sí | Número de procesadores de la máquina virtual. 
+
+
+| memoria | Int64 | Sí | Memoria de la máquina virtual, en MB. 
+
+
+| dataStoreId *[FK]* →link:#entity-hv_data_store["hv_data_store"].id | Int64 | Sí | GUID del almacén de datos que utiliza la máquina virtual para almacenar sus metadatos (registros, instantáneas, archivos de memoria, etc.). 
+
+
+| naturalKey | Cadena | Sí | Identificador natural de la máquina virtual. 
+
+
+| virtualCenterIp | Cadena | Sí | Dirección IP de virtual center. 
+
+
+| provisionedCapacityMB | Int64 | Sí | Cantidad de almacenamiento asignada a la máquina virtual, en MB. 
+
+
+| usedCapacityMB | Int64 | Sí | Espacio realmente utilizado por la máquina virtual, en MB. 
+
+
+| url | Cadena | Sí | Url de esta máquina virtual en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_data_store | link:#entity-hv_data_store["hv_data_store"] | un JOIN:dataStoreId=link:#entity-hv_data_store["hv_data_store"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| vm_to_application | link:#entity-vm_to_application["vm_to_application"] | muchos 
+
+
+| hv_virtual_machine_to_disk | link:#entity-hv_virtual_machine_to_disk["hv_virtual_machine_to_disk"] | muchos 
+
+
+| k8s_node | link:#entity-k8s_node["k8s_node"] | muchos 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | muchos 
+|===
+
+
+[[hvvirtualmachinetodisk]]
+=== hv_virtual_machine_to_disk
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: hv_virtual_machine_to_disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre una máquina virtual y un disco virtual. 
+
+
+| virtualMachineId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | Sí | GUID de la id de la máquina virtual. 
+
+
+| virtualDiskId *[FK]* →link:#entity-hv_virtual_disk["hv_virtual_disk"].id | Int64 | Sí | GUID del disco virtual. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | una JOIN:virtualMachineId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| hv_virtual_disk | link:#entity-hv_virtual_disk["hv_virtual_disk"] | una JOIN:virtualDiskId=link:#entity-hv_virtual_disk["hv_virtual_disk"].id 
+|===
+
+
+[[internalvolume]]
+=== volumen_interno
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: internal_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del volumen interno. 
+
+
+| storagePoolId *[FK]* →link:#entity-storage_pool["pool de almacenamiento"].id | Int64 | Sí | GUID del grupo de almacenamiento. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador). 
+
+
+| identificador | Cadena | Sí | Identificador único del volumen interno en el almacenamiento. 
+
+
+| nombre | Cadena | Sí | El nombre del volumen interno identifica de forma única dicho volumen en el sistema de almacenamiento. 
+
+
+| tipo | Cadena | Sí | Tipo de volumen interno (p. ej., flexVol, tradicional, etc.). 
+
+
+| thinProvisioningSupported | Cadena | Sí | Si este volumen interno admite Thin-Provisioning para la capa de volumen que se encuentra por encima de él. 
+
+
+| thinProvisioned | Cadena | Sí | Si este volumen interno utiliza Thin-Provisioning. por defecto falso. 
+
+
+| spaceGuarantee | Cadena | Sí | Política de garantía de espacio 
+
+
+| dedupeEnabled | Cadena | Sí | ¿Está habilitada la deduplicación en el volumen interno? Por defecto, false. 
+
+
+| cloneSourceId | Int64 | Sí | Si este volumen interno es un clon de otro volumen interno, el id del volumen interno clonado. Nulo en caso contrario. 
+
+
+| snapshotCount | Int32 | Sí | Número de instantáneas en los volúmenes internos. 
+
+
+| lastSnapshotTime | DateTimeOffset | Sí | Hora de la última instantánea 
+
+
+| lastKnownAccessTime | DateTimeOffset | Sí | Hora del último acceso al volumen interno. 
+
+
+| estado | Cadena | Sí | Estado del volumen interno (p. ej. offline, online...) 
+
+
+| virtualStorage | Cadena | Sí | Especifica VirtualStorage(por ejemplo, vFiler) 
+
+
+| protectionType | Cadena | Sí | Especifica el tipo de protección del volumen interno (p. ej., SnapMirror, SnapVault ...). 
+
+
+| flashPoolEligibility | Cadena | Sí | Indica si el volumen interno puede utilizar flash pool. 
+
+
+| dedupeRatio | Doble | Sí | Relación de compresión por deduplicación. Valor entre 0 y 1. 
+
+
+| dedupeSavingsGB | Int64 | Sí | La compresión con deduplicación en este volumen interno (en GB). 
+
+
+| capacidad total asignada en MB | Int64 | Sí | Capacidad asignada a un volumen interno según lo indica la matriz de almacenamiento, en MB. Incluye la capacidad asignada a instantáneas. <br>Equivale a: snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB 
+
+
+| capacidadTotalUtilizadaMB | Int64 | Sí | Capacidad consumida por el volumen interno del storage pool. 
+
+
+| capacidad total utilizada del dispositivo en MB | Int64 | Sí | Capacidad utilizada en un volumen interno, según lo indica la matriz de almacenamiento, en MB. Incluye la capacidad utilizada para instantáneas. <br>Equivale a: snapshotUsedCapacityMB + dataUsedCapacityMB 
+
+
+| capacidadAsignadaMB | Int64 | Sí | Capacidad asignada a un volumen interno según lo indicado por la matriz de almacenamiento, en MB. No incluye la capacidad asignada a instantáneas. 
+
+
+| dataUsedCapacityMB | Int64 | Sí | Capacidad utilizada en un volumen interno según lo indicado por la storage-array, en MB. No incluye la capacidad utilizada para snapshots. 
+
+
+| snapshotAllocatedCapacityMB | Int64 | Sí | Capacidad asignada para las instantáneas de volumen interno en MB. 
+
+
+| snapshotUsedCapacityMB | Int64 | Sí | Capacidad utilizada para instantáneas de volumen interno en MB. 
+
+
+| rawToUsableRatio | Doble | Sí | La relación entre la capacidad bruta del disco y la capacidad utilizable del volumen interno. Depende del nivel RAID y de otras sobrecargas. 
+
+
+| otraCapacidadUtilizadaMB | Int64 | Sí | Sobrecarga adicional que no se ha incluido en la «Capacidad utilizada de datos/instantáneas» del volumen interno. totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB. 
+
+
+| otherAllocatedCapacityMB | Int64 | Sí | Espacio adicional no incluido en la capacidad asignada a datos y Snapshots del volumen interno. totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB. 
+
+
+| totalCloneSavedCapacityMB | Int64 | Sí | Capacidad que el volumen interno clonado comparte con su volumen interno de origen 
+
+
+| compressionEnabled | Cadena | Sí | ¿La compresión está activada en el volumen interno? 
+
+
+| compressionRatio | Doble | Sí | Índice de ahorro por compresión. Valor entre 0 y 1. 
+
+
+| compressionSavingsGB | Int64 | Sí | La compresión de este volumen interno (en GB). 
+
+
+| compressionSavingsPercent | Doble | Sí | La compresión de este volumen interno (%). 
+
+
+| uuid | Cadena | Sí | UUID del volumen interno. 
+
+
+| url | Cadena | Sí | Url de este volumen interno en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| pool de almacenamiento | link:#entity-storage_pool["pool de almacenamiento"] | una JOIN:storagePoolId=link:#entity-storage_pool["pool de almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | muchos 
+
+
+| qtree | link:#entity-qtree["qtree"] | muchos 
+
+
+| dr_internal_volume_replica | link:#entity-dr_internal_volume_replica["dr_internal_volume_replica"] | muchos 
+
+
+| volumen_interno_a_aplicación | link:#entity-internal_volume_to_application["volumen_interno_a_aplicación"] | muchos 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | muchos 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | muchos 
+
+
+| cuota | link:#entity-quota["cuota"] | muchos 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | muchos 
+|===
+
+
+[[internalvolumetoapplication]]
+=== volumen_interno_a_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: internal_volume_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un volumen interno y una aplicación. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+|===
+
+
+[[iscsilogical]]
+=== iscsi_logical
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: iscsi_logical
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta lógica iscsi. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host iniciador de la ruta lógica iscsi. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento de destino de la ruta lógica iscsi. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen de destino de la ruta lógica iSCSI. 
+
+
+| numberOfSessions | Int32 | Sí | El número de sesiones establecidas en la ruta lógica iscsi. 
+
+
+| numberOfConnections | Int32 | Sí | El número de conexiones establecidas en la ruta lógica iscsi. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[k8scluster]]
+=== k8s_cluster
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_cluster
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | Id del clúster K8S 
+
+
+| nombre | Cadena | Sí |  
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | muchos 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | muchos 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | muchos 
+
+
+| k8s_node | link:#entity-k8s_node["k8s_node"] | muchos 
+
+
+| k8s_pv | link:#entity-k8s_pv["k8s_pv"] | muchos 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | muchos 
+|===
+
+
+[[k8slabel]]
+=== k8s_label
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_label
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| objectId *[PK]* | Int64 | Sí | GUID del objeto. 
+
+
+| objectType *[PK]* | Cadena | Sí | Tipo del objeto. 
+
+
+| labelName *[PK]* | Cadena | Sí | Nombre de la etiqueta. 
+
+
+| labelValue | Cadena | Sí | Valor de la etiqueta de este objeto. 
+|===
+
+
+[[k8snamespace]]
+=== k8s_namespace
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_namespace
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | Identificador del espacio de nombres K8S 
+
+
+| identificador | Cadena | Sí | Identificador del espacio de nombres K8S 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| nombre | Cadena | Sí |  
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | muchos 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | muchos 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | muchos 
+|===
+
+
+[[k8snode]]
+=== k8s_node
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_node
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | Id del nodo K8S 
+
+
+| identificador | Cadena | Sí | Identificador del nodo K8S 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| nombre | Cadena | Sí | Nombre del nodo K8S 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | Sí | ID de la máquina virtual en la que se encuentra este nodo 
+
+
+| internalIp | Cadena | Sí | Dirección IP interna del nodo K8S 
+
+
+| osImage | Cadena | Sí | Imagen del sistema operativo del nodo K8S 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | una JOIN:vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+|===
+
+
+[[k8spv]]
+=== k8s_pv
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_pv
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID del volumen persistente K8S 
+
+
+| identificador | Cadena | Sí | Identificador del volumen persistente K8S 
+
+
+| nombre | Cadena | Sí | Nombre del volumen persistente K8S 
+
+
+| objectId | Int64 | Sí | ID del objeto de almacenamiento asociado a este volumen persistente 
+
+
+| objectType | Cadena | Sí | Tipo del objeto de almacenamiento asignado a este volumen persistente 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| fase | Cadena | Sí | Fase del volumen persistente K8S (Bound, etc.) 
+
+
+| sizeBytes | Int64 | Sí | Tamaño del volumen persistente K8S (en bytes) 
+
+
+| storageClass | Cadena | Sí | Clase de almacenamiento del volumen persistente K8S 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | muchos 
+|===
+
+
+[[k8spvc]]
+=== k8s_pvc
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_pvc
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID de la reserva de volumen persistente K8S 
+
+
+| identificador | Cadena | Sí | Identificador de la reclamación de volumen persistente K8S 
+
+
+| nombre | Cadena | Sí | Nombre de la asignación de volumen persistente K8S 
+
+
+| pvId *[FK]* →link:#entity-k8s_pv["k8s_pv"].id | Int64 | Sí | Identificador del volumen persistente K8S asociado a este claim 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | Sí | Identificador del espacio de nombres K8S 
+
+
+| fase | Cadena | Sí | Fase de la reclamación de volumen persistente K8S (Bound, etc.) 
+
+
+| sizeBytes | Int64 | Sí | Tamaño de la solicitud de volumen persistente K8S (en bytes) 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_pv | link:#entity-k8s_pv["k8s_pv"] | una JOIN:pvId=link:#entity-k8s_pv["k8s_pv"].id 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | una unión:namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | muchos 
+|===
+
+
+[[k8sworkload]]
+=== k8s_workload
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_workload
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID de la carga de trabajo K8S 
+
+
+| identificador | Cadena | Sí | Identificador de la carga de trabajo K8S 
+
+
+| nombre | Cadena | Sí | Nombre de la carga de trabajo K8S 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | Sí | Identificador del espacio de nombres K8S 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| tipo | Cadena | Sí | Tipo de carga de trabajo (pod, statefulset, etc.) 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | una unión:namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+
+
+| k8s_workload_to_pvc | link:#entity-k8s_workload_to_pvc["k8s_workload_to_pvc"] | muchos 
+|===
+
+
+[[k8sworkloadtopvc]]
+=== k8s_workload_to_pvc
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: k8s_workload_to_pvc
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| workloadId *[PK]* | Int64 | Sí | Identificador de la carga de trabajo K8S 
+
+
+| pvcId *[PK]* | Int64 | Sí | Identificador del volumen persistente K8S 
+
+
+| clusterId *[FK]* →link:#entity-k8s_cluster["k8s_cluster"].id | Int64 | Sí | Id del clúster K8S 
+
+
+| namespaceId *[FK]* →link:#entity-k8s_namespace["k8s_namespace"].id | Int64 | Sí | Identificador del espacio de nombres K8S 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| k8s_workload | link:#entity-k8s_workload["k8s_workload"] | una JOIN:workloadId=link:#entity-k8s_workload["k8s_workload"].id 
+
+
+| k8s_pvc | link:#entity-k8s_pvc["k8s_pvc"] | una JOIN:pvcId=link:#entity-k8s_pvc["k8s_pvc"].id 
+
+
+| k8s_namespace | link:#entity-k8s_namespace["k8s_namespace"] | una unión:namespaceId=link:#entity-k8s_namespace["k8s_namespace"].id 
+
+
+| k8s_cluster | link:#entity-k8s_cluster["k8s_cluster"] | una JOIN:clusterId=link:#entity-k8s_cluster["k8s_cluster"].id 
+|===
+
+
+[[logical]]
+=== lógico
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: lógico
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta lógica. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host iniciador de la ruta lógica: se establece en null para las rutas de generic-devices. 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["dispositivo_genérico"].id | Int64 | Sí | El GUID del dispositivo genérico, que es el iniciador de la ruta lógica, se establece en null para las rutas desde hosts. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento de destino de la ruta lógica: se establece en null para las rutas a cintas. 
+
+
+| tapeId *[FK]* →link:#entity-tape["cinta"].id | Int64 | Sí | GUID de la cinta de destino de la ruta lógica: se establece en nulo para las rutas a storage-arrays. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen de destino de la ruta lógica: se establece en null para las rutas a cintas. 
+
+
+| minHopNumber | Int32 | Sí | Saltos mínimos de conmutador para la ruta lógica. 
+
+
+| hopsToDisplay | Cadena | Sí | Lista separada por comas de los recuentos de saltos de switch correspondientes a las diferentes rutas subyacentes para esta ruta lógica. 
+
+
+| numberOfFabrics | Int32 | Sí | Número de fabrics utilizados por la ruta lógica. 
+
+
+| numberOfHostPorts | Int32 | Sí | Número de puertos host utilizados por la ruta lógica. 
+
+
+| numberOfStoragePorts | Int32 | Sí | Número de puertos de almacenamiento utilizados por la ruta lógica. 
+
+
+| punto único de fallo | Byte | Sí | Indica si la ruta lógica tiene un punto único de fallo. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| cinta | link:#entity-tape["cinta"] | una JOIN:tapeId=link:#entity-tape["cinta"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| dispositivo_genérico | link:#entity-generic_device["dispositivo_genérico"] | una JOIN:genericDeviceId=link:#entity-generic_device["dispositivo_genérico"].id 
+|===
+
+
+[[nascrlogical]]
+=== nas_cr_logical
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: nas_cr_logical
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta lógica del NAS. 
+
+
+| computeResourceId *[FK]* →link:#entity-compute_resource["recurso_de_computación"].id | Int64 | Sí | GUID del host que accede al recurso compartido de archivos. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del archivador de la matriz de almacenamiento a la que se accede. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno al que se está accediendo. 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | Sí | GUID del recurso compartido al que se está accediendo. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| recurso_de_computación | link:#entity-compute_resource["recurso_de_computación"] | una JOIN:computeResourceId=link:#entity-compute_resource["recurso_de_computación"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | una JOIN:shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[nasfileshare]]
+=== nas_file_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: nas_file_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del recurso compartido de archivos. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno en el que se define este recurso compartido de archivos. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del archivador de la matriz de almacenamiento en la que se define este recurso compartido. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree en el que se define este recurso compartido de archivos. 
+
+
+| nombre | Cadena | Sí | Nombre del recurso compartido de archivos. 
+
+
+| ruta | Cadena | Sí | La ruta completa dentro del volumen interno hasta la carpeta que se va a compartir termina con el nombre del recurso compartido. 
+
+
+| estado | Cadena | Sí | Estado del recurso compartido de archivos (snapvaulted, snapmirrored, normal o de solo lectura). 
+
+
+| securityType | Cadena | Sí | Tipo de seguridad del recurso compartido de archivos (unix, ntfs o mixto). 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | muchos 
+|===
+
+
+[[naslogical]]
+=== nas_logical
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: nas_logical
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id | Int64 | Sí | GUID de la ruta lógica del NAS. 
+
+
+| hostId | Int64 | Sí | El ID del host. 
+
+
+| storageId | Int64 | Sí | GUID del archivador de la matriz de almacenamiento a la que se accede. 
+
+
+| shareId | Int64 | Sí | GUID del recurso compartido al que se está accediendo. 
+|===
+
+
+[[nasshare]]
+=== nas_share
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: nas_share
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del recurso compartido. 
+
+
+| fileShareId *[FK]* →link:#entity-nas_file_share["nas_file_share"].id | Int64 | Sí | GUID del recurso compartido de archivos con el que está asociado este recurso compartido. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del archivador de la matriz de almacenamiento en la que se define este recurso compartido. 
+
+
+| identificador | Cadena | Sí | Identificador del recurso compartido en el almacenamiento. 
+
+
+| nombre | Cadena | Sí | Nombre del recurso compartido. 
+
+
+| protocolo | Cadena | Sí | Protocolo utilizado para acceder al recurso compartido, uno de: CIFS o NFS. 
+
+
+| ipInterfaces | Cadena | Sí | Todas las direcciones IP del almacenamiento en el que se encuentra el recurso compartido. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | una JOIN:fileShareId=link:#entity-nas_file_share["nas_file_share"].id 
+
+
+| compartir_con_la_aplicación | link:#entity-share_to_application["compartir_con_la_aplicación"] | muchos 
+
+
+| nas_share_initiator | link:#entity-nas_share_initiator["nas_share_initiator"] | muchos 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | muchos 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | muchos 
+|===
+
+
+[[nasshareinitiator]]
+=== nas_share_initiator
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: nas_share_initiator
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de share_initiator. 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | Sí | GUID del recurso compartido con el que está asociado este share_initiator. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del archivador de la matriz de almacenamiento en la que se define este recurso compartido. 
+
+
+| iniciador | Cadena | Sí | Dirección IP o nombre de la subred del host o hosts a los que se permite acceder al recurso compartido. 
+
+
+| permiso | Cadena | Sí | Lectura/escritura/ejecución y nombre. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | una JOIN:shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[objecttoannotation]]
+=== objeto_a_anotación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: object_to_annotation
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| annotationValueId *[PK]* | Int64 | Sí | GUID del valor de la anotación. 
+
+
+| objectId *[PK]* | Int64 | Sí | GUID del objeto anotado. 
+
+
+| objectType *[PK]* | Cadena | Sí | Tipo del objeto anotado. 
+
+
+| annotationType | Cadena | Sí | Tipo de la anotación. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| valor_de_anotación | link:#entity-annotation_value["valor_de_anotación"] | una JOIN:annotationValueId=link:#entity-annotation_value["valor_de_anotación"].id 
+|===
+
+
+[[physicalpath]]
+=== ruta_física
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: physical_path
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta física. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host que inicia la ruta física. Es nulo para una ruta de un dispositivo genérico. 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["dispositivo_genérico"].id | Int64 | Sí | GUID del dispositivo genérico que inicia la ruta física. Es nulo para una ruta desde un host. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento de destino de la ruta física. Es nulo para una ruta a una cinta. 
+
+
+| tapeId *[FK]* →link:#entity-tape["cinta"].id | Int64 | Sí | GUID de la cinta de destino de la ruta física. Es nulo para una ruta a un almacenamiento. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen de destino de la ruta física. 
+
+
+| hostPortWwn | Cadena | Sí | WWN del puerto de host. 
+
+
+| storagePortWwn | Cadena | Sí | WWN del puerto de almacenamiento. 
+
+
+| LUN | Cadena | Sí | Número de unidad lógica (LUN) que utiliza el host para acceder al volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| cinta | link:#entity-tape["cinta"] | una JOIN:tapeId=link:#entity-tape["cinta"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| dispositivo_genérico | link:#entity-generic_device["dispositivo_genérico"] | una JOIN:genericDeviceId=link:#entity-generic_device["dispositivo_genérico"].id 
+|===
+
+
+[[portconnectivity]]
+=== conectividad_de_puerto
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: port_connectivity
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la conectividad del puerto. 
+
+
+| portId | Int64 | Sí | GUID del primer puerto. 
+
+
+| tipo | Cadena | Sí | Tipo del primer puerto. 
+
+
+| wwn | Cadena | Sí | WWN del primer puerto. 
+
+
+| connectedId | Int64 | Sí | GUID del segundo puerto. 
+
+
+| connectedType | Cadena | Sí | Tipo del segundo puerto. 
+
+
+| connectedWwn | Cadena | Sí | WWN del segundo puerto. 
+|===
+
+
+[[qtree]]
+=== qtree
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: qtree
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del qtree. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno en el que se encuentra el qtree. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador). 
+
+
+| identificador | Cadena | Sí | Identificador único del qtree en el almacenamiento. 
+
+
+| nombre | Cadena | Sí | El nombre del qtree. 
+
+
+| cuotaLímiteMáximoDeCapacidadMB | Int64 | Sí | El límite de espacio en disco impuesto a este qtree mediante una cuota. Cuando se supera, no se pueden escribir datos. 
+
+
+| quotaSoftCapacityLimitMB | Int64 | Sí | El límite de espacio en disco impuesto a este qtree mediante una cuota. Cuando se supera, se emite una advertencia pero aún se pueden escribir datos. 
+
+
+| quotaUsedCapacityMB | Int64 | Sí | Capacidad utilizada con respecto al límite de capacidad máximo y mínimo establecido en la cuota. 
+
+
+| tipo | Cadena | Sí | Tipo de qtree. 
+
+
+| securityStyle | Cadena | Sí | Estilo de seguridad del qtree. 
+
+
+| estado | Cadena | Sí | Estado del qtree. 
+
+
+| oplocks | Cadena | Sí | Si los bloqueos oportunistas están habilitados en el qtree. 
+
+
+| url | Cadena | Sí | URL de este qtree en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| volume | link:#entity-volume["volume"] | muchos 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | muchos 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | muchos 
+
+
+| dr_qtree_replica | link:#entity-dr_qtree_replica["dr_qtree_replica"] | muchos 
+
+
+| cuota | link:#entity-quota["cuota"] | muchos 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | muchos 
+
+
+| qtree_to_application | link:#entity-qtree_to_application["qtree_to_application"] | muchos 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | muchos 
+|===
+
+
+[[qtreetoapplication]]
+=== qtree_to_application
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: qtree_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un qtree y una aplicación. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[quota]]
+=== cuota
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: quota
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la cuota. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | GUID del volumen interno en el que se define esta cuota. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del archivador de la matriz de almacenamiento en la que se define esta cuota. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | GUID del qtree en el que se ha definido esta cuota. 
+
+
+| identificador | Cadena | Sí | Identificador único de la cuota. 
+
+
+| targetUser | Cadena | Sí | Especifica un grupo o un usuario al que se aplica esta cuota. 
+
+
+| tipo | Cadena | Sí | Especifica el tipo de destino (tree, group o user) al que se aplica esta cuota. 
+
+
+| hardFileLimit | Int64 | Sí | Limitación estricta en el número de archivos que esta cuota impone al árbol, grupo o usuario. 
+
+
+| softFileLimit | Int64 | Sí | Límite de cuota flexible para archivos que, si se supera, genera avisos en lugar de rechazar las solicitudes de creación de archivos. 
+
+
+| hardCapacityLimitMB | Int64 | Sí | Límite de espacio en disco duro, en MB, que esta cuota impone al árbol, grupo, usuario o tipo. 
+
+
+| softCapacityLimitMB | Int64 | Sí | Límite de cuota de espacio flexible, en MB, que si se supera genera avisos en lugar de rechazar las solicitudes de espacio. 
+
+
+| thresholdMB | Int64 | Sí | Punto de uso del espacio en disco, en MB, en el que se emiten avisos de que se están alcanzando los límites de cuota. 
+
+
+| usedFiles | Int64 | Sí | Número de archivos que utiliza actualmente el destinatario de esta cuota. 
+
+
+| usedCapacityMB | Int64 | Sí | Espacio en disco, en MB, que está usando actualmente el destino de esta cuota. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+|===
+
+
+[[servicelevel]]
+=== nivel de servicio
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: service_level
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id | Int64 | Sí | GUID de la anotación. 
+
+
+| nombre | Cadena | Sí | Valor de la anotación. 
+
+
+| secuencia | Int32 | Sí | Número de secuencia que determina el orden de los valores de enumeración. Esto se utiliza principalmente con fines de visualización. 
+
+
+| coste | Doble | Sí | Coste opcional asociado a la anotación. Aplicable a la anotación de nivel. 
+|===
+
+
+[[sharetoapplication]]
+=== compartir_con_la_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: share_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un recurso compartido y una aplicación. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| shareId *[FK]* →link:#entity-nas_share["nas_share"].id | Int64 | Sí | GUID del recurso compartido. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | una JOIN:shareId=link:#entity-nas_share["nas_share"].id 
+|===
+
+
+[[storage]]
+=== almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: almacenamiento
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| nombre | Cadena | Sí | Nombre de la cabina de almacenamiento. 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| ip | Cadena | Sí | Dirección IP de la matriz de almacenamiento. 
+
+
+| modelo | Cadena | Sí | Modelo de la matriz de almacenamiento. 
+
+
+| fabricante | Cadena | Sí | Fabricante de la matriz de almacenamiento. 
+
+
+| serialNumber | Cadena | Sí | Número de serie de la matriz de almacenamiento. 
+
+
+| microcodeVersion | Cadena | Sí | Versión del firmware que se ejecuta en la matriz de almacenamiento. 
+
+
+| rawCapacityMB | Int64 | Sí | Capacidad real bruta del disco de la matriz de almacenamiento en MB. 
+
+
+| spareRawCapacityMB | Int64 | Sí | Suma de toda la capacidad bruta de los discos de reserva en la matriz de almacenamiento en MB. 
+
+
+| failedRawCapacityMB | Int64 | Sí | Suma de toda la capacidad bruta defectuosa en la matriz de almacenamiento en MB. 
+
+
+| memoryMB | Int64 | Sí | Tamaño de la memoria instalada en el array (archivador), en MB. 
+
+
+| cpuCount | Int32 | Sí | Número de CPU instaladas en la matriz (archivador). 
+
+
+| manageURL | Cadena | Sí | URL del software de gestión del dispositivo. 
+
+
+| familia | Cadena | Sí | Nombre de la familia de almacenamiento, podría ser Clariion, Symmetrix, etc. 
+
+
+| isVirtual | Cadena | Sí | Determina si la matriz es un virtualizador. 
+
+
+| clúster | Cadena | Sí | Determina si la matriz es un clúster NetApp C-Mode. 
+
+
+| url | Cadena | Sí | URL de este almacenamiento en Insight Server. 
+
+
+| lastAcquiredTime | DateTimeOffset | Sí | Especifica la última hora adquirida. 
+
+
+| activo | Cadena | Sí | Indica si la matriz de almacenamiento está activa en este momento. 
+
+
+| dataCenter | Cadena | Sí | # Valor de la anotación dataCenter asignado al almacenamiento 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| dr_internal_volume_replica | link:#entity-dr_internal_volume_replica["dr_internal_volume_replica"] | muchos 
+
+
+| nas_share | link:#entity-nas_share["nas_share"] | muchos 
+
+
+| controlador de almacenamiento | link:#entity-storage_controller["controlador de almacenamiento"] | muchos 
+
+
+| nas_share_initiator | link:#entity-nas_share_initiator["nas_share_initiator"] | muchos 
+
+
+| nas_cr_logical | link:#entity-nas_cr_logical["nas_cr_logical"] | muchos 
+
+
+| desconocido_lógico | link:#entity-unknown_logical["desconocido_lógico"] | muchos 
+
+
+| mapa de volumen | link:#entity-volume_map["mapa de volumen"] | muchos 
+
+
+| sistema_de_archivos_a_volumen | link:#entity-file_system_to_volume["sistema_de_archivos_a_volumen"] | muchos 
+
+
+| puerto_de_conmutador_de_clúster | link:#entity-cluster_switch_port["puerto_de_conmutador_de_clúster"] | muchos 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | muchos 
+
+
+| cuota | link:#entity-quota["cuota"] | muchos 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | muchos 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | muchos 
+
+
+| pool de almacenamiento | link:#entity-storage_pool["pool de almacenamiento"] | muchos 
+
+
+| hv_nas_share_to_share | link:#entity-hv_nas_share_to_share["hv_nas_share_to_share"] | muchos 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | muchos 
+
+
+| qtree | link:#entity-qtree["qtree"] | muchos 
+
+
+| dr_qtree_replica | link:#entity-dr_qtree_replica["dr_qtree_replica"] | muchos 
+
+
+| cluster_switch | link:#entity-cluster_switch["cluster_switch"] | muchos 
+
+
+| máscara de volumen | link:#entity-volume_mask["máscara de volumen"] | muchos 
+
+
+| política_de_escalado_automático | link:#entity-auto_tiering_policy["política_de_escalado_automático"] | muchos 
+
+
+| restricción_de_la_política_de_ajuste_automático_de_niveles | link:#entity-auto_tiering_policy_constraint["restricción_de_la_política_de_ajuste_automático_de_niveles"] | muchos 
+
+
+| dr_volume_replica | link:#entity-dr_volume_replica["dr_volume_replica"] | muchos 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | muchos 
+
+
+| lógico | link:#entity-logical["lógico"] | muchos 
+
+
+| volume | link:#entity-volume["volume"] | muchos 
+
+
+| backend_path | link:#entity-backend_path["backend_path"] | muchos 
+
+
+| disco | link:#entity-disk["disco"] | muchos 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | muchos 
+
+
+| nas_file_share | link:#entity-nas_file_share["nas_file_share"] | muchos 
+
+
+| hv_data_store_to_internal_volume | link:#entity-hv_data_store_to_internal_volume["hv_data_store_to_internal_volume"] | muchos 
+
+
+| almacenamiento_a_aplicación | link:#entity-storage_to_application["almacenamiento_a_aplicación"] | muchos 
+
+
+| backend_lun | link:#entity-backend_lun["backend_lun"] | muchos 
+
+
+| infracción | link:#entity-violation["infracción"] | muchos 
+
+
+| puerto_de_almacenamiento | link:#entity-storage_port["puerto_de_almacenamiento"] | muchos 
+
+
+| ruta_física | link:#entity-physical_path["ruta_física"] | muchos 
+
+
+| grupo_de_discos | link:#entity-disk_group["grupo_de_discos"] | muchos 
+
+
+| nodo_de_almacenamiento | link:#entity-storage_node["nodo_de_almacenamiento"] | muchos 
+|===
+
+
+[[storagecontroller]]
+=== controlador de almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_controller
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del controlador de almacenamiento. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento donde reside este controlador. 
+
+
+| wwn | Cadena | Sí | WWN del controlador de almacenamiento (node wwn). 
+
+
+| modelo | Cadena | Sí | Modelo del controlador de almacenamiento. 
+
+
+| fabricante | Cadena | Sí | Fabricante del controlador de almacenamiento. 
+
+
+| controlador | Cadena | Sí | Nombre del driver que gestiona el acceso al controlador de almacenamiento. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el controlador de almacenamiento. 
+
+
+| numberOfPorts | Cadena | Sí | Número de puertos del controlador de almacenamiento. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| puerto_de_almacenamiento | link:#entity-storage_port["puerto_de_almacenamiento"] | muchos 
+|===
+
+
+[[storagenode]]
+=== nodo_de_almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_node
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del nodo de almacenamiento 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador). 
+
+
+| nombre | Cadena | Sí | nombre del nodo de almacenamiento. 
+
+
+| identificador | Cadena | Sí | UUID del nodo de almacenamiento. 
+
+
+| versión | Cadena | Sí | versión del nodo de almacenamiento. 
+
+
+| modelo | Cadena | Sí | modelo del nodo de almacenamiento. 
+
+
+| serialNumber | Cadena | Sí | serialNumber del nodo de almacenamiento. 
+
+
+| estado | Cadena | Sí | estado del nodo de almacenamiento. 
+
+
+| partnerNodeId | Int64 | Sí | GUID del nodo asociado. 
+
+
+| memorySizeMB | Int64 | Sí | tamaño de la memoria de este nodo de almacenamiento. 
+
+
+| cacheSizeMB | Int64 | Sí | tamaño de la caché de este nodo de almacenamiento. 
+
+
+| numberOfProcessors | Int32 | Sí | número de procesadores de este nodo de almacenamiento 
+
+
+| url | Cadena | Sí | Url de este nodo de almacenamiento en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| puerto_de_conmutador_de_clúster | link:#entity-cluster_switch_port["puerto_de_conmutador_de_clúster"] | muchos 
+|===
+
+
+[[storagenodetointernalvolume]]
+=== nodo_de_almacenamiento_a_volumen_interno
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_node_to_internal_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storageNodeId | Int64 | Sí | GUID del nodo de almacenamiento. 
+
+
+| internalVolumeId | Int64 | Sí | GUID del volumen interno. 
+|===
+
+
+[[storagenodetoport]]
+=== nodo_de_almacenamiento_a_puerto
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_node_to_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storageNodeId | Int64 | Sí | GUID del nodo de almacenamiento. 
+
+
+| portId | Int64 | Sí | GUID del puerto. 
+|===
+
+
+[[storagenodetostoragepool]]
+=== nodo_de_almacenamiento_a_grupo_de_almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_node_to_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storageNodeId | Int64 | Sí | GUID del nodo de almacenamiento. 
+
+
+| storagePoolId | Int64 | Sí | GUID del grupo de almacenamiento. 
+|===
+
+
+[[storagenodetovolume]]
+=== nodo_de_almacenamiento_a_volumen
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_node_to_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storageNodeId | Int64 | Sí | GUID del nodo de almacenamiento. 
+
+
+| volumeId | Int64 | Sí | GUID del volumen. 
+|===
+
+
+[[storagepool]]
+=== pool de almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_pool
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del Storage Pool. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento (archivador). 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| tipo | Cadena | Sí | Tipo de entidad real que describe el grupo de almacenamiento. 
+
+
+| nombre | Cadena | Sí | Nombre del grupo de almacenamiento. 
+
+
+| thinProvisioningSupported | Cadena | Sí | Si este grupo de almacenamiento admite el aprovisionamiento ligero para la capa de volúmenes que se encuentra por encima de él. por defecto, falso. 
+
+
+| includeInDwhCapacity | Cadena | Sí | Determina si el storage_pool aparecerá en la dimensión storage-pool del datamart de capacidad. valor por defecto: false. 
+
+
+| isVirtual | Cadena | Sí | Indica que el storage_pool consiste en LUN de backend. 
+
+
+| raidGroup | Cadena | Sí | Indica si el storage_pool es un raidGroup. 
+
+
+| vendorTier | Cadena | Sí | Nombre del nivel específico del proveedor. 
+
+
+| autoTiering | Cadena | Sí | Indica si este grupo de almacenamiento participa en la clasificación automática por niveles junto con otros grupos. 
+
+
+| usesFlashPools | Cadena | Sí | Indica si este grupo de almacenamiento utiliza flash pools. 
+
+
+| redundancia | Cadena | Sí | El nivel de redundancia del storage_pool. 
+
+
+| estado | Cadena | Sí | Estado del storage_pool (p. ej., fuera de línea, en línea...). 
+
+
+| snapshotAllocatedCapacityMB | Int64 | Sí | Capacidad asignada para instantáneas a nivel de grupo de almacenamiento en MB. 
+
+
+| snapshotUsedCapacityMB | Int64 | Sí | Capacidad utilizada para las instantáneas a nivel de storage-pool, en MB. 
+
+
+| capacidadAsignadaMB | Int64 | Sí | Capacidad asignada a un storage-pool según lo reporta la storage-array, en MB. No incluye la capacidad asignada a las snapshots a nivel de storage-pool. 
+
+
+| dataUsedCapacityMB | Int64 | Sí | Capacidad utilizada en un grupo de almacenamiento según lo informado por la matriz de almacenamiento en MB. No incluye la capacidad utilizada para las instantáneas a nivel de grupo de almacenamiento. 
+
+
+| capacidad total asignada en MB | Int64 | Sí | Capacidad asignada a un storage-pool según lo reportado por el storage-array, en MB. Incluye la capacidad asignada a las instantáneas a nivel de storage-pool. <br>Equivale a: snapshotAllocatedCapacityMB + dataAllocatedCapacityMB + otherAllocatedCapacityMB 
+
+
+| capacidadTotalUtilizadaMB | Int64 | Sí | Capacidad utilizada en un grupo de almacenamiento según lo indicado por la storage-array en MB. Incluye la capacidad utilizada para las instantáneas a nivel de storage-pool. <br>Equivale a: snapshotUsedCapacityMB + dataUsedCapacityMB + otherUsedCapacityMB 
+
+
+| rawToUsableRatio | Doble | Sí | La relación entre la capacidad bruta del disco y la capacidad utilizable del storage-pool. Afectada por el nivel de RAID y otros gastos generales. 
+
+
+| capacidadReservadaMB | Int64 | Sí | Capacidad no utilizada del grupo de almacenamiento reservada para volúmenes en MB. Esta capacidad se incluye en la capacidad dataAllocatedCapacityMB. 
+
+
+| otraCapacidadUtilizadaMB | Int64 | Sí | Espacio adicional no incluido en la «Capacidad utilizada de datos/instantáneas» del storage-pool. totalUsedCapacityMB = dataUsedCapacityMB + snapShotUsedCapacityMB + otherUsedCapacityMB. 
+
+
+| otherAllocatedCapacityMB | Int64 | Sí | Sobrecarga adicional que no se ha incluido en la Capacidad asignada a datos/instantáneas del storage-pool. totalAllocatedCapacityMB = dataAllocatedCapacityMB + snapShotAllocatedCapacityMB + otherAllocatedCapacityMB. 
+
+
+| physicalDiskCapacityMB | Int64 | Sí | La capacidad del disco físico en MB en caso de que el grupo de almacenamiento cuente tanto con LUN de backend como con discos. 
+
+
+| softLimitCapacityMB | Int64 | Sí | Límite de capacidad para thin provisioning en MB. 
+
+
+| dedupeEnabled | Cadena | Sí | ¿La deduplicación está activada en el grupo de almacenamiento? 
+
+
+| compressionEnabled | Cadena | Sí | ¿La compresión está activada en el grupo de almacenamiento? 
+
+
+| compactionEnabled | Cadena | Sí | ¿La compactación está activada en el grupo de almacenamiento? 
+
+
+| dedupeRatio | Doble | Sí | Proporción de ahorro gracias a la deduplicación. Valor entre 0 y 1. 
+
+
+| dedupeSavingsGB | Int64 | Sí | La deduplicación en este grupo de almacenamiento (en GB). 
+
+
+| compressionRatio | Doble | Sí | Índice de ahorro por compresión. Valor entre 0 y 1. 
+
+
+| compressionSavingsGB | Int64 | Sí | La compresión en este grupo de almacenamiento (en GB). 
+
+
+| compressionSavingsPercent | Doble | Sí | La compresión de este grupo de almacenamiento (%). 
+
+
+| ahorroPorCompactaciónGB | Int64 | Sí | La compactación en este grupo de almacenamiento (en GB). 
+
+
+| url | Cadena | Sí | Url de este grupo de almacenamiento en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | muchos 
+|===
+
+
+[[storagepooltobackendlun]]
+=== storage_pool_to_backend_lun
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_pool_to_backend_lun
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storagePoolId | Int64 | Sí | GUID del grupo de almacenamiento. 
+
+
+| backendLunId | Int64 | Sí | GUID del LUN del backend. 
+|===
+
+
+[[storagepooltodisk]]
+=== storage_pool_to_disk
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_pool_to_disk
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| storagePoolId | Int64 | Sí | GUID del grupo de almacenamiento. 
+
+
+| diskId | Int64 | Sí | GUID del disco. 
+|===
+
+
+[[storageport]]
+=== puerto_de_almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del puerto de almacenamiento. 
+
+
+| controllerId *[FK]* →link:#entity-storage_controller["controlador de almacenamiento"].id | Int64 | Sí | GUID del controlador (nodo) en el que se encuentra este puerto. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID de la matriz de almacenamiento en la que se encuentra este puerto. 
+
+
+| wwn | Cadena | Sí | WWN del puerto. 
+
+
+| nodeWwn | Cadena | Sí | WWN del nodo (controlador) donde se encuentra este puerto. 
+
+
+| portId | Cadena | Sí | Id del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| controlador | Cadena | Sí | Nombre del controlador en el que se encuentra este puerto. 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| activo | Cadena | Sí | Verdadero si el puerto no está inactivo 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| controlador de almacenamiento | link:#entity-storage_controller["controlador de almacenamiento"] | una JOIN:controllerId=link:#entity-storage_controller["controlador de almacenamiento"].id 
+|===
+
+
+[[storagetoapplication]]
+=== almacenamiento_a_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: storage_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un sistema de almacenamiento y una aplicación. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+|===
+
+
+[[switch]]
+=== interruptor
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: switch
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del conmutador. 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | Sí | GUID de la estructura en la que está configurado este conmutador para funcionar. 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| wwn | Cadena | Sí | WWN del conmutador. 
+
+
+| ip | Cadena | Sí | Dirección IP del conmutador. 
+
+
+| nombre | Cadena | Sí | Nombre del conmutador. 
+
+
+| fabricante | Cadena | Sí | Fabricante del switch 
+
+
+| modelo | Cadena | Sí | Modelo del switch. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el switch. 
+
+
+| domainId | Cadena | Sí | ID de dominio de fabric del switch. 
+
+
+| domainIdType | Cadena | Sí | Tipo de identificador de dominio. Los valores posibles son static (0) o preferred (1). 
+
+
+| prioridad | Cadena | Sí | Prioridad del conmutador. 
+
+
+| vsanEnabled | Cadena | Sí | Indica si el conmutador es compatible con VSANs. 
+
+
+| serialNumber | Cadena | Sí | Número de serie del conmutador. 
+
+
+| manageURL | Cadena | Sí | URL del software de gestión del dispositivo. 
+
+
+| sanRouteEnabled | Cadena | Sí | Indica si el conmutador es compatible con el enrutamiento entre VSAN (IVR). 
+
+
+| npv | Cadena | Sí | Indicación de si se trata de un conmutador NPV. 
+
+
+| isGenerated | Cadena | Sí | Indicación de que este conmutador no corresponde a un dispositivo físico. Se utiliza para modelar una conectividad de uno a muchos puertos. 
+
+
+| tipo | Cadena | Sí | Tipo de switch. 
+
+
+| url | Cadena | Sí | Url de este switch en Insight Server. 
+
+
+| lastAcquiredTime | DateTimeOffset | Sí | Especifica la última hora adquirida. 
+
+
+| activo | Cadena | Sí | Indica si el Switch está inactivo o activo 
+
+
+| dataCenter | Cadena | Sí | # Valor de la anotación dataCenter asignado al switch 
+
+
+| switchLevel | Cadena | Sí | # Valor de la anotación switchLevel asignado al switch 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| fabric | link:#entity-fabric["fabric"] | una JOIN: fabricId=link:#entity-fabric["fabric"].id 
+
+
+| puerto de switch | link:#entity-switch_port["puerto de switch"] | muchos 
+
+
+| cambiar_a_la_aplicación | link:#entity-switch_to_application["cambiar_a_la_aplicación"] | muchos 
+|===
+
+
+[[switchport]]
+=== puerto de switch
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: switch_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del puerto. 
+
+
+| switchId *[FK]* →link:#entity-switch["interruptor"].id | Int64 | Sí | GUID del switch en el que se encuentra el puerto. 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | Sí | GUID de la estructura en la que está configurado el puerto para funcionar. 
+
+
+| virtualSwitchId *[FK]* →link:#entity-virtual_switch["conmutador_virtual"].id | Int64 | Sí | GUID del conmutador virtual en el que se encuentra el puerto. NULL si no existe ninguno. 
+
+
+| wwn | Cadena | Sí | WWN del puerto. 
+
+
+| estado | Cadena | Sí | Estado del puerto. Los valores posibles son OK, NOT_LICENSED, ERROR, INACTIVE y UNKNOWN 
+
+
+| rawPortStatus | Cadena | Sí | Estado del puerto, obtenido directamente del propio dispositivo. Consulta la documentación del dispositivo para obtener una explicación de los valores. 
+
+
+| tipo | Cadena | Sí | Tipo de puerto, que suele utilizarse para identificar el protocolo empleado para comunicarse con el otro dispositivo, según la propia información del dispositivo: puerto F, puerto E, y así sucesivamente. 
+
+
+| portPhysicalState | Cadena | Sí | Estado actual del puerto, obtenido directamente del propio dispositivo. Consulta la documentación del dispositivo para obtener una explicación de los valores. 
+
+
+| número | Int64 | Sí | Número del puerto en la blade que lo contiene 
+
+
+| blade | Int64 | Sí | Número de la cuchilla en el switch que la contiene. 
+
+
+| portId | Cadena | Sí | Id del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| fc4Protocol | Cadena | Sí | Protocolo FC4 (capa de aplicación), que se muestra como cualquier subconjunto o combinación de los siguientes valores: BASIC_LINK, EXTEND_LINK, FCIP, SCSI_FCP, FC_SERVICES, FC_SW, SNMP, FABRIC_SERVICES, FABRIC, DIAG y VI. 
+
+
+| classOfService | Cadena | Sí | Clase de servicio para el protocolo FC. 
+
+
+| gbicType | Cadena | Sí | Tipo de GBIC (Gigabit Interface Converter) utilizado para el puerto. 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| isGenerated | Cadena | Sí | Indicación de si se trata de un wwn generado (si no conocemos el wwn real). 
+
+
+| activo | Cadena | Sí | Verdadero si el puerto no está inactivo 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| conmutador_virtual | link:#entity-virtual_switch["conmutador_virtual"] | una JOIN:virtualSwitchId=link:#entity-virtual_switch["conmutador_virtual"].id 
+
+
+| fabric | link:#entity-fabric["fabric"] | una JOIN: fabricId=link:#entity-fabric["fabric"].id 
+
+
+| interruptor | link:#entity-switch["interruptor"] | una JOIN:switchId=link:#entity-switch["interruptor"].id 
+
+
+| cambiar_puerto_a_aplicación | link:#entity-switch_port_to_application["cambiar_puerto_a_aplicación"] | muchos 
+
+
+| fc_name_server_entry | link:#entity-fc_name_server_entry["fc_name_server_entry"] | muchos 
+|===
+
+
+[[switchporttoapplication]]
+=== cambiar_puerto_a_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: switch_port_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un puerto y una aplicación. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| portId *[FK]* →link:#entity-switch_port["puerto de switch"].id | Int64 | Sí | GUID del puerto del switch. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| puerto de switch | link:#entity-switch_port["puerto de switch"] | una JOIN:portId=link:#entity-switch_port["puerto de switch"].id 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+|===
+
+
+[[switchtoapplication]]
+=== cambiar_a_la_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: switch_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un switch y una aplicación. 
+
+
+| switchId *[FK]* →link:#entity-switch["interruptor"].id | Int64 | Sí | GUID del conmutador. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| interruptor | link:#entity-switch["interruptor"] | una JOIN:switchId=link:#entity-switch["interruptor"].id 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+|===
+
+
+[[tape]]
+=== cinta
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: cinta
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la cinta. 
+
+
+| nombre | Cadena | Sí | Nombre de la cinta. 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| ip | Cadena | Sí | Dirección IP de la cinta. 
+
+
+| fabricante | Cadena | Sí | Fabricante de la cinta. 
+
+
+| serialNumber | Cadena | Sí | Número de serie de la cinta. 
+
+
+| activo | Cadena | Sí | Indica si la cinta está activa en este momento. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| controlador_de_cinta | link:#entity-tape_controller["controlador_de_cinta"] | muchos 
+
+
+| infracción | link:#entity-violation["infracción"] | muchos 
+
+
+| puerto_de_cinta | link:#entity-tape_port["puerto_de_cinta"] | muchos 
+
+
+| ruta_física | link:#entity-physical_path["ruta_física"] | muchos 
+
+
+| lógico | link:#entity-logical["lógico"] | muchos 
+|===
+
+
+[[tapecontroller]]
+=== controlador_de_cinta
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: tape_controller
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del controlador de cinta. 
+
+
+| tapeId *[FK]* →link:#entity-tape["cinta"].id | Int64 | Sí | GUID de la cinta en la que se encuentra este controlador. 
+
+
+| wwn | Cadena | Sí | GUID del controlador. 
+
+
+| modelo | Cadena | Sí | Modelo del controlador. 
+
+
+| fabricante | Cadena | Sí | Fabricante del controlador. 
+
+
+| controlador | Cadena | Sí | Nombre del driver que gestiona el acceso al controlador. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el controlador. 
+
+
+| numberOfPorts | Cadena | Sí | Número de puertos del controlador. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| cinta | link:#entity-tape["cinta"] | una JOIN:tapeId=link:#entity-tape["cinta"].id 
+
+
+| puerto_de_cinta | link:#entity-tape_port["puerto_de_cinta"] | muchos 
+|===
+
+
+[[tapeport]]
+=== puerto_de_cinta
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: tape_port
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del puerto de cinta. 
+
+
+| controllerId *[FK]* →link:#entity-tape_controller["controlador_de_cinta"].id | Int64 | Sí | GUID del controlador en el que se encuentra este puerto. 
+
+
+| tapeId *[FK]* →link:#entity-tape["cinta"].id | Int64 | Sí | GUID de la cinta en la que se encuentra este puerto. 
+
+
+| wwn | Cadena | Sí | WWN del puerto. 
+
+
+| nodeWwn | Cadena | Sí | WWN del nodo (controlador) donde se encuentra este puerto. 
+
+
+| portId | Cadena | Sí | Id del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| controlador | Cadena | Sí | Nombre del controlador en el que se encuentra este puerto. 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| activo | Cadena | Sí | Verdadero si el puerto no está inactivo 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| controlador_de_cinta | link:#entity-tape_controller["controlador_de_cinta"] | una JOIN:controllerId=link:#entity-tape_controller["controlador_de_cinta"].id 
+
+
+| cinta | link:#entity-tape["cinta"] | una JOIN:tapeId=link:#entity-tape["cinta"].id 
+|===
+
+
+[[tier]]
+=== nivel
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: tier
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id | Int64 | Sí | GUID de la anotación. 
+
+
+| nombre | Cadena | Sí | Valor de la anotación. 
+
+
+| secuencia | Int32 | Sí | Número de secuencia que determina el orden de los valores de enumeración. Esto se utiliza principalmente con fines de visualización. 
+
+
+| coste | Doble | Sí | Coste opcional asociado a la anotación. Aplicable a la anotación de nivel. 
+|===
+
+
+[[unknownlogical]]
+=== desconocido_lógico
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: unknown_logical
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la ruta lógica genérica de tipo desconocido. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host iniciador de la ruta lógica genérica de tipo desconocido. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento de destino de la ruta lógica genérica de tipo desconocido. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen de destino de la ruta lógica genérica de tipo desconocido. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[violation]]
+=== infracción
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: violation
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la infracción. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host iniciador de la infracción: se establece en null para las infracciones de generic-devices. 
+
+
+| genericDeviceId *[FK]* →link:#entity-generic_device["dispositivo_genérico"].id | Int64 | Sí | El GUID del dispositivo genérico que es el iniciador de la infracción se establece en nulo para las infracciones provenientes de hosts. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento de destino de la infracción: se establece en null para las infracciones a cintas. 
+
+
+| tapeId *[FK]* →link:#entity-tape["cinta"].id | Int64 | Sí | GUID de la cinta de destino de la infracción: se establece en null para las infracciones a storage-arrays. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen al que se aplica la infracción: se establece en null para las rutas a cintas. 
+
+
+| volumeName | Cadena | Sí | Nombre del volumen. Esto estaría disponible incluso si hay una infracción de ruta con un volumen faltante 
+
+
+| tipo | Cadena | Sí | Tipo de infracción. 
+
+
+| technologyType | Cadena | Sí | El tipo de tecnología (FC, ISCSI, HV) de la infracción 
+
+
+| desde que | DateTimeOffset | Sí | Momento en el que comenzó la infracción. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| cinta | link:#entity-tape["cinta"] | una JOIN:tapeId=link:#entity-tape["cinta"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+
+
+| dispositivo_genérico | link:#entity-generic_device["dispositivo_genérico"] | una JOIN:genericDeviceId=link:#entity-generic_device["dispositivo_genérico"].id 
+|===
+
+
+[[virtualswitch]]
+=== conmutador_virtual
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: virtual_switch
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del switch virtual. 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | Sí | GUID de la estructura a la que pertenece el switch virtual. 
+
+
+| wwn | Cadena | Sí | WWN del conmutador virtual. 
+
+
+| ip | Cadena | Sí | Dirección IP del switch virtual 
+
+
+| nombre | Cadena | Sí | Nombre del switch virtual. 
+
+
+| domainId | Cadena | Sí | ID de dominio de fabric del switch. 
+
+
+| domainIdType | Cadena | Sí | Tipo de identificador de dominio. Los valores posibles son static (0) o preferred (1). 
+
+
+| prioridad | Cadena | Sí | Prioridad del conmutador virtual. 
+
+
+| switchRole | Cadena | Sí | Función del conmutador virtual en caso de fusión de estructuras. Los valores posibles son PRINCIPAL y SUBORDINADO 
+
+
+| chassisWwn | Cadena | Sí | WWN del switch físico que define el switch virtual. 
+
+
+| npv | Cadena | Sí | Indicación de si se trata de un conmutador NPV. 
+
+
+| isGenerated | Cadena | Sí | Indicación de que este conmutador no corresponde a un dispositivo físico. Se utiliza para modelar una conectividad de uno a muchos puertos. 
+
+
+| tipo | Cadena | Sí | Tipo de switch. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| fabric | link:#entity-fabric["fabric"] | una JOIN: fabricId=link:#entity-fabric["fabric"].id 
+
+
+| puerto de switch | link:#entity-switch_port["puerto de switch"] | muchos 
+|===
+
+
+[[virtualtobackendvolume]]
+=== virtual_to_backend_volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: virtual_to_backend_volume
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| virtualVolumeId | Int64 | Sí | GUID del volumen. 
+
+
+| backendVolumeId | Int64 | Sí | GUID del volumen del backend. 
+|===
+
+
+[[vmtoapplication]]
+=== vm_to_application
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: vm_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre una máquina virtual y una aplicación. 
+
+
+| vmId *[FK]* →link:#entity-hv_virtual_machine["hv_virtual_machine"].id | Int64 | Sí | GUID de la máquina virtual. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+
+
+| hv_virtual_machine | link:#entity-hv_virtual_machine["hv_virtual_machine"] | una JOIN:vmId=link:#entity-hv_virtual_machine["hv_virtual_machine"].id 
+|===
+
+
+[[vmwarehost]]
+=== vmware_host
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: vmware_host
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | ID del host de VMware 
+
+
+| identificador | Cadena | Sí | Identificador del host de VMware 
+
+
+| hvServerId *[FK]* →link:#entity-hv_server["hv_server"].id | Int64 | Sí | Servidor HV del host vmware 
+
+
+| nombre | Cadena | Sí | Nombre del host de VMware 
+
+
+| numCpuCores | Int64 | Sí | Número de núcleos de CPU del host de VMware 
+
+
+| numCpuPackages | Int64 | Sí | Número de paquetes de CPU para el host de vmware 
+
+
+| numCpuThreads | Int64 | Sí | Número de subprocesos de CPU para el host de vmware 
+
+
+| numNodes | Int64 | Sí | Número de nodos del host de VMware 
+
+
+| hyperThreadActive | Cadena | Sí | Indica si el hyperthreading está habilitado en el host de vmware 
+
+
+| hyperThreadAvailable | Cadena | Sí | Indica si la tecnología hyperthreading está disponible en el host de vmware 
+
+
+| hyperThreadConfig | Cadena | Sí | Indica si la hyperthreading está configurada para estar habilitada en el host de vmware 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| hv_server | link:#entity-hv_server["hv_server"] | un JOIN:hvServerId=link:#entity-hv_server["hv_server"].id 
+|===
+
+
+[[volume]]
+=== volume
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: volumen
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del volumen. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento donde reside este volumen. 
+
+
+| internalVolumeId *[FK]* →link:#entity-internal_volume["volumen_interno"].id | Int64 | Sí | Cuando el volumen representa un LUN de NetApp, el GUID del volumen interno donde reside el LUN. Nulo en caso contrario. 
+
+
+| qtreeId *[FK]* →link:#entity-qtree["qtree"].id | Int64 | Sí | Cuando el volumen representa un LUN de NetApp, el GUID del qtree donde reside el LUN. Nulo en caso contrario. 
+
+
+| nombre | Cadena | Sí | Nombre del volumen. 
+
+
+| etiqueta | Cadena | Sí | Etiqueta (descripción) del volumen. 
+
+
+| thinProvisioned | Cadena | Sí | Si este volumen está aprovisionado de forma thin. 
+
+
+| capacityMB | Int64 | Sí | Capacidad utilizable del volumen (tal y como la ven el host u otros iniciadores SCSI) en MB. 
+
+
+| consumedCapacityMB | Int64 | Sí | Muestra la capacidad que se está consumiendo en MB. 
+
+
+| Capacidad de escritura (MB) | Int64 | Sí | Muestra la capacidad que se está escribiendo en MB. 
+
+
+| rawCapacityMB | Int64 | Sí | Capacidad real de disco sin procesar utilizada por el volumen, en MB. 
+
+
+| tipo | Cadena | Sí | Tipo de volumen específico del proveedor (p. ej., SFS, BCV). 
+
+
+| replicaSource | Cadena | Sí | Indica si este volumen es una fuente en una réplica. 
+
+
+| replicaTarget | Cadena | Sí | Indica si este volumen es un destino en una réplica. 
+
+
+| instantánea | Cadena | Sí | Indica si este volumen es un volumen de snapshot. 
+
+
+| cilindros | Int32 | Sí | Número de cilindros en el volumen. 
+
+
+| grupo de discos | Cadena | Sí | Lista separada por comas de los grupos de discos usados por este volumen. 
+
+
+| isVirtual | Cadena | Sí | Indica si este volumen es un volumen virtual (en un virtual storage-pool). 
+
+
+| meta | Cadena | Sí | Indica si este volumen es un metavolumen en un grupo de volúmenes. 
+
+
+| virtualStorage | Cadena | Sí | Nombre del vFiler que contiene el volumen (NetApp). 
+
+
+| cabeza | Cadena | Sí | Cabezal (NetApp) a través del cual se expone el volumen. Por ejemplo, el nombre del cabezal activo en una configuración activa-pasiva. 
+
+
+| protectionType | Cadena | Sí | Especifica el tipo de protección del volumen (por ejemplo, BCV, R1, R2 ...) 
+
+
+| technologyType | Cadena | Sí | Especifica el tipo de tecnología (FC/iSCSI/DESCONOCIDO). 
+
+
+| autoTieringPolicyId *[FK]* →link:#entity-auto_tiering_policy["política_de_escalado_automático"].id | Int64 | Sí | GUID de la política de auto tiering 
+
+
+| autoTiering | Cadena | Sí | Indica si este volumen participa en la organización automática por niveles. 
+
+
+| uuid | Cadena | Sí | UUID del volumen. 
+
+
+| isMainframe | Cadena | Sí | Indica si es un volumen Mainframe 
+
+
+| lastKnownAccessTime | DateTimeOffset | Sí | Especifica la última vez conocida por SANscreen en la que se accedió al volumen para lectura o escritura (NULL si no se dispone de la hora). 
+
+
+| url | Cadena | Sí | URL de este volumen en Insight Server. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volumen_interno | link:#entity-internal_volume["volumen_interno"] | una JOIN:internalVolumeId=link:#entity-internal_volume["volumen_interno"].id 
+
+
+| política_de_escalado_automático | link:#entity-auto_tiering_policy["política_de_escalado_automático"] | una JOIN:autoTieringPolicyId=link:#entity-auto_tiering_policy["política_de_escalado_automático"].id 
+
+
+| qtree | link:#entity-qtree["qtree"] | una JOIN:qtreeId=link:#entity-qtree["qtree"].id 
+
+
+| máscara de volumen | link:#entity-volume_mask["máscara de volumen"] | muchos 
+
+
+| dr_volume_replica | link:#entity-dr_volume_replica["dr_volume_replica"] | muchos 
+
+
+| hv_virtual_disk_to_volume | link:#entity-hv_virtual_disk_to_volume["hv_virtual_disk_to_volume"] | muchos 
+
+
+| desconocido_lógico | link:#entity-unknown_logical["desconocido_lógico"] | muchos 
+
+
+| mapa de volumen | link:#entity-volume_map["mapa de volumen"] | muchos 
+
+
+| lógico | link:#entity-logical["lógico"] | muchos 
+
+
+| sistema_de_archivos_a_volumen | link:#entity-file_system_to_volume["sistema_de_archivos_a_volumen"] | muchos 
+
+
+| backend_lun_to_volume | link:#entity-backend_lun_to_volume["backend_lun_to_volume"] | muchos 
+
+
+| infracción | link:#entity-violation["infracción"] | muchos 
+
+
+| volumen_a_aplicación | link:#entity-volume_to_application["volumen_a_aplicación"] | muchos 
+
+
+| iscsi_logical | link:#entity-iscsi_logical["iscsi_logical"] | muchos 
+
+
+| hv_lun_to_volume | link:#entity-hv_lun_to_volume["hv_lun_to_volume"] | muchos 
+
+
+| ruta_física | link:#entity-physical_path["ruta_física"] | muchos 
+
+
+| hv_data_store_to_volume | link:#entity-hv_data_store_to_volume["hv_data_store_to_volume"] | muchos 
+|===
+
+
+[[volumeinstoragepool]]
+=== volumen_en_el_grupo_de_almacenamiento
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: volume_in_storage_pool
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| storageId | Int64 | Sí | GUID de la matriz de almacenamiento. 
+
+
+| volumeId | Int64 | Sí | GUID del volumen. 
+
+
+| storagePoolId | Int64 | Sí | GUID del grupo de almacenamiento. 
+
+
+| volumenMiembrosCapacidadMB | Int64 | Sí | Capacidad de todos los miembros de volumen en el grupo de almacenamiento que contribuyen a un volumen, en MB. 
+
+
+| capacidad bruta de miembros de volumenMB | Int64 | Sí | Capacidad bruta de todos los miembros de volumen del storage-pool que contribuyen a un volumen, en MB. 
+|===
+
+
+[[volumemap]]
+=== mapa de volumen
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: volume_map
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la entrada del mapa de volúmenes. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen al que hace referencia la entrada del mapa de volúmenes. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento en el que se define la entrada de asignación de volumen. 
+
+
+| protocolController | Cadena | Sí | Nombre del controlador de protocolo que define la entrada del mapa de volúmenes. 
+
+
+| LUN | Cadena | Sí | Número de unidad lógica (LUN) usado para acceder a este volumen. 
+
+
+| tid | Int32 | Sí | ID SCSI de destino definido por la entrada del mapa de volúmenes. 
+
+
+| storagePortWwn | Cadena | Sí | WWN del puerto de almacenamiento al que hace referencia esta entrada de asignación de volumen. 
+
+
+| wwnSecurityValidity | Byte | Sí | Indica si el acceso al volumen requiere una configuración adicional de enmascaramiento. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+|===
+
+
+[[volumemask]]
+=== máscara de volumen
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: volume_mask
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la entrada de la máscara de volumen. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen al que hace referencia la entrada de la máscara de volumen. 
+
+
+| storageId *[FK]* →link:#entity-storage["almacenamiento"].id | Int64 | Sí | GUID del almacenamiento en el que se define la entrada de la máscara de volumen. 
+
+
+| protocolController | Cadena | Sí | Nombre del controlador de protocolo que define la entrada de la máscara de volumen. 
+
+
+| storagePortWwn | Cadena | Sí | WWN del puerto de almacenamiento al que hace referencia la entrada de la máscara de volumen. 
+
+
+| initiatorWwn | Cadena | Sí | WWN del puerto iniciador al que hace referencia la entrada de la máscara de volumen. 
+
+
+| hostId *[FK]* →link:#entity-host["anfitrión"].id | Int64 | Sí | GUID del host al que hace referencia el WWN del iniciador de esta entrada de máscara de volumen 
+
+
+| tipo | Cadena | Sí | Tipo de tecnología de acceso al volumen. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| almacenamiento | link:#entity-storage["almacenamiento"] | una JOIN:storageId=link:#entity-storage["almacenamiento"].id 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| anfitrión | link:#entity-host["anfitrión"] | una JOIN:hostId=link:#entity-host["anfitrión"].id 
+|===
+
+
+[[volumetoapplication]]
+=== volumen_a_aplicación
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: volume_to_application
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la relación entre un volumen y una aplicación. 
+
+
+| applicationId *[FK]* →link:#entity-application["aplicación"].id | Int64 | Sí | GUID de la aplicación. 
+
+
+| volumeId *[FK]* →link:#entity-volume["volume"].id | Int64 | Sí | GUID del volumen. 
+
+
+| heredado | Cadena | Sí | Esta aplicación es heredada. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| volume | link:#entity-volume["volume"] | una JOIN:volumeId=link:#entity-volume["volume"].id 
+
+
+| aplicación | link:#entity-application["aplicación"] | una JOIN:applicationId=link:#entity-application["aplicación"].id 
+|===
+
+
+[[zone]]
+=== zona
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: zone
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID de la zona. 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | Sí | GUID de la estructura donde se define la zona. 
+
+
+| nombre | Cadena | Sí | Nombre de la zona. Parte de la clave natural. 
+
+
+| fabricWwn | Cadena | Sí | WWN de la estructura donde se define la zona. 
+
+
+| configurationName | Cadena | Sí | Nombre de la configuración de zona activa (conjunto) que contiene esta zona. Parte de la clave natural. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| fabric | link:#entity-fabric["fabric"] | una JOIN: fabricId=link:#entity-fabric["fabric"].id 
+
+
+| miembro_de_zona | link:#entity-zone_member["miembro_de_zona"] | muchos 
+|===
+
+
+[[zonemember]]
+=== miembro_de_zona
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: zone_member
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| id *[PK]* | Int64 | Sí | GUID del zone_member. 
+
+
+| zoneId *[FK]* →link:#entity-zone["zona"].id | Int64 | Sí | GUID de la zona. 
+
+
+| fabricId *[FK]* →link:#entity-fabric["fabric"].id | Int64 | Sí | GUID de la estructura donde se define la zona. 
+
+
+| tipo | Cadena | Sí | Tipo de división en zonas del miembro. Puede ser WWN (Soft) o SWITCH (Hard). 
+
+
+| wwn | Cadena | Sí | WWN del miembro. Puede ser un puerto del switch (si type=SWITCH) o un nodo/puerto de un dispositivo (type=WWN). 
+
+
+| zoneName | Cadena | Sí | Nombre de la zona. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| fabric | link:#entity-fabric["fabric"] | una JOIN: fabricId=link:#entity-fabric["fabric"].id 
+
+
+| zona | link:#entity-zone["zona"] | una JOIN:zoneId=link:#entity-zone["zona"].id 
+|===

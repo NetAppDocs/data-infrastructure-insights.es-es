@@ -1,0 +1,462 @@
+---
+sidebar: sidebar 
+permalink: reporting_schema_ports.html 
+summary: Tablas de esquemas para el almacén de datos de Ports 
+keywords: dwh, data warehouse, schema, reporting, ports 
+---
+= Esquema de puertos
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Fuente: punto final OData *dwh_ports* — Data Infrastructure Insights
+
+Tablas encontradas: *7* | Asociaciones: *4*
+
+
+
+[[key-relationships-between-tables]]
+== Relaciones clave entre tablas
+
+
+
+[[portsfact]]
+=== ports_fact
+
+[cols="1,1,1"]
+|===
+| Tabla de referencia (tabla principal) | Columna FK | PK principal 
+
+
+| link:#entity-connected_device_dimension["dimensión_dispositivo_conectado"] | connectedDeviceTk | tk 
+
+
+| link:#entity-date_dimension["date_dimension"] | dateTk | tk 
+
+
+| link:#entity-port_dimension["dimensión_puerto"] | portTk | tk 
+
+
+| link:#entity-switch_dimension["switch_dimension"] | switchTk | tk 
+|===
+
+
+[[tables-fields]]
+== Tablas y campos
+
+PK clave primaria FK clave foránea NOT NULL campo obligatorio
+
+
+
+[[cardinals]]
+=== cardenales
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: cardinals
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| dígito | Int32 | Sí | Un número entre 0 y 99. 
+|===
+
+
+[[connecteddevicedimension]]
+=== dimensión_dispositivo_conectado
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: connected_device_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk *[PK]* | Int32 | Sí | TK del dispositivo. 
+
+
+| nombre | Cadena | Sí | Nombre del dispositivo. 
+
+
+| fabricante | Cadena | Sí | Fabricante del dispositivo. 
+
+
+| modelo | Cadena | Sí | Modelo del dispositivo. 
+
+
+| tipo | Cadena | Sí | Tipo de dispositivo. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el dispositivo. 
+
+
+| id | Int64 | Sí | El ID del dispositivo 
+
+
+| más reciente | Cadena | Sí | Indica si esta fila es la más reciente para este dispositivo. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muchos 
+|===
+
+
+[[datedimension]]
+=== date_dimension
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: date_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk | Int32 | Sí | TK del objeto de fecha. 
+
+
+| fullDate | DateTimeOffset | Sí | Fecha del objeto date. 
+
+
+| dayInMonth | Byte | Sí | Día del mes correspondiente al objeto de fecha. El primer día del mes tiene el valor 1. 
+
+
+| dayInYear | Int32 | Sí | Día del año del objeto «date». El primer día del año tiene el valor 1. 
+
+
+| dateYear | Int32 | Sí | Año del objeto de fecha. 
+
+
+| yearLabel | Cadena | Sí | Año formateado como cadena 
+
+
+| monthNum | Byte | Sí | Mes del objeto «date». Enero tiene el valor 1. 
+
+
+| monthLabel | Cadena | Sí | Mes formateado como cadena 
+
+
+| dayInWeekNum | Byte | Sí | Día de la semana correspondiente al objeto de fecha. El domingo tiene el valor 1. 
+
+
+| trimestre | Byte | Sí | Trimestre del objeto de fecha. El primer trimestre tiene el valor 1. 
+
+
+| quarterLabel | Cadena | Sí | Trimestre en formato de cadena 
+
+
+| dayInQuarter | Int32 | Sí | Día del trimestre del objeto de fecha. El primer día del trimestre tiene el valor 1. 
+
+
+| repQuarter | Byte | Sí | Indica si esta fecha es la primera fecha disponible para su trimestre. 
+
+
+| repMonth | Byte | Sí | Indica si esta fecha es la primera fecha disponible de ese mes. 
+
+
+| repWeek | Byte | Sí | Indica si esta fecha es la primera fecha disponible de su semana. 
+
+
+| repDay | Byte | Sí | Indica si esta fecha es la primera disponible para ese día. 
+
+
+| repMonthOrLatest | Byte | Sí | Indica si esta fecha corresponde al mes de referencia o a la más reciente. Este indicador lo utilizan los Datamarts que funcionan con repeticiones mensuales. La única diferencia es que, para el mes actual, es la más reciente. 
+
+
+| sspFlag | Byte | Sí | Indica si esta fecha se utiliza en Storage y Storage Pool Datamart. Es cierto para los representantes de mes y para el último número de días según lo definido en la configuración. 
+
+
+| más reciente | Cadena | Sí | Indica si esta fecha es la última disponible en la tabla. 
+
+
+| futuro | Cadena | Sí | Indica si esta fecha es una fecha futura (proyección) o una fecha habitual. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muchos 
+|===
+
+
+[[portdimension]]
+=== dimensión_puerto
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: port_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk | Int32 | Sí | TK de esta fila de puertos. 
+
+
+| wwn | Cadena | Sí | WWN del puerto. 
+
+
+| nombre | Cadena | Sí | Nombre del puerto. 
+
+
+| gbicType | Cadena | Sí | Tipo de GBIC (Gigabit Interface Converter) utilizado para el puerto. 
+
+
+| tipo | Cadena | Sí | Tipo de puerto, que suele utilizarse para identificar el protocolo empleado para comunicarse con el otro dispositivo, según la propia información del dispositivo: puerto F, puerto E, y así sucesivamente. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| isGenerated | Cadena | Sí | Indicación de si se trata de un wwn generado (si no conocemos el wwn real). 
+
+
+| url | Cadena | Sí | Url de este puerto en Insight Server. 
+
+
+| id | Int64 | Sí | GUID del puerto en dwh_inventory.switch_port. 
+
+
+| más reciente | Cadena | Sí | Indica si esta fila es la más reciente para este puerto. 
+
+
+| dateTk | Int32 | Sí | TK de la fecha en la que se creó la fila del puerto. 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muchos 
+|===
+
+
+[[portsfact]]
+=== ports_fact
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: ports_fact
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk *[PK]* | Int32 | Sí | TK del hecho. 
+
+
+| dateTk *[FK]* →link:#entity-date_dimension["date_dimension"].tk | Int32 | Sí | TK de la fecha. 
+
+
+| switchTk *[FK]* →link:#entity-switch_dimension["switch_dimension"].tk | Int32 | Sí | TK del switch que contiene el puerto. 
+
+
+| connectedDeviceTk *[FK]* →link:#entity-connected_device_dimension["dimensión_dispositivo_conectado"].tk | Int32 | Sí | TK del dispositivo que está conectado al puerto. 
+
+
+| portTk *[FK]* →link:#entity-port_dimension["dimensión_puerto"].tk | Int32 | Sí | TK del puerto. 
+
+
+| fabric | Cadena | Sí | Nombre o WWN de la estructura (o VSAN) en la que el puerto está configurado para operar. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| connectivityType | Cadena | Sí | Tipo de dispositivo conectado. 
+
+
+| tipo | Cadena | Sí | Tipo de puerto, que suele utilizarse para identificar el protocolo empleado para comunicarse con el otro dispositivo, según la propia información del dispositivo: puerto F, puerto E, y así sucesivamente. 
+
+
+| estado | Cadena | Sí | Estado del puerto. Los valores posibles son OK, NOT_LICENSED, ERROR, INACTIVE y UNKNOWN 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| dimensión_dispositivo_conectado | link:#entity-connected_device_dimension["dimensión_dispositivo_conectado"] | una unión:connectedDeviceTk=link:#entity-connected_device_dimension["dimensión_dispositivo_conectado"].tk 
+
+
+| dimensión_puerto | link:#entity-port_dimension["dimensión_puerto"] | una unión:portTk=link:#entity-port_dimension["dimensión_puerto"].tk 
+
+
+| date_dimension | link:#entity-date_dimension["date_dimension"] | una JOIN:dateTk=link:#entity-date_dimension["date_dimension"].tk 
+
+
+| switch_dimension | link:#entity-switch_dimension["switch_dimension"] | una JOIN:switchTk=link:#entity-switch_dimension["switch_dimension"].tk 
+|===
+
+
+[[portsfactcurrent]]
+=== ports_fact_current
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: ports_fact_current
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk | Int32 | Sí | TK del hecho. 
+
+
+| dateTk | Int32 | Sí | TK de la fecha. 
+
+
+| switchTk | Int32 | Sí | TK del switch que contiene el puerto. 
+
+
+| connectedDeviceTk | Int32 | Sí | TK del dispositivo que está conectado al puerto. 
+
+
+| portTk | Int32 | Sí | TK del puerto. 
+
+
+| fabric | Cadena | Sí | Nombre o WWN de la estructura (o VSAN) en la que el puerto está configurado para operar. 
+
+
+| velocidad | Cadena | Sí | Velocidad del puerto, en Gbps. 
+
+
+| connectivityType | Cadena | Sí | Tipo de dispositivo conectado. 
+
+
+| tipo | Cadena | Sí | Tipo de puerto, que suele utilizarse para identificar el protocolo empleado para comunicarse con el otro dispositivo, según la propia información del dispositivo: puerto F, puerto E, y así sucesivamente. 
+
+
+| estado | Cadena | Sí | Estado del puerto. Los valores posibles son OK, NOT_LICENSED, ERROR, INACTIVE y UNKNOWN 
+|===
+
+
+[[switchdimension]]
+=== switch_dimension
+
+
+
+[[top]]
+=== ↑ arriba
+
+Conjunto(s) de entidades: switch_dimension
+
+[cols="1,1,1,1"]
+|===
+| Campo | Tipo | Admite valores nulos | Comentario 
+
+
+| tk | Int32 | Sí | TK de esta fila de interruptores. 
+
+
+| wwn | Cadena | Sí | WWN del conmutador. 
+
+
+| nombre | Cadena | Sí | Nombre del conmutador. 
+
+
+| identificador | Cadena | Sí | Identificador del dispositivo. 
+
+
+| ip | Cadena | Sí | Dirección IP del conmutador. 
+
+
+| modelo | Cadena | Sí | Modelo del switch. 
+
+
+| fabricante | Cadena | Sí | Fabricante del switch. 
+
+
+| firmware | Cadena | Sí | Versión del firmware que se ejecuta en el switch. 
+
+
+| serialNumber | Cadena | Sí | Número de serie del conmutador. 
+
+
+| npv | Cadena | Sí | Indicación de si se trata de un conmutador NPV. 
+
+
+| isGenerated | Cadena | Sí | Indicación de que este conmutador no corresponde a un dispositivo físico. Se utiliza para modelar una conectividad de uno a muchos puertos. 
+
+
+| tipo | Cadena | Sí | Tipo de switch. 
+
+
+| url | Cadena | Sí | Url de este switch en Insight Server. 
+
+
+| id | Int64 | Sí | GUID del switch en dwh_inventory.switch. 
+
+
+| más reciente | Cadena | Sí | Indica si esta fila es la más reciente para este switch. 
+
+
+| dateTk | Int32 | Sí | TK de la fecha en la que se creó esta fila de switch. 
+
+
+| dataCenter | Cadena | Sí | dataCenter valor de anotación asignado a dwh_dimensions.switch_dimension 
+
+
+| switchLevel | Cadena | Sí | switchLevel valor de anotación asignado a dwh_dimensions.switch_dimension 
+|===
+
+
+==== Propiedades de navegación (joins)
+
+[cols="1,1,1"]
+|===
+| Propiedad de navegación | Entidad relacionada | Cardinalidad / Join 
+
+
+| ports_fact | link:#entity-ports_fact["ports_fact"] | muchos 
+|===
