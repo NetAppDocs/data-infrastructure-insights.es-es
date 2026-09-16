@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboards_overview.html 
-summary: Descripción general de los paneles de control en Data Infrastructure Insights. 
+summary: Crea paneles personalizados con widgets flexibles para visualizar datos de infraestructura, supervisar tendencias de rendimiento y crear vistas operativas adaptadas a tus necesidades específicas de supervisión. 
 keywords: dashboard, widget, custom, view, data 
 ---
 = Descripción general de los paneles
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, view, data
 
 
 [role="lead"]
-Data Infrastructure Insights brinda a los usuarios la flexibilidad de crear vistas operativas de datos de infraestructura, permitiéndole crear paneles personalizados con una variedad de widgets, cada uno de los cuales proporciona una amplia flexibilidad para mostrar y graficar sus datos.
+Crea paneles personalizados que te proporcionen la información operativa que más necesitas. Elige entre varios tipos de widgets, incluidos tablas, gráficos, indicadores y representaciones, para visualizar los datos de tu infraestructura exactamente como quieras, lo que te permitirá tomar mejores decisiones y realizar una supervisión más eficaz.
 
 
 IMPORTANT: Los ejemplos en estas secciones son sólo para fines explicativos y no cubren todos los escenarios posibles.  Los conceptos y pasos aquí presentados se pueden utilizar para crear sus propios paneles de control para resaltar los datos específicos para sus necesidades particulares.

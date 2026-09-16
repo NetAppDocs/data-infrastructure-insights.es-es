@@ -7,10 +7,14 @@ summary: Presenta las dependencias y los flujos de carga de trabajo de Kubernete
 = Monitoreo y mapa del rendimiento de la red de Kubernetes
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-La función de monitoreo y mapeo del rendimiento de la red de Kubernetes simplifica la resolución de problemas al mapear las dependencias entre servicios (también llamados cargas de trabajo) y brinda visibilidad en tiempo real de las latencias y anomalías del rendimiento de la red para identificar problemas de rendimiento antes de que afecten a los usuarios.  Esta capacidad ayuda a las organizaciones a reducir los costos generales al analizar y auditar los flujos de tráfico de Kubernetes.
+Data Infrastructure Insights ofrece una supervisión integral del rendimiento de la red y una representación gráfica para entornos de Kubernetes. Obtén visibilidad en tiempo real de las dependencias de las cargas de trabajo, las latencias de red y los flujos de tráfico para identificar de forma proactiva los problemas de rendimiento y optimizar los costos mediante un análisis detallado del tráfico.
 
 Características principales: • El mapa de carga de trabajo presenta las dependencias y los flujos de carga de trabajo de Kubernetes y resalta los problemas de red y rendimiento.  • Supervisar el tráfico de red entre pods, cargas de trabajo y nodos de Kubernetes; identifica el origen del tráfico y los problemas de latencia.  • Reducir los costos generales mediante el análisis del tráfico de red de ingreso, egreso, entre regiones y entre zonas.
 

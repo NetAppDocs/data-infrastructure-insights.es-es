@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_query_assign_multiple_applications.html 
-summary: Utilice una consulta para asignar múltiples aplicaciones o anotaciones a objetos, o eliminar múltiples aplicaciones o anotaciones de ellos. 
+summary: Gestiona de forma eficiente las aplicaciones y las anotaciones en múltiples activos mediante operaciones masivas basadas en consultas para asignarlas o eliminarlas sin necesidad de configurar manualmente cada activo por separado. 
 keywords: query, queries, application, annotation, multiple 
 ---
 = Asignar varias aplicaciones a los activos o eliminar varias aplicaciones de ellos
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Puedes asignar varioslink:task_create_application.html["aplicaciones"] o eliminar múltiples aplicaciones de los activos mediante una consulta en lugar de tener que asignarlas o eliminarlas manualmente.
+Optimiza la gestión de activos utilizando consultas para realizar operaciones masivas sobre aplicaciones y anotaciones. En lugar de configurar manualmente cada activo por separado, puedes asignar o eliminar de forma eficiente varias aplicaciones y anotaciones en grupos de activos con una sola operación.
 
 
 NOTE: Puede utilizar estos pasos para agregar o eliminarlink:task_defining_annotations.html["anotaciones"] del mismo modo.

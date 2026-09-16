@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reporting_querying_database.html 
-summary: Utilice las API de Data Infrastructure Insights para consultar la base de datos de informes directamente. 
+summary: Accede directamente a la base de datos de informes a través de las API, sin pasar por Cognos, para realizar integraciones personalizadas, generar informes automatizados y llevar a cabo flujos de trabajo avanzados de análisis de datos. 
 keywords: reporting, cognos, data warehouse, dwh, API 
 ---
 = Acceda a la base de datos de informes a través de API
@@ -14,7 +14,7 @@ keywords: reporting, cognos, data warehouse, dwh, API
 
 
 [role="lead"]
-La potente API de Data Infrastructure Insights permite a los usuarios consultar la base de datos de informes de Data Infrastructure Insights directamente, sin pasar por el entorno de informes de Cognos.
+Accede a la base de datos de informes de Data Infrastructure Insights directamente a través de API compatibles con OData v4, sin pasar por la interfaz de Cognos, lo que te da mayor flexibilidad. Esto permite integraciones personalizadas, flujos de trabajo automatizados de generación de informes y análisis avanzados de datos para los usuarios que necesitan acceso programático a los datos de su infraestructura.
 
 
 NOTE: Esta documentación hace referencia a la función de informes de Data Infrastructure Insights , que está disponible en Data Infrastructure Insights Premium Edition.
@@ -24,7 +24,7 @@ NOTE: Esta documentación hace referencia a la función de informes de Data Infr
 [[odata]]
 == Odata
 
-La API de informes de Data Infrastructure Insights sigue laslink:https://www.odata.org/["OData versión 4"] (Open Data Protocol) estándar para su consulta a la base de datos de Reportes.  Para obtener más información o aprender más, consultelink:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] en OData.
+La API de informes de Data Infrastructure Insights sigue el estándar link:https://www.odata.org/["OData versión 4"] (Open Data Protocol) para sus consultas en la base de datos de informes. Para obtener más información, consulta link:https://www.odata.org/getting-started/basic-tutorial/["este tutorial"] sobre OData.
 
 Todas las solicitudes comenzarán con la URL _\https://< URL de Data Infrastructure Insights >/rest/v1/dwh-management/odata_
 

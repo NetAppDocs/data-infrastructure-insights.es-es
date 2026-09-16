@@ -14,7 +14,7 @@ keywords: support, knowledgebase, documentation, community, videos, help, contac
 
 
 [role="lead"]
-Puede acceder a las opciones de soporte disponibles en Data Infrastructure Insights seleccionando *Ayuda > Soporte*.
+Data Infrastructure Insights ofrece opciones de soporte completas, incluyendo recursos de autoservicio, foros de la comunidad, documentación y soporte técnico. Accede a estos recursos de soporte seleccionando *Help > Support*, y plantéate activar tu derecho de soporte para desbloquear asistencia técnica completa mediante tickets web y soporte telefónico.
 
 image:SupportPageExample.png["Página de soporte, ancho=600"]
 
@@ -115,11 +115,7 @@ Es muy recomendable que marques la casilla para permitir que un ingeniero de sop
 
 Cuando tu problema se resuelva o tu sesión de soporte haya terminado, puedes desmarcar la casilla.
 
-Puede solicitar soporte mediante cualquiera de los siguientes métodos.  Debe tener una suscripción activa a Data Infrastructure Insights para utilizar estas opciones de soporte:
-
-* link:https://www.netapp.com/us/contact-us/support.aspx["*Teléfono*"]
-* link:https://mysupport.netapp.com/portal?_nfpb=true&_st=initialPage=true&_pageLabel=submitcase["*Ticket de soporte*"]
-
+Puedes solicitar soporte accediendo a link:https://www.netapp.com/support-and-training/["Sitio de soporte de NetApp"]. Debes tener una suscripción activa a Data Infrastructure Insights.
 
 También puede solicitar asistencia de ventas haciendo clic en el enlace *Contactar con ventas*.
 

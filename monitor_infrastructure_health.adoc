@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: monitor_infrastructure_health.html 
 keywords: infra, infrastructure, health, monitor 
-summary: Supervise el estado de la infraestructura con una puntuación unificada basada en el rendimiento, la capacidad, la configuración y las alertas de componentes para la resolución proactiva de problemas. 
+summary: Consigue una visión global del estado de tu entorno de almacenamiento gracias a una supervisión exhaustiva que combina alertas sobre rendimiento, capacidad, configuración y componentes en índices de estado que permiten tomar medidas. 
 ---
 = Monitorear el estado de la infraestructura
 :hardbreaks:
@@ -14,15 +14,12 @@ summary: Supervise el estado de la infraestructura con una puntuación unificada
 
 
 [role="lead"]
-Data Infrastructure Insights proporciona un monitoreo integral del estado de la infraestructura que rastrea el rendimiento, la capacidad, la configuración y el estado de los componentes de su entorno de almacenamiento. Los puntajes de salud se calculan en función de las alertas del monitor en estas categorías, lo que le brinda una vista unificada del estado del sistema y permite la resolución proactiva de problemas.
+Data Infrastructure Insights supervisa el estado de tu entorno de almacenamiento mediante el seguimiento del rendimiento, la capacidad, la configuración y el estado de los componentes. El sistema calcula puntuaciones unificadas de estado a partir de las alertas de supervisión de estas categorías, lo que proporciona una visibilidad clara del estado del sistema y te permite resolver los problemas de forma proactiva.
 
 
 
 [[the-infrastructure-health-dashboard]]
 == El panel de control de salud de la infraestructura
-
-
-NOTE: Monitorear la salud de la infraestructura es unalink:concept_preview_features.html["Avance"] característica y está sujeta a cambios.
 
 Vaya a *Observabilidad > Analizar* y seleccione *Salud de la infraestructura*. El panel de control proporciona una descripción general del estado del sistema, en función de las categorías de alerta del monitor y los puntajes, como se explica a continuación. Establezca filtros en la parte superior para limitar el enfoque de su investigación.
 

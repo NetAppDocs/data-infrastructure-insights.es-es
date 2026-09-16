@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_export_query_results.html 
-summary: Cómo exportar los resultados de una consulta a un archivo .csv 
+summary: Exporta los resultados de las consultas, las tablas de los paneles de control, la página de destino y otros datos a archivos .CSV para análisis externo, elaboración de informes e integración con otras aplicaciones mediante procesamiento asíncrono. 
 keywords: query, queries, export, csv 
 ---
 = Exportar los resultados de la consulta a un archivo .CSV
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Puede exportar los resultados de cualquier consulta a un archivo .CSV, lo que le permitirá analizar los datos o importarlos a otra aplicación.
+Exporta datos a archivos .CSV desde consultas, widgets de tablas de paneles de control y tablas de páginas de destino para su análisis externo, la elaboración de informes y la integración con otras aplicaciones. El proceso de exportación asíncrono te permite seguir trabajando mientras se procesan grandes conjuntos de datos en segundo plano.
 
 .Pasos
 . Inicie sesión en Data Infrastructure Insights.

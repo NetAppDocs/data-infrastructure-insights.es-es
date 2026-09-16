@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_querying_assets.html 
-summary: Consulta los activos de inventario y las métricas de integración para supervisar, solucionar problemas y analizar el rendimiento en toda tu infraestructura, incluidos el almacenamiento, el cómputo y los recursos de red. 
+summary: Consulta los activos de la infraestructura física y virtual, así como las métricas de integración, para supervisar el rendimiento, solucionar problemas y crear vistas específicas de tu entorno usando criterios de búsqueda detallados. 
 keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, Host, Internal Volume, iSCSI, Network, Portal, Path, Port, Qtree, Quota, Share, Storage, Node, Pool, SVM, Switch, Tape, VMDK, Virtual Machine, VM, Volume, Zone, Member 
 ---
 = Consulta de assets y métricas
@@ -14,7 +14,7 @@ keywords: query, queries, Application, Datastore, Disk, Fabric, Generic Device, 
 
 
 [role="lead"]
-Consulta los activos físicos y virtuales de tu infraestructura para monitorear el rendimiento, solucionar problemas y realizar búsquedas granulares basadas en criterios personalizados como anotaciones. Data Infrastructure Insights permite consultas en diversos tipos de activos, desde matrices de almacenamiento y hosts hasta aplicaciones y máquinas virtuales, junto con métricas de integración de Kubernetes, Docker y ONTAP Advanced Data para una visibilidad completa.
+Utiliza consultas para buscar y analizar los activos y las métricas de tu infraestructura a un nivel detallado. Consulta los activos del inventario físico y virtual, los datos de integración de Kubernetes y ONTAP, y las métricas de rendimiento para supervisar tu entorno, resolver problemas y crear vistas personalizadas basadas en tus criterios específicos.
 
 Ten en cuenta que las reglas de anotación, que asignan automáticamente anotaciones a los assets, requieren una consulta que se haya compartido con todos. Mira abajo para más información sobre cómo compartir consultas.
 

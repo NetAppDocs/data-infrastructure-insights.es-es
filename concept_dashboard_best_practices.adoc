@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_best_practices.html 
-summary: Mejores prácticas para aprovechar al máximo sus paneles de control 
+summary: Descubre las mejores prácticas para encontrar las métricas adecuadas, filtrar los activos de forma eficaz y configurar los widgets para crear paneles de control potentes y reveladores. 
 keywords: dashboard, hints, tips, best practice, widgets, metrics, 
 ---
 = Mejores prácticas para paneles y widgets
@@ -14,7 +14,7 @@ keywords: dashboard, hints, tips, best practice, widgets, metrics,
 
 
 [role="lead"]
-Consejos y trucos para ayudarle a aprovechar al máximo las potentes funciones de los paneles y widgets.
+Domina la creación de paneles de control con estrategias contrastadas para encontrar las métricas adecuadas, filtrar activos de forma eficaz y configurar widgets para obtener la máxima información. Estas prácticas recomendadas te ayudan a crear paneles de control más eficaces que ofrecen información útil sobre la infraestructura.
 
 
 

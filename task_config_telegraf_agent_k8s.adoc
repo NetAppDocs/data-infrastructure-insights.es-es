@@ -420,7 +420,7 @@ Algunas cosas que puedes probar si tienes problemas al configurar el operador de
 | Tuve problemas al intentar implementar el Operador y tengo PSP/PSA en uso. | 1. Edite el agente utilizando el siguiente comando: kubectl -n <name-space> edit agent 2.  Marcar 'security-policy-enabled' como 'falso'.  Esto deshabilitará las Políticas de seguridad de pod y la Admisión de seguridad de pod y permitirá que el Operador realice la implementación.  Confirme usando los siguientes comandos: kubectl get psp (debería mostrar que se eliminó la política de seguridad del pod) kubectl get all -n <namespace> | grep -i psp (debería mostrar que no se encontró nada) 
 
 
-| Errores "ImagePullBackoff" detectados | Estos errores pueden aparecer si tienes un repositorio de docker personalizado o privado y aún no has configurado el Kubernetes Monitoring Operator para que lo reconozca correctamente. <<Uso de un repositorio Docker personalizado o privado,Leer más>> sobre cómo configurar para un repo personalizado/privado. 
+| Errores "ImagePullBackoff" detectados | Estos errores pueden aparecer si tienes un repositorio de docker personalizado o privado y aún no has configurado el Kubernetes Monitoring Operator para que lo reconozca correctamente. <<using-a-custom-or-private-docker-repository,Leer más>> sobre cómo configurar para un repo personalizado/privado. 
 
 
 | Tengo un problema con la implementación de mi operador de monitoreo y la documentación actual no me ayuda a resolverlo.  a| 

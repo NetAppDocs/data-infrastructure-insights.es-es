@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: reporting_storage_manager_dashboard.html 
-summary: Puede utilizar el Panel de control del Administrador de almacenamiento para la gestión diaria de sus servicios de almacenamiento. 
+summary: Accede a información detallada sobre la gestión centralizada del almacenamiento gracias a informes exhaustivos sobre el uso de la capacidad, las tendencias de rendimiento y la previsión de recursos para una gestión proactiva del centro de datos. 
 keywords: reporting, cognos, data warehouse, dwh, smd, storage manager dashboard 
 ---
 = Panel de control del administrador de almacenamiento
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-El panel del administrador de almacenamiento le proporciona una visualización centralizada que le permite comparar y contrastar el uso de recursos a lo largo del tiempo con los rangos aceptables y los días de actividad anteriores.  Al mostrar solo las métricas de rendimiento clave de sus servicios de almacenamiento, puede tomar decisiones sobre cómo mantener sus centros de datos.
+El panel de control de Storage Manager te ofrece información centralizada sobre tu entorno de almacenamiento a través de informes y visualizaciones exhaustivos. Supervisa el uso de la capacidad, haz un seguimiento de las tendencias de rendimiento a lo largo del tiempo y compara las métricas actuales con los rangos aceptables para que puedas tomar decisiones informadas sobre el mantenimiento del centro de datos y la planificación de recursos.
 
 
 NOTE: La función de informes está disponible en Data Infrastructure Insightslink:concept_subscribing_to_cloud_insights.html["Edición Premium"] .

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: dashboard_access_management.html 
-summary: Tú decides si el panel que creas es público o privado. 
+summary: Controla la visibilidad y el acceso a los paneles de control gracias a unas opciones de uso compartido flexibles que te permiten mantenerlos privados, compartirlos con usuarios concretos o ponerlos a disposición de toda la organización. 
 keywords: dashboard, public, shared, private 
 ---
 = Gestión de acceso al panel de control
@@ -14,7 +14,7 @@ keywords: dashboard, public, shared, private
 
 
 [role="lead"]
-Data Infrastructure Insights ahora le brinda un mayor control sobre el acceso a los paneles que crea.  Tú eliges quién puede modificar tus gráficos.  Usted controla la exposición a información potencialmente sensible.  Mantener un panel privado le permite finalizar sus visualizaciones hasta que estén listas para ser consumidas por otros en su organización.
+Controla quién puede ver y modificar tus paneles de control gracias a las opciones flexibles de gestión del acceso. Mantén la privacidad de los paneles de control mientras los desarrollas y luego compártelos con usuarios específicos o con toda tu organización, usando permisos personalizables de edición o solo lectura para proteger la información confidencial y permitir la colaboración.
 
 image:Dashboard_Sharing_Options.png["Opciones para compartir el panel, ancho=300"]
 

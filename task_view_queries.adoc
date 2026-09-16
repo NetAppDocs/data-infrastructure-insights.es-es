@@ -1,20 +1,24 @@
 ---
 sidebar: sidebar 
 permalink: task_view_queries.html 
-summary: Visualización de consultas que se han creado 
+summary: Visualiza y gestiona tus consultas guardadas con opciones de visualización personalizables, incluyendo filtrado, ordenación y disposición de columnas, para una organización y acceso eficiente de las consultas. 
 keywords: query, queries, viewing 
 ---
 = Consultas de visualización
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Puede ver sus consultas para monitorear sus activos y cambiar la forma en que sus consultas muestran los datos relacionados con sus activos.
+Accede y gestiona tus consultas guardadas a través de la interfaz de consultas, donde puedes filtrarlas, ordenarlas y personalizar la visualización para organizar y localizar de forma eficiente las consultas que necesitas para la supervisión y el análisis de activos.
 
 .Pasos
 . Inicie sesión en su inquilino de Data Infrastructure Insights .
-. Haga clic en *Consultas* y seleccione *Mostrar todas las consultas*.  Puede cambiar la forma en que se muestran las consultas realizando cualquiera de las siguientes acciones:
+. Haz clic en *Explorar* y selecciona *Todas las consultas métricas*. Puedes cambiar cómo se muestran las consultas haciendo cualquiera de las siguientes acciones:
 . Puede ingresar texto en el cuadro de filtro para buscar y mostrar consultas específicas.
 . Puede cambiar el orden de clasificación de las columnas en la tabla de consultas a ascendente (flecha hacia arriba) o descendente (flecha hacia abajo) haciendo clic en la flecha en el encabezado de la columna.
 . Para cambiar el tamaño de una columna, pase el mouse sobre el encabezado de la columna hasta que aparezca una barra azul.  Coloque el ratón sobre la barra y arrástrela hacia la derecha o hacia la izquierda.

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept_dashboard_features.html 
-summary: Características y conceptos del tablero de instrumentos. 
+summary: Domina las funciones avanzadas de los paneles de control, como la personalización de widgets, el filtrado de consultas, la configuración de variables, las transformaciones de datos y las opciones de formato para crear visualizaciones potentes y flexibles. 
 keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll up, grouping, aggregate, aggregation, filter, axis, group by, expressions, timeseries, exact match, theme, visibility, formatting, conditional, hide, collapse, expand 
 ---
 = Características del panel de control
@@ -14,7 +14,7 @@ keywords: dashboard, widget, custom, concepts, queries, variables, rollup, roll 
 
 
 [role="lead"]
-Los paneles y widgets permiten una gran flexibilidad en cómo se muestran los datos.  A continuación se presentan algunos conceptos que le ayudarán a aprovechar al máximo sus paneles personalizados.
+Aprovecha todo el potencial de tus paneles de control gracias a sus funciones avanzadas y opciones de personalización. Aprende a configurar consultas de widgets, aplicar transformaciones de datos, usar variables para el filtrado dinámico e implementar formatos sofisticados para crear visualizaciones altamente eficaces y personalizadas que se adapten a tus necesidades de supervisión de la infraestructura.
 
 índice:[]
 

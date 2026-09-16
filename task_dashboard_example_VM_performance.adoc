@@ -1,16 +1,20 @@
 ---
 sidebar: sidebar 
 permalink: task_dashboard_example_VM_performance.html 
-summary: Ejemplo de panel que resalta el rendimiento de la máquina virtual. 
+summary: Tutorial paso a paso para crear un panel de control del rendimiento de una máquina virtual con tablas, gráficos y widgets que comparan las métricas de la máquina virtual y del almacenamiento. 
 keywords: dashboard, widget, custom, example, virtual machine, vm, performance 
 ---
 = Ejemplo de panel de control: Rendimiento de máquinas virtuales
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Las operaciones de TI se enfrentan hoy en día a numerosos desafíos.  A los administradores se les pide que hagan más con menos, y tener visibilidad completa de sus centros de datos dinámicos es imprescindible.  En este ejemplo, le mostraremos cómo crear un panel con widgets que le brindan información operativa sobre el rendimiento de la máquina virtual (VM) en su inquilino.  Si sigue este ejemplo y crea widgets que se adapten a sus necesidades específicas, podrá realizar tareas como visualizar el rendimiento del almacenamiento de back-end en comparación con el rendimiento de la máquina virtual de front-end, o ver la latencia de la máquina virtual en comparación con la demanda de E/S.
+Aprende a crear un panel de control completo sobre el rendimiento de las máquinas virtuales con este tutorial paso a paso. Vas a crear widgets que visualizan los datos de rendimiento de las máquinas virtuales, comparar las métricas de almacenamiento del backend con el rendimiento de las máquinas virtuales del frontend y analizar las relaciones entre la latencia de las máquinas virtuales y la demanda de E/S para obtener mejores ideas operativas.
 
 .Acerca de esta tarea
 Aquí crearemos un panel de rendimiento de máquina virtual que contenga lo siguiente:
