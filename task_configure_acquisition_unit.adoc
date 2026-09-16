@@ -7,6 +7,10 @@ summary: 'Unidad de Adquisición: instalación, desinstalación, configuración 
 = Configuración de unidades de adquisición
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
@@ -89,7 +93,15 @@ La forma más sencilla de hacerlo es especificar la configuración de comodín e
 
 NOTE: El uso de un asterisco (*) como comodín es común, pero la configuración de su proxy/firewall puede utilizar un formato diferente.  Consulte la documentación de su proxy para asegurarse de que la especificación de comodín sea correcta en su entorno.
 
+Si observas que tu AU se bloquea al intentar conectarse a DII, prueba a añadir estos endpoints a tu proxy:
+
+....
+api.bluexp.netapp.com
+netapp-cloud-account.auth0.com
+....
 Puede encontrar más información sobre la configuración del proxy en NetApplink:https://kb.netapp.com/Cloud/ncds/nds/dii/dii_kbs/Where_is_the_proxy_information_saved_to_in_the_Cloud_Insights_Acquisition_Unit["Base de conocimientos"] .
+
+Los endpoints de proxy específicos de NetApp Console que puedes necesitar se enumeran en la documentación de link:https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console-previous.html#update-endpoint-list["Administrador de configuración de NetApp Console"].
 
 
 
