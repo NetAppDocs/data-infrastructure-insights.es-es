@@ -7,41 +7,168 @@ summary: Eliminación de agentes de seguridad de carga de trabajo
 = Eliminar un agente de seguridad de carga de trabajo
 :hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
 
 
 [role="lead"]
-Cuando se elimina un agente de seguridad de carga de trabajo, primero se deben eliminar todos los recopiladores de datos asociados con el agente.
+Elimina un agente cuando vayas a retirar su host o a consolidar la recopilación en otro agente. Al eliminar un agente, también se elimina cada recopilador que aún esté asignado a él.
+
+[cols="100%"]
+|===
+| *Al eliminar un agente se eliminan los recopiladores que le quedan* Cualquier recopilador de datos o User Directory Collector que siga asignado al agente se eliminará junto con él, y la configuración no se podrá recuperar posteriormente. Anota o traslada cualquier configuración que aún necesites antes de eliminar el agente. 
+|===
+
+
+[[decide-what-you-want-to-keep]]
+== Decide qué quieres conservar
+
+[cols="37%,63%"]
+|===
+| *Tu objetivo* | *Qué hacer* 
+
+
+| Sigue recopilando el mismo almacenamiento desde otro agente | Traslada cada colector al otro agente antes de eliminar este. Reasigna los colectores en lugar de volver a crearlos, para que no se duplique la recopilación. 
+
+
+| Deja de recopilar de este almacenamiento por completo | Elimina el agente. Los colectores que aún están asignados a él se eliminan al mismo tiempo. 
+
+
+| Reconstruye el agente en un nuevo host | Registra primero la configuración de cada colector, implementa el nuevo Agent y luego vuelve a crear o traslada los colectores. 
+|===
+
+
+[[before-you-begin]]
+== Antes de empezar
+
+* Inicia sesión como Data Infrastructure Insights Administrator o Account Owner. Eliminar un agente requiere permisos de administrador.
+* Identifica el agente por su nombre y revisa los colectores asignados en la página de detalles del agente.
+* Guarda cualquier configuración de recopilador que aún necesites. La configuración de recopilador eliminada no se puede restaurar.
+* Elimina todos los colectores asignados a este agente de cualquier política de alertas que haga referencia a él. Un colector que siga siendo referenciado por una política de alertas bloquea la eliminación.
+
+
+[cols="100%"]
+|===
+| *No necesitas pausar el agente, desanclarlo ni esperar a que se actualice* Pausar, reanudar, anclar y desanclar no afectan la eliminación del agente. Las operaciones programadas o en curso del agente y del colector tampoco lo bloquean. 
+|===
+
+
+[[choose-the-procedure-that-matches-your-agent]]
+== Elige el procedimiento que se ajuste a tu Agent
+
+La lista de agentes muestra el estado de cada agente. Lo que debes hacer antes de eliminarlo depende de si el agente sigue conectado.
+
+[cols="21%,62%,17%"]
+|===
+| *Estado del agente* | *Qué requiere Workload Security* | *Uso* 
+
+
+| Conectado | Primero tienes que eliminar del agente todos los recopiladores de datos y todos los recopiladores del User Directory Collector. El estado del recopilador no importa; un recopilador detenido sigue contando. | Procedimiento A 
+
+
+| No conectado | No es necesario eliminar primero los colectores. Cualquier colector que siga asignado se elimina junto con el Agent. | Procedimiento B 
+|===
+
+
+[[procedure-a-delete-a-connected-agent]]
+== Procedimiento A: eliminar un agente conectado
+
+*1.* Selecciona Workload Security ++>++ Collectors ++>++ Agents y luego selecciona el nombre del Agent para abrir sus detalles.
+
+*2.* Mueve o elimina todos los recopiladores de datos que aparecen en la lista para el agente. Para seguir recopilando el mismo almacenamiento, asigna el recopilador a otro agente en lugar de eliminarlo.
+
+*3.* Mueve o elimina todos los recopiladores de directorios de usuario que figuran para el agente.
+
+*4.* Vuelve a Workload Security ++>++ Collectors ++>++ Agents.
+
+*5.* Selecciona el menú de opciones del agente y luego selecciona Delete.
+
+*6.* Confirma la eliminación en el cuadro de diálogo Eliminar Agent.
+
+*7.* Desinstala el software del agente en su equipo, como se describe en «Desinstalar el software del agente».
+
+image:ws-delete-agent-confirmation.png["Cuadro de diálogo «Eliminar Agent», que confirma la eliminación de un Agent de prueba y muestra el comando que desinstala el software del Agent de su host.,title=\"Delete Agent confirmation dialog\",width=1007,height=562"]
+
+[cols="100%"]
+|===
+| *Si el cuadro de diálogo muestra el mensaje «No se puede eliminar el agente»* Al menos un recopilador de datos o un recopilador del directorio de usuarios sigue asignado a este agente conectado. Elimina los recopiladores restantes e inténtalo de nuevo. Actualiza primero la página Agentes si acabas de eliminarlos. 
+|===
+
+
+[[procedure-b-delete-a-retired-or-unreachable-agent]]
+== Procedimiento B: eliminar un agente retirado o inaccesible
+
+Utiliza este procedimiento cuando el host del agente vaya a ser descomisionado o ya esté fuera de línea, y ya no necesites los colectores asignados a él.
+
+*1.* Confirma que ya no necesitas ningún colector asignado a este agente. Esos colectores se eliminan junto con él.
+
+*2.* Si aún se puede acceder al host, desinstala el software del Agent tal y como se describe en «Uninstall the Agent software».
+
+*3.* Selecciona Workload Security ++>++ Collectors ++>++ Agents y espera hasta que el agente muestre No conectado.
+
+*4.* Selecciona el menú de opciones del Agent y luego selecciona Delete.
+
+*5.* Confirma la eliminación en el cuadro de diálogo Eliminar Agent.
 
 
 
-[[deleting-an-agent]]
-== Eliminar un agente
+[[uninstall-the-agent-software]]
+== Desinstala el software del agente
+
+Al eliminar un agente en Workload Security, se elimina su configuración en la nube. Esto no desinstala el software del host, así que desinstálalo por separado cuando retires el host.
+
+*1.* Abre una sesión de terminal en el host del agente.
+
+*2.* Ejecuta el comando de desinstalación e introduce y cuando se te solicite.
+
+[listing]
+----
+sudo cloudsecure-agent-uninstall.sh
+----
+El desinstalador detiene y desactiva el servicio del agente y elimina el directorio de instalación. Para desinstalar sin que aparezca el mensaje de confirmación, añade la opción -n.
 
 
-IMPORTANT: Al eliminar un agente se eliminan todos los recopiladores de datos asociados con el agente.  Si planea configurar los recopiladores de datos con un agente diferente, debe crear una copia de seguridad de las configuraciones del recopilador de datos antes de eliminar el agente.
 
-.Antes de empezar
-. Asegúrese de que todos los recopiladores de datos asociados con el agente se eliminen del portal de seguridad de carga de trabajo.
-+
-Nota: Ignore este paso si todos los recolectores asociados están en estado DETENIDO.
+[[verify-the-deletion]]
+== Verifica la eliminación
+
+* El agente ya no aparece en Workload Security ++>++ Collectors ++>++ Agents.
+* Los collectors que estaban asignados a ella ya no aparecen en las listas de collectors.
+* El servicio Agent ya no está presente en el host si desinstalaste el software.
 
 
 
-.Pasos para eliminar un Agente:
-. Inicie sesión en la máquina virtual del agente mediante SSH y ejecute el siguiente comando.  Cuando se le solicite, ingrese "y" para continuar.
-+
-....
-sudo /opt/netapp/cloudsecure/agent/install/cloudsecure-agent-uninstall.sh
-Uninstall CloudSecure Agent? [y|N]:
-....
-. Haga clic en *Seguridad de la carga de trabajo > Recopiladores > Agentes*
-+
-El sistema muestra la lista de Agentes configurados.
 
-. Haga clic en el menú de opciones del Agente que está eliminando.
-. Haga clic en *Eliminar*.
-+
-El sistema muestra la página *Eliminar agente*.
+[[troubleshooting]]
+== Solución de problemas
 
-. Haga clic en *Eliminar* para confirmar la eliminación.
+[cols="39%,61%"]
+|===
+| *Mensaje o síntoma* | *Causa y solución* 
 
+
+| No se puede eliminar el agente: «Elimina todos los recopiladores de datos configurados en ++<++Agent++>++». | El agente está conectado y todavía tiene asignado al menos un recopilador de datos o un recopilador de directorios de usuarios. Mueve o elimina los recopiladores restantes, actualiza la página y vuelve a intentarlo. 
+
+
+| «Elimina los siguientes dispositivos del agente de estas políticas antes de eliminar el agente» | Un colector bajo este agente sigue siendo referenciado por las políticas de alerta mencionadas en el mensaje. Edita cada política, elimina ese colector, guarda la política y luego vuelve a intentar la eliminación. 
+
+
+| La eliminación falla debido a un error de autorización. | Eliminar un agente requiere ser administrador o titular de la cuenta. Otros roles pueden abrir la página de Agentes pero no pueden completar la eliminación. 
+
+
+| Se informa que el agente no está registrado. | El agente ya se ha eliminado o estás trabajando en un entorno diferente. Actualiza la página de Agentes y confirma el agente y el tenant. 
+
+
+| El agente ya no aparece en Workload Security, pero sigue ejecutándose en el host. | Al eliminar el agente no se desinstala el software. Ejecuta el comando de desinstalación en el host. 
+
+
+| Un colector eliminado todavía parece consumir uso. | Los datos de uso los facilitan los recopiladores presentes durante cada intervalo de informe. Elimina los agentes y recopiladores que ya no utilices, y traslada los recopiladores en lugar de volver a crearlos para que los recopiladores antiguos y los nuevos no se solapen. 
+|===
+
+
+[[related-information]]
+== Información relacionada
+
+https://docs.netapp.com/us-en/data-infrastructure-insights/task_cs_delete_agent.html["[.subrayado"]#Página de documentación actual de NetApp#]
