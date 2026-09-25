@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_environment_inventory.html 
+summary: Utiliza esta receta para saber si las unidades de adquisición y las fuentes de datos configuradas de DII están conectadas, si informan y si recopilan datos correctamente. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Entorno de inventario y estado de recopilación
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para saber si las unidades de adquisición y las fuentes de datos configuradas de DII están conectadas, si informan y si recopilan datos correctamente.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* Acceso a las herramientas de la unidad de adquisición y de los recopiladores.
+* Un nombre opcional de unidad de adquisición o de recopilador para acotar la investigación.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +AcquisitionUnitsService_getAcquisitionUnits+
+* +AcquisitionUnitsService_getAcquisitionUnitByUuid+
+* +CollectorService_getDataSources+
+* +CollectorService_getDataSourceById+
+* +CollectorService_getDataSourceTypes+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Revisa mi entorno de recopilación de DII. Resume las unidades de adquisición por estado de conexión y actualidad de los informes; a continuación, resume las fuentes de datos configuradas por estado de adquisición y proveedor. Destaca las unidades de adquisición que nunca informaron, las unidades sin recopiladores asignados, los recopiladores con errores y las adquisiciones correctas pero obsoletas. No muestres direcciones IP, UUID ni credenciales.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Enumera todas las unidades de adquisición.
+. Clasifica cada AU teniendo en cuenta tanto el estado de la conexión como  `lastReported`.
+. Cuenta las fuentes de datos asignadas por AU.
+. Mostrar todas las fuentes de datos configuradas.
+. Agrupa los recopiladores por estado, proveedor, modelo y AU.
+. Identifica:
++
+** AUs desconectadas o con fallo de heartbeat
+** Unidades administrativas conectadas que nunca informaron
+** Unidades de negocio sin fuentes de datos
+** Colectores fallidos
+** Recopiladores sin ninguna adquisición correcta
+** Coleccionistas de éxito cuya última adquisición es inesperadamente antigua
+
+
+. Recupera los datos completos de AU o del recopilador solo para las excepciones.
+. Devuelve un resumen por orden de prioridad e indica claramente el umbral de actualidad utilizado.
+
+
+
+
+[[interpretation]]
+== Interpretación
+
+Ten en cuenta estas distinciones:
+
+* *Conectada y con datos:* la AU está conectada y tiene un valor `lastReported` reciente.
+* *Conectado, pero nunca se informó:* existe conectividad, pero no se ha establecido el envío correcto de informes de telemetría.
+* *Heartbeat failed:* comprueba el host de AU, la ruta de red y el servicio.
+* *Error del colector:* comprueba la actividad reciente de sondeo del colector, el estado del paquete, la configuración y la última adquisición correcta.
+* *No hay recopiladores asignados:* esto puede ser intencionado; compruébalo antes de considerarlo un error.
+
+
+El catálogo de tipos de fuentes de datos compatibles describe los productos que DII puede recopilar. Esto no demuestra que esos productos estén configurados en el tenant.
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+. Resumen ejecutivo
+. Recuento del estado de las unidades de adquisición
+. Recuentos del estado del recopilador
+. Excepciones clasificadas según su impacto operativo
+. Comprobaciones recomendadas
+. Limitaciones de los datos
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* Evita devolver UUID de AU, direcciones IP, nombres de host privados o credenciales del recopilador.
+* Un valor de estado por sí solo no garantiza la actualidad de los datos.
+* Recupera la configuración detallada únicamente de las excepciones especificadas.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+Revisa el colector con fallo llamado  `example-array`. Resume la actividad reciente de sondeo y los fallos de los paquetes de recopilación sin mostrar credenciales ni direcciones privadas.
+
+====
+[]
+====
+¿Qué unidades de adquisición no han informado en los últimos 30 minutos y de cuáles dependen los recopiladores?
+
+====
+[]
+====
+Compara los proveedores de colectores configurados con el catálogo de tipos de fuentes de datos compatibles con DII.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]

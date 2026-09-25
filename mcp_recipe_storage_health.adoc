@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_storage_health.html 
+summary: Utiliza esta receta para priorizar los problemas de almacenamiento combinando alertas activas, la intención de supervisión, las recomendaciones correctivas, los registros relevantes de la plataforma y el contexto de los objetos. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Evaluar el estado del almacenamiento
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para priorizar los problemas de almacenamiento combinando alertas activas, la intención de supervisión, las recomendaciones correctivas, los registros relevantes de la plataforma y el contexto de los objetos.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* Un intervalo de tiempo de 30 días o menos.
+* Ámbito opcional de sistema de almacenamiento, clúster, grupo o volumen.
+* Acceso a herramientas de alertas, supervisión, registro y objetos.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+* +AlertsService_getAlertByName+
+* +MonitorsService_getMonitorById+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Evalúa el estado del almacenamiento durante las últimas 24 horas. Identifica las alertas activas críticas y de advertencia para los sistemas de almacenamiento, los nodos, los pools y los volúmenes. En el caso de las alertas de mayor impacto, explica la condición del monitor y las recomendaciones correctivas; a continuación, revisa los registros pertinentes del EMS o de la plataforma de almacenamiento en torno a la hora en que se activó la alerta. Distingue entre las pruebas confirmadas y las causas probables.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Obtén los metadatos de la alerta.
+. Identifica los campos válidos para gravedad, estado, monitor, objeto relacionado y hora de activación.
+. Consulta las alertas activas relacionadas con el almacenamiento en el intervalo solicitado.
+. Clasifica las alertas usando:
++
+** Gravedad
+** Tipo de objeto afectado
+** Número de objetos afectados
+** Actualidad y recurrencia
+** Impacto en la disponibilidad, la protección de datos, el rendimiento o la capacidad
+
+
+. Consulta todos los detalles de las alertas de mayor prioridad.
+. Recupera sus definiciones de monitores y las directrices correctivas.
+. Enumera los tipos de registro y selecciona el flujo nativo de la plataforma correspondiente a cada alerta, como ONTAP EMS o eventos de StorageGRID.
+. Recupera los metadatos del registro y, a continuación, consulta un intervalo reducido en torno a la alerta.
+. Recupera los atributos o las métricas del objeto necesarios para confirmar su estado actual.
+. Elabora un resumen del estado con evidencia, causa probable, impacto y la siguiente comprobación.
+
+
+
+
+[[interpretation]]
+== Interpretación
+
+No consideres una sola señal como una evaluación completa del estado de salud:
+
+* Las *alertas* muestran las condiciones detectadas.
+* *Los monitores* explican la regla de detección y la acción correctiva prevista.
+* Los *registros* proporcionan el contexto de eventos nativo de la plataforma.
+* *Los objetos y las métricas* muestran el inventario actual o el estado medido.
+
+
+Una alerta activa puede permanecer abierta después de que cambie la condición subyacente. Utiliza datos recientes de objetos y métricas siempre que sea posible.
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+Para cada cuestión prioritaria:
+
+* Recurso afectado
+* Gravedad y estado de alerta
+* Hora de activación
+* Supervisar y acondicionar
+* Registros o métricas que lo corroboran
+* Pruebas confirmadas
+* Causa probable, indicada como una inferencia
+* Orientación correctiva
+* Confianza y falta de pruebas
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* Mantente alerta y mantén las ventanas de registro por debajo de 30 días.
+* Utiliza ventanas de registro estrechas para reducir los eventos no relacionados.
+* Omite los UUID, las direcciones, las anotaciones y las cargas útiles sin procesar innecesarios.
+* Las orientaciones correctivas tienen carácter informativo; comprueba que los comandos se ajusten a la documentación pertinente del producto y al proceso de cambio.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+Para la alerta `AL-123456`, muestra la guía del monitor y los eventos de EMS relacionados dentro de los 30 minutos anteriores y posteriores a la activación.
+
+====
+[]
+====
+Agrupa las alertas de almacenamiento activas por sistema afectado y área de impacto. ¿Qué sistema necesita atención primero y por qué?
+
+====
+[]
+====
+Comprueba si la alerta de máxima prioridad sigue siendo compatible con las métricas actuales del objeto.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]

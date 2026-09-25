@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_performance_rca.html 
+summary: Utiliza esta receta para investigar un volumen lento, un almacén de datos, una máquina virtual, una carga de trabajo de Kubernetes u otro objeto de DII correlacionando métricas de rendimiento, alertas y registros de la plataforma. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Solucionar problemas de rendimiento
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para investigar un volumen lento, un almacén de datos, una máquina virtual, una carga de trabajo de Kubernetes u otro objeto de DII correlacionando métricas de rendimiento, alertas y registros de la plataforma.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* El nombre del recurso afectado y la hora aproximada en que se produjo el incidente.
+* Un intervalo de tiempo de 30 días o menos.
+* Un período de comparación o una línea base saludable conocida, siempre que sea posible.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+* +ObjectService_queryPerformanceMetricsForObjects+
+* +ObjectService_groupObjects+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+* +LogService_getLogTypes+
+* +LogService_getLogTypeMetadata+
+* +LogService_queryLogEvents+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Investiga por qué el volumen `example-volume` funcionó con lentitud entre las 09:00 y las 11:00 UTC. Determina el tipo de objeto correcto y las métricas válidas, compara la latencia, las IOPS y el rendimiento durante el período del incidente, revisa las alertas activas relacionadas y los registros de la plataforma, y compáralos con un período sin incidentes. Distingue las pruebas de las hipótesis e identifica la siguiente medición necesaria.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Determina el tipo de objeto exacto y la identidad del recurso.
+. Recupera los metadatos de ese tipo de objeto.
+. Identifica métricas válidas de latencia, operaciones, rendimiento, utilización y capacidad.
+. Consultar los atributos del objeto actual para determinar la ubicación y las relaciones.
+. Recuperar series temporales durante:
++
+** La ventana del incidente
+** Una ventana de estado óptimo comparable
+
+
+. Alinea las marcas de tiempo y las funciones de agregación entre las distintas métricas.
+. Recupera alertas relacionadas con el recurso que contengan el sistema, el host, el nodo o el grupo de almacenamiento.
+. Selecciona flujos de registros relevantes, recupera metadatos y busca en un intervalo reducido en torno a los cambios en las métricas.
+. Comprueba hipótesis plausibles:
++
+** Aumento repentino de la demanda
+** Saturación de recursos
+** Errores de almacenamiento o de estructura
+** Presión sobre la capacidad
+** Contención del host o la VM
+** Brecha de recopilación
+
+
+. Indica la explicación que cuenta con más apoyo y las alternativas que siguen sin resolverse.
+
+
+
+
+[[evidence-standards]]
+== Normas probatorias
+
+Resultados del análisis de etiquetas:
+
+* *Observado:* devuelto directamente por una herramienta.
+* *Correlacionadas:* señales independientes cambiaron en el mismo intervalo.
+* *Inferido:* una explicación plausible que aún no se ha demostrado.
+* *Desconocido:* no se dispone de las pruebas necesarias.
+
+
+La correlación no implica causalidad. Una alerta simultánea debe considerarse una prueba complementaria, no una prueba concluyente, a menos que se haya establecido el mecanismo.
+
+
+
+[[metric-guidance]]
+== Guía de métricas
+
+* Utiliza `AVG` para obtener una visión general del comportamiento, pero consulta `MAX` cuando los picos breves sean importantes.
+* Utiliza  `SUM` solo para métricas aditivas.
+* Utiliza  `CHANGE` o +CHANGE_RATIO+ para contadores o crecimiento cuando los metadatos lo admitan.
+* Evita comparar series con límites o unidades de bucket diferentes.
+* Los filtros se aplican antes de la agregación por intervalos de tiempo.
+
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+. Alcance y cronología del incidente
+. Evidencia métrica
+. Evidencia de alertas y registros
+. Comparación entre períodos saludables
+. La explicación más probable
+. Hipótesis alternativas
+. Confianza y falta de pruebas
+. Próxima comprobación recomendada
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* Las ventanas de series temporales no pueden superar los 30 días.
+* La herramienta de rendimiento devuelve un número limitado de series; restringe el filtro antes de aumentar el límite.
+* Omite los campos sensibles de los registros sin procesar que no contribuyen al diagnóstico.
+* No propongas medidas correctoras disruptivas sin validarlas mediante los controles operativos habituales.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+Compara la latencia máxima y media durante el incidente con la de la misma hora del día sano anterior.
+
+====
+[]
+====
+Agrupa las cargas de trabajo por host o pool de almacenamiento e identifica si la ralentización fue aislada o compartida.
+
+====
+[]
+====
+Muestra los eventos de la plataforma en los 15 minutos posteriores al primer aumento de la latencia.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]

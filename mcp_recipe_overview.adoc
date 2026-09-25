@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_overview.html 
+summary: Las recetas combinan varias herramientas DII de solo lectura en flujos de trabajo de infraestructura repetibles. Úsalas como punto de partida y sustituye los nombres ficticios de los recursos por los valores de tu tenant. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Recetas operativas de DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Las recetas combinan varias herramientas DII de solo lectura en flujos de trabajo de infraestructura repetibles. Úsalas como punto de partida y sustituye los nombres ficticios de los recursos por los valores de tu tenant.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[choose-a-workflow]]
+== Elige un flujo de trabajo
+
+|===
+| Objetivo | Receta | Superficies DII primarias 
+
+
+| Comprobar la cobertura y la actualidad de la recopilación | link:mcp_recipe_environment_inventory.html["Entorno de inventario y estado de recopilación"] | Unidades de adquisición, fuentes de datos 
+
+
+| Dar prioridad a los problemas de infraestructura activos | link:mcp_recipe_storage_health.html["Evaluar el estado del almacenamiento"] | Alertas, monitores, registros, objetos 
+
+
+| Busca pools que se estén acercando al límite de capacidad | link:mcp_recipe_capacity_risk.html["Identificar el riesgo de capacidad"] | Metadatos de objetos, agrupación, series temporales 
+
+
+| Comprueba las versiones de los componentes de recopilación de Kubernetes | link:mcp_recipe_kubernetes_collector_currency.html["Comprobar la actualidad del recopilador de Kubernetes"] | Recopiladores de Kubernetes 
+
+
+| Investiga un volumen o una carga de trabajo lentos | link:mcp_recipe_performance_rca.html["Solucionar problemas de rendimiento"] | Métricas de objetos, alertas, registros 
+
+
+| Revisa el enrutamiento y la supresión de forma segura | link:mcp_recipe_notification_posture.html["Revisar la política de notificaciones"] | Normas, objetivos, ventanas de mantenimiento 
+|===
+
+
+[[standard-investigation-pattern]]
+== Patrón de investigación estándar
+
+. Aclara el alcance del recurso y el período de tiempo.
+. Descubre los tipos disponibles.
+. Recupera los metadatos antes de utilizar campos dinámicos.
+. Consulta un intervalo de tiempo delimitado.
+. Correlaciona señales independientes.
+. Distingue los hechos observados de las inferencias.
+. Limitaciones del informe y seguimiento recomendado.
+
+
+
+
+[[safety]]
+== Seguridad
+
+* Estas recetas utilizan herramientas de solo lectura.
+* Limita los períodos de tiempo a 30 días o menos.
+* Omite las credenciales, las direcciones privadas, los UUID, los endpoints de webhook sin procesar y las cargas útiles de registro innecesarias.
+* Confirma las acciones operativas de alto impacto fuera del flujo de trabajo de MCP.
+
+
+
+
+[[related-documentation]]
+== Documentación relacionada
+
+* link:mcp_overview.html["Descripción general de DII MCP"]
+* link:mcp_concepts.html["Conceptos y modelo de datos"]
+* link:mcp_tools_overview.html["Referencia de herramientas"]
+* link:mcp_security.html["Seguridad y privacidad"]
+

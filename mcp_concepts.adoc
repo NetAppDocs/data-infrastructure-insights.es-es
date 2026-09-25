@@ -1,0 +1,161 @@
+---
+sidebar: sidebar 
+permalink: mcp_concepts.html 
+summary: Comprender estos conceptos ayuda a un asistente de IA a seleccionar las herramientas adecuadas y a elaborar consultas válidas. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Conceptos y modelo de datos de DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Comprender estos conceptos ayuda a un asistente de IA a seleccionar las herramientas adecuadas y a elaborar consultas válidas.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[tenant-scope]]
+== Ámbito del inquilino
+
+Cada solicitud de DII MCP se ejecuta dentro del tenant y con los permisos del usuario autenticado en DII. Una herramienta solo puede devolver datos que existan en ese tenant y que sean visibles para esa identidad.
+
+
+
+[[acquisition-units]]
+== Unidades de adquisición
+
+Una unidad de adquisición (AU) es un agente instalado de forma remota que sondea fuentes de datos y envía telemetría a DII. Los registros de la AU incluyen el estado de la conexión, la vigencia de los informes, el sistema operativo, la versión y el número de fuentes de datos asignadas.
+
+La conexión y el envío de informes son señales diferentes. Por ejemplo, una AU puede aceptar una conexión aunque no tenga un historial de informes correctos. Evalúa tanto el estado como `lastReported`.
+
+
+
+[[data-sources]]
+== Fuentes de datos
+
+Una fuente de datos, también llamada colector, es una conexión configurada con un sistema de infraestructura, como una cabina de almacenamiento, un conmutador, un hipervisor o un servicio en la nube.
+
+Utiliza la operación de lista para consultar el inventario y el estado. Recupera una fuente de datos específica cuando necesites detalles de configuración, como paquetes de recopilación, intervalos de sondeo o actividad reciente.
+
+Los tipos de fuentes de datos compatibles describen el catálogo más amplio de colectores de DII. No son lo mismo que los colectores configurados en el tenant actual.
+
+
+
+[[objects]]
+== Objetos
+
+Los objetos son entidades de infraestructura normalizadas, como sistemas de almacenamiento, pools, volúmenes, hosts, máquinas virtuales, cargas de trabajo de Kubernetes y recursos específicos de cada producto.
+
+Los tipos de objetos son dinámicos. Siempre:
+
+. Enumera los tipos de objetos.
+. Selecciona el tipo exacto.
+. Recupera los metadatos de ese tipo.
+. Consulta únicamente los atributos y las métricas declarados en los metadatos.
+
+
+
+
+[[attributes-and-metrics]]
+=== Atributos y métricas
+
+* Los *atributos* describen la identidad, la configuración, la titularidad, las etiquetas o las relaciones.
+* Las *métricas* son mediciones que varían con el tiempo, como la capacidad, la latencia, el rendimiento o la utilización.
+* *Los atributos agrupables* pueden segmentar una consulta agregada.
+
+
+Los filtros de métricas se evalúan con respecto a los valores brutos de las métricas antes de aplicar la agregación solicitada de la ventana de tiempo.
+
+
+
+[[logs]]
+== Registros
+
+Los tipos de registro representan flujos de eventos como ONTAP EMS, eventos de Kubernetes, eventos de StorageGRID, eventos de VMware y eventos de la plataforma DII.
+
+La consulta de registros también se basa primero en los metadatos:
+
+. Enumera los tipos de registros disponibles.
+. Recupera los metadatos del tipo seleccionado.
+. Solicita únicamente los atributos válidos.
+. Busca eventos o crea un histograma de recuento de eventos.
+
+
+
+
+[[monitors-and-alerts]]
+== Supervisión y alertas
+
+Un monitor define una condición que evalúa DII. Una alerta es un resultado específico de un monitor para uno o varios objetos relacionados.
+
+* Utiliza las herramientas de supervisión para inspeccionar la intención, el estado, el tipo de objeto y la guía correctiva.
+* Utiliza los metadatos de las alertas antes de consultar las alertas.
+* Utiliza un nombre de alerta como  `AL-123456` o su UUID para recuperar una alerta.
+
+
+El estado de la alerta y su gravedad son dimensiones independientes. Pide ambos al priorizar los resultados.
+
+
+
+[[maintenance-windows]]
+== Ventanas de mantenimiento
+
+Una ventana de mantenimiento suprime las alertas que coinciden con una expresión durante un periodo definido. Un resultado correcto vacío significa que no existen ventanas que coincidan; no es indicio de que falten datos.
+
+
+
+[[notification-rules-and-targets]]
+== Reglas y destinos de notificación
+
+Las reglas de notificación dirigen las alertas coincidentes. Los destinos pueden incluir Slack, Microsoft Teams, PagerDuty o integraciones HTTP personalizadas.
+
+Las direcciones de webhook pueden contener información confidencial. Para la presentación de informes, solicita únicamente el nombre del destino, el tipo de motor y el estado. Nunca reproduzcas la dirección completa.
+
+
+
+[[metadata-first-query-flow]]
+== Flujo de consulta basado en metadatos
+
+[source, text]
+----
+Discover types
+    → retrieve type metadata
+        → select valid attributes and metrics
+            → query a bounded time range
+                → paginate, group, or retrieve time series
+----
+
+
+[[filters]]
+== Filtros
+
+Las herramientas de consulta DII admiten condiciones y operadores lógicos anidados:
+
+* Comparativas: `EQ`, `NE`, `GT`, `LT`, `GE`, `LE`
+* Coincidencia de patrones: `WILDCARD`
+* Presencia: `EXISTS`
+* Lógica: `and`, `or`, `not`
+
+
+Utiliza el nombre exacto del campo y el tipo de valor compatible declarados en los metadatos. Para `EXISTS`, omite un valor de comparación cuando lo admita la versión del servidor conectado.
+
+
+
+[[time-ranges-and-pagination]]
+== Intervalos de tiempo y paginación
+
+* Utiliza marcas de tiempo ISO-8601 con desplazamientos explícitos o `Z`.
+* Indica una zona horaria de la IANA, como +America/New_York+ o  `UTC` cuando sea necesario.
+* Limita las ventanas de consulta a 30 días o menos, salvo que una herramienta documente un límite menor.
+* Las consultas de objetos y alertas suelen utilizar `limit` y `offset`.
+* Las consultas de eventos de registro usan un cursor devuelto para la página siguiente.
+
+
+Para obtener información sobre los errores y los pasos de recuperación, consulta link:mcp_troubleshooting.html["Solución de problemas"].

@@ -1,0 +1,154 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_capacity_risk.html 
+summary: Utiliza esta receta para identificar pools de almacenamiento o dominios de capacidad equivalentes que se estén acercando a la saturación y para encontrar posibles candidatos para el reequilibrio. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Identificar el riesgo de capacidad
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para identificar pools de almacenamiento o dominios de capacidad equivalentes que se estén acercando a la saturación y para encontrar posibles candidatos para el reequilibrio.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* Un ámbito de almacenamiento o un permiso para revisar todos los pools de almacenamiento visibles.
+* Un periodo de retrospectiva de 30 días o menos.
+* Acuerdo sobre los umbrales de advertencia y críticos de la organización.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +ObjectService_getObjectTypes+
+* +ObjectService_getMetadataForObjectType+
+* +ObjectService_query+
+* +ObjectService_groupObjects+
+* +ObjectService_queryPerformanceMetricsForObjects+
+* +AlertsService_getMetadata+
+* +AlertsService_queryForAlerts+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Evalúa el riesgo de capacidad de almacenamiento durante los últimos 30 días. Detecta el tipo de objeto y los metadatos correctos del pool de almacenamiento y, a continuación, clasifica los pools usando la proporción de capacidad usada disponible, la capacidad libre, el crecimiento y las señales de tiempo hasta llenarse. Identifica los pools críticos, de advertencia y de la lista de seguimiento, y sugiere candidatos de reequilibrio basados en evidencia. Indica los umbrales y las funciones de agregación usados.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Enumera los tipos de objetos y selecciona el tipo de pool normalizado o específico del producto adecuado.
+. Recupera metadatos.
+. Identifica los siguientes elementos válidos:
++
+** Nombres de pools y sistemas de almacenamiento
+** Métricas de capacidad total, utilizada y libre
+** Métrica de la proporción utilizada
+** Métrica de tiempo hasta la saturación o de previsión
+** Atributos de almacenamiento, nivel, ubicación o nivel de servicio que se pueden agrupar
+
+
+. Consulta una instantánea clasificada actual con agregaciones compatibles.
+. Recupera series temporales de métricas sensibles al crecimiento durante el periodo de retrospectiva solicitado.
+. Cuando sea posible, agrupa la capacidad por sistema de almacenamiento, nivel o ubicación.
+. Consulta las alertas activas relacionadas con la capacidad para corroborarlas.
+. Clasifica el riesgo utilizando los umbrales acordados.
+. Identifica posibles fuentes y destinos de reequilibrio teniendo en cuenta tanto la capacidad como las restricciones operativas.
+
+
+
+
+[[example-risk-model]]
+== Ejemplo de modelo de riesgo
+
+Utiliza la política del tenant cuando esté disponible. De lo contrario, etiqueta lo siguiente como un modelo ilustrativo:
+
+* *Crítico:* índice de utilización igual o superior al 90 %, o plazo hasta la saturación inferior a 30 días
+* *Advertencia:* índice de uso igual o superior al 80 %, o tiempo hasta estar lleno inferior a 90 días
+* *A tener en cuenta:* crecimiento positivo sostenido con un plazo hasta la recuperación total inferior a 180 días
+* *Menor riesgo:* ninguna de las condiciones anteriores
+
+
+No deduzcas el tiempo hasta el agotamiento a partir de solo dos muestras cuando DII proporciona una métrica de previsión. Si no hay ninguna previsión disponible, describe la tendencia sin indicar una fecha concreta de agotamiento.
+
+
+
+[[rebalance-guidance]]
+== Orientación sobre el reequilibrio
+
+Un destino no es adecuado solo por el hecho de tener capacidad disponible. Ten en cuenta lo siguiente:
+
+* Compatibilidad de sistemas y protocolos de almacenamiento
+* Nivel de servicio y margen de rendimiento
+* Relaciones entre la protección de datos y la replicación
+* Restricciones de ubicación de cargas de trabajo
+* Thin provisioning y sobrecompromiso
+* Ventanas de cambio operativas
+
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+. Resumen de riesgos de capacidad
+. Pools críticos y de advertencia
+. Narrativa de crecimiento
+. Alertas de capacidad activas
+. Pares de origen y destino candidatos
+. Supuestos y datos que faltan
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* Las ventanas de objetos no pueden superar los 30 días por llamada. Utiliza ventanas consecutivas que no se solapen para tendencias más largas.
+* Los filtros se aplican a los valores brutos de las métricas antes de la agregación.
+* Agrupa solo por los atributos marcados como «agrupables» en los metadatos.
+* Los valores de capacidad pueden expresarse en diferentes unidades; normalízalos antes de compararlos.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+Muestra la tendencia de la capacidad utilizada en los últimos 30 días de los cinco pools de mayor riesgo.
+
+====
+[]
+====
+Agrupa la capacidad de almacenamiento en pool por sistema de almacenamiento e identifica los sistemas con un pool crítico y un destino viable de menor riesgo.
+
+====
+[]
+====
+Correlaciona los grupos de mayor riesgo con los monitores de capacidad activos y las alertas.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]

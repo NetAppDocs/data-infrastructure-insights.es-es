@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_kubernetes_collector_currency.html 
+summary: Utiliza esta receta para identificar los clústeres de Kubernetes cuyos componentes del operador DII o de la colección estén desactualizados, desactivados o obsoletos. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Comprobar la actualidad del recopilador de Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para identificar los clústeres de Kubernetes cuyos componentes del operador DII o de la colección estén desactualizados, desactivados o obsoletos.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* La recopilación de Kubernetes está configurada en el tenant de DII.
+* Acceso a la información del recopilador de Kubernetes.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +OperatorsManagement_getKubernetesCollectors+
+* Opcional: +AcquisitionUnitsService_getAcquisitionUnits+
+* Opcional: +CollectorService_getDataSources+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Revisa la vigencia del collector de Kubernetes de DII. Agrupa los clústeres por estado general, identifica los operators y componentes obsoletos o deshabilitados, y marca las marcas de tiempo del último informe que estén desactualizadas. No muestres direcciones internas ni UUID.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Mostrar los recopiladores de Kubernetes.
+. Normaliza cada clúster en:
++
+** Actualizado
+** Obsoleto
+** Desactivado
+** Desconocido
+
+
+. Compara:
++
+** Versión del operador
+** Rendimiento de la red y versión del componente Map
+** Cambiar la versión del componente Change Analysis
+
+
+. Convierte la última marca de tiempo registrada a la zona horaria solicitada.
+. Marca los clústeres que no hayan informado dentro del umbral de actualización acordado.
+. Distingue `N/A` una versión actual de una obsoleta:
++
+** `N/A` puede significar que el componente no está instalado, no está habilitado o no es aplicable.
+
+
+. Si los informes están desactualizados, comprueba el estado de la unidad de adquisición y del recopilador correspondientes, siempre que esté disponible.
+. Devuelve una lista priorizada de actualizaciones e investigaciones.
+
+
+
+
+[[interpretation]]
+== Interpretación
+
+* *Obsoleto:* al menos un componente instalado está por detrás de la versión esperada por DII.
+* *Desactivada:* la recopilación está desactivada de forma intencionada o por motivos administrativos.
+* *Informes desactualizados:* es posible que los datos de la versión no reflejen el estado actual del clúster.
+* *N/A:* requiere contexto; no lo clasifiques automáticamente como un error.
+
+
+La herramienta muestra las versiones y el estado. No realiza actualizaciones.
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+. Recuento de clústeres por estado
+. Clústeres obsoletos ordenados según la actualidad de la información
+. Diferencias de versión a nivel de componentes
+. Componentes desactivados o no disponibles
+. Pasos de verificación recomendados
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* La nomenclatura de los clústeres puede ser sensible; utiliza los procedimientos autorizados al compartir los resultados.
+* No deduzcas la exposición a vulnerabilidades basándote únicamente en si la versión está actualizada.
+* Comprueba la compatibilidad de la actualización y realiza el proceso fuera de este flujo de trabajo de solo lectura.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+¿Qué clústeres tienen un operador desactualizado y no han informado en la última hora?
+
+====
+[]
+====
+Separa los clústeres con un componente de Change Analysis obsoleto de los clústeres en los que ese componente no esté disponible.
+
+====
+[]
+====
+En el caso de los clústeres obsoletos, comprueba si la infraestructura de recopilación de DII asociada funciona correctamente.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]

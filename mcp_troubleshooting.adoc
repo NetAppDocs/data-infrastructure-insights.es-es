@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: mcp_troubleshooting.html 
+summary: Soluciones habituales para problemas de conexión al servidor MCP, errores de autenticación, rechazos de consultas y limitación de la velocidad de la API. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Solución de problemas de DII MCP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[the-server-does-not-connect]]
+== El servidor no se conecta
+
+Comprueba:
+
+. La URL configurada coincide con el endpoint proporcionado para tu entorno de DII.
+. El cliente es compatible con servidores MCP HTTP remotos y con el flujo de autenticación necesario.
+. La autenticación se ha completado correctamente.
+. La política de red permite el acceso al endpoint.
+. La identidad conectada puede acceder al tenant de DII.
+
+
+Reinicia o recarga el servidor MCP tras cambiar la configuración del cliente.
+
+
+
+[[authentication-is-required]]
+== Se requiere autenticación
+
+Completa el flujo de inicio de sesión del cliente y luego vuelve a intentar la solicitud original. Si se usa una identidad de servicio, comprueba que sus credenciales sean válidas y estén almacenadas mediante un mecanismo de secretos aprobado.
+
+No vuelvas a intentar repetidamente una denegación de autorización confirmada. Pide a un administrador de DII que revise los permisos del usuario para el tenant y los recursos.
+
+
+
+[[an-object-query-rejects-a-field]]
+== Una consulta de objeto rechaza un campo
+
+Los atributos y las métricas de los objetos varían según el tipo.
+
+. Llama a +ObjectService_getObjectTypes+.
+. Confirma el tipo de objeto exacto.
+. Llama a +ObjectService_getMetadataForObjectType+.
+. Copia los nombres de los campos exactamente como aparecen en los metadatos.
+. Comprueba que el tipo de valor y la función de agregación sean compatibles.
+
+
+Solo los atributos marcados como «agrupables» se pueden usar para agrupar objetos.
+
+
+
+[[a-log-query-rejects-an-attribute]]
+== Una consulta de registro rechaza un atributo
+
+. Llama a +LogService_getLogTypes+.
+. Confirma el tipo exacto de registro.
+. Llama a +LogService_getLogTypeMetadata+.
+. Utiliza únicamente los atributos que se devuelven para ese tipo de registro.
+
+
+Las consultas de eventos de registro utilizan paginación basada en cursores. Pasa el cursor devuelto por la página anterior en lugar de un desplazamiento.
+
+
+
+[[an-alert-query-rejects-a-field]]
+== Una consulta de alerta rechaza un campo
+
+Llama a +AlertsService_getMetadata+ inmediatamente antes de crear la consulta. Los metadatos de las alertas pueden ser amplios y depender del tenant; utiliza los nombres exactos de los campos.
+
+
+
+[[the-time-range-is-invalid]]
+== El intervalo de tiempo no es válido
+
+* Asegúrate de que `fromTime` sea anterior o igual que `toTime`.
+* Utiliza marcas de tiempo ISO-8601 con un desplazamiento o  `Z`.
+* Mantén la ventana solicitada por debajo de 30 días.
+* Divide las investigaciones más largas en intervalos consecutivos que no se superpongan y resume los resultados.
+* Indica una zona horaria válida de IANA cuando la herramienta la requiera.
+
+
+La aplicación en tiempo de ejecución es vinculante si es más estricta que la descripción de la herramienta almacenada en caché en el cliente.
+
+
+
+[[a-query-returns-too-many-results]]
+== Una consulta devuelve demasiados resultados
+
+* Añade un filtro válido.
+* Reduce el intervalo de tiempo.
+* Ordena por la métrica más relevante.
+* Reduce el límite de resultados.
+* Utiliza la agrupación o un histograma cuando los registros individuales no sean necesarios.
+* Continúa con `offset` o un cursor de registro solo cuando necesites más detalles.
+
+
+
+
+[[a-successful-call-returns-no-rows]]
+== Una llamada realizada correctamente no devuelve ninguna fila
+
+Un resultado vacío suele ser una respuesta válida. Puede significar:
+
+* No hay recursos que coincidan con el filtro.
+* No se produjeron eventos en el intervalo de tiempo seleccionado.
+* No hay ventanas de mantenimiento ni reglas de notificación configuradas.
+* Los recopiladores del tenant no rellenan el tipo de datos seleccionado.
+
+
+No describas un resultado vacío correcto como un dato faltante, a menos que haya otras pruebas que indiquen un problema de recopilación.
+
+
+
+[[an-acquisition-unit-is-connected-but-has-never-reported]]
+== Hay una unidad de adquisición conectada, pero nunca ha enviado ningún informe
+
+El estado de la conexión y la generación correcta de informes son dos cosas distintas. Comprueba:
+
+* `lastReported`
+* Número de fuentes de datos asignadas
+* Estado de adquisición de fuentes de datos
+* Conectividad de host y versión de AU
+* Actividad de sondeo para una fuente de datos asignada
+
+
+
+
+[[a-collector-is-failed]]
+== Ha fallado un colector
+
+Utiliza +CollectorService_getDataSourceById+ para el colector afectado. Revisa la actividad reciente de sondeo, la información de parches activos, el estado del paquete, la configuración y la hora de la última adquisición correcta. Evita mostrar credenciales o valores de configuración privados.
+
+
+
+[[webhook-results-include-complete-addresses]]
+== Los resultados del webhook incluyen direcciones completas
+
+No repitas los valores. Resume únicamente los nombres de los objetivos, los tipos de integración, los recuentos y el estado. Sigue link:mcp_security.html["Seguridad y privacidad"] si se mostró o compartió material confidencial.
+
+
+
+[[the-ai-assistant-selected-the-wrong-tool]]
+== El asistente de IA seleccionó la herramienta equivocada
+
+Utiliza una indicación más explícita:
+
+[]
+====
+Primero, enumera los tipos de objetos disponibles. Recupera los metadatos del tipo seleccionado. Luego, consulta solo los campos válidos y explica qué herramientas de DII has utilizado.
+
+====
+Para investigaciones habituales, empieza por un link:mcp_recipe_overview.html["receta operativa"].

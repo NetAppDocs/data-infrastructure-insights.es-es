@@ -1,0 +1,150 @@
+---
+sidebar: sidebar 
+permalink: mcp_recipe_notification_posture.html 
+summary: Utiliza esta receta para entender cómo se enrutan y se suprimen las alertas de DII sin exponer las direcciones de los endpoints de webhook. 
+keywords: MCP, DII, Data Infrastructure Insights, AI assistant 
+---
+= Revisar la política de notificaciones
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Utiliza esta receta para entender cómo se enrutan y se suprimen las alertas de DII sin exponer las direcciones de los endpoints de webhook.
+
+
+NOTE: El MCP de DII es una función de link:concept_preview_features.html["Avance"] y, por lo tanto, está sujeta a cambios.
+
+
+
+[[prerequisites]]
+== Prerrequisitos
+
+* Acceso a herramientas de notificación y de ventanas de mantenimiento.
+* Un tipo opcional de monitor, recurso o integración para delimitar la revisión.
+
+
+
+
+[[tools-used]]
+== Herramientas utilizadas
+
+* +NotificationService_getNotificationRules+
+* +NotificationService_getNotificationRuleById+
+* +NotificationService_getWebhooks+
+* +MaintenanceWindowService_getMaintenanceWindows+
+* +MaintenanceWindowService_getMaintenanceWindowById+
+* Opcional: +MonitorsService_queryMonitors+
+
+
+
+
+[[starter-prompt]]
+== Mensaje inicial
+
+[]
+====
+Revisa la configuración de notificaciones de DII. Resume las reglas de notificación activas e inactivas, el ámbito del monitor o de los recursos de cada regla, el número de destinos de webhook por tipo de integración y las ventanas de mantenimiento actuales. Devuelve únicamente los nombres de los destinos, los tipos de motor y el estado, nunca las direcciones de los endpoints.
+
+====
+
+
+[[agent-workflow]]
+== Flujo de trabajo del agente
+
+. Enumera las reglas de notificación.
+. Clasifica las reglas como activas, inactivas, a punto de caducar o sin caducidad.
+. Resume el ámbito de expresión de cada regla:
++
+** Nombre del monitor o del grupo
+** Objeto relacionado
+** Alcance amplio del comodín
+
+
+. Recupera una regla concreta solo cuando necesites más detalles.
+. Enumera los destinos de los webhooks y descarta inmediatamente el campo «dirección» del resultado de trabajo.
+. Agrupa los objetivos por tipo de motor y estado.
+. Enumera las ventanas de mantenimiento activas.
+. Identifica las ventanas de supresión que se superponen con recursos importantes o períodos inusualmente largos.
+. Si lo deseas, compara las expresiones de las reglas con los monitores disponibles.
+. Informa sobre la cobertura de enrutamiento, las reglas generales, las reglas inactivas y los riesgos de supresión.
+
+
+
+
+[[security-requirement]]
+== Requisito de seguridad
+
+Las direcciones completas de los webhooks pueden contener:
+
+* Rutas de inicio de sesión en Slack o Teams
+* PagerDuty claves de enrutamiento
+* Tokens de API
+* Firmas de flujo de trabajo únicas
+* Credenciales de integración personalizadas
+
+
+Nunca muestres, cites, resumas, conserves ni reenvíes el campo de dirección. Tampoco es necesario usar un sufijo enmascarado en este flujo de trabajo.
+
+Si aparece un endpoint completo en una transcripción o en un artefacto compartido, sigue los pasos del incidente en link:mcp_security.html["Seguridad y privacidad"].
+
+
+
+[[interpretation]]
+== Interpretación
+
+* Una regla inactiva puede ser intencionada; confirma la propiedad antes de recomendar su eliminación.
+* Una expresión comodín demasiado amplia puede generar notificaciones innecesarias o un enrutamiento no deseado.
+* El estado de un destino puede ser nulo o desconocido; no lo indiques como «activado».
+* Un resultado vacío correcto de la ventana de mantenimiento significa que no existe ninguna ventana coincidente.
+* Una ventana de larga duración puede ocultar problemas reales incluso cuando está técnicamente activa y es válida.
+
+
+
+
+[[suggested-output]]
+== Resultado sugerido
+
+. Recuento de reglas por estado
+. Ámbito de la regla y tipo de destino
+. Recuento de objetivos por motor
+. Ventanas de mantenimiento activas
+. Configuraciones generales, inactivas o ambiguas
+. Advertencias sobre seguridad y calidad de los datos
+
+
+
+
+[[limits-and-privacy]]
+== Límites y privacidad
+
+* No devuelvas direcciones, tokens, UUID ni identificadores de recursos privados.
+* Este flujo de trabajo revisa la configuración, pero no prueba la entrega de mensajes.
+* Las herramientas actuales no crean, actualizan, desactivan ni eliminan reglas ni destinos.
+
+
+
+
+[[follow-up-prompts]]
+== Indicaciones de seguimiento
+
+[]
+====
+¿Qué reglas de notificación activas tienen expresiones comodín amplias y con qué grupos de monitores pueden coincidir?
+
+====
+[]
+====
+Enumera las ventanas de mantenimiento actuales y las próximas, y explica qué ámbitos de alerta suprimen.
+
+====
+[]
+====
+Cuenta los destinatarios de las notificaciones por tipo de integración e identifica los destinatarios con estado desconocido. No muestres direcciones.
+
+====
+link:mcp_recipe_overview.html["Volver a las recetas"]
