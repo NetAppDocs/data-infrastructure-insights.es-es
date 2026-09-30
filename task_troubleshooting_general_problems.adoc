@@ -65,6 +65,9 @@ Véase tambiénlink:task_troubleshooting_linux_acquisition_unit_problems.html["S
 
 
 | Al ingresar el tiempo de programación de un informe de Cognos, a veces termino con una "m" adicional en el tiempo de programación.  Por ejemplo, si ingreso la hora como "02:15 PM", es posible que se agregue un carácter adicional: "02:15 PMM" (o PMm).  Cuando hago clic afuera, cambia a "2:15 AM".  Puedo guardar el informe, pero cuando vuelvo a abrir el informe guardado, la hora programada aparece como AM (es decir, mañana), independientemente de si ingresé AM o PM en la hora programada. | Vuelva a ingresar la hora programada, teniendo cuidado de no ingresar los caracteres completos "AM" o "PM"; es suficiente escribir "A" para "AM" o "P" para "PM".  Si no se le muestra el personaje adicional, la hora programada se establecerá correctamente. 
+
+
+| En DII, las cifras de capacidad de FlexGroups son "0". Los componentes están bien, pero FlexGroup no muestra una capacidad total consolidada de todos los componentes. | Esto es intencionado. La mayoría de las métricas de capacidad se informan en los componentes de FlexGroup, no en el FlexGroup principal. Informar la misma capacidad en ambos la contabilizaría dos veces. Priorizar los informes a nivel de componente admite casos de uso clave y evita esa duplicación. Para informar la capacidad de un FlexGroup en una consulta, un panel o un monitor, usa la referencia del componente a su FlexGroup principal. Agrupa los componentes por esa referencia y suma sus valores de capacidad. 
 |===
 
 
