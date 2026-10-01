@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, capacity
 :imagesdir: ./media/
 
 
+[role="lead"]
+El esquema «Capacity» contiene tablas y métricas relacionadas con la capacidad de almacenamiento, la utilización y el aprovisionamiento en toda tu infraestructura. Usa este esquema para analizar las tendencias de capacidad, prever las necesidades futuras y optimizar la asignación de recursos.
+
 Fuente: Punto final OData *dwh_capacity* — Data Infrastructure Insights
 
 Tablas encontradas: *44* | Asociaciones: *92*

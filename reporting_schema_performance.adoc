@@ -13,6 +13,9 @@ keywords: dwh, data warehouse, schema, reporting, performance
 :imagesdir: ./media/
 
 
+[role="lead"]
+El esquema «Performance» proporciona métricas de series temporales sobre E/S, latencia, rendimiento y otros indicadores de rendimiento en sistemas de almacenamiento, hosts, volúmenes y aplicaciones. Usa este esquema para analizar tendencias de rendimiento, identificar cuellos de botella y optimizar la ubicación de las cargas de trabajo.
+
 Fuente: Punto de conexión OData *dwh_performance* — Data Infrastructure Insights
 
 Tablas encontradas: *74* | Asociaciones: *167*
