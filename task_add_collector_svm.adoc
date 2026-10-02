@@ -53,7 +53,7 @@ ____
 | ONTAP Select | Compatible. 
 
 
-| Tipo/subtipo de SVM | Solo SVM de datos (sin volúmenes infinitos). Subtipos admitidos: default, sync++_++source, sync++_++destination. Las SVM de destino DP se omiten para la auditoría por diseño. 
+| Tipo/subtipo de SVM | Solo las SVM de datos (sin volúmenes infinitos). Subtipos admitidos: default, sync_source, sync_destination. Las SVM de destino de DP se omiten en la auditoría por diseño. 
 
 
 | política de servicio data-fpolicy-client | Obligatorio a partir de ONTAP 9.8 y versiones posteriores (véase la política de servicio). En versiones anteriores no es necesario configurarlo. 
@@ -141,15 +141,15 @@ _Se recomienda utilizar la IP de gestión del clúster {plus} y el nombre de SVM
 
 [listing]
 ----
-security login password -username vsadmin -vserver ++<++svmname++>++
+security login password -username vsadmin -vserver <svmname>
 
-security login unlock -username vsadmin -vserver ++<++svmname++>++
+security login unlock -username vsadmin -vserver <svmname>
 ----
 *Utiliza un LIF específico para la gestión de SVM. Si no hay ninguno disponible, configura la política de firewall del LIF de datos en mgmt:*
 
 [listing]
 ----
-network interface modify -lif ++<++SVM++_++data++_++LIF++_++name++>++ -firewall-policy mgmt
+network interface modify -lif <SVM_data_LIF_name> -firewall-policy mgmt
 ----
 .Ejemplo de salida del inicio de sesión en SVM.
 image:ontap-svm-login-output.png["Ejemplo de salida de inicio de sesión de SVM, title=\"Example SVM login output\", width=646, height=164"]
@@ -180,7 +180,7 @@ Test Connection se ejecuta con la cuenta de ONTAP introducida en el formulario d
 | Acceso directo de administrador | función DEFAULT: solo lectura (clúster) — cumple con las comprobaciones de lectura; fpolicy sigue necesitando todas | — 
 
 
-| Instantáneas | instantánea de volumen: todo (limitado a cloudsecure++_*++ donde sea posible) | Cualquiera 
+| Instantáneas | snapshot de volumen: todos (limitado a cloudsecure_* siempre que sea posible) | Cualquiera 
 
 
 | Monitorización basada en EMS | catálogo de eventos, filtro de eventos, notificación de eventos, destino de la notificación de eventos, certificado de seguridad: todo | Cualquiera 
@@ -215,10 +215,10 @@ Si primero hay que sustituir un csuser o un csrole ya existente:
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application ++*++
-security login role delete -role csrole -cmddirname ++*++
-security login rest-role delete -role csrestrole -api ++*++
-security login rest-role delete -role arwrole -api ++*++
+security login delete -user-or-group-name csuser -application *
+security login role delete -role csrole -cmddirname *
+security login rest-role delete -role csrestrole -api *
+security login rest-role delete -role arwrole -api *
 ----
 Crea el rol y el usuario (ejecuta como administrador del clúster):
 
@@ -226,7 +226,7 @@ Crea el rol y el usuario (ejecuta como administrador del clúster):
 ----
 security login role create -role csrole -cmddirname DEFAULT -access readonly
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure++_*++"
+security login role create -role csrole -cmddirname "volume snapshot" -access all -query "-snapshot cloudsecure_*"
 security login role create -role csrole -cmddirname "event catalog" -access all
 security login role create -role csrole -cmddirname "event filter" -access all
 security login role create -role csrole -cmddirname "event notification destination" -access all
@@ -246,37 +246,37 @@ Si primero hay que sustituir un csuser o un csrole ya existente:
 
 [listing]
 ----
-security login delete -user-or-group-name csuser -application ++*++ -vserver ++<++vservername++>++
-security login role delete -role csrole -cmddirname ++*++ -vserver ++<++vservername++>++
-security login rest-role delete -role csrestrole -api ++*++ -vserver ++<++vservername++>++
+security login delete -user-or-group-name csuser -application * -vserver <vservername>
+security login role delete -role csrole -cmddirname * -vserver <vservername>
+security login rest-role delete -role csrestrole -api * -vserver <vservername>
 ----
-Crea el rol y el usuario (sustituye ++<++vservername++>++ antes de ejecutarlo):
+Crea el rol y el usuario (sustituye <vservername> antes de ejecutar):
 
 [listing]
 ----
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname DEFAULT -access none
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "network interface" -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname version -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname volume -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname vserver -access readonly
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "vserver fpolicy" -access all
-security login role create -vserver ++<++vservername++>++ -role csrole -cmddirname "volume snapshot" -access all
-security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver ++<++vservername++>++
-security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver ++<++vservername++>++
+security login role create -vserver <vservername> -role csrole -cmddirname DEFAULT -access none
+security login role create -vserver <vservername> -role csrole -cmddirname "network interface" -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname version -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname volume -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname vserver -access readonly
+security login role create -vserver <vservername> -role csrole -cmddirname "vserver fpolicy" -access all
+security login role create -vserver <vservername> -role csrole -cmddirname "volume snapshot" -access all
+security login create -user-or-group-name csuser -application ontapi -authmethod password -role csrole -vserver <vservername>
+security login create -user-or-group-name csuser -application http -authmethod password -role csrole -vserver <vservername>
 ----
 
 
 [[feature-specific-permissions]]
 === Permisos específicos de cada función
 
-*Almacenamiento persistente (se muestra el modo cluster; añade -vserver ++<++vservername++>++ para el modo SVM):*
+*Almacenamiento persistente (se muestra el modo cluster; añade -vserver <vservername> para el modo SVM):*
 
 [listing]
 ----
 security login role create -role csrole -cmddirname "vserver fpolicy" -access all
 security login role create -role csrole -cmddirname "job show" -access readonly
 ----
-*Protobuf (se muestra el modo cluster; añade -vserver ++<++vservername++>++ para el modo SVM):*
+*Protobuf (se muestra el modo de clúster; añade -vserver <vservername> para el modo SVM):*
 
 [listing]
 ----
@@ -290,7 +290,7 @@ Para Access Denied y ARP, las credenciales del administrador del clúster no nec
 == Configura y prueba el recopilador de datos
 
 . Inicia sesión como administrador o titular de la cuenta en Data Infrastructure Insights.
-. Selecciona Workload Security ++>++ Collectors ++>++ +Data Collectors.
+. Selecciona Workload Security > Collectors > &#43;Data Collectors.
 . Pasa el cursor sobre el mosaico de SVM de NetApp y haz clic en +Monitor.
 . Rellena los campos siguientes. No guardes todavía el colector.
 
@@ -337,7 +337,7 @@ Para Access Denied y ARP, las credenciales del administrador del clúster no nec
 |===
 [quote]
 ____
-*Important:* Extensiones de archivo excluidas por defecto: por diseño, Workload Security configura el ámbito de FPolicy para excluir las extensiones ini y DS++_++Store. Los eventos relacionados con estos archivos se filtran en ONTAP y nunca llegan a Workload Security, así que no aparecen en Activity Forensics. Esto es independiente de las exclusiones de alertas configurables por el cliente. Es un comportamiento esperado; auditar estas extensiones no se puede configurar en la interfaz de usuario.
+*Important:* extensiones de archivo excluidas de forma predeterminada: por diseño, Workload Security configura el ámbito de FPolicy para excluir las extensiones ini y DS_Store. Los eventos de estos archivos se filtran en ONTAP y nunca llegan a Workload Security, por lo que no aparecen en Activity Forensics. Esto es independiente de las exclusiones de alertas configurables por el cliente. Es el comportamiento esperado; la auditoría de estas extensiones no se puede configurar en la interfaz de usuario.
 
 ____
 
@@ -402,14 +402,14 @@ No verifiques manualmente los datos LIF antes de realizar la prueba de conexión
 
 [listing]
 ----
-net int service-policy create -policy only++_++data++_++fpolicy -vserver ++<++svm++>++ ++\++ \
+net int service-policy create -policy only_data_fpolicy -vserver <svm> \
 -allowed-addresses 0.0.0.0/0 -services data-cifs,data-nfs,data,-core,data-fpolicy-client
 ----
 Comprueba el LIF:
 
 [listing]
 ----
-network interface show -vserver ++<++svm++>++ -fields service-policy,status-admin,status-oper
+network interface show -vserver <svm> -fields service-policy,status-admin,status-oper
 ----
 En ONTAP anterior a la versión 9.8, no es necesario configurar data-fpolicy-client; basta con una LIF con la función data (up) que transporte NFS y/o CIFS.
 
@@ -427,8 +427,8 @@ Si MAV está activado, puede bloquear los comandos que utiliza Workload Security
 
 [listing]
 ----
-multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !++*++cloudsecure++_*++"
-multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !++*++cloudsecure++_*++"
+multi-admin-verify rule modify -operation "volume snapshot create" -query "-snapshot !*cloudsecure_*"
+multi-admin-verify rule modify -operation "volume snapshot delete" -query "-snapshot !*cloudsecure_*"
 multi-admin-verify rule delete -operation set # allow user blocking
 ----
 
@@ -490,7 +490,7 @@ ____
 [[pause-and-resume-a-collector]]
 == Pausar y reanudar un colector
 
-Las opciones «Pausar» y «Reanudar» se aplican a un recopilador de datos, no a un agente. Puedes ejecutarlas desde la interfaz de usuario (Recopiladores > el recopilador > menú Opciones) o desde la API.
+Pausar y Reanudar se aplican a un recopilador de datos, no a un Agent. Puedes ejecutarlos desde la interfaz de usuario (Recopiladores > el recopilador > menú de opciones) o desde la API.
 
 Al poner en pausa un colector en ejecución, se elimina la configuración de FPolicy de ONTAP. Mientras está en pausa, no se producen eventos y no se envían datos en ninguna dirección.
 
@@ -557,7 +557,7 @@ Selecciona otro agente para migrar el colector.
 
 La prueba de conexión abarca la conectividad durante la configuración, las credenciales, los LIF de datos, la conectividad de devolución de llamada en los puertos asignados, la comprobación del servidor CIFS cuando se selecciona SMB y el acceso a las funciones en Cluster mode. No repitas esas comprobaciones manualmente tras una prueba satisfactoria.
 
-Si el colector entra posteriormente en estado Error o Degradado, abre Estado ++>++ Más detalles y sigue Solución de problemas del colector de datos SVM de ONTAP. Las condiciones de ejecución, como colectores duplicados, sobrecarga de la tasa de eventos, colectores en pausa, ubicación en el almacenamiento persistente, transiciones MetroCluster, falta de actividad y resolución de identidades, quedan fuera del flujo de trabajo de Probar conexión previo al guardado.
+Si el colector entra más tarde en estado Error o Degraded, abre Estado > Más detalles y sigue la guía de solución de problemas del colector de datos SVM de ONTAP. Las condiciones de tiempo de ejecución, como colectores duplicados, sobrecarga de la tasa de eventos, colectores en pausa, ubicación de Persistent Store, transiciones de MetroCluster, falta de actividad y resolución de identidades, quedan fuera del flujo de trabajo Probar conexión previo al guardado.
 
 
 
@@ -565,6 +565,6 @@ Si el colector entra posteriormente en estado Error o Degradado, abre Estado ++>
 == Después de terminar
 
 * En la página «Recopiladores de datos instalados», usa el menú de opciones para editar o reiniciar un recopilador.
-* Confirma que el colector llegue a estado Running y que los eventos aparezcan en Workload Security ++>++ Activity Forensics después de una E/S real del cliente.
+* Comprueba que el colector llegue a Running y que los eventos aparezcan en Workload Security > Activity Forensics después de operaciones reales de I/O del cliente.
 * Verifica que los nombres de usuario se resuelvan (no los SID); si no, revisa el User Directory Collector.
 

@@ -14715,7 +14715,6 @@
   <block id="3a3a5cd068731551120f43f37950768b" category="cell">ONTAP Select</block>
   <block id="d4ae205eb2c457ac736944368ed76f4e" category="cell">Compatible.</block>
   <block id="cbd8ba58ffce3ba619b32d06c59ccf43" category="cell">Tipo/subtipo de SVM</block>
-  <block id="add9fe580da121a40e7d835cf08a489d" category="cell">Solo SVM de datos (sin volúmenes infinitos). Subtipos admitidos: default, sync++_++source, sync++_++destination. Las SVM de destino DP se omiten para la auditoría por diseño.</block>
   <block id="8e7c7f420aaad9ac4efadf78cd539fce" category="cell">política de servicio data-fpolicy-client</block>
   <block id="ca144cead5527bd3ee58c0c2db2295be" category="cell">Obligatorio a partir de ONTAP 9.8 y versiones posteriores (véase la política de servicio). En versiones anteriores no es necesario configurarlo.</block>
   <block id="e2eabe65d493701bc6060114e99b0c9e" category="cell">Versiones mínimas de las funciones</block>
@@ -14777,7 +14776,6 @@
   <block id="a0802df16c945d0e95fc47b41df0b506" category="cell">función DEFAULT: solo lectura (clúster) — cumple con las comprobaciones de lectura; fpolicy sigue necesitando todas</block>
   <block id="26aeabd0c99c77002e55825fbcd435af" category="cell">—</block>
   <block id="9147e5e61a7b9260dec09f3a6eb3e5be" category="cell">Instantáneas</block>
-  <block id="689b820747aa6a4d860f2786eb806378" category="cell">instantánea de volumen: todo (limitado a cloudsecure++_*++ donde sea posible)</block>
   <block id="ed36a1ef76a59ee3f15180e0441188ad" category="cell">Cualquiera</block>
   <block id="dd19eb6af7604080f6211a3670f8e075" category="cell">Monitorización basada en EMS</block>
   <block id="c3e82a027d34cb4bbb340016c09d0785" category="cell">catálogo de eventos, filtro de eventos, notificación de eventos, destino de la notificación de eventos, certificado de seguridad: todo</block>
@@ -14798,14 +14796,10 @@
   <block id="8e2de964cfdee8590e6b6154525b5d93" category="paragraph">Si primero hay que sustituir un csuser o un csrole ya existente:</block>
   <block id="f672a9771502c29126a3c35f4914cb76" category="paragraph">Crea el rol y el usuario (ejecuta como administrador del clúster):</block>
   <block id="bc72c6230f93afcba183ab1fa3f21642" category="section-title">Crear csuser a través de la IP de gestión de SVM (Vserver)</block>
-  <block id="a0f6fb0a8302b109f912737c2869ae71" category="paragraph">Crea el rol y el usuario (sustituye ++&lt;++vservername++&gt;++ antes de ejecutarlo):</block>
   <block id="9a57480d777872dcea7adf10743a9952" category="section-title">Permisos específicos de cada función</block>
-  <block id="28c033259ae71cab82483e5eb721e1c5" category="paragraph">*Almacenamiento persistente (se muestra el modo cluster; añade -vserver ++&lt;++vservername++&gt;++ para el modo SVM):*</block>
-  <block id="8de1a3a6bc3dbbbe06d26a1bcaf978d0" category="paragraph">*Protobuf (se muestra el modo cluster; añade -vserver ++&lt;++vservername++&gt;++ para el modo SVM):*</block>
   <block id="bc758e282c37d2d9a0517a93eece5907" category="paragraph">Para Access Denied y ARP, las credenciales del administrador del clúster no necesitan permisos adicionales. Para un usuario personalizado, añade los privilegios que aparecen en la tabla de capacidades anterior. Consulta las guías de integración de ONTAP Access Denied y ONTAP Autonomous Ransomware Protection.</block>
   <block id="e7d9ce3a5da364f2958195e14ff8fe63" category="section-title">Configura y prueba el recopilador de datos</block>
   <block id="8e74db1aff0722071bb47c173993c43f" category="list-text">Inicia sesión como administrador o titular de la cuenta en Data Infrastructure Insights.</block>
-  <block id="58322ab2ae3213de6b39a5124b6c922f" category="list-text">Selecciona Workload Security ++&gt;++ Collectors ++&gt;++ +Data Collectors.</block>
   <block id="1c8e1403d69deb6fe2ab09b0987817d3" category="list-text">Pasa el cursor sobre el mosaico de SVM de NetApp y haz clic en +Monitor.</block>
   <block id="ca6dbdd28f74169fa4b6bdc7ea68f856" category="list-text">Rellena los campos siguientes. No guardes todavía el colector.</block>
   <block id="7eea9d7817ee2e4f6a3b32e32e073cbd" category="cell">*Campo*</block>
@@ -14824,7 +14818,6 @@
   <block id="91e39cbc92e5415e5f78c8806b7a24cb" category="cell">Nombres completos de volúmenes separados por comas (sin comillas).</block>
   <block id="b09191377f9b6b951d60b2bd6174e871" category="cell">Habilita los eventos generales de acceso a carpetas. Las acciones de creación, renombrado y eliminación de carpetas se registran incluso sin esta opción. Habilitarla aumenta el volumen de eventos.</block>
   <block id="26ab4dcb28c140ed3030981362b24276" category="cell">Ajusta el búfer de envío de FPolicy. En versiones de ONTAP anteriores a la 9.8p7 con problemas de rendimiento, ajusta esto para mejorar el rendimiento de ONTAP. Contacta al soporte de NetApp si no se muestra la opción.</block>
-  <block id="c421bfa9e5f3f2069af785152ca7a7ab" category="paragraph">*Important:* Extensiones de archivo excluidas por defecto: por diseño, Workload Security configura el ámbito de FPolicy para excluir las extensiones ini y DS++_++Store. Los eventos relacionados con estos archivos se filtran en ONTAP y nunca llegan a Workload Security, así que no aparecen en Activity Forensics. Esto es independiente de las exclusiones de alertas configurables por el cliente. Es un comportamiento esperado; auditar estas extensiones no se puede configurar en la interfaz de usuario.</block>
   <block id="4382509b287cd683101bff64820824d5" category="section-title">Ejecuta la prueba de conexión antes de guardar</block>
   <block id="193a78920391ccef7cc87f529c239fcc" category="paragraph">La función Test Connection (introducida en marzo de 2025) valida la conectividad, las credenciales, los LIF de datos, la llamada de retorno de FPolicy y el RBAC por función antes de crear el colector, así puedes corregir tú mismo los problemas de red y permisos. En la página para añadir o editar un colector, introduce los detalles y haz clic en Test Connection.</block>
   <block id="92b414da7b32cefb75be6566fce55d1b" category="inline-image-macro">Botón Test Connection, title="Test Connection button", width=433, height=54</block>
@@ -14881,7 +14874,6 @@
   <block id="4f4a1b4c3c6037326a4858faf590909b" category="list-text">En la conmutación de sitios, los estados se intercambian; permite hasta dos minutos para la transición.</block>
   <block id="db4210231f9102ae9bf9a4de573d89ce" category="paragraph">*Nota:* Un colector MetroCluster detenido en el lado de reserva es lo esperado, no es un error. Investiga solo si el lado activo no está en ejecución.</block>
   <block id="5ecd3700f40aa2ecc41a5566d5bb457a" category="section-title">Pausar y reanudar un colector</block>
-  <block id="2900a29dbf701a91de01303efc97eac8" category="paragraph">Las opciones «Pausar» y «Reanudar» se aplican a un recopilador de datos, no a un agente. Puedes ejecutarlas desde la interfaz de usuario (Recopiladores &gt; el recopilador &gt; menú Opciones) o desde la API.</block>
   <block id="1cd63011ecef087e6725de251947e701" category="paragraph">Al poner en pausa un colector en ejecución, se elimina la configuración de FPolicy de ONTAP. Mientras está en pausa, no se producen eventos y no se envían datos en ninguna dirección.</block>
   <block id="3070fc72c1e826111ddbc25d614547d8" category="list-text">Los nuevos volúmenes creados mientras está en pausa no se detectan hasta que reanudes.</block>
   <block id="687ecad589a53ce9917f7a1297ae2d5a" category="list-text">La purga de instantáneas no se ejecuta en un colector en pausa.</block>
@@ -14917,9 +14909,7 @@
   <block id="209a869a1a80f43872e859a94b46d639" category="list-text">Para obtener el mejor rendimiento de FPolicy, coloca el agente cerca de la red de almacenamiento y minimiza la latencia de red.</block>
   <block id="1d73eacdaf8c8824c5acb1c2966f4c07" category="section-title">Si el colector notifica un error tras guardar</block>
   <block id="c959971e1357197b467c89aa8f789725" category="paragraph">La prueba de conexión abarca la conectividad durante la configuración, las credenciales, los LIF de datos, la conectividad de devolución de llamada en los puertos asignados, la comprobación del servidor CIFS cuando se selecciona SMB y el acceso a las funciones en Cluster mode. No repitas esas comprobaciones manualmente tras una prueba satisfactoria.</block>
-  <block id="8939329780680219f89b75f98718d19d" category="paragraph">Si el colector entra posteriormente en estado Error o Degradado, abre Estado ++&gt;++ Más detalles y sigue Solución de problemas del colector de datos SVM de ONTAP. Las condiciones de ejecución, como colectores duplicados, sobrecarga de la tasa de eventos, colectores en pausa, ubicación en el almacenamiento persistente, transiciones MetroCluster, falta de actividad y resolución de identidades, quedan fuera del flujo de trabajo de Probar conexión previo al guardado.</block>
   <block id="87c6ee99d11a193762ea2b98b8f6ab57" category="list-text">En la página «Recopiladores de datos instalados», usa el menú de opciones para editar o reiniciar un recopilador.</block>
-  <block id="ecfa6237a8a218fc5c797ee0578679c7" category="list-text">Confirma que el colector llegue a estado Running y que los eventos aparezcan en Workload Security ++&gt;++ Activity Forensics después de una E/S real del cliente.</block>
   <block id="e18aef600b2d8504f1e47650de009e83" category="list-text">Verifica que los nombres de usuario se resuelvan (no los SID); si no, revisa el User Directory Collector.</block>
   <block id="0d66c633187e88b2e22907cdb3336aee" category="paragraph">Configura el recopilador de directorios de usuarios antes del recopilador de datos de ONTAP SVM.</block>
   <block id="bbfc5ca7682ab84e651eb864c318dd85" category="paragraph">Workload Security utiliza los datos del directorio para identificar identidades en la actividad de acceso a archivos. Los colectores de User Directory no ofrecen una función de prueba de conexión.</block>
@@ -16301,4 +16291,14 @@
   <block id="b2200689dae4036b4813579eff31d56c" category="paragraph">El esquema Inventory contiene datos exhaustivos sobre activos y objetos, incluidos sistemas de almacenamiento, hosts, aplicaciones y anotaciones. Es el esquema más grande del data warehouse y constituye la base para la gestión de activos y la visibilidad de la infraestructura.</block>
   <block id="d9a7965bf43985ef0fc40616a6785117" category="paragraph">El esquema «Performance» proporciona métricas de series temporales sobre E/S, latencia, rendimiento y otros indicadores de rendimiento en sistemas de almacenamiento, hosts, volúmenes y aplicaciones. Usa este esquema para analizar tendencias de rendimiento, identificar cuellos de botella y optimizar la ubicación de las cargas de trabajo.</block>
   <block id="18b7f15f593dc47ea50fd485e859a539" category="paragraph">El esquema «Ports» contiene datos sobre puertos de red y switches, incluida la conectividad de los puertos, el estado y las relaciones con los dispositivos conectados. Utiliza este esquema para analizar la topología de red y el estado del fabric dentro de tu infraestructura de almacenamiento.</block>
+  <block id="1bccf90180c31adab404747497809cea" category="cell">Solo las SVM de datos (sin volúmenes infinitos). Subtipos admitidos: default, sync_source, sync_destination. Las SVM de destino de DP se omiten en la auditoría por diseño.</block>
+  <block id="aadaea56453502b49c3bb1d83460b925" category="cell">snapshot de volumen: todos (limitado a cloudsecure_* siempre que sea posible)</block>
+  <block id="7f1025af379bb72826214683cac22df7" category="paragraph">Crea el rol y el usuario (sustituye &lt;vservername&gt; antes de ejecutar):</block>
+  <block id="adf604179202ac8d7549519f9ce15c55" category="paragraph">*Almacenamiento persistente (se muestra el modo cluster; añade -vserver &lt;vservername&gt; para el modo SVM):*</block>
+  <block id="2ad63734d5ea88b691fcec8abfa334e6" category="paragraph">*Protobuf (se muestra el modo de clúster; añade -vserver &lt;vservername&gt; para el modo SVM):*</block>
+  <block id="03a48f775ff6c08509430c660d47baaa" category="list-text">Selecciona Workload Security &gt; Collectors &gt; &amp;#43;Data Collectors.</block>
+  <block id="d78aa3ef141641a0a1fc5a86295f9836" category="paragraph">*Important:* extensiones de archivo excluidas de forma predeterminada: por diseño, Workload Security configura el ámbito de FPolicy para excluir las extensiones ini y DS_Store. Los eventos de estos archivos se filtran en ONTAP y nunca llegan a Workload Security, por lo que no aparecen en Activity Forensics. Esto es independiente de las exclusiones de alertas configurables por el cliente. Es el comportamiento esperado; la auditoría de estas extensiones no se puede configurar en la interfaz de usuario.</block>
+  <block id="24dda3b59a8373ca61cb08f3e04c9cce" category="paragraph">Pausar y Reanudar se aplican a un recopilador de datos, no a un Agent. Puedes ejecutarlos desde la interfaz de usuario (Recopiladores &gt; el recopilador &gt; menú de opciones) o desde la API.</block>
+  <block id="77b5c5ee27c770993c6041b7b3f0105c" category="paragraph">Si el colector entra más tarde en estado Error o Degraded, abre Estado &gt; Más detalles y sigue la guía de solución de problemas del colector de datos SVM de ONTAP. Las condiciones de tiempo de ejecución, como colectores duplicados, sobrecarga de la tasa de eventos, colectores en pausa, ubicación de Persistent Store, transiciones de MetroCluster, falta de actividad y resolución de identidades, quedan fuera del flujo de trabajo Probar conexión previo al guardado.</block>
+  <block id="954c32784463d0103797201c7694bdf9" category="list-text">Comprueba que el colector llegue a Running y que los eventos aparezcan en Workload Security &gt; Activity Forensics después de operaciones reales de I/O del cliente.</block>
 </blocks>
