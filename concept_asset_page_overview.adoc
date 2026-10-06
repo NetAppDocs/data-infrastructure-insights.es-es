@@ -34,13 +34,15 @@ Puede hacer clic en cualquiera de los enlaces de activos para ver sus páginas d
 
 NOTE: Es posible que notes que la capacidad de volumen puede ser superior al 100 % en algunos activos de almacenamiento.  Esto se debe a que los metadatos relacionados con la capacidad del volumen son parte de los datos de capacidad consumida informados por el activo.
 
+[NOTE]
+====
+Puede que también hayas notado que las cifras de capacidad de FlexGroups pueden mostrar "0", mientras que los componentes sí muestran valores. En DII, los FlexGroups ponen a cero la mayoría de las métricas de capacidad, mientras que los componentes sí las incluyen. El problema es el recuento doble: si ambas entidades informaran las métricas de capacidad completas, DII estaría informando la misma capacidad dos veces (una vez en el FlexGroup y otra en el componente). Dar prioridad a los informes a nivel de componente admite casos de uso clave y evita esa duplicación.
 
-NOTE: Puede que también hayas notado que las cifras de capacidad de FlexGroups pueden mostrar "0", mientras que los componentes sí muestran valores. En DII, los FlexGroups ponen a cero la mayoría de las métricas de capacidad, mientras que los componentes sí las incluyen. El problema es el recuento doble: si ambas entidades informaran las métricas de capacidad completas, DII estaría informando la misma capacidad dos veces (una vez en el FlexGroup y otra en el componente). Dar prioridad a los informes a nivel de componente admite casos de uso clave y evita esa duplicación.
+En este caso, para informar sobre la capacidad de un FlexGroup en una consulta, un panel de control o un monitor, usa la referencia del constituyente a su FlexGroup principal. Luego puedes agrupar los constituyentes por esa referencia y agregar sus valores de capacidad.
 
-+ En este caso, para informar de la capacidad de un FlexGroup en una consulta, un panel o un monitor, utiliza la referencia del componente a su FlexGroup principal. A continuación, puedes agrupar los componentes por esa referencia y sumar sus valores de capacidad.
+DII establece intencionadamente en cero la capacidad del FlexGroup principal; el propio ONTAP sigue informando la capacidad. Esto se aplica a las métricas de capacidad/eficiencia, no a las métricas de rendimiento. Se recomienda agrupar los constituyentes por Group ID, ya que Group Name puede no ser globalmente único.
 
-+ DII establece intencionadamente en cero la capacidad del elemento principal de FlexGroup; ONTAP sigue mostrando la capacidad. Esto se aplica a las métricas de capacidad y eficiencia, no a las métricas de rendimiento. Se recomienda agrupar los componentes por ID de grupo, ya que el nombre del grupo puede no ser único a nivel global.
-
+====
 
 
 [[performance-section]]
