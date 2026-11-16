@@ -197,6 +197,9 @@ Lista alfabética de recopiladores de datos compatibles con Data Infrastructure 
 | link:task_dc_na_storagegrid.html["StorageGRID en NetApp"] | Infraestructura 
 
 
+| link:task_dc_nvidia_bcm_rest.html["NVIDIA Base Command Manager REST"] | Infraestructura 
+
+
 | link:task_dc_nutanix.html["Serie Nutanix NX"] | Infraestructura 
 
 

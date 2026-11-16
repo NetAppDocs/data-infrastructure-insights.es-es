@@ -19,6 +19,23 @@ NetApp mejora y optimiza continuamente sus productos y servicios.  A continuaci�
 
 
 
+[[november-2026]]
+== noviembre de 2026
+
+
+
+[[data-collector-updates]]
+=== Actualizaciones del recopilador de datos:
+
+Ya están disponibles los siguientes recopiladores de datos:
+
+*NVIDIA Base Command Manager (BCM) Collector (Preview)* Data Infrastructure Insights ahora ofrece un recopilador en versión preliminar para NVIDIA Base Command Manager, lo que te da visibilidad de tus clústeres de HPC e IA. Correlaciona los nodos del clúster y las cargas de trabajo con sus componentes de almacenamiento subyacentes para que puedas detectar cuellos de botella de E/S, identificar qué trabajos o nodos están generando la carga y evitar que los costosos recursos de GPU permanezcan inactivos esperando datos.
+
+*Recopilador de datos de Proxmox VE (versión preliminar)* Data Infrastructure Insights ofrece ahora un recopilador de datos en versión preliminar para Proxmox VE. Te permite supervisar tus hosts y máquinas virtuales de Proxmox, así como el almacenamiento subyacente, para que puedas identificar problemas a lo largo de toda la ruta de datos y resolverlos más rápidamente.
+
+'''
+
+
 [[september-2026]]
 == septiembre de 2026
 
